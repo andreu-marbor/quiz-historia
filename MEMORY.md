@@ -12,7 +12,7 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 |---|---|---|
 | — | Documentación inicial (`PLAN.md`, `AGENTS.md`, `MEMORY.md`) | ✅ Completada |
 | 1 | Cimiento (repo `main`, scaffold Vite+TS, validador, lógica, ~40 preguntas, tests) | ✅ Completada (2026-10-06) |
-| 2 | Interfaz completa (5 pantallas, persistencia, oscuro, responsive) | ⏳ Pendiente |
+| 2 | Interfaz completa (5 pantallas, persistencia, oscuro, responsive) | ✅ Completada (2026-10-06) |
 | 3 | PWA (manifest, iconos, service worker offline, Lighthouse) | ⏳ Pendiente |
 | 4 | Despliegue web (GitHub Actions → Pages, `base: /quiz-historia/`) | ⏳ Pendiente |
 | 5 | Android TWA (keystore nuevo, assetlinks, APK + tramo cerrado Play) | ⏳ Pendiente |
@@ -67,6 +67,29 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - `main` queda con upstream configurado desde el primer push (mitigación del riesgo de PLAN §7): basta `git push`, sin `HEAD:main`.
 - `gh run list` seguirá vacío hasta la Fase 4 (aún no existe `.github/workflows/despliegue.yml`).
 
+### 2026-10-06 — Fase 2 completada (interfaz completa)
+
+- **`src/ui/` — las 5 pantallas de §4**, todas construidas con un helper propio (`h()`, sin frameworks) y con los textos centralizados en `src/ui/cadenas.ts` (objeto `T`; sin i18n pero preparado para añadirla):
+  - **Inicio** (`inicio.ts`): cursos en `<details>` desplegables, temas como botones con nº de preguntas, insignia de mejor nota y **tema bloqueado + explicación cuando no llega a `minPreguntas`**.
+  - **Cuestionario** (`cuestionario.ts`): contador, barra `role="progressbar"` con `aria-valuetext`, opciones como botones (nunca `disabled` hasta responder), feedback inmediato dentro de una región `aria-live="polite"` **que ya existe antes de responder** (para que el lector de pantalla lo anuncie), iconos ✓/✗ + `aria-label` (el color nunca es el único indicador), foco automático en "Siguiente". Se actualiza el DOM en el sitio en vez de repintar al responder.
+  - **Resultados** (`resultados.ts`): nota grande, aciertos, veredicto, insignia de nueva mejor nota, lista de falladas con "Tu respuesta / Respuesta correcta / Explicación" y los 3 botones (repetir falladas, repetir todas, elegir otro tema).
+  - **Progreso** (`progreso.ts`): tarjetas de racha y cuestionarios + tabla real con `caption`/`scope`, envuelta en una región enfocable (`tabindex="0"`) para poder desplazarla con teclado en móvil.
+  - **Ajustes** (`ajustes.ts`): `fieldset`+`legend` para el modo de color, selector de nº de preguntas (5·10·15·20·todas), casilla de barajado con `aria-describedby`, "Borrar progreso" con confirmación y aviso `role="status"`. Los cambios se guardan solos.
+- **`src/aplicacion.ts`** (nuevo): shell (cabecera + navegación con `aria-current`), **enrutado por hash** (`#/`, `#/cuestionario`, `#/resultados`, `#/progreso`, `#/ajustes`; rutas desconocidas o acceso sin sesión vuelven a `#/`), estado de la sesión, gestión del foco al cambiar de pantalla y todas las acciones. `src/main.ts` queda como arranque puro (bundle de datos + CSS + montaje) → **el núcleo se puede probar en jsdom**.
+- **`src/datos.ts`** (nuevo): integra `datos/` en el bundle con `import.meta.glob` (R/06: funciona sin internet). Fuera de `logica/` porque `import.meta.glob` es una API de Vite y las pruebas no deben importarlo.
+- **`src/logica/catalogo.ts`** (nuevo, puro): orden de cursos/temas, búsquedas, clave `<curso>/<tema>`, `preguntasDeTema` y `temaJugable` (respetar `minPreguntas`).
+- **`src/persistencia.ts`**: único punto que toca `localStorage`. Claves versionadas (`repaso-historia:ajustes:v1`, `...:progreso:v1`), **lectura defensiva** (JSON corrupto o valores fuera de catálogo → defectos), `Almacen` inyectable para testear sin navegador, `borrarProgreso`, y lógica pura `avanzarRacha`/`registrarCuestionario`/`fechaLocal`/`diasEntre`.
+  - **Racha = días consecutivos con actividad** (estilo Duolingo): primer día → 1, mismo día no suma, día siguiente +1, un día perdido reinicia a 1, fecha anterior (reloj atrasado) no castiga. Decisión propia: el PLAN solo decía "racha" sin definirla.
+- **Estilos**: `base.css` ampliado (variables de tema completo, `--ok`/`--error`/`--aviso` con contraste AA en ambos modos, `prefers-contrast`, `prefers-reduced-motion`) y `app.css` con todos los componentes (móvil primero, objetivos táctiles ≥44px, foco visible heredado). `index.html` con `lang="es"`, meta descripción y `color-scheme`.
+- **Pruebas nuevas** (patrón esbuild existente):
+  - `pruebas/logica.ts` ampliado con el catálogo y `minPreguntas` (53 comprobaciones).
+  - `pruebas/persistencia.ts` (41): ajustes por defecto/defensivos, racha completa, mejor nota, acotado a 100, saneado de datos sucios, borrado.
+  - `pruebas/pantallas.ts` (141) con **`jsdom` como dependencia de desarrollo única nueva** (la app sigue con **cero dependencias de runtime**): helper `h()`, las 5 pantallas por separado (render, eventos, ARIA) y un **recorrido E2E** montar → elegir tema → responder 3 preguntas → resultados → repetir falladas → salir → navegar por enlaces → ajustes → borrar progreso → guardas de rutas.
+  - `pruebas/ayudante.ts` ahora informa del **número de comprobaciones** en el resumen final.
+- **Verificado en verde:** `npm.cmd run prueba` (**274 comprobaciones**: 53 lógica + 41 persistencia + 141 pantallas + 39 datos) y `npm.cmd run build` (24 módulos, 42.98 kB JS / 14.37 kB gzip + 11 kB CSS).
+- **Documentación:** `PLAN.md` (checklist Fase 2 marcado ✅ y tabla §6 con los scripts nuevos), `AGENTS.md` (árbol `src/` y `pruebas/`, stack de tests, comandos).
+- **Siguiente:** Fase 3 (PWA) o revisión visual con el usuario en `npm.cmd run dev`.
+
 ---
 
 ## 🐛 Incidencias y soluciones
@@ -94,3 +117,23 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - Aplicado `winget install --id OpenJS.NodeJS.22` → **v22.23.2** en `C:\Program Files\nodejs\`.
 - Sin avisos de Vite en `npm.cmd run build` ni en `vite`; pruebas y build en verde con el runtime nuevo.
 - **Pendiente (Fase 4):** fijar `node-version: 22` en `.github/workflows/despliegue.yml` para que la CI use esta misma versión.
+
+### 2026-10-06 — `setAttribute('onclick', fn)` no registra el listener (fase 2)
+
+- **Qué implica:** mi helper `h('button', { onclick: () => ... })` hacía `elemento.setAttribute('onclick', String(fn))`. Eso **no ejecuta nada**: el navegador evalúa el atributo como *cuerpo* de una función, así que `() => acciones.x()` solo define una flecha y la descarta. Toda la UI habría quedado sin reacción (clásico fallo silencioso, el build en verde no lo detecta).
+- **Solución:** en `src/ui/dom.ts`, cualquier atributo que empiece por `on` **y** cuyo valor sea función se registra con `addEventListener(clave.slice(2).toLowerCase(), fn)`. Cubierto por un test explícito en `pruebas/pantallas.ts` ("onclick registra un listener real").
+- **Lección:** con DOM manual, los tests de DOM no son lujo: el type-checker no puede ver que un listener no está conectado.
+
+### 2026-10-06 — jsdom: `document.textContent` es `null` y la navegación por hash es asíncrona (fase 2)
+
+- **Qué falló:** en el flujo E2E, `texto(document)` devolvía `''` (en jsdom `Document.textContent` es `null`, hay que usar `#vista` o `body`) y el clic en un enlace de la navegación "no funcionaba".
+- **Causa real:** jsdom **sí** sigue el enlace, pero en dos pasos: primero cambia `location.hash` y **después** dispara `hashchange` en otra tarea. Mi espera comprobaba solo `hash === '#/progreso'` y corría antes de que la app repintara.
+- **Solución:** helper `esperar(condicion)` que sondea cada 5 ms (hasta 500 ms) **la condición que importa** (el `h1` de la pantalla destino), no el hash. La app pinta además de forma síncrona en `navegar()` para no depender del evento.
+- **Relacionado:** el error silencioso de jsdom ("excepción dentro de un listener") solo aparece si se instala un `VirtualConsole`; se ha añadido en el test para que un fallo dentro de un listener no se trague.
+
+### 2026-10-06 — 5 fallos que eran del test, no de la app (fase 2)
+
+- **Qué falló:** 3 aserciones en `pruebas/pantallas.ts` al marcar opciones y 2 en la tabla de progreso.
+- **Causas:** (1) `elemento.querySelector('.opcion--correcta')` busca en los **descendientes**, no en el propio elemento → había que usar `classList.contains`; (2) esperaba `.insignia--alta` con una nota de 85, pero 85 cae en la banda **media** (≥60 y <90); (3) `querySelectorAll('td')` no incluye el `<th scope="row">` del tema, así que el índice de "jugados" era `[2]`, no `[1]`.
+- **Solución:** corregir las aserciones; **la app estaba bien** (lo confirmaban por otro lado el icono ✓, los `aria-label` y el texto de la insignia).
+- **Nota:** contar ✅ con `Select-String`/`regex` desde PowerShell **se corrompe** (el emoji no llega igual); se hace el recuento en el propio `ayudante.ts` (`TODO OK (N comprobaciones)`).

@@ -4,12 +4,14 @@
  */
 
 let fallos = 0;
+let comprobaciones = 0;
 
 export function seccion(titulo: string): void {
   console.log(`\n${titulo}`);
 }
 
 export function comprobar(condicion: boolean, mensaje: string): void {
+  comprobaciones++;
   if (condicion) {
     console.log(`  ✅ ${mensaje}`);
   } else {
@@ -33,9 +35,9 @@ export function mostrarSiHay(errores: readonly string[]): void {
 
 export function finalizar(): void {
   if (fallos === 0) {
-    console.log('\n🎉 TODO OK');
+    console.log(`\n🎉 TODO OK (${comprobaciones} comprobaciones)`);
     return;
   }
-  console.error(`\n💥 ${fallos} fallo(s)`);
+  console.error(`\n💥 ${fallos} fallo(s) de ${comprobaciones} comprobaciones`);
   process.exit(1);
 }

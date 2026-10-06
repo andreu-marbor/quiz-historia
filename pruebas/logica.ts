@@ -5,8 +5,17 @@
 
 import { corregir, resumir } from '../src/logica/correccion';
 import { barajar, presentarPregunta } from '../src/logica/barajado';
+import {
+  buscarCurso,
+  buscarTema,
+  claveTema,
+  cursosOrdenados,
+  preguntasDeTema,
+  temasOrdenados,
+  temaJugable,
+} from '../src/logica/catalogo';
 import { seleccionarPreguntas } from '../src/logica/seleccion';
-import type { Dificultad, Pregunta } from '../src/logica/tipos';
+import type { Catalogo, Dificultad, Pregunta, Tema } from '../src/logica/tipos';
 import { comprobar, finalizar, seccion } from './ayudante';
 
 /** Generador determinista: mismas entradas, mismas salidas. */
@@ -224,6 +233,73 @@ seccion('Selección de preguntas');
 
   const vacio = seleccionarPreguntas([], { cantidad: 5 }, fijo);
   comprobar(vacio.length === 0, 'banco vacío → sin preguntas (el validador lo impide en datos/)');
+}
+
+// ---------------------------------------------------------------------------
+seccion('Catálogo: orden, búsquedas y mínimo de preguntas');
+{
+  const catalogo: Catalogo = {
+    cursos: [
+      {
+        id: 'bachillerato1',
+        titulo: '1º Bachillerato',
+        orden: 3,
+        temas: [{ id: 'guerras-frias', titulo: 'La Guerra Fría', orden: 2, minPreguntas: 4 }],
+      },
+      {
+        id: 'eso2',
+        titulo: '2º ESO',
+        orden: 1,
+        temas: [
+          { id: 'revolucion-industrial', titulo: 'Revolución Industrial', orden: 2, minPreguntas: 4 },
+          { id: 'restauracion', titulo: 'Restauración borbónica', orden: 1, minPreguntas: 6 },
+        ],
+      },
+      { id: 'eso4', titulo: '4º ESO', orden: 2, temas: [] },
+    ],
+  };
+
+  const ordenCursos = cursosOrdenados(catalogo).map((c) => c.id);
+  comprobar(ordenCursos.join() === 'eso2,eso4,bachillerato1', 'ordena los cursos por su campo `orden`');
+
+  const eso2 = buscarCurso(catalogo, 'eso2');
+  comprobar(Boolean(eso2) && eso2?.titulo === '2º ESO', 'busca un curso por su id');
+  comprobar(buscarCurso(catalogo, 'no-existe') === undefined, 'un curso inexistente devuelve undefined');
+
+  const ordenTemas = eso2 ? temasOrdenados(eso2).map((t) => t.id) : [];
+  comprobar(ordenTemas.join() === 'restauracion,revolucion-industrial', 'ordena los temas por su campo `orden`');
+  comprobar(temasOrdenados(buscarCurso(catalogo, 'eso4')!).length === 0, 'un curso sin temas no falla');
+
+  const tema = eso2 ? buscarTema(eso2, 'restauracion') : undefined;
+  comprobar(Boolean(tema) && tema?.minPreguntas === 6, 'busca un tema por su id dentro del curso');
+  comprobar(!eso2 || buscarTema(eso2, 'no-existe') === undefined, 'un tema inexistente devuelve undefined');
+
+  comprobar(claveTema('eso2', 'restauracion') === 'eso2/restauracion', 'la clave de tema es `<curso>/<tema>`');
+
+  const indice = new Map<string, readonly Pregunta[]>([
+    ['eso2/restauracion', [crearPregunta('eso2-restauracion-001')]],
+    ['eso2/vacia', []],
+  ]);
+  comprobar(
+    preguntasDeTema(indice, 'eso2', 'restauracion').length === 1,
+    'recupera las preguntas de un tema del índice',
+  );
+  comprobar(preguntasDeTema(indice, 'eso2', 'sin-archivo').length === 0, 'un tema sin archivo no lanza');
+
+  // --- mínimas preguntas para poder jugar (§3 / R/05) ---
+  const banco = [1, 2, 3, 4, 5, 6, 7, 8].map((n) => crearPregunta(`eso2-restauracion-${n}`));
+  const minimo: Tema = { id: 'restauracion', titulo: 'Restauración borbónica', orden: 1, minPreguntas: 6 };
+  comprobar(temaJugable(banco, minimo), 'con ≥ minPreguntas el tema se puede jugar');
+  comprobar(!temaJugable(banco.slice(0, 5), minimo), 'con minPreguntas − 1 el tema queda bloqueado');
+  comprobar(!temaJugable([], minimo), 'un tema vacío nunca es jugable');
+  comprobar(temaJugable(banco, { ...minimo, minPreguntas: 0 }), 'minPreguntas 0 siempre permite jugar');
+
+  const dificiles = banco.map((p) => ({ ...p, dificultad: 3 as Dificultad }));
+  const elegidas = seleccionarPreguntas(dificiles, { cantidad: 6 }, fijo);
+  comprobar(
+    elegidas.length === 6 && new Set(elegidas.map((p) => p.id)).size === 6,
+    'un cuestionario completo de 6 nunca repite preguntas',
+  );
 }
 
 finalizar();

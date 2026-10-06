@@ -27,6 +27,8 @@ export interface PreguntaPresentada {
   opciones: string[];
   /** Índice de la correcta DENTRO de `opciones` (no el de `pregunta.respuesta`) */
   respuesta: number;
+  /** Para cada opción mostrada, su índice en el orden ORIGINAL de la pregunta */
+  originales: number[];
 }
 
 export interface OpcionesPresentacion {
@@ -46,11 +48,17 @@ export function presentarPregunta(
   const { barajar: barajarOpciones = true, aleatorio = Math.random } = opciones;
 
   if (!barajarOpciones || pregunta.tipo === 'verdadero-falso') {
-    return { pregunta, opciones: [...pregunta.opciones], respuesta: pregunta.respuesta };
+    return {
+      pregunta,
+      opciones: [...pregunta.opciones],
+      respuesta: pregunta.respuesta,
+      originales: pregunta.opciones.map((_, i) => i),
+    };
   }
 
   const pares = pregunta.opciones.map((texto, indice) => ({
     texto,
+    indice,
     esCorrecta: indice === pregunta.respuesta,
   }));
   const paresBarajados = barajar(pares, aleatorio);
@@ -59,5 +67,6 @@ export function presentarPregunta(
     pregunta,
     opciones: paresBarajados.map((p) => p.texto),
     respuesta: paresBarajados.findIndex((p) => p.esCorrecta),
+    originales: paresBarajados.map((p) => p.indice),
   };
 }

@@ -19,7 +19,7 @@
 | Estilo | CSS con variables (arquitectura de temas, modo oscuro) |
 | Contenido | **JSON versionado en `datos/`** + script validador |
 | Persistencia | `localStorage` (centralizado) |
-| Tests | Scripts propios con esbuild (sin frameworks de test) |
+| Tests | Scripts propios con esbuild (sin frameworks de test); `jsdom` solo como DOM en los tests de pantallas |
 | PWA | manifest + service worker *cache-first* (offline para el aula) |
 | Empaquetado Android | PWA + Bubblewrap (sin Android Studio) |
 | CI/CD | GitHub Actions → GitHub Pages (`prueba` → `build` → deploy) |
@@ -48,15 +48,19 @@ quiz-historia/
 │   └── preguntas/
 │       └── <curso>/<tema>.json   # un fichero por tema
 ├── src/
-│   ├── main.ts               # arranque + router de pantallas
+│   ├── main.ts               # arranque: bundle de datos + estilos + monta la app
+│   ├── aplicacion.ts         # shell, enrutado por hash y sesión del cuestionario
+│   ├── datos.ts              # integra datos/ en el bundle (import.meta.glob)
 │   ├── vite-env.d.ts
 │   ├── persistencia.ts       # acceso centralizado a localStorage
-│   ├── logica/               # corrección, barajado, selección de preguntas
-│   ├── ui/                   # pantallas (inicio, cuestionario, resultados, progreso, ajustes)
-│   └── estilos/              # base.css (variables) + resto
+│   ├── logica/               # corrección, barajado, selección, catálogo (sin DOM)
+│   ├── ui/                   # pantallas (inicio, cuestionario, resultados, progreso, ajustes) + cadenas + dom
+│   └── estilos/              # base.css (variables) + app.css (componentes)
 ├── pruebas/
 │   ├── ayudante.ts            # mini-ayudante de aserciones (sin frameworks)
-│   ├── logica.ts             # pruebas de la lógica del quiz
+│   ├── logica.ts             # pruebas de la lógica del quiz y del catálogo
+│   ├── persistencia.ts       # pruebas de ajustes, progreso y racha
+│   ├── pantallas.ts          # pruebas de las 5 pantallas + flujo completo (jsdom)
 │   └── datos.ts              # validación de datos/ (reglas de §3 del PLAN)
 ├── scripts/
 │   ├── validar-preguntas.mjs # validador del contenido
@@ -106,8 +110,10 @@ npm.cmd install        # instalar dependencias
 npm.cmd run dev        # servidor de desarrollo
 npm.cmd run build      # build de producción (tsc --noEmit + vite)
 npm.cmd run preview    # previsualizar build
-npm.cmd run prueba     # TODO: lógica + validación de datos/
-npm.cmd run prueba:logica   # solo lógica del quiz
+npm.cmd run prueba     # TODO: lógica + persistencia + pantallas + datos
+npm.cmd run prueba:logica   # lógica del quiz y catálogo
+npm.cmd run prueba:persistencia  # ajustes, progreso y racha (almacén falso)
+npm.cmd run prueba:pantallas     # 5 pantallas + flujo completo (jsdom)
 npm.cmd run prueba:datos    # solo validador de preguntas/temas
 node scripts/validar-preguntas.mjs   # el validador solo, sin pasar por esbuild
 npm.cmd run iconos     # regenerar iconos PNG del PWA desde SVG

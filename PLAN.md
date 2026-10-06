@@ -211,12 +211,14 @@ Así quedan **incluidas en el bundle y la app funciona sin internet de serie**.
 
 **Resultado: `npm.cmd run prueba` y `npm.cmd run build` en verde.** ✅ (38 comprobaciones de lógica + 39 de datos = 77)
 
-### Fase 2 — Interfaz completa
+### Fase 2 — Interfaz completa ✅ (2026-10-06)
 
-- [ ] Las 5 pantallas de §4 con enrutado ligero (hash o vista única con estados).
-- [ ] `src/persistencia.ts` (mejor nota por tema, racha, ajustes).
-- [ ] Modo oscuro, responsive, accesibilidad.
-- [ ] Tests de la lógica de selección de preguntas (sin repetir, respetar `minPreguntas`).
+- [x] Las 5 pantallas de §4 con enrutado ligero por hash (`#/`, `#/cuestionario`, `#/resultados`, `#/progreso`, `#/ajustes`; rutas desconocidas o sin sesión vuelven a `#/`).
+- [x] `src/persistencia.ts` (mejor nota por tema, racha de días consecutivos, ajustes) con lectura defensiva de datos corruptos y `Almacen` inyectable.
+- [x] Modo oscuro (respetando `prefers-color-scheme` + override manual), responsive móvil-primero y accesibilidad (ARIA en el quiz, `aria-live` en el feedback, foco gestionado, contraste AA, colores nunca como único indicador).
+- [x] Tests de la lógica de selección de preguntas (sin repetir, respetar `minPreguntas`) + tests de persistencia + tests de las 5 pantallas con DOM real (jsdom), incluido un recorrido completo montar → jugar → guardar → navegar.
+
+**Resultado: `npm.cmd run prueba` y `npm.cmd run build` en verde.** ✅ (274 comprobaciones: 53 lógica + 41 persistencia + 141 pantallas + 39 datos)
 
 ### Fase 3 — PWA
 
@@ -269,8 +271,10 @@ Así quedan **incluidas en el bundle y la app funciona sin internet de serie**.
 |---|---|
 | `npm.cmd run dev` | Servidor de desarrollo Vite |
 | `npm.cmd run build` | `tsc --noEmit && vite build` |
-| `npm.cmd run prueba` | Ejecuta todos los tests (lógica + datos) |
-| `npm.cmd run prueba:logica` | Tests de corrección/barajado/selección |
+| `npm.cmd run prueba` | Ejecuta todos los tests (lógica + persistencia + pantallas + datos) |
+| `npm.cmd run prueba:logica` | Tests de corrección/barajado/selección/catálogo |
+| `npm.cmd run prueba:persistencia` | Tests de ajustes, progreso y racha (almacén falso) |
+| `npm.cmd run prueba:pantallas` | Tests de las 5 pantallas y del flujo completo con jsdom |
 | `npm.cmd run prueba:datos` | Validador de `datos/` (§3) |
 | `npm.cmd run iconos` | Genera iconos PWA con `sharp` |
 
