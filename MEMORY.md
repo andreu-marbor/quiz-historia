@@ -59,6 +59,14 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **`src/main.ts`** carga catálogo y preguntas con `import.meta.glob(..., { eager: true })` → **las 40 preguntas entran en el bundle** (21 kB): la app funciona offline desde el primer build (R/06). Pinta una vista de comprovación de cursos/temas (la UI real es la Fase 2).
 - **Verificado en verde:** `npm.cmd run prueba` (77 comprobaciones: 38 de lógica + 39 de datos) y `npm.cmd run build` (`dist/` con las preguntas embebidas).
 
+### 2026-10-06 — Infraestructura: Node 22, GitHub CLI y remoto en GitHub
+
+- **Node actualizado** de 20.18.0 a **22.23.2** con `winget install --id OpenJS.NodeJS.22` → desaparece el aviso de Vite 7. Re-verificado en verde bajo el runtime nuevo: `npm.cmd run build` y `npm.cmd run prueba` (77 comprobaciones).
+- **GitHub CLI 2.102.0** instalado (`winget install --id GitHub.cli`) y autenticado como `andreu-marbor` mediante device flow (scopes `repo`, `gist`, `read:org`). Instalado en `C:\Program Files\GitHub CLI\gh.exe`; las sesiones de terminal abiertas antes de instalar no lo ven en el PATH, hay que usar la ruta completa o abrir terminal nueva.
+- **Remoto creado y push hecho:** `gh repo create quiz-historia --public --source . --remote origin --push` → **https://github.com/andreu-marbor/quiz-historia** (público, rama por defecto `main`, descripción, *homepage* provisional hacia Pages y topics `pwa`, `quiz`, `history`, `typescript`, `vite`).
+- `main` queda con upstream configurado desde el primer push (mitigación del riesgo de PLAN §7): basta `git push`, sin `HEAD:main`.
+- `gh run list` seguirá vacío hasta la Fase 4 (aún no existe `.github/workflows/despliegue.yml`).
+
 ---
 
 ## 🐛 Incidencias y soluciones
@@ -80,3 +88,9 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **Causa:** Vite 7 exige Node `^20.19.0 || >=22.12.0`; este PC tiene 20.18.0.
 - **Acción recomendada:** actualizar Node a la rama 22 LTS antes de la Fase 4/5 (CI usará su propia versión de Node, así que hay que fijarla también en el workflow de GitHub Actions).
 - **Alternativa descartada:** bajar a Vite 6, que sí admite Node 20.0; se prefiere mantener Vite 7 (mismo stack que `tres-en-raya`).
+
+### 2026-10-06 — Resolución: Node actualizado a 22.23.2 ✅ (cierra la incidencia anterior)
+
+- Aplicado `winget install --id OpenJS.NodeJS.22` → **v22.23.2** en `C:\Program Files\nodejs\`.
+- Sin avisos de Vite en `npm.cmd run build` ni en `vite`; pruebas y build en verde con el runtime nuevo.
+- **Pendiente (Fase 4):** fijar `node-version: 22` en `.github/workflows/despliegue.yml` para que la CI use esta misma versión.
