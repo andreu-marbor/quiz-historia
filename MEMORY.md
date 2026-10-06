@@ -11,7 +11,7 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 | Fase | Descripción | Estado |
 |---|---|---|
 | — | Documentación inicial (`PLAN.md`, `AGENTS.md`, `MEMORY.md`) | ✅ Completada |
-| 1 | Cimiento (repo `main`, scaffold Vite+TS, validador, lógica, ~40 preguntas, tests) | ⏳ Pendiente |
+| 1 | Cimiento (repo `main`, scaffold Vite+TS, validador, lógica, ~40 preguntas, tests) | ✅ Completada (2026-10-06) |
 | 2 | Interfaz completa (5 pantallas, persistencia, oscuro, responsive) | ⏳ Pendiente |
 | 3 | PWA (manifest, iconos, service worker offline, Lighthouse) | ⏳ Pendiente |
 | 4 | Despliegue web (GitHub Actions → Pages, `base: /quiz-historia/`) | ⏳ Pendiente |
@@ -48,8 +48,35 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **Hallazgo del entorno:** verificado que `tres-en-raya/android.keystore` y `%USERPROFILE%\.bubblewrap\` (contraseña) **no existen en esta máquina**. El usuario confirma que los conserva **en otro PC** → se adopta la convención de **respaldo siempre en el segundo PC** para el keystore de este proyecto. No afecta a este proyecto; sí al mantenimiento de `tres-en-raya` si se pierde.
 - **Pendiente:** iniciar Fase 1 (`git init -b main`, scaffold, validador, lógica y preguntas de muestra).
 
+### 2026-10-06 — Fase 1 completada (cimiento)
+
+- **Repo:** `git init -b main` + `.gitignore` (incluye ya `*.keystore`/Android, PLAN §5 fase 5). Commit inicial `docs: plan, AGENTS.md, memoria inicial y .gitignore`.
+- **Scaffold a mano:** `package.json` (scripts `dev`, `build` = `tsc --noEmit && vite build`, `preview`, `prueba`, `prueba:logica`, `prueba:datos`), `tsconfig.json` (estricto, `include: ["src"]`, como en `tres-en-raya`), `vite.config.ts` (sin `base` todavía: llega en la Fase 4), `index.html`, `src/vite-env.d.ts`, `src/estilos/base.css` (variables `--bg`, `--accent`, modo oscuro por `prefers-color-scheme` + override `[data-tema]`).
+- **Contenido:** `datos/temas.json` con 3 cursos (`eso2`, `eso4`, `bachillerato1`) y 4 temas, y **40 preguntas** (10 por tema) en `datos/preguntas/<curso>/<tema>.json`. Mezcla de tipos: `opcion-multiple`, `verdadero-falso` y `fecha`.
+- **Validador** `scripts/validar-preguntas.mjs` (sin dependencias): todas las reglas de §3 (ids únicos y con convención `<curso>-<tema>-<nnn>`, `respuesta` dentro de rango, textos no vacíos, tipos y coherencia de `opciones`/`verdadero-falso`, `dificultad` ∈ 1·2·3, `minPreguntas`, ficheros huérfanos, directorios que no son cursos del catálogo, temas sin fichero, JSON ilegible). **Reglas extra** más allá de §3: campos desconocidos (typos), opciones/etiquetas repetidas, existencia del fichero de `imagen` en `public/`. Es CLI (`node scripts/validar-preguntas.mjs`) y módulo (lo importa `pruebas/datos.ts`).
+- **Lógica** `src/logica/`: `tipos.ts`, `correccion.ts` (`corregir`, `resumir` → nota 0–100, falladas, sin responder = fallo), `barajado.ts` (Fisher-Yates con generador inyectable + `presentarPregunta` que remapea la respuesta correcta; `verdadero-falso` nunca se baraja), `seleccion.ts` (`seleccionarPreguntas`: sin repetir, filtros por dificultad/tags/excluir y **reparto equilibrado 1·2·3**).
+- **Pruebas** con el patrón de `tres-en-raya` (esbuild → `node_modules/.tmp/*.mjs` → node): `pruebas/ayudante.ts` (mini-ayudante sin frameworks), `pruebas/logica.ts` (38 comprobaciones), `pruebas/datos.ts` (39: contenido real + reglas con datos falsos y repositorios inventados en `node_modules/.tmp/validacion-falsa`).
+- **`src/main.ts`** carga catálogo y preguntas con `import.meta.glob(..., { eager: true })` → **las 40 preguntas entran en el bundle** (21 kB): la app funciona offline desde el primer build (R/06). Pinta una vista de comprovación de cursos/temas (la UI real es la Fase 2).
+- **Verificado en verde:** `npm.cmd run prueba` (77 comprobaciones: 38 de lógica + 39 de datos) y `npm.cmd run build` (`dist/` con las preguntas embebidas).
+
 ---
 
 ## 🐛 Incidencias y soluciones
 
-*(Sin incidencias todavía — este bloque es para problemas concretos: qué falló, causa y cómo se resolvió.)*
+### 2026-10-06 — `esbuild` con salida `.mjs` producía `require` (fase 1)
+
+- **Qué falló:** `npm.cmd run prueba:datos` terminaba con `ReferenceError: require is not defined in ES module scope`.
+- **Causa:** con `--platform=node` esbuild empaqueta en **CJS** (`require` de `node:fs`), pero el fichero de salida `node_modules/.tmp/datos.mjs` lo hace Node tratar como **ESM**. El otro test pasaba solo porque no importa builtins de Node.
+- **Solución:** añadir `--format=esm` a los dos scripts `prueba:*` de `package.json`.
+
+### 2026-10-06 — Test de Fisher-Yates con generador constante (fase 1)
+
+- **Qué falló:** `barajar(base, () => 0.99)` devolvía el mismo orden: en Fisher-Yates `j = floor(r * (i+1))` con `r ≈ 0.99` da siempre `j = i`.
+- **Solución:** usar un generador congruencial con semilla (`generadorSembrado`) en `pruebas/logica.ts` y comprobar reproducibilidad por semilla en lugar de comparar con un valor constante.
+
+### 2026-10-06 — Node.js 20.18.0 por debajo de lo que pide Vite 7 ⚠️ pendiente
+
+- **Qué ocurre:** cada ejecución de `vite` avisa: *"You are using Node.js 20.18.0. Vite requires Node.js version 20.19+ or 22.12+"*. **El build y el dev server funcionan** (verificado), pero es una advertencia de compatibilidad.
+- **Causa:** Vite 7 exige Node `^20.19.0 || >=22.12.0`; este PC tiene 20.18.0.
+- **Acción recomendada:** actualizar Node a la rama 22 LTS antes de la Fase 4/5 (CI usará su propia versión de Node, así que hay que fijarla también en el workflow de GitHub Actions).
+- **Alternativa descartada:** bajar a Vite 6, que sí admite Node 20.0; se prefiere mantener Vite 7 (mismo stack que `tres-en-raya`).

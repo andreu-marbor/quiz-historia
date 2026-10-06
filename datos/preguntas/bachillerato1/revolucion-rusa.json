@@ -1,0 +1,117 @@
+[
+  {
+    "id": "bachillerato1-revolucion-rusa-001",
+    "enunciado": "¿Qué líder encabezó el partido bolchevique y la revolución de octubre de 1917?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Vladimir Ilich Lenin", "Iósif Stalin", "León Trotsky", "Nicolás II"],
+    "respuesta": 0,
+    "explicacion": "Lenin dirigió a los bolcheviques desde su regreso del exilio en abril de 1917; Stalin y Trotsky serían sus principales sucesores en la lucha por el poder.",
+    "dificultad": 1,
+    "tags": ["revolucion-rusa", "protagonistas"]
+  },
+  {
+    "id": "bachillerato1-revolucion-rusa-002",
+    "enunciado": "¿En qué año se proclamó la Revolución de Octubre en Rusia?",
+    "tipo": "fecha",
+    "opciones": ["1905", "1914", "1917", "1922"],
+    "respuesta": 2,
+    "explicacion": "En 1917 Rusia tuvo dos revoluciones: la de febrero (cae el zar) y la de octubre (los bolcheviques toman el poder).",
+    "dificultad": 1,
+    "tags": ["revolucion-rusa"]
+  },
+  {
+    "id": "bachillerato1-revolucion-rusa-003",
+    "enunciado": "¿Cómo se llamaba la facción bolchevique de Lenin, frente a los mencheviques?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Los bolcheviques", "Los socialistas revolucionarios", "Los cadetes", "Los naranjas"],
+    "respuesta": 0,
+    "explicacion": "«Bolchevique» significa «mayoritario» y «menchevique», «minoritario»: la división surgió en 1903 dentro del Partido Obrero Socialdemócrata ruso.",
+    "dificultad": 2,
+    "tags": ["revolucion-rusa", "protagonistas"]
+  },
+  {
+    "id": "bachillerato1-revolucion-rusa-004",
+    "enunciado": "¿Cuáles eran los tres lemas de las Tesis de Abril de Lenin (1917)?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Paz, tierra y pan",
+      "Libertad, igualdad y fraternidad",
+      "Trabajo, orden y progreso",
+      "Pan, hierro y sangre"
+    ],
+    "respuesta": 0,
+    "explicacion": "Las Tesis de Abril resumían el programa bolchevique: paz inmediata en la guerra, traspaso de la tierra a los campesinos y control obrero de las fábricas («Todo el poder a los soviets»).",
+    "dificultad": 2,
+    "tags": ["revolucion-rusa", "ideologia"]
+  },
+  {
+    "id": "bachillerato1-revolucion-rusa-005",
+    "enunciado": "Durante la guerra civil rusa (1918-1921), ¿qué bando representaba al gobierno bolchevique?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Los rojos", "Los blancos", "Los verdes", "Los amarillos"],
+    "respuesta": 0,
+    "explicacion": "Los rojos (Ejército Rojo, bolcheviques) vencieron a los blancos (antibolcheviques, apoyados por potencias extranjeras). El conflicto dejó el país devastado.",
+    "dificultad": 2,
+    "tags": ["revolucion-rusa", "guerra-civil"]
+  },
+  {
+    "id": "bachillerato1-revolucion-rusa-006",
+    "enunciado": "¿Qué medida económica aplicó Lenin en 1921 para recuperar la economía tras la guerra civil?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La Nueva Política Económica (NEP)",
+      "El primer Plan Quinquenal",
+      "La colectivización forzosa de las granjas",
+      "La perestroika"
+    ],
+    "respuesta": 0,
+    "explicacion": "La NEP (1921) permitió el comercio privado a pequeña escala mientras el Estado mantenía el control de las grandes industrias y el banco. Stalin la sustituyó en 1928.",
+    "dificultad": 3,
+    "tags": ["revolucion-rusa", "economia"]
+  },
+  {
+    "id": "bachillerato1-revolucion-rusa-007",
+    "enunciado": "¿En qué año se proclamó la Unión de Repúblicas Socialistas Soviéticas (URSS)?",
+    "tipo": "fecha",
+    "opciones": ["1917", "1918", "1922", "1924"],
+    "respuesta": 2,
+    "explicacion": "La URSS se creó en diciembre de 1922, cinco años después de la revolución; Lenin moriría en 1924 y Stalin acabaría imponiéndose al frente del partido.",
+    "dificultad": 2,
+    "tags": ["revolucion-rusa", "urss"]
+  },
+  {
+    "id": "bachillerato1-revolucion-rusa-008",
+    "enunciado": "La Revolución de Octubre de 1917 se llama así porque ocurrió en octubre según el calendario juliano que se usaba en Rusia.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Verdadero: el calendario juliano ruso atrasaba doce días respecto al gregoriano. Por eso la «revolución de octubre» tuvo lugar el 7 de noviembre en el calendario occidental.",
+    "dificultad": 3,
+    "tags": ["revolucion-rusa", "calendario"]
+  },
+  {
+    "id": "bachillerato1-revolucion-rusa-009",
+    "enunciado": "¿Qué líder impuso los planes quinquenales, la colectivización y el sistema de purgas?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Iósif Stalin", "Vladimir Lenin", "León Trotsky", "Mijaíl Gorbachov"],
+    "respuesta": 0,
+    "explicacion": "Stalin concentró el poder desde 1928: industrialización acelerada por planes quinquenales, colectivización forzosa de la agricultura y represión de los opositores.",
+    "dificultad": 1,
+    "tags": ["revolucion-rusa", "urss", "protagonistas"]
+  },
+  {
+    "id": "bachillerato1-revolucion-rusa-010",
+    "enunciado": "¿Qué caracterizó al Gran Terror de Stalin (1936-1938)?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Juicios públicos y purgas masivas de dirigentes y ciudadanos acusados de espía",
+      "La liberación de los presos de los campos de trabajo",
+      "El fin de la censura en la prensa soviética",
+      "La elección libre de los dirigentes del partido"
+    ],
+    "respuesta": 0,
+    "explicacion": "Las puras estalinianas llevaron a miles de juicios escenificados y al Gulag (red de campos de trabajo forzado). El término «terror» describía la represión como método de Estado.",
+    "dificultad": 3,
+    "tags": ["revolucion-rusa", "urss", "represion"]
+  }
+]

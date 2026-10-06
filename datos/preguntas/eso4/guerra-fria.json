@@ -1,0 +1,117 @@
+[
+  {
+    "id": "eso4-guerra-fria-001",
+    "enunciado": "¿Qué dos bloques se enfrentaron en la Guerra Fría?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El bloque occidental liderado por EE. UU. y el bloque oriental liderado por la URSS",
+      "El bloque de la ONU y el bloque de la OTAN",
+      "La Unión Europea y la ASEAN",
+      "Los países neutrales y la OPEP"
+    ],
+    "respuesta": 0,
+    "explicacion": "El enfrentamiento no fue militar directo entre las dos superpotencias: se debatió en el plano ideológico (capitalismo vs. comunismo), económico, tecnológico y propagandístico.",
+    "dificultad": 1,
+    "tags": ["guerra-fria", "enfrentamiento"]
+  },
+  {
+    "id": "eso4-guerra-fria-002",
+    "enunciado": "¿En qué año se creó la OTAN?",
+    "tipo": "fecha",
+    "opciones": ["1945", "1949", "1955", "1961"],
+    "respuesta": 1,
+    "explicacion": "La OTAN (Tratado del Atlántico Norte) se firmó en 1949 con la idea de defensa colectiva: un ataque a un miembro se considera ataque a todos (artículo 5).",
+    "dificultad": 2,
+    "tags": ["guerra-fria", "alianzas"]
+  },
+  {
+    "id": "eso4-guerra-fria-003",
+    "enunciado": "¿Qué alianza militar creó la URSS en 1955 como respuesta a la OTAN?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El Pacto de Varsovia", "El Comité de Ayuda Mutua", "El Pacto de Berlín", "La CIE"],
+    "respuesta": 0,
+    "explicacion": "El Pacto de Varsovia (1955) agrupó a los países del bloque soviético. Se disolvió en 1991, igual que la URSS.",
+    "dificultad": 2,
+    "tags": ["guerra-fria", "alianzas"]
+  },
+  {
+    "id": "eso4-guerra-fria-004",
+    "enunciado": "¿En qué consistió el Plan Marshall?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "En una ayuda económica de EE. UU. para reconstruir Europa occidental",
+      "En un plan soviético para industrializar Asia",
+      "En un programa de la ONU para repartir alimentos",
+      "En la creación del mercado común europeo"
+    ],
+    "respuesta": 0,
+    "explicacion": "El Plan Marshall (1948) aportó dólares estadounidenses a cambio de abrir mercados: frenó la expansión comunista en Europa occidental y modernizó sus economías.",
+    "dificultad": 2,
+    "tags": ["guerra-fria", "economia"]
+  },
+  {
+    "id": "eso4-guerra-fria-005",
+    "enunciado": "¿En qué año se levantó el Muro de Berlín?",
+    "tipo": "fecha",
+    "opciones": ["1949", "1955", "1961", "1989"],
+    "respuesta": 2,
+    "explicacion": "La RDA cerró la frontera en agosto de 1961 para evitar la fuga de población hacia Berlín Occidental. Cayó el 9 de noviembre de 1989.",
+    "dificultad": 2,
+    "tags": ["guerra-fria", "europa"]
+  },
+  {
+    "id": "eso4-guerra-fria-006",
+    "enunciado": "Winston Churchill habló de un «telón de Acero» que dividía Europa. ¿En qué año lo hizo?",
+    "tipo": "fecha",
+    "opciones": ["1944", "1946", "1948", "1950"],
+    "respuesta": 1,
+    "explicacion": "En su discurso de Fulton (Misuri) en 1946, Churchill anunció que Europa estaba dividida por un telón de Acero desde Stettin hasta Trieste: simboliza el inicio de la Guerra Fría.",
+    "dificultad": 3,
+    "tags": ["guerra-fria", "europa"]
+  },
+  {
+    "id": "eso4-guerra-fria-007",
+    "enunciado": "¿Qué sucedió en 1962, considerado el momento más caliente de la Guerra Fría?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La crisis de los misiles de Cuba, con riesgo de guerra nuclear",
+      "La caída del Muro de Berlín",
+      "La llegada del hombre a la Luna",
+      "El fin de la Guerra de Corea"
+    ],
+    "respuesta": 0,
+    "explicacion": "EE. UU. detectó misiles soviéticos en Cuba y Kennedy impuso un bloqueo. Tras trece días de tensión, URSS y EE. UU. llegaron a un acuerdo: se retiraron los misiles.",
+    "dificultad": 3,
+    "tags": ["guerra-fria", "enfrentamiento"]
+  },
+  {
+    "id": "eso4-guerra-fria-008",
+    "enunciado": "La OTAN es una alianza militar del bloque occidental liderado por Estados Unidos.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Verdadero. La OTAN agrupa a los países de Europa occidental, Canadá y EE. UU.; su contrapartida soviética fue el Pacto de Varsovia.",
+    "dificultad": 1,
+    "tags": ["guerra-fria", "alianzas"]
+  },
+  {
+    "id": "eso4-guerra-fria-009",
+    "enunciado": "¿Qué país asiático sufrió una guerra (1955-1975) con intervención militar estadounidense para frenar al comunismo?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Vietnam", "Japón", "India", "Egipto"],
+    "respuesta": 0,
+    "explicacion": "La Guerra de Vietnam fue el ejemplo más claro de guerra por poderes: EE. UU. apoyó al Sur y la URSS y China al Norte; terminó en 1975 con la reunificación comunista.",
+    "dificultad": 1,
+    "tags": ["guerra-fria", "guerras"]
+  },
+  {
+    "id": "eso4-guerra-fria-010",
+    "enunciado": "¿En qué año cayó el Muro de Berlín?",
+    "tipo": "fecha",
+    "opciones": ["1985", "1989", "1991", "1993"],
+    "respuesta": 1,
+    "explicacion": "El 9 de noviembre de 1989 se abrió el paso en Berlín; en 1991 se reunificó Alemania y se disolvió la URSS, poniendo fin a la Guerra Fría.",
+    "dificultad": 1,
+    "tags": ["guerra-fria", "europa"]
+  }
+]

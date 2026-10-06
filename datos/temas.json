@@ -1,0 +1,49 @@
+{
+  "cursos": [
+    {
+      "id": "eso2",
+      "titulo": "2º ESO",
+      "orden": 2,
+      "temas": [
+        {
+          "id": "revolucion-industrial",
+          "titulo": "La Revolución Industrial",
+          "orden": 3,
+          "minPreguntas": 10
+        },
+        {
+          "id": "primera-guerra-mundial",
+          "titulo": "La Primera Guerra Mundial",
+          "orden": 5,
+          "minPreguntas": 10
+        }
+      ]
+    },
+    {
+      "id": "eso4",
+      "titulo": "4º ESO",
+      "orden": 4,
+      "temas": [
+        {
+          "id": "guerra-fria",
+          "titulo": "La Guerra Fría",
+          "orden": 7,
+          "minPreguntas": 10
+        }
+      ]
+    },
+    {
+      "id": "bachillerato1",
+      "titulo": "1º Bachiller",
+      "orden": 5,
+      "temas": [
+        {
+          "id": "revolucion-rusa",
+          "titulo": "La Revolución Rusa y la URSS",
+          "orden": 2,
+          "minPreguntas": 10
+        }
+      ]
+    }
+  ]
+}

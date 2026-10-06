@@ -1,0 +1,127 @@
+[
+  {
+    "id": "eso2-primera-guerra-mundial-001",
+    "enunciado": "¿Qué acontecimiento desencadenó la Primera Guerra Mundial?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El hundimiento del Titanic",
+      "El asesinato del archiduque Francisco Fernando en Sarajevo",
+      "La revolución rusa de 1917",
+      "El incendio del Reichstag"
+    ],
+    "respuesta": 1,
+    "explicacion": "El 28 de junio de 1914 el archiduque austrohúngaro Francisco Fernando fue asesinado en Sarajevo por Gavrilo Princip. El sistema de alianzas convirtió el conflicto local en una guerra europea.",
+    "dificultad": 1,
+    "tags": ["guerras-mundiales", "causas"]
+  },
+  {
+    "id": "eso2-primera-guerra-mundial-002",
+    "enunciado": "¿En qué año estalló la Primera Guerra Mundial?",
+    "tipo": "fecha",
+    "opciones": ["1912", "1914", "1916", "1918"],
+    "respuesta": 1,
+    "explicacion": "La guerra estalló en julio de 1914, tras el asesinato de Francisco Fernando, y terminó el 11 de noviembre de 1918 con el armisticio.",
+    "dificultad": 1,
+    "tags": ["guerras-mundiales", "causas"]
+  },
+  {
+    "id": "eso2-primera-guerra-mundial-003",
+    "enunciado": "¿Cómo fue la guerra en el frente occidental entre Francia y Alemania?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Guerra de trincheras con frente estático",
+      "Guerra naval exclusiva",
+      "Guerra relámpago en el desierto",
+      "Guerra aérea sin combate terrestre"
+    ],
+    "respuesta": 0,
+    "explicacion": "Desde 1914 ambos bandos se enfrentaron en una red de trincheras de Flandes al norte de París, con ataques frontales sangrientos (Verdún, Somme) y pocas ganancias territoriales.",
+    "dificultad": 1,
+    "tags": ["guerras-mundiales", "europa"]
+  },
+  {
+    "id": "eso2-primera-guerra-mundial-004",
+    "enunciado": "¿Cómo se llamó el bloque de alianzas liderado por Alemania y Austria-Hungría?",
+    "tipo": "opcion-multiple",
+    "opciones": ["La Triple Alianza", "La Triple Entente", "El Pacto de Varsovia", "La Liga de Naciones"],
+    "respuesta": 0,
+    "explicacion": "La Triple Alianza (Alemania, Austria-Hungría e Italia) se enfrentó a la Triple Entente (Francia, Reino Unido y Rusia). Italia, sin embargo, cambió de bando en 1915.",
+    "dificultad": 2,
+    "tags": ["guerras-mundiales", "causas"]
+  },
+  {
+    "id": "eso2-primera-guerra-mundial-005",
+    "enunciado": "¿Qué países formaron la Triple Entente, contraria a Alemania?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Francia, Reino Unido y Rusia",
+      "Italia, Japón y Estados Unidos",
+      "España, Portugal y Bélgica",
+      "Austria-Hungría, Otomán y Bulgaria"
+    ],
+    "respuesta": 0,
+    "explicacion": "Francia, Reino Unido y Rusia cerraron su alianza antes de 1914; a ellas se unieron Italia (1915) y Estados Unidos (1917).",
+    "dificultad": 2,
+    "tags": ["guerras-mundiales", "causas"]
+  },
+  {
+    "id": "eso2-primera-guerra-mundial-006",
+    "enunciado": "Durante la Primera Guerra Mundial se usaron armas nuevas. ¿Cuál NO pertenece a esa época?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El carro de combate (tanque)", "El submarino", "El avión de combate", "El misil intercontinental"],
+    "respuesta": 3,
+    "explicacion": "Los misiles intercontinentales son de la época nuclear, ya en la Guerra Fría. En 1914-1918 ya había submarinos, aviones de reconocimiento y desde 1916 los primeros tanques británicos.",
+    "dificultad": 2,
+    "tags": ["guerras-mundiales", "tecnicos"]
+  },
+  {
+    "id": "eso2-primera-guerra-mundial-007",
+    "enunciado": "¿En qué año entraron Estados Unidos en la Primera Guerra Mundial?",
+    "tipo": "fecha",
+    "opciones": ["1914", "1915", "1917", "1918"],
+    "respuesta": 2,
+    "explicacion": "Estados Unidos entró en abril de 1917, motivado por la guerra submarina alemana sin restricciones, que hundía buques mercantes con ciudadanos americanos.",
+    "dificultad": 2,
+    "tags": ["guerras-mundiales"]
+  },
+  {
+    "id": "eso2-primera-guerra-mundial-008",
+    "enunciado": "Italia permaneció neutral al estallar la guerra en 1914 y después se unió al bando de la Triple Entente.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Verdadero: Italia declaró su neutralidad en 1914 y en 1915, por el Tratado de Londres, entró en guerra junto a la Triple Entente contra Austria-Hungría.",
+    "dificultad": 3,
+    "tags": ["guerras-mundiales", "causas"]
+  },
+  {
+    "id": "eso2-primera-guerra-mundial-009",
+    "enunciado": "¿Qué impuso el Tratado de Versalles (1919) a Alemania?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Que se declarase culpable de causar la guerra y pagase reparaciones",
+      "Una indemnización a Alemania por los daños sufridos",
+      "La anexión de Polonia por parte de Alemania",
+      "El derecho a rearmarse libremente"
+    ],
+    "respuesta": 0,
+    "explicacion": "El artículo 231 (cláusula de culpabilidad) obligó a Alemania a pagar reparaciones, a reducir su ejército y a ceder territorios: fue una de las causas del revanchismo alemán.",
+    "dificultad": 3,
+    "tags": ["guerras-mundiales", "consecuencias"]
+  },
+  {
+    "id": "eso2-primera-guerra-mundial-010",
+    "enunciado": "¿Qué imperios desaparecieron como consecuencia de la Primera Guerra Mundial?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El alemán, el austrohúngaro, el otomano y el ruso",
+      "El español, el portugués, el holandés y el belga",
+      "El británico, el francés, el italiano y el japonés",
+      "El sueco, el danés, el noruego y el suizo"
+    ],
+    "respuesta": 0,
+    "explicacion": "Cayeron cuatro imperios: el alemán (república de Weimar), el austrohúngaro (se fragmentó en varios estados), el otomano (Turquía) y el ruso (tras la revolución de 1917).",
+    "dificultad": 3,
+    "tags": ["guerras-mundiales", "consecuencias"]
+  }
+]

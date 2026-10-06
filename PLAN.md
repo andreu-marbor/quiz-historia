@@ -198,18 +198,18 @@ Así quedan **incluidas en el bundle y la app funciona sin internet de serie**.
 
 ## 5. Fases de implementación
 
-### Fase 1 — Cimiento (repo, datos, lógica)
+### Fase 1 — Cimiento (repo, datos, lógica) ✅ (2026-10-06)
 
-- [ ] `git init -b main` en `quiz-historia/` + `.gitignore` + commit inicial.
-- [ ] Scaffold Vite + TypeScript (`npm.cmd create vite` manual o a mano, sin extras).
-- [ ] `package.json` con scripts: `dev`, `build` (`tsc --noEmit && vite build`), `prueba`, `prueba:logica`, `prueba:datos`.
-- [ ] `datos/temas.json` con 3–4 cursos/temas de ejemplo.
-- [ ] `scripts/validar-preguntas.mjs` con todas las reglas de §3.
-- [ ] ~40 preguntas de muestra repartidas en 3–4 temas.
-- [ ] `src/logica/`: corrección, barajado, selección de preguntas.
-- [ ] `pruebas/logica.ts` + `pruebas/datos.ts` (bundled con esbuild, patrón de `tres-en-raya`).
+- [x] `git init -b main` en `quiz-historia/` + `.gitignore` + commit inicial.
+- [x] Scaffold Vite + TypeScript (`npm.cmd create vite` manual o a mano, sin extras).
+- [x] `package.json` con scripts: `dev`, `build` (`tsc --noEmit && vite build`), `prueba`, `prueba:logica`, `prueba:datos`.
+- [x] `datos/temas.json` con 3–4 cursos/temas de ejemplo (3 cursos: `eso2`, `eso4`, `bachillerato1`; 4 temas).
+- [x] `scripts/validar-preguntas.mjs` con todas las reglas de §3.
+- [x] ~40 preguntas de muestra repartidas en 3–4 temas (4 × 10 = 40).
+- [x] `src/logica/`: corrección, barajado, selección de preguntas.
+- [x] `pruebas/logica.ts` + `pruebas/datos.ts` (bundled con esbuild, patrón de `tres-en-raya`).
 
-**Resultado: `npm.cmd run prueba` y `npm.cmd run build` en verde.**
+**Resultado: `npm.cmd run prueba` y `npm.cmd run build` en verde.** ✅ (38 comprobaciones de lógica + 39 de datos = 77)
 
 ### Fase 2 — Interfaz completa
 

@@ -1,0 +1,44 @@
+/**
+ * Tipos del dominio (catálogo + preguntas).
+ * Son la fuente de verdad de las formas que también valida `scripts/validar-preguntas.mjs`.
+ */
+
+export type TipoPregunta = 'opcion-multiple' | 'verdadero-falso' | 'fecha' | 'imagen';
+
+export type Dificultad = 1 | 2 | 3;
+
+export interface Pregunta {
+  /** Único en todo el proyecto. Convención: `<curso>-<tema>-<nnn>` */
+  id: string;
+  enunciado: string;
+  tipo: TipoPregunta;
+  /** 2–6 opciones; en `verdadero-falso` exactamente ["Verdadero", "Falso"] */
+  opciones: string[];
+  /** Índice (0-based) de la opción correcta dentro de `opciones` */
+  respuesta: number;
+  /** Se muestra tras responder: imprescindible para el valor pedagógico */
+  explicacion: string;
+  dificultad: Dificultad;
+  /** Ruta relativa a `public/` (obligatoria si `tipo === "imagen"`) */
+  imagen?: string;
+  /** Etiquetas para filtrado futuro */
+  tags?: string[];
+}
+
+export interface Tema {
+  id: string;
+  titulo: string;
+  orden: number;
+  minPreguntas: number;
+}
+
+export interface Curso {
+  id: string;
+  titulo: string;
+  orden: number;
+  temas: Tema[];
+}
+
+export interface Catalogo {
+  cursos: Curso[];
+}

@@ -1,0 +1,75 @@
+/**
+ * Base de estilos: variables de tema (claro/oscuro) y utilidades mínimas.
+ * Colores y tipografía SIEMPRE vía variables CSS, nunca valores fijos.
+ * La interfaz completa llega en la Fase 2.
+ */
+
+:root {
+  --bg: #f7f5f0;
+  --bg-secundario: #ffffff;
+  --texto: #1d1b18;
+  --texto-tenue: #5f5a52;
+  --accent: #8c2f2f;
+  --accent-texto: #ffffff;
+  --borde: #ded8cd;
+  --radio: 10px;
+  --espacio: 1rem;
+  --sombra: 0 1px 3px rgb(0 0 0 / 12%);
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-tema='claro']) {
+    --bg: #17161a;
+    --bg-secundario: #211f26;
+    --texto: #f1efe9;
+    --texto-tenue: #a9a49b;
+    --accent: #e08b8b;
+    --accent-texto: #17161a;
+    --borde: #3a3742;
+    --sombra: 0 1px 3px rgb(0 0 0 / 45%);
+  }
+}
+
+:root[data-tema='oscuro'] {
+  --bg: #17161a;
+  --bg-secundario: #211f26;
+  --texto: #f1efe9;
+  --texto-tenue: #a9a49b;
+  --accent: #e08b8b;
+  --accent-texto: #17161a;
+  --borde: #3a3742;
+  --sombra: 0 1px 3px rgb(0 0 0 / 45%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--texto);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+#app {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: var(--espacio);
+}
+
+h1 {
+  color: var(--accent);
+  font-size: clamp(1.5rem, 5vw, 2rem);
+}
+
+a {
+  color: var(--accent);
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}

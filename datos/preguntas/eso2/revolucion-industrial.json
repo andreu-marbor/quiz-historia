@@ -1,0 +1,112 @@
+[
+  {
+    "id": "eso2-revolucion-industrial-001",
+    "enunciado": "¿En qué país se inició la Revolución Industrial?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Francia", "Reino Unido", "Alemania", "Bélgica"],
+    "respuesta": 1,
+    "explicacion": "A finales del siglo XVIII comenzó en Gran Bretaña, gracias a la abundancia de carbón, el capital acumulado por el comercio colonial y una burguesía emprendedora.",
+    "dificultad": 1,
+    "tags": ["industrializacion"]
+  },
+  {
+    "id": "eso2-revolucion-industrial-002",
+    "enunciado": "¿En qué siglo comenzó la Revolución Industrial?",
+    "tipo": "fecha",
+    "opciones": ["Siglo XVII", "Siglo XVIII", "Siglo XIX", "Siglo XX"],
+    "respuesta": 1,
+    "explicacion": "Se inicia en la segunda mitad del siglo XVIII (hacia 1760) y se consolida durante el siglo XIX, cuando se extiende al resto de Europa y a Estados Unidos.",
+    "dificultad": 1,
+    "tags": ["industrializacion"]
+  },
+  {
+    "id": "eso2-revolucion-industrial-003",
+    "enunciado": "¿En qué año patentó James Watt su máquina de vapor con condensador separado?",
+    "tipo": "fecha",
+    "opciones": ["1698", "1712", "1769", "1825"],
+    "respuesta": 2,
+    "explicacion": "Watt patentó la mejora en 1769. Antes, Thomas Newcomen había construido una máquina de vapor más rudimentaria en 1712 para bombear agua de las minas.",
+    "dificultad": 2,
+    "tags": ["industrializacion", "tecnicos"]
+  },
+  {
+    "id": "eso2-revolucion-industrial-004",
+    "enunciado": "¿Cómo se llamó la primera línea férrea pública que unió dos ciudades inglesas (Liverpool y Manchester)?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Liverpool-Manchester", "Londres-París", "Madrid-Barcelona", "Nueva York-Filadelfia"],
+    "respuesta": 0,
+    "explicacion": "El ferrocarril Liverpool-Manchester abrió en 1830 y demostró que la máquina de vapor podía revolucionar el transporte de viajeros y mercancías.",
+    "dificultad": 3,
+    "tags": ["industrializacion", "transporte"]
+  },
+  {
+    "id": "eso2-revolucion-industrial-005",
+    "enunciado": "¿Cómo se llamó la hiladora inventada por James Hargreaves que permitía hilar varios cabos a la vez?",
+    "tipo": "opcion-multiple",
+    "opciones": ["La hiladora (Spinning Jenny)", "El telar mecánico", "El torno paralelo", "La pala de vapor"],
+    "respuesta": 0,
+    "explicacion": "La Spinning Jenny (1764) multiplicó la producción de hilo. El telar mecánico de Cartwright (1785) hizo lo propio con el tejido.",
+    "dificultad": 2,
+    "tags": ["industrializacion", "tecnicos"]
+  },
+  {
+    "id": "eso2-revolucion-industrial-006",
+    "enunciado": "¿Cómo se organizaba la producción textil en el campo antes de la llegada de las fábricas?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Sistema doméstico: cada familia trabajaba en su casa con la materia prima del mercader",
+      "A destajo en grandes fábricas de propiedad estatal",
+      "En cooperativas de propiedad de los propios obreros",
+      "En manufacturas reales financiadas por la Iglesia"
+    ],
+    "respuesta": 0,
+    "explicacion": "Era el sistema doméstico (o putting-out system): el comerciante repartía la lana y recogía el hilo y el tejido. La fábrica sustituyó ese trabajo a domicilio.",
+    "dificultad": 2,
+    "tags": ["industrializacion", "trabajo"]
+  },
+  {
+    "id": "eso2-revolucion-industrial-007",
+    "enunciado": "La industria textil fue la primera en industrializarse.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Verdadero: el algodón encabezó la mecanización (hiladoras, telares) porque su demanda crecía rápido y no tenía competencia de los gremios.",
+    "dificultad": 1,
+    "tags": ["industrializacion"]
+  },
+  {
+    "id": "eso2-revolucion-industrial-008",
+    "enunciado": "La Revolución Industrial provocó el éxodo rural: muchas familias dejaron el campo para instalarse en las ciudades.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Verdadero. El campo necesitaba menos manos (cerramientos y maquinaria) y las fábricas concentraban el empleo: nacen barrios obreros y grandes ciudades industriales.",
+    "dificultad": 1,
+    "tags": ["industrializacion", "social"]
+  },
+  {
+    "id": "eso2-revolucion-industrial-009",
+    "enunciado": "¿Qué clase social poseía las fábricas y acumuló capital durante la Revolución Industrial?",
+    "tipo": "opcion-multiple",
+    "opciones": ["La aristocracia terrateniente", "La burguesía industrial", "El campesinado", "El clero"],
+    "respuesta": 1,
+    "explicacion": "La burguesía industrial y comercial acumuló capital y propiedad de medios de producción; frente a ella surgió el proletariado, que solo vendía su fuerza de trabajo.",
+    "dificultad": 1,
+    "tags": ["industrializacion", "social"]
+  },
+  {
+    "id": "eso2-revolucion-industrial-010",
+    "enunciado": "¿Qué medida aprobada en Gran Bretaña en 1833 limitó el trabajo de mujeres y niños en las fábricas?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Las leyes fabriles (factory acts)",
+      "El Código de Comercio",
+      "La Constitución de 1812",
+      "El Tratado de Viena"
+    ],
+    "respuesta": 0,
+    "explicacion": "Las factory acts de 1833 prohibieron el trabajo infantil en las fábricas a partir de ciertas edades e inspeccionaron el cumplimiento: fue el inicio de la intervención del Estado en el trabajo.",
+    "dificultad": 3,
+    "tags": ["industrializacion", "social", "legislacion"]
+  }
+]

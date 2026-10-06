@@ -55,6 +55,7 @@ quiz-historia/
 │   ├── ui/                   # pantallas (inicio, cuestionario, resultados, progreso, ajustes)
 │   └── estilos/              # base.css (variables) + resto
 ├── pruebas/
+│   ├── ayudante.ts            # mini-ayudante de aserciones (sin frameworks)
 │   ├── logica.ts             # pruebas de la lógica del quiz
 │   └── datos.ts              # validación de datos/ (reglas de §3 del PLAN)
 ├── scripts/
@@ -108,6 +109,7 @@ npm.cmd run preview    # previsualizar build
 npm.cmd run prueba     # TODO: lógica + validación de datos/
 npm.cmd run prueba:logica   # solo lógica del quiz
 npm.cmd run prueba:datos    # solo validador de preguntas/temas
+node scripts/validar-preguntas.mjs   # el validador solo, sin pasar por esbuild
 npm.cmd run iconos     # regenerar iconos PNG del PWA desde SVG
 ```
 
