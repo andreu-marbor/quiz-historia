@@ -1,0 +1,150 @@
+# AGENTS.md — Información del proyecto
+
+## ¿Qué es este proyecto?
+
+**"Repaso de Historia"** — aplicación web (PWA) y Android (TWA) de cuestionarios de Historia para estudiantes de **ESO y Bachiller en España**. Doble objetivo: **pieza de portfolio** y **herramienta de repaso real para alumnos de un colegio**.
+
+- **Objetivo:** app publicada (web en GitHub Pages + APK/AAB en Play Store) con un flujo de edición de preguntas ágil y sin backend.
+- **Público:** alumnos de ESO/Bachiller + revisores de portfolio.
+- **Idioma del código, la documentación y la interfaz:** español (sin capa i18n; decisión cerrada en `PLAN.md` §2).
+- **Plan completo:** **[PLAN.md](./PLAN.md)** — leérselo antes de tocar nada (fases, alcance, decisiones §9, criterios de hecho §8).
+
+## Stack tecnológico
+
+| Capa | Tecnología |
+|---|---|
+| Lenguaje | TypeScript |
+| Build | Vite |
+| Render | DOM + CSS (sin frameworks: nada de React/Vue) |
+| Estilo | CSS con variables (arquitectura de temas, modo oscuro) |
+| Contenido | **JSON versionado en `datos/`** + script validador |
+| Persistencia | `localStorage` (centralizado) |
+| Tests | Scripts propios con esbuild (sin frameworks de test) |
+| PWA | manifest + service worker *cache-first* (offline para el aula) |
+| Empaquetado Android | PWA + Bubblewrap (sin Android Studio) |
+| CI/CD | GitHub Actions → GitHub Pages (`prueba` → `build` → deploy) |
+| Entorno | VSCode; PowerShell con **`.cmd`** (ver ⚠️ abajo) |
+
+**Sin backend, sin cuentas, sin base de datos, sin datos personales** (RGPD por diseño).
+
+## Estructura de directorios
+
+> 📌 Árbol **previsto** (PLAN.md §3). Se completa en las Fases 1-5; si el árbol real acaba difiriendo, **actualizar este fichero**.
+
+```
+quiz-historia/
+├── PLAN.md                   # Plan completo (fases, decisiones, riesgos)
+├── MEMORY.md                 # Memoria de cambios e incidencias (aditiva)
+├── AGENTS.md                 # Este fichero
+├── README.md                 # README del portfolio
+├── index.html
+├── package.json
+├── tsconfig.json
+├── vite.config.ts            # base: '/quiz-historia/'
+├── .github/
+│   └── workflows/despliegue.yml  # CI: prueba → build → deploy Pages
+├── datos/                    # ★ EL CONTENIDO VIVE AQUÍ (nunca en src/)
+│   ├── temas.json            # catálogo: cursos, temas, orden, minPreguntas
+│   └── preguntas/
+│       └── <curso>/<tema>.json   # un fichero por tema
+├── src/
+│   ├── main.ts               # arranque + router de pantallas
+│   ├── vite-env.d.ts
+│   ├── persistencia.ts       # acceso centralizado a localStorage
+│   ├── logica/               # corrección, barajado, selección de preguntas
+│   ├── ui/                   # pantallas (inicio, cuestionario, resultados, progreso, ajustes)
+│   └── estilos/              # base.css (variables) + resto
+├── pruebas/
+│   ├── logica.ts             # pruebas de la lógica del quiz
+│   └── datos.ts              # validación de datos/ (reglas de §3 del PLAN)
+├── scripts/
+│   ├── validar-preguntas.mjs # validador del contenido
+│   └── generar-iconos.mjs    # iconos PWA con sharp (npm.cmd run iconos)
+├── public/
+│   ├── manifest.webmanifest  # PWA: name "Repaso de Historia"
+│   ├── sw.js                 # service worker
+│   ├── icons/                # SVG fuentes + PNG generados
+│   └── imagenes/             # imágenes de preguntas (carga diferida)
+└── docs/capturas/            # imágenes y GIFs para el README
+```
+
+> 📌 **Empaquetado Android (Fase 5):** `twa-manifest.json`, `manifest-checksum.txt`, `build.gradle`, `settings.gradle`, `gradle.properties`, `gradlew*`, `gradle/`, `app/` son **generados** por `bubblewrap build` a partir de `twa-manifest.json`. **No editarlos a mano.** `build/`, `.gradle/`, `local.properties`, `*.apk/aab` y `*.keystore` van en `.gitignore`.
+
+## El contenido: cómo se añaden preguntas (funcionalidad clave)
+
+1. Editar o crear `datos/preguntas/<curso>/<tema>.json` (formato en `PLAN.md` §3).
+2. `npm.cmd run prueba` → el validador revisa **todo** el contenido.
+3. `git push origin main` → CI valida, construye y despliega.
+
+**Reglas duras (las comprueba el validador):**
+
+- `id` **único** en todo el proyecto, convención `<curso>-<tema>-<nnn>`.
+- `respuesta` = índice (0-based) **dentro** de `opciones`.
+- `tipo` ∈ `opcion-multiple` | `verdadero-falso` | `fecha` | `imagen` (2–6 opciones; `verdadero-falso` exactamente 2).
+- `dificultad` ∈ 1 | 2 | 3. `enunciado` y `explicacion` **no vacíos**.
+- Todo tema de `temas.json` ≥ `minPreguntas`; sin ficheros huérfanos ni temas vacíos.
+
+> ⚠️ **Nunca** escribir preguntas dentro de `src/` ni cadenas de contenido hardcodeadas: el contenido SOLO vive en `datos/`.
+
+## Convenciones del proyecto
+
+- **Código, comentarios y documentación en español.**
+- **Colores y tipografía SIEMPRE vía variables CSS** (`--bg`, `--accent`...), nunca valores fijos.
+- **Textos de la interfaz** centralizados (objeto de cadenas en un único módulo de `src/ui/`), nunca dispersos por el DOM — sin i18n, pero preparado para poder añadirla.
+- **Persistencia (`localStorage`) centralizada** en `src/persistencia.ts`; ninguna llamada suelta.
+- **Lógica pura separada de la UI**: `src/logica/` no toca el DOM (así se testea sin navegador).
+- Nombres de archivos en minúscula/sin espacios; claves de `temas.json` en inglés-kebab (`revolucion-industrial`), títulos visibles en español.
+- Nada compartido con otros proyectos de `C:\Users\andre\Documents\Repositorios` (keystore, dependencias, configuración): **cada cambio se queda en este directorio**.
+
+## Comandos útiles
+
+> ⚠️ En PowerShell la política de ejecución bloquea los `.ps1`; usar siempre las variantes **`npm.cmd`**, **`npx.cmd`** y **`bubblewrap.cmd`** (contexto en `MEMORY.md`).
+
+```bash
+npm.cmd install        # instalar dependencias
+npm.cmd run dev        # servidor de desarrollo
+npm.cmd run build      # build de producción (tsc --noEmit + vite)
+npm.cmd run preview    # previsualizar build
+npm.cmd run prueba     # TODO: lógica + validación de datos/
+npm.cmd run prueba:logica   # solo lógica del quiz
+npm.cmd run prueba:datos    # solo validador de preguntas/temas
+npm.cmd run iconos     # regenerar iconos PNG del PWA desde SVG
+```
+
+### Git / despliegue
+
+```bash
+git push origin HEAD:main     # la CI y Pages solo se disparan en `main`
+gh run list                   # estado del último despliegue
+gh workflow run despliegue.yml
+```
+
+> El repo se creó directamente en **`main`** (a diferencia de los proyectos antiguos con `master` local): push normal con upstream, sin `HEAD:main`.
+
+### Publicación Android (Fase 5)
+
+```bash
+bubblewrap.cmd doctor    # valida JDK + Android SDK (~/.bubblewrap/config.json)
+bubblewrap.cmd build     # genera APK + AAB — requiere BUBBLEWRAP_KEYSTORE_PASSWORD /
+                         # BUBBLEWRAP_KEY_PASSWORD (fuera del repo, ver PLAN.md §9.1)
+```
+
+- **Package:** `com.andreumarbor.quizophistoria` · **Nombre:** "Repaso de Historia".
+- **Keystore:** `./android.keystore` propio, **GITIGNORED**; contraseña en `%USERPROFILE%\.bubblewrap\keystore-pass-quizhistoria.txt` (fuera del repo y de OneDrive) + **copia de respaldo en el otro PC**.
+- `assetlinks.json` vive en el repo `andreu-marbor.github.io/.well-known/` → añadir/bloque nuevo de este paquete (admite varios); `.nojekyll` debe seguir existiendo.
+
+**URLs:** web → `https://andreu-marbor.github.io/quiz-historia/` · repo → `https://github.com/andreu-marbor/quiz-historia`
+
+## ⚠️ Memoria del proyecto
+
+Existe un archivo **[MEMORY.md](./MEMORY.md)** que registra:
+
+- Cambios relevantes realizados.
+- Problemas encontrados y sus soluciones.
+- Estado actual de las fases del plan.
+
+**Instrucción para agentes:** tras cada cambio relevante o incidencia, **actualizar `MEMORY.md`** añadiendo una entrada con fecha, descripción del cambio/problema y solución aplicada. **No borrar entradas anteriores; solo añadir.** Si el árbol de directorios o los comandos cambian, actualizar también este `AGENTS.md`.
+
+## Plan
+
+El plan completo (fases, alcance, decisiones, riesgos, criterios de "hecho") está en **[PLAN.md](./PLAN.md)**. Fases: 1 Cimiento · 2 Interfaz · 3 PWA · 4 Despliegue web · 5 Android · 6 Contenido real.
