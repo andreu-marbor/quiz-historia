@@ -146,7 +146,7 @@ bubblewrap.cmd build                         # genera APK + AAB — requiere BUB
 - **`local.properties`** (gitignored) con `sdk.dir=…` es imprescindible para que Gradle encuentre el SDK; recrearlo si `update` regenera el proyecto.
 - **Entorno:** Bubblewrap instaló su **JDK 17** en `%USERPROFILE%\.bubblewrap\jdk\` (ruta en `config.json`); el SDK es el de Android Studio y `doctor` exige `bin`/`tools` en su raíz → existe el junction `%LOCALAPPDATA%\Android\Sdk\bin` → `cmdline-tools\latest\bin` (incidencia en `MEMORY.md`, 2026-10-07).
 - **Keystore:** `./android.keystore` propio, **GITIGNORED**; contraseña en `%USERPROFILE%\.bubblewrap\keystore-pass-quizhistoria.txt` (fuera del repo y de OneDrive) + **copia de respaldo en el otro PC**. Huella SHA-256: `b7666ba3b6dedfc2ae1f36e8025f364f242199f01d35a0fb4dcb0e0ad66b54cf`.
-- `assetlinks.json` vive en el repo `andreu-marbor.github.io/.well-known/` → añadir/bloque nuevo de este paquete (admite varios); `.nojekyll` debe seguir existiendo. **Ya publicada** (ambas sentencias).
+- `assetlinks.json` vive en el repo `andreu-marbor.github.io/.well-known/` → añadir/bloque nuevo de este paquete (admite varios); `.nojekyll` debe seguir existiendo. **Ya publicada** (ambas sentencias) y verificada con la API de Google: la huella **obligatoriamente** en formato `AA:BB:…` mayúsculas (hex plano → `ERROR_CODE_MALFORMED_CONTENT`).
 
 **URLs:** web → `https://andreu-marbor.github.io/quiz-historia/` · repo → `https://github.com/andreu-marbor/quiz-historia`
 
