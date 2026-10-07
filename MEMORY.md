@@ -128,7 +128,8 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **Build:** `BUBBLEWRAP_KEYSTORE_PASSWORD` y `BUBBLEWRAP_KEY_PASSWORD` en el entorno (leídos del fichero de contraseña, nunca impresos) → `bubblewrap.cmd build` → `app-release-signed.apk` (1,04 MB) y `app-release-bundle.aab` (1,15 MB).
 - **Firma verificada** con `apksigner verify --print-certs`: `SHA-256 digest: b7666ba3…b54cf` = el del keystore ✓. Los `WARNING: META-INF/… not protected by signature` que imprime son informativos de Android Gradle Plugin, no errores.
 - **Segunda sentencia de `assetlinks.json`** añadida en `andreu-marbor.github.io/.well-known/` (commit `dd58933`, rama `main`) y **verificada ya publicada** en `https://andreu-marbor.github.io/.well-known/assetlinks.json`; sin ella la app Android mostraría la barra de URL en vez de abrirse a pantalla completa.
-- **Pendiente de la Fase 5:** respaldo del keystore en el otro PC, prueba en dispositivo real, tramo cerrado de Play Console (12 verificadores × 14 días) y fichas de la tienda.
+- **Respaldo del keystore:** generado el paquete `C:\Users\andre\Downloads\respaldo-keystore-quiz-historia.zip` (`android.keystore` + contraseña + `LEEME-respaldo.txt` con huella, restauración y notas de Play App Signing), **fuera del repo y de OneDrive**. **Pendiente: copiarlo al otro PC y borrarlo de Descargas.**
+- **Pendiente de la Fase 5:** prueba en dispositivo real (APK también copiado a `Descargas\RepasoHistoria-1.apk`), tramo cerrado de Play Console (12 verificadores × 14 días) y fichas de la tienda.
 
 ---
 

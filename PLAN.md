@@ -252,7 +252,7 @@ Así quedan **incluidas en el bundle y la app funciona sin internet de serie**.
   - Build con `BUBBLEWRAP_KEYSTORE_PASSWORD` / `BUBBLEWRAP_KEY_PASSWORD` en el entorno (evita prompts en `build.js`).
   - Extraer huella SHA-256 con `keytool -list -v` y verificarla en el APK final con `apksigner verify --print-certs`.
   - Antes de cada push: `git grep -niIF -e 'password' -e 'passwd' -e 'secret' -e 'token'` como red de seguridad.
-  - **Respaldo** ⏳ *(pendiente, manual)*: copia del keystore generado en el otro PC (misma convención que el de `tres-en-raya`), antes de subir nada a Play Console.
+  - **Respaldo** ⏳ *(pendiente, manual)*: paquete ya generado en `%USERPROFILE%\Downloads\respaldo-keystore-quiz-historia.zip` (keystore + contraseña + `LEEME-respaldo.txt`); **falta copiarlo al otro PC** y borrarlo de Descargas, antes de subir nada a Play Console (misma convención que el de `tres-en-raya`).
 - [x] Añadir una **segunda sentencia** en `andreu-marbor.github.io/.well-known/assetlinks.json` para `com.andreumarbor.quizophistoria` con la huella nueva (el fichero admite varias). Si falta, la app Android muestra la barra de URL en vez de abrirse a pantalla completa. Recordar: `.nojekyll` debe mantenerse para que Pages sirva `.well-known`. *Hecho:* añadida y verificada publicada en `https://andreu-marbor.github.io/.well-known/assetlinks.json` (commit `dd58933` del portfolio).
 - [ ] Probar en dispositivo real: instalación, pantalla completa, offline.
 - [ ] **Distribución en dos vías** (decisión §9.2):
