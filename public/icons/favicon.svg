@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Repaso de Historia">
+  <title>Repaso de Historia</title>
+  <!-- Fondo granate (color de acento de la app) con esquinas redondeadas -->
+  <rect width="512" height="512" rx="112" fill="#8c2f2f" />
+  <!-- Signo de interrogación dibujado con trazo (sin fuentes: se renderiza igual en todas las plataformas) -->
+  <g transform="translate(0 -16)">
+    <path d="M180 220 A76 76 0 1 1 256 296 L256 336" fill="none" stroke="#f7f5f0" stroke-width="44" stroke-linecap="round" stroke-linejoin="round" />
+    <circle cx="256" cy="392" r="26" fill="#f7f5f0" />
+  </g>
+</svg>
