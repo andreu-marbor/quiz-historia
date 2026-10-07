@@ -155,6 +155,38 @@
   margin-top: calc(var(--espacio) * 2);
 }
 
+/* ---------------------------------------------------------- diálogo modal */
+/* INC-02: diálogo propio en lugar del confirm() nativo, que mostraba
+   "andreu-marbor.github.io dice" con los estilos del sistema. */
+
+.dialogo {
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-grande);
+  background: var(--bg-secundario);
+  color: var(--texto);
+  box-shadow: var(--sombra);
+  padding: calc(var(--espacio) * 1.25);
+  max-width: min(26rem, calc(100vw - 2rem));
+}
+
+.dialogo::backdrop {
+  background: rgb(0 0 0 / 45%);
+}
+
+.dialogo-titulo {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+}
+
+.dialogo-mensaje {
+  margin: 0;
+  color: var(--texto-tenue);
+}
+
+.dialogo .acciones {
+  justify-content: flex-end;
+}
+
 /* ------------------------------------------------------------- insignias */
 
 .insignia {

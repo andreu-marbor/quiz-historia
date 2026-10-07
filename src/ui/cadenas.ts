@@ -39,7 +39,9 @@ export const T = {
     siguiente: 'Siguiente pregunta',
     finalizar: 'Ver resultados',
     abandonar: 'Salir del cuestionario',
-    abandonarConfirm: '¿Salir del cuestionario? Perderás las respuestas de esta partida.',
+    abandonarConfirm: '¿Seguro que quieres salir? Perderás las respuestas de esta partida.',
+    abandonarSi: 'Salir',
+    abandonarNo: 'Seguir',
     enunciado: (n: number) => `Pregunta ${n}`,
   },
 
@@ -96,9 +98,16 @@ export const T = {
     barajarAyuda: 'Las preguntas de Verdadero/Falso siempre mantienen su orden.',
     borrar: 'Borrar progreso',
     borrarAyuda: 'Elimina mejores notas, racha y estadísticas de este dispositivo.',
-    borrarConfirm: '¿Seguro que quieres borrar todo tu progreso? No se puede deshacer.',
+    borrarTitulo: '¿Borrar todo tu progreso?',
+    borrarConfirm:
+      'Se borrarán las mejores notas, la racha y las estadísticas de este dispositivo. No se puede deshacer.',
+    borrarSeguro: 'Borrar',
     borrado: 'Progreso borrado.',
     sinAlmacen: 'Este navegador no permite guardar datos: el progreso no se conservará.',
+  },
+
+  dialogo: {
+    cancelar: 'Cancelar',
   },
 
   comunes: {

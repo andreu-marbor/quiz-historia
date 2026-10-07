@@ -216,3 +216,13 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **Verificación de la verificación:** con el código antiguo el test **falla en 5 de 6 comprobaciones** (se comprobó revertido el arreglo), así que el test sí atrapa la incidencia; con el arreglo pasa todo.
 - **Cobertura:** pruebas de 275 → **283 comprobaciones** (53 + 41 + 150 + 39); `npm.cmd run prueba` y `npm.cmd run build` en verde.
 - **Sigue abierta INC-02** (diálogo nativo "…dice"): ver `PLAN.md` §11.
+
+### 2026-10-07 — INC-02 resuelta: diálogo propio con `<dialog>` en vez del `confirm()` nativo
+
+- **Solución:** nuevo módulo `src/ui/dialogo.ts` con `pedirConfirmacion({ titulo, mensaje, confirmar, cancelar }, alConfirmar)`: monta un `<dialog>` en el `body`, lo abre con `showModal()` y, al confirmar/cancelar/`Esc`, hace `close()` + `remove()` y devuelve el resultado por **callback síncrono** (encaja con las funciones de pintado, que son síncronas; no hizo falta promesa ni `async`). Cero dependencias.
+- **Accesibilidad:** `aria-labelledby` apuntando al `h2` del título; el botón seguro va **primero** y con `autofocus` (que `Enter` no ejecute la acción destructiva); `Esc` llega como evento `cancel`, que se intercepta con `preventDefault()` para cerrarlo con el valor correcto; el retorno del foco al botón que lo abrió lo hace el propio navegador al cerrar.
+- **Textos** (`src/ui/cadenas.ts`): cuestionario → título "Salir del cuestionario", botones *Seguir* / **Salir**; ajustes → título "¿Borrar todo tu progreso?", mensaje "Se borrarán las mejores notas… No se puede deshacer." y botones *Cancelar* / **Borrar**. Nuevo grupo `dialogo.cancelar` como valor por defecto.
+- **Estilo** (`src/estilos/app.css`): `.dialogo`, `.dialogo::backdrop`, `.dialogo-titulo`, `.dialogo-mensaje` — todo con variables CSS (`--bg-secundario`, `--borde`, `--texto-tenue`, `--radio-grande`, `--sombra`), así que **respeta el modo oscuro**.
+- **Ya no queda ningún `globalThis.confirm(...)` en `src/`** (estaban en `cuestionario.ts` y `ajustes.ts`).
+- **Pruebas:** jsdom 30 **no implementa** `showModal`/`close` → *polyfill* mínimo y documentado en la cabecera de `pruebas/pantallas.ts` (atributo `open` + evento `close`); el `Esc` se simula despachando `cancel`. Se adaptaron los tests de "salir", "borrar progreso" y los dos del flujo completo (ahora confirman dentro del diálogo). **+12 comprobaciones → 300** (53 + 41 + 167 + 39); `prueba` y `build` en verde.
+- **Estado:** ✅ cerrada → `PLAN.md` §11.

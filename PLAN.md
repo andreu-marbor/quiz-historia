@@ -336,15 +336,16 @@ Así quedan **incluidas en el bundle y la app funciona sin internet de serie**.
 
 ---
 
-## 11. Incidencias abiertas (2026-10-07)
+## 11. Incidencias (2026-10-07)
 
-> Detectadas en uso real tras el despliegue de las fases 3–4. Se registran aquí antes de corregirlas; la causa técnica y la solución quedan además en `MEMORY.md`.
+> Detectadas en uso real tras el despliegue de las fases 3–4. Se registran aquí antes de corregirlas; la causa técnica y la solución quedan además en `MEMORY.md`. **Las dos de esta tanda están cerradas.**
 
 - [x] **INC-01 · Con las opciones barajadas, un acierto se corrige como fallo.** ✅ *corregido 2026-10-07.* En una pregunta de opción múltiple, al elegir la **respuesta correcta** el cuestionario respondía *"Incorrecto"*, y en *"Tu respuesta"* y *"Respuesta correcta"* aparecía **el mismo texto**. Pasaba también lo contrario (un fallo felicitado como acierto).
   - **Causa:** `pintarFeedback` (`src/ui/cuestionario.ts`) compara `sesion.respuestas[...]`, guardado en el orden **ORIGINAL** (`aplicacion.ts` → `responder`), contra `presentada.respuesta`, que está en el orden **MOSTRADO** (`logica/barajado.ts`). Con el barajado activo (por defecto) los dos índices no son el mismo eje y el acierto se tumba.
   - **Por qué no lo pilló la CI:** `pruebas/pantallas.ts` presentaba las preguntas con `barajar: false` (índices idénticos → el fallo no se manifiesta). Verdadero/Falso nunca se baraja tampoco.
   - **Alcance:** solo el feedback en pantalla; la pantalla de resultados usa el orden original y es correcta.
   - **Corrección:** comparar ambos valores en el mismo sistema de índices (el original: `elegida === presentada.pregunta.respuesta` en `pintarFeedback`) + test de regresión `seccion('Corrección con las opciones barajadas (INC-01)')` en `pruebas/pantallas.ts`, que **falla en 5 de 6 comprobaciones con el código antiguo**. Verificado: 283 comprobaciones y build en verde.
-- [ ] **INC-02 · El diálogo de salida muestra "andreu-marbor.github.io dice".** Al pulsar *"Salir del cuestionario"* (y también en Ajustes → *Borrar progreso*) aparece el `confirm()` nativo del navegador: título con el dominio, textos del sistema y estilos ajenos a la app.
+- [x] **INC-02 · El diálogo de salida muestra "andreu-marbor.github.io dice".** ✅ *corregido 2026-10-07.* Al pulsar *"Salir del cuestionario"* (y también en Ajustes → *Borrar progreso*) aparecía el `confirm()` nativo del navegador: título con el dominio, textos del sistema y estilos ajenos a la app.
   - **Causa:** `globalThis.confirm(...)` en `src/ui/cuestionario.ts` y `src/ui/ajustes.ts`.
-  - **Corrección prevista:** diálogo propio con el elemento nativo `<dialog>` (sin dependencias, accesible por foco y `Esc`), títulos propios ("Salir del cuestionario" / "¿Borrar todo tu progreso?"), botones con las variables CSS del proyecto y foco devuelto al botón que lo abrió. **⏳ pendiente**
+  - **Corrección:** nuevo módulo `src/ui/dialogo.ts` con `pedirConfirmacion()`, que monta un `<dialog>` **modal** nativo (foco atrapado, cierre con `Esc` vía el evento `cancel`, `aria-labelledby` hacia el título y foco devuelto al botón que lo abrió), sin ninguna dependencia. Títulos y botones salen de `src/ui/cadenas.ts` ("Salir del cuestionario" → *Seguir* / **Salir**; "¿Borrar todo tu progreso?" → *Cancelar* / **Borrar**, con el seguro **primero** para que `Enter` no ejecute lo destructivo) y el estilo va en `src/estilos/app.css` (`.dialogo`, `.dialogo::backdrop`) con variables CSS, incluido el modo oscuro.
+  - **Nota de pruebas:** jsdom 30 no implementa `showModal`/`close`, así que `pruebas/pantallas.ts` añade un *polyfill* mínimo (atributo `open` + evento `close`) y dispara el `cancel` de `Esc` a mano. Cubierto con 12 comprobaciones nuevas (apertura, título, orden de botones, confirmar/cancelar/Esc, retira del DOM y que no se borra nada hasta confirmar).

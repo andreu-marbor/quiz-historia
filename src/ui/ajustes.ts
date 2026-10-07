@@ -6,6 +6,7 @@
 import { OPCIONES_PREGUNTAS, type ModoTema } from '../persistencia';
 import { T } from './cadenas';
 import type { Contexto } from './contexto';
+import { pedirConfirmacion } from './dialogo';
 import { h, vaciar } from './dom';
 
 export function pintarAjustes(vista: HTMLElement, ctx: Contexto): void {
@@ -106,9 +107,18 @@ export function pintarAjustes(vista: HTMLElement, ctx: Contexto): void {
         type: 'button',
         class: 'boton boton--peligro',
         onclick: () => {
-          if (!globalThis.confirm(T.ajustes.borrarConfirm)) return;
-          ctx.acciones.borrarProgreso();
-          aviso.textContent = T.ajustes.borrado;
+          pedirConfirmacion(
+            {
+              titulo: T.ajustes.borrarTitulo,
+              mensaje: T.ajustes.borrarConfirm,
+              confirmar: T.ajustes.borrarSeguro,
+            },
+            (confirmado) => {
+              if (!confirmado) return;
+              ctx.acciones.borrarProgreso();
+              aviso.textContent = T.ajustes.borrado;
+            },
+          );
         },
       },
       T.ajustes.borrar,

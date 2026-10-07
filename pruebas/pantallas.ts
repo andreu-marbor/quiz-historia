@@ -26,8 +26,20 @@ Object.assign(globalThis, {
   HTMLInputElement: dom.window.HTMLInputElement,
   HTMLSelectElement: dom.window.HTMLSelectElement,
   Event: dom.window.Event,
-  confirm: () => true as boolean,
 });
+
+// jsdom no implementa el `<dialog>` modal (`showModal`/`close`): se emula aquí
+// el comportamiento mínimo que necesita la app (atributo `open` + evento
+// `close`). El cierre con `Esc` (evento `cancel`) se dispara a mano donde interesa.
+if (typeof dom.window.HTMLDialogElement.prototype.showModal !== 'function') {
+  dom.window.HTMLDialogElement.prototype.showModal = function showModal(this: HTMLDialogElement): void {
+    this.setAttribute('open', '');
+  };
+  dom.window.HTMLDialogElement.prototype.close = function close(this: HTMLDialogElement): void {
+    this.removeAttribute('open');
+    this.dispatchEvent(new dom.window.Event('close'));
+  };
+}
 
 import { pintarAjustes } from '../src/ui/ajustes';
 import { montarAplicacion } from '../src/aplicacion';
@@ -332,17 +344,44 @@ seccion('Pantalla de cuestionario');
   comprobar(texto(ok).includes('Explicación de eso2-restauracion-002.'), 'también explica el acierto');
   comprobar(texto(botones(vista, '#siguiente')[0]) === 'Ver resultados', 'en la última pregunta el botón cambia a "Ver resultados"');
 
-  // --- salir del cuestionario ---
+  // --- salir del cuestionario (INC-02: diálogo propio, no el confirm nativo) ---
   llamadas = [];
   botones(vista, '.boton--fantasma')[0].click();
-  comprobar(llamadas.length === 1 && llamadas[0][0] === 'abandonar', 'el botón de salir (tras confirmar) abandona la partida');
 
-  const confirmado = (globalThis as { confirm?: () => boolean }).confirm;
-  (globalThis as { confirm?: () => boolean }).confirm = () => false;
+  const dialogoSalida = document.querySelector('dialog.dialogo');
+  comprobar(dialogoSalida !== null, 'INC-02: salir abre un diálogo propio en vez del confirm del navegador');
+  comprobar(llamadas.length === 0, 'INC-02: no se abandona hasta que se confirma');
+  comprobar(
+    dialogoSalida!.getAttribute('aria-labelledby') === dialogoSalida!.querySelector('h2')!.id &&
+      Boolean(dialogoSalida!.getAttribute('aria-labelledby')),
+    'INC-02: el diálogo expone su título como nombre accesible',
+  );
+  comprobar(texto(dialogoSalida!.querySelector('.dialogo-titulo')) === 'Salir del cuestionario', 'INC-02: el diálogo lleva el título de la acción');
+  comprobar(
+    texto(dialogoSalida!).includes('Perderás las respuestas de esta partida'),
+    'INC-02: explica qué se pierde al salir',
+  );
+  comprobar(
+    botones(dialogoSalida!, '.boton').map((b) => texto(b)).join(' · ') === 'Seguir · Salir',
+    'INC-02: el botón seguro va primero y el destructivo después',
+  );
+
+  botones(dialogoSalida!, '.boton--primario')[0].click(); // "Salir"
+  comprobar(llamadas.length === 1 && llamadas[0][0] === 'abandonar', 'el botón de salir (tras confirmar en el diálogo) abandona la partida');
+  comprobar(document.querySelector('dialog.dialogo') === null, 'INC-02: el diálogo se retira del documento al cerrarse');
+
   llamadas = [];
   botones(vista, '.boton--fantasma')[0].click();
-  comprobar(llamadas.length === 0, 'si el usuario cancela la confirmación, no se abandona');
-  (globalThis as { confirm?: () => boolean }).confirm = confirmado;
+  botones(document.querySelector('dialog.dialogo')!, '.boton')[0].click(); // "Seguir"
+  comprobar(llamadas.length === 0, 'si cancela en el diálogo, no se abandona');
+  comprobar(document.querySelector('dialog.dialogo') === null, 'y el diálogo también se retira');
+
+  llamadas = [];
+  botones(vista, '.boton--fantasma')[0].click();
+  const dialogoEsc = document.querySelector('dialog.dialogo')!;
+  dialogoEsc.dispatchEvent(new Event('cancel', { cancelable: true }));
+  comprobar(llamadas.length === 0, 'Esc (evento cancel) cierra sin abandonar');
+  comprobar(document.querySelector('dialog.dialogo') === null, 'y el diálogo desaparece');
 }
 
 // ---------------------------------------------------------------------------
@@ -545,8 +584,22 @@ seccion('Pantalla de ajustes');
 
   llamadas = [];
   botones(vista, '.boton--peligro')[0].click();
+  const dialogoBorrar = document.querySelector('dialog.dialogo');
+  comprobar(dialogoBorrar !== null, 'INC-02: borrar progreso pide confirmación en un diálogo propio');
+  comprobar(
+    texto(dialogoBorrar!.querySelector('.dialogo-titulo')) === '¿Borrar todo tu progreso?',
+    'INC-02: con el título de la acción, no con el dominio',
+  );
+  comprobar(llamadas.length === 0, 'sin confirmar todavía no se borra nada');
+  botones(dialogoBorrar!, '.boton--primario')[0].click(); // "Borrar"
   comprobar(llamadas.length === 1 && llamadas[0][0] === 'borrarProgreso', 'borrar progreso (tras confirmar) llama a la acción');
   comprobar(texto(vista.querySelector('.aviso-estado')) === 'Progreso borrado.', 'confirma el borrado');
+  comprobar(document.querySelector('dialog.dialogo') === null, 'INC-02: el diálogo se retira al cerrarse');
+
+  llamadas = [];
+  botones(vista, '.boton--peligro')[0].click();
+  botones(document.querySelector('dialog.dialogo')!, '.boton')[0].click(); // "Cancelar"
+  comprobar(llamadas.length === 0, 'cancelar en el diálogo no borra el progreso');
 
   const sinAlmacen = nuevaVista();
   pintarAjustes(sinAlmacen, contexto({ almacenDisponible: false }));
@@ -569,7 +622,6 @@ await (async () => {
   seccion('Flujo completo: montar, jugar, guardar y navegar');
   // Empezamos de cero: una única app montada en el documento
   document.body.innerHTML = '';
-  (globalThis as { confirm?: () => boolean }).confirm = () => true;
 
   const almacen = almacenFalso();
   guardarAjustes({ modoTema: 'auto', preguntas: 10, barajarOpciones: false }, almacen);
@@ -636,6 +688,8 @@ await (async () => {
   );
 
   botones(document, '.boton--fantasma')[0].click();
+  comprobar(window.location.hash === '#/cuestionario', 'INC-02: al salir primero se abre el diálogo');
+  botones(document.querySelector('dialog.dialogo')!, '.boton--primario')[0].click();
   comprobar(window.location.hash === '#/', 'salir del cuestionario regresa al inicio');
   comprobar(texto(document.querySelector('#vista')).includes('Mejor nota: 67'), 'el inicio refleja la nota guardada');
 
@@ -667,8 +721,13 @@ await (async () => {
 
   botones(document, '.boton--peligro')[0].click();
   comprobar(
+    JSON.stringify(leerProgreso(almacen)) !== JSON.stringify(progresoVacio()),
+    'INC-02: mientras no se confirme, el progreso sigue intacto',
+  );
+  botones(document.querySelector('dialog.dialogo')!, '.boton--primario')[0].click();
+  comprobar(
     JSON.stringify(leerProgreso(almacen)) === JSON.stringify(progresoVacio()),
-    'borrar progreso vacía localStorage',
+    'borrar progreso vacía localStorage tras confirmar en el diálogo',
   );
 
   (document.querySelector('a[href="#/progreso"]') as HTMLAnchorElement).click();

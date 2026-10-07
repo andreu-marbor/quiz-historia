@@ -9,6 +9,7 @@
 
 import { T } from './cadenas';
 import type { Contexto, Sesion } from './contexto';
+import { pedirConfirmacion } from './dialogo';
 import { h, vaciar } from './dom';
 
 export function pintarCuestionario(vista: HTMLElement, ctx: Contexto): void {
@@ -85,9 +86,18 @@ export function pintarCuestionario(vista: HTMLElement, ctx: Contexto): void {
       {
         type: 'button',
         class: 'boton boton--fantasma',
-        onclick: () => {
-          if (globalThis.confirm(T.cuestionario.abandonarConfirm)) ctx.acciones.abandonar();
-        },
+        onclick: () =>
+          pedirConfirmacion(
+            {
+              titulo: T.cuestionario.abandonar,
+              mensaje: T.cuestionario.abandonarConfirm,
+              confirmar: T.cuestionario.abandonarSi,
+              cancelar: T.cuestionario.abandonarNo,
+            },
+            (confirmado) => {
+              if (confirmado) ctx.acciones.abandonar();
+            },
+          ),
       },
       T.cuestionario.abandonar,
     ),
