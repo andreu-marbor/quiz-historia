@@ -346,6 +346,67 @@ seccion('Pantalla de cuestionario');
 }
 
 // ---------------------------------------------------------------------------
+seccion('Corrección con las opciones barajadas (INC-01)');
+{
+  // Fisher-Yates con r = 0 sobre ["Opción A","Opción B","Opción C"]:
+  //   i=2 → j=0 → [C,B,A]  y  i=1 → j=0 → [B,C,A]
+  // Se muestran ["Opción B","Opción C","Opción A"] → originales [1,2,0], y la
+  // correcta (índice original 1) aparece en la posición MOSTRADA 0.
+  // ahí es donde el feedback original comparaba dos sistemas de índices distintos.
+  const presentada = presentarPregunta(pregunta('eso2-restauracion-001'), {
+    barajar: true,
+    aleatorio: () => 0,
+  });
+  comprobar(presentada.originales.join(',') === '1,2,0', 'el barajado de la prueba mueve la correcta de sitio');
+  comprobar(presentada.respuesta === 0, 'la correcta queda en la posición mostrada 0 (no en la original 1)');
+
+  const sesionBase: Sesion = {
+    cursoId: 'eso2',
+    temaId: 'restauracion',
+    claveTema: 'eso2/restauracion',
+    cursoTitulo: '2º ESO',
+    temaTitulo: 'Restauración borbónica',
+    preguntas: [presentada],
+    respuestas: [null],
+    actual: 0,
+    soloFalladas: false,
+  };
+
+  // 1) Se pulsa la correcta (posición mostrada 0) → se guarda el índice original 1
+  const sesionAcierto: Sesion = { ...sesionBase, respuestas: [null] };
+  const ctxAcierto = contexto({ sesion: sesionAcierto });
+  const vistaAcierto = nuevaVista();
+  pintarCuestionario(vistaAcierto, ctxAcierto);
+  sesionAcierto.respuestas[0] = presentada.originales[0]; // 1 = la correcta
+  aplicarRespuesta(vistaAcierto, ctxAcierto);
+
+  const ok = vistaAcierto.querySelector('.feedback')!;
+  comprobar(ok.className.includes('feedback--ok'), 'INC-01: un acierto con opciones barajadas se corrige como acierto');
+  comprobar(texto(ok.querySelector('.feedback-titulo')) === '¡Correcto!', 'INC-01: felicita el acierto');
+  comprobar(!texto(ok).includes('Tu respuesta:'), 'INC-01: en un acierto no se listan las dos respuestas');
+  comprobar(
+    botones(vistaAcierto, '.opcion')[0].classList.contains('opcion--correcta') &&
+      texto(botones(vistaAcierto, '.opcion')[0]).includes('✓'),
+    'INC-01: el botón de la correcta se resalta en su posición mostrada',
+  );
+
+  // 2) Se pulsa "Opción A" (posición mostrada 2, índice original 0) → sigue siendo fallo
+  const sesionFallo: Sesion = { ...sesionBase, respuestas: [null] };
+  const ctxFallo = contexto({ sesion: sesionFallo });
+  const vistaFallo = nuevaVista();
+  pintarCuestionario(vistaFallo, ctxFallo);
+  sesionFallo.respuestas[0] = presentada.originales[2]; // 0 = "Opción A", incorrecta
+  aplicarRespuesta(vistaFallo, ctxFallo);
+
+  const mal = vistaFallo.querySelector('.feedback')!;
+  comprobar(mal.className.includes('feedback--mal'), 'INC-01: un fallo con opciones barajadas sigue siendo fallo');
+  comprobar(
+    texto(mal).includes('Tu respuesta: Opción A') && texto(mal).includes('Respuesta correcta: Opción B'),
+    'INC-01: "Tu respuesta" y "Respuesta correcta" ya no son el mismo texto',
+  );
+}
+
+// ---------------------------------------------------------------------------
 seccion('Pantalla de resultados');
 {
   const base = ['r-001', 'r-002', 'r-003', 'r-004'].map((id) => presentarPregunta(pregunta(id), { barajar: false }));

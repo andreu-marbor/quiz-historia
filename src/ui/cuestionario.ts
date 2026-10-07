@@ -191,7 +191,12 @@ function pintarFeedback(vista: HTMLElement, sesion: Sesion): void {
     return;
   }
 
-  const acertada = elegida === presentada.respuesta;
+  // `elegida` está en el orden ORIGINAL de la pregunta (así se guarda en
+  // `sesion.respuestas`, ver `aplicacion.ts` → `responder`), mientras que
+  // `presentada.respuesta` está en el orden MOSTRADO tras el barajado.
+  // Se comparan en el mismo eje (el original): si no, con las opciones barajadas
+  // un acierto se tumba como fallo (y un fallo puede pasar por acierto).
+  const acertada = elegida === presentada.pregunta.respuesta;
   caja.className = `feedback ${acertada ? 'feedback--ok' : 'feedback--mal'}`;
   caja.append(h('p', { class: 'feedback-titulo' }, acertada ? T.cuestionario.correcto : T.cuestionario.incorrecto));
 

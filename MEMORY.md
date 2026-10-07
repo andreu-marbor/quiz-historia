@@ -194,3 +194,25 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **Impacto:** con el fichero sin parsear, Chrome en Android **no puede verificar** la relación → la TWA se abriría con la barra de URL en vez de a pantalla completa, que es justo lo que busca evitar este paso. **La app de `tres-en-raya` tenía la misma sentencia inválida.**
 - **Solución:** ambas huellas a `AA:BB:…` (mayúsculas) en `andreu-marbor.github.io/.well-known/assetlinks.json` (commits `dd58933` → `cdb3b29`). Verificado con la API de Google: devuelve `statements` con las dos apps y **cero errores**.
 - **Lección:** validar `assetlinks.json` contra `statements:list`, no solo con `ConvertFrom-Json`: JSON válido ≠ contenido aceptado por Google.
+
+### 2026-10-07 — INC-01 (⏳ abierta) · Con las opciones barajadas, un acierto se corrige como fallo
+
+- **Qué ocurre:** en una pregunta de opción múltiple, al elegir **la respuesta correcta** el feedback de la pantalla de cuestionario pone **"Incorrecto"**, y las líneas *"Tu respuesta:"* y *"Respuesta correcta:"* muestran **el mismo texto**. Puede darse el caso contrario: un fallo felicitado como acierto.
+- **Causa:** `pintarFeedback` en `src/ui/cuestionario.ts` compara `elegida` (guardada en `sesion.respuestas` en el **orden original** de la pregunta, ver `aplicacion.ts` → `responder`) contra `presentada.respuesta`, que está en el **orden mostrado** (tras el barajado de `logica/barajado.ts`). Dos sistemas de índices distintos: el que coincide, coincide por suerte; el que no, tumba el acierto.
+- **Por qué no lo detectó la CI:** `pruebas/pantallas.ts` llamaba a `presentarPregunta(p, { barajar: false })`, con lo que ambos índices son idénticos y el fallo no se manifiesta. Tampoco aparece en Verdadero/Falso (nunca se baraja) ni en la pantalla de resultados (trabaja en orden original).
+- **Estado:** ⏳ en corrección → `PLAN.md` §11 INC-01.
+
+### 2026-10-07 — INC-02 (⏳ abierta) · El diálogo de salida dice "andreu-marbor.github.io dice"
+
+- **Qué ocurre:** al pulsar *"Salir del cuestionario"* el aviso sale con el **diálogo nativo** del navegador, cuyo título es "andreu-marbor.github.io dice" (en local, "localhost dice"): textos y estilos del sistema, fuera de la identidad de la app. Lo mismo en Ajustes → *Borrar progreso*.
+- **Causa:** `globalThis.confirm(...)` en `src/ui/cuestionario.ts` (`abandonarConfirm`) y en `src/ui/ajustes.ts` (`borrarConfirm`).
+- **Corrección prevista:** diálogo propio con el elemento nativo `<dialog>` (accesible: foco, `Esc`, `aria-labelledby`), sin dependencias; botones y textos con las cadenas de `src/ui/cadenas.ts` y colores vía variables CSS; foco devuelto al botón que lo abrió. También cubrirlo en `pruebas/pantallas.ts`.
+- **Estado:** ⏳ pendiente → `PLAN.md` §11 INC-02.
+
+### 2026-10-07 — INC-01 resuelta: el feedback comparaba índices de dos sistemas distintos
+
+- **Solución:** en `pintarFeedback` (`src/ui/cuestionario.ts`) la comprobación pasa a hacerse en el **orden original** (`elegida === presentada.pregunta.respuesta`), que es el mismo eje en que `aplicacion.ts` guarda `sesion.respuestas`. La línea lleva un comentario con los dos ejes para que no vuelva a mezclarse.
+- **Test de regresión:** nueva sección `seccion('Corrección con las opciones barajadas (INC-01)')` en `pruebas/pantallas.ts` con presentación barajada determinista (`aleatorio: () => 0` → mostradas `[B,C,A]`, `originales [1,2,0]`): un caso de acierto y otro de fallo.
+- **Verificación de la verificación:** con el código antiguo el test **falla en 5 de 6 comprobaciones** (se comprobó revertido el arreglo), así que el test sí atrapa la incidencia; con el arreglo pasa todo.
+- **Cobertura:** pruebas de 275 → **283 comprobaciones** (53 + 41 + 150 + 39); `npm.cmd run prueba` y `npm.cmd run build` en verde.
+- **Sigue abierta INC-02** (diálogo nativo "…dice"): ver `PLAN.md` §11.
