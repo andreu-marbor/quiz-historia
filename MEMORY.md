@@ -14,7 +14,7 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 | 1 | Cimiento (repo `main`, scaffold Vite+TS, validador, lógica, ~40 preguntas, tests) | ✅ Completada (2026-10-06) |
 | 2 | Interfaz completa (5 pantallas, persistencia, oscuro, responsive) | ✅ Completada (2026-10-06) |
 | 3 | PWA (manifest, iconos, service worker offline, Lighthouse) | ⏳ Pendiente |
-| 4 | Despliegue web (GitHub Actions → Pages, `base: /quiz-historia/`) | ⏳ Pendiente |
+| 4 | Despliegue web (GitHub Actions → Pages, `base: /quiz-historia/`) | ✅ Completada (2026-10-07) |
 | 5 | Android TWA (keystore nuevo, assetlinks, APK + tramo cerrado Play) | ⏳ Pendiente |
 | 6 | Contenido real (temario ESO/Bachiller) y documentación | ⏳ Pendiente |
 
@@ -89,6 +89,18 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **Verificado en verde:** `npm.cmd run prueba` (**274 comprobaciones**: 53 lógica + 41 persistencia + 141 pantallas + 39 datos) y `npm.cmd run build` (24 módulos, 42.98 kB JS / 14.37 kB gzip + 11 kB CSS).
 - **Documentación:** `PLAN.md` (checklist Fase 2 marcado ✅ y tabla §6 con los scripts nuevos), `AGENTS.md` (árbol `src/` y `pruebas/`, stack de tests, comandos).
 - **Siguiente:** Fase 3 (PWA) o revisión visual con el usuario en `npm.cmd run dev`.
+
+### 2026-10-07 — Fase 4 completada (despliegue web) — antes que la Fase 3
+
+- **Cambio de orden acordado con el usuario:** se ejecuta la **Fase 4 antes que la Fase 3** para poder probar y validar la app directamente en la URL pública de GitHub Pages (y porque la PWA se audita con Lighthouse sobre HTTPS real, no en local).
+- **`vite.config.ts`:** `base: '/quiz-historia/'` (GitHub Pages publica en subcarpeta). Verificado en `dist/index.html`: los assets se sirven como `/quiz-historia/assets/...`.
+- **`.github/workflows/despliegue.yml`** (nuevo): `prueba` → `build` → Pages en push a `main` y en `workflow_dispatch`, y **solo `prueba` + `build` en PRs** (los pasos de Pages van con `if: github.event_name != 'pull_request'`). Node **22** (misma versión que el PC, decisión pendiente de la incidencia de Node). Patrón copiado del flujo de `tres-en-raya`, adaptado a los 4 scripts de pruebas de este proyecto.
+- **GitHub Pages activado** vía API (`gh api -X POST .../pages -f build_type=workflow`) → fuente **GitHub Actions**; antes devolvía 404 (estaba desactivado).
+- **`README.md`** (nuevo): enlace en vivo, badges, características, tabla tecnológica, comandos (`npm.cmd`), tabla de pruebas, flujo de edición de preguntas, estructura y estado de fases. Tabla de capturas **pendiente** (falta `docs/capturas/`).
+- **Primer despliegue en verde:** run `37639197045` (`build` + `deploy` OK). **URL pública: https://andreu-marbor.github.io/quiz-historia/** → 200, título "Repaso de Historia", JS (42,5 kB) y CSS (11 kB) responden 200.
+- **Portfolio `andreu-marbor.github.io`:** enlace **"Jugar"/"Play"** añadido al artículo `#quiz-historia` (es y en) y nota de estado actualizada a "Fases 1, 2 y 4 completas". Commit `e09b8c1` → `main` (push con `HEAD:main`: la rama local allí sigue siendo `master`).
+- **Aviso no bloqueante en la CI:** `actions/checkout@v4`, `setup-node@v4`, `configure-pages@v5` y `upload-artifact@v4` apuntan a Node 20 (deprecado); subir a v5 cuando salgan. También aviso de migración de `ubuntu-latest` a Ubuntu 26 (19/10/2026).
+- **Pendiente:** capturas del README y, sobre todo, **Fase 3 (PWA)**, ahora sí la siguiente.
 
 ---
 

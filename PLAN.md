@@ -3,7 +3,7 @@
 Plan de implementación de la aplicación de repaso de Historia para ESO y Bachiller.
 
 > **Estado:** plan aprobado y decisiones cerradas (§9), pendiente de ejecución por fases.
-> **Última actualización:** 2026-10-06
+> **Última actualización:** 2026-10-07
 
 ---
 
@@ -227,13 +227,13 @@ Así quedan **incluidas en el bundle y la app funciona sin internet de serie**.
 - [ ] Service worker *cache-first* para uso sin conexión en el aula.
 - [ ] Auditoría Lighthouse: PWA instalable + offline ≥ 90.
 
-### Fase 4 — Despliegue web
+### Fase 4 — Despliegue web ✅ (2026-10-07)
 
-- [ ] `vite.config.ts` con `base: '/quiz-historia/'`.
-- [ ] `.github/workflows/despliegue.yml`: `prueba` → `build` → Pages en push a `main` (y check en PRs).
-- [ ] Activar GitHub Pages con fuente "GitHub Actions".
-- [ ] Enlace añadido a `andreu-marbor.github.io` (portfolio).
-- [ ] README con capturas y enlace en vivo.
+- [x] `vite.config.ts` con `base: '/quiz-historia/'`.
+- [x] `.github/workflows/despliegue.yml`: `prueba` → `build` → Pages en push a `main` (y check en PRs).
+- [x] Activar GitHub Pages con fuente "GitHub Actions".
+- [x] Enlace añadido a `andreu-marbor.github.io` (portfolio).
+- [x] README con capturas y enlace en vivo.
 
 ### Fase 5 — Android (TWA)
 
