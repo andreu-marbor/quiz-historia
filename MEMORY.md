@@ -13,7 +13,7 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 | — | Documentación inicial (`PLAN.md`, `AGENTS.md`, `MEMORY.md`) | ✅ Completada |
 | 1 | Cimiento (repo `main`, scaffold Vite+TS, validador, lógica, ~40 preguntas, tests) | ✅ Completada (2026-10-06) |
 | 2 | Interfaz completa (5 pantallas, persistencia, oscuro, responsive) | ✅ Completada (2026-10-06) |
-| 3 | PWA (manifest, iconos, service worker offline, Lighthouse) | ⏳ Pendiente |
+| 3 | PWA (manifest, iconos, service worker offline, Lighthouse) | ✅ Completada (2026-10-07) |
 | 4 | Despliegue web (GitHub Actions → Pages, `base: /quiz-historia/`) | ✅ Completada (2026-10-07) |
 | 5 | Android TWA (keystore nuevo, assetlinks, APK + tramo cerrado Play) | ⏳ Pendiente |
 | 6 | Contenido real (temario ESO/Bachiller) y documentación | ⏳ Pendiente |
@@ -101,6 +101,21 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **Portfolio `andreu-marbor.github.io`:** enlace **"Jugar"/"Play"** añadido al artículo `#quiz-historia` (es y en) y nota de estado actualizada a "Fases 1, 2 y 4 completas". Commit `e09b8c1` → `main` (push con `HEAD:main`: la rama local allí sigue siendo `master`).
 - **Aviso no bloqueante en la CI:** `actions/checkout@v4`, `setup-node@v4`, `configure-pages@v5` y `upload-artifact@v4` apuntan a Node 20 (deprecado); subir a v5 cuando salgan. También aviso de migración de `ubuntu-latest` a Ubuntu 26 (19/10/2026).
 - **Pendiente:** capturas del README y, sobre todo, **Fase 3 (PWA)**, ahora sí la siguiente.
+
+### 2026-10-07 — Fase 3 completada (PWA), con dos fallos de offline destapados por las pruebas
+
+- **`public/manifest.webmanifest`**: `name` "Repaso de Historia", `short_name` "Repaso Historia", `start_url`/`scope` `./`, `display: standalone`, `theme_color` `#8c2f2f`, `background_color` `#f7f5f0`, `categories: ["education"]` y 5 iconos (192/512 `any`, 192/512 `maskable` y SVG).
+- **Iconos propios** (`public/icons/icono.svg` e `icono-maskable.svg`): cuadrado granate con un signo de interrogación **dibujado con trazos** (sin fuentes, se renderiza igual en todas las plataformas); el maskable va a sangre con el glifo dentro de la zona segura. `npm.cmd run iconos` (`scripts/generar-iconos.mjs` + **`sharp` como dependencia de desarrollo única nueva**) genera los PNG y el `favicon.svg`.
+- **`index.html`**: `<link rel="manifest">`, favicon SVG, `apple-touch-icon`, dos `theme-color` (claro/oscuro) y las metas `apple-mobile-web-app-*`; rutas con `%BASE_URL%` para que Vite aplique `base: '/quiz-historia/'`.
+- **Registro del SW** en `src/main.ts` solo con `import.meta.env.PROD` y rutas relativas (`./sw.js`) → funciona igual en raíz y en subcarpeta.
+- **`public/sw.js`** (estrategia documentada en su cabecera): red primero para navegaciones (HTML fresco) y **caché primero con revalidación en segundo plano** para el resto; carcasa precacheada en `install`.
+- **🐛 Fallo 1 — sin precachear los assets no había offline real.** El SW solo cacheaba la carcasa; los JS/CSS con hash se cacheaban si alguien los pedía con red, y en la primera visita el SW aún no controlaba → sin internet quedaba un `index.html` vacío. **Solución:** en `install` se extraen del HTML cacheado (`src`/`href`) y se guardan (`precachear()`).
+- **🐛 Fallo 2 — `Vary: Origin` impedía encontrar los assets cacheados.** Los servidores responden con `Vary: Origin` (y `Vary: Accept-Encoding`); la request guardada con `cache.add(url)` no lleva esas cabeceras, mientras que la del `<script crossorigin>` sí → `caches.match` devolvía `undefined` y el SW respondía `Response.error()` (`net::ERR_FAILED`). **Solución:** `caches.match(..., { ignoreVary: true })` en todas las comparaciones.
+- **Cómo se verificó offline** (Lighthouse ya no incluye esas auditorías): `scripts/comprobar-offline.mjs` (**`npm.cmd run comprobar-offline`**, con Chrome headless + CDP) que (1) carga online, (2) corta la red con `Network.emulateNetworkConditions` **en la página y en el service worker** y desactiva la caché HTTP, (3) vuelve a navegar. Resultado en local y en producción: Document/CSS/JS **200 desde CacheStorage** y la app monta con contenido (`Repaso de Historia Jugar Progreso Ajustes…`). Descubierto además que el flag `--offline` de Chrome **no surte efecto** en headless: el control con perfil limpio también "montaba" la app, o sea que esa comprobación habría sido falaz. No entra en `npm.cmd run prueba` porque necesita Chrome.
+- **Auditorías:** **PWA 100/100** con Lighthouse 11 (`installable-manifest`, `splash-screen`, `themed-omnibox`, `content-width`, `viewport`, `maskable-icon` todos OK). ⚠️ **Lighthouse 13.5 ya no tiene la categoría `pwa`** (se retiró), así que `--only-categories=pwa` exige `lighthouse@11`. Con la versión actual: performance 96 · accessibility 100 · best-practices 100 · seo 100.
+- **🐛 A11y — `label-content-name-mismatch`.** El `aria-label` de los botones de tema (`"Jugar a La Revolución Industrial (2º ESO)"`) **reemplazaba** el texto visible, que axe exige ver dentro del nombre accesible. **Solución:** sin `aria-label`; el contexto va en un `span.visualmente-oculto` **al frente** del botón (`src/estilos/base.css` + `src/ui/inicio.ts`), y el test correspondiente pasa a comprobar que no hay `aria-label` y que el nombre accesible sí suma el curso. Sin esto, la auditoría seguía en rojo.
+- **Verificado en verde:** `npm.cmd run prueba` (**275 comprobaciones**: 53 + 41 + 142 + 39) y `npm.cmd run build`; despliegues `56e28e7`, `e40d544` y `5a184ff` en CI verde.
+- **Aviso:** una vez salí a auditar contra un build recién publicado y **Lighthouse midió la versión anterior** (CDN/cache): comprobar siempre el hash de `assets/` servido antes de dar por buena una auditoría.
 
 ---
 

@@ -26,6 +26,7 @@
 - **Progreso persistente** en `localStorage`: mejor nota por tema y racha de días consecutivos.
 - **Accesible**: contraste AA, foco visible, ARIA en el quiz (`aria-live` en el feedback), navegación por teclado, `prefers-reduced-motion`; el color nunca es el único indicador.
 - **Responsive móvil-primero** y **modo oscuro** (respeta `prefers-color-scheme` con override manual).
+- **PWA instalable y offline**: manifest, iconos *maskable* y service worker que precachea la carcasa y los assets del build → tras la primera visita funciona sin conexión en el aula.
 - **Cero dependencias de runtime**: TypeScript estricto + Vite, DOM manual sin frameworks.
 
 ## 🛠️ Tecnologías
@@ -50,6 +51,8 @@ npm.cmd run preview    # previsualizar el build → http://localhost:4173
 npm.cmd run prueba     # TODO: lógica + persistencia + pantallas + datos
 npm.cmd run prueba:datos   # solo el validador de datos/
 node scripts/validar-preguntas.mjs   # el validador sin pasar por esbuild
+npm.cmd run iconos        # regenerar los PNG del PWA desde public/icons/*.svg
+npm.cmd run comprobar-offline   # verifica que la app funciona sin conexión (Chrome)
 ```
 
 > ⚠️ En Windows/PowerShell usar `npm.cmd` (la política de ejecución bloquea los `.ps1`).
@@ -99,7 +102,7 @@ scripts/                # validar-preguntas.mjs, generar-iconos.mjs
 | --- | --- |
 | 1 · Cimiento (repo, datos, lógica) | ✅ |
 | 2 · Interfaz completa (5 pantallas) | ✅ |
-| 3 · PWA (manifest, iconos, service worker) | ⏳ |
+| 3 · PWA (manifest, iconos, service worker) | ✅ |
 | 4 · Despliegue web (GitHub Pages) | ✅ |
 | 5 · Android (TWA + Play Store) | ⏳ |
 | 6 · Contenido real y documentación | ⏳ |

@@ -220,12 +220,16 @@ Así quedan **incluidas en el bundle y la app funciona sin internet de serie**.
 
 **Resultado: `npm.cmd run prueba` y `npm.cmd run build` en verde.** ✅ (274 comprobaciones: 53 lógica + 41 persistencia + 141 pantallas + 39 datos)
 
-### Fase 3 — PWA
+### Fase 3 — PWA ✅ (2026-10-07)
 
-- [ ] `manifest.webmanifest`: `name`: **"Repaso de Historia"**, `short_name`: "Repaso Historia", `start_url`, `display: standalone`, theme colors.
-- [ ] `scripts/generar-iconos.mjs` con `sharp` (misma estética que `tres-en-raya`).
-- [ ] Service worker *cache-first* para uso sin conexión en el aula.
-- [ ] Auditoría Lighthouse: PWA instalable + offline ≥ 90.
+> Ejecutada **después** de la Fase 4, para poder validarla sobre la URL pública (acuerdo con el usuario, 2026-10-07).
+
+- [x] `manifest.webmanifest`: `name`: **"Repaso de Historia"**, `short_name`: "Repaso Historia", `start_url`, `display: standalone`, theme colors.
+- [x] `scripts/generar-iconos.mjs` con `sharp` (misma estética que `tres-en-raya`).
+- [x] Service worker *cache-first* para uso sin conexión en el aula.
+- [x] Auditoría Lighthouse: PWA instalable + offline ≥ 90. ✅ **PWA 100/100** (Lighthouse 11, última versión con categoría `pwa`; en 13.5 esa categoría ya no existe) y **offline verificado** cortando la red por CDP.
+
+**Resultado: `npm.cmd run prueba` y `npm.cmd run build` en verde.** ✅ (275 comprobaciones)
 
 ### Fase 4 — Despliegue web ✅ (2026-10-07)
 
@@ -298,7 +302,7 @@ Así quedan **incluidas en el bundle y la app funciona sin internet de serie**.
 
 ## 8. Criterios de "hecho"
 
-- [ ] Web en Pages funcionando offline y apta en Lighthouse (PWA instalable).
+- [x] Web en Pages funcionando offline y apta en Lighthouse (PWA instalable).
 - [ ] App Android instalada en un dispositivo real, a pantalla completa, sin barra de URL.
 - [ ] Añadir una pregunta lleva < 2 minutos sin tocar código de la app.
 - [ ] `npm.cmd run prueba` cubre: lógica de corrección, validación de datos e integridad del catálogo.

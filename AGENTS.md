@@ -64,7 +64,8 @@ quiz-historia/
 │   └── datos.ts              # validación de datos/ (reglas de §3 del PLAN)
 ├── scripts/
 │   ├── validar-preguntas.mjs # validador del contenido
-│   └── generar-iconos.mjs    # iconos PWA con sharp (npm.cmd run iconos)
+│   ├── generar-iconos.mjs    # iconos PWA con sharp (npm.cmd run iconos)
+│   └── comprobar-offline.mjs # verifica el offline real vía CDP (requiere Chrome)
 ├── public/
 │   ├── manifest.webmanifest  # PWA: name "Repaso de Historia"
 │   ├── sw.js                 # service worker
@@ -117,6 +118,7 @@ npm.cmd run prueba:pantallas     # 5 pantallas + flujo completo (jsdom)
 npm.cmd run prueba:datos    # solo validador de preguntas/temas
 node scripts/validar-preguntas.mjs   # el validador solo, sin pasar por esbuild
 npm.cmd run iconos     # regenerar iconos PNG del PWA desde SVG
+npm.cmd run comprobar-offline   # comprueba el offline real (Chrome; no va en `prueba`)
 ```
 
 ### Git / despliegue
