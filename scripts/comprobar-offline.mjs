@@ -44,6 +44,10 @@ function rutaChrome() {
   return encontrada;
 }
 
+// El perfil viejo se limpia ANTES de lanzar Chrome: si se borra después,
+// Chrome ya está creando sus ficheros y arranca roto (no abre el puerto).
+if (existsSync(PERFIL)) rmSync(PERFIL, { recursive: true, force: true });
+
 const chrome = spawn(
   rutaChrome(),
   [
@@ -65,10 +69,11 @@ async function json(url) {
 }
 
 try {
-  if (existsSync(PERFIL)) rmSync(PERFIL, { recursive: true, force: true });
-
   let version;
-  for (let intento = 0; intento < 60 && !version; intento += 1) {
+  for (let intento = 0; intento < 120 && !version; intento += 1) {
+    if (chrome.exitCode !== null) {
+      throw new Error(`Chrome terminó antes de abrir el puerto (código ${chrome.exitCode}).`);
+    }
     try {
       version = await json(`http://127.0.0.1:${PUERTO}/json/version`);
     } catch {
@@ -167,6 +172,8 @@ try {
   );
   process.exitCode = correcto ? 0 : 1;
 } finally {
-  ws.close();
-  chrome.kill();
+  // `ws` puede ser null si fallamos antes de conectar: sin esto, el error del
+  // `finally` tapaba al original y solo salía "Cannot read ... (reading 'close')".
+  ws?.close();
+  if (chrome.exitCode === null) chrome.kill();
 }

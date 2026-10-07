@@ -226,3 +226,12 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **Ya no queda ningún `globalThis.confirm(...)` en `src/`** (estaban en `cuestionario.ts` y `ajustes.ts`).
 - **Pruebas:** jsdom 30 **no implementa** `showModal`/`close` → *polyfill* mínimo y documentado en la cabecera de `pruebas/pantallas.ts` (atributo `open` + evento `close`); el `Esc` se simula despachando `cancel`. Se adaptaron los tests de "salir", "borrar progreso" y los dos del flujo completo (ahora confirman dentro del diálogo). **+12 comprobaciones → 300** (53 + 41 + 167 + 39); `prueba` y `build` en verde.
 - **Estado:** ✅ cerrada → `PLAN.md` §11.
+
+### 2026-10-07 — Incidencia: `scripts/comprobar-offline.mjs` moría sin decir por qué
+
+- **Síntoma:** `npm.cmd run comprobar-offline` terminaba con `TypeError: Cannot read properties of null (reading 'close')` en la línea del `finally`, sin llegar a mostrar el problema real.
+- **Causa 1 (la que rompía el test):** el perfil de Chrome (`%TEMP%\perfil-comprobar-offline`) se borraba con `rmSync` **después** de hacer `spawn`, es decir, mientras Chrome lo estaba creando → arranque roto y puerto de depuración que nunca se abría. **Solución:** limpiar el perfil **antes** de lanzar Chrome.
+- **Causa 2 (la que ocultaba el error):** el bloque `finally { ws.close(); ... }` lanzaba su propia excepción cuando `ws` seguía siendo `null` (fallo anterior a conectar) y eso **reemplazaba** al error original. **Solución:** `ws?.close()` y matar Chrome solo si sigue vivo (`chrome.exitCode === null`).
+- **Mejoras añadidas:** 120 intentos de espera (30 s en vez de 15) y un error explícito si Chrome termina antes de abrir el puerto (`exitCode`), en vez del genérico "no abrió el puerto".
+- **Verificación** contra la producción desplegada hoy: `swControlador: true`, `appMontada: true`, caché `repaso-historia-v2` con 9 entradas (incluye el bundle `index-qKnA2ORL.js` con INC-01 + INC-02) → **✅ la app arranca sin conexión**.
+- **Contexto del offline:** el JS lleva dentro las preguntas (`import.meta.glob`) y el progreso vive en `localStorage`; no hay fuentes externas y todavía no hay imágenes (`public/imagenes/` no existe → Fase 6). Si en el futuro se añaden, se guardan en la caché la primera vez que se ven online (el SW cachéa todo lo mismo-origen); sin haberlas visto nunca, aparecerían rotas offline.
