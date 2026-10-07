@@ -1,0 +1,67 @@
+# CI + despliegue de "Repaso de Historia" en GitHub Pages.
+# En cada push a `main`: pruebas → build → publicación de dist/.
+# En los PR a `main`: solo pruebas + build (sin desplegar).
+name: Prueba y desplegar en GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch: # permite lanzarlo a mano desde la pestaña Actions
+
+# Permiso mínimo para publicar en Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# No mezclar despliegues simultáneos
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Pruebas (lógica + persistencia + pantallas + datos)
+        run: npm run prueba
+
+      - name: Build de producción
+        run: npm run build
+
+      # Solo desplegar en push a `main` (no en PR)
+      - name: Configurar Pages
+        if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@v5
+
+      - name: Subir artefacto (dist/)
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Desplegar
+        id: deployment
+        uses: actions/deploy-pages@v4
