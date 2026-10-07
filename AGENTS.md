@@ -134,14 +134,19 @@ gh workflow run despliegue.yml
 ### Publicación Android (Fase 5)
 
 ```bash
-bubblewrap.cmd doctor    # valida JDK + Android SDK (~/.bubblewrap/config.json)
-bubblewrap.cmd build     # genera APK + AAB — requiere BUBBLEWRAP_KEYSTORE_PASSWORD /
-                         # BUBBLEWRAP_KEY_PASSWORD (fuera del repo, ver PLAN.md §9.1)
+bubblewrap.cmd doctor                        # valida JDK + Android SDK (~/.bubblewrap/config.json)
+bubblewrap.cmd update --skipVersionUpgrade   # regenera el proyecto Android desde twa-manifest.json
+bubblewrap.cmd build                         # genera APK + AAB — requiere BUBBLEWRAP_KEYSTORE_PASSWORD /
+                                             # BUBBLEWRAP_KEY_PASSWORD (fuera del repo, ver PLAN.md §9.1)
+%LOCALAPPDATA%\Android\Sdk\build-tools\36.1.0\apksigner.bat verify --print-certs app-release-signed.apk
 ```
 
-- **Package:** `com.andreumarbor.quizophistoria` · **Nombre:** "Repaso de Historia".
-- **Keystore:** `./android.keystore` propio, **GITIGNORED**; contraseña en `%USERPROFILE%\.bubblewrap\keystore-pass-quizhistoria.txt` (fuera del repo y de OneDrive) + **copia de respaldo en el otro PC**.
-- `assetlinks.json` vive en el repo `andreu-marbor.github.io/.well-known/` → añadir/bloque nuevo de este paquete (admite varios); `.nojekyll` debe seguir existiendo.
+- **Package:** `com.andreumarbor.quizophistoria` · **Nombre:** "Repaso de Historia" (en el escritorio: "Repaso Historia").
+- **`twa-manifest.json` se edita a mano** (el `init` interactivo no es automatizable por pipe) y `bubblewrap.cmd update` regenera `app/`, `gradle/`, `build.gradle`, `settings.gradle`, `gradle.properties`, `gradlew*`, `manifest-checksum.txt`: **están versionados pero no se editan a mano**.
+- **`local.properties`** (gitignored) con `sdk.dir=…` es imprescindible para que Gradle encuentre el SDK; recrearlo si `update` regenera el proyecto.
+- **Entorno:** Bubblewrap instaló su **JDK 17** en `%USERPROFILE%\.bubblewrap\jdk\` (ruta en `config.json`); el SDK es el de Android Studio y `doctor` exige `bin`/`tools` en su raíz → existe el junction `%LOCALAPPDATA%\Android\Sdk\bin` → `cmdline-tools\latest\bin` (incidencia en `MEMORY.md`, 2026-10-07).
+- **Keystore:** `./android.keystore` propio, **GITIGNORED**; contraseña en `%USERPROFILE%\.bubblewrap\keystore-pass-quizhistoria.txt` (fuera del repo y de OneDrive) + **copia de respaldo en el otro PC**. Huella SHA-256: `b7666ba3b6dedfc2ae1f36e8025f364f242199f01d35a0fb4dcb0e0ad66b54cf`.
+- `assetlinks.json` vive en el repo `andreu-marbor.github.io/.well-known/` → añadir/bloque nuevo de este paquete (admite varios); `.nojekyll` debe seguir existiendo. **Ya publicada** (ambas sentencias).
 
 **URLs:** web → `https://andreu-marbor.github.io/quiz-historia/` · repo → `https://github.com/andreu-marbor/quiz-historia`
 

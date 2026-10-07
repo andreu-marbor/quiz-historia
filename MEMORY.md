@@ -15,7 +15,7 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 | 2 | Interfaz completa (5 pantallas, persistencia, oscuro, responsive) | ✅ Completada (2026-10-06) |
 | 3 | PWA (manifest, iconos, service worker offline, Lighthouse) | ✅ Completada (2026-10-07) |
 | 4 | Despliegue web (GitHub Actions → Pages, `base: /quiz-historia/`) | ✅ Completada (2026-10-07) |
-| 5 | Android TWA (keystore nuevo, assetlinks, APK + tramo cerrado Play) | ⏳ Pendiente |
+| 5 | Android TWA (keystore nuevo, assetlinks, APK + tramo cerrado Play) | 🔄 En curso (2026-10-07): keystore + APK/AAB firmados + assetlinks ✅ · pendiente: prueba en dispositivo, respaldo del keystore y Play Console |
 | 6 | Contenido real (temario ESO/Bachiller) y documentación | ⏳ Pendiente |
 
 ---
@@ -117,6 +117,19 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **Verificado en verde:** `npm.cmd run prueba` (**275 comprobaciones**: 53 + 41 + 142 + 39) y `npm.cmd run build`; despliegues `56e28e7`, `e40d544` y `5a184ff` en CI verde.
 - **Aviso:** una vez salí a auditar contra un build recién publicado y **Lighthouse midió la versión anterior** (CDN/cache): comprobar siempre el hash de `assets/` servido antes de dar por buena una auditoría.
 
+### 2026-10-07 — Fase 5 en marcha: entorno Android, keystore propio, APK/AAB firmados y assetlinks
+
+- **Entorno** (no había nada de Android instalado en este PC): `npm.cmd install -g @bubblewrap/cli` → **`bubblewrap.cmd`**; Bubblewrap instaló su **JDK 17** en `%USERPROFILE%\.bubblewrap\jdk\jdk-17.0.11+9`; el **SDK** de Android Studio (`%LOCALAPPDATA%\Android\Sdk`, build-tools 36.1.0, platforms 34/36/36.1) se reutiliza.
+- **`twa-manifest.json` escrito a mano** en vez de `bubblewrap.cmd init`: el `init` encadena ~25 preguntas interactivas que no se pueden responder de forma fiable por pipe en PowerShell. Plantilla: `tres-en-raya/twa-manifest.json`, con `packageId com.andreumarbor.quizophistoria`, `host andreu-marbor.github.io`, `startUrl`/`fullScopeUrl` `/quiz-historia/`, `webManifestUrl .../manifest.webmanifest`, iconos vivos (`icono-512.png`, `maskable-512.png`), `fallbackType: customtabs`, `minSdkVersion 21`, `enableNotifications: false` y `signingKey ./android.keystore` (alias `android`).
+- **Desvío controlado del PLAN §5:** `name` = "Repaso de Historia" pero **`launcherName` = "Repaso Historia"** (15 chars): la etiqueta de 18 se trunca en los launchers y coincide con el `short_name` del manifest (§9.4).
+- **Proyecto Android generado** con `bubblewrap.cmd update --skipVersionUpgrade` (comando no interactivo) → `app/`, `gradle/`, `build.gradle`, `settings.gradle`, `gradle.properties`, `gradlew*`, `manifest-checksum.txt` (versionados, como en `tres-en-raya`; no editarlos a mano) y `store_icon.png`, que Bubblewrap crea en la raíz.
+- **Keystore propio** (§9.1): `keytool -genkeypair` (JDK de Bubblewrap) → `android.keystore`, alias `android`, RSA-2048, validez **10.000 días**, DN `CN=andreu-marbor, OU=Portfolio, O=GitHub, C=ES`; contraseña aleatoria de 36 hex en `%USERPROFILE%\.bubblewrap\keystore-pass-quizhistoria.txt` (fuera del repo). Confirmado que `.gitignore:18:*.keystore` lo ignora. **Huella SHA-256: `b7666ba3b6dedfc2ae1f36e8025f364f242199f01d35a0fb4dcb0e0ad66b54cf`.**
+- **`local.properties`** (gitignored, creado a mano) con `sdk.dir=C:/Users/andre/AppData/Local/Android/Sdk`: sin él Gradle no encuentra el SDK. Hay que recrearlo si un `bubblewrap update` regenera el proyecto.
+- **Build:** `BUBBLEWRAP_KEYSTORE_PASSWORD` y `BUBBLEWRAP_KEY_PASSWORD` en el entorno (leídos del fichero de contraseña, nunca impresos) → `bubblewrap.cmd build` → `app-release-signed.apk` (1,04 MB) y `app-release-bundle.aab` (1,15 MB).
+- **Firma verificada** con `apksigner verify --print-certs`: `SHA-256 digest: b7666ba3…b54cf` = el del keystore ✓. Los `WARNING: META-INF/… not protected by signature` que imprime son informativos de Android Gradle Plugin, no errores.
+- **Segunda sentencia de `assetlinks.json`** añadida en `andreu-marbor.github.io/.well-known/` (commit `dd58933`, rama `main`) y **verificada ya publicada** en `https://andreu-marbor.github.io/.well-known/assetlinks.json`; sin ella la app Android mostraría la barra de URL en vez de abrirse a pantalla completa.
+- **Pendiente de la Fase 5:** respaldo del keystore en el otro PC, prueba en dispositivo real, tramo cerrado de Play Console (12 verificadores × 14 días) y fichas de la tienda.
+
 ---
 
 ## 🐛 Incidencias y soluciones
@@ -164,3 +177,11 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **Causas:** (1) `elemento.querySelector('.opcion--correcta')` busca en los **descendientes**, no en el propio elemento → había que usar `classList.contains`; (2) esperaba `.insignia--alta` con una nota de 85, pero 85 cae en la banda **media** (≥60 y <90); (3) `querySelectorAll('td')` no incluye el `<th scope="row">` del tema, así que el índice de "jugados" era `[2]`, no `[1]`.
 - **Solución:** corregir las aserciones; **la app estaba bien** (lo confirmaban por otro lado el icono ✓, los `aria-label` y el texto de la insignia).
 - **Nota:** contar ✅ con `Select-String`/`regex` desde PowerShell **se corrompe** (el emoji no llega igual); se hace el recuento en el propio `ayudante.ts` (`TODO OK (N comprobaciones)`).
+
+### 2026-10-07 — `bubblewrap doctor` rechazaba el SDK de Android Studio (fase 5)
+
+- **Qué falló:** `bubblewrap.cmd doctor` y `bubblewrap build` devolvían *"The androidSdkPath isn't correct …"* (y el propio texto del error hablaba de una carpeta `build` que en realidad no es lo que se comprueba).
+- **Causa:** `AndroidSdkTools.validatePath()` de `@bubblewrap/core` exige que la **raíz** del SDK contenga `tools/` o `bin/` — layout de los SDK antiguos. El SDK actual de Android Studio solo trae `cmdline-tools/` (con `bin` dentro), así que la validación rechaza una instalación perfectamente válida.
+- **Intentos descartados:** apuntar `androidSdkPath` a `cmdline-tools/latest` (pasa el chequeo, pero después `build-tools` y `platform-tools` se buscarían dentro de esa subcarpeta y fallaría el build); responder `n` y dar la ruta por pipe (inquirer recibe EOF tras la primera respuesta y aborta el prompt, `EXIT=1`); dejar que Bubblewrap instale su propio SDK (mismo problema de pipe en la pregunta de términos y condiciones, ~1 GB extra).
+- **Solución:** **junction** `%LOCALAPPDATA%\Android\Sdk\bin` → `%LOCALAPPDATA%\Android\Sdk\cmdline-tools\latest\bin` con `New-Item -ItemType Junction` (no requiere administrador; junction, no symlink). Así `validatePath` ve `bin`, `sdkmanager` sigue resolviendo en su sitio real y se usan `build-tools/36.1.0` y `platforms/android-36` tal cual → `bubblewrap.cmd doctor`: *"Your jdkpath and androidSdkPath are valid"*.
+- **Alcance:** ajuste **solo de esta máquina** (fuera de los repos); si Bubblewrap corrige la validación, basta con borrar el junction. También documentado en `AGENTS.md`.

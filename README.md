@@ -104,7 +104,7 @@ scripts/                # validar-preguntas.mjs, generar-iconos.mjs
 | 2 · Interfaz completa (5 pantallas) | ✅ |
 | 3 · PWA (manifest, iconos, service worker) | ✅ |
 | 4 · Despliegue web (GitHub Pages) | ✅ |
-| 5 · Android (TWA + Play Store) | ⏳ |
+| 5 · Android (TWA + Play Store) | 🔄 APK/AAB firmados + assetlinks · pendiente dispositivo y Play Console |
 | 6 · Contenido real y documentación | ⏳ |
 
 El plan completo, los requisitos (R/01–R/08) y las decisiones están en [`PLAN.md`](./PLAN.md); el historial de cambios, en [`MEMORY.md`](./MEMORY.md).

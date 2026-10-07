@@ -241,19 +241,19 @@ Así quedan **incluidas en el bundle y la app funciona sin internet de serie**.
 
 ### Fase 5 — Android (TWA)
 
-- [ ] `twa-manifest.json` + `bubblewrap.cmd init` / `bubblewrap.cmd build` (**usar `bubblewrap.cmd`**: la política de PowerShell bloquea los `.ps1`).
+- [x] `twa-manifest.json` + `bubblewrap.cmd init` / `bubblewrap.cmd build` (**usar `bubblewrap.cmd`**: la política de PowerShell bloquea los `.ps1`).
   - `packageId`: **`com.andreumarbor.quizophistoria`**
-  - `name` / `launcherName`: **"Repaso de Historia"**
+  - `name`: **"Repaso de Historia"** · `launcherName`: **"Repaso Historia"** (≥12 chars: la etiqueta del escritorio se trunca; coherente con el `short_name` del manifest, §9.4). *Hecho:* `twa-manifest.json` escrito a mano (el `init` interactivo de 25 preguntas no es automatizable por pipe en PowerShell) y proyecto regenerado con `bubblewrap.cmd update --skipVersionUpgrade`.
   - `host`: `andreu-marbor.github.io` · `startUrl` / `fullScopeUrl`: `/quiz-historia/`
-- [ ] **Keystore nuevo propio** (decisión §9.1):
+- [x] **Keystore nuevo propio** (decisión §9.1): *hecho:* generado y verificado (`b7666ba3b6dedfc2ae1f36e8025f364f242199f01d35a0fb4dcb0e0ad66b54cf`).
   - Generar con `keytool` (JDK): `quiz-historia/android.keystore`, alias `android`, RSA-2048, validez larga, DN `CN=andreu-marbor, OU=Portfolio, O=GitHub, C=ES` (coherente con el del otro proyecto).
   - **Contraseña**: aleatoria de 36 hex, guardada en `%USERPROFILE%\.bubblewrap\keystore-pass-quizhistoria.txt` (fuera del repo y de OneDrive; **nombre distinto** al de `tres-en-raya` para no colisionar). Nunca en ficheros versionados (lección aprendida en `tres-en-raya/MEMORY.md`, incidencia 2026-10-05).
   - **`.keystore` en `.gitignore`** desde el primer commit; nunca se versiona.
   - Build con `BUBBLEWRAP_KEYSTORE_PASSWORD` / `BUBBLEWRAP_KEY_PASSWORD` en el entorno (evita prompts en `build.js`).
   - Extraer huella SHA-256 con `keytool -list -v` y verificarla en el APK final con `apksigner verify --print-certs`.
   - Antes de cada push: `git grep -niIF -e 'password' -e 'passwd' -e 'secret' -e 'token'` como red de seguridad.
-  - **Respaldo**: copia del keystore generado en el otro PC (misma convención que el de `tres-en-raya`), antes de subir nada a Play Console.
-- [ ] Añadir una **segunda sentencia** en `andreu-marbor.github.io/.well-known/assetlinks.json` para `com.andreumarbor.quizophistoria` con la huella nueva (el fichero admite varias). Si falta, la app Android muestra la barra de URL en vez de abrirse a pantalla completa. Recordar: `.nojekyll` debe mantenerse para que Pages sirva `.well-known`.
+  - **Respaldo** ⏳ *(pendiente, manual)*: copia del keystore generado en el otro PC (misma convención que el de `tres-en-raya`), antes de subir nada a Play Console.
+- [x] Añadir una **segunda sentencia** en `andreu-marbor.github.io/.well-known/assetlinks.json` para `com.andreumarbor.quizophistoria` con la huella nueva (el fichero admite varias). Si falta, la app Android muestra la barra de URL en vez de abrirse a pantalla completa. Recordar: `.nojekyll` debe mantenerse para que Pages sirva `.well-known`. *Hecho:* añadida y verificada publicada en `https://andreu-marbor.github.io/.well-known/assetlinks.json` (commit `dd58933` del portfolio).
 - [ ] Probar en dispositivo real: instalación, pantalla completa, offline.
 - [ ] **Distribución en dos vías** (decisión §9.2):
   1. **Tramo cerrado de Play Console** con el colegio como verificadores → requisito de Google: **12 verificadores × 14 días continuos** por package nuevo (cuentas personales creadas tras el 13/11/2023) → solicitud de acceso a Producción.
