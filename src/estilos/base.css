@@ -103,6 +103,21 @@ button {
   outline: none;
 }
 
+/* Texto solo para lectores de pantalla: aporta contexto al nombre accesible
+   de un botón sin alterar el diseño (patrón sr-only). Ver inicio.ts. */
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
 @media (prefers-contrast: more) {
   :root {
     --borde: #6b6b6b;

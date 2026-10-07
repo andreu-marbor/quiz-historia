@@ -217,8 +217,12 @@ seccion('Pantalla de inicio');
   comprobar(industrial.disabled, 'un tema con menos de minPreguntas queda deshabilitado');
   comprobar(texto(industrial).includes('Necesitas al menos 4 preguntas'), 'explica por qué no se puede jugar');
   comprobar(
-    industrial.getAttribute('aria-label') === 'Revolución Industrial: Necesitas al menos 4 preguntas para jugar',
-    'el motivo también llega a los lectores de pantalla',
+    !industrial.hasAttribute('aria-label'),
+    'no usa aria-label: no se pisa el texto visible con el nombre accesible',
+  );
+  comprobar(
+    texto(industrial).includes('2º ESO') && texto(industrial).includes('Necesitas al menos 4 preguntas'),
+    'el nombre accesible suma el curso con texto oculto',
   );
 
   temas[0].click();

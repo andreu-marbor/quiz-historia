@@ -61,13 +61,18 @@ function pintarTema(ctx: Contexto, curso: Curso, tema: Tema): HTMLElement {
     {
       type: 'button',
       class: 'tema',
-      'aria-label': jugable
-        ? `${T.inicio.jugar} ${tema.titulo} (${curso.titulo})`
-        : `${tema.titulo}: ${T.inicio.minimo(tema.minPreguntas)}`,
       disabled: jugable ? undefined : true,
       title: jugable ? undefined : T.inicio.minimo(tema.minPreguntas),
       onclick: jugable ? () => ctx.acciones.elegirTema(curso.id, tema.id) : undefined,
     },
+    // Contexto que no se ve: va AL FRENTE para que el nombre accesible del
+    // botón lo incluya sin pisar el texto visible. Nunca `aria-label`, que
+    // reemplazaría el texto visible (Lighthouse: label-content-name-mismatch).
+    h(
+      'span',
+      { class: 'visualmente-oculto' },
+      `(${curso.titulo})${jugable ? ` ${T.inicio.jugar}` : ''} `,
+    ),
     h('span', { class: 'tema-nombre' }, tema.titulo),
     h('span', { class: 'tema-meta' }, T.inicio.preguntas(preguntas.length)),
     nota === undefined
