@@ -321,26 +321,32 @@
   transform: rotate(45deg);
 }
 
-/* El título del curso es un `h2` dentro del `summary` (el summary admite un
-   encabezado): así el esquema queda h1 → h2 curso → h3 asignatura (§13.2). */
+/* Jerarquía de la tarjeta (T2): título grande → chip pequeño → chevron.
+   El título va SOLO en el `h2` (el chip es su hermano, no su contenido). */
 .curso-titulo {
-  display: flex;
   flex: 1;
-  align-items: center;
-  justify-content: space-between;
   min-width: 0;
-  gap: var(--espacio);
   margin: 0;
-  font-size: var(--texto-base);
+  font-size: var(--texto-m);
   font-weight: 700;
+  transition: color 0.12s ease;
 }
 
 .curso-numero {
-  padding: 0.1rem var(--espacio-s);
+  flex: none;
+  padding: 0.15rem var(--espacio-s);
   border: 1px solid var(--borde);
   border-radius: 999px;
+  background: var(--bg);
   color: var(--texto-tenue);
   font-size: var(--texto-xs);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Curso desplegado: su cabecera se enciende en granate */
+.curso[open] > .curso-resumen .curso-titulo {
+  color: var(--accent);
 }
 
 /* --- bloques de asignatura dentro de un curso (§13.2) --- */
@@ -368,9 +374,9 @@
 
 .lista-temas {
   display: grid;
-  gap: var(--espacio-s);
+  gap: var(--espacio-xs);
   margin: 0;
-  padding: 0 0 var(--espacio);
+  padding: 0 0 var(--espacio-s);
   list-style: none;
 }
 
@@ -384,7 +390,7 @@
   gap: var(--espacio-xs) var(--espacio-m);
   width: 100%;
   min-height: 44px;
-  padding: var(--espacio-m);
+  padding: var(--espacio-s) var(--espacio-m);
   border: 1px solid var(--borde);
   border-radius: var(--radio);
   background: var(--bg);
@@ -430,10 +436,22 @@
   justify-self: end;
 }
 
+/* Icono de flecha de la fila (T2): sustituye al «→» literal. */
 .tema-ir {
   grid-area: ir;
+  justify-self: end;
+  width: 1.5em;
+  height: 1.5em;
   color: var(--accent);
-  font-weight: 700;
+  transition: transform 0.12s ease;
+}
+
+/* Idea 3: al pasar o pulsar, la flecha avanza (solo sin movimiento reducido) */
+@media (prefers-reduced-motion: no-preference) {
+  .tema:not(:disabled):hover .tema-ir,
+  .tema:not(:disabled):active .tema-ir {
+    transform: translateX(2px);
+  }
 }
 
 .tema-no-disponible {

@@ -19,7 +19,7 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 | 6 | Contenido real (temario ESO/Bachiller) y documentación | ⏳ Pendiente |
 | 7 | Escalado (miles de preguntas, cientos de temas, imágenes): disparadores, chunks, cachés y pipeline `sharp` | ⏳ Planificada (2026-10-07) · plan en `PLAN.md` §12 |
 | 8 | Mejoras de uso: «Todos los temas» por asignatura, estructura `cursos > asignaturas > temas` y widget de racha | 🔄 En curso (2026-10-08): §13.2 ✅ · §13.1 ✅ · pendiente §13.3 (widget) |
-| 9 | Pulido de interfaz (las 5 pantallas, manual): tipografía, iconos, microinteracciones, vacíos, ficha de examen y ajustes agrupados | 🔄 En curso (2026-10-08) · plan en `PLAN.md` §14 · T0 ✅ · T1 ✅ · pendiente T2–T8 |
+| 9 | Pulido de interfaz (las 5 pantallas, manual): tipografía, iconos, microinteracciones, vacíos, ficha de examen y ajustes agrupados | 🔄 En curso (2026-10-08) · plan en `PLAN.md` §14 · T0 ✅ · T1 ✅ · T2 ✅ · pendiente T3–T8 |
 
 ---
 
@@ -224,6 +224,17 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **Docs:** `PLAN.md` — T1 `[x]` con detalle, cifras obsoletas de §14 fuera («167 selectores», «300 comprobaciones») y **Fase 6: `AGENTS.md`/`MEMORY.md` marcadas `[x]`** (ya existían desde Fase 1; era doc pendiente detectada al revisar).
 - **Siguiente de la Fase 9:** **T2 · Inicio** (jerarquía de la tarjeta, chip de contador accesible, «→» → icono, densidad de `lista-temas`).
 - **Alcance:** `src/estilos/{base,app}.css`, `src/ui/iconos.ts` (nuevo), `src/ui/inicio.ts`, `src/aplicacion.ts`, `pruebas/pantallas.ts`, `PLAN.md` y esta entrada.
+
+### 2026-10-08 — Fase 9 · T2 COMPLETADA: jerarquía de Inicio, chip accesible, flecha y densidad
+
+- **Jerarquía de la tarjeta:** el `h2` del curso se queda **solo con el título** («2º ESO») y crece a `--texto-m`; con el curso desplegado su cabecera **se enciende en granate** (`.curso[open] .curso-titulo`). El `summary` queda `[h2] [chip] [chevron]`, con el chip de fondo `--bg` para que destaque sobre la tarjeta blanca.
+- **Chip de contador accesible:** el contador **sale del `h2`** (antes el encabezado leía «2º ESO4» y el número iba con `aria-hidden`) y ahora es chip hermano con texto visible **«N temas»** (nueva cadena `T.inicio.temas(n)`, con plural) y **sin `aria-hidden`** → el nombre accesible del curso suma los dos textos visibles (sin riesgo de `label-content-name-mismatch`).
+- **Fila de tema:** el `«→»` literal pasa a **`icono('flecha', 'tema-ir')`** en las dos filas (tema y «Todos los temas»), 1.5em, `currentColor`, decorativo. Idea 3: al pasar o pulsar la flecha **avanza 2px** (`translateX`), dentro de `@media (prefers-reduced-motion: no-preference)`. Las filas **bloqueadas** no la llevan: siguen mostrando «Necesitas al menos N preguntas».
+- **Densidad de `lista-temas`:** `gap` 0.5 → `--espacio-xs` (0.35), `padding` de `.tema` 0.75 → `--espacio-s`/`--espacio-m` (8/12 px) y `padding-bottom` de la lista a `--espacio-s`; `min-height: 44px` intacto ⇒ objetivos táctiles sin tocar.
+- **Tests: 363 → 368 comprobaciones** (`68 lógica + 43 persistencia + 212 pantallas + 45 datos`) y `build` en verde. Nuevas: chip sin `aria-hidden` y con «N temas», `h2` despojado del contador, filas jugables con `svg.tema-ir` y sin «→» en el texto, fila bloqueada sin flecha. **Autocorregido durante el desarrollo:** la primera versión del test de flechas exigía el icono también en la fila bloqueada (contradecía el diseño) → el test falló y se corrigió el test, no la app.
+- **Docs:** `PLAN.md` — T2 `[x]` con detalle; fila de estado de Fase 9 en `MEMORY.md`.
+- **Siguiente de la Fase 9:** **T3 · Cuestionario** (feedback con ✓/✗ + entrada animada, barra más expresiva, opciones con marca gráfica).
+- **Alcance:** `src/ui/{cadenas,inicio}.ts`, `src/estilos/app.css`, `pruebas/pantallas.ts`, `PLAN.md` y esta entrada.
 
 ---
 

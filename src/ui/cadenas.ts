@@ -21,6 +21,8 @@ export const T = {
     sinContenido: 'Todavía no hay ningún curso con preguntas.',
     sinTemas: 'Este curso todavía no tiene temas.',
     preguntas: (n: number) => `${n} pregunta${n === 1 ? '' : 's'}`,
+    /** Chip del contador de temas del curso (visible y accesible, T2) */
+    temas: (n: number) => `${n} tema${n === 1 ? '' : 's'}`,
     minimo: (n: number) => `Necesitas al menos ${n} preguntas para jugar`,
     mejorNota: (n: number) => `Mejor nota: ${n}`,
     sinNota: 'Sin jugar todavía',

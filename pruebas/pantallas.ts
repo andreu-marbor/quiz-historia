@@ -242,6 +242,13 @@ seccion('Pantalla de inicio');
     vista.querySelectorAll('summary h2').length === 2,
     'el título del curso es un h2 dentro de su summary',
   );
+  // T2 · jerarquía: el contador sale del `h2` y pasa a ser accesible
+  const chip = vista.querySelector('.curso-numero');
+  comprobar(chip !== null && !chip.hasAttribute('aria-hidden'), 'el chip del contador ya no se oculta (accesible)');
+  comprobar(
+    /^\d+ temas?$/.test(texto(chip!)) && !texto(vista.querySelector('summary h2')!).includes('temas'),
+    'el chip dice «N temas» y el h2 se queda solo con el título del curso',
+  );
   comprobar(
     vista.querySelectorAll('.asignatura-titulo').length === 2 &&
       [...vista.querySelectorAll('.asignatura-titulo')].every((e) => e.tagName === 'H3'),
@@ -266,8 +273,22 @@ seccion('Pantalla de inicio');
   const temas = botones(vista, '.tema:not(.tema--todos)');
   comprobar(temas.length === 3, `pinta los 3 temas (salieron ${temas.length})`);
 
+  // T2 · «→» literal → icono de flecha
+  comprobar(
+    [...conjuntos, ...temas].every((b) => b.disabled || b.querySelector('svg.tema-ir') !== null),
+    'todas las filas jugables llevan el icono de flecha en vez de «→»',
+  );
+  comprobar(
+    ![...conjuntos, ...temas].some((b) => texto(b).includes('→')),
+    'y el carácter «→» ya no aparece en el texto',
+  );
+
   const industrial = temas[1];
   comprobar(industrial.disabled, 'un tema con menos de minPreguntas queda deshabilitado');
+  comprobar(
+    industrial.querySelector('svg.tema-ir') === null && existe(industrial, '.tema-no-disponible'),
+    'la fila bloqueada explica el mínimo en vez de prometer flecha',
+  );
   comprobar(texto(industrial).includes('Necesitas al menos 4 preguntas'), 'explica por qué no se puede jugar');
   comprobar(
     !industrial.hasAttribute('aria-label'),

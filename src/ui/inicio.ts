@@ -17,6 +17,7 @@ import type { Asignatura, Curso, Tema } from '../logica/tipos';
 import { T } from './cadenas';
 import type { Contexto } from './contexto';
 import { h, vaciar } from './dom';
+import { icono } from './iconos';
 
 export function pintarInicio(vista: HTMLElement, ctx: Contexto): void {
   vaciar(vista);
@@ -45,12 +46,11 @@ function pintarCurso(ctx: Contexto, curso: Curso, abiertoPorDefecto: boolean): H
   const resumen = h(
     'summary',
     { class: 'curso-resumen' },
-    h(
-      'h2',
-      { class: 'curso-titulo' },
-      curso.titulo,
-      h('span', { class: 'curso-numero', 'aria-hidden': 'true' }, String(temas.length)),
-    ),
+    // El h2 se queda SOLO con el título del curso: el encabezado no se rellena
+    // con el contador, que va como chip hermano, visible y accesible (sin
+    // aria-hidden) → el nombre accesible del summary suma ambos textos.
+    h('h2', { class: 'curso-titulo' }, curso.titulo),
+    h('span', { class: 'curso-numero' }, T.inicio.temas(temas.length)),
   );
   detalle.append(resumen);
 
@@ -114,8 +114,10 @@ function pintarConjunto(ctx: Contexto, curso: Curso, asignatura: Asignatura): HT
     nota === undefined
       ? h('span', { class: 'insignia insignia--neutro' }, T.inicio.sinNota)
       : h('span', { class: `insignia ${claseInsignia(nota)}` }, T.inicio.mejorNota(nota)),
+    // Icono de flecha (decorativo, T2): el significado ya lo da el propio
+    // botón, así que va con aria-hidden y sin texto.
     jugable
-      ? h('span', { class: 'tema-ir', 'aria-hidden': 'true' }, '→')
+      ? icono('flecha', 'tema-ir')
       : h('span', { class: 'tema-no-disponible' }, T.inicio.minimo(minimo)),
   );
 
@@ -150,7 +152,7 @@ function pintarTema(ctx: Contexto, curso: Curso, asignatura: Asignatura, tema: T
       ? h('span', { class: 'insignia insignia--neutro' }, T.inicio.sinNota)
       : h('span', { class: `insignia ${claseInsignia(nota)}` }, T.inicio.mejorNota(nota)),
     jugable
-      ? h('span', { class: 'tema-ir', 'aria-hidden': 'true' }, '→')
+      ? icono('flecha', 'tema-ir')
       : h('span', { class: 'tema-no-disponible' }, T.inicio.minimo(tema.minPreguntas)),
   );
 
