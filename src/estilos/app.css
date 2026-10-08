@@ -20,36 +20,48 @@
   display: inline-block;
   padding: var(--espacio) var(--espacio) 0;
   color: var(--accent);
-  font-size: clamp(1.25rem, 4vw, 1.6rem);
+  font-family: var(--font-titulo);
+  font-size: var(--texto-marca);
   font-weight: 800;
   letter-spacing: -0.01em;
   text-decoration: none;
 }
 
 .navegacion {
-  padding: 0.5rem var(--espacio) 0.75rem;
+  padding: var(--espacio-s) var(--espacio) var(--espacio-m);
 }
 
 .navegacion ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: var(--espacio-s);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .navegacion a {
-  display: block;
-  padding: 0.55rem 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-xs);
+  padding: var(--espacio-s) var(--espacio);
   border: 1px solid transparent;
   border-radius: 999px;
   color: var(--texto);
   text-decoration: none;
+  transition:
+    background-color 0.12s ease,
+    border-color 0.12s ease,
+    color 0.12s ease;
 }
 
 .navegacion a:hover {
   background: var(--bg);
+}
+
+/* Estado pulsado (§14 T1): en móvil la navegación «se hunde» al tocar */
+.navegacion a:active:not([aria-current='page']) {
+  background: var(--borde);
 }
 
 .navegacion a[aria-current='page'] {
@@ -70,9 +82,9 @@
 }
 
 .pantalla-cabecera h1 {
-  margin: 0 0 0.25rem;
+  margin: 0 0 var(--espacio-2xs);
   color: var(--accent);
-  font-size: clamp(1.5rem, 6vw, 2.1rem);
+  font-size: var(--texto-h1);
 }
 
 .subtitulo,
@@ -87,7 +99,7 @@
 
 .bloque h2 {
   margin: 0 0 var(--espacio);
-  font-size: 1.15rem;
+  font-size: var(--texto-m);
 }
 
 /* --------------------------------------------------------------- botones */
@@ -96,17 +108,29 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: var(--espacio-xs);
   min-height: 44px;
-  padding: 0.6rem 1.1rem;
+  padding: var(--espacio-m) var(--espacio);
   border: 1px solid var(--borde);
   border-radius: var(--radio);
   background: var(--bg-secundario);
   color: var(--texto);
   cursor: pointer;
   text-decoration: none;
+  transition:
+    background-color 0.12s ease,
+    border-color 0.12s ease,
+    color 0.12s ease,
+    filter 0.12s ease,
+    transform 0.1s ease;
 }
 
 .boton:hover {
+  border-color: var(--accent);
+}
+
+/* Estado pulsado (§14 T1): en móvil «se hunde» al tocar */
+.boton:active:not(:disabled) {
   border-color: var(--accent);
 }
 
@@ -119,6 +143,10 @@
 
 .boton--primario:hover {
   filter: brightness(1.08);
+}
+
+.boton--primario:active:not(:disabled) {
+  filter: brightness(0.92);
 }
 
 .boton--fantasma {
@@ -144,10 +172,19 @@
   cursor: not-allowed;
 }
 
+/* El «hundirse» es movimiento: solo para quien no lo tiene reducido. */
+@media (prefers-reduced-motion: no-preference) {
+  .boton:active:not(:disabled),
+  .tema:active:not(:disabled),
+  .opcion:active:not(:disabled) {
+    transform: translateY(1px);
+  }
+}
+
 .acciones {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: var(--espacio-m);
   margin-top: calc(var(--espacio) * 1.5);
 }
 
@@ -174,8 +211,8 @@
 }
 
 .dialogo-titulo {
-  margin: 0 0 0.5rem;
-  font-size: 1.15rem;
+  margin: 0 0 var(--espacio-s);
+  font-size: var(--texto-m);
 }
 
 .dialogo-mensaje {
@@ -191,14 +228,21 @@
 
 .insignia {
   display: inline-block;
-  padding: 0.15rem 0.55rem;
+  padding: 0.15rem var(--espacio-s);
   border: 1px solid var(--borde);
   border-radius: 999px;
   background: var(--bg);
   color: var(--texto-tenue);
-  font-size: 0.85rem;
+  font-size: var(--texto-xs);
   font-weight: 600;
   white-space: nowrap;
+}
+
+/* «Sin jugar todavía»: se distingue de las de nota por el borde discontinuo
+   (antes era una clase muerta que no existía en el CSS, §14.1). */
+.insignia--neutro {
+  border-style: dashed;
+  background: var(--bg-secundario);
 }
 
 .insignia--alta {
@@ -220,8 +264,8 @@
 }
 
 .insignia--nueva {
-  padding: 0.4rem 0.8rem;
-  font-size: 1rem;
+  padding: var(--espacio-xs) var(--espacio-m);
+  font-size: var(--texto-base);
 }
 
 /* --------------------------------------------------------------- inicio */
@@ -234,35 +278,69 @@
   box-shadow: var(--sombra);
 }
 
+/* `summary`: sin `list-style: none` el navegador dibuja su propio disco (doble
+   en Safari) y encima con `inside` se mete en el texto (§14.1). Lo quitamos y
+   ponemos nuestro propio chevron, que gira al abrirse. */
 .curso-resumen {
-  padding: 0.9rem var(--espacio);
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-s);
+  padding: var(--espacio);
   cursor: pointer;
   font-weight: 700;
-  list-style-position: inside;
+  list-style: none;
+  transition: color 0.12s ease;
+}
+
+.curso-resumen::-webkit-details-marker {
+  display: none;
 }
 
 .curso-resumen:hover {
   color: var(--accent);
 }
 
+/* Estado pulsado (§14 T1) */
+.curso-resumen:active {
+  color: var(--accent);
+}
+
+.curso-resumen::after {
+  content: '';
+  flex: none;
+  width: 0.5em;
+  height: 0.5em;
+  margin-left: auto;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg);
+  transition: transform 0.15s ease;
+}
+
+.curso[open] > .curso-resumen::after {
+  transform: rotate(45deg);
+}
+
 /* El título del curso es un `h2` dentro del `summary` (el summary admite un
    encabezado): así el esquema queda h1 → h2 curso → h3 asignatura (§13.2). */
 .curso-titulo {
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: space-between;
+  min-width: 0;
   gap: var(--espacio);
   margin: 0;
-  font-size: 1rem;
+  font-size: var(--texto-base);
   font-weight: 700;
 }
 
 .curso-numero {
-  padding: 0.1rem 0.55rem;
+  padding: 0.1rem var(--espacio-s);
   border: 1px solid var(--borde);
   border-radius: 999px;
   color: var(--texto-tenue);
-  font-size: 0.85rem;
+  font-size: var(--texto-xs);
 }
 
 /* --- bloques de asignatura dentro de un curso (§13.2) --- */
@@ -278,10 +356,11 @@
 }
 
 .asignatura-titulo {
-  margin: 0 0 0.5rem;
+  margin: 0 0 var(--espacio-s);
   padding-top: 0.15rem;
   color: var(--texto-tenue);
-  font-size: 0.9rem;
+  font-family: var(--font-cuerpo);
+  font-size: var(--texto-s);
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -289,7 +368,7 @@
 
 .lista-temas {
   display: grid;
-  gap: 0.6rem;
+  gap: var(--espacio-s);
   margin: 0;
   padding: 0 0 var(--espacio);
   list-style: none;
@@ -302,16 +381,21 @@
     'nombre ir'
     'meta   insignia';
   align-items: center;
-  gap: 0.35rem 0.75rem;
+  gap: var(--espacio-xs) var(--espacio-m);
   width: 100%;
   min-height: 44px;
-  padding: 0.75rem;
+  padding: var(--espacio-m);
   border: 1px solid var(--borde);
   border-radius: var(--radio);
   background: var(--bg);
   color: var(--texto);
   text-align: left;
   cursor: pointer;
+  transition:
+    border-color 0.12s ease,
+    background-color 0.12s ease,
+    box-shadow 0.12s ease,
+    transform 0.1s ease;
 }
 
 .tema:hover:not(:disabled) {
@@ -338,7 +422,7 @@
 .tema-meta {
   grid-area: meta;
   color: var(--texto-tenue);
-  font-size: 0.9rem;
+  font-size: var(--texto-s);
 }
 
 .tema .insignia {
@@ -356,7 +440,7 @@
   grid-area: insignia;
   justify-self: end;
   color: var(--texto-tenue);
-  font-size: 0.85rem;
+  font-size: var(--texto-xs);
 }
 
 .tema:disabled {
@@ -375,15 +459,15 @@
 }
 
 .contador {
-  margin: 0 0 0.35rem;
+  margin: 0 0 var(--espacio-xs);
   color: var(--texto-tenue);
-  font-size: 0.95rem;
+  font-size: var(--texto-s);
   font-weight: 600;
 }
 
 .barra {
   height: 10px;
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--espacio-s);
   border-radius: 999px;
   background: var(--borde);
   overflow: hidden;
@@ -400,12 +484,12 @@
 
 .enunciado {
   margin: 0 0 var(--espacio);
-  font-size: clamp(1.2rem, 5vw, 1.5rem);
+  font-size: var(--texto-enunciado);
 }
 
 .opciones {
   display: grid;
-  gap: 0.6rem;
+  gap: var(--espacio-s);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -414,16 +498,21 @@
 .opcion {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: var(--espacio-s);
   width: 100%;
   min-height: 48px;
-  padding: 0.75rem 0.9rem;
+  padding: var(--espacio-m) var(--espacio);
   border: 2px solid var(--borde);
   border-radius: var(--radio);
   background: var(--bg-secundario);
   color: var(--texto);
   text-align: left;
   cursor: pointer;
+  transition:
+    border-color 0.12s ease,
+    background-color 0.12s ease,
+    color 0.12s ease,
+    transform 0.1s ease;
 }
 
 .opcion:hover:not(:disabled) {
@@ -468,7 +557,7 @@
 .feedback {
   min-height: 3rem;
   margin-top: var(--espacio);
-  padding: 0.85rem 1rem;
+  padding: var(--espacio-m) var(--espacio);
   border-left: 4px solid var(--borde);
   border-radius: 0 var(--radio) var(--radio) 0;
   background: var(--bg-secundario);
@@ -485,7 +574,7 @@
 }
 
 .feedback-titulo {
-  margin: 0 0 0.35rem;
+  margin: 0 0 var(--espacio-xs);
   font-weight: 800;
 }
 
@@ -498,7 +587,7 @@
 }
 
 .feedback-linea {
-  margin: 0 0 0.25rem;
+  margin: 0 0 var(--espacio-2xs);
 }
 
 .feedback-linea--correcta {
@@ -506,7 +595,7 @@
 }
 
 .feedback .explicacion {
-  margin: 0.5rem 0 0;
+  margin: var(--espacio-s) 0 0;
 }
 
 .pista {
@@ -529,24 +618,25 @@
 .nota {
   margin: 0;
   color: var(--accent);
-  font-size: clamp(3rem, 18vw, 4.5rem);
+  font-family: var(--font-titulo);
+  font-size: var(--texto-nota);
   font-weight: 800;
   line-height: 1;
 }
 
 .nota-maxima {
   color: var(--texto-tenue);
-  font-size: 1.2rem;
+  font-size: var(--texto-m);
   font-weight: 600;
 }
 
 .aciertos {
-  margin: 0.5rem 0 0.25rem;
+  margin: var(--espacio-s) 0 var(--espacio-2xs);
   font-weight: 600;
 }
 
 .veredicto {
-  margin: 0 0 0.75rem;
+  margin: 0 0 var(--espacio-m);
   color: var(--texto-tenue);
 }
 
@@ -560,7 +650,7 @@
 }
 
 .falladas li {
-  padding: 0.9rem 1rem;
+  padding: var(--espacio);
   border: 1px solid var(--borde);
   border-radius: var(--radio);
   background: var(--bg-secundario);
@@ -571,7 +661,7 @@
   content: counter(fallada) '.';
   display: inline-block;
   min-width: 2ch;
-  margin-right: 0.4rem;
+  margin-right: var(--espacio-xs);
   color: var(--texto-tenue);
   font-weight: 700;
 }
@@ -582,7 +672,7 @@
 }
 
 .falladas .linea {
-  margin: 0.5rem 0 0;
+  margin: var(--espacio-s) 0 0;
 }
 
 .linea--mal {
@@ -594,8 +684,8 @@
 }
 
 .falladas .explicacion {
-  margin: 0.6rem 0 0;
-  padding-left: 0.75rem;
+  margin: var(--espacio-s) 0 0;
+  padding-left: var(--espacio-m);
   border-left: 3px solid var(--borde);
   color: var(--texto);
 }
@@ -617,9 +707,9 @@
 }
 
 .tarjeta-titulo {
-  margin: 0 0 0.35rem;
+  margin: 0 0 var(--espacio-xs);
   color: var(--texto-tenue);
-  font-size: 0.9rem;
+  font-size: var(--texto-s);
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -628,15 +718,15 @@
 .tarjeta-valor {
   margin: 0;
   color: var(--accent);
-  font-size: 2.4rem;
+  font-size: var(--texto-cifra);
   font-weight: 800;
   line-height: 1;
 }
 
 .tarjeta-pie {
-  margin: 0.4rem 0 0;
+  margin: var(--espacio-xs) 0 0;
   color: var(--texto-tenue);
-  font-size: 0.9rem;
+  font-size: var(--texto-s);
 }
 
 .tabla-contenedor {
@@ -654,22 +744,22 @@
 }
 
 .tabla caption {
-  padding-bottom: 0.5rem;
+  padding-bottom: var(--espacio-s);
   color: var(--texto-tenue);
-  font-size: 0.9rem;
+  font-size: var(--texto-s);
   text-align: left;
 }
 
 .tabla th,
 .tabla td {
-  padding: 0.6rem 0.5rem;
+  padding: var(--espacio-s);
   border-bottom: 1px solid var(--borde);
   text-align: left;
 }
 
 .tabla thead th {
   color: var(--texto-tenue);
-  font-size: 0.85rem;
+  font-size: var(--texto-xs);
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
@@ -698,20 +788,20 @@ fieldset.ajuste {
 }
 
 .ajuste legend {
-  padding: 0 0.4rem;
+  padding: 0 var(--espacio-xs);
   font-weight: 700;
 }
 
 .ajuste > label:not(.control) {
   display: block;
-  margin-bottom: 0.35rem;
+  margin-bottom: var(--espacio-xs);
   font-weight: 600;
 }
 
 .ayuda {
-  margin: 0 0 0.75rem;
+  margin: 0 0 var(--espacio-m);
   color: var(--texto-tenue);
-  font-size: 0.9rem;
+  font-size: var(--texto-s);
 }
 
 .ajuste .ayuda:last-child {
@@ -721,7 +811,7 @@ fieldset.ajuste {
 .control {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--espacio-s);
   min-height: 44px;
   cursor: pointer;
 }
@@ -733,13 +823,13 @@ fieldset.ajuste {
 }
 
 .control--radio + .control--radio {
-  margin-top: 0.15rem;
+  margin-top: var(--espacio-2xs);
 }
 
 .control-select {
   width: 100%;
   min-height: 44px;
-  padding: 0.5rem 0.6rem;
+  padding: var(--espacio-s);
   border: 1px solid var(--borde);
   border-radius: var(--radio);
   background: var(--bg);
@@ -749,14 +839,14 @@ fieldset.ajuste {
 
 .aviso-estado {
   min-height: 1.4em;
-  margin: 0.25rem 0 0;
+  margin: var(--espacio-2xs) 0 0;
   color: var(--ok);
-  font-size: 0.9rem;
+  font-size: var(--texto-s);
   font-weight: 600;
 }
 
 .aviso {
-  padding: 0.75rem 1rem;
+  padding: var(--espacio-m) var(--espacio);
   border: 1px dashed var(--borde);
   border-radius: var(--radio);
   background: var(--bg-secundario);
@@ -776,11 +866,11 @@ fieldset.ajuste {
   }
 
   .navegacion ul {
-    gap: 0.35rem;
+    gap: var(--espacio-xs);
   }
 
   .navegacion a {
-    padding: 0.5rem 0.7rem;
-    font-size: 0.95rem;
+    padding: var(--espacio-s) var(--espacio-m);
+    font-size: var(--texto-s);
   }
 }

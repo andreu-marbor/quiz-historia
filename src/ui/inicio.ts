@@ -48,7 +48,7 @@ function pintarCurso(ctx: Contexto, curso: Curso, abiertoPorDefecto: boolean): H
     h(
       'h2',
       { class: 'curso-titulo' },
-      h('span', { class: 'curso-nombre' }, curso.titulo),
+      curso.titulo,
       h('span', { class: 'curso-numero', 'aria-hidden': 'true' }, String(temas.length)),
     ),
   );

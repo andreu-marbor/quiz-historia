@@ -45,6 +45,7 @@ import { pintarAjustes } from '../src/ui/ajustes';
 import { montarAplicacion } from '../src/aplicacion';
 import { aplicarRespuesta, pintarCuestionario } from '../src/ui/cuestionario';
 import { h } from '../src/ui/dom';
+import { icono, ICONOS } from '../src/ui/iconos';
 import { pintarInicio } from '../src/ui/inicio';
 import { pintarProgreso } from '../src/ui/progreso';
 import { pintarResultados } from '../src/ui/resultados';
@@ -300,6 +301,10 @@ seccion('Pantalla de inicio');
   pintarInicio(vista2, contexto({ progreso }));
   comprobar(texto(vista2).includes('Mejor nota: 85'), 'muestra la mejor nota del tema');
   comprobar(texto(vista2).includes('Sin jugar todavía'), 'los temas sin jugar lo indican');
+  comprobar(
+    existe(vista2, '.insignia--neutro'),
+    'con la clase que hoy sí tiene estilo propio (era clase muerta, §14.1)',
+  );
 
   // Catálogo vacío
   const vista3 = nuevaVista();
@@ -710,6 +715,36 @@ seccion('Pantalla de ajustes');
 }
 
 // ---------------------------------------------------------------------------
+seccion('Iconos SVG inline (Fase 9 · T1)');
+{
+  // Todo el catálogo cumple las mismas reglas: decorativos y heredando color.
+  for (const nombre of ICONOS) {
+    const svg = icono(nombre);
+    comprobar(
+      svg.tagName === 'svg' &&
+        svg.getAttribute('viewBox') === '0 0 24 24' &&
+        svg.getAttribute('aria-hidden') === 'true' &&
+        svg.getAttribute('focusable') === 'false' &&
+        svg.getAttribute('stroke') === 'currentColor' &&
+        svg.classList.contains('icono') &&
+        svg.querySelectorAll('path').length > 0,
+      `icono «${nombre}»: SVG con viewBox, decorativo (aria-hidden), currentColor y trazo`,
+    );
+  }
+  comprobar(ICONOS.includes('jugar') && ICONOS.includes('check'), 'el catálogo cubre nav, ✓ y ✗ (§14.2 idea 2)');
+
+  const conClase = icono('check', 'icono--grande');
+  comprobar(
+    conClase.classList.contains('icono') && conClase.classList.contains('icono--grande'),
+    'admite clases extra sin perder .icono',
+  );
+
+  // El icono no aporta texto: el nombre accesible sigue siendo el texto visible
+  const caja = h('a', { href: '#' }, icono('jugar'), 'Jugar');
+  comprobar(texto(caja) === 'Jugar', 'el icono no contamina el texto visible del enlace');
+}
+
+// ---------------------------------------------------------------------------
 await (async () => {
   seccion('Flujo completo: montar, jugar, guardar y navegar');
   // Empezamos de cero: una única app montada en el documento
@@ -724,6 +759,14 @@ await (async () => {
 
   comprobar(texto(document.querySelector('.marca')) === 'Repaso de Historia', 'arranca con su cabecera');
   comprobar(document.querySelectorAll('.navegacion a').length === 3, 'tres destinos en la navegación');
+  comprobar(
+    [...document.querySelectorAll('.navegacion a')].every((a) => a.querySelectorAll('svg.icono').length === 1),
+    'cada destino lleva su icono decorativo (T1)',
+  );
+  comprobar(
+    [...document.querySelectorAll('.navegacion a')].map((a) => texto(a)).join('|') === 'Jugar|Progreso|Ajustes',
+    'y el texto visible sigue mandando en el nombre accesible',
+  );
   comprobar(
     document.querySelector('.navegacion a[data-ruta="/"]')!.getAttribute('aria-current') === 'page',
     'marca la pestaña activa',

@@ -42,6 +42,7 @@ import { T } from './ui/cadenas';
 import { aplicarRespuesta, pintarCuestionario } from './ui/cuestionario';
 import type { Acciones, Contexto, Sesion, TemaDelResultado } from './ui/contexto';
 import { h, vaciar } from './ui/dom';
+import { icono, type NombreIcono } from './ui/iconos';
 import { pintarInicio } from './ui/inicio';
 import { pintarProgreso } from './ui/progreso';
 import { pintarResultados } from './ui/resultados';
@@ -77,10 +78,11 @@ export function montarAplicacion(raiz: HTMLElement, fuentes: Fuentes, almacen: A
   function montar(): void {
     vaciar(raiz);
 
-    const enlaces: Array<[string, string]> = [
-      ['/', T.nav.jugar],
-      ['/progreso', T.nav.progreso],
-      ['/ajustes', T.nav.ajustes],
+    // Icono decorativo + texto visible: el nombre accesible sigue siendo el texto
+    const enlaces: Array<[string, string, NombreIcono]> = [
+      ['/', T.nav.jugar, 'jugar'],
+      ['/progreso', T.nav.progreso, 'progreso'],
+      ['/ajustes', T.nav.ajustes, 'ajustes'],
     ];
 
     const navegacion = h(
@@ -89,8 +91,8 @@ export function montarAplicacion(raiz: HTMLElement, fuentes: Fuentes, almacen: A
       h(
         'ul',
         {},
-        ...enlaces.map(([ruta, texto]) =>
-          h('li', {}, h('a', { href: `#${ruta}`, 'data-ruta': ruta }, texto)),
+        ...enlaces.map(([ruta, texto, nombre]) =>
+          h('li', {}, h('a', { href: `#${ruta}`, 'data-ruta': ruta }, icono(nombre), texto)),
         ),
       ),
     );

@@ -292,8 +292,8 @@ Así quedan **incluidas en el bundle y la app funciona sin internet de serie**.
 
 - [ ] Cargar preguntas del temario real: 1º–4º ESO y 1º–2º Bachiller, por unidad.
 - [ ] Revisión pedagógica (que un profesor valide enunciados y explicaciones).
-- [ ] `AGENTS.md` del proyecto: flujo "editar JSON → validador → push → despliegue", convenciones, ubicación del keystore.
-- [ ] `MEMORY.md` con el registro de cambios (solo aditivo, como en `tres-en-raya`).
+- [x] `AGENTS.md` del proyecto: flujo "editar JSON → validador → push → despliegue", convenciones, ubicación del keystore. ✅ *Hecho en Fase 1; revisado con la Asignatura (§13.2).*
+- [x] `MEMORY.md` con el registro de cambios (solo aditivo, como en `tres-en-raya`). ✅ *Hecho; se lleva al día en cada cambio.*
 
 ### Fase 7 — Escalado de contenido e imágenes (por disparadores) ⏳
 
@@ -700,7 +700,7 @@ Por disparadores (§12.2). Las tres primeras tareas **no esperan a ningún dispa
 
 > Decisión del usuario: **todas las pantallas** y **todas las ideas** de la lista de abajo. Ejecución en la **Fase 9** (§5). Trabajo **manual**: primero se valoró una skill de diseño con API externa (Sleek) y el usuario la descartó — queda anotado por eso en `MEMORY.md` y `.gitignore`.
 
-**Objetivo.** Un pulido, **no un rediseño**: misma identidad (crema `#f7f5f0` + granate `#8c2f2f`, «papel de archivo»), mismas reglas duras (variables CSS, cadenas centralizadas, AA, `reduced-motion`, 300 comprobaciones verdes). **No toca** Fase 7 (§12) ni Fase 8 (§13).
+**Objetivo.** Un pulido, **no un rediseño**: misma identidad (crema `#f7f5f0` + granate `#8c2f2f`, «papel de archivo»), mismas reglas duras (variables CSS, cadenas centralizadas, AA, `reduced-motion`, las comprobaciones de `npm.cmd run prueba` en verde). **No toca** Fase 7 (§12) ni Fase 8 (§13).
 
 ### 14.1 Auditoría (hechos sobre el código, 2026-10-08)
 
@@ -737,10 +737,10 @@ Por disparadores (§12.2). Las tres primeras tareas **no esperan a ningún dispa
 
 ### 14.3 Orden de ejecución (T0–T8)
 
-Cada tarea = **commit + push** con `prueba` y `build` en verde; los selectores de `pruebas/pantallas.ts` (167) se actualizan **en la misma tarea** si cambia el DOM.
+Cada tarea = **commit + push** con `prueba` y `build` en verde; los selectores de `pruebas/pantallas.ts` se actualizan **en la misma tarea** si cambia el DOM.
 
 - [x] **T0 · Limpieza:** `.agents/` + `skills-lock.json` → `.gitignore` (skill de Sleek descartada, localmente conservable).
-- [ ] **T1 · Base común** (`base.css`, `app.css`, `src/ui/iconos.ts` nuevo): escala tipográfica por variables · iconos SVG inline (`aria-hidden` en los decorativos, cuidado con `label-content-name-mismatch`) · estados `:active` + transiciones cortas · escala de espaciado (`--espacio-s/m/l`) y fuera los sueltos · arreglar `insignia--neutro`, `curso-nombre` y el `summary`.
+- [x] **T1 · Base común** (`base.css`, `app.css`, `src/ui/iconos.ts` nuevo): escala tipográfica por variables · iconos SVG inline (`aria-hidden` en los decorativos, cuidado con `label-content-name-mismatch`) · estados `:active` + transiciones cortas · escala de espaciado (`--espacio-s/m/l`) y fuera los sueltos · arreglar `insignia--neutro`, `curso-nombre` y el `summary`. ✅ *(2026-10-08. Detalle: `--texto-*` (9 tamaños, de `xs` al `clamp()` de la nota) y `--espacio-2xs…l` (0.25–1.5rem) ⇒ **cero** `font-size`/`rem` suelto salvo los micro-ajustes ópticos de píldoras (0.1/0.15rem, comentado en `base.css`). `--font-titulo` (serif de sistema) en `h1/h2/h3`, `.marca` y `.nota`; `.asignatura-titulo` se queda en `--font-cuerpo` por ser una etiqueta versalita. `iconos.ts` con el catálogo de la idea 2 (jugar, progreso, ajustes, flecha, check, cruz, aviso) y **la nav ya lo usa** (texto visible sigue mandando). `:active` en `.boton`/`.tema`/`.opcion`/`.curso-resumen`/nav + transiciones de 0.12s; el «hundirse» (`translateY(1px)`) va dentro de `@media (prefers-reduced-motion: no-preference)`. `insignia--neutro` ahora existe (borde discontinuo), `curso-nombre` se elimina (no tenía regla) y el `summary` pasa a `list-style: none` + chevron propio que gira con `[open]`. Selectores de `pruebas/pantallas.ts` actualizados y +13 comprobaciones → **363**.)*
 - [ ] **T2 · Inicio:** jerarquía de la tarjeta de curso, chip de contador accesible, fila de tema con icono en vez de «→», densidad de `lista-temas`.
 - [ ] **T3 · Cuestionario:** feedback con ✓/✗ + entrada animada, barra más expresiva, opciones con marca gráfica (además de la letra y del color).
 - [ ] **T4 · Resultados:** «ficha de examen» — resumen (nota + aciertos + veredicto + mejor nota) y falladas mejor jerarquizadas.
@@ -753,7 +753,7 @@ Cada tarea = **commit + push** con `prueba` y `build` en verde; los selectores d
 
 | Riesgo | Mitigación |
 |---|---|
-| Romper los 167 tests de pantallas al cambiar el DOM | Selector nuevo + test en **la misma** tarea; `prueba` en verde antes de pushear |
+| Romper los tests de pantallas al cambiar el DOM | Selector nuevo + test en **la misma** tarea; `prueba` en verde antes de pushear |
 | Iconos inline alterando nombres accesibles | `aria-hidden` en decorativos; el texto visible manda (patrón ya usado en `inicio.ts`) |
 | Regresión del modo oscuro | Todo color nuevo **por variables**, con su pareja oscura en `base.css`; revisar a mano en cada tarea |
 | Animación incómoda | Todo bajo el `prefers-reduced-motion` global de `base.css` |

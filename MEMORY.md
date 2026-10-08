@@ -19,7 +19,7 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 | 6 | Contenido real (temario ESO/Bachiller) y documentación | ⏳ Pendiente |
 | 7 | Escalado (miles de preguntas, cientos de temas, imágenes): disparadores, chunks, cachés y pipeline `sharp` | ⏳ Planificada (2026-10-07) · plan en `PLAN.md` §12 |
 | 8 | Mejoras de uso: «Todos los temas» por asignatura, estructura `cursos > asignaturas > temas` y widget de racha | 🔄 En curso (2026-10-08): §13.2 ✅ · §13.1 ✅ · pendiente §13.3 (widget) |
-| 9 | Pulido de interfaz (las 5 pantallas, manual): tipografía, iconos, microinteracciones, vacíos, ficha de examen y ajustes agrupados | ⏳ Planificada (2026-10-08) · plan en `PLAN.md` §14 · T0 ✅ |
+| 9 | Pulido de interfaz (las 5 pantallas, manual): tipografía, iconos, microinteracciones, vacíos, ficha de examen y ajustes agrupados | 🔄 En curso (2026-10-08) · plan en `PLAN.md` §14 · T0 ✅ · T1 ✅ · pendiente T2–T8 |
 
 ---
 
@@ -212,6 +212,18 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **Docs:** `PLAN.md` — §13.1 y sus 6 tareas `[x]`, la extensión de §13.2 `[x]`, la Fase 8 marca §13.1 `[x]` y el diseño documenta el tipo `Seleccion` implementado.
 - **Siguiente de la Fase 8:** **§13.3** (widget de la racha en Android vía `intent://`), y después Fase 9 (pulido de interfaz T1–T8) o Fase 6 (contenido).
 - **Alcance:** `src/logica/{tipos,catalogo}.ts`, `src/aplicacion.ts`, `src/ui/{contexto,inicio,progreso,cadenas}.ts`, `src/estilos/app.css`, `pruebas/{logica,persistencia,pantallas}.ts` y `PLAN.md`.
+
+### 2026-10-08 — Fase 9 · T1 COMPLETADA: base común (escalas, iconos, `:active`, clases muertas)
+
+- **Escala tipográfica** (`base.css`): nuevos `--texto-xs/s/base/m` + `--texto-marca/h1/enunciado/nota/cifra` (los `clamp()` de antes ahora son variables). **Cero `font-size` suelto** en los CSS (comprobado con grep). Nuevos `--font-cuerpo` (system-ui, el de siempre) y **`--font-titulo`** = serif de sistema (`Iowan Old Style / Palatino Linotype / Palatino / Book Antiqua / Georgia`) aplicado a `h1, h2, h3`, `.marca` y `.nota` → **idea 1 sin descargar ninguna fuente** (sigue funcionando offline). `.asignatura-titulo` se queda en `--font-cuerpo` por ser una etiqueta versalita.
+- **Escala de espaciado:** `--espacio-2xs (0.25) / xs (0.35) / s (0.5) / m (0.75) / base (1) / l (1.5)` → todos los `margin/padding/gap` en variables. **Quedan 3 `rem` sueltos a propósito**: los micro-ajustes ópticos de píldoras (`0.1/0.15rem` en `.insignia`, `.curso-numero`, `padding-top` del `h3`), comentado en `base.css`. Desviaciones máximas al normalizar: ±0.15rem (≤2,4 px) en paddings de bloques.
+- **Iconos:** nuevo `src/ui/iconos.ts` con el catálogo de la idea 2 (**jugar, progreso, ajustes, flecha, check, cruz, aviso**), SVG de 24×24 con `stroke="currentColor"`, **`aria-hidden="true"` + `focusable="false"`** (el texto visible sigue mandando en el nombre accesible → sin riesgo de `label-content-name-mismatch`) y clase `.icono` (tamaño en `em`). **Úsalo ya la navegación** (`aplicacion.ts`); `flecha/check/cruz/aviso` están listas para T2/T3/T7. No se reutiliza `h()` porque un SVG necesita `createElementNS`.
+- **Microinteracciones (idea 3):** transiciones de 0.12 s en `.navegacion a`, `.boton`, `.tema`, `.opcion`, `.curso-resumen` (color/borde/fondo/transform) y estados **`:active`** en los cinco → en móvil «se hunde» al tocar. El `translateY(1px)` vive dentro de `@media (prefers-reduced-motion: no-preference)`; `.boton--primario:active` usa `filter: brightness(0.92)`.
+- **Clases muertas / `summary` (§14.1):** `.insignia--neutro` **ahora existe** (borde discontinuo + fondo `--bg-secundario`, distinto de las de nota); **`curso-nombre` eliminado** de `inicio.ts` (no tenía ninguna regla y el `h2` ya es flex); el `summary` pasa de `list-style-position: inside` (disco del navegador, doble en Safari) a **`list-style: none` + `::-webkit-details-marker` oculto + chevron propio** que gira con `details[open]` — para eso `.curso-resumen` es `flex` y `.curso-titulo` gana `flex: 1; min-width: 0`.
+- **Tests: 350 → 363 comprobaciones** (`68 lógica + 43 persistencia + 207 pantallas + 45 datos`) y `npm.cmd run build` en verde. Nuevas: sección «Iconos SVG inline» (el catálogo entero cumple viewBox/aria-hidden/currentColor/clases, + que no contamina el texto), icono en cada enlace de la nav con el texto visible intacto, y `.insignia--neutro` presente en Inicio.
+- **Docs:** `PLAN.md` — T1 `[x]` con detalle, cifras obsoletas de §14 fuera («167 selectores», «300 comprobaciones») y **Fase 6: `AGENTS.md`/`MEMORY.md` marcadas `[x]`** (ya existían desde Fase 1; era doc pendiente detectada al revisar).
+- **Siguiente de la Fase 9:** **T2 · Inicio** (jerarquía de la tarjeta, chip de contador accesible, «→» → icono, densidad de `lista-temas`).
+- **Alcance:** `src/estilos/{base,app}.css`, `src/ui/iconos.ts` (nuevo), `src/ui/inicio.ts`, `src/aplicacion.ts`, `pruebas/pantallas.ts`, `PLAN.md` y esta entrada.
 
 ---
 

@@ -5,6 +5,7 @@
  */
 
 :root {
+  /* --- color --- */
   --bg: #f7f5f0;
   --bg-secundario: #ffffff;
   --texto: #1d1b18;
@@ -17,9 +18,33 @@
   --error: #b42318;
   --error-fondo: #fbeae9;
   --aviso: #8a5a00;
+
+  /* --- tipografía: escala única (§14 T1). Ningún `font-size` suelto en la app. --- */
+  /* Cuerpo: system-ui (sin fuentes externas → la app sigue sin internet).
+     Títulos: serif de sistema, da carácter sin descargar nada. */
+  --font-cuerpo: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-titulo: 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+  --texto-xs: 0.85rem; /* píldoras, notas al pie */
+  --texto-s: 0.9rem; /* metadatos, ayudas */
+  --texto-base: 1rem; /* cuerpo */
+  --texto-m: 1.15rem; /* h2 de bloque, títulos de diálogo */
+  --texto-marca: clamp(1.25rem, 4vw, 1.6rem); /* cabecera de la app */
+  --texto-h1: clamp(1.5rem, 6vw, 2.1rem); /* h1 de pantalla */
+  --texto-enunciado: clamp(1.2rem, 5vw, 1.5rem); /* enunciado de la pregunta */
+  --texto-nota: clamp(3rem, 18vw, 4.5rem); /* nota de resultados */
+  --texto-cifra: 2.4rem; /* cifras grandes de Progreso */
+
+  /* --- espaciado: escala única (§14 T1). Ningún `rem` suelto en
+     margin/padding/gap salvo los micro-ajustes ópticos de píldoras. --- */
+  --espacio-2xs: 0.25rem;
+  --espacio-xs: 0.35rem;
+  --espacio-s: 0.5rem;
+  --espacio-m: 0.75rem;
+  --espacio: 1rem;
+  --espacio-l: 1.5rem;
+
   --radio: 10px;
   --radio-grande: 16px;
-  --espacio: 1rem;
   --sombra: 0 1px 3px rgb(0 0 0 / 12%);
   --maximo: 46rem;
   color-scheme: light dark;
@@ -69,14 +94,18 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--texto);
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-cuerpo);
+  font-size: var(--texto-base);
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
 }
 
+/* Títulos con carácter (§14.2 idea 1): serif de sistema. El cuerpo sigue
+   con `system-ui`; los títulos van por `--font-titulo`, que sí tiene personalidad. */
 h1,
 h2,
 h3 {
+  font-family: var(--font-titulo);
   line-height: 1.25;
   text-wrap: balance;
 }
@@ -116,6 +145,17 @@ button {
   clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
+}
+
+/* Iconos SVG inline (§14.2 idea 2): decorativos — el texto visible manda para
+   el nombre accesible (por eso `aria-hidden`, ver `src/ui/iconos.ts`).
+   Tamaño en `em` → escalan con el texto que acompañan. */
+.icono {
+  display: inline-block;
+  flex: none;
+  width: 1.15em;
+  height: 1.15em;
+  vertical-align: -0.2em;
 }
 
 @media (prefers-contrast: more) {
