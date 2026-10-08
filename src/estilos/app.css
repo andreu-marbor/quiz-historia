@@ -319,6 +319,17 @@
   box-shadow: var(--sombra);
 }
 
+/* Fila «Todos los temas de {asignatura}» (§13.1): mismo ancho, pero se
+   distingue de un tema concreto por el borde discontinuo granate. */
+.tema--todos {
+  border-color: var(--accent);
+  border-style: dashed;
+}
+
+.tema--todos .tema-nombre {
+  color: var(--accent);
+}
+
 .tema-nombre {
   grid-area: nombre;
   font-weight: 600;

@@ -6,13 +6,15 @@
 
 import type { PreguntaPresentada } from '../logica/barajado';
 import type { Resultado } from '../logica/correccion';
-import type { Catalogo, Pregunta } from '../logica/tipos';
+import type { Catalogo, Pregunta, Seleccion } from '../logica/tipos';
 import type { Ajustes, Progreso } from '../persistencia';
 
 /** Partida en curso. */
 export interface Sesion {
   cursoId: string;
-  temaId: string;
+  /** Tema concreto o «Todos los temas de {asignatura}» (§13.1) */
+  seleccion: Seleccion;
+  /** Clave en `progreso.temas`: `<curso>/<tema>` o `<curso>/__todos__/<asignatura>` */
   claveTema: string;
   cursoTitulo: string;
   temaTitulo: string;
@@ -28,8 +30,8 @@ export interface Sesion {
 
 /** Datos del tema del último resultado (para repetir). */
 export interface TemaDelResultado {
-  cursoId: string;
-  temaId: string;
+  /** Cómo se llegó a jugar: tema suelto o fila «Todos los temas» (§13.1) */
+  seleccion: Seleccion;
   cursoTitulo: string;
   temaTitulo: string;
 }
@@ -37,6 +39,8 @@ export interface TemaDelResultado {
 export interface Acciones {
   /** Empieza un cuestionario del tema elegido */
   elegirTema(cursoId: string, temaId: string): void;
+  /** Empieza un cuestionario con «Todos los temas de {asignatura}» (§13.1) */
+  elegirConjunto(cursoId: string, asignaturaId: string): void;
   /** Responde la pregunta en pantalla (índice en el orden mostrado) */
   responder(indice: number): void;
   /** Pasa a la siguiente pregunta o cierra el cuestionario */

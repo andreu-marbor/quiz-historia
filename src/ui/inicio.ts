@@ -4,7 +4,10 @@
 
 import {
   asignaturasDeCurso,
+  claveConjunto,
   cursosOrdenados,
+  minimoDeConjunto,
+  preguntasDeConjunto,
   preguntasDeTema,
   temasDeAsignatura,
   temasDelCurso,
@@ -74,11 +77,49 @@ function pintarAsignatura(ctx: Contexto, curso: Curso, asignatura: Asignatura): 
   if (temas.length === 0) return bloque; // el validador exige ≥1 tema por asignatura
 
   const lista = h('ul', { class: 'lista-temas' });
+  // Primero, la fila «Todos los temas de {asignatura}» (§13.1)
+  lista.append(pintarConjunto(ctx, curso, asignatura));
   for (const tema of temas) {
     lista.append(pintarTema(ctx, curso, asignatura, tema));
   }
   bloque.append(lista);
   return bloque;
+}
+
+/**
+ * Fila «Todos los temas de {asignatura}» (§13.1): juega con el banco de TODOS
+ * los temas de esa asignatura. Clave de progreso propia (`claveConjunto`), así
+ * que convive con las notas de cada tema suelto.
+ */
+function pintarConjunto(ctx: Contexto, curso: Curso, asignatura: Asignatura): HTMLElement {
+  const temas = temasDeAsignatura(asignatura);
+  const preguntas = preguntasDeConjunto(ctx.preguntasPorTema, curso, asignatura.id);
+  const minimo = minimoDeConjunto(temas);
+  const jugable = preguntas.length >= minimo;
+  const titulo = T.inicio.todosDe(asignatura.titulo);
+  const nota = ctx.progreso.temas[claveConjunto(curso.id, asignatura.id)]?.mejorNota;
+
+  const boton = h(
+    'button',
+    {
+      type: 'button',
+      class: 'tema tema--todos',
+      disabled: jugable ? undefined : true,
+      title: jugable ? undefined : T.inicio.minimo(minimo),
+      onclick: jugable ? () => ctx.acciones.elegirConjunto(curso.id, asignatura.id) : undefined,
+    },
+    h('span', { class: 'visualmente-oculto' }, `(${curso.titulo} · ${asignatura.titulo}) `),
+    h('span', { class: 'tema-nombre' }, titulo),
+    h('span', { class: 'tema-meta' }, T.inicio.preguntas(preguntas.length)),
+    nota === undefined
+      ? h('span', { class: 'insignia insignia--neutro' }, T.inicio.sinNota)
+      : h('span', { class: `insignia ${claseInsignia(nota)}` }, T.inicio.mejorNota(nota)),
+    jugable
+      ? h('span', { class: 'tema-ir', 'aria-hidden': 'true' }, '→')
+      : h('span', { class: 'tema-no-disponible' }, T.inicio.minimo(minimo)),
+  );
+
+  return h('li', {}, boton);
 }
 
 function pintarTema(ctx: Contexto, curso: Curso, asignatura: Asignatura, tema: Tema): HTMLElement {

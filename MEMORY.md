@@ -18,7 +18,7 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 | 5 | Android TWA (keystore nuevo, assetlinks, APK + tramo cerrado Play) | 🔄 En curso (2026-10-08): keystore + APK/AAB firmados + assetlinks ✅ · prueba en dispositivo ✅ · respaldo en el otro PC ✅ · pendiente: Play Console y fichas de la tienda |
 | 6 | Contenido real (temario ESO/Bachiller) y documentación | ⏳ Pendiente |
 | 7 | Escalado (miles de preguntas, cientos de temas, imágenes): disparadores, chunks, cachés y pipeline `sharp` | ⏳ Planificada (2026-10-07) · plan en `PLAN.md` §12 |
-| 8 | Mejoras de uso: «Todos los temas» por asignatura, estructura `cursos > asignaturas > temas` y widget de racha | 🔄 En curso (2026-10-08): §13.2 (estructura) ✅ · pendiente §13.1 (filas) y §13.3 (widget) |
+| 8 | Mejoras de uso: «Todos los temas» por asignatura, estructura `cursos > asignaturas > temas` y widget de racha | 🔄 En curso (2026-10-08): §13.2 ✅ · §13.1 ✅ · pendiente §13.3 (widget) |
 | 9 | Pulido de interfaz (las 5 pantallas, manual): tipografía, iconos, microinteracciones, vacíos, ficha de examen y ajustes agrupados | ⏳ Planificada (2026-10-08) · plan en `PLAN.md` §14 · T0 ✅ |
 
 ---
@@ -199,6 +199,19 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **Docs:** `PLAN.md` — §3 muestra ya el ejemplo **nuevo** de `temas.json`, Fase 8 §13.2 marcada `[x]` y tareas de §13.2 completadas (queda la de contenido de Historia del Arte y la §13.1).
 - **Siguiente:** **§13.1** — filas «Todos los temas de {asignatura}» con `claveConjunto(cursoId, asignaturaId)`.
 - **Alcance:** `datos/temas.json`, `src/logica/{tipos,catalogo}.ts`, `src/ui/{inicio,progreso,cadenas}.ts`, `src/estilos/app.css`, `scripts/validar-preguntas.mjs`, `pruebas/{datos,logica,pantallas}.ts` y `PLAN.md`.
+
+### 2026-10-08 — Fase 8 · §13.1 COMPLETADA: filas «Todos los temas de {asignatura}»
+
+- **Qué es:** cada bloque de asignatura de Inicio lleva ahora **primera** una fila **«Todos los temas de {asignatura}»** que arma un cuestionario con preguntas **mezcladas de todos los temas de esa asignatura y ese curso**. Rótulo **siempre con la asignatura** (nunca un «Todos los temas» a secas ni «Todo el curso»), en coherencia con la decisión de §13.2.
+- **Clave virtual:** `claveConjunto(cursoId, asignaturaId)` → `<curso>/__todos__/<asignatura>` (centralizada en `src/logica/catalogo.ts`; `__todos__` no puede ser un id válido porque el validador exige kebab-case ⇒ **no choca con ninguna clave real**). **Las claves existentes `<curso>/<tema>` no cambian** y el nuevo tipo `Seleccion` de `src/logica/tipos.ts` convive con ellas en `localStorage`.
+- **Lógica pura nueva** (`catalogo.ts`): `preguntasDeConjunto(indice, curso, asignaturaId)` (unión en orden, **colapsando ids repetidos**), `minimoDeConjunto(temas)` = `max(minPreguntas)` y `asignaturaDeCurso(curso, asignaturaId)`.
+- **Flujo:** nuevo `Acciones.elegirConjunto(cursoId, asignaturaId)`; `iniciar()` en `src/aplicacion.ts` pasa a recibir la **selección** (`tipo: 'tema' | 'conjunto'`) y deriva de ella banco, rótulo (`T.inicio.todosDe`) y clave. **`sesion.temaId` desaparece** en favor de `sesion.seleccion`; `estado.temaResultado` guarda la selección, así que **«Repetir solo las falladas» funciona también desde el pool**. `sesion.temaTitulo` = el rótulo → la cabecera del cuestionario y Resultados lo muestran **sin cambios**.
+- **UI:** `pintarConjunto()` en `inicio.ts` (misma retícula que un tema, clase `.tema--todos` con **borde discontinuo granate** y nombre en `--accent`, deshabilitada con el motivo si el pool < mínimo); `progreso.ts` pinta **una fila por clave virtual** (la del conjunto, primero) con su propia mejor nota e insignia. Nueva cadena **`T.inicio.todosDe`**; ninguna cadena genérica (§13.1: ni `todosLosTemas` ni `todoElCurso`).
+- **Tests: 315 → 350 comprobaciones**, todas verdes (`68 lógica + 43 persistencia + 194 pantallas + 45 datos`) y `build` en verde. Destacan: fila conjunta → clic → `elegirConjunto`; **flujo completo jugando el pool** (4 preguntas = 3 + 1 → nota 75 → clave `eso2/__todos__/historia` guardada **sin pisar** la del tema suelto → repetir falladas desde el pool → fila en Progreso); curso con **dos asignaturas → dos filas** con sus dos subtítulos; pool con ids repetidos colapsados; sorteo del conjunto con dificultades 2·2·1; clave virtual conviviendo con las de tema en `persistencia.ts`.
+- **Sin cambios de contenido ni migración:** sólo `datos/temas.json` ya estaba migrado en §13.2; ningún JSON de preguntas se tocó.
+- **Docs:** `PLAN.md` — §13.1 y sus 6 tareas `[x]`, la extensión de §13.2 `[x]`, la Fase 8 marca §13.1 `[x]` y el diseño documenta el tipo `Seleccion` implementado.
+- **Siguiente de la Fase 8:** **§13.3** (widget de la racha en Android vía `intent://`), y después Fase 9 (pulido de interfaz T1–T8) o Fase 6 (contenido).
+- **Alcance:** `src/logica/{tipos,catalogo}.ts`, `src/aplicacion.ts`, `src/ui/{contexto,inicio,progreso,cadenas}.ts`, `src/estilos/app.css`, `pruebas/{logica,persistencia,pantallas}.ts` y `PLAN.md`.
 
 ---
 

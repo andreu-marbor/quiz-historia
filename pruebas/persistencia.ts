@@ -142,6 +142,16 @@ seccion('Progreso: mejor nota, contadores y guardado');
   );
   comprobar(p.racha === 2 && p.cuestionarios === 4, 'la racha es global, no por tema');
 
+  // Clave virtual de la fila «Todos los temas de {asignatura}» (§13.1)
+  const conjunto = registrarCuestionario(p, 'eso2/__todos__/historia', 75, '2026-10-07');
+  comprobar(
+    Object.keys(conjunto.temas).length === 3 &&
+      conjunto.temas['eso2/__todos__/historia'].mejorNota === 75 &&
+      conjunto.temas['eso2/restauracion'].mejorNota === 85,
+    'la clave virtual del conjunto convive con las de los temas, sin pisarse',
+  );
+  comprobar(conjunto.cuestionarios === 5, 'y cuenta su cuestionario como cualquier otro');
+
   const fuera = registrarCuestionario(p, 'eso2/restauracion', 130, '2026-10-07');
   comprobar(fuera.temas['eso2/restauracion'].mejorNota === 100, 'la nota se acota a 100');
 

@@ -9,8 +9,11 @@ import {
   asignaturasDeCurso,
   buscarCurso,
   buscarTema,
+  claveConjunto,
   claveTema,
   cursosOrdenados,
+  minimoDeConjunto,
+  preguntasDeConjunto,
   preguntasDeTema,
   temasDeAsignatura,
   temasDelCurso,
@@ -345,6 +348,65 @@ seccion('Catálogo: orden, búsquedas y mínimo de preguntas');
   comprobar(
     elegidas.length === 6 && new Set(elegidas.map((p) => p.id)).size === 6,
     'un cuestionario completo de 6 nunca repite preguntas',
+  );
+
+  // --- §13.1: fila «Todos los temas de {asignatura}» ---
+  comprobar(
+    claveConjunto('2bach', 'historia') === '2bach/__todos__/historia',
+    'la clave del conjunto es `<curso>/__todos__/<asignatura>`',
+  );
+  comprobar(
+    claveConjunto('eso2', 'historia') !== claveTema('eso2', 'historia'),
+    'y nunca choca con la clave de un tema real',
+  );
+  comprobar(
+    claveConjunto('2bach', 'historia') !== claveConjunto('2bach', 'historia-del-arte'),
+    'dos asignaturas del mismo curso tienen claves distintas',
+  );
+
+  const idxConjunto = new Map<string, readonly Pregunta[]>([
+    ['eso2/restauracion', [crearPregunta('eso2-restauracion-001'), crearPregunta('eso2-restauracion-002')]],
+    [
+      'eso2/revolucion-industrial',
+      [
+        crearPregunta('eso2-restauracion-002'), // id repetido entre temas, a propósito
+        crearPregunta('eso2-revolucion-industrial-001'),
+      ],
+    ],
+  ]);
+  const conjunto = preguntasDeConjunto(idxConjunto, eso2!, 'historia');
+  comprobar(conjunto.length === 3, 'une los temas de la asignatura');
+  comprobar(
+    conjunto.map((p) => p.id).join() ===
+      'eso2-restauracion-001,eso2-restauracion-002,eso2-revolucion-industrial-001',
+    'en orden (temas ordenados) y colapsando los ids repetidos',
+  );
+  comprobar(
+    preguntasDeConjunto(idxConjunto, eso2!, 'sin-asignatura').length === 0,
+    'una asignatura inexistente devuelve banco vacío (sin lanzar)',
+  );
+  comprobar(
+    preguntasDeConjunto(idxConjunto, buscarCurso(catalogo, 'eso4')!, 'historia').length === 0,
+    'un curso sin asignaturas, igual',
+  );
+
+  comprobar(
+    minimoDeConjunto(temasDeAsignatura(asignaturasDeCurso(eso2!)[0])) === 6,
+    'el mínimo del conjunto es el MAYOR de sus temas (4 y 6 → 6)',
+  );
+  comprobar(minimoDeConjunto([]) === 0, 'un conjunto sin temas no exige nada');
+
+  // El sorteo del conjunto reparte las dificultades igual que el de un tema
+  const pool: Pregunta[] = [
+    ...[1, 2, 3].map((n) => crearPregunta(`c-c-${String(n).padStart(3, '0')}`, 1)),
+    ...[4, 5, 6].map((n) => crearPregunta(`c-c-${String(n).padStart(3, '0')}`, 2)),
+    ...[7, 8, 9].map((n) => crearPregunta(`c-c-${String(n).padStart(3, '0')}`, 3)),
+  ];
+  const sorteo = seleccionarPreguntas(pool, { cantidad: 5 }, fijo);
+  const nivel = (d: Dificultad): number => sorteo.filter((p) => p.dificultad === d).length;
+  comprobar(
+    sorteo.length === 5 && nivel(1) === 2 && nivel(2) === 2 && nivel(3) === 1,
+    `el sorteo del conjunto reparte las dificultades 2·2·1 (salió ${nivel(1)}·${nivel(2)}·${nivel(3)})`,
   );
 }
 

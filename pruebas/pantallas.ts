@@ -75,6 +75,7 @@ function accionesFalsas(): Acciones {
   const anotar = (nombre: string) => (...argumentos: unknown[]): void => void llamadas.push([nombre, ...argumentos]);
   return {
     elegirTema: anotar('elegirTema') as Acciones['elegirTema'],
+    elegirConjunto: anotar('elegirConjunto') as Acciones['elegirConjunto'],
     responder: anotar('responder') as Acciones['responder'],
     siguiente: anotar('siguiente') as Acciones['siguiente'],
     repetir: anotar('repetir') as Acciones['repetir'],
@@ -250,7 +251,18 @@ seccion('Pantalla de inicio');
     'el subtítulo muestra el nombre de la asignatura',
   );
 
-  const temas = botones(vista, '.tema');
+  const conjuntos = botones(vista, '.tema--todos');
+  comprobar(conjuntos.length === 2, 'una fila «Todos los temas» por asignatura (§13.1)');
+  comprobar(
+    texto(conjuntos[0]).includes('Todos los temas de Historia'),
+    'el rótulo de la fila conjunta lleva el nombre de la asignatura',
+  );
+  comprobar(
+    texto(conjuntos[0]).includes('4 preguntas'),
+    'suma las preguntas de todos los temas de la asignatura (3 + 1)',
+  );
+
+  const temas = botones(vista, '.tema:not(.tema--todos)');
   comprobar(temas.length === 3, `pinta los 3 temas (salieron ${temas.length})`);
 
   const industrial = temas[1];
@@ -265,6 +277,16 @@ seccion('Pantalla de inicio');
     'el nombre accesible suma el curso con texto oculto',
   );
 
+  conjuntos[0].click();
+  comprobar(
+    llamadas.length === 1 &&
+      llamadas[0][0] === 'elegirConjunto' &&
+      llamadas[0][1] === 'eso2' &&
+      llamadas[0][2] === 'historia',
+    'pulsar la fila «Todos los temas» arranca el cuestionario del conjunto',
+  );
+
+  llamadas = [];
   temas[0].click();
   comprobar(
     llamadas.length === 1 && llamadas[0][0] === 'elegirTema' && llamadas[0][1] === 'eso2' && llamadas[0][2] === 'restauracion',
@@ -283,6 +305,41 @@ seccion('Pantalla de inicio');
   const vista3 = nuevaVista();
   pintarInicio(vista3, contexto({ catalogo: { cursos: [] } }));
   comprobar(texto(vista3).includes('Todavía no hay ningún curso'), 'catálogo vacío: mensaje en lugar de pantalla en blanco');
+
+  // Un curso con DOS asignaturas → dos filas «Todos los temas», cada una con la suya (§13.1)
+  const dosAsignaturas: Catalogo = {
+    cursos: [
+      {
+        id: '2bach',
+        titulo: '2º Bachillerato',
+        orden: 1,
+        asignaturas: [
+          {
+            id: 'historia',
+            titulo: 'Historia',
+            orden: 1,
+            temas: [{ id: 'restauracion', titulo: 'La Restauración', orden: 1, minPreguntas: 2 }],
+          },
+          {
+            id: 'historia-del-arte',
+            titulo: 'Historia del Arte',
+            orden: 2,
+            temas: [{ id: 'renacimiento', titulo: 'El Renacimiento', orden: 1, minPreguntas: 2 }],
+          },
+        ],
+      },
+    ],
+  };
+  const vista4 = nuevaVista();
+  pintarInicio(vista4, contexto({ catalogo: dosAsignaturas }));
+  const filasDoble = botones(vista4, '.tema--todos');
+  comprobar(filasDoble.length === 2, 'hay una fila «Todos los temas» por asignatura, no una por curso');
+  comprobar(
+    texto(filasDoble[0]).includes('Todos los temas de Historia') &&
+      texto(filasDoble[1]).includes('Todos los temas de Historia del Arte'),
+    'cada una lleva su asignatura en el rótulo',
+  );
+  comprobar(vista4.querySelectorAll('.asignatura-titulo').length === 2, 'y cada bloque, su subtítulo (h3)');
 }
 
 // ---------------------------------------------------------------------------
@@ -294,7 +351,7 @@ seccion('Pantalla de cuestionario');
   );
   const sesion: Sesion = {
     cursoId: 'eso2',
-    temaId: 'restauracion',
+    seleccion: { tipo: 'tema', cursoId: 'eso2', temaId: 'restauracion' },
     claveTema: 'eso2/restauracion',
     cursoTitulo: '2º ESO',
     temaTitulo: 'Restauración borbónica',
@@ -429,7 +486,7 @@ seccion('Corrección con las opciones barajadas (INC-01)');
 
   const sesionBase: Sesion = {
     cursoId: 'eso2',
-    temaId: 'restauracion',
+    seleccion: { tipo: 'tema', cursoId: 'eso2', temaId: 'restauracion' },
     claveTema: 'eso2/restauracion',
     cursoTitulo: '2º ESO',
     temaTitulo: 'Restauración borbónica',
@@ -482,8 +539,7 @@ seccion('Pantalla de resultados');
     [1, 0, null, 2],
   );
   const temaResultado: TemaDelResultado = {
-    cursoId: 'eso2',
-    temaId: 'restauracion',
+    seleccion: { tipo: 'tema', cursoId: 'eso2', temaId: 'restauracion' },
     cursoTitulo: '2º ESO',
     temaTitulo: 'Restauración borbónica',
   };
@@ -534,6 +590,7 @@ seccion('Pantalla de progreso');
   let progreso = registrarCuestionario(progresoVacio(), 'eso2/restauracion', 85, '2026-10-06');
   progreso = registrarCuestionario(progreso, 'eso2/restauracion', 40, '2026-10-06');
   progreso = registrarCuestionario(progreso, 'eso4/contemporanea', 60, '2026-10-07');
+  progreso = registrarCuestionario(progreso, 'eso2/__todos__/historia', 75, '2026-10-07');
 
   const vista = nuevaVista();
   pintarProgreso(vista, contexto({ progreso }));
@@ -543,16 +600,22 @@ seccion('Pantalla de progreso');
   comprobar(tarjetas.length === 2, 'dos tarjetas: racha y cuestionarios');
   comprobar(tarjetas[0].querySelector('.tarjeta-valor')!.textContent === '2', 'racha de 2 días');
   comprobar(texto(tarjetas[0]).includes('2 días seguidos'), 'la racha se explica en palabras');
-  comprobar(tarjetas[1].querySelector('.tarjeta-valor')!.textContent === '3', '3 cuestionarios jugados');
+  comprobar(tarjetas[1].querySelector('.tarjeta-valor')!.textContent === '4', '4 cuestionarios jugados');
 
   const filas = [...vista.querySelectorAll('tbody tr')];
-  comprobar(filas.length === 2, 'una fila por tema con datos');
-  comprobar(filas[0].querySelector('th')!.textContent === 'Restauración borbónica', 'fila del tema');
-  comprobar(filas[0].querySelectorAll('td')[1]!.textContent === 'Historia', 'columna de asignatura (§13.2)');
-  comprobar(filas[0].querySelector('.insignia')!.textContent === '85', 'mejor nota (no la última)');
+  comprobar(filas.length === 3, 'una fila por clave con datos');
+  comprobar(
+    filas[0].querySelector('th')!.textContent === 'Todos los temas de Historia',
+    'la fila del conjunto convive con las de los temas (§13.1)',
+  );
+  comprobar(filas[0].querySelectorAll('td')[1]!.textContent === 'Historia', 'y también lleva su asignatura');
+  comprobar(filas[0].querySelector('.insignia')!.textContent === '75', 'con su propia mejor nota');
+  comprobar(filas[1].querySelector('th')!.textContent === 'Restauración borbónica', 'fila del tema');
+  comprobar(filas[1].querySelectorAll('td')[1]!.textContent === 'Historia', 'columna de asignatura (§13.2)');
+  comprobar(filas[1].querySelector('.insignia')!.textContent === '85', 'mejor nota (no la última)');
   comprobar(existe(vista, '.insignia--media'), 'la insignia colorea la nota (85 está en la banda media)');
   comprobar(
-    filas[0].querySelectorAll('td')[3]!.textContent === '2',
+    filas[1].querySelectorAll('td')[3]!.textContent === '2',
     'veces jugado en ese tema',
   );
   comprobar(vista.querySelectorAll('th[scope="col"]').length === 5, 'cabeceras de tabla con scope');
@@ -668,7 +731,7 @@ await (async () => {
   comprobar(texto(document.querySelector('#vista h1')) === 'Elige curso y tema', 'y arranca en el inicio');
 
   // --- jugar un cuestionario completo (2 aciertos, 1 fallo) ---
-  botones(document, '.tema')[0].click();
+  botones(document, '.tema:not(.tema--todos)')[0].click();
   comprobar(window.location.hash === '#/cuestionario', 'elegir tema lleva a #/cuestionario');
   comprobar(texto(document.querySelector('.contador')) === 'Pregunta 1 de 3', '3 preguntas (todas las disponibles)');
 
@@ -722,6 +785,50 @@ await (async () => {
   comprobar(window.location.hash === '#/', 'salir del cuestionario regresa al inicio');
   comprobar(texto(document.querySelector('#vista')).includes('Mejor nota: 67'), 'el inicio refleja la nota guardada');
 
+  // --- «Todos los temas de {asignatura}»: fila conjunta (§13.1) ---
+  const filasConjunto = botones(document, '.tema--todos');
+  comprobar(filasConjunto.length === 2, 'hay una fila «Todos los temas» por asignatura');
+  comprobar(
+    texto(filasConjunto[0]).includes('Todos los temas de Historia'),
+    'con el rótulo de su asignatura',
+  );
+  filasConjunto[0].click();
+  comprobar(window.location.hash === '#/cuestionario', 'la fila conjunta arranca su cuestionario');
+  comprobar(
+    texto(document.querySelector('.contexto')) === '2º ESO · Todos los temas de Historia',
+    'el contexto de juego lleva el rótulo del conjunto',
+  );
+  comprobar(texto(document.querySelector('.contador')) === 'Pregunta 1 de 4', 'el banco es la unión de sus temas (3 + 1)');
+
+  botones(document, '.opcion')[0].click(); // fallo
+  botones(document, '#siguiente')[0].click();
+  for (let i = 0; i < 3; i++) {
+    botones(document, '.opcion')[1].click(); // aciertos (sin barajar)
+    botones(document, '#siguiente')[0].click();
+  }
+
+  comprobar(window.location.hash === '#/resultados', 'y también termina en resultados');
+  comprobar(texto(document.querySelector('.nota')).startsWith('75'), 'nota 75 (3 de 4 aciertos)');
+  const guardadoConjunto = leerProgreso(almacen);
+  comprobar(
+    guardadoConjunto.temas['eso2/__todos__/historia']?.mejorNota === 75,
+    'la nota queda en la clave virtual del conjunto',
+  );
+  comprobar(
+    guardadoConjunto.temas['eso2/restauracion']?.mejorNota === 67,
+    'sin mezclarse con la del tema suelto',
+  );
+
+  botones(document, '.boton')
+    .find((b) => texto(b) === 'Repetir solo las falladas')!
+    .click();
+  comprobar(window.location.hash === '#/cuestionario', 'se pueden repetir las falladas del conjunto');
+  comprobar(texto(document.querySelector('.contador')) === 'Pregunta 1 de 1', 'tomadas del banco del conjunto');
+
+  botones(document, '.boton--fantasma')[0].click();
+  botones(document.querySelector('dialog.dialogo')!, '.boton--primario')[0].click();
+  comprobar(window.location.hash === '#/', 'y se puede salir al inicio');
+
   // --- navegar con los enlaces de la cabecera ---
   (document.querySelector('a[href="#/progreso"]') as HTMLAnchorElement).click();
   await esperar(() => texto(document.querySelector('#vista h1')) === 'Tu progreso');
@@ -731,7 +838,14 @@ await (async () => {
     document.querySelector('.navegacion a[data-ruta="/progreso"]')!.getAttribute('aria-current') === 'page',
     'y actualiza la pestaña activa',
   );
-  comprobar(document.querySelectorAll('tbody tr').length === 1, 'una fila: el único tema jugado');
+  comprobar(
+    document.querySelectorAll('tbody tr').length === 2,
+    'dos filas: el tema suelto y la fila del conjunto (§13.1)',
+  );
+  comprobar(
+    texto(document.querySelector('tbody tr th')) === 'Todos los temas de Historia',
+    'y la del conjunto va primero, con su clave propia',
+  );
   comprobar(texto(document.querySelector('.tarjeta-valor')) === '1', 'racha de 1 día');
 
   (document.querySelector('a[href="#/ajustes"]') as HTMLAnchorElement).click();

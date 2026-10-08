@@ -25,6 +25,8 @@ export const T = {
     mejorNota: (n: number) => `Mejor nota: ${n}`,
     sinNota: 'Sin jugar todavía',
     jugar: 'Jugar a',
+    /** Fila «Todos los temas de {asignatura}» (§13.1) */
+    todosDe: (asignatura: string) => `Todos los temas de ${asignatura}`,
   },
 
   cuestionario: {

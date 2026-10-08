@@ -10,10 +10,21 @@
  */
 
 import { presentarPregunta } from './logica/barajado';
-import { buscarCurso, buscarTema, claveTema, preguntasDeTema, temaJugable } from './logica/catalogo';
+import {
+  asignaturaDeCurso,
+  buscarCurso,
+  buscarTema,
+  claveConjunto,
+  claveTema,
+  minimoDeConjunto,
+  preguntasDeConjunto,
+  preguntasDeTema,
+  temasDeAsignatura,
+  temaJugable,
+} from './logica/catalogo';
 import { resumir, type Resultado } from './logica/correccion';
 import { seleccionarPreguntas } from './logica/seleccion';
-import type { Catalogo, Pregunta } from './logica/tipos';
+import type { Catalogo, Pregunta, Seleccion } from './logica/tipos';
 import {
   borrarProgreso as borrarProgresoAlmacen,
   guardarAjustes,
@@ -182,7 +193,11 @@ export function montarAplicacion(raiz: HTMLElement, fuentes: Fuentes, almacen: A
 
   const acciones: Acciones = {
     elegirTema(cursoId, temaId) {
-      iniciar(cursoId, temaId, null);
+      iniciar({ tipo: 'tema', cursoId, temaId }, null);
+    },
+
+    elegirConjunto(cursoId, asignaturaId) {
+      iniciar({ tipo: 'conjunto', cursoId, asignaturaId }, null);
     },
 
     responder(indice) {
@@ -211,7 +226,7 @@ export function montarAplicacion(raiz: HTMLElement, fuentes: Fuentes, almacen: A
       const tema = estado.temaResultado;
       if (!tema) return;
       const ids = soloFalladas && estado.resultado ? estado.resultado.falladas.map((p) => p.id) : null;
-      iniciar(tema.cursoId, tema.temaId, ids);
+      iniciar(tema.seleccion, ids);
     },
 
     cambiarAjustes(cambios) {
@@ -240,18 +255,50 @@ export function montarAplicacion(raiz: HTMLElement, fuentes: Fuentes, almacen: A
   // Partida
   // ---------------------------------------------------------------------
 
-  function iniciar(cursoId: string, temaId: string, idsFalladas: readonly string[] | null): void {
-    const curso = buscarCurso(fuentes.catalogo, cursoId);
-    const tema = curso ? buscarTema(curso, temaId) : undefined;
-    if (!curso || !tema) {
+  /**
+   * Monta la partida a partir de la **selección** (§13.1): un tema concreto o la
+   * fila «Todos los temas de {asignatura}». `idsFalladas` restringe el banco a
+   * esas preguntas (botón «Repetir solo las falladas»).
+   */
+  function iniciar(seleccion: Seleccion, idsFalladas: readonly string[] | null): void {
+    const curso = buscarCurso(fuentes.catalogo, seleccion.cursoId);
+    if (!curso) {
       navegar('/');
       return;
     }
 
-    const disponibles = preguntasDeTema(fuentes.preguntasPorTema, cursoId, temaId);
-    if (!temaJugable(disponibles, tema)) {
-      navegar('/');
-      return;
+    // Banco disponible, título visible y clave de progreso de lo elegido
+    let disponibles: readonly Pregunta[];
+    let titulo: string;
+    let clave: string;
+
+    if (seleccion.tipo === 'tema') {
+      const tema = buscarTema(curso, seleccion.temaId);
+      if (!tema) {
+        navegar('/');
+        return;
+      }
+      disponibles = preguntasDeTema(fuentes.preguntasPorTema, curso.id, tema.id);
+      if (!temaJugable(disponibles, tema)) {
+        navegar('/');
+        return;
+      }
+      titulo = tema.titulo;
+      clave = claveTema(curso.id, tema.id);
+    } else {
+      const asignatura = asignaturaDeCurso(curso, seleccion.asignaturaId);
+      if (!asignatura) {
+        navegar('/');
+        return;
+      }
+      const temas = temasDeAsignatura(asignatura);
+      disponibles = preguntasDeConjunto(fuentes.preguntasPorTema, curso, asignatura.id);
+      if (disponibles.length < minimoDeConjunto(temas)) {
+        navegar('/');
+        return;
+      }
+      titulo = T.inicio.todosDe(asignatura.titulo);
+      clave = claveConjunto(curso.id, asignatura.id);
     }
 
     const candidatas = idsFalladas
@@ -269,11 +316,11 @@ export function montarAplicacion(raiz: HTMLElement, fuentes: Fuentes, almacen: A
     const preguntas = elegidas.map((p) => presentarPregunta(p, { barajar: ajustes.barajarOpciones }));
 
     estado.sesion = {
-      cursoId,
-      temaId,
-      claveTema: claveTema(cursoId, temaId),
+      cursoId: curso.id,
+      seleccion,
+      claveTema: clave,
       cursoTitulo: curso.titulo,
-      temaTitulo: tema.titulo,
+      temaTitulo: titulo,
       preguntas,
       respuestas: preguntas.map(() => null),
       actual: 0,
@@ -298,8 +345,7 @@ export function montarAplicacion(raiz: HTMLElement, fuentes: Fuentes, almacen: A
 
     estado.resultado = resultado;
     estado.temaResultado = {
-      cursoId: sesion.cursoId,
-      temaId: sesion.temaId,
+      seleccion: sesion.seleccion,
       cursoTitulo: sesion.cursoTitulo,
       temaTitulo: sesion.temaTitulo,
     };

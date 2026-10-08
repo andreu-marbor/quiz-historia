@@ -2,7 +2,13 @@
  * Pantalla de progreso (R/04): racha, cuestionarios jugados y mejor nota por tema.
  */
 
-import { asignaturasDeCurso, claveTema, cursosOrdenados, temasDeAsignatura } from '../logica/catalogo';
+import {
+  asignaturasDeCurso,
+  claveConjunto,
+  claveTema,
+  cursosOrdenados,
+  temasDeAsignatura,
+} from '../logica/catalogo';
 import { T } from './cadenas';
 import type { Contexto } from './contexto';
 import { h, vaciar } from './dom';
@@ -38,6 +44,17 @@ export function pintarProgreso(vista: HTMLElement, ctx: Contexto): void {
   const filas: Fila[] = [];
   for (const curso of cursosOrdenados(ctx.catalogo)) {
     for (const asignatura of asignaturasDeCurso(curso)) {
+      // Fila «Todos los temas de {asignatura}»: clave virtual propia (§13.1)
+      const conjunto = progreso.temas[claveConjunto(curso.id, asignatura.id)];
+      if (conjunto) {
+        filas.push({
+          curso: curso.titulo,
+          asignatura: asignatura.titulo,
+          tema: T.inicio.todosDe(asignatura.titulo),
+          mejor: conjunto.mejorNota,
+          jugados: conjunto.jugados,
+        });
+      }
       for (const tema of temasDeAsignatura(asignatura)) {
         const dato = progreso.temas[claveTema(curso.id, tema.id)];
         if (!dato) continue;

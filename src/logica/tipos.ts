@@ -54,3 +54,13 @@ export interface Curso {
 export interface Catalogo {
   cursos: Curso[];
 }
+
+/**
+ * Qué se va a jugar (§13.1): un tema concreto o la fila virtual
+ * «Todos los temas de {asignatura}».
+ * `temaId` solo existe en `tipo: "tema"`; en el conjunto, la clave de progreso
+ * se construye con `claveConjunto(cursoId, asignaturaId)`.
+ */
+export type Seleccion =
+  | { tipo: 'tema'; cursoId: string; temaId: string }
+  | { tipo: 'conjunto'; cursoId: string; asignaturaId: string };

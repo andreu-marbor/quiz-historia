@@ -306,7 +306,7 @@ Así quedan **incluidas en el bundle y la app funciona sin internet de serie**.
 > Plan detallado en **[§13](#13-mejoras-previstas-2026-10-08)**. Sin fecha; se ejecuta cuando toque. **Orden: 13.2 → 13.1 → 13.3** — primero la estructura obligatoria `cursos > asignaturas > temas` (sin ella no hay bloques de asignatura donde pintar las filas); §13.1 y §13.2 se tocan, así que conviene hacerlas juntas. §13.3 va independiente.
 
 - [x] §13.2 · **Estructura obligatoria `cursos > asignaturas > temas`** en el catálogo: migrar `datos/temas.json` (todos los cursos envueltos en «Historia»), tipos, `datos.ts`, UI con subtítulos, validador con reglas obligatorias y tests — 2º Bachillerato llevará además Historia del Arte. ✅ *(2026-10-08; ver §13.2)*
-- [ ] §13.1 · Filas **«Todos los temas de {asignatura}»** en cada bloque de asignatura (pool mezclado de esa asignatura y curso, clave virtual por fila, *repetir falladas* incluido).
+- [x] §13.1 · Filas **«Todos los temas de {asignatura}»** en cada bloque de asignatura (pool mezclado de esa asignatura y curso, clave virtual por fila, *repetir falladas* incluido). ✅ *(2026-10-08; ver §13.1)*
 - [ ] §13.3 · **Widget nativo** de Android con la racha + puente `intent://` desde la web (despliegue en dos pasos).
 - [ ] Verdes al terminar cada tarea: `npm.cmd run prueba` y `npm.cmd run build` (los tests actuales no deben cambiar de significado y **los progresos guardados no deben perderse**: sus claves `<curso>/<tema>` no cambian).
 
@@ -558,18 +558,18 @@ Por disparadores (§12.2). Las tres primeras tareas **no esperan a ningún dispa
 - `src/logica/catalogo.ts` gana tres funciones **puras**:
   - `preguntasDeConjunto(indice, curso, asignaturaId)` → concatenación de `preguntasDeTema` de los temas **de esa asignatura y curso**, **sin duplicados por `id`** y en orden;
   - `minimoDeConjunto(temas)` → `max(temas.minPreguntas)` (umbral de «jugable», igual que `temaJugable`).
-- `src/aplicacion.ts` → `iniciar(cursoId, temaId, idsFalladas)` pasa a recibir la **selección** (`{ temaId }` o `{ temaIds, titulo, clave }`, con `clave` de `claveConjunto`). El resto del flujo **no cambia**: `seleccionarPreguntas` ya baraja y ya reparte 1·2·3, y si `ajustes.preguntas` supera al pool devuelve el pool entero.
+- `src/aplicacion.ts` → `iniciar(cursoId, temaId, idsFalladas)` pasa a recibir la **selección**: el tipo `Seleccion` de `src/logica/tipos.ts` (`{ tipo: 'tema', cursoId, temaId }` o `{ tipo: 'conjunto', cursoId, asignaturaId }`), del que `iniciar()` deriva banco, rótulo (`T.inicio.todosDe`) y clave (`claveConjunto`). `Acciones` gana `elegirConjunto(cursoId, asignaturaId)` junto a `elegirTema`. El resto del flujo **no cambia**: `seleccionarPreguntas` ya baraja y ya reparte 1·2·3, y si `ajustes.preguntas` supera al pool devuelve el pool entero.
 - `sesion.temaTitulo` = el rótulo de la fila (**«Todos los temas de Historia»**) → la cabecera `curso · tema` del cuestionario y la pantalla de Resultados lo muestran sin cambios.
 - **Progreso**: una fila por clave virtual con su mejor nota (misma insignia `claseInsignia`).
 
 **Tareas**
 
-- [ ] `claveConjunto`, `preguntasDeConjunto` y `minimoDeConjunto` en `src/logica/catalogo.ts` (las tres, puras).
-- [ ] Generalizar `iniciar()` en `src/aplicacion.ts` y **guardar la selección en `estado.temaResultado`**, para que «Repetir solo las falladas» funcione desde el pool (hoy `repetir()` rehace `iniciar(tema.cursoId, tema.temaId, ids)`).
-- [ ] Fila «Todos los temas de {asignatura}» en `src/ui/inicio.ts` → `pintarCurso()`, **primera de cada bloque de asignatura**, clase propia `tema--todos`, deshabilitada con motivo si el pool < mínimo.
-- [ ] Fila equivalente en `src/ui/progreso.ts`, una por clave virtual.
-- [ ] Cadena nueva en `src/ui/cadenas.ts`: `inicio.todosDe(asignatura)` → «Todos los temas de {asignatura}». **No** se crean `inicio.todosLosTemas` (el genérico ya no aplica: el rótulo lleva siempre la asignatura) ni `inicio.todoElCurso` (mezclar materias queda fuera de alcance).
-- [ ] Tests: `pruebas/logica.ts` (pool sin duplicados · mínimo · dificultades repartidas), `pruebas/pantallas.ts` (fila visible → se juega → resultados → *repetir falladas* desde el pool → fila en Progreso; y con dos asignaturas, **dos filas con claves distintas**), `pruebas/persistencia.ts` (las claves virtuales conviven con el progreso existente y se borran con él).
+- [x] `claveConjunto`, `preguntasDeConjunto` y `minimoDeConjunto` en `src/logica/catalogo.ts` (las tres, puras). ✅
+- [x] Generalizar `iniciar()` en `src/aplicacion.ts` (recibe la **selección**, tipo `Seleccion` de `src/logica/tipos.ts`) y **guardar la selección en `estado.temaResultado`**, para que «Repetir solo las falladas» funcione desde el pool (hoy `repetir()` rehace `iniciar(tema.cursoId, tema.temaId, ids)`). ✅
+- [x] Fila «Todos los temas de {asignatura}» en `src/ui/inicio.ts` → `pintarCurso()`, **primera de cada bloque de asignatura**, clase propia `tema--todos`, deshabilitada con motivo si el pool < mínimo. ✅
+- [x] Fila equivalente en `src/ui/progreso.ts`, una por clave virtual. ✅
+- [x] Cadena nueva en `src/ui/cadenas.ts`: `inicio.todosDe(asignatura)` → «Todos los temas de {asignatura}». **No** se crean `inicio.todosLosTemas` (el genérico ya no aplica: el rótulo lleva siempre la asignatura) ni `inicio.todoElCurso` (mezclar materias queda fuera de alcance). ✅
+- [x] Tests: `pruebas/logica.ts` (pool sin duplicados · mínimo · dificultades repartidas), `pruebas/pantallas.ts` (fila visible → se juega → resultados → *repetir falladas* desde el pool → fila en Progreso; y con dos asignaturas, **dos filas con claves distintas**), `pruebas/persistencia.ts` (las claves virtuales conviven con el progreso existente y se borran con él). ✅
 
 **Riesgos**
 
@@ -636,7 +636,7 @@ Por disparadores (§12.2). Las tres primeras tareas **no esperan a ningún dispa
 - [x] Adaptar `src/ui/inicio.ts` (curso → subtítulo de asignatura → temas) y `src/ui/progreso.ts` (+ columna «Asignatura»). `src/datos.ts` y `src/aplicacion.ts` **no necesitaron cambios**: el índice sigue siendo `<curso>/<tema>` y `buscarTema` no cambió de firma. ✅
 - [x] Validador + `pruebas/datos.ts` con las reglas obligatorias de arriba (curso sin asignaturas, forma antigua con `temas`, campos desconocidos, id de tema repetido entre asignaturas, `orden` repetido dentro de una asignatura). ✅
 - [x] Migrar los fixtures de catálogo de `pruebas/` y actualizar `pruebas/logica.ts` y `pruebas/pantallas.ts` (315 comprobaciones). ✅
-- [ ] Extensión de §13.1: las filas pasan a ser **una por asignatura**, cada una con su propia clave virtual.
+- [x] Extensión de §13.1: las filas pasan a ser **una por asignatura**, cada una con su propia clave virtual. ✅
 - [ ] Contenido: primeros temas de Historia del Arte de 2º Bachillerato (puede caer en la Fase 6).
 
 **Riesgos**
