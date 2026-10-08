@@ -5,9 +5,12 @@
  * RemoteViews: cifra grande + «días», o «—» + «Juega hoy». No necesita red:
  * todo vive en el dispositivo, así que funciona igual sin conexión.
  *
- * **La misma regla que `avanzarRacha()` en la web:** si hace más de un día que
- * no hay actividad la racha está rota y NO se enseña un número viejo (se
- * mostraría «5 días» una semana después de dejar de jugar).
+ * **Recordatorio diario, no vitrina:** la cifra solo sale si la última
+ * actividad es de **hoy**. Si fue ayer (la racha sigue viva en la web) o hace
+ * más, se enseña «—» + «Juega hoy»: el widget empuja a jugar, y desde luego
+ * nunca un número viejo («5 días» una semana después de dejar de jugar).
+ * La web sí sigue mostrando la racha mientras no pasen dos días: es la
+ * pantalla de Progreso (el récord) y este es el recordatorio de hoy.
  *
  * Las fuentes viven en `android/widget/` y se copian a `app/` con
  * `node scripts/aplicar-widget.mjs` (nunca a mano: `app/` es generado).
@@ -35,8 +38,10 @@ class WidgetRachaProvider : AppWidgetProvider() {
         appWidgetManager: AppWidgetManager,
         appWidgetIds: IntArray,
     ) {
-        // `updatePeriodMillis="0"`: esto solo salta al añadir el widget o al
-        // reencender el dispositivo, el resto de veces lo llamamos nosotros.
+        // `updatePeriodMillis="1800000"` (30 min, el mínimo que acepta Android):
+        // sin este refresco esto solo saltaría al añadir el widget, al
+        // reencender y al actualizar la app, y «Juega hoy» no llegaría a
+        // pintarse al pasar la medianoche hasta que el alumno abriera la app.
         for (id in appWidgetIds) pintar(context, appWidgetManager, id)
     }
 
@@ -52,18 +57,28 @@ class WidgetRachaProvider : AppWidgetProvider() {
         private fun pintar(context: Context, manager: AppWidgetManager, id: Int) {
             val prefs =
                 context.getSharedPreferences(WidgetBridgeActivity.PREFERENCIAS, Context.MODE_PRIVATE)
+
+            // `contains` = «¿ha llegado algún envío del puente?». Un móvil con la
+            // app recién instalada —o recién actualizada, la primera vez que
+            // corre el puente— todavía no tiene nada guardado: en ese caso no se
+            // miente, se enseña «Abre la app» en vez de un «Juega hoy» falso.
+            val sincronizado = prefs.contains(WidgetBridgeActivity.CLAVE_RACHA)
             val racha = prefs.getInt(WidgetBridgeActivity.CLAVE_RACHA, 0)
             val ultimoDia = prefs.getString(WidgetBridgeActivity.CLAVE_ULTIMO_DIA, "").orEmpty()
-            val vigente = rachaVigente(racha, ultimoDia)
+
+            val sinRacha = context.getString(R.string.widget_sin_racha)
+            val (valor, etiqueta) = when {
+                !sincronizado -> sinRacha to context.getString(R.string.widget_abre)
+                else -> {
+                    val vigente = rachaVigente(racha, ultimoDia)
+                    if (vigente != null) vigente.toString() to context.getString(R.string.widget_dias)
+                    else sinRacha to context.getString(R.string.widget_juega)
+                }
+            }
 
             val vistas = RemoteViews(context.packageName, R.layout.widget_racha)
-            if (vigente != null) {
-                vistas.setTextViewText(R.id.widget_valor, vigente.toString())
-                vistas.setTextViewText(R.id.widget_etiqueta, context.getString(R.string.widget_dias))
-            } else {
-                vistas.setTextViewText(R.id.widget_valor, context.getString(R.string.widget_sin_racha))
-                vistas.setTextViewText(R.id.widget_etiqueta, context.getString(R.string.widget_juega))
-            }
+            vistas.setTextViewText(R.id.widget_valor, valor)
+            vistas.setTextViewText(R.id.widget_etiqueta, etiqueta)
 
             // Tocar el widget abre la app (mismo lanzador que el icono).
             vistas.setOnClickPendingIntent(R.id.widget_fondo, abrirApp(context))
@@ -71,13 +86,16 @@ class WidgetRachaProvider : AppWidgetProvider() {
         }
 
         /**
-         * Racha en pie, o `null` si está rota: misma regla que `avanzarRacha()`
-         * de la web (hoy o ayer → sigue; dos o más días sin jugar → a cero).
+         * Cifra que se enseña, o `null` para «Juega hoy».
+         *
+         * **Solo si la última actividad es de hoy** (`dias == 0`): el widget es
+         * el empujón del día, no el récord. Si la última partida fue ayer, la
+         * racha sigue viva en la web, pero aquí toca jugar → «Juega hoy».
          */
         private fun rachaVigente(racha: Int, ultimoDia: String): Int? {
             if (racha <= 0 || ultimoDia.isEmpty()) return null
             val dias = diasDe(ultimoDia) ?: return null
-            return if (dias <= 1) racha else null
+            return if (dias == 0) racha else null
         }
 
         /**

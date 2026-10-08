@@ -18,7 +18,7 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 | 5 | Android TWA (keystore nuevo, assetlinks, APK + tramo cerrado Play) | 🔄 En curso (2026-10-08): keystore + APK/AAB firmados + assetlinks ✅ · prueba en dispositivo ✅ · respaldo en el otro PC ✅ · pendiente: Play Console y fichas de la tienda |
 | 6 | Contenido real (temario ESO/Bachiller) y documentación | ⏳ Pendiente |
 | 7 | Escalado (miles de preguntas, cientos de temas, imágenes): disparadores, chunks, cachés y pipeline `sharp` | ⏳ Planificada (2026-10-07) · plan en `PLAN.md` §12 |
-| 8 | Mejoras de uso: «Todos los temas» por asignatura, estructura `cursos > asignaturas > temas` y widget de racha | 🔄 En curso (2026-10-08): §13.2 ✅ · §13.1 ✅ · §13.3 🔄 **puente web ✅ + widget nativo ✅ + INC-04 ✅ (aparece) + paso 2 ✅ puente ACTIVADO y APK 1.3 con widget 2×1** → pendiente la prueba en dispositivo (tarea 6) |
+| 8 | Mejoras de uso: «Todos los temas» por asignatura, estructura `cursos > asignaturas > temas` y widget de racha | 🔄 En curso (2026-10-08): §13.2 ✅ · §13.1 ✅ · §13.3 🔄 **puente web ✅ + widget nativo ✅ + INC-04 ✅ (aparece) + paso 2 ✅ puente ACTIVADO y APK 1.3 (2×1) + APK 1.4 ✅ regla «solo si has jugado hoy», «Abre la app» sin datos y refresco de 30 min** → pendiente la prueba en dispositivo (tarea 6) |
 | 9 | Pulido de interfaz (las 5 pantallas, manual): tipografía, iconos, microinteracciones, vacíos, ficha de examen y ajustes agrupados | 🔄 Casi completa (2026-10-08) · plan en `PLAN.md` §14 · **T0–T8 validación ✅** (434 comprobaciones + AA/`comprobar-contraste` + reflow `comprobar-movil` + estructura ARIA) · pendientes: capturas en `docs/capturas/` y revisión en dispositivo (sin cuenta de desarrollador) |
 
 ---
@@ -351,6 +351,26 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **APK en el equipo:** `C:\Users\andre\Downloads\RepasoHistoria-1.3.apk` (1,0 MB). **Obsoletas:** las 1.1 y 1.2.
 - **Docs:** `PLAN.md` §13.3 — paso 2 marcado `[x]` y tarea 6 actualizada (fichero 1.3 y «`—`/Juega hoy» al borrar progreso); esta entrada.
 - **Alcance:** `src/ui/widget.ts`, `android/widget/res/{xml,layout}/widget_racha.xml`, `twa-manifest.json`, `manifest-checksum.txt`, `app/**` (regenerado + parcheado), `PLAN.md`, `MEMORY.md`.
+
+---
+
+### 2026-10-08 — Fase 8 · §13.3: incidencia del alumno + APK **1.4** (regla «solo si has jugado hoy»)
+
+- **Qué se reportó:** «*cuando la actualizas la app te dice que tienes que jugar hoy para que se actualice el widget aunque ya hayas jugado hoy antes de actualizar la app. Una vez juegas ya si muestra la racha bien. Debería detectar que hoy ya has jugado y mostrar la racha y solo mostrar el "juega hoy" los días que NO has jugado, por ejemplo mañana a primera hora*».
+- **Diagnóstico (dos cosas distintas):**
+  1. **No había datos, no se ignoraba la racha.** El puente (`PUENTE_WIDGET_ACTIVADO`) se activó en el despliegue de 13:42 UTC y hasta ese momento **nunca había enviado nada**: `SharedPreferences` estaban vacías → `racha=0`, `ultimoDia=""` → «Juega hoy» por defecto. El primer **toque** dentro de la app ya dispara el envío (Chrome exige gesto), y como el alumno comprobó el widget antes de tocar, lo vio hasta que jugó. **No se puede** sincronizar sin gesto: es una limitación de Chrome, no del código.
+  2. **La regla era laxa.** `rachaVigente()` devolvía la cifra con `dias <= 1`, o sea también cuando la partida era de *ayer*. Pedido explícito: cifra solo si has jugado **hoy**.
+- **Solución (todo lado nativo, la web no cambia):**
+  - `WidgetRachaProvider.rachaVigente()` → **`dias == 0`**: cifra solo si `ultimoDia == hoy`; si fue ayer o hace más → «—» + «Juega hoy». La web (`Progreso`) sigue mostrando la racha mientras no pasen dos días: una es el récord, el widget es el empujón del día.
+  - **«Abre la app» sin datos:** `pintar()` comprueba `prefs.contains(CLAVE_RACHA)` (= «ha llegado algún envío») → si no, «—» + `widget_abre` en vez de un «Juega hoy» falso. Nada nuevo que migrar: quien ya sincronizó conserva su cifra.
+  - **Refresco para «mañana a primera hora»:** `android:updatePeriodMillis` **`0` → `1800000`** (30 min, el mínimo de Android). Sin eso el widget solo se repintaba al añadirlo, al reencender, al actualizar la app o al abrir la app, y «Juega hoy» no llegaría a pintarse al cambiar de día. Coste: el sistema repite `onUpdate` (lee prefs y repinta; sin red ni actividad).
+- **APK 1.4:** `appVersionCode` 5 → **6**, `appVersionName`/`appVersion` → **1.4**; flujo `bubblewrap.cmd update --skipVersionUpgrade` → `npm.cmd run widget` → `bubblewrap.cmd build` → `Downloads/RepasoHistoria-1.4.apk`. **Huella `b7666ba3…b54cf` idéntica** (actualiza encima sin perder datos).
+- **Verificación en el paquete:** `versionCode='6' versionName='1.4'`; `string/widget_abre` presente en `resources.arsc`; la ficha compilada con `updatePeriodMillis=0x1b7740` (1800000) + `targetCellWidth=0x2`/`targetCellHeight=0x1`.
+- **Verificación de variantes (por qué salía 3×2):** `xml/widget_racha` figura en la tabla con **dos configuraciones**: `default` → `res/Ot.xml` (sin `targetCell`/`previewLayout`) y **`v22` → `res/D9.xml`** (la nuestra, con ambas). Android se queda con la **más específica ≤ su SDK**, o sea `v22` en cualquier móvil de Android 5.1+ → manda **nuestra** ficha. Por eso el 3×2 de la 1.2 funcionaba y por eso el 2×1 de la 1.3/1.4 también. (Decodificado a mano el `resources.arsc`: `d=0x3a`/`d=0xad` son **índices** del pool de cadenas, no offsets.)
+- **Incidencia de entorno (no del producto):** el primer `bubblewrap update` falló con `EBUSY … classes.dex` — dos daemons de Gradle/Kotlin del JDK de Bubblewrap retenían la salida de la build anterior, y `app/` quedó a medias. Solución: matar los `java.exe` cuyo `CommandLine` apunta a `~\.bubblewrap\jdk\` y rehacer `update` → `widget` → `build`. (El comprobador inicial `Test-Path .\app\gradlew.bat` daba falso negativo: el wrapper está en la **raíz** del proyecto Android, `.\gradlew.bat`, no dentro de `app/`.)
+- **Pruebas:** 455 comprobaciones ✅ y `npm.cmd run build` ✅ (mismo hash de bundle que producción: **cero cambios web**, no hace falta desplegar).
+- **Docs:** `PLAN.md` §13.3 — regla y `updatePeriodMillis` en el diseño, detalle de la tarea de código nativo, nueva tarea APK 1.4 `[x]`, prueba manual actualizada a 1.4 y riesgo «widget desactualizado»; esta entrada + tabla de fases.
+- **Alcance:** `android/widget/java/**/WidgetRachaProvider.kt`, `android/widget/res/values/widget_strings.xml`, `android/widget/res/xml/widget_racha.xml`, `twa-manifest.json`, `manifest-checksum.txt`, `app/**` (regenerado + parcheado), `PLAN.md`, `MEMORY.md`. **`src/` intacto.**
 
 ---
 

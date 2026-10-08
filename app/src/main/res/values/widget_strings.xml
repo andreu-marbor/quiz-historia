@@ -8,6 +8,10 @@
     <string name="widget_titulo">Racha</string>
     <string name="widget_dias">días</string>
     <string name="widget_juega">Juega hoy</string>
+    <!-- «todavía no ha llegado ningún dato» (app recién instalada): el widget
+         prefiere pedir que se abra la app antes que decir «Juega hoy» a quien
+         ya ha jugado. -->
+    <string name="widget_abre">Abre la app</string>
     <string name="widget_sin_racha">—</string>
     <string name="widget_descripcion">Tu racha de días seguidos de repaso.</string>
 </resources>

@@ -4,9 +4,11 @@
   `targetCellWidth/Height` = **2×1** (2026-10-08: 3×2 se quedaba grande);
   `minWidth`/`minHeight` son el suelo para los lanzadores antiguos, que calculan
   las celdas con esos valores en vez de con el tamaño por defecto.
-  `updatePeriodMillis="0"`: el sistema no refresca por su cuenta; solo lo
-  hacemos nosotros (al terminar un cuestionario, al borrar progreso, al abrir
-  la app y al añadir el widget).
+  `updatePeriodMillis="1800000"` (30 min, el mínimo de Android): el sistema
+  repite `onUpdate` para que la cifra no se quede vieja al pasar la medianoche
+  (sin eso, «Juega hoy» no llegaría a pintarse hasta que el alumno abriera la
+  app). El resto de veces lo seguimos pintando nosotros: al terminar un
+  cuestionario, al borrar progreso, al abrir la app y al añadir el widget.
 -->
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     android:description="@string/widget_descripcion"
@@ -17,5 +19,5 @@
     android:resizeMode="horizontal|vertical"
     android:targetCellHeight="1"
     android:targetCellWidth="2"
-    android:updatePeriodMillis="0"
+    android:updatePeriodMillis="1800000"
     android:widgetCategory="home_screen" />
