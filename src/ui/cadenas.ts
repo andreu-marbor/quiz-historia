@@ -91,6 +91,12 @@ export const T = {
   ajustes: {
     titulo: 'Ajustes',
     guardado: 'Ajuste guardado.',
+    /** Los tres grupos `fieldset/legend` de la pantalla (T6) */
+    apariencia: 'Apariencia',
+    juego: 'Juego',
+    datos: 'Datos',
+    /** Rótulo de la zona de peligro dentro de «Datos» (T6) */
+    peligro: 'Zona de peligro',
     tema: 'Modo de color',
     temaAyuda: '«Según el sistema» respeta la configuración de tu dispositivo.',
     temaAuto: 'Según el sistema',

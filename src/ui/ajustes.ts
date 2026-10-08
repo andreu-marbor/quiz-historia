@@ -1,6 +1,7 @@
 /**
- * Pantalla de ajustes: modo de color, nº de preguntas, barajar opciones
- * y borrar progreso. Los cambios se guardan solos.
+ * Pantalla de ajustes (T6): tres grupos `fieldset/legend` — **Apariencia**
+ * (modo de color), **Juego** (nº de preguntas y barajar opciones) y **Datos**
+ * («Borrar progreso» como zona de peligro aparte). Los cambios se guardan solos.
  */
 
 import { OPCIONES_PREGUNTAS, type ModoTema } from '../persistencia';
@@ -24,11 +25,13 @@ export function pintarAjustes(vista: HTMLElement, ctx: Contexto): void {
     aviso,
   );
 
-  // --- Modo de color ---
+  // --- Grupo Apariencia: modo de color ---
+  // El grupo lo nombra el `legend` del `fieldset`; el subgrupo de radios se
+  // declara con `role="group"` + `aria-labelledby` (no se anida otro fieldset).
   const campoTema = h(
-    'fieldset',
-    { class: 'ajuste' },
-    h('legend', {}, T.ajustes.tema),
+    'div',
+    { class: 'ajuste', role: 'group', 'aria-labelledby': 'titulo-tema' },
+    h('p', { class: 'ajuste-titulo', id: 'titulo-tema' }, T.ajustes.tema),
     h('p', { class: 'ayuda', id: 'ayuda-tema' }, T.ajustes.temaAyuda),
     ...(['auto', 'claro', 'oscuro'] as const).map((modo) =>
       controlRadio(
@@ -43,6 +46,13 @@ export function pintarAjustes(vista: HTMLElement, ctx: Contexto): void {
         'ayuda-tema',
       ),
     ),
+  );
+
+  const grupoApariencia = h(
+    'fieldset',
+    { class: 'grupo' },
+    h('legend', {}, T.ajustes.apariencia),
+    campoTema,
   );
 
   // --- Preguntas por cuestionario ---
@@ -97,10 +107,11 @@ export function pintarAjustes(vista: HTMLElement, ctx: Contexto): void {
     h('p', { class: 'ayuda', id: 'ayuda-barajar' }, T.ajustes.barajarAyuda),
   );
 
-  // --- Borrar progreso ---
+  // --- Grupo Datos: borrar progreso como zona de peligro aparte ---
   const campoBorrar = h(
     'div',
-    { class: 'ajuste' },
+    { class: 'ajuste ajuste--peligro' },
+    h('p', { class: 'ajuste-titulo' }, T.ajustes.peligro),
     h(
       'button',
       {
@@ -126,7 +137,22 @@ export function pintarAjustes(vista: HTMLElement, ctx: Contexto): void {
     h('p', { class: 'ayuda' }, T.ajustes.borrarAyuda),
   );
 
-  vista.append(cabecera, campoTema, campoPreguntas, campoBarajar, campoBorrar);
+  const grupoJuego = h(
+    'fieldset',
+    { class: 'grupo' },
+    h('legend', {}, T.ajustes.juego),
+    campoPreguntas,
+    campoBarajar,
+  );
+
+  const grupoDatos = h(
+    'fieldset',
+    { class: 'grupo' },
+    h('legend', {}, T.ajustes.datos),
+    campoBorrar,
+  );
+
+  vista.append(cabecera, grupoApariencia, grupoJuego, grupoDatos);
 
   if (!ctx.almacenDisponible) {
     vista.append(h('p', { class: 'aviso' }, T.ajustes.sinAlmacen));

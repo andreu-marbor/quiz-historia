@@ -967,23 +967,65 @@
   }
 }
 
-/* -------------------------------------------------------------- ajustes */
+/* -------------------------------------------------------- ajustes (T6)
+   Tres grupos `fieldset/legend`: Apariencia · Juego · Datos. Dentro de un
+   grupo los `.ajuste` dejan de ser tarjeta propia y se separan con una línea;
+   «Datos» envuelve su botón en una zona de peligro aparte. */
 
-.ajuste {
-  margin: 0 0 var(--espacio);
-  padding: calc(var(--espacio) * 1.1);
+.grupo {
+  margin: 0 0 var(--espacio-l);
+  padding: calc(var(--espacio) * 1.2);
   border: 1px solid var(--borde);
   border-radius: var(--radio-grande);
   background: var(--bg-secundario);
+  box-shadow: var(--sombra);
 }
 
-fieldset.ajuste {
-  border-color: var(--borde);
-}
-
-.ajuste legend {
-  padding: 0 var(--espacio-xs);
+/* el `legend` se apoya sobre el borde; su fondo tapa la línea por si el
+   navegador la dibujara por detrás (y le da el peso de un título) */
+.grupo > legend {
+  padding: 0 var(--espacio-s);
+  background: var(--bg-secundario);
+  color: var(--accent);
+  font-family: var(--font-titulo);
+  font-size: var(--texto-m);
   font-weight: 700;
+}
+
+.ajuste {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.ajuste + .ajuste {
+  margin-top: var(--espacio-m);
+  padding-top: var(--espacio-m);
+  border-top: 1px dashed var(--borde);
+}
+
+.ajuste-titulo {
+  margin: 0 0 var(--espacio-s);
+  color: var(--texto-tenue);
+  font-size: var(--texto-s);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* zona de peligro: panel hundido con borde discontinuo y rótulo en rojo;
+   el fondo es `--bg` (no `--error-fondo`) para que el hover del botón —que
+   usa `--error-fondo`— siga notándose dentro */
+.ajuste--peligro {
+  padding: var(--espacio-m);
+  border: 1px dashed var(--error);
+  border-radius: var(--radio);
+  background: var(--bg);
+}
+
+.ajuste--peligro .ajuste-titulo {
+  color: var(--error);
 }
 
 .ajuste > label:not(.control) {

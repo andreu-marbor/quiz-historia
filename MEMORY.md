@@ -19,7 +19,7 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 | 6 | Contenido real (temario ESO/Bachiller) y documentación | ⏳ Pendiente |
 | 7 | Escalado (miles de preguntas, cientos de temas, imágenes): disparadores, chunks, cachés y pipeline `sharp` | ⏳ Planificada (2026-10-07) · plan en `PLAN.md` §12 |
 | 8 | Mejoras de uso: «Todos los temas» por asignatura, estructura `cursos > asignaturas > temas` y widget de racha | 🔄 En curso (2026-10-08): §13.2 ✅ · §13.1 ✅ · pendiente §13.3 (widget) |
-| 9 | Pulido de interfaz (las 5 pantallas, manual): tipografía, iconos, microinteracciones, vacíos, ficha de examen y ajustes agrupados | 🔄 En curso (2026-10-08) · plan en `PLAN.md` §14 · T0–T5 ✅ · pendiente T6–T8 |
+| 9 | Pulido de interfaz (las 5 pantallas, manual): tipografía, iconos, microinteracciones, vacíos, ficha de examen y ajustes agrupados | 🔄 En curso (2026-10-08) · plan en `PLAN.md` §14 · T0–T6 ✅ · pendiente T7–T8 |
 
 ---
 
@@ -268,6 +268,18 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **Docs:** `PLAN.md` — T5 `[x]` con detalle y el resumen de Fase 9 (T1–T5 `[x]`); fila de estado en `MEMORY.md`.
 - **Siguiente de la Fase 9:** **T6 · Ajustes** (tres `fieldset/legend`: Apariencia · Juego · Datos + «Borrar progreso» como zona de peligro).
 - **Alcance:** `src/ui/{iconos,progreso}.ts`, `src/estilos/app.css`, `pruebas/pantallas.ts`, `PLAN.md` y esta entrada.
+
+### 2026-10-08 — Fase 9 · T6 COMPLETADA: Ajustes en tres grupos y zona de peligro
+
+- **Estructura nueva:** la pantalla pasa de un `fieldset` suelto + tres `div.ajuste` a **tres `fieldset.grupo`** con su `legend`: **Apariencia** (modo de color) · **Juego** (nº de preguntas + barajar) · **Datos** (borrar progreso). Test nuevo que fija los tres rótulos en orden.
+- **Subgrupo de radios sin anidar fieldsets:** el grupo de modo de color es ahora `div.ajuste role="group" aria-labelledby="titulo-tema"` con `<p class="ajuste-titulo" id="titulo-tema">Modo de color</p>` → sigue teniendo **nombre anunciado** por lector de pantalla, sin el doble `fieldset` (que confunde más de lo que ayuda).
+- **Estilo:** `.grupo` hereda el aire de tarjeta (borde, `--radio-grande`, `--sombra`); el `legend` se apoya **sobre el borde** con fondo `--bg-secundario` (tapa la línea por si el navegador la dibuja detrás) y **serif `--font-titulo` + `--accent`** — extensión de la regla de títulos de T1. Dentro de un grupo los `.ajuste` **dejan de ser tarjeta** (borde/fondo a 0) y se separan con `border-top: 1px dashed var(--borde)`.
+- **Zona de peligro:** `.ajuste--peligro` con rótulo **«Zona de peligro»** en `--error`, borde discontinuo `--error` y fondo **`--bg`**. A propósito **no** `--error-fondo`: el `:hover` del `.boton--peligro` usa ese color y sobre ese mismo fondo el hover desaparecería (incidencia de estilo previsible, resuelta en el diseño, no a base de parches).
+- **Cadenas nuevas solo en `src/ui/cadenas.ts`** (regla del proyecto): `ajustes.apariencia`, `ajustes.juego`, `ajustes.datos`, `ajustes.peligro`.
+- **Tests: 381 → 385 comprobaciones** (`68 lógica + 43 persistencia + 229 pantallas + 45 datos`) y `build` en verde. La aserción antigua «legend count === 1» pasa a comprobar los 3 grupos, sus contenidos, el `role="group"` de los radios y la zona de peligro; el resto (radios, select, casilla, diálogo de borrado, aviso sin almacen) sigue intacto — **ningún test cambió de significado**.
+- **Docs:** `PLAN.md` — T6 `[x]` con detalle y resumen de Fase 9 actualizado; fila de estado en `MEMORY.md`.
+- **Siguiente de la Fase 9:** **T7 · Estados vacíos** (componente con icono, copys solo en `cadenas.ts`).
+- **Alcance:** `src/ui/{ajustes,cadenas}.ts`, `src/estilos/app.css`, `pruebas/pantallas.ts`, `PLAN.md` y esta entrada.
 
 ---
 

@@ -715,7 +715,30 @@ seccion('Pantalla de ajustes');
   pintarAjustes(vista, contexto());
 
   comprobar(texto(vista.querySelector('h1')) === 'Ajustes', 'encabezado');
-  comprobar(vista.querySelectorAll('legend').length === 1, 'el grupo de modo de color usa fieldset+legend');
+  const grupos = [...vista.querySelectorAll('fieldset.grupo')] as HTMLElement[];
+  comprobar(grupos.length === 3, 'tres grupos fieldset+legend (T6)');
+  comprobar(
+    grupos.map((g) => g.querySelector('legend')!.textContent).join(' · ') ===
+      'Apariencia · Juego · Datos',
+    'Apariencia · Juego · Datos, en ese orden',
+  );
+  comprobar(
+    grupos[0].querySelectorAll('input[type="radio"]').length === 3 &&
+      grupos[1].querySelector('select') !== null &&
+      grupos[1].querySelector('input[type="checkbox"]') !== null,
+    'Apariencia lleva el modo de color y Juego el nº de preguntas y el barajado',
+  );
+  comprobar(
+    vista.querySelector('[role="group"]')!.getAttribute('aria-labelledby') === 'titulo-tema' &&
+      texto(vista.querySelector('#titulo-tema')) === 'Modo de color',
+    'los radios mantienen su subgrupo con nombre (T6)',
+  );
+  comprobar(
+    grupos[2].querySelector('.ajuste--peligro') !== null &&
+      texto(vista.querySelector('.ajuste--peligro .ajuste-titulo')) === 'Zona de peligro' &&
+      grupos[2].querySelector('.boton--peligro') !== null,
+    '«Borrar progreso» en su zona de peligro, dentro de «Datos» (T6)',
+  );
   const radios = [...vista.querySelectorAll('input[type="radio"]')] as HTMLInputElement[];
   comprobar(radios.length === 3, 'tres modos de color');
   comprobar(radios[0].checked && radios[0].value === 'auto', 'por defecto: según el sistema');
