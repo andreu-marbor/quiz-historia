@@ -260,9 +260,9 @@ Así quedan **incluidas en el bundle y la app funciona sin internet de serie**.
   - Build con `BUBBLEWRAP_KEYSTORE_PASSWORD` / `BUBBLEWRAP_KEY_PASSWORD` en el entorno (evita prompts en `build.js`).
   - Extraer huella SHA-256 con `keytool -list -v` y verificarla en el APK final con `apksigner verify --print-certs`.
   - Antes de cada push: `git grep -niIF -e 'password' -e 'passwd' -e 'secret' -e 'token'` como red de seguridad.
-  - **Respaldo** ⏳ *(pendiente, manual)*: paquete ya generado en `%USERPROFILE%\Downloads\respaldo-keystore-quiz-historia.zip` (keystore + contraseña + `LEEME-respaldo.txt`); **falta copiarlo al otro PC** y borrarlo de Descargas, antes de subir nada a Play Console (misma convención que el de `tres-en-raya`).
+  - **Respaldo** ✅ *(hecho 2026-10-08)*: paquete `%USERPROFILE%\Downloads\respaldo-keystore-quiz-historia.zip` (keystore + contraseña + `LEEME-respaldo.txt`) **copiado al otro PC**; queda una copia en Descargas (borrarla cuando se quiera, ya no es necesaria para nada). Misma convención que el de `tres-en-raya`.
 - [x] Añadir una **segunda sentencia** en `andreu-marbor.github.io/.well-known/assetlinks.json` para `com.andreumarbor.quizophistoria` con la huella nueva (el fichero admite varias). Si falta, la app Android muestra la barra de URL en vez de abrirse a pantalla completa. Recordar: `.nojekyll` debe mantenerse para que Pages sirva `.well-known`. *Hecho:* añadida y verificada publicada en `https://andreu-marbor.github.io/.well-known/assetlinks.json` (commit `dd58933` del portfolio).
-- [ ] Probar en dispositivo real: instalación, pantalla completa, offline.
+- [x] Probar en dispositivo real: instalación, pantalla completa, offline. ✅ *(2026-10-08: instalación correcta, se abre a pantalla completa — `assetlinks.json` verificado — y funciona sin conexión en modo avión.)*
 - [ ] **Distribución en dos vías** (decisión §9.2):
   1. **Tramo cerrado de Play Console** con el colegio como verificadores → requisito de Google: **12 verificadores × 14 días continuos** por package nuevo (cuentas personales creadas tras el 13/11/2023) → solicitud de acceso a Producción.
   2. **Mientras tanto, APK firmado directo al colegio** (`bubblewrap.cmd build` → `app-release-bundle`/APK) para no esperar a los 14 días.

@@ -15,7 +15,7 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 | 2 | Interfaz completa (5 pantallas, persistencia, oscuro, responsive) | ✅ Completada (2026-10-06) |
 | 3 | PWA (manifest, iconos, service worker offline, Lighthouse) | ✅ Completada (2026-10-07) |
 | 4 | Despliegue web (GitHub Actions → Pages, `base: /quiz-historia/`) | ✅ Completada (2026-10-07) |
-| 5 | Android TWA (keystore nuevo, assetlinks, APK + tramo cerrado Play) | 🔄 En curso (2026-10-07): keystore + APK/AAB firmados + assetlinks ✅ · pendiente: prueba en dispositivo, respaldo del keystore y Play Console |
+| 5 | Android TWA (keystore nuevo, assetlinks, APK + tramo cerrado Play) | 🔄 En curso (2026-10-08): keystore + APK/AAB firmados + assetlinks ✅ · prueba en dispositivo ✅ · respaldo en el otro PC ✅ · pendiente: Play Console y fichas de la tienda |
 | 6 | Contenido real (temario ESO/Bachiller) y documentación | ⏳ Pendiente |
 | 7 | Escalado (miles de preguntas, cientos de temas, imágenes): disparadores, chunks, cachés y pipeline `sharp` | ⏳ Planificada (2026-10-07) · plan en `PLAN.md` §12 |
 | 8 | Mejoras de uso: «Todos los temas» por asignatura, estructura `cursos > asignaturas > temas` y widget de racha | ⏳ Planificada (2026-10-08) · plan en `PLAN.md` §13 |
@@ -178,6 +178,14 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **Relación con otras fases:** no toca **Fase 7** (§12) ni **Fase 8** (§13); al final, T8 deja capturas que sirven para el **README** y las **fichas de Play Store** (dos pendientes de una).
 - **Alcance de esta iteración:** `.gitignore`, `PLAN.md` (§4, §5, §14) y esta entrada; **cero cambios de código**.
 - **Estado:** ⏳ Fase 9 planificada; **T0 ✅**, T1–T8 sin empezar.
+
+### 2026-10-08 — Fase 5: cerradas las dos tareas manuales (F5-a y F5-b)
+
+- **F5-a · Prueba en dispositivo real ✅:** el usuario instala la APK en su móvil y confirma instalación correcta, **pantalla completa** (la segunda sentencia de `assetlinks.json` funciona: no aparece barra de URL) y **funcionamiento sin conexión** en modo avión.
+- **F5-b · Respaldo del keystore ✅:** `respaldo-keystore-quiz-historia.zip` (keystore + contraseña + `LEEME-respaldo.txt`) **copiado al otro PC**. Queda una copia en `Downloads` (ya no es imprescindible; se puede borrar).
+- **Actualizado `PLAN.md` Fase 5:** las dos casillas pasan a `[x]`. **Siguen abiertas de la Fase 5:** tramo cerrado de Play Console (12 verificadores × 14 días) y fichas de la tienda (§5).
+- **Estado de la fase:** 🔄 la parte técnica y manual ya está; sólo queda la publicación en Play (que irá agrupada con la reconstrucción de APK de §13.3 para no firmar dos veces).
+- **Alcance:** solo `PLAN.md` (Fase 5) y esta entrada en `MEMORY.md`.
 
 ---
 
