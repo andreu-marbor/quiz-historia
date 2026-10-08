@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  §13.3 · Paleta del widget en tema OSCURO: mismos valores que los tokens
+  oscuros de `src/estilos/base.css` (`values-night` = «según el sistema», como
+  `prefers-color-scheme` en la web; el selector manual de Ajustes no llega aquí
+  porque el widget vive fuera de Chrome).
+-->
+<resources>
+    <color name="widget_fondo">#211F26</color>
+    <color name="widget_texto">#F1EFE9</color>
+    <color name="widget_tenue">#A9A49B</color>
+    <color name="widget_acento">#E08B8B</color>
+</resources>

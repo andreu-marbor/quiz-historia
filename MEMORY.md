@@ -18,7 +18,7 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 | 5 | Android TWA (keystore nuevo, assetlinks, APK + tramo cerrado Play) | 🔄 En curso (2026-10-08): keystore + APK/AAB firmados + assetlinks ✅ · prueba en dispositivo ✅ · respaldo en el otro PC ✅ · pendiente: Play Console y fichas de la tienda |
 | 6 | Contenido real (temario ESO/Bachiller) y documentación | ⏳ Pendiente |
 | 7 | Escalado (miles de preguntas, cientos de temas, imágenes): disparadores, chunks, cachés y pipeline `sharp` | ⏳ Planificada (2026-10-07) · plan en `PLAN.md` §12 |
-| 8 | Mejoras de uso: «Todos los temas» por asignatura, estructura `cursos > asignaturas > temas` y widget de racha | 🔄 En curso (2026-10-08): §13.2 ✅ · §13.1 ✅ · **§13.3 en curso**: puente web ✅ → lado nativo ⏳ |
+| 8 | Mejoras de uso: «Todos los temas» por asignatura, estructura `cursos > asignaturas > temas` y widget de racha | 🔄 En curso (2026-10-08): §13.2 ✅ · §13.1 ✅ · §13.3 🔄 **puente web ✅ + widget nativo ✅ (APK 1.1)** → pendiente instalarlo y activar `PUENTE_WIDGET_ACTIVADO` |
 | 9 | Pulido de interfaz (las 5 pantallas, manual): tipografía, iconos, microinteracciones, vacíos, ficha de examen y ajustes agrupados | 🔄 Casi completa (2026-10-08) · plan en `PLAN.md` §14 · **T0–T8 validación ✅** (434 comprobaciones + AA/`comprobar-contraste` + reflow `comprobar-movil` + estructura ARIA) · pendientes: capturas en `docs/capturas/` y revisión en dispositivo (sin cuenta de desarrollador) |
 
 ---
@@ -322,6 +322,21 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **Docs:** `PLAN.md` §13.3 — tareas 1 y 2 `[x]` y diseño ajustado al gesto de Chrome; esta entrada.
 - **Alcance:** `src/ui/widget.ts` (nuevo), `src/aplicacion.ts`, `pruebas/pantallas.ts`, `PLAN.md` y esta entrada.
 
+### 2026-10-08 — Fase 8 · §13.3 (2/3): widget nativo en Kotlin + script de parche + APK 1.1
+
+- **8 ficheros nuevos en `android/widget/`** (fuera de `app/`, que es generado): `WidgetBridgeActivity.kt`, `WidgetRachaProvider.kt` + `res/{values,values-night,drawable,layout,xml}/widget_*` + `parche/manifiesto.xml`.
+  - **`WidgetBridgeActivity`** (el receptor del intent): `exported="true"`, `noHistory` + `excludeFromRecents`, hereda el tema transparente de la `<application>` → se ve y se oye como un corte, solo guarda. **Valida los extras** (entero **0–9999** y `YYYY-MM-DD`; si no, `finish()` sin tocar nada): al ser pública, un intent malicioso solo podría pintar un número falso, y ni eso.
+  - **`WidgetRachaProvider`**: aplica **la misma regla que `avanzarRacha()`** en la web (hoy/ayer → cifra; **≥2 días → «—» + «Juega hoy»**), con `updatePeriodMillis="0"` (ni un refresco de batería: lo repintamos nosotros) y clic → `getLaunchIntentForPackage`. `diasDe()` con `SimpleDateFormat(..., Locale.ROOT)` + `isLenient=false` y redondeo **no truncado** (un día con horario de verano son 23 o 25 h).
+  - **Recursos en ficheros propios** (`widget_strings`, `widget_colors` + `values-night`, `widget_fondo`, `layout/widget_racha`, `xml/widget_racha`) → el parche es **idempotente** y el widget respeta el **modo oscuro del sistema** (mismos tokens que `base.css`: crema `#F7F5F0`/granate `#8C2F2F`, oscuro `#211F26`/`#E08B8B`).
+  - Sólo vistas que `RemoteViews` sabe dibujar (`LinearLayout` + `TextView`), etiquetas cortas («días» / «Juega hoy») y `layout_weight` + `maxLines` para que no se corte en 2 celdas.
+- **`scripts/aplicar-widget.mjs`** (`npm.cmd run widget`): copia `android/widget/{java,res}` → `app/src/main/`, mete el fragmento de manifiesto antes del cierre de `<application>` y añade los tres parches de Gradle (`mavenCentral()` ×2, classpath de Kotlin 2.1.21, `apply plugin: 'kotlin-android'` + `kotlinOptions.jvmTarget='1.8'`). **Idempotente** («aplicado»/«ya estaba») y **falla en voz alta** si un ancla no está donde se esperaba. **Probado en caliente:** `bubblewrap update` borró *todos* los parches → el script los rehizo de un plumazo.
+- **Versión:** `twa-manifest.json` → `appVersionCode` **1 → 3** y `appVersionName`/`appVersion` → **`1.1`** (la orden `bubblewrap update` sin `--skipVersionUpgrade` autoincrementa: pedí 2 y puso 3) + `bubblewrap update` para regenerar el proyecto.
+- **Build y verificación:** `bubblewrap.cmd build` → `app-release-signed.apk` + `app-release-bundle.aab`; **`apksigner verify --print-certs` → huella `b7666ba3b6dedfc2ae1f36e8025f364f242199f01d35a0fb4dcb0e0ad66b54cf` idéntica** → el que ya la tiene se la **actualiza encima sin perder datos** (mismo paquete y misma clave ⇒ `assetlinks.json` intacto). `aapt dump badging` = `versionCode='3' versionName='1.1'`, `minSdk 21`, etiqueta «Repaso de Historia»; en el manifiesto del APK: `WidgetBridgeActivity` (con `BROWSABLE`) y `WidgetRachaProvider`.
+- **APK en el equipo:** `C:\Users\andre\Downloads\RepasoHistoria-1.1.apk` (1,0 MB), junto al antiguo `RepasoHistoria-1.apk`.
+- **Siguiente (paso 6):** instalar ese APK en el móvil → añadir el widget (mantener pulsado → Widgets → Repaso Historia → «Racha») → confirmarme → **yo pongo `PUENTE_WIDGET_ACTIVADO = true`** y hago push.
+- **Docs:** `PLAN.md` §13.3 — tareas 3, 4 y 5 `[x]`, riesgo del JDK añadido; `AGENTS.md` (árbol + comando `widget`); esta entrada y la incidencia de abajo.
+- **Alcance:** `android/**` (nuevo), `scripts/aplicar-widget.mjs` (nuevo), `package.json`, `twa-manifest.json`, `manifest-checksum.txt`, `build.gradle`, `app/**` (generado + parcheado), `PLAN.md`, `AGENTS.md`, `MEMORY.md`.
+
 ---
 
 ## 🐛 Incidencias y soluciones
@@ -426,3 +441,14 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **Mejoras añadidas:** 120 intentos de espera (30 s en vez de 15) y un error explícito si Chrome termina antes de abrir el puerto (`exitCode`), en vez del genérico "no abrió el puerto".
 - **Verificación** contra la producción desplegada hoy: `swControlador: true`, `appMontada: true`, caché `repaso-historia-v2` con 9 entradas (incluye el bundle `index-qKnA2ORL.js` con INC-01 + INC-02) → **✅ la app arranca sin conexión**.
 - **Contexto del offline:** el JS lleva dentro las preguntas (`import.meta.glob`) y el progreso vive en `localStorage`; no hay fuentes externas y todavía no hay imágenes (`public/imagenes/` no existe → Fase 6). Si en el futuro se añaden, se guardan en la caché la primera vez que se ven online (el SW cachéa todo lo mismo-origen); sin haberlas visto nunca, aparecerían rotas offline.
+
+### 2026-10-08 — El JDK que descarga Bubblewrap era de **32 bits**: Kotlin revienta con «Unknown hardware platform: x86»
+
+- **Síntoma:** `bubblewrap.cmd build` fallaba en 2 s con `Could not initialize class org.jetbrains.kotlin.gradle.utils.NativeCompilerDownloader` / `Caused by: TargetSupportException: Unknown hardware platform: x86`, y en segundo plano «`project ':app' does not specify compileSdk`» (este es **rejuego**: la línea 23 de `app/build.gradle` es `apply plugin: 'kotlin-android'`, que reventaba y dejaba el bloque `android { }` sin ejecutar).
+- **Causa:** `%USERPROFILE%\.bubblewrap\jdk\jdk-17.0.11+9` es una build **x86 (32 bits)** — `java -XshowSettings` → `os.arch = x86`. El detector de anfitrión de Kotlin/Native sólo acepta `amd64`/`arm64`. Los builds de Java pura de la Fase 5 funcionaban, así que el problema estaba **bajo la alfombra**.
+- **Por qué `JAVA_HOME` no bastaba:** Bubblewrap **fuerza** el `JAVA_HOME` de Gradle desde `~/.bubblewrap/config.json` (`jdkPath`) → cambiar la variable en la sesión no servía (el daemon seguía siendo el mismo). Además, el primer intento de arreglo (JBR de Android Studio, **JDK 21**) pasó a Gradle pero lo rechazó `bubblewrap doctor`: exige **JDK 17** («Unsupported jdk version. Please download OpenJDK 17(LTS)»).
+- **Solución (la que se quedó):** descargar **Temurin JDK 17 x64** desde la API de Adoptium (`…/binary/latest/17/ga/windows/x64/jdk/hotspot/normal/eclipse`, 182 MB) a `~\.bubblewrap\jdk\jdk-17.0.20.1+1`, luego `bubblewrap.cmd updateConfig --jdkPath <esa ruta>` (la flag es **`--jdkPath`**, no `--jdk`) → `bubblewrap.cmd doctor` ✅ *«Your jdkpath and androidSdkPath are valid»* y build en verde.
+- **Descartado:** `org.gradle.java.home` en `~/.gradle/gradle.properties` (también funcionaría, pero deja una dependencia global de Gradle) y usar el JBR de Android Studio (21, doctor lo rechaza).
+- **⚠️ Para reconstruir:** `JAVA_HOME=%USERPROFILE%\.bubblewrap\jdk\jdk-17.0.20.1+1` (el de 32 bits **ya no** es el bueno), `ANDROID_HOME=%LOCALAPPDATA%\Android\Sdk`, `BUBBLEWRAP_KEYSTORE_PASSWORD`/`BUBBLEWRAP_KEY_PASSWORD` desde `%USERPROFILE%\.bubblewrap\keystore-pass-quizhistoria.txt`.
+- **Error propio del código (misma tanda):** `Locale.ES` **no existe** en `java.util.Locale` (los literales son `FRANCE`, `GERMANY`, `US`…) → `e: Unresolved reference 'ES'`. Cambiado por **`Locale.ROOT`**, que además es lo correcto: el patrón `yyyy-MM-dd` es numérico y debe leer exactamente lo que escribe la web, sin calendario ni dígitos localizados.
+- **Verificado:** huella de la firma idéntica a la de la Fase 5 y `aapt dump xmltree` confirma los dos componentes del widget dentro del APK.

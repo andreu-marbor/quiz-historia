@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  §13.3 · Paleta del widget en tema CLARO. Mismos valores que las variables CSS
+  de la web (`src/estilos/base.css`): crema `#f7f5f0` + granate `#8c2f2f`.
+  El tema oscuro está en `res/values-night/widget_colors.xml`.
+-->
+<resources>
+    <color name="widget_fondo">#F7F5F0</color>
+    <color name="widget_texto">#1D1B18</color>
+    <color name="widget_tenue">#5F5A52</color>
+    <color name="widget_acento">#8C2F2F</color>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  §13.3 · Textos del widget. En castellano como el resto de la app (sin i18n):
+  mismos conceptos que `src/ui/cadenas.ts` («Racha», «días», «Juega hoy»).
+  Etiquetas cortas a propósito: en un widget de 2–3 celdas no cabe nada más.
+-->
+<resources>
+    <string name="widget_titulo">Racha</string>
+    <string name="widget_dias">días</string>
+    <string name="widget_juega">Juega hoy</string>
+    <string name="widget_sin_racha">—</string>
+    <string name="widget_descripcion">Tu racha de días seguidos de repaso.</string>
+</resources>

@@ -190,5 +190,35 @@
         
 
         
+        <!--
+          §13.3 · Bloques del widget de la racha. Este fragmento lo inserta
+          scripts/aplicar-widget.mjs justo antes del cierre de <application>;
+          no se edita el manifiesto generado a mano (se regenera con
+          `bubblewrap update`). El puente es `exported="true"` porque lo abre
+          Chrome desde la web, y lleva BROWSABLE, que es la categoría que
+          Chrome exige para lanzarlo.
+        -->
+        <activity
+            android:name=".widget.WidgetBridgeActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="com.andreumarbor.quizophistoria.widget.RACHA" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="racha"
+                    android:scheme="quizhistoria" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".widget.WidgetRachaProvider"
+            android:exported="false">
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_racha" />
+        </receiver>
     </application>
 </manifest>

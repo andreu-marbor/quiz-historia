@@ -67,7 +67,12 @@ quiz-historia/
 │   ├── generar-iconos.mjs    # iconos PWA con sharp (npm.cmd run iconos)
 │   ├── comprobar-offline.mjs # verifica el offline real vía CDP (requiere Chrome)
 │   ├── comprobar-contraste.mjs  # contraste WCAG AA de base.css, claro y oscuro
-│   └── comprobar-movil.mjs   # reflow + objetivos táctiles a 320 CSS px (CDP)
+│   ├── comprobar-movil.mjs   # reflow + objetivos táctiles a 320 CSS px (CDP)
+│   └── aplicar-widget.mjs    # (re)aplica el widget a app/ (npm.cmd run widget)
+├── android/                  # ★ fuentes del widget (§13.3), generado NO
+│   ├── java/…/widget/        # WidgetBridgeActivity.kt + WidgetRachaProvider.kt
+│   ├── res/                  # strings, colores día/noche, drawable, layout, appwidget-provider
+│   └── parche/manifiesto.xml # fragmento que inyecta aplicar-widget.mjs
 ├── public/
 │   ├── manifest.webmanifest  # PWA: name "Repaso de Historia"
 │   ├── sw.js                 # service worker
@@ -77,6 +82,8 @@ quiz-historia/
 ```
 
 > 📌 **Empaquetado Android (Fase 5):** `twa-manifest.json`, `manifest-checksum.txt`, `build.gradle`, `settings.gradle`, `gradle.properties`, `gradlew*`, `gradle/`, `app/` son **generados** por `bubblewrap build` a partir de `twa-manifest.json`. **No editarlos a mano.** `build/`, `.gradle/`, `local.properties`, `*.apk/aab` y `*.keystore` van en `.gitignore`.
+
+> 📌 **Widget (Fase 8 · §13.3):** las fuentes viven en **`android/widget/`** y `npm.cmd run widget` (`scripts/aplicar-widget.mjs`) las copia a `app/src/main/` y añade los parches (bloques del manifiesto + plugin de Kotlin en los dos `build.gradle`). Es **idempotente** y **falla si un ancla no está donde se espera**. **Hay que volver a ejecutarlo tras cada `bubblewrap update`** (regenera `app/` y `build.gradle` y borra los parches).
 
 ## El contenido: cómo se añaden preguntas (funcionalidad clave)
 
@@ -123,6 +130,7 @@ npm.cmd run comprobar-contraste  # contraste WCAG AA de la paleta (claro y oscur
 npm.cmd run comprobar-movil      # reflow y objetivos táctiles a 320 px (Chrome)
 npm.cmd run comprobar-offline    # el offline real vía service worker (Chrome)
 npm.cmd run iconos     # regenerar iconos PNG del PWA desde SVG
+npm.cmd run widget     # (re)aplica el widget a app/ tras un bubblewrap update
 ```
 
 ### Git / despliegue
@@ -142,15 +150,16 @@ gh workflow run despliegue.yml
 ```bash
 bubblewrap.cmd doctor                        # valida JDK + Android SDK (~/.bubblewrap/config.json)
 bubblewrap.cmd update --skipVersionUpgrade   # regenera el proyecto Android desde twa-manifest.json
+npm.cmd run widget                           # ★ reaplica el widget (¡`update` borra los parches!)
 bubblewrap.cmd build                         # genera APK + AAB — requiere BUBBLEWRAP_KEYSTORE_PASSWORD /
                                              # BUBBLEWRAP_KEY_PASSWORD (fuera del repo, ver PLAN.md §9.1)
 %LOCALAPPDATA%\Android\Sdk\build-tools\36.1.0\apksigner.bat verify --print-certs app-release-signed.apk
 ```
 
 - **Package:** `com.andreumarbor.quizophistoria` · **Nombre:** "Repaso de Historia" (en el escritorio: "Repaso Historia").
-- **`twa-manifest.json` se edita a mano** (el `init` interactivo no es automatizable por pipe) y `bubblewrap.cmd update` regenera `app/`, `gradle/`, `build.gradle`, `settings.gradle`, `gradle.properties`, `gradlew*`, `manifest-checksum.txt`: **están versionados pero no se editan a mano**.
+- **`twa-manifest.json` se edita a mano** (el `init` interactivo no es automatizable por pipe) y `bubblewrap.cmd update` regenera `app/`, `gradle/`, `build.gradle`, `settings.gradle`, `gradle.properties`, `gradlew*`, `manifest-checksum.txt`: **están versionados pero no se editan a mano**. **Sin `--skipVersionUpgrade` pregunta la `versionName` por consola y autoincrementa** el `versionCode` (si el stdin no es interactivo, pásala por pipe: `"(echo 1.1 & echo 2) | bubblewrap.cmd update"`); con la flag, se queda con lo que haya en `twa-manifest.json`.
 - **`local.properties`** (gitignored) con `sdk.dir=…` es imprescindible para que Gradle encuentre el SDK; recrearlo si `update` regenera el proyecto.
-- **Entorno:** Bubblewrap instaló su **JDK 17** en `%USERPROFILE%\.bubblewrap\jdk\` (ruta en `config.json`); el SDK es el de Android Studio y `doctor` exige `bin`/`tools` en su raíz → existe el junction `%LOCALAPPDATA%\Android\Sdk\bin` → `cmdline-tools\latest\bin` (incidencia en `MEMORY.md`, 2026-10-07).
+- **Entorno (JDK): hace falta un JDK 17 de 64 bits** — el que descarga Bubblewrap era **x86** y el plugin de Kotlin se cae con *«Unknown hardware platform: x86»* (incidencia en `MEMORY.md`, 2026-10-08). Instalado **Temurin JDK 17 x64** en `%USERPROFILE%\.bubblewrap\jdk\jdk-17.0.20.1+1` y apuntado con `bubblewrap.cmd updateConfig --jdkPath …` (la flag es **`--jdkPath`**); `doctor` exige **exactamente la 17** (rechaza el 21 del JBR de Android Studio). El SDK es el de Android Studio y `doctor` exige `bin`/`tools` en su raíz → existe el junction `%LOCALAPPDATA%\Android\Sdk\bin` → `cmdline-tools\latest\bin` (incidencia en `MEMORY.md`, 2026-10-07).
 - **Keystore:** `./android.keystore` propio, **GITIGNORED**; contraseña en `%USERPROFILE%\.bubblewrap\keystore-pass-quizhistoria.txt` (fuera del repo y de OneDrive) + **copia de respaldo en el otro PC**. Huella SHA-256: `b7666ba3b6dedfc2ae1f36e8025f364f242199f01d35a0fb4dcb0e0ad66b54cf`.
 - `assetlinks.json` vive en el repo `andreu-marbor.github.io/.well-known/` → añadir/bloque nuevo de este paquete (admite varios); `.nojekyll` debe seguir existiendo. **Ya publicada** (ambas sentencias) y verificada con la API de Google: la huella **obligatoriamente** en formato `AA:BB:…` mayúsculas (hex plano → `ERROR_CODE_MALFORMED_CONTENT`).
 

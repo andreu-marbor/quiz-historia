@@ -20,6 +20,8 @@ plugins {
     id 'com.android.application'
 }
 
+apply plugin: 'kotlin-android'
+
 def twaManifest = [
     applicationId: 'com.andreumarbor.quizophistoria',
     hostName: 'andreu-marbor.github.io', // The domain being opened in the TWA.
@@ -57,8 +59,8 @@ android {
         applicationId "com.andreumarbor.quizophistoria"
         minSdkVersion 21
         targetSdkVersion 36
-        versionCode 1
-        versionName "1"
+        versionCode 3
+        versionName "1.1"
 
         // The name for the application
         resValue "string", "appName", twaManifest.name
@@ -158,6 +160,9 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
     }
     lintOptions {
         checkReleaseBuilds false

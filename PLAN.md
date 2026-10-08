@@ -681,10 +681,10 @@ Por disparadores (§12.2). Las tres primeras tareas **no esperan a ningún dispa
 
 - [x] `src/ui/widget.ts` (puente **inyectable**, sin tocar `location` real en las pruebas) + llamadas en arranque / `finalizar()` / `borrarProgreso()`.
 - [x] Tests web con stub: envía al terminar un cuestionario, envía `0` al borrar progreso y **no** envía si el puente está desactivado.
-- [ ] Código nativo (Kotlin): `WidgetBridgeActivity`, `WidgetRachaProvider`, `appwidget-provider`, layout y bloques del `AndroidManifest.xml`.
-- [ ] `scripts/aplicar-widget.mjs` que (re)aplique el parche tras un `bubblewrap update` (ver riesgos).
-- [ ] `bubblewrap.cmd build` + `apksigner verify --print-certs` (**misma huella**) y APK nuevo a `Downloads`.
-- [ ] Prueba manual en dispositivo: añadir widget → jugar → se actualiza · borrar progreso → `0` · tema oscuro · tocar → abre la app · **sin conexión** (lee `SharedPreferences`, no necesita red).
+- [x] Código nativo (Kotlin): `WidgetBridgeActivity`, `WidgetRachaProvider`, `appwidget-provider`, layout y bloques del `AndroidManifest.xml`. ✅ *(2026-10-08. Detalle: **8 ficheros** en `android/widget/` (fuentes + `parche/manifiesto.xml`). `WidgetBridgeActivity` es `exported="true"` + `noHistory`/`excludeFromRecents`, hereda el tema transparente de la `<application>` y **valida los extras** (entero 0–9999 y `YYYY-MM-DD`, si no, `finish()` sin guardar). `WidgetRachaProvider` aplica **la misma regla que `avanzarRacha()`**: hoy/ayer → cifra, ≥2 días → «—» + «Juega hoy»; `updatePeriodMillis="0"` (nada de refrescos de batería: lo repintamos nosotros) y clic → `getLaunchIntentForPackage`. Recursos en ficheros propios (`widget_strings/widget_colors` + `values-night`, `widget_fondo`, `layout`, `xml/widget_racha`) ⇒ el parche es idempotente y el widget respeta el modo oscuro del sistema. **Kotlin 2.1.21** enganchado a los dos `build.gradle` (decisión cumplida).)*
+- [x] `scripts/aplicar-widget.mjs` que (re)aplique el parche tras un `bubblewrap update` (ver riesgos). ✅ *(2026-10-08. Detalle: `npm.cmd run widget`. Copia `android/widget/{java,res}` → `app/src/main/`, inserta el fragmento de manifiesto antes del cierre de `<application>` y añade los parches de Gradle (`mavenCentral()` ×2, classpath de Kotlin, `apply plugin: 'kotlin-android'`, `kotlinOptions`). **Idempotente** (marcas «aplicado»/«ya estaba») y **falla en voz alta** si un ancla no está donde se esperaba. **Probado en caliente:** `bubblewrap update` borró todos los parches → el script los rehizo de un plumazo.)*
+- [x] `bubblewrap.cmd build` + `apksigner verify --print-certs` (**misma huella**) y APK nuevo a `Downloads`. ✅ *(2026-10-08. Detalle: **`appVersionCode` 1 → 3 y `appVersionName` → `1.1`** en `twa-manifest.json` + `bubblewrap update` (la orden sin `--skipVersionUpgrade` autoincrementa). APK+AAB firmados, huella **`b7666ba3…b54cf` idéntica** → el alumno que ya la tiene se la actualiza encima sin perder datos. `aapt dump badging` = `versionCode='3' versionName='1.1'`, `minSdk 21`, y en el manifiesto del APK están `WidgetBridgeActivity` (con `BROWSABLE`) y `WidgetRachaProvider`. Copiado a `Downloads/RepasoHistoria-1.1.apk`. **Incidencia resuelta abajo:** el JDK que descarga Bubblewrap era de **32 bits** y Kotlin se cae con él.)*
+- [ ] Prueba manual en dispositivo: añadir widget → jugar → se actualiza · borrar progreso → `0` · tema oscuro · tocar → abre la app · **sin conexión** (lee `SharedPreferences`, no necesita red). *Paso 6: instalar `Downloads/RepasoHistoria-1.1.apk` (actualización, sin desinstalar) y, una vez confirmado, activar `PUENTE_WIDGET_ACTIVADO = true`.*
 
 **Riesgos**
 
@@ -695,6 +695,7 @@ Por disparadores (§12.2). Las tres primeras tareas **no esperan a ningún dispa
 | APK viejo + web nueva → diálogo «No se encontró ninguna aplicación» | Despliegue en dos pasos (APK primero) + sondeo con auto-desactivación |
 | Widget desactualizado si el alumno no abre la app | Envío también al arrancar + regla de racha rota en el propio widget |
 | Firma y tienda | **Sin impacto**: mismo paquete y misma clave → `assetlinks.json` y huella **no cambian**; el widget no pide permisos |
+| **Kotlin necesita un JDK de 64 bits** y el que descarga Bubblewrap era **x86** (crash *«Unknown hardware platform: x86»*) | Temurin **JDK 17 x64** en `~\.bubblewrap\jdk\` + `bubblewrap.cmd updateConfig --jdkPath …`; `bubblewrap.cmd doctor` en verde |
 
 **Alternativas descartadas** (por si cambia el escenario):
 
