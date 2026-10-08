@@ -181,6 +181,11 @@ export function montarAplicacion(raiz: HTMLElement, fuentes: Fuentes, almacen: A
       default:
         navegar('/');
     }
+
+    // 2.4.2 «Página titulada»: en una SPA con hash el título del documento
+    // debe seguir a la pantalla (historial del navegador, pestañas y lectores).
+    const tituloPantalla = vista.querySelector('h1')?.textContent;
+    document.title = tituloPantalla ? `${tituloPantalla} · ${T.nombre}` : T.nombre;
   }
 
   /** Mueve el foco al encabezado de la pantalla (aviso a lectores de pantalla). */

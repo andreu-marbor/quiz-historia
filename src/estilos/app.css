@@ -44,6 +44,7 @@
   display: flex;
   align-items: center;
   gap: var(--espacio-xs);
+  min-height: 44px; /* objetivo táctil: sin esto quedaba en ~42px */
   padding: var(--espacio-s) var(--espacio);
   border: 1px solid transparent;
   border-radius: 999px;
@@ -111,7 +112,8 @@
   gap: var(--espacio-xs);
   min-height: 44px;
   padding: var(--espacio-m) var(--espacio);
-  border: 1px solid var(--borde);
+  /* control interactivo: borde con 1.4.11 AA, no el decorativo */
+  border: 1px solid var(--borde-control);
   border-radius: var(--radio);
   background: var(--bg-secundario);
   color: var(--texto);
@@ -391,7 +393,8 @@
   width: 100%;
   min-height: 44px;
   padding: var(--espacio-s) var(--espacio-m);
-  border: 1px solid var(--borde);
+  /* fila-interactiva: borde con 1.4.11 AA sobre el fondo de la tarjeta */
+  border: 1px solid var(--borde-control);
   border-radius: var(--radio);
   background: var(--bg);
   color: var(--texto);
@@ -537,7 +540,8 @@
   width: 100%;
   min-height: 48px;
   padding: var(--espacio-m) var(--espacio);
-  border: 2px solid var(--borde);
+  /* control interactivo: blanco sobre crema, el borde ES el borde visible */
+  border: 2px solid var(--borde-control);
   border-radius: var(--radio);
   background: var(--bg-secundario);
   color: var(--texto);
@@ -1076,7 +1080,8 @@
   width: 100%;
   min-height: 44px;
   padding: var(--espacio-s);
-  border: 1px solid var(--borde);
+  /* campo de formulario: su borde es lo que dice dónde se escribe (1.4.11) */
+  border: 1px solid var(--borde-control);
   border-radius: var(--radio);
   background: var(--bg);
   color: var(--texto);

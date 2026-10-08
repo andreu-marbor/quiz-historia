@@ -65,7 +65,9 @@ quiz-historia/
 ├── scripts/
 │   ├── validar-preguntas.mjs # validador del contenido
 │   ├── generar-iconos.mjs    # iconos PWA con sharp (npm.cmd run iconos)
-│   └── comprobar-offline.mjs # verifica el offline real vía CDP (requiere Chrome)
+│   ├── comprobar-offline.mjs # verifica el offline real vía CDP (requiere Chrome)
+│   ├── comprobar-contraste.mjs  # contraste WCAG AA de base.css, claro y oscuro
+│   └── comprobar-movil.mjs   # reflow + objetivos táctiles a 320 CSS px (CDP)
 ├── public/
 │   ├── manifest.webmanifest  # PWA: name "Repaso de Historia"
 │   ├── sw.js                 # service worker
@@ -111,14 +113,16 @@ npm.cmd install        # instalar dependencias
 npm.cmd run dev        # servidor de desarrollo
 npm.cmd run build      # build de producción (tsc --noEmit + vite)
 npm.cmd run preview    # previsualizar build
-npm.cmd run prueba     # TODO: lógica + persistencia + pantallas + datos
+npm.cmd run prueba     # TODO: lógica + persistencia + pantallas + datos + contraste AA
 npm.cmd run prueba:logica   # lógica del quiz y catálogo
 npm.cmd run prueba:persistencia  # ajustes, progreso y racha (almacén falso)
-npm.cmd run prueba:pantallas     # 5 pantallas + flujo completo (jsdom)
+npm.cmd run prueba:pantallas     # 5 pantallas + flujo completo + estructura de accesibilidad (jsdom)
 npm.cmd run prueba:datos    # solo validador de preguntas/temas
 node scripts/validar-preguntas.mjs   # el validador solo, sin pasar por esbuild
+npm.cmd run comprobar-contraste  # contraste WCAG AA de la paleta (claro y oscuro)
+npm.cmd run comprobar-movil      # reflow y objetivos táctiles a 320 px (Chrome)
+npm.cmd run comprobar-offline    # el offline real vía service worker (Chrome)
 npm.cmd run iconos     # regenerar iconos PNG del PWA desde SVG
-npm.cmd run comprobar-offline   # comprueba el offline real (Chrome; no va en `prueba`)
 ```
 
 ### Git / despliegue

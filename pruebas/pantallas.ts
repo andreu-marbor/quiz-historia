@@ -1040,6 +1040,10 @@ await (async () => {
   comprobar(texto(document.querySelector('#vista h1')) === 'Tu progreso', 'el enlace a Progreso cambia de pantalla');
   comprobar(window.location.hash === '#/progreso', 'y deja la URL en #/progreso');
   comprobar(
+    document.title === 'Tu progreso · Repaso de Historia',
+    'el título del documento sigue a la pantalla (2.4.2)',
+  );
+  comprobar(
     document.querySelector('.navegacion a[data-ruta="/progreso"]')!.getAttribute('aria-current') === 'page',
     'y actualiza la pestaña activa',
   );
@@ -1099,6 +1103,97 @@ await (async () => {
     texto(document.querySelector('#vista h1')) === 'Elige curso y tema',
     'una ruta desconocida también vuelve al inicio',
   );
+})();
+
+// ---------------------------------------------------------------------------
+await (async () => {
+  seccion('Accesibilidad estructural (§14 T8 · lector de pantalla y teclado)');
+
+  // --- shell común a las 5 pantallas ---
+  comprobar(!!document.querySelector('header.cabecera'), 'la cabecera es landmark (banner)');
+  comprobar(!!document.querySelector('nav[aria-label]'), 'la navegación es landmark con nombre');
+  comprobar(!!document.querySelector('main#vista'), 'el contenido vive en <main>');
+  comprobar(
+    [...document.querySelectorAll('[tabindex]')].every((e) => ['0', '-1'].includes(e.getAttribute('tabindex') ?? '')),
+    'sin tabindex positivo: el orden del tabulador es el del DOM',
+  );
+  comprobar(
+    !!document.querySelector('.navegacion a[aria-current="page"]'),
+    'la pestaña activa se anuncia con aria-current',
+  );
+
+  /**
+   * Árbol de encabezados y nombres accesibles de la pantalla pintada.
+   * Un h1 por pantalla (el que recibe el foco al navegar) y sin saltos de
+   * nivel: en móvil, con `display` alterado, la jerarquía de encabezados es
+   * lo único con lo que se orienta un lector de pantalla.
+   */
+  const estructura = (pantalla: string): void => {
+    const niveles = [...document.querySelectorAll('#vista h1, #vista h2, #vista h3, #vista h4')].map((e) =>
+      Number(e.tagName.slice(1)),
+    );
+    comprobar(
+      niveles.length > 0 && niveles[0] === 1 && niveles.filter((n) => n === 1).length === 1,
+      `${pantalla}: exactamente un h1, y es el primer encabezado`,
+    );
+    comprobar(
+      niveles.every((n, i) => i === 0 || n <= niveles[i - 1] + 1),
+      `${pantalla}: los encabezados no saltan de nivel (h1 → h2 → h3)`,
+    );
+    comprobar(
+      [...document.querySelectorAll('#vista input, #vista select')].every(
+        (c) =>
+          !!c.closest('label') ||
+          (!!c.id && !!document.querySelector(`label[for="${c.id}"]`)) ||
+          !!c.getAttribute('aria-label'),
+      ),
+      `${pantalla}: todo campo tiene etiqueta asociada`,
+    );
+    comprobar(
+      [...document.querySelectorAll('#vista button, #vista a[href]')].every(
+        (e) => (e.textContent ?? '').trim().length > 0 || !!e.getAttribute('aria-label'),
+      ),
+      `${pantalla}: todo botón y enlace tiene nombre accesible`,
+    );
+    comprobar(
+      [...document.querySelectorAll('#vista svg')].every((s) => s.getAttribute('aria-hidden') === 'true'),
+      `${pantalla}: los iconos SVG son decorativos (aria-hidden)`,
+    );
+    comprobar(
+      document.title.endsWith('· Repaso de Historia'),
+      `${pantalla}: el título del documento sigue a la pantalla`,
+    );
+  };
+
+  estructura('inicio');
+
+  // --- cuestionario ---
+  (document.querySelector('.tema:not([disabled])') as HTMLButtonElement).click();
+  await esperar(() => window.location.hash === '#/cuestionario');
+  estructura('cuestionario');
+
+  // --- resultados: se juega entero, sin ratón ---
+  for (let i = 0; i < 80 && window.location.hash !== '#/resultados'; i += 1) {
+    const sig = document.getElementById('siguiente') as HTMLButtonElement | null;
+    const objetivo =
+      sig && !sig.disabled
+        ? sig
+        : (document.querySelector('.opcion:not([disabled])') as HTMLButtonElement | null);
+    if (!objetivo) break;
+    objetivo.click();
+    await esperar(() => true);
+  }
+  await esperar(() => window.location.hash === '#/resultados');
+  estructura('resultados');
+
+  // --- progreso y ajustes ---
+  window.location.hash = '#/progreso';
+  await esperar(() => texto(document.querySelector('#vista h1')) === 'Tu progreso');
+  estructura('progreso');
+
+  window.location.hash = '#/ajustes';
+  await esperar(() => texto(document.querySelector('#vista h1')) === 'Ajustes');
+  estructura('ajustes');
 })();
 
 finalizar();

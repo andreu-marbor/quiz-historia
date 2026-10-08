@@ -8,13 +8,15 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "prueba": "npm run prueba:logica && npm run prueba:persistencia && npm run prueba:pantallas && npm run prueba:datos",
+    "prueba": "npm run prueba:logica && npm run prueba:persistencia && npm run prueba:pantallas && npm run prueba:datos && npm run comprobar-contraste",
     "prueba:logica": "esbuild pruebas/logica.ts --bundle --format=esm --platform=node --outfile=node_modules/.tmp/logica.mjs --log-level=warning && node node_modules/.tmp/logica.mjs",
     "prueba:persistencia": "esbuild pruebas/persistencia.ts --bundle --format=esm --platform=node --outfile=node_modules/.tmp/persistencia.mjs --log-level=warning && node node_modules/.tmp/persistencia.mjs",
     "prueba:pantallas": "esbuild pruebas/pantallas.ts --bundle --packages=external --format=esm --platform=node --outfile=node_modules/.tmp/pantallas.mjs --log-level=warning && node node_modules/.tmp/pantallas.mjs",
     "prueba:datos": "esbuild pruebas/datos.ts --bundle --format=esm --platform=node --outfile=node_modules/.tmp/datos.mjs --log-level=warning && node node_modules/.tmp/datos.mjs",
     "iconos": "node scripts/generar-iconos.mjs",
-    "comprobar-offline": "node scripts/comprobar-offline.mjs"
+    "comprobar-offline": "node scripts/comprobar-offline.mjs",
+    "comprobar-movil": "node scripts/comprobar-movil.mjs",
+    "comprobar-contraste": "node scripts/comprobar-contraste.mjs"
   },
   "devDependencies": {
     "esbuild": "^0.25.0",

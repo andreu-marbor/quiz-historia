@@ -13,6 +13,10 @@
   --accent: #8c2f2f;
   --accent-texto: #ffffff;
   --borde: #ded8cd;
+  /* Borde de los controles INTERACTIVOS (botones, filas, select, opciones):
+     ≥3:1 contra fondo y tarjeta — 1.4.11 AA. `--borde` se queda para
+     separadores y tarjetas, que son decorativos. */
+  --borde-control: #8a857c;
   --ok: #166534;
   --ok-fondo: #e8f3ec;
   --error: #b42318;
@@ -59,6 +63,7 @@
     --accent: #e08b8b;
     --accent-texto: #17161a;
     --borde: #3a3742;
+    --borde-control: #77737f;
     --ok: #3fb950;
     --ok-fondo: #143122;
     --error: #ff7b72;
@@ -76,6 +81,7 @@
   --accent: #e08b8b;
   --accent-texto: #17161a;
   --borde: #3a3742;
+  --borde-control: #77737f;
   --ok: #3fb950;
   --ok-fondo: #143122;
   --error: #ff7b72;
@@ -162,6 +168,22 @@ button {
   :root {
     --borde: #6b6b6b;
     --texto-tenue: #3d3a35;
+  }
+
+  /* Tema oscuro elegido a mano (venga del SO que venga): el bloque anterior no
+     llega, porque `:root[data-tema='oscuro']` tiene más especificidad que
+     `:root`. Aquí se repite con la misma especificidad y va después → gana. */
+  :root[data-tema='oscuro'] {
+    --borde: #6f6b78;
+    --texto-tenue: #d6d1c9;
+  }
+}
+
+/* Y lo mismo para «según el sistema» con el SO en modo oscuro. */
+@media (prefers-color-scheme: dark) and (prefers-contrast: more) {
+  :root:not([data-tema='claro']) {
+    --borde: #6f6b78;
+    --texto-tenue: #d6d1c9;
   }
 }
 
