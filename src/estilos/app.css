@@ -677,6 +677,22 @@
   text-align: center;
 }
 
+/* --- ficha de examen (T4): la nota manda y los datos la acompañan --- */
+
+.nota-cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espacio-s) var(--espacio-l);
+}
+
+.nota-datos {
+  display: grid;
+  gap: var(--espacio-2xs);
+  text-align: left;
+}
+
 .nota {
   margin: 0;
   color: var(--accent);
@@ -693,13 +709,25 @@
 }
 
 .aciertos {
-  margin: var(--espacio-s) 0 var(--espacio-2xs);
+  margin: 0;
   font-weight: 600;
 }
 
 .veredicto {
-  margin: 0 0 var(--espacio-m);
+  margin: 0;
   color: var(--texto-tenue);
+}
+
+.nota-mejor {
+  margin: 0;
+  color: var(--texto-tenue);
+  font-size: var(--texto-s);
+  font-weight: 600;
+}
+
+.nota-bloque > :last-child {
+  margin-top: var(--espacio-s);
+  margin-bottom: 0;
 }
 
 .falladas {
@@ -709,6 +737,14 @@
   padding: 0;
   list-style: none;
   counter-reset: fallada;
+}
+
+/* Título de la revisión con su contador (ficha de examen) */
+.falladas-titulo {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-s);
+  margin: 0 0 var(--espacio-m);
 }
 
 .falladas li {
@@ -733,8 +769,19 @@
   font-weight: 600;
 }
 
-.falladas .linea {
+/* Cada línea lleva su icono (✗ lo que pusiste, ✓ la correcta, aviso si no
+   hubo respuesta): el color deja de ser el único indicador. */
+.linea {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-xs);
   margin: var(--espacio-s) 0 0;
+}
+
+.linea .icono {
+  width: 1.1em;
+  height: 1.1em;
+  flex: none;
 }
 
 .linea--mal {
@@ -743,13 +790,22 @@
 
 .linea--ok {
   color: var(--ok);
+  font-weight: 600;
 }
 
+.linea--tenue {
+  color: var(--texto-tenue);
+}
+
+/* La explicación es lo último y lo más apagado: caja al fondo, sin competir */
 .falladas .explicacion {
   margin: var(--espacio-s) 0 0;
-  padding-left: var(--espacio-m);
+  padding: var(--espacio-s) var(--espacio-m);
   border-left: 3px solid var(--borde);
-  color: var(--texto);
+  border-radius: 0 var(--radio) var(--radio) 0;
+  background: var(--bg);
+  color: var(--texto-tenue);
+  font-size: var(--texto-s);
 }
 
 /* ------------------------------------------------------------- progreso */
@@ -908,11 +964,20 @@ fieldset.ajuste {
 }
 
 .aviso {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-s);
   padding: var(--espacio-m) var(--espacio);
   border: 1px dashed var(--borde);
   border-radius: var(--radio);
   background: var(--bg-secundario);
   color: var(--texto-tenue);
+}
+
+.aviso .icono {
+  width: 1.3em;
+  height: 1.3em;
+  flex: none;
 }
 
 .aviso--positivo {

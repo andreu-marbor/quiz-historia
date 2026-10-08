@@ -348,6 +348,7 @@ export function montarAplicacion(raiz: HTMLElement, fuentes: Fuentes, almacen: A
     estado.resultado = resultado;
     estado.temaResultado = {
       seleccion: sesion.seleccion,
+      claveTema: sesion.claveTema,
       cursoTitulo: sesion.cursoTitulo,
       temaTitulo: sesion.temaTitulo,
     };

@@ -19,7 +19,7 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 | 6 | Contenido real (temario ESO/Bachiller) y documentación | ⏳ Pendiente |
 | 7 | Escalado (miles de preguntas, cientos de temas, imágenes): disparadores, chunks, cachés y pipeline `sharp` | ⏳ Planificada (2026-10-07) · plan en `PLAN.md` §12 |
 | 8 | Mejoras de uso: «Todos los temas» por asignatura, estructura `cursos > asignaturas > temas` y widget de racha | 🔄 En curso (2026-10-08): §13.2 ✅ · §13.1 ✅ · pendiente §13.3 (widget) |
-| 9 | Pulido de interfaz (las 5 pantallas, manual): tipografía, iconos, microinteracciones, vacíos, ficha de examen y ajustes agrupados | 🔄 En curso (2026-10-08) · plan en `PLAN.md` §14 · T0–T3 ✅ · pendiente T4–T8 |
+| 9 | Pulido de interfaz (las 5 pantallas, manual): tipografía, iconos, microinteracciones, vacíos, ficha de examen y ajustes agrupados | 🔄 En curso (2026-10-08) · plan en `PLAN.md` §14 · T0–T4 ✅ · pendiente T5–T8 |
 
 ---
 
@@ -246,6 +246,17 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **Docs:** `PLAN.md` — T3 `[x]` con detalle; fila de estado de Fase 9 en `MEMORY.md`.
 - **Siguiente de la Fase 9:** **T4 · Resultados** («ficha de examen»: resumen arriba + revisión jerarquizada).
 - **Alcance:** `src/ui/cuestionario.ts`, `src/estilos/app.css`, `pruebas/pantallas.ts`, `PLAN.md` y esta entrada.
+
+### 2026-10-08 — Fase 9 · T4 COMPLETADA: «ficha de examen» en Resultados
+
+- **Mejor nota en la ficha:** `TemaDelResultado` gana el campo **`claveTema`**, que `finalizar()` rellena con la MISMA clave que usó para guardar el progreso → `pintarResultados` lee `ctx.progreso.temas[claveTema].mejorNota` **sin duplicar** la lógica de claves (`<curso>/<tema>` o `<curso>/__todos__/<asignatura>`). Nueva cadena reutilizada: `T.inicio.mejorNota(n)` («Mejor nota: N»), ya que `resultados.ts` ya usaba cadenas de `cuestionario` — misma práctica.
+- **Estructura del resumen:** `.nota-bloque` pasa a `.nota-cabecera` = **nota grande a la izquierda + `.nota-datos`** (aciertos · veredicto · mejor nota, en `text-align: left` y `gap` de rejilla) a la derecha; `flex-wrap` ⇒ en móvil se apila y sigue centrado. La insignia «¡Nueva mejor nota!» queda debajo de todo. **Todos los selectores de test** (`.nota`, `.aciertos`, `.veredicto`, `.insignia--nueva`) siguen intactos.
+- **Revisión jerarquizada:** el `h2` gana la clase `.falladas-titulo` con una **insignia contador** («Preguntas falladas [3]»); cada `li` lleva ahora iconos — **✗** en «Tu respuesta», **✓** en «Respuesta correcta» (esta línea en `font-weight: 600`, es la que hay que recordar) y **aviso** en «Sin responder» (`.linea--tenue`); `.linea` pasa a `flex` con `gap: --espacio-xs`. La **explicación se apaga**: caja con `background: --bg`, `--texto-s` y `--texto-tenue` sobre el borde izquierdo → ya no compite con las respuestas.
+- **Nota 100:** el mensaje «No has fallado ninguna pregunta» lleva su **icono ✓**; `.aviso` pasa a `flex` (sus otros usos son texto suelto, sin cambio visual).
+- **Tests: 372 → 376 comprobaciones** (`68 lógica + 43 persistencia + 220 pantallas + 45 datos`) y `build` en verde. Nuevas: `.nota-datos` con sus 3 párrafos + «Mejor nota: 25» (el fixture ahora lleva progreso), contador en el título de la revisión, iconos en la primera fallada y en el «sin falladas».
+- **Docs:** `PLAN.md` — T4 `[x]` con detalle; fila de estado de Fase 9 en `MEMORY.md`.
+- **Siguiente de la Fase 9:** **T5 · Progreso** (tarjetas de racha/contador con icono, tabla legible en móvil).
+- **Alcance:** `src/ui/{contexto,resultados}.ts`, `src/aplicacion.ts`, `src/estilos/app.css`, `pruebas/pantallas.ts`, `PLAN.md` y esta entrada.
 
 ---
 

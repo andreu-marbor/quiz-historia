@@ -28,10 +28,12 @@ export interface Sesion {
   soloFalladas: boolean;
 }
 
-/** Datos del tema del último resultado (para repetir). */
+/** Datos del tema del último resultado (para repetir y para la ficha). */
 export interface TemaDelResultado {
   /** Cómo se llegó a jugar: tema suelto o fila «Todos los temas» (§13.1) */
   seleccion: Seleccion;
+  /** Clave en `progreso.temas` (la que usó `finalizar`), para leer la mejor nota */
+  claveTema: string;
   cursoTitulo: string;
   temaTitulo: string;
 }

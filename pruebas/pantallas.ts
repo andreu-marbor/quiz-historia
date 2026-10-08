@@ -585,23 +585,39 @@ seccion('Pantalla de resultados');
   );
   const temaResultado: TemaDelResultado = {
     seleccion: { tipo: 'tema', cursoId: 'eso2', temaId: 'restauracion' },
+    claveTema: 'eso2/restauracion',
     cursoTitulo: '2º ESO',
     temaTitulo: 'Restauración borbónica',
   };
 
   llamadas = [];
   const vista = nuevaVista();
-  pintarResultados(vista, contexto({ resultado, temaResultado, nuevaMejor: true }));
+  // El progreso ya lleva la partida de esta ficha (así lo deja `finalizar`)
+  const progresoFicha = registrarCuestionario(progresoVacio(), 'eso2/restauracion', 25, '2026-10-06');
+  pintarResultados(
+    vista,
+    contexto({ resultado, temaResultado, nuevaMejor: true, progreso: progresoFicha }),
+  );
 
   comprobar(texto(vista.querySelector('h1')) === 'Resultados', 'encabezado');
   comprobar(texto(vista.querySelector('.contexto')) === '2º ESO · Restauración borbónica', 'sitúa la partida');
   comprobar(texto(vista.querySelector('.nota')).startsWith('25'), 'nota 25 sobre 100');
   comprobar(texto(vista.querySelector('.aciertos')) === '1 de 4 correctas', 'aciertos y total');
   comprobar(texto(vista.querySelector('.veredicto')).includes('practicando'), 'veredicto acorde a la nota');
+  comprobar(
+    texto(vista.querySelector('.nota-mejor')) === 'Mejor nota: 25' &&
+      vista.querySelectorAll('.nota-datos p').length === 3,
+    'ficha (T4): aciertos, veredicto y mejor nota agrupados junto a la nota',
+  );
   comprobar(existe(vista, '.insignia--nueva'), 'avisa de la nueva mejor nota');
   comprobar(vista.querySelectorAll('.falladas li').length === 3, 'lista las 3 falladas (aciertos y sin falladas fuera)');
+  comprobar(
+    texto(vista.querySelector('.falladas-titulo')) === 'Preguntas falladas3',
+    'la revisión lleva su contador (T4)',
+  );
 
   const primeraFallada = vista.querySelector('.falladas li')!;
+  comprobar(primeraFallada.querySelectorAll('svg').length >= 2, 'cada fallada lleva sus iconos ✗ y ✓ (T4)');
   comprobar(texto(primeraFallada).includes('Respuesta correcta: Opción B'), 'en cada fallada muestra la correcta');
   const sinResponder = [...vista.querySelectorAll('.falladas li')].find((li) => texto(li).includes('Sin responder'));
   comprobar(Boolean(sinResponder), 'una pregunta sin responder aparece como tal');
@@ -623,6 +639,10 @@ seccion('Pantalla de resultados');
   pintarResultados(vista2, contexto({ resultado: perfecto, temaResultado }));
   comprobar(!existe(vista2, '.falladas'), 'con nota 100 no hay bloque de falladas');
   comprobar(texto(vista2).includes('No has fallado ninguna pregunta'), 'y lo dice con texto');
+  comprobar(
+    vista2.querySelector('.aviso--positivo svg') !== null,
+    'y con su icono gráfico ✓ (T4)',
+  );
   comprobar(
     !botones(vista2, '.boton').some((b) => texto(b) === 'Repetir solo las falladas'),
     'tampoco se ofrece repetir las falladas',

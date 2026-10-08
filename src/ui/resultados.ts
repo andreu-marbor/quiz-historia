@@ -6,6 +6,7 @@
 import { T } from './cadenas';
 import type { Contexto } from './contexto';
 import { h, vaciar } from './dom';
+import { icono } from './iconos';
 
 export function pintarResultados(vista: HTMLElement, ctx: Contexto): void {
   vaciar(vista);
@@ -21,28 +22,41 @@ export function pintarResultados(vista: HTMLElement, ctx: Contexto): void {
     h('p', { class: 'contexto' }, T.resultados.contexto(tema.cursoTitulo, tema.temaTitulo)),
   );
 
+  // Ficha de examen (T4): la nota grande manda y los datos se agrupan a su
+  // lado. La mejor nota sale del MISMO progreso que guardó `finalizar`
+  // (clave `tema.claveTema`), así que ya refleja esta partida.
+  const mejorNota = ctx.progreso.temas[tema.claveTema]?.mejorNota;
   const resumen = h(
     'section',
     { class: 'nota-bloque', 'aria-live': 'polite' },
     h(
-      'p',
-      { class: 'nota' },
-      String(resultado.nota),
-      h('span', { class: 'nota-maxima' }, '/100'),
+      'div',
+      { class: 'nota-cabecera' },
+      h('p', { class: 'nota' }, String(resultado.nota), h('span', { class: 'nota-maxima' }, '/100')),
+      h(
+        'div',
+        { class: 'nota-datos' },
+        h('p', { class: 'aciertos' }, T.resultados.aciertos(resultado.aciertos, resultado.total)),
+        h('p', { class: 'veredicto' }, veredicto(resultado.nota)),
+        mejorNota === undefined ? null : h('p', { class: 'nota-mejor' }, T.inicio.mejorNota(mejorNota)),
+      ),
     ),
-    h('p', { class: 'aciertos' }, T.resultados.aciertos(resultado.aciertos, resultado.total)),
-    h('p', { class: 'veredicto' }, veredicto(resultado.nota)),
     ctx.nuevaMejor ? h('p', { class: 'insignia insignia--alta insignia--nueva' }, T.resultados.nuevaMejor) : null,
   );
 
   const falladas = resultado.detalles.filter((detalle) => !detalle.acertada);
   const bloqueFalladas =
     falladas.length === 0
-      ? h('p', { class: 'aviso aviso--positivo' }, T.resultados.sinFalladas)
+      ? h('p', { class: 'aviso aviso--positivo' }, icono('check'), T.resultados.sinFalladas)
       : h(
           'div',
           {},
-          h('h2', {}, T.resultados.falladas),
+          h(
+            'h2',
+            { class: 'falladas-titulo' },
+            T.resultados.falladas,
+            h('span', { class: 'insignia' }, String(falladas.length)),
+          ),
           h(
             'ol',
             { class: 'falladas' },
@@ -50,21 +64,26 @@ export function pintarResultados(vista: HTMLElement, ctx: Contexto): void {
               const pregunta = detalle.pregunta;
               const elegida = detalle.elegida;
               const textoElegido = elegida === null ? null : (pregunta.opciones[elegida] ?? null);
+              // Jerarquía de la revisión (T4): enunciado → lo que pusiste (✗)
+              // → la correcta (✓), que es lo que hay que recordar → explicación
+              // en caja apagada al final.
               return h(
                 'li',
                 {},
                 h('p', { class: 'enunciado' }, pregunta.enunciado),
                 textoElegido === null
-                  ? h('p', { class: 'linea' }, T.resultados.sinResponder)
+                  ? h('p', { class: 'linea linea--tenue' }, icono('aviso'), T.resultados.sinResponder)
                   : h(
                       'p',
                       { class: 'linea linea--mal' },
+                      icono('cruz'),
                       h('strong', {}, `${T.cuestionario.tuRespuesta}: `),
                       textoElegido,
                     ),
                 h(
                   'p',
                   { class: 'linea linea--ok' },
+                  icono('check'),
                   h('strong', {}, `${T.cuestionario.respuestaCorrecta}: `),
                   pregunta.opciones[pregunta.respuesta],
                 ),
