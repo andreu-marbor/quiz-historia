@@ -123,6 +123,8 @@ npm.cmd run comprobar-offline   # comprueba el offline real (Chrome; no va en `p
 
 ### Git / despliegue
 
+> **Convención del usuario:** cuando pide **«haz un commit»** quiere decir **commit + push** (`git push origin main`) — no dejar nada solo local.
+
 ```bash
 git push origin HEAD:main     # la CI y Pages solo se disparan en `main`
 gh run list                   # estado del último despliegue
