@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   §13.3 · Ficha del widget para el selector de Android.
+  `targetCellWidth/Height` = **2×1** (2026-10-08: 3×2 se quedaba grande);
+  `minWidth`/`minHeight` son el suelo para los lanzadores antiguos, que calculan
+  las celdas con esos valores en vez de con el tamaño por defecto.
   `updatePeriodMillis="0"`: el sistema no refresca por su cuenta; solo lo
   hacemos nosotros (al terminar un cuestionario, al borrar progreso, al abrir
   la app y al añadir el widget).
@@ -12,7 +15,7 @@
     android:minWidth="140dp"
     android:previewLayout="@layout/widget_racha"
     android:resizeMode="horizontal|vertical"
-    android:targetCellHeight="2"
-    android:targetCellWidth="3"
+    android:targetCellHeight="1"
+    android:targetCellWidth="2"
     android:updatePeriodMillis="0"
     android:widgetCategory="home_screen" />

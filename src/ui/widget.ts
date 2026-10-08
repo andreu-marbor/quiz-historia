@@ -25,11 +25,12 @@
 import type { Almacen } from '../persistencia';
 
 /**
- * Paso 2 del despliegue en dos pasos: se pone a `true` **cuando el APK con el
- * receptor ya esté instalado**. Con `false` no se manda nada (así el APK viejo
- * no enseña ningún diálogo de Chrome).
+ * Paso 2 del despliegue en dos pasos (§13.3): **activado el 2026-10-08**, con
+ * el APK 1.2 instalado y el widget confirmado en el móvil. Sigue siendo el
+ * interruptor de corte: con `false` no se manda nada y el widget se queda en
+ * «Juega hoy» (así un APK viejo no llega a enseñar el diálogo de Chrome).
  */
-export const PUENTE_WIDGET_ACTIVADO = false;
+export const PUENTE_WIDGET_ACTIVADO = true;
 
 /** Clave del almacén: estado del puente (`ok` o `sin-soporte:<marca de tiempo>`). */
 export const CLAVE_WIDGET = 'repaso-historia:widget:v1';

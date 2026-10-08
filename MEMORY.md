@@ -18,7 +18,7 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 | 5 | Android TWA (keystore nuevo, assetlinks, APK + tramo cerrado Play) | 🔄 En curso (2026-10-08): keystore + APK/AAB firmados + assetlinks ✅ · prueba en dispositivo ✅ · respaldo en el otro PC ✅ · pendiente: Play Console y fichas de la tienda |
 | 6 | Contenido real (temario ESO/Bachiller) y documentación | ⏳ Pendiente |
 | 7 | Escalado (miles de preguntas, cientos de temas, imágenes): disparadores, chunks, cachés y pipeline `sharp` | ⏳ Planificada (2026-10-07) · plan en `PLAN.md` §12 |
-| 8 | Mejoras de uso: «Todos los temas» por asignatura, estructura `cursos > asignaturas > temas` y widget de racha | 🔄 En curso (2026-10-08): §13.2 ✅ · §13.1 ✅ · §13.3 🔄 **puente web ✅ + widget nativo ✅ (APK 1.1)** → pendiente instalarlo y activar `PUENTE_WIDGET_ACTIVADO` |
+| 8 | Mejoras de uso: «Todos los temas» por asignatura, estructura `cursos > asignaturas > temas` y widget de racha | 🔄 En curso (2026-10-08): §13.2 ✅ · §13.1 ✅ · §13.3 🔄 **puente web ✅ + widget nativo ✅ + INC-04 ✅ (aparece) + paso 2 ✅ puente ACTIVADO y APK 1.3 con widget 2×1** → pendiente la prueba en dispositivo (tarea 6) |
 | 9 | Pulido de interfaz (las 5 pantallas, manual): tipografía, iconos, microinteracciones, vacíos, ficha de examen y ajustes agrupados | 🔄 Casi completa (2026-10-08) · plan en `PLAN.md` §14 · **T0–T8 validación ✅** (434 comprobaciones + AA/`comprobar-contraste` + reflow `comprobar-movil` + estructura ARIA) · pendientes: capturas en `docs/capturas/` y revisión en dispositivo (sin cuenta de desarrollador) |
 
 ---
@@ -336,6 +336,21 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **Siguiente (paso 6):** instalar ese APK en el móvil → añadir el widget (mantener pulsado → Widgets → Repaso Historia → «Racha») → confirmarme → **yo pongo `PUENTE_WIDGET_ACTIVADO = true`** y hago push.
 - **Docs:** `PLAN.md` §13.3 — tareas 3, 4 y 5 `[x]`, riesgo del JDK añadido; `AGENTS.md` (árbol + comando `widget`); esta entrada y la incidencia de abajo.
 - **Alcance:** `android/**` (nuevo), `scripts/aplicar-widget.mjs` (nuevo), `package.json`, `twa-manifest.json`, `manifest-checksum.txt`, `build.gradle`, `app/**` (generado + parcheado), `PLAN.md`, `AGENTS.md`, `MEMORY.md`.
+
+---
+
+### 2026-10-08 — Fase 8 · §13.3 (3/3): paso 2 — puente **ACTIVADO** y widget a **2×1** (APK 1.3)
+
+- **Lo que se vio:** el widget ya se añadía (INC-04 resuelta), pero se quedaba en **«— / Juega hoy»** con la racha de 2 días correcta en la pantalla de Progreso. **No era un fallo**: `PUENTE_WIDGET_ACTIVADO` seguía en `false` — era el paso 2 del despliegue en dos pasos, pendiente de que me confirmaras la instalación.
+- **Contrato revisado antes de activar** (primera vez que se usaba de verdad): la web manda `intent://racha#Intent;scheme=quizhistoria;package=com.andreumarbor.quizophistoria;action=…widget.RACHA;S.racha=…;S.ultimoDia=…;end` y `WidgetBridgeActivity` lee `getStringExtra("racha")` / `getStringExtra("ultimoDia")` → **nombres, acción, scheme y host coinciden**, con validación 0–9999 y `YYYY-MM-DD`. Tras guardar llama a `WidgetRachaProvider.actualizarTodos()`.
+- **Activación:** `src/ui/widget.ts` → **`PUENTE_WIDGET_ACTIVADO = true`**. Los tests inyectan `activo: true/false`, así que **ningún test cambia de significado** (455 comprobaciones y `npm.cmd run build` en verde con el flag ya activo).
+- **Cuándo se actualiza el widget** (ya con el puente activo): al **abrir la app** el envío queda en **cola** y sale con el **primer toque** (Chrome exige gesto de usuario); al **terminar un cuestionario** y al **borrar progreso** va directo; y `onUpdate` salta al **añadir el widget** (ahora que el `<intent-filter>` existe).
+- **Tamaño 3×2 → 2×1** (petición): `targetCellWidth/Height` en `android/widget/res/xml/widget_racha.xml`; `minWidth 140dp` / `minHeight 64dp` siguen como suelo para los lanzadores antiguos, que calculan las celdas con esos valores en vez de con el tamaño por defecto. El layout baja el padding vertical **12 → 8dp** (y 12dp en horizontal) para que los ≈70dp de contenido (título + cifra + etiqueta) quepan en **una sola fila** sin recortarse. Ni una línea de más: mismos textos, mismos tamaños de letra.
+- **APK 1.3:** `appVersionCode` 4 → **5**, `appVersionName`/`appVersion` → **1.3**; flujo `bubblewrap.cmd update --skipVersionUpgrade` → `npm.cmd run widget` → `bubblewrap.cmd build`.
+- **Verificación en el paquete** (no en las fuentes): `aapt dump badging` = `versionCode='5' versionName='1.3'`; manifiesto con `<receiver> → APPWIDGET_UPDATE`; la ficha compilada (`res/D9.xml`) con **`targetCellWidth=0x2`** y **`targetCellHeight=0x1`**; el layout (`res/7q.xml`) con `paddingTop/Bottom=8dp` y `paddingStart/End=12dp`; **huella `b7666ba3…b54cf` idéntica** → actualiza encima sin perder datos.
+- **APK en el equipo:** `C:\Users\andre\Downloads\RepasoHistoria-1.3.apk` (1,0 MB). **Obsoletas:** las 1.1 y 1.2.
+- **Docs:** `PLAN.md` §13.3 — paso 2 marcado `[x]` y tarea 6 actualizada (fichero 1.3 y «`—`/Juega hoy» al borrar progreso); esta entrada.
+- **Alcance:** `src/ui/widget.ts`, `android/widget/res/{xml,layout}/widget_racha.xml`, `twa-manifest.json`, `manifest-checksum.txt`, `app/**` (regenerado + parcheado), `PLAN.md`, `MEMORY.md`.
 
 ---
 

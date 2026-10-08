@@ -3,6 +3,9 @@
   §13.3 · Diseño del widget. Solo vistas que RemoteViews sabe dibujar
   (LinearLayout + TextView) y colores/ textos por recursos, nunca a mano:
   mismo criterio que las variables CSS en la web.
+  El widget es 2×1 (una sola fila), así que el padding vertical baja de 12 a
+  8dp: el contenido (título + cifra + etiqueta ≈ 70dp) tiene que caber sin
+  recortarse en una celda.
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/widget_fondo"
@@ -11,7 +14,10 @@
     android:background="@drawable/widget_fondo"
     android:gravity="center_vertical"
     android:orientation="vertical"
-    android:padding="12dp">
+    android:paddingBottom="8dp"
+    android:paddingEnd="12dp"
+    android:paddingStart="12dp"
+    android:paddingTop="8dp">
 
     <TextView
         android:id="@+id/widget_titulo"
