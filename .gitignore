@@ -13,6 +13,10 @@ node_modules/.tmp/
 .DS_Store
 Thumbs.db
 
+# Skills de agente instaladas localmente (Sleek descartado; no van al repo)
+.agents/
+skills-lock.json
+
 # Secrets de Bubblewrap / Android (NO subirlos) — desde el primer commit (PLAN §5 fase 5)
 bubblewrapConfig/
 *.keystore

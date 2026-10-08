@@ -200,6 +200,8 @@ Así quedan **incluidas en el bundle y la app funciona sin internet de serie**.
 - Modo oscuro respetando `prefers-color-scheme`, con override manual.
 - Sin fuentes externas en tiempo de ejecución (offline).
 
+> **Fase 9 (§14):** pulido visual de las cinco pantallas **a mano** (sin herramientas externas: se probó una skill de diseño con API externa y el usuario la descartó). Mantiene todos los criterios de arriba y la identidad crema + granate.
+
 ---
 
 ## 5. Fases de implementación
@@ -287,6 +289,15 @@ Así quedan **incluidas en el bundle y la app funciona sin internet de serie**.
 - [ ] §13.1 · Filas **«Todos los temas de {asignatura}»** en cada bloque de asignatura (pool mezclado de esa asignatura y curso, clave virtual por fila, *repetir falladas* incluido).
 - [ ] §13.3 · **Widget nativo** de Android con la racha + puente `intent://` desde la web (despliegue en dos pasos).
 - [ ] Verdes al terminar cada tarea: `npm.cmd run prueba` y `npm.cmd run build` (los tests actuales no deben cambiar de significado y **los progresos guardados no deben perderse**: sus claves `<curso>/<tema>` no cambian).
+
+### Fase 9 — Pulido de interfaz (5 pantallas, manual) ⏳
+
+> Plan detallado en **[§14](#14-pulido-de-interfaz-2026-10-08)**. Sin fecha; se ejecuta cuando toque. **Orden: T0 → T1 → T2…T7 (una pantalla por tarea) → T8**. Cada tarea = commit + push con CI en verde, revisable por separado. **No toca** la Fase 7 (§12) ni la Fase 8 (§13).
+
+- [x] **T0 · Limpieza:** `.agents/` y `skills-lock.json` (skill de Sleek, descartada) al `.gitignore`.
+- [ ] **T1 · Base común:** escala tipográfica, iconos SVG inline (`src/ui/iconos.ts`), estados `:active` + microtransiciones, escala de espaciado y clases muertas.
+- [ ] **T2 · Inicio** · **T3 · Cuestionario** · **T4 · Resultados** («ficha de examen») · **T5 · Progreso** · **T6 · Ajustes** (agrupados) · **T7 · Estados vacíos** (con `cadenas.ts`).
+- [ ] **T8 · Validación y entrega:** `prueba` + `build` + `comprobar-offline`, revisión AA/teclado/lector/móvil real, **capturas en `docs/capturas/`** (README + fichas de Play Store) y entrada en `MEMORY.md`.
 
 ---
 
@@ -662,3 +673,68 @@ Por disparadores (§12.2). Las tres primeras tareas **no esperan a ningún dispa
 
 - **`navigator.setAppBadge()`** (número sobre el icono del launcher): cero código nativo y ya hoy, pero **no es un widget** y depende del launcher. Sirve como versión mínima intermedia.
 - **Widgets PWA** (miembro `widgets` del manifest): la solución limpia cuando Chrome/Android la soporte; entonces el puente sobra.
+
+---
+
+## 14. Pulido de interfaz (2026-10-08)
+
+> Decisión del usuario: **todas las pantallas** y **todas las ideas** de la lista de abajo. Ejecución en la **Fase 9** (§5). Trabajo **manual**: primero se valoró una skill de diseño con API externa (Sleek) y el usuario la descartó — queda anotado por eso en `MEMORY.md` y `.gitignore`.
+
+**Objetivo.** Un pulido, **no un rediseño**: misma identidad (crema `#f7f5f0` + granate `#8c2f2f`, «papel de archivo»), mismas reglas duras (variables CSS, cadenas centralizadas, AA, `reduced-motion`, 300 comprobaciones verdes). **No toca** Fase 7 (§12) ni Fase 8 (§13).
+
+### 14.1 Auditoría (hechos sobre el código, 2026-10-08)
+
+**Clases muertas / incoherencias**
+
+- `inicio.ts` usa `insignia--neutro` → **no existe** en `app.css` (solo apila el estilo base).
+- `inicio.ts` usa `curso-nombre` → **sin regla CSS** (hereda de `.curso-resumen`).
+- `summary` de curso con `list-style-position: inside` pero **sin `list-style: none`** → flecha del navegador por defecto (doble en Safari).
+- Espaciado sin escala: conviven `var(--espacio)` y sueltos `0.35/0.5/0.6/0.75/0.9rem`.
+
+**Acabado de interacción**
+
+- **Sin estado `:active`** en `.boton`, `.tema`, `.opcion` ni la nav → en móvil no se «hunde» al tocar (solo hay `hover`).
+- Transiciones: solo `.barra-relleno` las tiene.
+
+**Sin iconos:** la nav es texto, el «→» de cada tema es un carácter literal (`.tema-ir`), el feedback distingue solo por color+borde, y los 5 estados vacíos comparten el mismo `.aviso` punteado.
+
+**Tipografía:** una sola familia `system-ui`; los `clamp()` de los títulos están bien pero no hay personalidad.
+
+**Ajustes:** 4 bloques planos, solo el primero es `fieldset` con `legend`, y «Borrar progreso» (destructiva) va en la misma lista que las preferencias.
+
+**Lo que ya está bien y NO se toca:** contraste AA · `:focus-visible` global · `prefers-reduced-motion` y `prefers-contrast` globales · `aria-live` y gestión de foco del quiz · `<dialog>` propio (INC-02) · insignias nunca solo-color · `accent-color` · targets ≥44 px · `system-ui` sin fuentes externas (offline).
+
+### 14.2 Las 6 ideas aprobadas (D.2)
+
+| # | Idea | Dónde |
+|---|---|---|
+| 1 | **Tipografía con carácter** en títulos/`.nota` (cuerpo sigue con `system-ui`) | `base.css` + todas |
+| 2 | **Iconos SVG inline propios** (sin dependencias): nav, «→», ✓/✗, avisos | `src/ui/iconos.ts` nuevo |
+| 3 | **Microinteracciones**: feedback, barra, *press* de tarjetas (bajo `reduced-motion`) | `app.css` |
+| 4 | **Estados vacíos diseñados** (0 cursos, 0 temas, progreso vacío, sin conexión, mínimo no alcanzado) | `T7` |
+| 5 | **Resultados como «ficha de examen»**: resumen arriba + revisión jerarquizada | `T4` |
+| 6 | **Ajustes agrupados** (`Apariencia` · `Juego` · `Datos`) con la destructiva separada | `T6` |
+
+### 14.3 Orden de ejecución (T0–T8)
+
+Cada tarea = **commit + push** con `prueba` y `build` en verde; los selectores de `pruebas/pantallas.ts` (167) se actualizan **en la misma tarea** si cambia el DOM.
+
+- [x] **T0 · Limpieza:** `.agents/` + `skills-lock.json` → `.gitignore` (skill de Sleek descartada, localmente conservable).
+- [ ] **T1 · Base común** (`base.css`, `app.css`, `src/ui/iconos.ts` nuevo): escala tipográfica por variables · iconos SVG inline (`aria-hidden` en los decorativos, cuidado con `label-content-name-mismatch`) · estados `:active` + transiciones cortas · escala de espaciado (`--espacio-s/m/l`) y fuera los sueltos · arreglar `insignia--neutro`, `curso-nombre` y el `summary`.
+- [ ] **T2 · Inicio:** jerarquía de la tarjeta de curso, chip de contador accesible, fila de tema con icono en vez de «→», densidad de `lista-temas`.
+- [ ] **T3 · Cuestionario:** feedback con ✓/✗ + entrada animada, barra más expresiva, opciones con marca gráfica (además de la letra y del color).
+- [ ] **T4 · Resultados:** «ficha de examen» — resumen (nota + aciertos + veredicto + mejor nota) y falladas mejor jerarquizadas.
+- [ ] **T5 · Progreso:** tarjetas de racha/contador con icono, tabla legible en móvil.
+- [ ] **T6 · Ajustes:** tres grupos `fieldset/legend` (**Apariencia · Juego · Datos**) y «Borrar progreso» como zona de peligro aparte.
+- [ ] **T7 · Estados vacíos:** componente propio con icono; copy **nuevo solo en `src/ui/cadenas.ts`**.
+- [ ] **T8 · Validación y entrega:** `npm.cmd run prueba` + `build` + `comprobar-offline` · AA (incluido oscuro), teclado, lector de pantalla, móvil real · **capturas en `docs/capturas/`** (sirven para README **y** fichas de Play Store) · entrada en `MEMORY.md`.
+
+### 14.4 Riesgos
+
+| Riesgo | Mitigación |
+|---|---|
+| Romper los 167 tests de pantallas al cambiar el DOM | Selector nuevo + test en **la misma** tarea; `prueba` en verde antes de pushear |
+| Iconos inline alterando nombres accesibles | `aria-hidden` en decorativos; el texto visible manda (patrón ya usado en `inicio.ts`) |
+| Regresión del modo oscuro | Todo color nuevo **por variables**, con su pareja oscura en `base.css`; revisar a mano en cada tarea |
+| Animación incómoda | Todo bajo el `prefers-reduced-motion` global de `base.css` |
+| Alcance desbordado | Fases 7 y 8 intactas; una pantalla por tarea y un push por tarea |

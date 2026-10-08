@@ -19,6 +19,7 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 | 6 | Contenido real (temario ESO/Bachiller) y documentación | ⏳ Pendiente |
 | 7 | Escalado (miles de preguntas, cientos de temas, imágenes): disparadores, chunks, cachés y pipeline `sharp` | ⏳ Planificada (2026-10-07) · plan en `PLAN.md` §12 |
 | 8 | Mejoras de uso: «Todos los temas» por asignatura, estructura `cursos > asignaturas > temas` y widget de racha | ⏳ Planificada (2026-10-08) · plan en `PLAN.md` §13 |
+| 9 | Pulido de interfaz (las 5 pantallas, manual): tipografía, iconos, microinteracciones, vacíos, ficha de examen y ajustes agrupados | ⏳ Planificada (2026-10-08) · plan en `PLAN.md` §14 · T0 ✅ |
 
 ---
 
@@ -165,6 +166,18 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **Orden de ejecución (Fase 8):** ahora es **§13.2 → §13.1 → §13.3** — sin la estructura obligatoria no hay bloques de asignatura donde pintar las filas del §13.1 (ambas tareas conviene hacerlas juntas).
 - **Alcance de esta iteración:** solo `PLAN.md` (§3, §4, §5 Fase 8, §13.1, §13.2) y esta entrada; **cero cambios de código**.
 - **Estado:** ⏳ decisión cerrada; la Fase 8 sigue sin empezar.
+
+### 2026-10-08 — Plan de pulido de interfaz (`PLAN.md` §14 + Fase 9) y descarte de la skill de diseño Sleek
+
+- **Contexto:** el usuario pidió «mejorar la interfaz con la skill `design-mobile-apps`» (instalada con `npx skills add designed-by-ai/skills` → `.agents/skills/`). Tras leerla, la propuesta obligaba a un flujo con **API externa (Sleek.design)** y su rama de implementación asume React Native/Expo o HTML+Tailwind, incompatible con nuestro **DOM + CSS con variables** (§9). **El usuario la descartó: «No quiero usar sleek»** → se anula todo el flujo de API/clave/coste y se hace el pulido **a mano**.
+- **Alcance decidido (D.1 + D.2):** **las 5 pantallas** y **las 6 ideas** de la lista propuesta (tipografía en títulos · iconos SVG inline propios · microinteracciones · estados vacíos diseñados · resultados como «ficha de examen» · ajustes agrupados). **Decisión:** pulido, **no rediseño** — misma identidad crema + granate, mismas reglas duras (variables CSS, `cadenas.ts`, AA, `reduced-motion`, tests verdes).
+- **Auditoría previa (solo lectura, hallazgos en `PLAN.md` §14.1):** clases muertas `insignia--neutro` y `curso-nombre`; `summary` sin `list-style:none` (flecha del navegador); espaciado sin escala (`var(--espacio)` junto a `0.35…0.9rem` sueltos); **sin `:active`** en botones/temas/opciones/nav (en móvil no se «hunde» al tocar); el «→» de `.tema-ir` es un carácter literal; los 5 estados vacíos son el mismo `.aviso` punteado; Ajustes con 4 bloques planos y la destructiva mezclada.
+- **Se conserva tal cual** (auditoría positiva): `:focus-visible`, `reduced-motion`/`prefers-contrast`, `aria-live` + foco del quiz, `<dialog>` de INC-02, insignias nunca solo-color, targets ≥44 px, sin fuentes externas (offline).
+- **T0 ejecutado:** `.agents/` y `skills-lock.json` añadidos al **`.gitignore`** (recurso local, no versionado; no se borró nada).
+- **Plan escrito en `PLAN.md`:** §14 (14.1 auditoría · 14.2 las 6 ideas · 14.3 orden T0–T8 · 14.4 riesgos) + **Fase 9** en §5 + puntero en §4 «Criterios de UI». Ejecución **T1 → T2…T7 (una pantalla por tarea, commit+push con CI verde) → T8**; `pruebas/pantallas.ts` (167 selectores) se actualiza en la misma tarea que cambie el DOM.
+- **Relación con otras fases:** no toca **Fase 7** (§12) ni **Fase 8** (§13); al final, T8 deja capturas que sirven para el **README** y las **fichas de Play Store** (dos pendientes de una).
+- **Alcance de esta iteración:** `.gitignore`, `PLAN.md` (§4, §5, §14) y esta entrada; **cero cambios de código**.
+- **Estado:** ⏳ Fase 9 planificada; **T0 ✅**, T1–T8 sin empezar.
 
 ---
 
