@@ -95,14 +95,54 @@ hechos.push(`fuentes: ${copiados} ficheros copiados a app/src/main/ (Kotlin + re
 // ---------------------------------------------------------------------------
 // 2 · AndroidManifest.xml: actividad del puente + receiver del widget
 // ---------------------------------------------------------------------------
+// El bloque se reconoce por el comentario de su fuente: así, si alguien cambia
+// `android/widget/parche/manifiesto.xml`, la reaplicación lo sustituye en vez de
+// dar por bueno el viejo (antes valía un simple `includes('WidgetBridgeActivity')`
+// y el cambio no llegaba nunca al manifiesto).
+const FRAGMENTO = leer(join(origen, 'parche', 'manifiesto.xml')).trimEnd();
+const MARCA_BLOQUE = '§13.3 · Bloques del widget de la racha.';
+
+// Validación del CONTENIDO del fragmento, no solo de que exista: Android
+// descubre los widgets buscando receivers que escuchen APPWIDGET_UPDATE, y sin
+// ese <intent-filter> el selector de widgets ni enseña la app — build en verde
+// y widget invisible (INC-04, 2026-10-08). Mejor fallar aquí que repartir un
+// APK sin widget.
+exigir(
+  /<intent-filter>[\s\S]*android\.appwidget\.action\.APPWIDGET_UPDATE[\s\S]*<\/intent-filter>/.test(FRAGMENTO),
+  'android/widget/parche/manifiesto.xml no declara <intent-filter> con android.appwidget.action.APPWIDGET_UPDATE: Android no descubriría el widget (INC-04).',
+);
+exigir(
+  FRAGMENTO.includes('android.appwidget.provider'),
+  'android/widget/parche/manifiesto.xml no lleva el meta-data android.appwidget.provider: el widget no tendría ficha.',
+);
+exigir(
+  /<receiver[\s\S]*android:exported=/.test(FRAGMENTO),
+  'El <receiver> del widget necesita android:exported explícito (obligatorio desde Android 12 cuando hay intent-filter).',
+);
+
 parchear(join(destino, 'AndroidManifest.xml'), (manifiesto) => {
-  if (manifiesto.includes('WidgetBridgeActivity')) return manifiesto;
+  if (manifiesto.includes(FRAGMENTO)) return manifiesto;
+
+  const inicioBloque = manifiesto.indexOf(MARCA_BLOQUE);
+  if (inicioBloque !== -1) {
+    // Hay un bloque del widget, pero distinto al de la fuente → lo sustituimos.
+    const inicio = manifiesto.lastIndexOf('\n', inicioBloque) + 1;
+    const cierre = manifiesto.indexOf('</receiver>', inicioBloque);
+    exigir(cierre !== -1, 'El bloque del widget en AndroidManifest.xml no termina en `</receiver>`');
+    const fin = manifiesto.indexOf('\n', cierre);
+    return manifiesto.slice(0, inicio) + FRAGMENTO + manifiesto.slice(fin);
+  }
+
+  exigir(
+    !manifiesto.includes('WidgetBridgeActivity'),
+    'AndroidManifest.xml ya menciona WidgetBridgeActivity pero no en el formato esperado de android/widget/parche/: revísalo a mano.',
+  );
+
   const cierre = '</application>';
   const marca = manifiesto.lastIndexOf(cierre);
   exigir(marca !== -1, 'No se encontró `</application>` en AndroidManifest.xml');
   const inicioDeLinea = manifiesto.lastIndexOf('\n', marca) + 1;
-  const fragmento = leer(join(origen, 'parche', 'manifiesto.xml')).trimEnd();
-  return manifiesto.slice(0, inicioDeLinea) + fragmento + '\n' + manifiesto.slice(inicioDeLinea);
+  return manifiesto.slice(0, inicioDeLinea) + FRAGMENTO + '\n' + manifiesto.slice(inicioDeLinea);
 }, 'AndroidManifest.xml (activity + receiver)');
 
 // ---------------------------------------------------------------------------

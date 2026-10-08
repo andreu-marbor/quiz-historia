@@ -59,8 +59,8 @@ android {
         applicationId "com.andreumarbor.quizophistoria"
         minSdkVersion 21
         targetSdkVersion 36
-        versionCode 3
-        versionName "1.1"
+        versionCode 4
+        versionName "1.2"
 
         // The name for the application
         resValue "string", "appName", twaManifest.name

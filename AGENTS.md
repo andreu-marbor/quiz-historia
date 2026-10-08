@@ -69,10 +69,11 @@ quiz-historia/
 │   ├── comprobar-contraste.mjs  # contraste WCAG AA de base.css, claro y oscuro
 │   ├── comprobar-movil.mjs   # reflow + objetivos táctiles a 320 CSS px (CDP)
 │   └── aplicar-widget.mjs    # (re)aplica el widget a app/ (npm.cmd run widget)
-├── android/                  # ★ fuentes del widget (§13.3), generado NO
-│   ├── java/…/widget/        # WidgetBridgeActivity.kt + WidgetRachaProvider.kt
-│   ├── res/                  # strings, colores día/noche, drawable, layout, appwidget-provider
-│   └── parche/manifiesto.xml # fragmento que inyecta aplicar-widget.mjs
+├── android/                  # ★ fuentes del widget (§13.3); `app/`, gradle… son generados
+│   └── widget/               # todas las fuentes viven aquí
+│       ├── java/…/widget/    # WidgetBridgeActivity.kt + WidgetRachaProvider.kt
+│       ├── res/              # strings, colores día/noche, drawable, layout, appwidget-provider
+│       └── parche/manifiesto.xml # fragmento que inyecta aplicar-widget.mjs
 ├── public/
 │   ├── manifest.webmanifest  # PWA: name "Repaso de Historia"
 │   ├── sw.js                 # service worker
@@ -83,7 +84,7 @@ quiz-historia/
 
 > 📌 **Empaquetado Android (Fase 5):** `twa-manifest.json`, `manifest-checksum.txt`, `build.gradle`, `settings.gradle`, `gradle.properties`, `gradlew*`, `gradle/`, `app/` son **generados** por `bubblewrap build` a partir de `twa-manifest.json`. **No editarlos a mano.** `build/`, `.gradle/`, `local.properties`, `*.apk/aab` y `*.keystore` van en `.gitignore`.
 
-> 📌 **Widget (Fase 8 · §13.3):** las fuentes viven en **`android/widget/`** y `npm.cmd run widget` (`scripts/aplicar-widget.mjs`) las copia a `app/src/main/` y añade los parches (bloques del manifiesto + plugin de Kotlin en los dos `build.gradle`). Es **idempotente** y **falla si un ancla no está donde se espera**. **Hay que volver a ejecutarlo tras cada `bubblewrap update`** (regenera `app/` y `build.gradle` y borra los parches).
+> 📌 **Widget (Fase 8 · §13.3):** las fuentes viven en **`android/widget/`** y `npm.cmd run widget` (`scripts/aplicar-widget.mjs`) las copia a `app/src/main/` y añade los parches (bloques del manifiesto + plugin de Kotlin en los dos `build.gradle`). Es **idempotente**, **propaga los cambios** que hagas en `android/widget/parche/manifiesto.xml` (si el bloque ya aplicado difiere de la fuente, lo sustituye), **valida el contenido** del fragmento (sin `<intent-filter>` con `APPWIDGET_UPDATE` Android ni enseña el widget: INC-04) y **falla si un ancla no está donde se espera**. **Hay que volver a ejecutarlo tras cada `bubblewrap update`** (regenera `app/` y `build.gradle` y borra los parches).
 
 ## El contenido: cómo se añaden preguntas (funcionalidad clave)
 

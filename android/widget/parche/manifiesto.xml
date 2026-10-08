@@ -24,6 +24,17 @@
         <receiver
             android:name=".widget.WidgetRachaProvider"
             android:exported="false">
+            <!--
+              Este `<intent-filter>` es OBLIGATORIO: así descubre el sistema los
+              widgets (consulta los receivers que escuchan `APPWIDGET_UPDATE`).
+              Sin él el selector de widgets de Android no enseña la app ni por
+              casualidad (incidencia del 2026-10-08). `exported="false"` no
+              estorba: los envíos del sistema —el que dispara `onUpdate`— sí
+              llegan a receptores no exportados.
+            -->
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/widget_racha" />
