@@ -32,11 +32,23 @@ export interface Tema {
   minPreguntas: number;
 }
 
-export interface Curso {
+/**
+ * Asignatura de un curso (§13.2): obligatoria en todos los cursos.
+ * Ej.: "Historia" en 2º ESO; "Historia" + "Historia del Arte" en 2º Bachillerato.
+ */
+export interface Asignatura {
   id: string;
   titulo: string;
   orden: number;
   temas: Tema[];
+}
+
+export interface Curso {
+  id: string;
+  titulo: string;
+  orden: number;
+  /** ≥1 (obligatorio): los temas viven AQUÍ, no sueltos en el curso */
+  asignaturas: Asignatura[];
 }
 
 export interface Catalogo {

@@ -2,7 +2,7 @@
  * Pantalla de progreso (R/04): racha, cuestionarios jugados y mejor nota por tema.
  */
 
-import { claveTema, cursosOrdenados, temasOrdenados } from '../logica/catalogo';
+import { asignaturasDeCurso, claveTema, cursosOrdenados, temasDeAsignatura } from '../logica/catalogo';
 import { T } from './cadenas';
 import type { Contexto } from './contexto';
 import { h, vaciar } from './dom';
@@ -37,15 +37,18 @@ export function pintarProgreso(vista: HTMLElement, ctx: Contexto): void {
 
   const filas: Fila[] = [];
   for (const curso of cursosOrdenados(ctx.catalogo)) {
-    for (const tema of temasOrdenados(curso)) {
-      const dato = progreso.temas[claveTema(curso.id, tema.id)];
-      if (!dato) continue;
-      filas.push({
-        curso: curso.titulo,
-        tema: tema.titulo,
-        mejor: dato.mejorNota,
-        jugados: dato.jugados,
-      });
+    for (const asignatura of asignaturasDeCurso(curso)) {
+      for (const tema of temasDeAsignatura(asignatura)) {
+        const dato = progreso.temas[claveTema(curso.id, tema.id)];
+        if (!dato) continue;
+        filas.push({
+          curso: curso.titulo,
+          asignatura: asignatura.titulo,
+          tema: tema.titulo,
+          mejor: dato.mejorNota,
+          jugados: dato.jugados,
+        });
+      }
     }
   }
 
@@ -66,6 +69,7 @@ export function pintarProgreso(vista: HTMLElement, ctx: Contexto): void {
 
 interface Fila {
   curso: string;
+  asignatura: string;
   tema: string;
   mejor: number;
   jugados: number;
@@ -97,6 +101,7 @@ function tabla(filas: Fila[]): HTMLElement {
           'tr',
           {},
           h('th', { scope: 'col' }, T.progreso.tabla.curso),
+          h('th', { scope: 'col' }, T.progreso.tabla.asignatura),
           h('th', { scope: 'col' }, T.progreso.tabla.tema),
           h('th', { scope: 'col' }, T.progreso.tabla.mejor),
           h('th', { scope: 'col' }, T.progreso.tabla.jugados),
@@ -110,6 +115,7 @@ function tabla(filas: Fila[]): HTMLElement {
             'tr',
             {},
             h('td', { class: 'celda-texto' }, fila.curso),
+            h('td', { class: 'celda-texto' }, fila.asignatura),
             h('th', { scope: 'row' }, fila.tema),
             h(
               'td',

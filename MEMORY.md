@@ -18,7 +18,7 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 | 5 | Android TWA (keystore nuevo, assetlinks, APK + tramo cerrado Play) | 🔄 En curso (2026-10-08): keystore + APK/AAB firmados + assetlinks ✅ · prueba en dispositivo ✅ · respaldo en el otro PC ✅ · pendiente: Play Console y fichas de la tienda |
 | 6 | Contenido real (temario ESO/Bachiller) y documentación | ⏳ Pendiente |
 | 7 | Escalado (miles de preguntas, cientos de temas, imágenes): disparadores, chunks, cachés y pipeline `sharp` | ⏳ Planificada (2026-10-07) · plan en `PLAN.md` §12 |
-| 8 | Mejoras de uso: «Todos los temas» por asignatura, estructura `cursos > asignaturas > temas` y widget de racha | ⏳ Planificada (2026-10-08) · plan en `PLAN.md` §13 |
+| 8 | Mejoras de uso: «Todos los temas» por asignatura, estructura `cursos > asignaturas > temas` y widget de racha | 🔄 En curso (2026-10-08): §13.2 (estructura) ✅ · pendiente §13.1 (filas) y §13.3 (widget) |
 | 9 | Pulido de interfaz (las 5 pantallas, manual): tipografía, iconos, microinteracciones, vacíos, ficha de examen y ajustes agrupados | ⏳ Planificada (2026-10-08) · plan en `PLAN.md` §14 · T0 ✅ |
 
 ---
@@ -186,6 +186,19 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **Actualizado `PLAN.md` Fase 5:** las dos casillas pasan a `[x]`. **Siguen abiertas de la Fase 5:** tramo cerrado de Play Console (12 verificadores × 14 días) y fichas de la tienda (§5).
 - **Estado de la fase:** 🔄 la parte técnica y manual ya está; sólo queda la publicación en Play (que irá agrupada con la reconstrucción de APK de §13.3 para no firmar dos veces).
 - **Alcance:** solo `PLAN.md` (Fase 5) y esta entrada en `MEMORY.md`.
+
+### 2026-10-08 — Fase 8 · §13.2 COMPLETADA: estructura obligatoria `cursos > asignaturas > temas`
+
+- **Qué cambia:** el catálogo pasa de `cursos[].temas[]` a **`cursos[].asignaturas[].temas[]`**, con la asignatura **obligatoria** en todos los cursos. `datos/temas.json` migrado: los 3 cursos quedan envueltos en su asignatura «Historia». **Los JSON de preguntas NO se mueven** y **las claves de progreso `<curso>/<tema>` no cambian** → ninguna nota ni racha se pierde (las pruebas de persistencia siguen verdes con las mismas claves).
+- **Tipos** (`src/logica/tipos.ts`): nuevo `Asignatura = { id, titulo, orden, temas }`; `Curso.asignaturas` obligatorio; **`Curso.temas` eliminado**.
+- **Catálogo** (`src/logica/catalogo.ts`): `asignaturasDeCurso()` + `temasDeAsignatura()` + **`temasDelCurso()`** (aplanado, sustituye a `temasOrdenados`). `buscarTema(curso, temaId)` **conserva la firma de 2 argumentos** porque el validador garantiza que el id de tema es único **dentro del curso** → `src/aplicacion.ts` y `src/datos.ts` **no necesitaron ningún cambio** (índice `<curso>/<tema>` intacto).
+- **UI:** `inicio.ts` pinta curso → **`h3.asignatura-titulo`** → temas, con el esquema de encabezados **h1 → h2 (curso, dentro del `summary`, que admite un encabezado) → h3 (asignatura)**; el número del chip de curso ahora cuenta **todos** los temas del curso; el nombre accesible de cada botón de tema suma `(Curso · Asignatura)`. `progreso.ts` gana la **columna «Asignatura»** (nueva cadena `T.progreso.tabla.asignatura`). CSS nuevo: `.curso-titulo`, `.asignatura`, `.asignatura-titulo` (con separador entre bloques) — todo por variables, con el `--texto-tenue` actual.
+- **Validador** (`scripts/validar-preguntas.mjs`), ahora con **campos desconocidos también en el catálogo**: `asignaturas` ≥ 1 por curso (**se rechaza la forma antigua `temas` a nivel de curso** con mensaje «ya no va en el curso: la estructura es cursos > asignaturas > temas»), asignatura con ≥1 tema, `id` de asignatura único en el curso, **`id` de tema único DENTRO DEL CURSO** (chocarían `<curso>/<tema>` y `<curso>-<tema>-<nnn>`), `orden` de tema único **dentro de su asignatura**; `resumenDatos`/recorridos aplanados.
+- **Tests: 300 → 315 comprobaciones**, todas verdes (`58 lógica + 41 persistencia + 171 pantallas + 45 datos`) + `build` en verde. Nuevas: curso sin asignaturas, forma antigua, campo desconocido, id de tema repetido entre asignaturas, `orden` repetido, subtítulos `h3` y columna de asignatura; el fixture de `logica.ts` ahora incluye **dos asignaturas** (Historia + Historia del Arte) para probar el aplanado.
+- **Incidencia durante el desarrollo (rápida):** al reescribir `pintarCurso()` se olvidó `detalle.append(resumen)` en la rama con temas → el `<summary>` desaparecía y 2 tests de `pantallas.ts` fallaron; corregido al momento (los tests hicieron su función).
+- **Docs:** `PLAN.md` — §3 muestra ya el ejemplo **nuevo** de `temas.json`, Fase 8 §13.2 marcada `[x]` y tareas de §13.2 completadas (queda la de contenido de Historia del Arte y la §13.1).
+- **Siguiente:** **§13.1** — filas «Todos los temas de {asignatura}» con `claveConjunto(cursoId, asignaturaId)`.
+- **Alcance:** `datos/temas.json`, `src/logica/{tipos,catalogo}.ts`, `src/ui/{inicio,progreso,cadenas}.ts`, `src/estilos/app.css`, `scripts/validar-preguntas.mjs`, `pruebas/{datos,logica,pantallas}.ts` y `PLAN.md`.
 
 ---
 

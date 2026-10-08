@@ -3,16 +3,29 @@
  * No toca el DOM ni el almacenamiento.
  */
 
-import type { Catalogo, Curso, Pregunta, Tema } from './tipos';
+import type { Asignatura, Catalogo, Curso, Pregunta, Tema } from './tipos';
 
 /** Cursos ordenados por su campo `orden`. */
 export function cursosOrdenados(catalogo: Catalogo): Curso[] {
   return [...catalogo.cursos].sort((a, b) => a.orden - b.orden);
 }
 
-/** Temas de un curso ordenados por su campo `orden`. */
-export function temasOrdenados(curso: Curso): Tema[] {
-  return [...curso.temas].sort((a, b) => a.orden - b.orden);
+/** Asignaturas de un curso ordenadas por su campo `orden`. */
+export function asignaturasDeCurso(curso: Curso): Asignatura[] {
+  return [...(curso.asignaturas ?? [])].sort((a, b) => a.orden - b.orden);
+}
+
+/** Temas de una asignatura ordenados por su campo `orden`. */
+export function temasDeAsignatura(asignatura: Asignatura): Tema[] {
+  return [...(asignatura.temas ?? [])].sort((a, b) => a.orden - b.orden);
+}
+
+/**
+ * Todos los temas de un curso, aplanados y en orden (asignaturas → temas).
+ * Sirve para buscar por `temaId` (es único DENTRO del curso, §13.2).
+ */
+export function temasDelCurso(curso: Curso): Tema[] {
+  return asignaturasDeCurso(curso).flatMap(temasDeAsignatura);
 }
 
 export function buscarCurso(catalogo: Catalogo, cursoId: string): Curso | undefined {
@@ -20,7 +33,7 @@ export function buscarCurso(catalogo: Catalogo, cursoId: string): Curso | undefi
 }
 
 export function buscarTema(curso: Curso, temaId: string): Tema | undefined {
-  return curso.temas.find((tema) => tema.id === temaId);
+  return temasDelCurso(curso).find((tema) => tema.id === temaId);
 }
 
 /** Clave de un tema en el índice de preguntas: `<curso>/<tema>`. */

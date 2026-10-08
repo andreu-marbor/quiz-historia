@@ -40,10 +40,25 @@ function catalogoDePrueba(): Record<string, unknown> {
         id: 'eso2',
         titulo: '2º ESO',
         orden: 2,
-        temas: [{ id: 'tema-a', titulo: 'Tema de prueba', orden: 1, minPreguntas: 2 }],
+        asignaturas: [
+          {
+            id: 'historia',
+            titulo: 'Historia',
+            orden: 1,
+            temas: [{ id: 'tema-a', titulo: 'Tema de prueba', orden: 1, minPreguntas: 2 }],
+          },
+        ],
       },
     ],
   };
+}
+
+/** El `tema[0]` del primer curso (primera asignatura). */
+function primerTema(catalogo: Record<string, unknown>): Record<string, unknown> {
+  const cursos = catalogo['cursos'] as Array<Record<string, unknown>>;
+  const asignaturas = cursos[0]['asignaturas'] as Array<Record<string, unknown>>;
+  const temas = asignaturas[0]['temas'] as Array<Record<string, unknown>>;
+  return temas[0];
 }
 
 // ---------------------------------------------------------------------------
@@ -113,9 +128,9 @@ incluye(
 seccion('Reglas del catálogo (temas.json)');
 
 function catalogoCon(cambiosCurso: Record<string, unknown> = {}, cambiosTema: Record<string, unknown> = {}): Record<string, unknown> {
-  const catalogo = catalogoDePrueba() as { cursos: Array<Record<string, unknown>> };
-  Object.assign(catalogo.cursos[0], cambiosCurso);
-  Object.assign((catalogo.cursos[0]['temas'] as Array<Record<string, unknown>>)[0], cambiosTema);
+  const catalogo = catalogoDePrueba();
+  Object.assign((catalogo['cursos'] as Array<Record<string, unknown>>)[0], cambiosCurso);
+  Object.assign(primerTema(catalogo), cambiosTema);
   return catalogo;
 }
 
@@ -134,6 +149,75 @@ incluye(
   'está duplicado',
   'detecta cursos duplicados',
 );
+
+// --- §13.2: estructura obligatoria cursos > asignaturas > temas ---
+{
+  const sinAsignaturas = catalogoDePrueba();
+  delete (sinAsignaturas['cursos'] as Array<Record<string, unknown>>)[0]['asignaturas'];
+  incluye(
+    validarCatalogo(sinAsignaturas),
+    '"asignaturas" debe ser una lista no vacía',
+    'un curso sin asignaturas es un error (asignatura obligatoria)',
+  );
+}
+{
+  const formaVieja = catalogoDePrueba();
+  const curso = (formaVieja['cursos'] as Array<Record<string, unknown>>)[0];
+  curso['temas'] = [{ id: 'tema-viejo', titulo: 'Viejo', orden: 1, minPreguntas: 1 }];
+  incluye(
+    validarCatalogo(formaVieja),
+    'ya no va en el curso',
+    'rechaza la forma antigua con "temas" a nivel de curso',
+  );
+}
+incluye(
+  validarCatalogo(catalogoCon({ campoRaro: 1 })),
+  'campo desconocido',
+  'rechaza campos desconocidos en el curso (typos)',
+);
+{
+  const asignaturasVacias = catalogoDePrueba();
+  const asignaturas = ((asignaturasVacias['cursos'] as Array<Record<string, unknown>>)[0]['asignaturas'] as Array<Record<string, unknown>>);
+  asignaturas[0]['temas'] = [];
+  incluye(
+    validarCatalogo(asignaturasVacias),
+    '"temas" debe ser una lista no vacía',
+    'una asignatura sin temas es un error',
+  );
+}
+{
+  // Dos asignaturas reusando el mismo id de tema: chocaría la clave `<curso>/<tema>`
+  const dosAsignaturas = catalogoDePrueba();
+  const curso = (dosAsignaturas['cursos'] as Array<Record<string, unknown>>)[0];
+  (curso['asignaturas'] as Array<Record<string, unknown>>).push({
+    id: 'historia-del-arte',
+    titulo: 'Historia del Arte',
+    orden: 2,
+    temas: [{ id: 'tema-a', titulo: 'Repetido', orden: 1, minPreguntas: 2 }],
+  });
+  incluye(
+    validarCatalogo(dosAsignaturas),
+    'está duplicado en el curso',
+    'un id de tema repetido entre asignaturas del mismo curso es un error',
+  );
+}
+{
+  // Dos temas con el mismo `orden` dentro de una asignatura
+  const ordenRepetido = catalogoDePrueba();
+  primerTema(ordenRepetido)['orden'] = 5;
+  const asignaturas = ((ordenRepetido['cursos'] as Array<Record<string, unknown>>)[0]['asignaturas'] as Array<Record<string, unknown>>);
+  (asignaturas[0]['temas'] as Array<Record<string, unknown>>).push({
+    id: 'tema-b',
+    titulo: 'Otro tema',
+    orden: 5,
+    minPreguntas: 1,
+  });
+  incluye(
+    validarCatalogo(ordenRepetido),
+    'repetido dentro de la asignatura',
+    'el "orden" es único dentro de cada asignatura',
+  );
+}
 
 // ---------------------------------------------------------------------------
 seccion('Reglas del repositorio (ficheros falsos)');
@@ -184,8 +268,10 @@ mostrarSiHay(correcto);
 }
 {
   const f = baseValida();
-  const catalogo = f['temas.json'] as { cursos: Array<{ temas: Array<Record<string, unknown>> }> };
-  catalogo.cursos[0].temas.push({ id: 'tema-b', titulo: 'Tema sin fichero', orden: 2, minPreguntas: 1 });
+  const catalogo = f['temas.json'] as {
+    cursos: Array<{ asignaturas: Array<{ temas: Array<Record<string, unknown>> }> }>;
+  };
+  catalogo.cursos[0].asignaturas[0].temas.push({ id: 'tema-b', titulo: 'Tema sin fichero', orden: 2, minPreguntas: 1 });
   incluye(validarFicheros(f), 'falta el fichero', 'detecta temas del catálogo sin fichero');
 }
 {

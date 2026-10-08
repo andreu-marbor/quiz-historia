@@ -2,8 +2,15 @@
  * Pantalla de inicio: elegir curso (R/01) y tema, con la mejor nota de cada uno.
  */
 
-import { cursosOrdenados, preguntasDeTema, temasOrdenados, temaJugable } from '../logica/catalogo';
-import type { Curso, Tema } from '../logica/tipos';
+import {
+  asignaturasDeCurso,
+  cursosOrdenados,
+  preguntasDeTema,
+  temasDeAsignatura,
+  temasDelCurso,
+  temaJugable,
+} from '../logica/catalogo';
+import type { Asignatura, Curso, Tema } from '../logica/tipos';
 import { T } from './cadenas';
 import type { Contexto } from './contexto';
 import { h, vaciar } from './dom';
@@ -29,29 +36,52 @@ export function pintarInicio(vista: HTMLElement, ctx: Contexto): void {
 
 function pintarCurso(ctx: Contexto, curso: Curso, abiertoPorDefecto: boolean): HTMLElement {
   const detalle = h('details', { class: 'curso', ...(abiertoPorDefecto ? { open: true } : {}) });
+  const temas = temasDelCurso(curso);
+  // El título del curso va en un `h2` (dentro del `summary`, que admite UN
+  // encabezado): así el esquema de encabezados queda h1 → h2 (curso) → h3 (asignatura).
   const resumen = h(
     'summary',
     { class: 'curso-resumen' },
-    h('span', { class: 'curso-nombre' }, curso.titulo),
-    h('span', { class: 'curso-numero', 'aria-hidden': 'true' }, String(curso.temas.length)),
+    h(
+      'h2',
+      { class: 'curso-titulo' },
+      h('span', { class: 'curso-nombre' }, curso.titulo),
+      h('span', { class: 'curso-numero', 'aria-hidden': 'true' }, String(temas.length)),
+    ),
   );
+  detalle.append(resumen);
 
-  const temas = temasOrdenados(curso);
   if (temas.length === 0) {
-    detalle.append(resumen, h('p', { class: 'aviso' }, T.inicio.sinTemas));
+    detalle.append(h('p', { class: 'aviso' }, T.inicio.sinTemas));
     return detalle;
   }
 
-  const lista = h('ul', { class: 'lista-temas' });
-  for (const tema of temas) {
-    lista.append(pintarTema(ctx, curso, tema));
+  for (const asignatura of asignaturasDeCurso(curso)) {
+    detalle.append(pintarAsignatura(ctx, curso, asignatura));
   }
-
-  detalle.append(resumen, lista);
   return detalle;
 }
 
-function pintarTema(ctx: Contexto, curso: Curso, tema: Tema): HTMLElement {
+/** Bloque de una asignatura: subtítulo real (encabezado) + sus temas. */
+function pintarAsignatura(ctx: Contexto, curso: Curso, asignatura: Asignatura): HTMLElement {
+  const bloque = h(
+    'section',
+    { class: 'asignatura' },
+    h('h3', { class: 'asignatura-titulo' }, asignatura.titulo),
+  );
+
+  const temas = temasDeAsignatura(asignatura);
+  if (temas.length === 0) return bloque; // el validador exige ≥1 tema por asignatura
+
+  const lista = h('ul', { class: 'lista-temas' });
+  for (const tema of temas) {
+    lista.append(pintarTema(ctx, curso, asignatura, tema));
+  }
+  bloque.append(lista);
+  return bloque;
+}
+
+function pintarTema(ctx: Contexto, curso: Curso, asignatura: Asignatura, tema: Tema): HTMLElement {
   const preguntas = preguntasDeTema(ctx.preguntasPorTema, curso.id, tema.id);
   const jugable = temaJugable(preguntas, tema);
   const nota = ctx.progreso.temas[`${curso.id}/${tema.id}`]?.mejorNota;
@@ -71,7 +101,7 @@ function pintarTema(ctx: Contexto, curso: Curso, tema: Tema): HTMLElement {
     h(
       'span',
       { class: 'visualmente-oculto' },
-      `(${curso.titulo})${jugable ? ` ${T.inicio.jugar}` : ''} `,
+      `(${curso.titulo} · ${asignatura.titulo})${jugable ? ` ${T.inicio.jugar}` : ''} `,
     ),
     h('span', { class: 'tema-nombre' }, tema.titulo),
     h('span', { class: 'tema-meta' }, T.inicio.preguntas(preguntas.length)),

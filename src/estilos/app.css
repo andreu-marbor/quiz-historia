@@ -235,10 +235,6 @@
 }
 
 .curso-resumen {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--espacio);
   padding: 0.9rem var(--espacio);
   cursor: pointer;
   font-weight: 700;
@@ -249,6 +245,18 @@
   color: var(--accent);
 }
 
+/* El título del curso es un `h2` dentro del `summary` (el summary admite un
+   encabezado): así el esquema queda h1 → h2 curso → h3 asignatura (§13.2). */
+.curso-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espacio);
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
 .curso-numero {
   padding: 0.1rem 0.55rem;
   border: 1px solid var(--borde);
@@ -257,11 +265,33 @@
   font-size: 0.85rem;
 }
 
+/* --- bloques de asignatura dentro de un curso (§13.2) --- */
+
+.asignatura {
+  padding: 0 var(--espacio);
+}
+
+.asignatura + .asignatura {
+  margin-top: calc(var(--espacio) * 1.1);
+  padding-top: calc(var(--espacio) * 0.75);
+  border-top: 1px solid var(--borde);
+}
+
+.asignatura-titulo {
+  margin: 0 0 0.5rem;
+  padding-top: 0.15rem;
+  color: var(--texto-tenue);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .lista-temas {
   display: grid;
   gap: 0.6rem;
   margin: 0;
-  padding: 0 var(--espacio) var(--espacio);
+  padding: 0 0 var(--espacio);
   list-style: none;
 }
 

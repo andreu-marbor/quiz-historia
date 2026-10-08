@@ -129,15 +129,35 @@ quiz-historia/
 {
   "cursos": [
     {
-      "id": "eso2",
-      "titulo": "2º ESO",
-      "orden": 2,
-      "temas": [
+      "id": "2bach",
+      "titulo": "2º Bachillerato",
+      "orden": 12,
+      "asignaturas": [
         {
-          "id": "revolucion-industrial",
-          "titulo": "La Revolución Industrial",
-          "orden": 3,
-          "minPreguntas": 10
+          "id": "historia",
+          "titulo": "Historia",
+          "orden": 1,
+          "temas": [
+            {
+              "id": "restauracion",
+              "titulo": "La Restauración",
+              "orden": 1,
+              "minPreguntas": 10
+            }
+          ]
+        },
+        {
+          "id": "historia-del-arte",
+          "titulo": "Historia del Arte",
+          "orden": 2,
+          "temas": [
+            {
+              "id": "renacimiento",
+              "titulo": "El Renacimiento",
+              "orden": 1,
+              "minPreguntas": 10
+            }
+          ]
         }
       ]
     }
@@ -145,7 +165,7 @@ quiz-historia/
 }
 ```
 
-> **Fase 8 (§13.2) · decisión cerrada el 2026-10-08:** el catálogo pasa a la estructura **obligatoria `cursos > asignaturas > temas`**. El ejemplo de arriba es el **formato actual**; con la Fase 8 cada curso lleva un bloque `asignaturas` (los de hoy, todos con una sola: «Historia»; 2º Bachillerato con Historia y Historia del Arte) y el nombre de la asignatura **deja de ser opcional**. El JSON con la nueva forma, la migración y las reglas del validador: **§13.2**.
+> **Estructura obligatoria `cursos > asignaturas > temas`** (§13.2, implementada el 2026-10-08): **todo curso lleva ≥1 asignatura** (los de hoy, todos con una sola: «Historia») y los temas viven **dentro** de su asignatura. **Los ids de tema son únicos dentro del curso** (chocarían `<curso>/<tema>` y `<curso>-<tema>-<nnn>`). El detalle y las reglas del validador: **§13.2**.
 
 ### Flujo de edición de preguntas
 
@@ -285,7 +305,7 @@ Así quedan **incluidas en el bundle y la app funciona sin internet de serie**.
 
 > Plan detallado en **[§13](#13-mejoras-previstas-2026-10-08)**. Sin fecha; se ejecuta cuando toque. **Orden: 13.2 → 13.1 → 13.3** — primero la estructura obligatoria `cursos > asignaturas > temas` (sin ella no hay bloques de asignatura donde pintar las filas); §13.1 y §13.2 se tocan, así que conviene hacerlas juntas. §13.3 va independiente.
 
-- [ ] §13.2 · **Estructura obligatoria `cursos > asignaturas > temas`** en el catálogo: migrar `datos/temas.json` (todos los cursos envueltos en «Historia»), tipos, `datos.ts`, UI con subtítulos, validador con reglas obligatorias y tests — 2º Bachillerato llevará además Historia del Arte.
+- [x] §13.2 · **Estructura obligatoria `cursos > asignaturas > temas`** en el catálogo: migrar `datos/temas.json` (todos los cursos envueltos en «Historia»), tipos, `datos.ts`, UI con subtítulos, validador con reglas obligatorias y tests — 2º Bachillerato llevará además Historia del Arte. ✅ *(2026-10-08; ver §13.2)*
 - [ ] §13.1 · Filas **«Todos los temas de {asignatura}»** en cada bloque de asignatura (pool mezclado de esa asignatura y curso, clave virtual por fila, *repetir falladas* incluido).
 - [ ] §13.3 · **Widget nativo** de Android con la racha + puente `intent://` desde la web (despliegue en dos pasos).
 - [ ] Verdes al terminar cada tarea: `npm.cmd run prueba` y `npm.cmd run build` (los tests actuales no deben cambiar de significado y **los progresos guardados no deben perderse**: sus claves `<curso>/<tema>` no cambian).
@@ -610,12 +630,12 @@ Por disparadores (§12.2). Las tres primeras tareas **no esperan a ningún dispa
 
 **Tareas**
 
-- [ ] Tipos: `Asignatura` con `temas`, `Curso.asignaturas` obligatorio y `Curso.temas` fuera.
-- [ ] Migrar `datos/temas.json` (todos los cursos envueltos en «Historia») y **actualizar el ejemplo de §3**.
-- [ ] `asignaturasDeCurso` + `temasDeAsignatura` en `src/logica/catalogo.ts`; adaptar `buscarTema` (ahora curso + asignatura); `claveTema` **no cambia**.
-- [ ] Adaptar `src/datos.ts` (solo el bucle del catálogo), `src/ui/inicio.ts`, `src/ui/progreso.ts` y `src/aplicacion.ts`.
-- [ ] Validador + `pruebas/datos.ts` con las reglas obligatorias de arriba.
-- [ ] Migrar los fixtures de catálogo de `pruebas/` y actualizar `pruebas/logica.ts` y `pruebas/pantallas.ts`.
+- [x] Tipos: `Asignatura` con `temas`, `Curso.asignaturas` obligatorio y `Curso.temas` fuera. ✅
+- [x] Migrar `datos/temas.json` (todos los cursos envueltos en «Historia») y **actualizar el ejemplo de §3**. ✅
+- [x] `asignaturasDeCurso` + `temasDeAsignatura` (+ `temasDelCurso`, que aplana) en `src/logica/catalogo.ts`; `buscarTema(curso, temaId)` **conserva su firma** porque el id de tema es único **dentro del curso**; `claveTema` **no cambia**. ✅
+- [x] Adaptar `src/ui/inicio.ts` (curso → subtítulo de asignatura → temas) y `src/ui/progreso.ts` (+ columna «Asignatura»). `src/datos.ts` y `src/aplicacion.ts` **no necesitaron cambios**: el índice sigue siendo `<curso>/<tema>` y `buscarTema` no cambió de firma. ✅
+- [x] Validador + `pruebas/datos.ts` con las reglas obligatorias de arriba (curso sin asignaturas, forma antigua con `temas`, campos desconocidos, id de tema repetido entre asignaturas, `orden` repetido dentro de una asignatura). ✅
+- [x] Migrar los fixtures de catálogo de `pruebas/` y actualizar `pruebas/logica.ts` y `pruebas/pantallas.ts` (315 comprobaciones). ✅
 - [ ] Extensión de §13.1: las filas pasan a ser **una por asignatura**, cada una con su propia clave virtual.
 - [ ] Contenido: primeros temas de Historia del Arte de 2º Bachillerato (puede caer en la Fase 6).
 

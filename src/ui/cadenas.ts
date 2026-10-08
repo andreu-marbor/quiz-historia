@@ -75,6 +75,7 @@ export const T = {
     tabla: {
       pie: 'Mejor nota conseguida en cada tema',
       curso: 'Curso',
+      asignatura: 'Asignatura',
       tema: 'Tema',
       mejor: 'Mejor nota',
       jugados: 'Jugados',

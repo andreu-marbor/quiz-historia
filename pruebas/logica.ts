@@ -6,12 +6,14 @@
 import { corregir, resumir } from '../src/logica/correccion';
 import { barajar, presentarPregunta } from '../src/logica/barajado';
 import {
+  asignaturasDeCurso,
   buscarCurso,
   buscarTema,
   claveTema,
   cursosOrdenados,
   preguntasDeTema,
-  temasOrdenados,
+  temasDeAsignatura,
+  temasDelCurso,
   temaJugable,
 } from '../src/logica/catalogo';
 import { seleccionarPreguntas } from '../src/logica/seleccion';
@@ -244,18 +246,39 @@ seccion('Catálogo: orden, búsquedas y mínimo de preguntas');
         id: 'bachillerato1',
         titulo: '1º Bachillerato',
         orden: 3,
-        temas: [{ id: 'guerras-frias', titulo: 'La Guerra Fría', orden: 2, minPreguntas: 4 }],
+        asignaturas: [
+          {
+            id: 'historia',
+            titulo: 'Historia',
+            orden: 1,
+            temas: [{ id: 'guerras-frias', titulo: 'La Guerra Fría', orden: 2, minPreguntas: 4 }],
+          },
+          {
+            // 2º Bachillerato con Historia + Historia del Arte es el caso real (§13.2)
+            id: 'historia-del-arte',
+            titulo: 'Historia del Arte',
+            orden: 2,
+            temas: [{ id: 'renacimiento', titulo: 'El Renacimiento', orden: 1, minPreguntas: 3 }],
+          },
+        ],
       },
       {
         id: 'eso2',
         titulo: '2º ESO',
         orden: 1,
-        temas: [
-          { id: 'revolucion-industrial', titulo: 'Revolución Industrial', orden: 2, minPreguntas: 4 },
-          { id: 'restauracion', titulo: 'Restauración borbónica', orden: 1, minPreguntas: 6 },
+        asignaturas: [
+          {
+            id: 'historia',
+            titulo: 'Historia',
+            orden: 1,
+            temas: [
+              { id: 'revolucion-industrial', titulo: 'Revolución Industrial', orden: 2, minPreguntas: 4 },
+              { id: 'restauracion', titulo: 'Restauración borbónica', orden: 1, minPreguntas: 6 },
+            ],
+          },
         ],
       },
-      { id: 'eso4', titulo: '4º ESO', orden: 2, temas: [] },
+      { id: 'eso4', titulo: '4º ESO', orden: 2, asignaturas: [] },
     ],
   };
 
@@ -266,13 +289,36 @@ seccion('Catálogo: orden, búsquedas y mínimo de preguntas');
   comprobar(Boolean(eso2) && eso2?.titulo === '2º ESO', 'busca un curso por su id');
   comprobar(buscarCurso(catalogo, 'no-existe') === undefined, 'un curso inexistente devuelve undefined');
 
-  const ordenTemas = eso2 ? temasOrdenados(eso2).map((t) => t.id) : [];
+  const ordenTemas = eso2 ? temasDelCurso(eso2).map((t) => t.id) : [];
   comprobar(ordenTemas.join() === 'restauracion,revolucion-industrial', 'ordena los temas por su campo `orden`');
-  comprobar(temasOrdenados(buscarCurso(catalogo, 'eso4')!).length === 0, 'un curso sin temas no falla');
+  comprobar(
+    temasDelCurso(buscarCurso(catalogo, 'eso4')!).length === 0,
+    'un curso sin asignaturas no falla (defensivo)',
+  );
+
+  // --- asignaturas: estructura obligatoria cursos > asignaturas > temas (§13.2) ---
+  const bach = buscarCurso(catalogo, 'bachillerato1')!;
+  comprobar(
+    asignaturasDeCurso(bach).map((a) => a.id).join() === 'historia,historia-del-arte',
+    'ordena las asignaturas por su campo `orden`',
+  );
+  comprobar(
+    asignaturasDeCurso(buscarCurso(catalogo, 'eso4')!).length === 0,
+    'las asignaturas vacías devuelven lista vacía',
+  );
+  comprobar(
+    temasDeAsignatura(asignaturasDeCurso(bach)[1]).map((t) => t.id).join() === 'renacimiento',
+    'los temas viven dentro de su asignatura',
+  );
+  comprobar(temasDelCurso(bach).length === 2, 'temasDelCurso aplana todas las asignaturas del curso');
 
   const tema = eso2 ? buscarTema(eso2, 'restauracion') : undefined;
   comprobar(Boolean(tema) && tema?.minPreguntas === 6, 'busca un tema por su id dentro del curso');
   comprobar(!eso2 || buscarTema(eso2, 'no-existe') === undefined, 'un tema inexistente devuelve undefined');
+  comprobar(
+    buscarTema(bach, 'renacimiento')?.titulo === 'El Renacimiento',
+    'encuentra un tema que vive en la segunda asignatura',
+  );
 
   comprobar(claveTema('eso2', 'restauracion') === 'eso2/restauracion', 'la clave de tema es `<curso>/<tema>`');
 

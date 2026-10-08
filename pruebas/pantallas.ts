@@ -103,16 +103,30 @@ const catalogo: Catalogo = {
       id: 'eso2',
       titulo: '2º ESO',
       orden: 1,
-      temas: [
-        { id: 'restauracion', titulo: 'Restauración borbónica', orden: 1, minPreguntas: 2 },
-        { id: 'industrial', titulo: 'Revolución Industrial', orden: 2, minPreguntas: 4 },
+      asignaturas: [
+        {
+          id: 'historia',
+          titulo: 'Historia',
+          orden: 1,
+          temas: [
+            { id: 'restauracion', titulo: 'Restauración borbónica', orden: 1, minPreguntas: 2 },
+            { id: 'industrial', titulo: 'Revolución Industrial', orden: 2, minPreguntas: 4 },
+          ],
+        },
       ],
     },
     {
       id: 'eso4',
       titulo: '4º ESO',
       orden: 2,
-      temas: [{ id: 'contemporanea', titulo: 'El mundo contemporáneo', orden: 1, minPreguntas: 2 }],
+      asignaturas: [
+        {
+          id: 'historia',
+          titulo: 'Historia',
+          orden: 1,
+          temas: [{ id: 'contemporanea', titulo: 'El mundo contemporáneo', orden: 1, minPreguntas: 2 }],
+        },
+      ],
     },
   ],
 };
@@ -221,6 +235,20 @@ seccion('Pantalla de inicio');
   comprobar(vista.querySelectorAll('details.curso').length === 2, 'pinta los 2 cursos');
   comprobar(vista.querySelectorAll('details[open]').length === 1, 'el primer curso arranca desplegado');
   comprobar(vista.querySelectorAll('summary').length === 2, 'cada curso tiene su summary accesible');
+  // §13.2: esquema de encabezados h1 → h2 (curso) → h3 (asignatura)
+  comprobar(
+    vista.querySelectorAll('summary h2').length === 2,
+    'el título del curso es un h2 dentro de su summary',
+  );
+  comprobar(
+    vista.querySelectorAll('.asignatura-titulo').length === 2 &&
+      [...vista.querySelectorAll('.asignatura-titulo')].every((e) => e.tagName === 'H3'),
+    'cada asignatura se anuncia con un subtítulo real (h3)',
+  );
+  comprobar(
+    [...vista.querySelectorAll('.asignatura-titulo')].map((e) => e.textContent).join() === 'Historia,Historia',
+    'el subtítulo muestra el nombre de la asignatura',
+  );
 
   const temas = botones(vista, '.tema');
   comprobar(temas.length === 3, `pinta los 3 temas (salieron ${temas.length})`);
@@ -520,13 +548,14 @@ seccion('Pantalla de progreso');
   const filas = [...vista.querySelectorAll('tbody tr')];
   comprobar(filas.length === 2, 'una fila por tema con datos');
   comprobar(filas[0].querySelector('th')!.textContent === 'Restauración borbónica', 'fila del tema');
+  comprobar(filas[0].querySelectorAll('td')[1]!.textContent === 'Historia', 'columna de asignatura (§13.2)');
   comprobar(filas[0].querySelector('.insignia')!.textContent === '85', 'mejor nota (no la última)');
   comprobar(existe(vista, '.insignia--media'), 'la insignia colorea la nota (85 está en la banda media)');
   comprobar(
-    filas[0].querySelectorAll('td')[2]!.textContent === '2',
+    filas[0].querySelectorAll('td')[3]!.textContent === '2',
     'veces jugado en ese tema',
   );
-  comprobar(vista.querySelectorAll('th[scope="col"]').length === 4, 'cabeceras de tabla con scope');
+  comprobar(vista.querySelectorAll('th[scope="col"]').length === 5, 'cabeceras de tabla con scope');
   comprobar(vista.querySelector('.tabla-contenedor')!.getAttribute('tabindex') === '0', 'la tabla es enfocable con teclado para desplazarla');
 
   const vacia = nuevaVista();

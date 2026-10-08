@@ -42,6 +42,21 @@ const MAXIMO_OPCIONES = 6;
 const esObjeto = (v) => v !== null && typeof v === 'object' && !Array.isArray(v);
 const textoNoVacio = (v) => typeof v === 'string' && v.trim() !== '';
 
+/** Campos admitidos en cada nivel del catálogo (§13.2). */
+const CAMPOS_CURSO = ['id', 'titulo', 'orden', 'asignaturas'];
+const CAMPOS_ASIGNATURA = ['id', 'titulo', 'orden', 'temas'];
+const CAMPOS_TEMA = ['id', 'titulo', 'orden', 'minPreguntas'];
+
+function erroresDeCampos(objeto, validos, donde) {
+  const errores = [];
+  for (const clave of Object.keys(objeto)) {
+    if (!validos.includes(clave)) {
+      errores.push(`${donde}: campo desconocido "${clave}" (campos válidos: ${validos.join(', ')})`);
+    }
+  }
+  return errores;
+}
+
 /**
  * Valida una pregunta suelta.
  * @param {*} pregunta
@@ -217,6 +232,13 @@ export function validarCatalogo(datos, donde = 'temas.json') {
       return;
     }
 
+    errores.push(...erroresDeCampos(curso, CAMPOS_CURSO, en));
+    if ('temas' in curso) {
+      errores.push(
+        `${en}: "temas" ya no va en el curso: la estructura es cursos > asignaturas > temas (§13.2)`,
+      );
+    }
+
     if (!textoNoVacio(curso.id)) {
       errores.push(`${en}: falta el "id" (texto no vacío)`);
     } else {
@@ -230,32 +252,78 @@ export function validarCatalogo(datos, donde = 'temas.json') {
     if (!textoNoVacio(curso.titulo)) errores.push(`${en}: falta el "titulo" (texto no vacío)`);
     if (!Number.isInteger(curso.orden)) errores.push(`${en}: "orden" debe ser un número entero`);
 
-    if (!Array.isArray(curso.temas) || curso.temas.length === 0) {
-      errores.push(`${en}: "temas" debe ser una lista no vacía`);
+    if (!Array.isArray(curso.asignaturas) || curso.asignaturas.length === 0) {
+      errores.push(`${en}: "asignaturas" debe ser una lista no vacía (es obligatoria, §13.2)`);
       return;
     }
 
+    // Los ids de tema son únicos DENTRO DEL CURSO: la clave `<curso>/<tema>` y la
+    // convención de ids de pregunta `<curso>-<tema>-<nnn>` chocarían si se repiten.
     const idsTema = new Set();
-    curso.temas.forEach((tema, j) => {
-      const enTema = `${en} → temas[${j}]`;
-      if (!esObjeto(tema)) {
-        errores.push(`${enTema}: debe ser un objeto`);
+    const idsAsignatura = new Set();
+
+    curso.asignaturas.forEach((asignatura, a) => {
+      const enAsig = `${en} → asignaturas[${a}]`;
+      if (!esObjeto(asignatura)) {
+        errores.push(`${enAsig}: debe ser un objeto`);
         return;
       }
-      if (!textoNoVacio(tema.id)) {
-        errores.push(`${enTema}: falta el "id" (texto no vacío)`);
+
+      errores.push(...erroresDeCampos(asignatura, CAMPOS_ASIGNATURA, enAsig));
+
+      if (!textoNoVacio(asignatura.id)) {
+        errores.push(`${enAsig}: falta el "id" (texto no vacío)`);
       } else {
-        if (!RE_KEBAB.test(tema.id)) {
-          errores.push(`${enTema}: el "id" "${tema.id}" debe ir en minúsculas y guiones (kebab-case)`);
+        if (!RE_KEBAB.test(asignatura.id)) {
+          errores.push(`${enAsig}: el "id" "${asignatura.id}" debe ir en minúsculas y guiones (kebab-case)`);
         }
-        if (idsTema.has(tema.id)) errores.push(`${enTema}: el tema "${tema.id}" está duplicado en el curso`);
-        idsTema.add(tema.id);
+        if (idsAsignatura.has(asignatura.id)) {
+          errores.push(`${enAsig}: la asignatura "${asignatura.id}" está duplicada en el curso`);
+        }
+        idsAsignatura.add(asignatura.id);
       }
-      if (!textoNoVacio(tema.titulo)) errores.push(`${enTema}: falta el "titulo" (texto no vacío)`);
-      if (!Number.isInteger(tema.orden)) errores.push(`${enTema}: "orden" debe ser un número entero`);
-      if (!Number.isInteger(tema.minPreguntas) || tema.minPreguntas < 1) {
-        errores.push(`${enTema}: "minPreguntas" debe ser un entero ≥ 1`);
+
+      if (!textoNoVacio(asignatura.titulo)) errores.push(`${enAsig}: falta el "titulo" (texto no vacío)`);
+      if (!Number.isInteger(asignatura.orden)) errores.push(`${enAsig}: "orden" debe ser un número entero`);
+
+      if (!Array.isArray(asignatura.temas) || asignatura.temas.length === 0) {
+        errores.push(`${enAsig}: "temas" debe ser una lista no vacía`);
+        return;
       }
+
+      const idsOrden = new Set();
+      asignatura.temas.forEach((tema, j) => {
+        const enTema = `${enAsig} → temas[${j}]`;
+        if (!esObjeto(tema)) {
+          errores.push(`${enTema}: debe ser un objeto`);
+          return;
+        }
+
+        errores.push(...erroresDeCampos(tema, CAMPOS_TEMA, enTema));
+
+        if (!textoNoVacio(tema.id)) {
+          errores.push(`${enTema}: falta el "id" (texto no vacío)`);
+        } else {
+          if (!RE_KEBAB.test(tema.id)) {
+            errores.push(`${enTema}: el "id" "${tema.id}" debe ir en minúsculas y guiones (kebab-case)`);
+          }
+          if (idsTema.has(tema.id)) {
+            errores.push(`${enTema}: el tema "${tema.id}" está duplicado en el curso`);
+          }
+          idsTema.add(tema.id);
+        }
+
+        if (!textoNoVacio(tema.titulo)) errores.push(`${enTema}: falta el "titulo" (texto no vacío)`);
+        if (!Number.isInteger(tema.orden)) errores.push(`${enTema}: "orden" debe ser un número entero`);
+        else if (idsOrden.has(tema.orden)) {
+          errores.push(`${enTema}: el "orden" ${tema.orden} está repetido dentro de la asignatura`);
+        } else {
+          idsOrden.add(tema.orden);
+        }
+        if (!Number.isInteger(tema.minPreguntas) || tema.minPreguntas < 1) {
+          errores.push(`${enTema}: "minPreguntas" debe ser un entero ≥ 1`);
+        }
+      });
     });
   });
 
@@ -289,8 +357,11 @@ export function validarDatos(raizDatos, opciones = {}) {
   for (const curso of cursos) {
     if (!esObjeto(curso) || typeof curso.id !== 'string') continue;
     const ids = new Set();
-    for (const tema of Array.isArray(curso.temas) ? curso.temas : []) {
-      if (esObjeto(tema) && typeof tema.id === 'string') ids.add(tema.id);
+    for (const asignatura of Array.isArray(curso.asignaturas) ? curso.asignaturas : []) {
+      if (!esObjeto(asignatura) || !Array.isArray(asignatura.temas)) continue;
+      for (const tema of asignatura.temas) {
+        if (esObjeto(tema) && typeof tema.id === 'string') ids.add(tema.id);
+      }
     }
     temasPorCurso.set(curso.id, ids);
   }
@@ -388,18 +459,20 @@ export function validarDatos(raizDatos, opciones = {}) {
 
   // Todo tema del catálogo debe tener fichero y alcanzar minPreguntas
   for (const curso of cursos) {
-    if (!esObjeto(curso) || typeof curso.id !== 'string' || !Array.isArray(curso.temas)) continue;
-    for (const tema of curso.temas) {
-      if (!esObjeto(tema) || typeof tema.id !== 'string') continue;
-      const clave = `${curso.id}/${tema.id}`;
-      const rel = `datos/preguntas/${curso.id}/${tema.id}.json`;
-      const min = Number.isInteger(tema.minPreguntas) ? tema.minPreguntas : 1;
-      if (!ficherosPorTema.has(clave)) {
-        errores.push(`falta el fichero ${rel}: el catálogo declara ese tema`);
-      } else {
-        const total = conteoPorTema.get(clave);
-        if (total < min) {
-          errores.push(`${rel}: tiene ${total} preguntas y el catálogo exige minPreguntas=${min}`);
+    if (!esObjeto(curso) || typeof curso.id !== 'string' || !Array.isArray(curso.asignaturas)) continue;
+    for (const asignatura of curso.asignaturas) {
+      for (const tema of Array.isArray(asignatura?.temas) ? asignatura.temas : []) {
+        if (!esObjeto(tema) || typeof tema.id !== 'string') continue;
+        const clave = `${curso.id}/${tema.id}`;
+        const rel = `datos/preguntas/${curso.id}/${tema.id}.json`;
+        const min = Number.isInteger(tema.minPreguntas) ? tema.minPreguntas : 1;
+        if (!ficherosPorTema.has(clave)) {
+          errores.push(`falta el fichero ${rel}: el catálogo declara ese tema`);
+        } else {
+          const total = conteoPorTema.get(clave);
+          if (total < min) {
+            errores.push(`${rel}: tiene ${total} preguntas y el catálogo exige minPreguntas=${min}`);
+          }
         }
       }
     }
@@ -441,7 +514,10 @@ export function resumenDatos(raizDatos) {
   const cursos = Array.isArray(catalogo?.cursos) ? catalogo.cursos : [];
   let temas = 0;
   for (const curso of cursos) {
-    if (Array.isArray(curso?.temas)) temas += curso.temas.length;
+    if (!Array.isArray(curso?.asignaturas)) continue;
+    for (const asignatura of curso.asignaturas) {
+      if (Array.isArray(asignatura?.temas)) temas += asignatura.temas.length;
+    }
   }
   return { cursos: cursos.length, temas, preguntas: contarPreguntas(raizDatos) };
 }
