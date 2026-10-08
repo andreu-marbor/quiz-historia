@@ -19,7 +19,7 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 | 6 | Contenido real (temario ESO/Bachiller) y documentación | ⏳ Pendiente |
 | 7 | Escalado (miles de preguntas, cientos de temas, imágenes): disparadores, chunks, cachés y pipeline `sharp` | ⏳ Planificada (2026-10-07) · plan en `PLAN.md` §12 |
 | 8 | Mejoras de uso: «Todos los temas» por asignatura, estructura `cursos > asignaturas > temas` y widget de racha | 🔄 En curso (2026-10-08): §13.2 ✅ · §13.1 ✅ · pendiente §13.3 (widget) |
-| 9 | Pulido de interfaz (las 5 pantallas, manual): tipografía, iconos, microinteracciones, vacíos, ficha de examen y ajustes agrupados | 🔄 En curso (2026-10-08) · plan en `PLAN.md` §14 · T0–T4 ✅ · pendiente T5–T8 |
+| 9 | Pulido de interfaz (las 5 pantallas, manual): tipografía, iconos, microinteracciones, vacíos, ficha de examen y ajustes agrupados | 🔄 En curso (2026-10-08) · plan en `PLAN.md` §14 · T0–T5 ✅ · pendiente T6–T8 |
 
 ---
 
@@ -257,6 +257,17 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **Docs:** `PLAN.md` — T4 `[x]` con detalle; fila de estado de Fase 9 en `MEMORY.md`.
 - **Siguiente de la Fase 9:** **T5 · Progreso** (tarjetas de racha/contador con icono, tabla legible en móvil).
 - **Alcance:** `src/ui/{contexto,resultados}.ts`, `src/aplicacion.ts`, `src/estilos/app.css`, `pruebas/pantallas.ts`, `PLAN.md` y esta entrada.
+
+### 2026-10-08 — Fase 9 · T5 COMPLETADA: iconos en Progreso y tabla legible en móvil
+
+- **Iconos nuevos** en `src/ui/iconos.ts`: **`rayo`** (tarjeta de racha) y **`lista`** (tarjeta de cuestionarios jugados); el bucle de tests del catálogo los cubre automáticamente.
+- **Tarjetas con icono:** `.tarjeta-valor` pasa a `flex` con `gap: --espacio-xs` y el icono a `0.8em` con `opacity: 0.85` — acompaña a la cifra sin robarle peso. Sigue siendo **decorativo** (sin texto ⇒ `textContent` de la cifra intacto, y el título/pie de la tarjeta lo explican).
+- **Tabla legible en móvil (bajo `34rem`):** las filas se **apilan** en vez de desplazarse en horizontal — el `th` del tema pasa a ser el titular de la fila (`--texto-m`) y los `td` quedan en línea (`inline-block`) con su **rótulo hecho en CSS**: `content: attr(data-encabezado)`. La cabecera visual se oculta con la técnica de `clip-path` (visible solo para el ojo), **no** con `display: none`, para no perderla del árbol de accesibilidad.
+- **⚠️ Semántica ARIA explícita (lo importante):** cambiar el `display` de `table/thead/tbody/tr/td` a `block` hace que los navegadores **descarten la semántica implícita** de tabla en el árbol de accesibilidad. Por eso `tabla()` declara ahora `role="table"`, `role="rowgroup"`, `role="row"`, `role="rowheader"`, `role="columnheader"` y `role="cell"`, y cada `td` lleva `data-encabezado` (`Curso` · `Asignatura` · `Mejor nota` · `Jugados`). En escritorio el comportamiento es idéntico al de antes.
+- **Tests: 376 → 381 comprobaciones** (`68 lógica + 43 persistencia + 225 pantallas + 45 datos`) y `build` en verde. Nuevas: icono en las 2 tarjetas (+2 por el bucle del catálogo), roles ARIA y `data-encabezado` de las celdas.
+- **Docs:** `PLAN.md` — T5 `[x]` con detalle y el resumen de Fase 9 (T1–T5 `[x]`); fila de estado en `MEMORY.md`.
+- **Siguiente de la Fase 9:** **T6 · Ajustes** (tres `fieldset/legend`: Apariencia · Juego · Datos + «Borrar progreso» como zona de peligro).
+- **Alcance:** `src/ui/{iconos,progreso}.ts`, `src/estilos/app.css`, `pruebas/pantallas.ts`, `PLAN.md` y esta entrada.
 
 ---
 

@@ -666,6 +666,10 @@ seccion('Pantalla de progreso');
   comprobar(tarjetas[0].querySelector('.tarjeta-valor')!.textContent === '2', 'racha de 2 días');
   comprobar(texto(tarjetas[0]).includes('2 días seguidos'), 'la racha se explica en palabras');
   comprobar(tarjetas[1].querySelector('.tarjeta-valor')!.textContent === '4', '4 cuestionarios jugados');
+  comprobar(
+    vista.querySelectorAll('.tarjeta-valor svg').length === 2,
+    'cada tarjeta lleva su icono (racha y contador, T5)',
+  );
 
   const filas = [...vista.querySelectorAll('tbody tr')];
   comprobar(filas.length === 3, 'una fila por clave con datos');
@@ -685,6 +689,18 @@ seccion('Pantalla de progreso');
   );
   comprobar(vista.querySelectorAll('th[scope="col"]').length === 5, 'cabeceras de tabla con scope');
   comprobar(vista.querySelector('.tabla-contenedor')!.getAttribute('tabindex') === '0', 'la tabla es enfocable con teclado para desplazarla');
+  comprobar(
+    vista.querySelector('table')!.getAttribute('role') === 'table' &&
+      vista.querySelector('tbody')!.getAttribute('role') === 'rowgroup' &&
+      filas[1].querySelector('th')!.getAttribute('role') === 'rowheader',
+    'semántica de tabla explícita (T5): al apilarse en móvil el `display` la borraría',
+  );
+  comprobar(
+    filas[1].querySelectorAll('td')[0]!.getAttribute('data-encabezado') === 'Curso' &&
+      filas[1].querySelector('.celda-nota')!.getAttribute('data-encabezado') === 'Mejor nota' &&
+      filas[1].querySelector('.celda-numero')!.getAttribute('data-encabezado') === 'Jugados',
+    'cada celda lleva su rótulo para la vista apilada en móvil (T5)',
+  );
 
   const vacia = nuevaVista();
   pintarProgreso(vacia, contexto());

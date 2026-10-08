@@ -12,6 +12,7 @@ import {
 import { T } from './cadenas';
 import type { Contexto } from './contexto';
 import { h, vaciar } from './dom';
+import { icono, type NombreIcono } from './iconos';
 import { claseInsignia } from './inicio';
 
 export function pintarProgreso(vista: HTMLElement, ctx: Contexto): void {
@@ -33,11 +34,13 @@ export function pintarProgreso(vista: HTMLElement, ctx: Contexto): void {
       T.progreso.racha,
       progreso.racha > 0 ? String(progreso.racha) : '0',
       progreso.racha > 0 ? T.progreso.rachaDias(progreso.racha) : T.progreso.sinRacha,
+      'rayo',
     ),
     tarjeta(
       T.progreso.cuestionarios,
       String(progreso.cuestionarios),
       T.progreso.temasJugados(temasJugados),
+      'lista',
     ),
   );
 
@@ -92,54 +95,72 @@ interface Fila {
   jugados: number;
 }
 
-function tarjeta(titulo: string, valor: string, pie: string): HTMLElement {
+function tarjeta(titulo: string, valor: string, pie: string, nombre: NombreIcono): HTMLElement {
+  // El icono acompaña a la cifra; es decorativo (sin texto, sin `aria-label`)
+  // porque el título y el pie de la tarjeta ya lo explican.
   return h(
     'section',
     { class: 'tarjeta' },
     h('h2', { class: 'tarjeta-titulo' }, titulo),
-    h('p', { class: 'tarjeta-valor' }, valor),
+    h('p', { class: 'tarjeta-valor' }, icono(nombre), valor),
     h('p', { class: 'tarjeta-pie' }, pie),
   );
 }
 
 function tabla(filas: Fila[]): HTMLElement {
+  // En pantallas pequeñas la tabla se apila con `display: block`, lo que hace
+  // que los navegadores descarten la semántica implícita de tabla → se declara
+  // con `role` ARIA (y las celdas llevan `data-encabezado` para que el rótulo
+  // que antes daba la cabecera lo lleve cada celda en móvil, T5).
   return h(
     // región enfocable para poder desplazarla con teclado en pantallas pequeñas
     'div',
     { class: 'tabla-contenedor', tabindex: 0, role: 'region', 'aria-label': T.progreso.mejorPorTema },
     h(
       'table',
-      { class: 'tabla' },
+      { class: 'tabla', role: 'table' },
       h('caption', {}, T.progreso.tabla.pie),
       h(
         'thead',
-        {},
+        { role: 'rowgroup' },
         h(
           'tr',
-          {},
-          h('th', { scope: 'col' }, T.progreso.tabla.curso),
-          h('th', { scope: 'col' }, T.progreso.tabla.asignatura),
-          h('th', { scope: 'col' }, T.progreso.tabla.tema),
-          h('th', { scope: 'col' }, T.progreso.tabla.mejor),
-          h('th', { scope: 'col' }, T.progreso.tabla.jugados),
+          { role: 'row' },
+          h('th', { scope: 'col', role: 'columnheader' }, T.progreso.tabla.curso),
+          h('th', { scope: 'col', role: 'columnheader' }, T.progreso.tabla.asignatura),
+          h('th', { scope: 'col', role: 'columnheader' }, T.progreso.tabla.tema),
+          h('th', { scope: 'col', role: 'columnheader' }, T.progreso.tabla.mejor),
+          h('th', { scope: 'col', role: 'columnheader' }, T.progreso.tabla.jugados),
         ),
       ),
       h(
         'tbody',
-        {},
+        { role: 'rowgroup' },
         ...filas.map((fila) =>
           h(
             'tr',
-            {},
-            h('td', { class: 'celda-texto' }, fila.curso),
-            h('td', { class: 'celda-texto' }, fila.asignatura),
-            h('th', { scope: 'row' }, fila.tema),
+            { role: 'row' },
             h(
               'td',
-              { class: 'celda-nota' },
+              { class: 'celda-texto', role: 'cell', 'data-encabezado': T.progreso.tabla.curso },
+              fila.curso,
+            ),
+            h(
+              'td',
+              { class: 'celda-texto', role: 'cell', 'data-encabezado': T.progreso.tabla.asignatura },
+              fila.asignatura,
+            ),
+            h('th', { scope: 'row', role: 'rowheader' }, fila.tema),
+            h(
+              'td',
+              { class: 'celda-nota', role: 'cell', 'data-encabezado': T.progreso.tabla.mejor },
               h('span', { class: `insignia ${claseInsignia(fila.mejor)}` }, String(fila.mejor)),
             ),
-            h('td', { class: 'celda-numero' }, String(fila.jugados)),
+            h(
+              'td',
+              { class: 'celda-numero', role: 'cell', 'data-encabezado': T.progreso.tabla.jugados },
+              String(fila.jugados),
+            ),
           ),
         ),
       ),

@@ -36,6 +36,10 @@ const TRAZOS = {
   cruz: ['M6 6l12 12', 'M18 6L6 18'],
   /** ⚠ estados vacíos y avisos */
   aviso: ['M12 4l9 16H3z', 'M12 10v4', 'M12 17h.01'],
+  /** ⚡ tarjeta de racha (T5) */
+  rayo: ['M13 3L5 14h6l-1 7 8-11h-6z'],
+  /** lista: tarjeta de cuestionarios jugados (T5) */
+  lista: ['M8 6h12', 'M8 12h12', 'M8 18h12', 'M4 6h.01', 'M4 12h.01', 'M4 18h.01'],
 } as const;
 
 export type NombreIcono = keyof typeof TRAZOS;

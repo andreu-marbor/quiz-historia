@@ -834,11 +834,22 @@
 }
 
 .tarjeta-valor {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-xs);
   margin: 0;
   color: var(--accent);
   font-size: var(--texto-cifra);
   font-weight: 800;
   line-height: 1;
+}
+
+/* icono de la cifra: del mismo tamaño que el número, pero sin robarle peso */
+.tarjeta-valor .icono {
+  width: 0.8em;
+  height: 0.8em;
+  flex: none;
+  opacity: 0.85;
 }
 
 .tarjeta-pie {
@@ -889,6 +900,71 @@
 .celda-numero,
 .celda-nota {
   text-align: right;
+}
+
+/* --- T5 · la tabla legible en móvil: filas apiladas en vez de scroll ---
+   Cada celda lleva su rótulo (`data-encabezado`, antes lo daba la cabecera)
+   y la cabecera se oculta solo para el ojo, que sigue estando en el árbol
+   de accesibilidad — de ahí los `role` ARIA en `progreso.ts`. */
+@media (max-width: 34rem) {
+  .tabla,
+  .tabla caption,
+  .tabla tbody,
+  .tabla tr,
+  .tabla td,
+  .tabla th {
+    display: block;
+  }
+
+  .tabla thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .tabla th,
+  .tabla td {
+    padding: 0;
+    border-bottom: 0;
+    text-align: left;
+  }
+
+  .tabla tr {
+    padding: var(--espacio-s) 0;
+    border-bottom: 1px solid var(--borde);
+  }
+
+  /* el tema es el titular de la fila */
+  .tabla tbody th {
+    font-size: var(--texto-m);
+    font-weight: 600;
+  }
+
+  .tabla td {
+    display: inline-block;
+    margin: var(--espacio-2xs) var(--espacio-s) 0 0;
+    color: var(--texto-tenue);
+    font-size: var(--texto-s);
+  }
+
+  .tabla td::before {
+    content: attr(data-encabezado) ' ';
+    color: var(--texto);
+    font-size: var(--texto-xs);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  .celda-numero,
+  .celda-nota {
+    text-align: left;
+  }
 }
 
 /* -------------------------------------------------------------- ajustes */
