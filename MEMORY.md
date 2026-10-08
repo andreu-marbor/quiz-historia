@@ -19,7 +19,7 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 | 6 | Contenido real (temario ESO/Bachiller) y documentación | ⏳ Pendiente |
 | 7 | Escalado (miles de preguntas, cientos de temas, imágenes): disparadores, chunks, cachés y pipeline `sharp` | ⏳ Planificada (2026-10-07) · plan en `PLAN.md` §12 |
 | 8 | Mejoras de uso: «Todos los temas» por asignatura, estructura `cursos > asignaturas > temas` y widget de racha | 🔄 En curso (2026-10-08): §13.2 ✅ · §13.1 ✅ · pendiente §13.3 (widget) |
-| 9 | Pulido de interfaz (las 5 pantallas, manual): tipografía, iconos, microinteracciones, vacíos, ficha de examen y ajustes agrupados | 🔄 En curso (2026-10-08) · plan en `PLAN.md` §14 · T0 ✅ · T1 ✅ · T2 ✅ · pendiente T3–T8 |
+| 9 | Pulido de interfaz (las 5 pantallas, manual): tipografía, iconos, microinteracciones, vacíos, ficha de examen y ajustes agrupados | 🔄 En curso (2026-10-08) · plan en `PLAN.md` §14 · T0–T3 ✅ · pendiente T4–T8 |
 
 ---
 
@@ -235,6 +235,17 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **Docs:** `PLAN.md` — T2 `[x]` con detalle; fila de estado de Fase 9 en `MEMORY.md`.
 - **Siguiente de la Fase 9:** **T3 · Cuestionario** (feedback con ✓/✗ + entrada animada, barra más expresiva, opciones con marca gráfica).
 - **Alcance:** `src/ui/{cadenas,inicio}.ts`, `src/estilos/app.css`, `pruebas/pantallas.ts`, `PLAN.md` y esta entrada.
+
+### 2026-10-08 — Fase 9 · T3 COMPLETADA: letra + iconos en las opciones, feedback animado y barra «hoja de examen»
+
+- **Marca de opción = letra + icono gráfico (T3):** `.opcion-marca` estaba **vacío** antes de responder (solo reservaba `min-width`); ahora muestra la **letra A/B/C…** (serif `--font-titulo`, color `--texto-tenue`, ancho fijo de `1.4em` para que el texto no salte) y, tras responder, **la letra se sustituye por `icono('check')`/`icono('cruz')`** en la correcta/elegida (las descartadas conservan la letra). El estado ya **no es solo color**: lleva icono + texto + `aria-label`.
+- **Accesibilidad (cuidado con `label-content-name-mismatch`):** la letra va **sin `aria-hidden`** → antes de responder el nombre accesible sale del contenido y **contiene** lo visible; tras responder, el icono decorativo **no aporta texto visible** y el `aria-label` («Opción B — Respuesta correcta») sigue conteniendo todo lo visible. `icono()` ya pone `aria-hidden` de fábrica. **Tests de `aria-label` sin cambios** (la letra no contamina el nombre de estado).
+- **Feedback con icono + entrada animada:** `feedback-titulo` pasa a `flex` con `icono('check')`/`icono('cruz')` antes del texto (los tests de texto «¡Correcto!»/«Incorrecto» siguen verdes porque el icono no tiene texto) y el bloque **entra con un fundido** (`@keyframes feedback-entra`: opacidad + `translateY(-6px)`, 0.22 s) aplicado al aparecer `feedback--ok/mal`. Va **fuera de `prefers-reduced-motion`** y **no retrasa** el anuncio del `aria-live`.
+- **Barra más expresiva:** de 10 px plana a **12 px** con carril `--bg` + borde y **muescas** (`repeating-linear-gradient`, casillas de examen), relleno con **brillo** (`linear-gradient` blanco sobre `--accent`, vale en ambos temas) y avance con **rebote** (`cubic-bezier(0.34,1.4,0.64,1)`); el `reduced-motion` global lo deja instantáneo. **Ningún ARIA tocado** (`role`, `aria-valuenow/text` intactos).
+- **Tests: 368 → 372 comprobaciones** (`68 lógica + 43 persistencia + 216 pantallas + 45 datos`) y `build` en verde. Nuevas: letras antes de responder, descartada conserva letra, icono en el feedback (acierto y fallo); adaptadas: «✓Opción B» → icono SVG en `.opcion-marca` (el ✓ ya no es texto).
+- **Docs:** `PLAN.md` — T3 `[x]` con detalle; fila de estado de Fase 9 en `MEMORY.md`.
+- **Siguiente de la Fase 9:** **T4 · Resultados** («ficha de examen»: resumen arriba + revisión jerarquizada).
+- **Alcance:** `src/ui/cuestionario.ts`, `src/estilos/app.css`, `pruebas/pantallas.ts`, `PLAN.md` y esta entrada.
 
 ---
 

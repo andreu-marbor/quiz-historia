@@ -11,6 +11,10 @@ import { T } from './cadenas';
 import type { Contexto, Sesion } from './contexto';
 import { pedirConfirmacion } from './dialogo';
 import { h, vaciar } from './dom';
+import { icono } from './iconos';
+
+/** Letras de las opciones (A, B, C…) — hoja de examen, T3. */
+const LETRAS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 export function pintarCuestionario(vista: HTMLElement, ctx: Contexto): void {
   vaciar(vista);
@@ -50,7 +54,9 @@ export function pintarCuestionario(vista: HTMLElement, ctx: Contexto): void {
             disabled: respondida ? true : undefined,
             onclick: () => ctx.acciones.responder(indice),
           },
-          h('span', { class: 'opcion-marca', 'aria-hidden': 'true' }),
+          // La letra forma parte del nombre accesible (va SIN aria-hidden):
+          // antes de responder no hay aria-label y el nombre sale del contenido.
+          h('span', { class: 'opcion-marca' }, LETRAS[indice] ?? ''),
           h('span', { class: 'opcion-texto' }, texto),
         ),
       ),
@@ -174,8 +180,17 @@ function actualizarOpciones(vista: HTMLElement, sesion: Sesion): void {
     boton.classList.toggle('opcion--incorrecta', respondida && esElegida && !esCorrecta);
     boton.classList.toggle('opcion--descartada', respondida && !esCorrecta && !esElegida);
 
+    // La marca pasa de letra (A/B/C…) a icono gráfico ✓/✗. El icono es
+    // decorativo (`aria-hidden` de fábrica): el estado ya va en el aria-label
+    // de abajo, y al sustituir a la letra no deja texto visible fuera del
+    // nombre accesible.
     const marca = boton.querySelector<HTMLElement>('.opcion-marca');
-    if (marca) marca.textContent = respondida && esCorrecta ? '✓' : respondida && esElegida ? '✗' : '';
+    if (marca) {
+      vaciar(marca);
+      if (respondida && esCorrecta) marca.append(icono('check'));
+      else if (respondida && esElegida) marca.append(icono('cruz'));
+      else marca.append(LETRAS[indice] ?? '');
+    }
 
     if (respondida && esCorrecta) {
       boton.setAttribute('aria-label', `${texto} — ${T.cuestionario.respuestaCorrecta}`);
@@ -208,7 +223,15 @@ function pintarFeedback(vista: HTMLElement, sesion: Sesion): void {
   // un acierto se tumba como fallo (y un fallo puede pasar por acierto).
   const acertada = elegida === presentada.pregunta.respuesta;
   caja.className = `feedback ${acertada ? 'feedback--ok' : 'feedback--mal'}`;
-  caja.append(h('p', { class: 'feedback-titulo' }, acertada ? T.cuestionario.correcto : T.cuestionario.incorrecto));
+  caja.append(
+    h(
+      'p',
+      { class: 'feedback-titulo' },
+      // Icono gráfico además del color del bloque y del texto del título
+      icono(acertada ? 'check' : 'cruz'),
+      acertada ? T.cuestionario.correcto : T.cuestionario.incorrecto,
+    ),
+  );
 
   if (!acertada) {
     const indiceMostrado = presentada.originales.indexOf(elegida);

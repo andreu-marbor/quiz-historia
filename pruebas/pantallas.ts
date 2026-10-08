@@ -404,6 +404,10 @@ seccion('Pantalla de cuestionario');
 
   let opciones = botones(vista, '.opcion');
   comprobar(opciones.length === 3, 'pinta las 3 opciones');
+  comprobar(
+    texto(opciones[0]) === 'AOpción A' && texto(opciones[2]) === 'COpción C',
+    'cada opción lleva su letra de hoja de examen (T3)',
+  );
   comprobar(opciones.every((o) => !o.disabled), 'ninguna opción está bloqueada antes de responder');
   comprobar(!existe(vista, '.feedback--ok') && !existe(vista, '.feedback--mal'), 'sin feedback antes de responder');
   comprobar(botones(vista, '#siguiente')[0].disabled, 'el botón siguiente está bloqueado hasta responder');
@@ -426,13 +430,24 @@ seccion('Pantalla de cuestionario');
   comprobar(opciones[1].classList.contains('opcion--correcta'), 'se marca la respuesta correcta');
   comprobar(opciones[2].classList.contains('opcion--incorrecta'), 'se marca la respuesta elegida');
   comprobar(opciones[0].classList.contains('opcion--descartada'), 'las demás quedan de fondo');
-  comprobar(texto(opciones[1]) === '✓Opción B', 'el icono ✓ acompaña al color (no solo color)');
+  comprobar(
+    opciones[1].querySelector('.opcion-marca svg') !== null && texto(opciones[1]) === 'Opción B',
+    'el icono ✓ acompaña al color (no solo color)',
+  );
+  comprobar(
+    texto(opciones[0]) === 'AOpción A',
+    'las opciones descartadas conservan su letra',
+  );
   comprobar(opciones[1].getAttribute('aria-label') === 'Opción B — Respuesta correcta', 'el estado llega por aria-label');
   comprobar(opciones[2].getAttribute('aria-label') === 'Opción C — Tu respuesta', 'y la elegida también');
 
   const feedback = vista.querySelector('.feedback')!;
   comprobar(feedback.className.includes('feedback--mal'), 'feedback de fallo');
   comprobar(texto(feedback.querySelector('.feedback-titulo')) === 'Incorrecto', 'dice si ha sido correcto');
+  comprobar(
+    feedback.querySelector('.feedback-titulo .icono') !== null,
+    'y lo dice además con su icono gráfico ✗ (T3)',
+  );
   comprobar(texto(feedback).includes('Tu respuesta: Opción C'), 'lista la respuesta del alumno');
   comprobar(texto(feedback).includes('Respuesta correcta: Opción B'), 'lista la respuesta correcta');
   comprobar(texto(feedback).includes('Explicación de eso2-restauracion-001.'), 'muestra la explicación (R/02)');
@@ -451,6 +466,10 @@ seccion('Pantalla de cuestionario');
   const ok = vista.querySelector('.feedback')!;
   comprobar(ok.className.includes('feedback--ok'), 'feedback de acierto');
   comprobar(texto(ok.querySelector('.feedback-titulo')) === '¡Correcto!', 'felicita el acierto');
+  comprobar(
+    ok.querySelector('.feedback-titulo .icono') !== null,
+    'con su icono gráfico ✓ (T3)',
+  );
   comprobar(!texto(ok).includes('Tu respuesta:'), 'en un acierto no hace falta repetir la respuesta');
   comprobar(texto(ok).includes('Explicación de eso2-restauracion-002.'), 'también explica el acierto');
   comprobar(texto(botones(vista, '#siguiente')[0]) === 'Ver resultados', 'en la última pregunta el botón cambia a "Ver resultados"');
@@ -536,7 +555,7 @@ seccion('Corrección con las opciones barajadas (INC-01)');
   comprobar(!texto(ok).includes('Tu respuesta:'), 'INC-01: en un acierto no se listan las dos respuestas');
   comprobar(
     botones(vistaAcierto, '.opcion')[0].classList.contains('opcion--correcta') &&
-      texto(botones(vistaAcierto, '.opcion')[0]).includes('✓'),
+      botones(vistaAcierto, '.opcion')[0].querySelector('.opcion-marca svg') !== null,
     'INC-01: el botón de la correcta se resalta en su posición mostrada',
   );
 

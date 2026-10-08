@@ -483,11 +483,15 @@
   font-weight: 600;
 }
 
+/* Barra «hoja de examen» (T3): carril con muescas y relleno con brillo, para
+   que el avance se lea de un vistazo y no solo como una línea plana. */
 .barra {
-  height: 10px;
+  height: 12px;
   margin-bottom: var(--espacio-s);
+  border: 1px solid var(--borde);
   border-radius: 999px;
-  background: var(--borde);
+  background-color: var(--bg);
+  background-image: repeating-linear-gradient(90deg, rgb(0 0 0 / 7%) 0 1px, transparent 1px 10px);
   overflow: hidden;
 }
 
@@ -496,8 +500,11 @@
   width: 0;
   height: 100%;
   border-radius: inherit;
-  background: var(--accent);
-  transition: width 0.25s ease;
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 28%), rgb(255 255 255 / 0%) 60%),
+    var(--accent);
+  /* Rebote sutil al avanzar; con `reduced-motion` el global lo deja instantáneo */
+  transition: width 0.35s cubic-bezier(0.34, 1.4, 0.64, 1);
 }
 
 .enunciado {
@@ -537,10 +544,23 @@
   border-color: var(--accent);
 }
 
+/* La marca es la letra de la hoja de examen (A, B, C…) y, tras responder,
+   el icono gráfico ✓/✗; ancho fijo para que el texto no salte de estado. */
 .opcion-marca {
-  min-width: 1.2ch;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.4em;
+  color: var(--texto-tenue);
+  font-family: var(--font-titulo);
   font-weight: 800;
   text-align: center;
+}
+
+.opcion-marca .icono {
+  width: 1.2em;
+  height: 1.2em;
 }
 
 .opcion--respuesta {
@@ -591,9 +611,33 @@
   background: var(--error-fondo);
 }
 
+/* Idea 3: el feedback entra con un fundido corto; el `reduced-motion` global
+   lo deja instantáneo (y no retrasa el anuncio del `aria-live`) */
+@media (prefers-reduced-motion: no-preference) {
+  .feedback--ok,
+  .feedback--mal {
+    animation: feedback-entra 0.22s ease-out;
+  }
+}
+
+@keyframes feedback-entra {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
 .feedback-titulo {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-s);
   margin: 0 0 var(--espacio-xs);
   font-weight: 800;
+}
+
+.feedback-titulo .icono {
+  width: 1.4em;
+  height: 1.4em;
 }
 
 .feedback--ok .feedback-titulo {
