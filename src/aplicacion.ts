@@ -47,6 +47,7 @@ import { icono, type NombreIcono } from './ui/iconos';
 import { pintarInicio } from './ui/inicio';
 import { pintarProgreso } from './ui/progreso';
 import { pintarResultados } from './ui/resultados';
+import { crearPuenteWidget, type OpcionesPuente } from './ui/widget';
 
 /** Datos integrados que consume la app (en producción, el bundle de `datos/`). */
 export interface Fuentes {
@@ -66,11 +67,18 @@ interface Estado {
  * Monta la app dentro de `raiz`: dibuja el shell, instala el enrutado por hash
  * y pinta la pantalla inicial.
  */
-export function montarAplicacion(raiz: HTMLElement, fuentes: Fuentes, almacen: Almacen | null): void {
+export function montarAplicacion(
+  raiz: HTMLElement,
+  fuentes: Fuentes,
+  almacen: Almacen | null,
+  opcionesPuente: OpcionesPuente = {},
+): void {
   const estado: Estado = { sesion: null, resultado: null, temaResultado: null, nuevaMejor: false };
   let ajustes: Ajustes = leerAjustes(almacen);
   let progreso: Progreso = leerProgreso(almacen);
   let vista: HTMLElement;
+  // §13.3: el widget de Android se entera de la racha por este puente
+  const puenteWidget = crearPuenteWidget(almacen, opcionesPuente);
 
   // ---------------------------------------------------------------------
   // Shell
@@ -269,6 +277,7 @@ export function montarAplicacion(raiz: HTMLElement, fuentes: Fuentes, almacen: A
       borrarProgresoAlmacen(almacen);
       progreso = progresoVacio();
       estado.nuevaMejor = false;
+      puenteWidget.enviar(0, null); // el widget vuelve a «Juega hoy» (§13.3)
     },
 
     abandonar() {
@@ -372,6 +381,9 @@ export function montarAplicacion(raiz: HTMLElement, fuentes: Fuentes, almacen: A
 
     progreso = registrarCuestionario(progreso, sesion.claveTema, resultado.nota);
     guardarProgreso(progreso, almacen);
+    // Único sitio donde cambia la racha: el mejor momento para avisar al
+    // widget, y todavía dentro del gesto que pulsa «Ver resultados» (§13.3).
+    puenteWidget.enviar(progreso.racha, progreso.ultimoDia);
 
     estado.resultado = resultado;
     estado.temaResultado = {
@@ -403,4 +415,7 @@ export function montarAplicacion(raiz: HTMLElement, fuentes: Fuentes, almacen: A
     enfocarTitulo();
   });
   pintar();
+  // Al arrancar se reenvía la racha: sin gesto de usuario todavía, el puente
+  // la deja en cola y sale con el primer toque (§13.3).
+  puenteWidget.enviar(progreso.racha, progreso.ultimoDia);
 }

@@ -49,6 +49,13 @@ import { icono, ICONOS } from '../src/ui/iconos';
 import { pintarInicio } from '../src/ui/inicio';
 import { pintarProgreso } from '../src/ui/progreso';
 import { pintarResultados } from '../src/ui/resultados';
+import {
+  CADUCIDAD_SIN_SOPORTE,
+  CLAVE_WIDGET,
+  construirIntent,
+  crearPuenteWidget,
+  type OpcionesPuente,
+} from '../src/ui/widget';
 import { presentarPregunta } from '../src/logica/barajado';
 import { resumir } from '../src/logica/correccion';
 import type { Catalogo, Pregunta } from '../src/logica/tipos';
@@ -898,9 +905,26 @@ await (async () => {
   const almacen = almacenFalso();
   guardarAjustes({ modoTema: 'auto', preguntas: 10, barajarOpciones: false }, almacen);
 
+  // §13.3: el puente al widget nativo, con TODO inyectado (sin tocar `location`)
+  const enviadosWidget: string[] = [];
+  const opcionesPuente: OpcionesPuente = {
+    activo: true,
+    esAndroidChrome: () => true,
+    enApp: () => true,
+    hayGesto: () => true,
+    navegar: (url) => void enviadosWidget.push(url),
+    esperar: (fn) => void fn(), // el sondeo se resuelve en el acto
+    estaOculta: () => false,
+    alPerderVisibilidad: (fn) => {
+      fn(); // la página sí se va a segundo plano: el receptor existe
+      return () => {};
+    },
+    ahora: () => 0,
+  };
+
   const raiz = document.createElement('div');
   document.body.append(raiz);
-  montarAplicacion(raiz, { catalogo, preguntasPorTema }, almacen);
+  montarAplicacion(raiz, { catalogo, preguntasPorTema }, almacen, opcionesPuente);
 
   comprobar(texto(document.querySelector('.marca')) === 'Repaso de Historia', 'arranca con su cabecera');
   comprobar(document.querySelectorAll('.navegacion a').length === 3, 'tres destinos en la navegación');
@@ -917,6 +941,10 @@ await (async () => {
     'marca la pestaña activa',
   );
   comprobar(texto(document.querySelector('#vista h1')) === 'Elige curso y tema', 'y arranca en el inicio');
+  comprobar(
+    enviadosWidget.length === 1 && enviadosWidget[0] === construirIntent(0, null),
+    'al arrancar manda la racha 0 al widget nativo (§13.3)',
+  );
 
   // --- estado «sin conexión» en la cabecera (T7) ---
   const avisoConexion = document.querySelector('#aviso-conexion') as HTMLElement | null;
@@ -971,6 +999,10 @@ await (async () => {
     'y también los contadores',
   );
   comprobar(guardado.racha === 1 && guardado.ultimoDia !== null, 'y abre la racha de días');
+  comprobar(
+    enviadosWidget.at(-1) === construirIntent(guardado.racha, guardado.ultimoDia),
+    'al terminar un cuestionario envía la racha nueva al widget (§13.3)',
+  );
 
   // --- repetir solo las falladas (R/03) ---
   const enunciadoFallada = texto(document.querySelector('.falladas li .enunciado'));
@@ -1080,6 +1112,10 @@ await (async () => {
   comprobar(
     JSON.stringify(leerProgreso(almacen)) === JSON.stringify(progresoVacio()),
     'borrar progreso vacía localStorage tras confirmar en el diálogo',
+  );
+  comprobar(
+    enviadosWidget.at(-1) === construirIntent(0, null),
+    'y al borrar el progreso avisa al widget con una racha 0 (§13.3)',
   );
 
   (document.querySelector('a[href="#/progreso"]') as HTMLAnchorElement).click();
@@ -1195,5 +1231,112 @@ await (async () => {
   await esperar(() => texto(document.querySelector('#vista h1')) === 'Ajustes');
   estructura('ajustes');
 })();
+
+// ---------------------------------------------------------------------------
+seccion('Puente al widget nativo (Fase 8 · §13.3)');
+{
+  comprobar(
+    construirIntent(5, '2026-10-08') ===
+      'intent://racha#Intent;scheme=quizhistoria;package=com.andreumarbor.quizophistoria;' +
+        'action=com.andreumarbor.quizophistoria.widget.RACHA;S.racha=5;S.ultimoDia=2026-10-08;end',
+    'el intent lleva esquema, paquete, acción y los dos extras',
+  );
+  comprobar(
+    construirIntent(0, null).includes('S.ultimoDia=;'),
+    'sin último día el extra va vacío (el widget lo lee como «sin fecha»)',
+  );
+
+  /** Opciones con todo lo que normalmente decide el navegador/entorno. */
+  const opciones = (enviados: string[], extra: OpcionesPuente = {}): OpcionesPuente => ({
+    activo: true,
+    esAndroidChrome: () => true,
+    enApp: () => true,
+    hayGesto: () => true,
+    navegar: (url) => void enviados.push(url),
+    esperar: (fn) => void fn(),
+    estaOculta: () => false,
+    alPerderVisibilidad: (fn) => {
+      fn();
+      return () => {};
+    },
+    ahora: () => 0,
+    ...extra,
+  });
+
+  // --- el interruptor del despliegue en dos pasos ---
+  {
+    const enviados: string[] = [];
+    crearPuenteWidget(almacenFalso(), opciones(enviados, { activo: false })).enviar(3, '2026-10-08');
+    comprobar(enviados.length === 0, 'con el puente desactivado no se manda nada (paso 1: APK viejo)');
+  }
+
+  // --- nadie fuera de la app instalada debe notarlo ---
+  {
+    const enviados: string[] = [];
+    crearPuenteWidget(almacenFalso(), opciones(enviados, { esAndroidChrome: () => false })).enviar(
+      3,
+      '2026-10-08',
+    );
+    comprobar(enviados.length === 0, 'en escritorio no se intenta (el visitante del README ni se entera)');
+    crearPuenteWidget(almacenFalso(), opciones(enviados, { enApp: () => false })).enviar(3, '2026-10-08');
+    comprobar(enviados.length === 0, 'ni en el móvil fuera de la app instalada');
+  }
+
+  // --- Chrome exige gesto de usuario ---
+  {
+    const enviados: string[] = [];
+    let gesto = false;
+    const puente = crearPuenteWidget(almacenFalso(), opciones(enviados, { hayGesto: () => gesto }));
+    puente.enviar(2, '2026-10-08');
+    comprobar(enviados.length === 0 && puente.pendiente(), 'sin gesto el envío se queda en cola');
+    gesto = true;
+    document.dispatchEvent(new dom.window.Event('pointerdown'));
+    comprobar(enviados.length === 1 && !puente.pendiente(), 'y sale con el primer toque de la pantalla');
+  }
+
+  // --- sondeo del receptor ---
+  {
+    const enviados: string[] = [];
+    const almacen = almacenFalso();
+    let sondeos = 0;
+    const puente = crearPuenteWidget(
+      almacen,
+      opciones(enviados, {
+        alPerderVisibilidad: (fn) => {
+          sondeos += 1;
+          fn();
+          return () => {};
+        },
+      }),
+    );
+
+    puente.enviar(6, '2026-10-08');
+    comprobar(almacen.getItem(CLAVE_WIDGET) === 'ok', 'si la página se va a segundo plano, el receptor existe');
+    puente.enviar(7, '2026-10-09');
+    comprobar(sondeos === 1 && enviados.length === 2, 'confirmado, deja de sondear y sigue enviando');
+
+    // ...pero si la página no se mueve, es que Chrome no ha abierto nada
+    const sinReceptor = almacenFalso();
+    const fallido = crearPuenteWidget(
+      sinReceptor,
+      opciones(enviados, { alPerderVisibilidad: () => () => {}, estaOculta: () => false }),
+    );
+    fallido.enviar(4, '2026-10-08');
+    comprobar(
+      (sinReceptor.getItem(CLAVE_WIDGET) ?? '').startsWith('sin-soporte'),
+      'el sondeo apaga el puente si la página nunca se va a segundo plano',
+    );
+    enviados.length = 0;
+    crearPuenteWidget(sinReceptor, opciones(enviados, { ahora: () => 60_000 })).enviar(4, '2026-10-08');
+    comprobar(enviados.length === 0, 'y mientras dure, ya no vuelve a intentarlo');
+
+    // ...aunque a la semana vuelve a probar, por si el alumno actualizó el APK
+    crearPuenteWidget(
+      sinReceptor,
+      opciones(enviados, { ahora: () => CADUCIDAD_SIN_SOPORTE + 60_001 }),
+    ).enviar(4, '2026-10-08');
+    comprobar(enviados.length === 1, 'la caducidad del «sin soporte» reactiva el puente');
+  }
+}
 
 finalizar();

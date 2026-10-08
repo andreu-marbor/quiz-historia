@@ -18,7 +18,7 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 | 5 | Android TWA (keystore nuevo, assetlinks, APK + tramo cerrado Play) | 🔄 En curso (2026-10-08): keystore + APK/AAB firmados + assetlinks ✅ · prueba en dispositivo ✅ · respaldo en el otro PC ✅ · pendiente: Play Console y fichas de la tienda |
 | 6 | Contenido real (temario ESO/Bachiller) y documentación | ⏳ Pendiente |
 | 7 | Escalado (miles de preguntas, cientos de temas, imágenes): disparadores, chunks, cachés y pipeline `sharp` | ⏳ Planificada (2026-10-07) · plan en `PLAN.md` §12 |
-| 8 | Mejoras de uso: «Todos los temas» por asignatura, estructura `cursos > asignaturas > temas` y widget de racha | 🔄 En curso (2026-10-08): §13.2 ✅ · §13.1 ✅ · pendiente §13.3 (widget) |
+| 8 | Mejoras de uso: «Todos los temas» por asignatura, estructura `cursos > asignaturas > temas` y widget de racha | 🔄 En curso (2026-10-08): §13.2 ✅ · §13.1 ✅ · **§13.3 en curso**: puente web ✅ → lado nativo ⏳ |
 | 9 | Pulido de interfaz (las 5 pantallas, manual): tipografía, iconos, microinteracciones, vacíos, ficha de examen y ajustes agrupados | 🔄 Casi completa (2026-10-08) · plan en `PLAN.md` §14 · **T0–T8 validación ✅** (434 comprobaciones + AA/`comprobar-contraste` + reflow `comprobar-movil` + estructura ARIA) · pendientes: capturas en `docs/capturas/` y revisión en dispositivo (sin cuenta de desarrollador) |
 
 ---
@@ -309,6 +309,18 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **⛔ Pendiente de T8:** **capturas en `docs/capturas/`** (README y fichas de Play Store) y **revisión en dispositivo físico** — sin cuenta de desarrollador de Google por ahora (el APK de F5-a ya está instalado en el móvil).
 - **Docs:** `PLAN.md` (Fase 9 y §14.3: T5–T8 `[x]` con detalle, nuevo bullet «T8 · Capturas» pendiente y tabla §6 con los scripts nuevos), `AGENTS.md` (árbol de directorios y comandos) y esta entrada.
 - **Alcance:** `src/estilos/{base,app}.css`, `src/aplicacion.ts`, `pruebas/pantallas.ts`, `scripts/{comprobar-contraste,comprobar-movil}.mjs` (nuevos), `package.json`, `PLAN.md`, `AGENTS.md`, `MEMORY.md`.
+
+### 2026-10-08 — Fase 8 · §13.3 (1/3): puente web → widget nativo (`intent://`), con gesto, cola y sondeo
+
+- **Módulo nuevo `src/ui/widget.ts`:** `crearPuenteWidget(almacen, opciones)` → `enviar(racha, ultimoDia)`. Todo es inyectable (`activo`, `esAndroidChrome`, `enApp`, `hayGesto`, `navegar`, `esperar`, `estaOculta`, `alPerderVisibilidad`, `ahora`), así que las pruebas **nunca tocan `location` de verdad**.
+- **Tres enganches en `src/aplicacion.ts`:** al **arrancar**, en **`finalizar()`** (junto a `guardarProgreso`, el único sitio donde cambia la racha) y en **`borrarProgreso()`** (envía `0`). `montarAplicacion` acepta un **4.º parámetro opcional** con las opciones del puente; solo lo usan las pruebas.
+- **🔍 Hallazgo · Chrome exige gesto de usuario:** la documentación oficial de «Android Intents with Chrome» dice que **no** lanza un `intent://` «initiated without user gesture» (tampoco los que dispara un temporizador). El envío «al arrancar» habría quedado bloqueado en silencio → ahora **se encola** y sale con el primer `pointerdown`/`keydown`; los otros dos ocurren dentro de un clic, así que van directos.
+- **Filtro de entorno:** solo Android + Chrome **y** dentro de la app instalada (`display-mode: standalone|fullscreen` o referrer `android-app://`). Un visitante del README desde el navegador normal no se lleva ni diálogo de Chrome ni la Play Store; en escritorio ni se intenta.
+- **Sondeo de soporte:** tras cada envío, si la página **no** llega a irse a segundo plano en 1,2 s → `sin-soporte:<marca de tiempo>` en `localStorage` y deja de intentarlo; **caduca a la semana**, por si el alumno después actualiza el APK. Si la página sí se va → `ok` y deja de sondear.
+- **Constante del paso 2 del despliegue:** `PUENTE_WIDGET_ACTIVADO = false` dentro de `widget.ts` (no en `cadenas.ts`: ese módulo es solo de copys). Se pondrá a `true` **cuando el APK con receptor esté instalado**.
+- **Tests: 434 → 449 comprobaciones** (+15). Nueva sección *Puente al widget nativo* (URL del intent, desactivado, fuera de Android o de la app, cola sin gesto, sondeo positivo/negativo y caducidad) y 3 nuevas en el flujo completo (arranque, fin de cuestionario y borrado de progreso).
+- **Docs:** `PLAN.md` §13.3 — tareas 1 y 2 `[x]` y diseño ajustado al gesto de Chrome; esta entrada.
+- **Alcance:** `src/ui/widget.ts` (nuevo), `src/aplicacion.ts`, `pruebas/pantallas.ts`, `PLAN.md` y esta entrada.
 
 ---
 

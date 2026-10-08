@@ -663,9 +663,10 @@ Por disparadores (§12.2). Las tres primeras tareas **no esperan a ningún dispa
 
 **Decisión de diseño: widget nativo + puente `intent://`**
 
-- **Puente web → APK:** nuevo módulo `src/ui/widget.ts` con `enviarRachaAlWidget(racha, ultimoDia)` que dispara
-  `intent://racha#Intent;package=com.andreumarbor.quizophistoria;S.racha=5;S.ultimoDia=2026-10-08;end`.
+- **Puente web → APK:** nuevo módulo `src/ui/widget.ts` con `crearPuenteWidget(almacen, opciones)` y `enviar(racha, ultimoDia)`, que dispara
+  `intent://racha#Intent;scheme=quizhistoria;package=com.andreumarbor.quizophistoria;action=…widget.RACHA;S.racha=5;S.ultimoDia=2026-10-08;end`.
   Se llama en tres puntos de `src/aplicacion.ts`: al **arrancar**, en **`finalizar()`** (único sitio donde cambia la racha, junto a `registrarCuestionario`) y en **`borrarProgreso()`** (envía `0`).
+  ⚠️ **Chrome solo lanza un `intent://` con gesto de usuario** (documentación oficial de Android Intents): el envío «al arrancar» **se encola** y sale con el primer toque; los otros dos ocurren dentro de un clic, así que van directos. Además solo se intenta **dentro de la app instalada** (`display-mode: standalone` o referrer `android-app://`) y en Android+Chrome: quien llegue desde un enlace del README no se lleva ni diálogo ni Play Store.
 - **Lado nativo** (proyecto generado por Bubblewrap):
   - `WidgetBridgeActivity` (transparente, `exported="true"`, `noHistory`, `excludeFromRecents`): valida los extras (entero 0–9999 y fecha `YYYY-MM-DD`), los guarda en `SharedPreferences` y notifica al widget.
   - `WidgetRachaProvider` (`AppWidgetProvider`) + `res/xml/*appwidget*.xml` (`updatePeriodMillis="0"`: solo actualizaciones nuestras; `resizeMode`; `widgetCategory="home_screen"`) + `res/layout/*widget*.xml`: `TextView` con la racha y «días», y **`PendingIntent` a la `MainActivity`** del TWA (al tocarlo abre la app).
@@ -673,13 +674,13 @@ Por disparadores (§12.2). Las tres primeras tareas **no esperan a ningún dispa
   - Colores con recursos `daynight` (en la nativa, lo mismo que las variables CSS en la web: nada hardcodeado).
 - **¿Y los APKs antiguos?** Un `intent://` sin receptor hace que Chrome muestre «No se encontró ninguna aplicación». Por eso el despliegue va en **dos pasos**:
   1. **APK con el receptor** repartido/actualizado primero (subiendo `versionCode`/`versionName` en `twa-manifest.json`);
-  2. **activar el envío en la web** después (constante en `cadenas.ts` o interruptor en Ajustes).
-  Red de seguridad: **sondeo de soporte** en el primer envío (si la página no pierde el foco en ~300 ms → se desactiva y se guarda en `localStorage` para no reintentarlo).
+  2. **activar el envío en la web** después (constante `PUENTE_WIDGET_ACTIVADO` en `src/ui/widget.ts`, en `false` hasta que el APK nuevo esté instalado).
+  Red de seguridad: **sondeo de soporte** en el envío (si la página no llega a irse a segundo plano en ~1,2 s → se guarda `sin-soporte` en `localStorage` y deja de intentarlo; **caduca a la semana** por si el alumno después actualiza el APK). Confirmado el receptor se guarda `ok` y deja de sondear.
 
 **Tareas**
 
-- [ ] `src/ui/widget.ts` (puente **inyectable**, sin tocar `location` real en las pruebas) + llamadas en arranque / `finalizar()` / `borrarProgreso()`.
-- [ ] Tests web con stub: envía al terminar un cuestionario, envía `0` al borrar progreso y **no** envía si el puente está desactivado.
+- [x] `src/ui/widget.ts` (puente **inyectable**, sin tocar `location` real en las pruebas) + llamadas en arranque / `finalizar()` / `borrarProgreso()`.
+- [x] Tests web con stub: envía al terminar un cuestionario, envía `0` al borrar progreso y **no** envía si el puente está desactivado.
 - [ ] Código nativo (Kotlin): `WidgetBridgeActivity`, `WidgetRachaProvider`, `appwidget-provider`, layout y bloques del `AndroidManifest.xml`.
 - [ ] `scripts/aplicar-widget.mjs` que (re)aplique el parche tras un `bubblewrap update` (ver riesgos).
 - [ ] `bubblewrap.cmd build` + `apksigner verify --print-certs` (**misma huella**) y APK nuevo a `Downloads`.
