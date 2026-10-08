@@ -301,14 +301,14 @@ Así quedan **incluidas en el bundle y la app funciona sin internet de serie**.
 
 - [ ] Todo lo listado en §12.6, en este orden: presupuestos en CI → render/pipeline de imágenes → carga diferida de temas → manifest de contenido → cachés separadas → estados offline degradados → pantalla de almacenamiento → pruebas de escalado.
 
-### Fase 8 — Mejoras de uso: «Todos los temas», asignaturas y widget de racha ⏳
+### Fase 8 — Mejoras de uso: «Todos los temas», asignaturas y widget de racha ✅ (2026-10-08)
 
 > Plan detallado en **[§13](#13-mejoras-previstas-2026-10-08)**. Sin fecha; se ejecuta cuando toque. **Orden: 13.2 → 13.1 → 13.3** — primero la estructura obligatoria `cursos > asignaturas > temas` (sin ella no hay bloques de asignatura donde pintar las filas); §13.1 y §13.2 se tocan, así que conviene hacerlas juntas. §13.3 va independiente.
 
 - [x] §13.2 · **Estructura obligatoria `cursos > asignaturas > temas`** en el catálogo: migrar `datos/temas.json` (todos los cursos envueltos en «Historia»), tipos, `datos.ts`, UI con subtítulos, validador con reglas obligatorias y tests — 2º Bachillerato llevará además Historia del Arte. ✅ *(2026-10-08; ver §13.2)*
 - [x] §13.1 · Filas **«Todos los temas de {asignatura}»** en cada bloque de asignatura (pool mezclado de esa asignatura y curso, clave virtual por fila, *repetir falladas* incluido). ✅ *(2026-10-08; ver §13.1)*
-- [ ] §13.3 · **Widget nativo** de Android con la racha + puente `intent://` desde la web (despliegue en dos pasos).
-- [ ] Verdes al terminar cada tarea: `npm.cmd run prueba` y `npm.cmd run build` (los tests actuales no deben cambiar de significado y **los progresos guardados no deben perderse**: sus claves `<curso>/<tema>` no cambian).
+- [x] §13.3 · **Widget nativo** de Android con la racha + puente `intent://` desde la web (despliegue en dos pasos). ✅ *(2026-10-08: web `c8d29c1` → APK 1.1 `ad3d863` → INC-03 `800e18d` → INC-04 `5bb35ce` → paso 2 `82d38de` → APK 1.4 `8a89f05` + **prueba en dispositivo** → ver §13.3)*
+- [x] Verdes al terminar cada tarea: `npm.cmd run prueba` y `npm.cmd run build` (los tests actuales no deben cambiar de significado y **los progresos guardados no deben perderse**: sus claves `<curso>/<tema>` no cambian). ✅ *(**455** comprobaciones y build en verde en las tres tareas; ninguna clave de progreso cambió)*
 
 ### Fase 9 — Pulido de interfaz (5 pantallas, manual) ⏳
 
@@ -361,11 +361,11 @@ Así quedan **incluidas en el bundle y la app funciona sin internet de serie**.
 ## 8. Criterios de "hecho"
 
 - [x] Web en Pages funcionando offline y apta en Lighthouse (PWA instalable).
-- [ ] App Android instalada en un dispositivo real, a pantalla completa, sin barra de URL.
-- [ ] Añadir una pregunta lleva < 2 minutos sin tocar código de la app.
-- [ ] `npm.cmd run prueba` cubre: lógica de corrección, validación de datos e integridad del catálogo.
-- [ ] CI en verde en cada push a `main` y despliegue automático.
-- [ ] README con enlace en vivo, capturas y flujo de edición de preguntas.
+- [x] App Android instalada en un dispositivo real, a pantalla completa, sin barra de URL. ✅ *(2026-10-08; `assetlinks.json` verificado publicado)*
+- [x] Añadir una pregunta lleva < 2 minutos sin tocar código de la app. ✅ *(editar `datos/preguntas/<curso>/<tema>.json` → `npm.cmd run prueba` → push; el contenido vive solo en `datos/`)*
+- [x] `npm.cmd run prueba` cubre: lógica de corrección, validación de datos e integridad del catálogo. ✅ *(**455** comprobaciones: lógica + persistencia + pantallas + datos)*
+- [x] CI en verde en cada push a `main` y despliegue automático. ✅ *(cada tarea, desde la Fase 1)*
+- [ ] README con enlace en vivo, capturas y flujo de edición de preguntas. *Pendiente de las capturas (`docs/capturas/`, T8): el enlace y el flujo ya están.*
 
 ---
 
@@ -418,6 +418,7 @@ Así quedan **incluidas en el bundle y la app funciona sin internet de serie**.
   - **Corrección:** `<intent-filter>` con `APPWIDGET_UPDATE` en `android/widget/parche/manifiesto.xml`. Se mantiene `exported="false"`: los envíos del sistema —los que disparan `onUpdate` al añadir el widget— sí llegan a receptores no exportados.
   - **Guardas:** `scripts/aplicar-widget.mjs` valida ahora el **contenido** del fragmento (acción + `meta-data` + `android:exported` explícito) y, si el bloque ya aplicado difiere de la fuente, lo **sustituye** en vez de darlo por bueno.
   - **Verificación:** `bubblewrap update --skipVersionUpgrade` → `npm.cmd run widget` → `bubblewrap build`; en el APK, `aapt dump xmltree` muestra `<receiver> → <intent-filter> → <action …APPWIDGET_UPDATE/> → <meta-data …>`, recursos `layout/widget_racha` y `string/widget_*` presentes, `versionCode='4' versionName='1.2'` y huella **`b7666ba3…b54cf` idéntica** → se actualiza encima sin perder datos.
+  - **✅ Prueba en dispositivo (2026-10-08):** con el **APK 1.4** el alumno confirma que el widget **sí aparece** en el selector de Android y funciona — cierra la última comprobación que quedaba de esta incidencia.
 
 ---
 
@@ -698,7 +699,7 @@ Por disparadores (§12.2). Las tres primeras tareas **no esperan a ningún dispa
 - [x] `bubblewrap.cmd build` + `apksigner verify --print-certs` (**misma huella**) y APK nuevo a `Downloads`. ✅ *(2026-10-08. Detalle: **`appVersionCode` 1 → 3 y `appVersionName` → `1.1`** en `twa-manifest.json` + `bubblewrap update` (la orden sin `--skipVersionUpgrade` autoincrementa). APK+AAB firmados, huella **`b7666ba3…b54cf` idéntica** → el alumno que ya la tiene se la actualiza encima sin perder datos. `aapt dump badging` = `versionCode='3' versionName='1.1'`, `minSdk 21`, y en el manifiesto del APK están `WidgetBridgeActivity` (con `BROWSABLE`) y `WidgetRachaProvider`. Copiado a `Downloads/RepasoHistoria-1.1.apk`. **Incidencia resuelta abajo:** el JDK que descarga Bubblewrap era de **32 bits** y Kotlin se cae con él. **Rebuild por INC-04 (2026-10-08):** `appVersionCode` 3 → **4** y `appVersionName`/`appVersion` → **1.2** (el APK 1.1 no enseñaba el widget) → `Downloads/RepasoHistoria-1.2.apk`, **misma huella**, `versionCode='4' versionName='1.2'`.)*
 - [x] **Paso 2 · activación del puente + APK 1.3 (widget a 2×1).** ✅ *(2026-10-08. Detalle: el widget ya se añadía (INC-04) pero se quedaba en «— / Juega hoy» con la racha de Progreso correcta — **no era un fallo**: `PUENTE_WIDGET_ACTIVADO` seguía en `false`, era el paso 2 pendiente. Antes de activarlo se revisó el contrato `intent://` ↔ `WidgetBridgeActivity` (`S.racha`/`S.ultimoDia` ↔ `getStringExtra`, misma acción, scheme y host, validación 0–9999 y `YYYY-MM-DD`) → `PUENTE_WIDGET_ACTIVADO = true`; los tests inyectan `activo`, así que **ningún test cambia de significado**. A petición del alumno, el tamaño pasa de **3×2 a 2×1** (`targetCellWidth/Height` en `xml/widget_racha.xml`; `minWidth 140dp`/`minHeight 64dp` siguen siendo el suelo de los lanzadores antiguos) y el layout baja el padding vertical **12 → 8dp** para que los ≈70dp de contenido quepan en una sola fila. `appVersionCode` 4 → **5**, `appVersionName`/`appVersion` → **1.3**; misma huella → `Downloads/RepasoHistoria-1.3.apk`. Verificado en el paquete: `versionCode='5' versionName='1.3'`, `<receiver>` con `APPWIDGET_UPDATE`, ficha con `targetCellWidth=0x2`/`targetCellHeight=0x1` y layout con `paddingTop/Bottom=8dp`, `paddingStart/End=12dp`. Pruebas 455 y build en verde.)*
 - [x] **APK 1.4 · «solo si has jugado hoy» + refresco automático + «Abre la app».** ✅ *(2026-10-08. Detalle: el alumno reportó que, tras actualizar, el widget decía «Juega hoy» aunque hubiera jugado ese mismo día. Eran **dos cosas**: (1) el puente acababa de activarse y `SharedPreferences` **estaban vacías** — el widget no tenía ningún dato todavía, no es que ignorara la racha —, así que ahora, sin datos, enseña «— / **Abre la app**» en lugar de mentir; (2) la regla era `dias <= 1` (cifra también con la partida de *ayer*) → pasa a **`dias == 0`**, solo si la última actividad es de **hoy**. Para que «mañana a primera hora» diga «Juega hoy» **sin abrir la app**, `updatePeriodMillis` pasa de `0` a **`1800000`** (30 min, el mínimo de Android): el sistema repite `onUpdate` y `pintar()` recalcula contra la hora actual. `appVersionCode` 5 → **6**, `appVersionName`/`appVersion` → **1.4**; misma huella → `Downloads/RepasoHistoria-1.4.apk`. Verificado en el paquete: `versionCode='6' versionName='1.4'`, `string/widget_abre` en `resources.arsc` y `updatePeriodMillis=0x1b7740` (1800000) con `targetCellWidth=0x2`/`targetCellHeight=0x1` en la ficha compilada. **Detalle de la tabla de recursos:** `xml/widget_racha` tiene dos variantas — `default` (`res/Ot.xml`, sin `targetCell`/`previewLayout`) y `v22` (`res/D9.xml`, la nuestra) —; el móvil se queda con **`v22`** (Android ≥ 5.1), que es la que manda el `targetCell`: por eso salió 3×2 con la 1.2. Pruebas 455 y build en verde.)*
-- [ ] Prueba manual en dispositivo: añadir widget → jugar → se actualiza · borrar progreso → `—`/«Juega hoy» · tema oscuro · tocar → abre la app · **sin conexión** (lee `SharedPreferences`, no necesita red) · **sin datos → «Abre la app»** · **jugado hoy → cifra; ayer o antes → «Juega hoy» aunque no se abra la app (refresco de 30 min)**. *Paso 6: instalar `Downloads/RepasoHistoria-1.4.apk` (actualización, sin desinstalar; si el launcher conserva la geometría, quitar y re-añadir el widget). El puente ya está activado: al abrir la app el primer **toque** dispara el envío.*
+- [x] Prueba manual en dispositivo: añadir widget → jugar → se actualiza · borrar progreso → `—`/«Juega hoy» · tema oscuro · tocar → abre la app · **sin conexión** (lee `SharedPreferences`, no necesita red) · **sin datos → «Abre la app»** · **jugado hoy → cifra; ayer o antes → «Juega hoy» aunque no se abra la app (refresco de 30 min)**. ✅ *(2026-10-08: instalado `Downloads/RepasoHistoria-1.4.apk` como actualización, sin desinstalar, y probado por el alumno — «APK instalada y probada». **Cierra INC-04**: el widget sí aparece en el selector.)*
 
 **Riesgos**
 

@@ -18,7 +18,7 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 | 5 | Android TWA (keystore nuevo, assetlinks, APK + tramo cerrado Play) | 🔄 En curso (2026-10-08): keystore + APK/AAB firmados + assetlinks ✅ · prueba en dispositivo ✅ · respaldo en el otro PC ✅ · pendiente: Play Console y fichas de la tienda |
 | 6 | Contenido real (temario ESO/Bachiller) y documentación | ⏳ Pendiente |
 | 7 | Escalado (miles de preguntas, cientos de temas, imágenes): disparadores, chunks, cachés y pipeline `sharp` | ⏳ Planificada (2026-10-07) · plan en `PLAN.md` §12 |
-| 8 | Mejoras de uso: «Todos los temas» por asignatura, estructura `cursos > asignaturas > temas` y widget de racha | 🔄 En curso (2026-10-08): §13.2 ✅ · §13.1 ✅ · §13.3 🔄 **puente web ✅ + widget nativo ✅ + INC-04 ✅ (aparece) + paso 2 ✅ puente ACTIVADO y APK 1.3 (2×1) + APK 1.4 ✅ regla «solo si has jugado hoy», «Abre la app» sin datos y refresco de 30 min** → pendiente la prueba en dispositivo (tarea 6) |
+| 8 | Mejoras de uso: «Todos los temas» por asignatura, estructura `cursos > asignaturas > temas` y widget de racha | ✅ Completada (2026-10-08): §13.2 ✅ · §13.1 ✅ · §13.3 ✅ (puente web + widget nativo + INC-03/INC-04 + APK 1.1 → **1.4** — regla «solo si has jugado hoy», «Abre la app» sin datos, refresco de 30 min) · **prueba en dispositivo ✅** |
 | 9 | Pulido de interfaz (las 5 pantallas, manual): tipografía, iconos, microinteracciones, vacíos, ficha de examen y ajustes agrupados | 🔄 Casi completa (2026-10-08) · plan en `PLAN.md` §14 · **T0–T8 validación ✅** (434 comprobaciones + AA/`comprobar-contraste` + reflow `comprobar-movil` + estructura ARIA) · pendientes: capturas en `docs/capturas/` y revisión en dispositivo (sin cuenta de desarrollador) |
 
 ---
@@ -374,6 +374,17 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 
 ---
 
+### 2026-10-08 — Fase 8 COMPLETADA: §13.3 probado en dispositivo (APK 1.4) e INC-04 cerrada
+
+- **Confirmación del alumno:** «APK instalada y probada» — el **1.4** (`Downloads/RepasoHistoria-1.4.apk`, `versionCode` 6) montado como actualización sobre la 1.3, sin desinstalar. **Cierra la tarea 6 de §13.3** (la checklist de la prueba manual) y, con ella, **INC-04**: el widget **sí aparece** en el selector de Android y funciona — era lo único que quedaba «⏳ pendiente de prueba en dispositivo».
+- **Fase 8 cerrada al 100 %:** §13.2 (estructura `cursos > asignaturas > temas`) ✅ · §13.1 (filas «Todos los temas de {asignatura}») ✅ · §13.3 (widget) ✅ → puente web `c8d29c1` → APK 1.1 `ad3d863` → INC-03 `800e18d` → INC-04 `5bb35ce` → paso 2 `82d38de` → APK 1.4 `8a89f05`.
+- **Cajas caducas de §8 marcadas** (ya cumplidas, solo estaban sin marcar): app Android en dispositivo real a pantalla completa ✅ · añadir pregunta < 2 min sin tocar código ✅ · `prueba` cubre lógica/validación/integridad ✅ (455) · CI verde en cada push ✅. **Siguen abiertas las dos que de verdad faltan:** README con **capturas** (`docs/capturas/` no existe todavía) y el resto de §13.3/§14 T8.
+- **Docs:** `PLAN.md` — Fase 8 con ✅ en el encabezado, tareas §13.3 `[x]` (incluida la prueba manual), nota de dispositivo en INC-01…INC-04 de §11 y criterios §8; esta entrada + tabla de fases.
+- **Alcance:** solo `PLAN.md` y `MEMORY.md` (cero código).
+- **Siguiente (sin bloqueos):** Fase 6 — temario real (`PLAN.md` §5, líneas 293–294) + Historia del Arte de 2º Bachiller (§13.2). Bloqueadas por la cuenta de Google: Play Console/fichas (§5 Fase 5) y capturas T8 (§14).
+
+---
+
 ## 🐛 Incidencias y soluciones
 
 ### 2026-10-06 — `esbuild` con salida `.mjs` producía `require` (fase 1)
@@ -509,4 +520,4 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **Versión:** `twa-manifest.json` → `appVersionCode` **3 → 4**, `appVersionName`/`appVersion` **1.1 → 1.2**; flujo `bubblewrap.cmd update --skipVersionUpgrade` → `npm.cmd run widget` → `bubblewrap.cmd build` (el `update` borra los parches y el script los rehizo).
 - **Verificación del APK:** `aapt dump badging` = `versionCode='4' versionName='1.2'`; `aapt dump xmltree` = `<receiver> → <intent-filter> → <action …APPWIDGET_UPDATE/> → <meta-data …@xml/widget_racha>`; recursos `layout/widget_racha` + `string/widget_dias|widget_juega|widget_sin_racha` en `resources.arsc`; **huella `b7666ba3…b54cf` idéntica** (misma clave → actualiza encima sin borrar datos) y `apksigner verify` en verde.
 - **APK:** `Downloads/RepasoHistoria-1.2.apk` (1.044 KB). La 1.1 de `Downloads` queda **obsoleta**.
-- **Estado:** ⏳ pendiente de prueba en dispositivo → `PLAN.md` §11 y §13.3 tarea 6.
+- **Estado:** ✅ **cerrada** (2026-10-08): probada en dispositivo con el **APK 1.4** — el widget aparece en el selector y funciona. → `PLAN.md` §11 y §13.3 tarea 6.
