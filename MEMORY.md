@@ -17,6 +17,8 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 | 4 | Despliegue web (GitHub Actions → Pages, `base: /quiz-historia/`) | ✅ Completada (2026-10-07) |
 | 5 | Android TWA (keystore nuevo, assetlinks, APK + tramo cerrado Play) | 🔄 En curso (2026-10-07): keystore + APK/AAB firmados + assetlinks ✅ · pendiente: prueba en dispositivo, respaldo del keystore y Play Console |
 | 6 | Contenido real (temario ESO/Bachiller) y documentación | ⏳ Pendiente |
+| 7 | Escalado (miles de preguntas, cientos de temas, imágenes): disparadores, chunks, cachés y pipeline `sharp` | ⏳ Planificada (2026-10-07) · plan en `PLAN.md` §12 |
+| 8 | Mejoras de uso: «Todos los temas» por asignatura, estructura `cursos > asignaturas > temas` y widget de racha | ⏳ Planificada (2026-10-08) · plan en `PLAN.md` §13 |
 
 ---
 
@@ -130,6 +132,39 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **Segunda sentencia de `assetlinks.json`** añadida en `andreu-marbor.github.io/.well-known/` (commit `dd58933`, rama `main`) y **verificada ya publicada** en `https://andreu-marbor.github.io/.well-known/assetlinks.json`; sin ella la app Android mostraría la barra de URL en vez de abrirse a pantalla completa.
 - **Respaldo del keystore:** generado el paquete `C:\Users\andre\Downloads\respaldo-keystore-quiz-historia.zip` (`android.keystore` + contraseña + `LEEME-respaldo.txt` con huella, restauración y notas de Play App Signing), **fuera del repo y de OneDrive**. **Pendiente: copiarlo al otro PC y borrarlo de Descargas.**
 - **Pendiente de la Fase 5:** prueba en dispositivo real (APK también copiado a `Descargas\RepasoHistoria-1.apk`), tramo cerrado de Play Console (12 verificadores × 14 días) y fichas de la tienda.
+
+### 2026-10-08 — Plan de tres mejoras nuevas (`PLAN.md` §13 + Fase 8)
+
+- **Alcance de la iteración:** solo documentación (`PLAN.md` y este fichero). **Cero cambios de código.**
+- **§13.1 · «Todos los temas» en la lista de un curso:** fila **primera** que arma un cuestionario con el pool de todos los temas del curso, mezclado. Decisión: **clave virtual de runtime `__todos__`** (`eso2/__todos__`) en lugar de un tema falso en `temas.json` (el validador exige un fichero por tema y Progreso iteraría un tema inexistente). Toca `logica/catalogo.ts` (`preguntasDeConjunto` + `minimoDeConjunto`) y `aplicacion.ts` (`iniciar()` generalizado a *selección*, guardada en `estado.temaResultado` para que «Repetir solo las falladas» funcione desde el pool). **Mezclar no exige lógica nueva**: `seleccionarPreguntas` ya baraja y ya reparte 1·2·3.
+- **§13.2 · Asignaturas por curso** (2º Bachillerato con Historia **y** Historia del Arte): campos **opcionales** `Curso.asignaturas[]` y `Tema.asignatura` en `tipos.ts`; los temas **siguen planos** en `Curso.temas` (moverlos habría roto catálogo, `datos.ts`, UI, validador y tests por un campo más). Los JSON van en los **mismos** `datos/preguntas/2bach/` con la convención actual de ids. La UI agrupa en Inicio/Progreso solo si un curso tiene >1 asignatura; el validador, que hoy rechaza campos desconocidos, pasa a aceptarlos con reglas de coherencia (`orden` único por grupo).
+- **§13.3 · Widget de racha en la pantalla de inicio:** Android **no** soporta widgets para PWAs (el miembro `widgets` del manifest no está en Chrome/Android) y la racha vive en `localStorage` → **widget nativo** en el APK + **puente `intent://`** desde la web (`src/ui/widget.ts`, llamado al arrancar, en `finalizar()` y en `borrarProgreso()`), con `WidgetBridgeActivity` (valida extras → `SharedPreferences`) y `WidgetRachaProvider` con `PendingIntent` a la `MainActivity`. El widget aplica la regla de `avanzarRacha()`: si `ultimoDia` queda atrás muestra «—», nunca un número viejo. **Despliegue en dos pasos** (APK con el receptor primero, activación del envío en la web después) + sondeo de soporte con auto-desactivación, para no mostrar «No se encontró ninguna aplicación» con APKs antiguos. **Sin impacto en la firma ni en `assetlinks.json`**.
+- **Riesgo principal anotado:** `bubblewrap update` regenera `app/` y podría borrar el widget → fuentes en `android/widget/` + `scripts/aplicar-widget.mjs` para reaplicar, y `update` solo cuando cambie `twa-manifest.json`.
+- **Alternativas descartadas** (documentadas en §13.3): badge con `navigator.setAppBadge()` (cero nativo, pero no es widget) y esperar a los widgets PWA de Android.
+- **Nota sobre la iteración anterior (2026-10-07):** el plan de escalado (`PLAN.md` §12 + Fase 7) se redactó bajo la instrucción de no tocar más ficheros, por eso no figura aquí; queda recogido en la tabla de fases de más arriba.
+- **Estado:** ⏳ sin empezar; orden recomendado **§13.1 → §13.2 → §13.3** (Fase 8 en `PLAN.md` §5). Las tareas de §12.6 (Fase 7) siguen pendientes igual.
+
+### 2026-10-08 — Decisión: «Todos los temas» es **por asignatura** (precisa la entrada anterior)
+
+- **Decisión del usuario:** la opción «Todos los temas» se ofrece **por agrupación**, no por curso completo. En 2º Bachillerato con Historia y Historia del Arte el resultado es **«Todos los temas de Historia» + «Todos los temas de Historia del Arte»**, y **no hay fila «Todo el curso»** que mezcle materias distintas (se retira del plan §13.2).
+- **Rótulo según el curso:** si el curso no declara asignaturas (todos los actuales), la fila conserva el literal **«Todos los temas»** que se pidió al principio; en cuanto un curso declare varias asignaturas, cada fila lleva el nombre de la suya.
+- **Consecuencia técnica** (`PLAN.md` §13.1 actualizado): ya no basta una clave virtual por curso → hace falta **una clave virtual por fila**, centralizada en `claveConjunto(cursoId, asignaturaId | null)` → `eso2/__todos__` (sin agrupación) / `2bach/__todos__/historia` y `2bach/__todos__/historia-del-arte` (con agrupación). Inicio, Progreso, Resultados y `sesion.claveTema` deben usar esa misma función, o la nota guardada no coincidiría con la fila pintada. Desaparece la cadena `inicio.todoElCurso` (que sí figuraba en la entrada anterior) y los tests de `pruebas/pantallas.ts` pasan a comprobar **dos filas con claves distintas** cuando un curso tiene dos agrupaciones.
+- **Alcance de esta iteración:** solo `PLAN.md` (§4, §5 Fase 8, §13.1, §13.2) y esta entrada; **cero cambios de código**.
+- **Estado:** ⏳ decisión cerrada; la Fase 8 sigue sin empezar.
+
+### 2026-10-08 — Decisión (la que manda sobre las dos anteriores): la asignatura es **obligatoria** → estructura `cursos > asignaturas > temas`
+
+- **Decisión del usuario:** en vez de campos opcionales, se cambia la **arquitectura** del catálogo a **`cursos > asignaturas > temas`**, con el nombre de la asignatura **obligatorio en todos los cursos**. Los cursos de hoy quedarían envueltos en una única asignatura «Historia» (dejando la puerta abierta a más materias del currículo) y 2º Bachillerato llevaría Historia + Historia del Arte.
+- **Supersede:** lo que decían las dos entradas anteriores de hoy — «campos opcionales, sin mover estructuras» y «rótulo genérico *Todos los temas* si el curso no declara asignaturas». Con asignatura obligatoria el rótulo es **siempre «Todos los temas de {asignatura}»**: ya no queda un «Todos los temas» a secas, ni caso «sin agrupación».
+- **Consecuencias anotadas en `PLAN.md`:**
+  - §13.2 reescrito: `Asignatura = { id, titulo, orden, temas }`, **`Curso.asignaturas` obligatorio** y **`Curso.temas` desaparece**; `asignaturasDeCurso()` + `temasDeAsignatura()` en `logica/catalogo.ts`; Inicio y Progreso pintan **curso → subtítulo de asignatura → temas** (subtítulo accesible, no espaciado).
+  - §13.1: `claveConjunto(cursoId, asignaturaId)` **sin el caso `null`** → `eso2/__todos__/historia`, `2bach/__todos__/historia`, `2bach/__todos__/historia-del-arte`; cadena única `inicio.todosDe(asignatura)` (fuera `inicio.todosLosTemas`).
+  - §3 y §4: el ejemplo de `temas.json` de §3 sigue documentando **la forma actual** y queda la tarea de actualizarlo al migrar; el puntero de §4 ya describe la agrupación obligatoria.
+- **Migración de datos (commit atómico):** reescribir `datos/temas.json` envolviendo cada curso en «Historia» **junto con** tipos + `datos.ts` + UI + validador + tests, todo en verde. **Los JSON de preguntas no se mueven** y **las claves de progreso `<curso>/<tema>` no cambian** → no se pierden notas ni rachas.
+- **Validador más estricto:** todo curso con `asignaturas` (≥ 1) y toda asignatura con ≥ 1 tema; **se rechaza `temas` a nivel de curso**; `id` de asignatura único en el curso; **`id` de tema único dentro del curso** (chocarían `<curso>/<tema>` y `<curso>-<tema>-<nnn>`); `orden` único por asignatura.
+- **Orden de ejecución (Fase 8):** ahora es **§13.2 → §13.1 → §13.3** — sin la estructura obligatoria no hay bloques de asignatura donde pintar las filas del §13.1 (ambas tareas conviene hacerlas juntas).
+- **Alcance de esta iteración:** solo `PLAN.md` (§3, §4, §5 Fase 8, §13.1, §13.2) y esta entrada; **cero cambios de código**.
+- **Estado:** ⏳ decisión cerrada; la Fase 8 sigue sin empezar.
 
 ---
 
