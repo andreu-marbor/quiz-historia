@@ -36,6 +36,8 @@ const TRAZOS = {
   cruz: ['M6 6l12 12', 'M18 6L6 18'],
   /** ⚠ estados vacíos y avisos */
   aviso: ['M12 4l9 16H3z', 'M12 10v4', 'M12 17h.01'],
+  /** 📖 estados vacíos de contenido (sin cursos, sin temas) (T7) */
+  libro: ['M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z', 'M8 4v16'],
   /** ⚡ tarjeta de racha (T5) */
   rayo: ['M13 3L5 14h6l-1 7 8-11h-6z'],
   /** lista: tarjeta de cuestionarios jugados (T5) */

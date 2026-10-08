@@ -42,6 +42,7 @@ import { T } from './ui/cadenas';
 import { aplicarRespuesta, pintarCuestionario } from './ui/cuestionario';
 import type { Acciones, Contexto, Sesion, TemaDelResultado } from './ui/contexto';
 import { h, vaciar } from './ui/dom';
+import { estadoVacio } from './ui/estados';
 import { icono, type NombreIcono } from './ui/iconos';
 import { pintarInicio } from './ui/inicio';
 import { pintarProgreso } from './ui/progreso';
@@ -102,10 +103,32 @@ export function montarAplicacion(raiz: HTMLElement, fuentes: Fuentes, almacen: A
       { class: 'cabecera' },
       h('a', { class: 'marca', href: '#/' }, T.nombre),
       navegacion,
+      pintaAvisoConexion(),
     );
 
     vista = h('main', { id: 'vista', tabindex: '-1' });
     raiz.append(cabecera, vista);
+  }
+
+  /**
+   * Estado «sin conexión» (T7): la app funciona entera sin red —datos en el
+   * bundle, progreso en localStorage—, así que el aviso es tranquilizador y no
+   * un error. Vive en la cabecera, se anuncia con `role="status"` cuando cambia
+   * (sin robar el foco) y su texto sale de `cadenas.ts`.
+   */
+  function pintaAvisoConexion(): HTMLElement {
+    const aviso = estadoVacio('aviso', T.comunes.sinConexion, { clase: 'estado-vacio--conexion' });
+    aviso.id = 'aviso-conexion';
+    aviso.setAttribute('role', 'status');
+    const refrescar = (): void => {
+      // `window.navigator` explícito: es lo mismo en el navegador y nos deja
+      // probarlo en jsdom (donde el `navigator` global es el de Node).
+      aviso.hidden = window.navigator.onLine;
+    };
+    window.addEventListener('online', refrescar);
+    window.addEventListener('offline', refrescar);
+    refrescar();
+    return aviso;
   }
 
   // ---------------------------------------------------------------------

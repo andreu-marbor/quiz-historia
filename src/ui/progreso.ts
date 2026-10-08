@@ -12,6 +12,7 @@ import {
 import { T } from './cadenas';
 import type { Contexto } from './contexto';
 import { h, vaciar } from './dom';
+import { estadoVacio } from './estados';
 import { icono, type NombreIcono } from './iconos';
 import { claseInsignia } from './inicio';
 
@@ -74,7 +75,7 @@ export function pintarProgreso(vista: HTMLElement, ctx: Contexto): void {
 
   const contenido =
     filas.length === 0
-      ? h('p', { class: 'aviso' }, T.progreso.vacio)
+      ? estadoVacio('jugar', T.progreso.vacio)
       : tabla(filas);
 
   const bloque = h(

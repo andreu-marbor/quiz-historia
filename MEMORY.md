@@ -19,7 +19,7 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 | 6 | Contenido real (temario ESO/Bachiller) y documentación | ⏳ Pendiente |
 | 7 | Escalado (miles de preguntas, cientos de temas, imágenes): disparadores, chunks, cachés y pipeline `sharp` | ⏳ Planificada (2026-10-07) · plan en `PLAN.md` §12 |
 | 8 | Mejoras de uso: «Todos los temas» por asignatura, estructura `cursos > asignaturas > temas` y widget de racha | 🔄 En curso (2026-10-08): §13.2 ✅ · §13.1 ✅ · pendiente §13.3 (widget) |
-| 9 | Pulido de interfaz (las 5 pantallas, manual): tipografía, iconos, microinteracciones, vacíos, ficha de examen y ajustes agrupados | 🔄 En curso (2026-10-08) · plan en `PLAN.md` §14 · T0–T6 ✅ · pendiente T7–T8 |
+| 9 | Pulido de interfaz (las 5 pantallas, manual): tipografía, iconos, microinteracciones, vacíos, ficha de examen y ajustes agrupados | 🔄 En curso (2026-10-08) · plan en `PLAN.md` §14 · T0–T7 ✅ · pendiente T8 (validación y capturas) |
 
 ---
 
@@ -280,6 +280,19 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **Docs:** `PLAN.md` — T6 `[x]` con detalle y resumen de Fase 9 actualizado; fila de estado en `MEMORY.md`.
 - **Siguiente de la Fase 9:** **T7 · Estados vacíos** (componente con icono, copys solo en `cadenas.ts`).
 - **Alcance:** `src/ui/{ajustes,cadenas}.ts`, `src/estilos/app.css`, `pruebas/pantallas.ts`, `PLAN.md` y esta entrada.
+
+### 2026-10-08 — Fase 9 · T7 COMPLETADA: componente de estados vacíos (+ estado «sin conexión», que no existía)
+
+- **Componente nuevo `src/ui/estados.ts`:** `estadoVacio(icono, texto, { positivo?, clase? })` → SIEMPRE el mismo `p.estado-vacio` = icono `aria-hidden` + texto. **Copys nuevos solo en `cadenas.ts`** (única cadena nueva: `T.comunes.sinConexion`).
+- **Sustituye a los 5 `p.aviso` sueltos**: 0 cursos y 0 temas → **`libro`** (icono nuevo), progreso vacío → **`jugar`** (invita a jugar), sin almacenamiento → **`aviso`**, nota 100 → **`check`** con variante `estado-vacio--positivo`. **Se eliminó la clase `.aviso`** (`.aviso-estado`, la región viva «Ajuste guardado.», es otra cosa y NO se toca); test que comprueba que no queda ni un `.aviso` en el DOM.
+- **🔍 Estado «sin conexión» (T7) — no existía en la app:** `pintaAvisoConexion()` en `aplicacion.ts` lo monta **dentro de la cabecera**, con `role="status"` (se anuncia al cambiar sin robar el foco), `id="aviso-conexion"` y clase `estado-vacio--conexion` (borde e icono ámbar `--aviso`, fondo `--bg` para no fundirse con la cabecera `--bg-secundario`). Listeners `online`/`offline` que lo muestran/ocultan. El copy es tranquilizador, no un error: la app funciona entera sin red (datos en el bundle, progreso en `localStorage`).
+- **🐛 Incidencia 1 — `navigator.onLine` no se puede probar en jsdom:** el primer intento usaba el `navigator` global, pero **en Node ese `navigator` no tiene `onLine`** (y el test parchea `window`/`document`, no `navigator`) → `hidden` se quedaba en falso y dos tests fallaban. **Solución:** leer **`window.navigator.onLine`** (en el navegador es lo mismo; en las pruebas es el de jsdom, donde sí se puede hacer `defineProperty` y disparar `online`/`offline`). **Reproducción/verificación** en `pruebas/pantallas.ts` → sección *Flujo completo*: oculto con red → visible al cortar → oculto al volver.
+- **🐞 Incidencia 2 — un `}` sobrante rompía el build:** al separar `pintaAvisoConexion()` de `montar()` quedó la llave de cierre original → `esbuild` fallaba con `Unexpected "}"` en `src/aplicacion.ts:400` (y el fallo sale en **stderr**, con `--log-level=warning` no se veía: reproducir con `npx.cmd esbuild pruebas/pantallas.ts --bundle …` a pelo). Corregido; el patrón de captura de errores que sí funciona es `cmd /c "… > %TEMP%\sal.txt 2> %TEMP%\err.txt"`.
+- **Mínimo no alcanzado:** no puede usar el recuadro (vive DENTRO del botón de un tema) → lleva el icono **en línea**: `.tema-no-disponible` pasa a `flex` con icono de `1em`; sigue con `aria-hidden`, así que el nombre accesible del botón no cambia (test de T2 intacto).
+- **Tests: 385 → 398 comprobaciones** (`68 lógica + 43 persistencia + 242 pantallas + 45 datos`; +13) y `build` en verde. Nuevas: sección *Estados vacíos* (0 cursos, 0 temas, progreso vacío, sin almacenamiento, sin restos de `.aviso`), icono en el mínimo alcanzado, icono en el «sin falladas» y las 5 del estado de conexión.
+- **Docs:** `PLAN.md` — T7 `[x]` con detalle; fila de estado en `MEMORY.md` (T0–T7 ✅).
+- **Siguiente de la Fase 9:** **T8 · Validación y entrega** (`prueba` + `build` + `comprobar-offline`, AA/teclado/lector/móvil y capturas en `docs/capturas/`).
+- **Alcance:** `src/ui/estados.ts` (nuevo), `src/ui/{iconos,cadenas,inicio,progreso,ajustes,resultados}.ts`, `src/aplicacion.ts`, `src/estilos/app.css`, `pruebas/pantallas.ts`, `PLAN.md` y esta entrada.
 
 ---
 

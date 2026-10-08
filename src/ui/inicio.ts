@@ -17,6 +17,7 @@ import type { Asignatura, Curso, Tema } from '../logica/tipos';
 import { T } from './cadenas';
 import type { Contexto } from './contexto';
 import { h, vaciar } from './dom';
+import { estadoVacio } from './estados';
 import { icono } from './iconos';
 
 export function pintarInicio(vista: HTMLElement, ctx: Contexto): void {
@@ -31,7 +32,7 @@ export function pintarInicio(vista: HTMLElement, ctx: Contexto): void {
   );
 
   if (cursos.length === 0) {
-    vista.append(encabezado, h('p', { class: 'aviso' }, T.inicio.sinContenido));
+    vista.append(encabezado, estadoVacio('libro', T.inicio.sinContenido));
     return;
   }
 
@@ -55,7 +56,7 @@ function pintarCurso(ctx: Contexto, curso: Curso, abiertoPorDefecto: boolean): H
   detalle.append(resumen);
 
   if (temas.length === 0) {
-    detalle.append(h('p', { class: 'aviso' }, T.inicio.sinTemas));
+    detalle.append(estadoVacio('libro', T.inicio.sinTemas));
     return detalle;
   }
 
@@ -118,7 +119,7 @@ function pintarConjunto(ctx: Contexto, curso: Curso, asignatura: Asignatura): HT
     // botón, así que va con aria-hidden y sin texto.
     jugable
       ? icono('flecha', 'tema-ir')
-      : h('span', { class: 'tema-no-disponible' }, T.inicio.minimo(minimo)),
+      : h('span', { class: 'tema-no-disponible' }, icono('aviso'), T.inicio.minimo(minimo)),
   );
 
   return h('li', {}, boton);
@@ -153,7 +154,7 @@ function pintarTema(ctx: Contexto, curso: Curso, asignatura: Asignatura, tema: T
       : h('span', { class: `insignia ${claseInsignia(nota)}` }, T.inicio.mejorNota(nota)),
     jugable
       ? icono('flecha', 'tema-ir')
-      : h('span', { class: 'tema-no-disponible' }, T.inicio.minimo(tema.minPreguntas)),
+      : h('span', { class: 'tema-no-disponible' }, icono('aviso'), T.inicio.minimo(tema.minPreguntas)),
   );
 
   return h('li', {}, boton);

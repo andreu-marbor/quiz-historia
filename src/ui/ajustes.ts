@@ -9,6 +9,7 @@ import { T } from './cadenas';
 import type { Contexto } from './contexto';
 import { pedirConfirmacion } from './dialogo';
 import { h, vaciar } from './dom';
+import { estadoVacio } from './estados';
 
 export function pintarAjustes(vista: HTMLElement, ctx: Contexto): void {
   vaciar(vista);
@@ -155,7 +156,7 @@ export function pintarAjustes(vista: HTMLElement, ctx: Contexto): void {
   vista.append(cabecera, grupoApariencia, grupoJuego, grupoDatos);
 
   if (!ctx.almacenDisponible) {
-    vista.append(h('p', { class: 'aviso' }, T.ajustes.sinAlmacen));
+    vista.append(estadoVacio('aviso', T.ajustes.sinAlmacen));
   }
 }
 

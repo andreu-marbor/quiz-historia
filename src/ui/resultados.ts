@@ -6,6 +6,7 @@
 import { T } from './cadenas';
 import type { Contexto } from './contexto';
 import { h, vaciar } from './dom';
+import { estadoVacio } from './estados';
 import { icono } from './iconos';
 
 export function pintarResultados(vista: HTMLElement, ctx: Contexto): void {
@@ -47,7 +48,7 @@ export function pintarResultados(vista: HTMLElement, ctx: Contexto): void {
   const falladas = resultado.detalles.filter((detalle) => !detalle.acertada);
   const bloqueFalladas =
     falladas.length === 0
-      ? h('p', { class: 'aviso aviso--positivo' }, icono('check'), T.resultados.sinFalladas)
+      ? estadoVacio('check', T.resultados.sinFalladas, { positivo: true })
       : h(
           'div',
           {},

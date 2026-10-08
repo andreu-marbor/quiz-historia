@@ -455,10 +455,20 @@
 }
 
 .tema-no-disponible {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-2xs);
   grid-area: insignia;
   justify-self: end;
   color: var(--texto-tenue);
   font-size: var(--texto-xs);
+}
+
+/* mínimo no alcanzado (T7): el mismo aviso, pero en línea y dentro del botón */
+.tema-no-disponible .icono {
+  width: 1em;
+  height: 1em;
+  flex: none;
 }
 
 .tema:disabled {
@@ -1081,10 +1091,16 @@
   font-weight: 600;
 }
 
-.aviso {
+/* ------------------------- estados vacíos/degradados (T7)
+   Un único recuadro —icono decorativo + texto— para: sin cursos, sin temas,
+   progreso vacío, sin almacenamiento, sin conexión y nota 100 (positivo).
+   El mínimo no alcanzado va en línea (dentro del botón del tema). */
+
+.estado-vacio {
   display: flex;
   align-items: center;
   gap: var(--espacio-s);
+  margin: 0 0 var(--espacio);
   padding: var(--espacio-m) var(--espacio);
   border: 1px dashed var(--borde);
   border-radius: var(--radio);
@@ -1092,15 +1108,27 @@
   color: var(--texto-tenue);
 }
 
-.aviso .icono {
+.estado-vacio .icono {
   width: 1.3em;
   height: 1.3em;
   flex: none;
 }
 
-.aviso--positivo {
+.estado-vacio--positivo {
   border-color: var(--ok);
   color: var(--ok);
+}
+
+/* aviso de conexión: vive en la cabecera (entre navegación y vista); fondo de
+   página para que no se funda con la propia cabecera y borde/icono en ámbar */
+.estado-vacio--conexion {
+  margin: 0 var(--espacio) var(--espacio-s);
+  border-color: var(--aviso);
+  background: var(--bg);
+}
+
+.estado-vacio--conexion .icono {
+  color: var(--aviso);
 }
 
 /* ----------------------------------------------------------- responsive */

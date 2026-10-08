@@ -291,6 +291,10 @@ seccion('Pantalla de inicio');
   );
   comprobar(texto(industrial).includes('Necesitas al menos 4 preguntas'), 'explica por qué no se puede jugar');
   comprobar(
+    industrial.querySelector('.tema-no-disponible svg.icono[aria-hidden="true"]') !== null,
+    'el mínimo no alcanzado lleva su icono en línea (T7)',
+  );
+  comprobar(
     !industrial.hasAttribute('aria-label'),
     'no usa aria-label: no se pisa el texto visible con el nombre accesible',
   );
@@ -640,8 +644,8 @@ seccion('Pantalla de resultados');
   comprobar(!existe(vista2, '.falladas'), 'con nota 100 no hay bloque de falladas');
   comprobar(texto(vista2).includes('No has fallado ninguna pregunta'), 'y lo dice con texto');
   comprobar(
-    vista2.querySelector('.aviso--positivo svg') !== null,
-    'y con su icono gráfico ✓ (T4)',
+    vista2.querySelector('.estado-vacio--positivo svg') !== null,
+    'y con su icono gráfico ✓ (T4/T7)',
   );
   comprobar(
     !botones(vista2, '.boton').some((b) => texto(b) === 'Repetir solo las falladas'),
@@ -814,6 +818,48 @@ seccion('Pantalla de ajustes');
 }
 
 // ---------------------------------------------------------------------------
+seccion('Estados vacíos (Fase 9 · T7)');
+{
+  // 0 cursos
+  const sinCursos = nuevaVista();
+  pintarInicio(sinCursos, contexto({ catalogo: { cursos: [] } }));
+  const estadoCursos = sinCursos.querySelector('.estado-vacio')!;
+  comprobar(
+    texto(estadoCursos).includes('Todavía no hay ningún curso'),
+    'sin cursos: estado con el texto de cadenas',
+  );
+  comprobar(
+    estadoCursos.querySelector('svg.icono[aria-hidden="true"]') !== null,
+    'y con su icono decorativo (T7)',
+  );
+
+  // 0 temas en un curso
+  const cursoSinTemas = nuevaVista();
+  pintarInicio(
+    cursoSinTemas,
+    contexto({ catalogo: { cursos: [{ id: 'x', titulo: 'Curso sin temas', orden: 1, asignaturas: [] }] } }),
+  );
+  const estadoTemas = cursoSinTemas.querySelector('.estado-vacio')!;
+  comprobar(
+    texto(estadoTemas).includes('Este curso todavía no tiene temas'),
+    'sin temas: estado con el texto de cadenas',
+  );
+  comprobar(estadoTemas.querySelector('svg') !== null, 'y con su icono (T7)');
+
+  // progreso vacío y sin almacenamiento: mismo componente, distinto icono
+  const progresoVista = nuevaVista();
+  pintarProgreso(progresoVista, contexto());
+  comprobar(progresoVista.querySelector('.estado-vacio svg') !== null, 'progreso vacío: componente con icono (T7)');
+
+  const ajustesVista = nuevaVista();
+  pintarAjustes(ajustesVista, contexto({ almacenDisponible: false }));
+  comprobar(ajustesVista.querySelector('.estado-vacio svg') !== null, 'sin almacenamiento: componente con icono (T7)');
+
+  // no queda ningún resto de la clase antigua `.aviso` (`.aviso-estado` es otra)
+  comprobar(document.querySelectorAll('.aviso').length === 0, 'la clase .aviso antigua ya no se usa en ningún sitio');
+}
+
+// ---------------------------------------------------------------------------
 seccion('Iconos SVG inline (Fase 9 · T1)');
 {
   // Todo el catálogo cumple las mismas reglas: decorativos y heredando color.
@@ -871,6 +917,23 @@ await (async () => {
     'marca la pestaña activa',
   );
   comprobar(texto(document.querySelector('#vista h1')) === 'Elige curso y tema', 'y arranca en el inicio');
+
+  // --- estado «sin conexión» en la cabecera (T7) ---
+  const avisoConexion = document.querySelector('#aviso-conexion') as HTMLElement | null;
+  comprobar(
+    avisoConexion !== null && avisoConexion.getAttribute('role') === 'status',
+    'la cabecera lleva el estado de conexión como región de estado (T7)',
+  );
+  comprobar(
+    avisoConexion!.hasAttribute('hidden') && texto(avisoConexion).includes('Sin conexión'),
+    'con red está oculto, pero ya con su texto de cadenas (T7)',
+  );
+  Object.defineProperty(window.navigator, 'onLine', { value: false, configurable: true });
+  window.dispatchEvent(new window.Event('offline'));
+  comprobar(!avisoConexion!.hasAttribute('hidden'), 'al cortar la red aparece (T7)');
+  Object.defineProperty(window.navigator, 'onLine', { value: true, configurable: true });
+  window.dispatchEvent(new window.Event('online'));
+  comprobar(avisoConexion!.hasAttribute('hidden'), 'y al volver la red se retira (T7)');
 
   // --- jugar un cuestionario completo (2 aciertos, 1 fallo) ---
   botones(document, '.tema:not(.tema--todos)')[0].click();

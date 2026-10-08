@@ -125,5 +125,7 @@ export const T = {
     error: 'Algo ha salido mal. Vuelve a intentarlo.',
     atras: 'Volver',
     cargando: 'Cargando…',
+    /** Estado degradado del shell (T7): la app funciona entera sin red */
+    sinConexion: 'Sin conexión: la app sigue funcionando con los datos guardados en este dispositivo.',
   },
 } as const;
