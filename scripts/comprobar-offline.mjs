@@ -8,6 +8,9 @@
    2. Corta la red con `Network.emulateNetworkConditions` TANTO en la
       página como en el service worker, y desactiva la caché HTTP.
    3. Vuelve a navegar: si la app se monta, sale de CacheStorage.
+   Y comprueba el aviso «sin conexión» en los dos estados: CON red
+   debe estar OCULTO de verdad (atributo + regla `[hidden]` de
+   base.css — INC-03) y SIN red debe verse.
 
    ⚠️ El flag `--offline` de Chrome NO sirve: en headless no corta
    nada y el test daría falso positivo (comprobado el 2026-10-07).
@@ -116,6 +119,16 @@ try {
   await enviar('Page.navigate', { url: APP }, sesionPagina);
   await dormir(6000);
 
+  // 1.5) CON red: el aviso «sin conexión» tiene que estar oculto de verdad.
+  //      El `hidden` del atributo no basta si el CSS lo pisa (INC-03).
+  const avisoEnLinea = await evaluar(
+    `(() => {
+       const aviso = document.getElementById('aviso-conexion');
+       return !!aviso && getComputedStyle(aviso).display === 'none';
+     })()`,
+    sesionPagina,
+  );
+
   // 2) cortar la red en la página y en el service worker
   await enviar('Network.setCacheDisabled', { cacheDisabled: true }, sesionPagina);
   await enviar(
@@ -152,6 +165,10 @@ try {
         return JSON.stringify({
           swControlador: !!navigator.serviceWorker.controller,
           appMontada: !!document.querySelector('header.cabecera'),
+          avisoOculto: (() => {
+            const aviso = document.getElementById('aviso-conexion');
+            return aviso ? getComputedStyle(aviso).display === 'none' : null;
+          })(),
           primerasLineas: (document.body.innerText || '').replace(/\\s+/g, ' ').slice(0, 120),
           cachés: claves,
           entradasCaché: entradas,
@@ -164,11 +181,17 @@ try {
   console.log(`URL: ${APP}`);
   console.log(JSON.stringify(datos, null, 2));
 
-  const correcto = datos.swControlador && datos.appMontada;
+  const avisoCorrecto = avisoEnLinea === true && datos.avisoOculto === false;
+  console.log(
+    `Aviso «sin conexión» → con red: ${avisoEnLinea ? 'oculto ✅' : 'VISIBLE ❌ (INC-03)'}` +
+      ` · sin red: ${datos.avisoOculto === false ? 'visible ✅' : 'OCULTO ❌'}`,
+  );
+
+  const correcto = datos.swControlador && datos.appMontada && avisoCorrecto;
   console.log(
     correcto
-      ? '\n✅ La app funciona sin conexión (servida por el service worker).'
-      : '\n❌ La app NO se monta sin conexión.',
+      ? '\n✅ La app funciona sin conexión (servida por el service worker) y el aviso de conexión va bien.'
+      : '\n❌ La app NO se monta sin conexión (o el aviso de conexión falla: INC-03).',
   );
   process.exitCode = correcto ? 0 : 1;
 } finally {

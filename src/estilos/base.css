@@ -96,6 +96,15 @@
   box-sizing: border-box;
 }
 
+/* El atributo HTML `hidden` manda SIEMPRE. Sin esta regla, cualquier
+   `display:` de una clase (p. ej. `.estado-vacio { display: flex }`) lo pisa
+   —la hoja de usuario gana a la del navegador— y lo que debería estar oculto
+   se ve: el aviso «sin conexión» aparecía siempre, también en línea (INC-03).
+   `!important` para que también gane a estilos en línea y a reglas futuras. */
+[hidden] {
+  display: none !important;
+}
+
 body {
   margin: 0;
   background: var(--bg);

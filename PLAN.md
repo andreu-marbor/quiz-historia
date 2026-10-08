@@ -394,9 +394,9 @@ Así quedan **incluidas en el bundle y la app funciona sin internet de serie**.
 
 ---
 
-## 11. Incidencias (2026-10-07)
+## 11. Incidencias (2026-10-07 y 2026-10-08)
 
-> Detectadas en uso real tras el despliegue de las fases 3–4. Se registran aquí antes de corregirlas; la causa técnica y la solución quedan además en `MEMORY.md`. **Las dos de esta tanda están cerradas.**
+> Detectadas en uso real tras el despliegue de las fases 3–4. Se registran aquí antes de corregirlas; la causa técnica y la solución quedan además en `MEMORY.md`. **Las tres de esta tanda están cerradas.**
 
 - [x] **INC-01 · Con las opciones barajadas, un acierto se corrige como fallo.** ✅ *corregido 2026-10-07.* En una pregunta de opción múltiple, al elegir la **respuesta correcta** el cuestionario respondía *"Incorrecto"*, y en *"Tu respuesta"* y *"Respuesta correcta"* aparecía **el mismo texto**. Pasaba también lo contrario (un fallo felicitado como acierto).
   - **Causa:** `pintarFeedback` (`src/ui/cuestionario.ts`) compara `sesion.respuestas[...]`, guardado en el orden **ORIGINAL** (`aplicacion.ts` → `responder`), contra `presentada.respuesta`, que está en el orden **MOSTRADO** (`logica/barajado.ts`). Con el barajado activo (por defecto) los dos índices no son el mismo eje y el acierto se tumba.
@@ -407,6 +407,11 @@ Así quedan **incluidas en el bundle y la app funciona sin internet de serie**.
   - **Causa:** `globalThis.confirm(...)` en `src/ui/cuestionario.ts` y `src/ui/ajustes.ts`.
   - **Corrección:** nuevo módulo `src/ui/dialogo.ts` con `pedirConfirmacion()`, que monta un `<dialog>` **modal** nativo (foco atrapado, cierre con `Esc` vía el evento `cancel`, `aria-labelledby` hacia el título y foco devuelto al botón que lo abrió), sin ninguna dependencia. Títulos y botones salen de `src/ui/cadenas.ts` ("Salir del cuestionario" → *Seguir* / **Salir**; "¿Borrar todo tu progreso?" → *Cancelar* / **Borrar**, con el seguro **primero** para que `Enter` no ejecute lo destructivo) y el estilo va en `src/estilos/app.css` (`.dialogo`, `.dialogo::backdrop`) con variables CSS, incluido el modo oscuro.
   - **Nota de pruebas:** jsdom 30 no implementa `showModal`/`close`, así que `pruebas/pantallas.ts` añade un *polyfill* mínimo (atributo `open` + evento `close`) y dispara el `cancel` de `Esc` a mano. Cubierto con 12 comprobaciones nuevas (apertura, título, orden de botones, confirmar/cancelar/Esc, retira del DOM y que no se borra nada hasta confirmar).
+- [x] **INC-03 · El aviso «sin conexión» se ve siempre, también en línea.** ✅ *corregido 2026-10-08.* Con la app completamente online (y también abriéndola desde el navegador) el recuadro *"Sin conexión: la app sigue funcionando con los datos guardados en este dispositivo"* estaba visible.
+  - **Causa:** el aviso se oculta con el atributo `hidden` (`pintaAvisoConexion`, `src/aplicacion.ts`), pero `.estado-vacio { display: flex }` es una regla de la **hoja de usuario** y pisa a la del navegador (`[hidden] { display: none }`) → el atributo estaba puesto y los tests pasaban, pero en pantalla el recuadro salía siempre.
+  - **Por qué no lo pilló la CI:** las comprobaciones de `pruebas/pantallas.ts` solo miraban el **atributo** (`hasAttribute('hidden')`), que sí estaba. Tampoco sirve mirarlo desde jsdom: da por oculto un `hidden` aunque falte la regla (comprobado empíricamente), así que un test de `getComputedStyle` ahí habría dado **falsa confianza**.
+  - **Corrección:** normalización global en `src/estilos/base.css` → `[hidden] { display: none !important; }`, que cubre este caso y cualquier uso futuro (también contra estilos en línea).
+  - **Guardas:** (1) en la CI, `pruebas/pantallas.ts` lee `base.css` y exige esa regla — **falla con el CSS antiguo** (1 de 299) y pasa con el arreglo; (2) `scripts/comprobar-offline.mjs` pasa a mirar el `display` **real en Chrome** en los dos estados (con red → `none`; sin red → visible): contra la producción anterior reproducía el fallo (`con red: VISIBLE ❌`) y contra el build corregido sale en verde.
 
 ---
 

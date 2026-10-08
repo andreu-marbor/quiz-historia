@@ -4,6 +4,8 @@
  * Se ejecuta con `npm.cmd run prueba:pantallas` (esbuild + node).
  */
 
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { JSDOM, VirtualConsole } from 'jsdom';
 
 // --- Entorno de navegador falso (los módulos de UI solo tocan el DOM al pintar) ---
@@ -1337,6 +1339,46 @@ seccion('Puente al widget nativo (Fase 8 · §13.3)');
     ).enviar(4, '2026-10-08');
     comprobar(enviados.length === 1, 'la caducidad del «sin soporte» reactiva el puente');
   }
+}
+
+seccion('Aviso «sin conexión»: el atributo hidden y la regla [hidden] (INC-03)');
+{
+  // INC-03: el aviso se veía SIEMPRE, también en línea. Con
+  // `.estado-vacio { display: flex }` el atributo `hidden` no basta: la hoja
+  // de usuario gana a la del navegador. La normalización está en `base.css`.
+  //
+  // OJO: jsdom NO reproduce el fallo — da por oculto un elemento con `hidden`
+  // aunque falte la regla (comprobado empíricamente) —, así que el guardián del
+  // CSS en la CI es esta lectura del fichero; la cascada real la verifica
+  // Chrome en `scripts/comprobar-offline.mjs` (online → oculto / sin red → visible).
+  const base = readFileSync(join(process.cwd(), 'src', 'estilos', 'base.css'), 'utf8');
+  comprobar(
+    /\[hidden\]\s*\{[^}]*display\s*:\s*none/.test(base),
+    'base.css declara `[hidden] { display: none }` (sin ella el aviso se veía siempre)',
+  );
+
+  // El estado del atributo sí es DOM puro: lo comprobamos con el CSS real cargado.
+  const hoja = document.createElement('style');
+  hoja.textContent = ['base', 'app']
+    .map((nombre) => readFileSync(join(process.cwd(), 'src', 'estilos', `${nombre}.css`), 'utf8'))
+    .join('\n\n');
+  document.head.append(hoja);
+
+  const aviso = document.querySelector<HTMLElement>('#aviso-conexion');
+  comprobar(aviso !== null, 'el aviso de conexión existe en la cabecera');
+  comprobar(aviso!.hidden, 'EN LÍNEA: lleva el atributo hidden');
+
+  Object.defineProperty(window.navigator, 'onLine', { value: false, configurable: true });
+  window.dispatchEvent(new window.Event('offline'));
+  comprobar(!aviso!.hidden, 'SIN RED: se quita el atributo (T7)');
+  comprobar(
+    window.getComputedStyle(aviso!).display !== 'none',
+    'SIN RED: y se ve (display distinto de none)',
+  );
+
+  Object.defineProperty(window.navigator, 'onLine', { value: true, configurable: true });
+  window.dispatchEvent(new window.Event('online'));
+  comprobar(aviso!.hidden, 'VUELTA EN LÍNEA: vuelve a ocultarse (T7)');
 }
 
 finalizar();
