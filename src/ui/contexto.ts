@@ -7,7 +7,7 @@
 import type { PreguntaPresentada } from '../logica/barajado';
 import type { Resultado } from '../logica/correccion';
 import type { Catalogo, Pregunta, Seleccion } from '../logica/tipos';
-import type { Ajustes, Progreso } from '../persistencia';
+import type { Ajustes, Progreso, UltimoTema } from '../persistencia';
 
 /** Partida en curso. */
 export interface Sesion {
@@ -28,15 +28,15 @@ export interface Sesion {
   soloFalladas: boolean;
 }
 
-/** Datos del tema del último resultado (para repetir y para la ficha). */
-export interface TemaDelResultado {
-  /** Cómo se llegó a jugar: tema suelto o fila «Todos los temas» (§13.1) */
-  seleccion: Seleccion;
-  /** Clave en `progreso.temas` (la que usó `finalizar`), para leer la mejor nota */
-  claveTema: string;
-  cursoTitulo: string;
-  temaTitulo: string;
-}
+/**
+ * Datos del tema del último cuestionario terminado: los usan Resultados (la
+ * ficha), la acción «Repetir» y la tarjeta «Continuar repasando» de Inicio.
+ *
+ * **Es el mismo tipo que se guarda en `progreso.ultimoTema`** (T10), de modo
+ * que la tarjeta sobrevive a recargar la página sin una segunda versión del
+ * dato que pudiera desincronizarse.
+ */
+export type TemaDelResultado = UltimoTema;
 
 export interface Acciones {
   /** Empieza un cuestionario del tema elegido */

@@ -6,6 +6,8 @@
  * inyectable, así se testean en Node sin navegador.
  */
 
+import type { Seleccion } from './logica/tipos';
+
 export interface Almacen {
   getItem(clave: string): string | null;
   setItem(clave: string, valor: string): void;
@@ -27,6 +29,23 @@ export interface DatoTema {
   jugados: number;
 }
 
+/**
+ * Último cuestionario **terminado** (T10): lo que sostiene la tarjeta
+ * «Continuar repasando» cuando se recarga la página o se abre mañana.
+ *
+ * Es una instantánea de la sesión: los títulos van ya resueltos (no hace falta
+ * recorrer el catálogo para pintarlos) y `seleccion` es lo que permite volver
+ * a jugar con la misma elección — tema suelto o fila «Repaso global» (§13.1).
+ */
+export interface UltimoTema {
+  /** Cómo se llegó a jugar: tema suelto o fila «Repaso global de {asignatura}» */
+  seleccion: Seleccion;
+  /** Clave en `progreso.temas` (la que usó `finalizar`) */
+  claveTema: string;
+  cursoTitulo: string;
+  temaTitulo: string;
+}
+
 export interface Progreso {
   /** Mejor nota y veces jugado, por clave `<curso>/<tema>` */
   temas: Record<string, DatoTema>;
@@ -35,6 +54,8 @@ export interface Progreso {
   racha: number;
   /** `YYYY-MM-DD` del último día con actividad (`null` = sin actividad) */
   ultimoDia: string | null;
+  /** Último cuestionario terminado (`null` = nunca has jugado o se purgó) */
+  ultimoTema: UltimoTema | null;
 }
 
 const CLAVE_AJUSTES = 'repaso-historia:ajustes:v1';
@@ -48,7 +69,7 @@ export function ajustesPorDefecto(): Ajustes {
 }
 
 export function progresoVacio(): Progreso {
-  return { temas: {}, cuestionarios: 0, racha: 0, ultimoDia: null };
+  return { temas: {}, cuestionarios: 0, racha: 0, ultimoDia: null, ultimoTema: null };
 }
 
 /** Almacén real si el navegador lo permite (modo privado, cuota…), o `null`. */
@@ -137,6 +158,41 @@ export function leerProgreso(al: Almacen | null = almacenPorDefecto()): Progreso
     ultimoDia: typeof bruto.ultimoDia === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(bruto.ultimoDia)
       ? bruto.ultimoDia
       : null,
+    ultimoTema: leerUltimoTema(bruto.ultimoTema),
+  };
+}
+
+/**
+ * Lectura defensiva del último cuestionario terminado: el dato vive en el
+ * navegador, ha sobrevivido a versiones anteriores (el campo es nuevo) y lo
+ * puede tocar cualquiera desde las herramientas, así que **cualquier forma
+ * rara se descarta** antes que confiar en ella. La validación de que el tema
+ * sigue existiendo en `datos/` ya la hace `aplicacion.ts` al arrancar.
+ */
+function leerUltimoTema(bruto: unknown): UltimoTema | null {
+  if (!bruto || typeof bruto !== 'object') return null;
+  const objeto = bruto as Partial<UltimoTema>;
+  if (typeof objeto.claveTema !== 'string' || !objeto.claveTema) return null;
+  if (typeof objeto.cursoTitulo !== 'string' || !objeto.cursoTitulo) return null;
+  if (typeof objeto.temaTitulo !== 'string' || !objeto.temaTitulo) return null;
+
+  const seleccion = objeto.seleccion;
+  if (!seleccion || typeof seleccion !== 'object') return null;
+  if (typeof seleccion.cursoId !== 'string' || !seleccion.cursoId) return null;
+
+  const valido =
+    seleccion.tipo === 'tema'
+      ? typeof seleccion.temaId === 'string' && seleccion.temaId
+      : seleccion.tipo === 'conjunto'
+        ? typeof seleccion.asignaturaId === 'string' && seleccion.asignaturaId
+        : false;
+  if (!valido) return null;
+
+  return {
+    seleccion,
+    claveTema: objeto.claveTema,
+    cursoTitulo: objeto.cursoTitulo,
+    temaTitulo: objeto.temaTitulo,
   };
 }
 
@@ -215,5 +271,8 @@ export function registrarCuestionario(
     cuestionarios: progreso.cuestionarios + 1,
     racha: racha.racha,
     ultimoDia: racha.ultimoDia,
+    // Se conserva sin tocar: registrar las estadísticas no decide cuál es el
+    // «último cuestionario»; eso lo hace `finalizar` en el mismo gesto (T10).
+    ultimoTema: progreso.ultimoTema,
   };
 }

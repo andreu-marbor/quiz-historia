@@ -17,6 +17,7 @@ import {
   registrarCuestionario,
   ajustesPorDefecto,
   type Almacen,
+  type UltimoTema,
 } from '../src/persistencia';
 import { comprobar, finalizar, seccion } from './ayudante';
 
@@ -192,6 +193,91 @@ seccion('Progreso: mejor nota, contadores y guardado');
   comprobar(JSON.stringify(leerProgreso(al)) === JSON.stringify(progresoVacio()), 'borrar progreso deja el almacén limpio');
   borrarProgreso(null);
   comprobar(true, 'borrar sin almacén no lanza');
+}
+
+// ---------------------------------------------------------------------------
+seccion('Último cuestionario terminado (T10: la tarjeta «Continuar» sobrevive a la recarga)');
+{
+  const ultimo: UltimoTema = {
+    seleccion: { tipo: 'tema', cursoId: 'eso2', temaId: 'restauracion' },
+    claveTema: 'eso2/restauracion',
+    cursoTitulo: '2º ESO',
+    temaTitulo: 'Restauración borbónica',
+  };
+  const global: UltimoTema = {
+    seleccion: { tipo: 'conjunto', cursoId: 'bachiller', asignaturaId: 'historia' },
+    claveTema: 'bachiller/__todos__/historia',
+    cursoTitulo: '1º Bachiller',
+    temaTitulo: 'Repaso global de Historia de España',
+  };
+
+  comprobar(progresoVacio().ultimoTema === null, 'sin nada guardado no hay «último cuestionario» (la tarjeta no se inventa)');
+
+  const al = almacenFalso();
+  guardarProgreso({ ...progresoVacio(), ultimoTema: ultimo }, al);
+  comprobar(
+    JSON.stringify(leerProgreso(al).ultimoTema) === JSON.stringify(ultimo),
+    'guardar y leer devuelve el último cuestionario de un tema SUELTO sin pérdidas',
+  );
+
+  const alGlobal = almacenFalso();
+  guardarProgreso({ ...progresoVacio(), ultimoTema: global }, alGlobal);
+  comprobar(
+    JSON.stringify(leerProgreso(alGlobal).ultimoTema) === JSON.stringify(global),
+    'y también el de una fila «Repaso global» (§13.1), con su selección conjunta',
+  );
+
+  const registrado = registrarCuestionario(
+    { ...progresoVacio(), ultimoTema: ultimo },
+    'eso2/industrial',
+    60,
+    '2026-10-09',
+  );
+  comprobar(
+    registrado.ultimoTema !== null && registrado.ultimoTema.claveTema === 'eso2/restauracion',
+    'registrarCuestionario CONSERVA el último (construye el objeto a mano: habría sido fácil perderlo)',
+  );
+  comprobar(
+    registrarCuestionario(progresoVacio(), 'eso2/industrial', 60, '2026-10-09').ultimoTema === null,
+    'y sobre un progreso vacío lo deja en null, sin fabricar datos',
+  );
+
+  // --- compatibilidad: los progresos escritos ANTES del T10 no traen el campo ---
+  const antiguo = almacenFalso();
+  antiguo.setItem(
+    'repaso-historia:progreso:v1',
+    JSON.stringify({ temas: { 'eso2/x': { mejorNota: 90, jugados: 3 } }, cuestionarios: 3, racha: 1, ultimoDia: '2026-10-08' }),
+  );
+  const leidoAntiguo = leerProgreso(antiguo);
+  comprobar(leidoAntiguo.ultimoTema === null, 'un progreso de la versión anterior (sin el campo) se lee como «sin último»');
+  comprobar(
+    leidoAntiguo.temas['eso2/x'].mejorNota === 90 && leidoAntiguo.racha === 1,
+    'sin migración: el resto del progreso anterior queda intacto',
+  );
+
+  // --- lectura defensiva: el dato vive en el navegador y lo puede tocar cualquiera ---
+  const formasRaras: unknown[] = [
+    42,
+    'restauracion',
+    { claveTema: 'eso2/restauracion', cursoTitulo: '2º ESO', temaTitulo: 'Restauración borbónica' }, // sin selección
+    { ...ultimo, claveTema: '' },
+    { ...ultimo, cursoTitulo: '' },
+    { ...ultimo, seleccion: { tipo: 'tema', cursoId: 'eso2' } }, // sin temaId
+    { ...ultimo, seleccion: { tipo: 'tema', cursoId: '', temaId: 'x' } }, // sin curso
+    { ...ultimo, seleccion: { tipo: 'teletransporte', cursoId: 'eso2', temaId: 'x' } }, // tipo desconocido
+  ];
+  for (const forma of formasRaras) {
+    const sucio = almacenFalso();
+    sucio.setItem('repaso-historia:progreso:v1', JSON.stringify({ ...progresoVacio(), ultimoTema: forma }));
+    comprobar(leerProgreso(sucio).ultimoTema === null, `forma inválida de «último» (${JSON.stringify(forma)?.slice(0, 38)}…) → se descarta`);
+  }
+
+  const nulo = almacenFalso();
+  nulo.setItem('repaso-historia:progreso:v1', JSON.stringify({ ...progresoVacio(), ultimoTema: null }));
+  comprobar(leerProgreso(nulo).ultimoTema === null, 'un null explícito también es «sin último», sin ruido');
+
+  borrarProgreso(al);
+  comprobar(leerProgreso(al).ultimoTema === null, 'borrar el progreso borra también el último cuestionario');
 }
 
 finalizar();

@@ -47,10 +47,11 @@ export function pintarInicio(vista: HTMLElement, ctx: Contexto): void {
  * Tarjeta «Continuar repasando»: atajo al último cuestionario terminado.
  *
  * **Fuente de datos:** `ctx.temaResultado`, el MISMO dato que ya usa la
- * pantalla de resultados (selección + curso + tema). **No hay persistencia
- * nueva**: `Progreso` guarda notas, contadores y racha, pero no el último
- * tema jugado, así que la tarjeta solo existe mientras dura la sesión —
- * preferible a inventar un «último cuestionario» que los datos no respaldan.
+ * pantalla de resultados (selección + curso + tema). Desde T10 ese dato se
+ * guarda en `progreso.ultimoTema`, así que la tarjeta también aparece al
+ * recargar la página o al volver al día siguiente; si no hay nada guardado —
+ * o el tema ya no existe en el catálogo— el contexto llega con `null` y **no
+ * se pinta**: preferible a un atajo que no podría abrirse.
  *
  * **Acción:** `repetir(false)`, exactamente el botón «Repetir todas» de
  * resultados → reutiliza la navegación y la lógica de `iniciar` tal cual.

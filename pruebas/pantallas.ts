@@ -64,6 +64,7 @@ import type { Catalogo, Pregunta } from '../src/logica/tipos';
 import {
   ajustesPorDefecto,
   guardarAjustes,
+  guardarProgreso,
   leerAjustes,
   leerProgreso,
   progresoVacio,
@@ -1465,5 +1466,123 @@ seccion('Aviso «sin conexión»: el atributo hidden y la regla [hidden] (INC-03
   window.dispatchEvent(new window.Event('online'));
   comprobar(aviso!.hidden, 'VUELTA EN LÍNEA: vuelve a ocultarse (T7)');
 }
+
+// ---------------------------------------------------------------------------
+await (async () => {
+  seccion('Tarjeta «Continuar repasando» entre sesiones (T10: el último cuestionario se guarda)');
+
+  const CLAVE_PROGRESO = 'repaso-historia:progreso:v1';
+
+  /**
+   * Simula una **recarga** (o volver al día siguiente): se monta una app NUEVA
+   * sobre un almacén que ya trae datos. Es el punto entero de T10.
+   */
+  const recargarCon = (almacen: Almacen, bruto?: string): void => {
+    document.body.innerHTML = '';
+    window.location.hash = '#/';
+    if (bruto !== undefined) almacen.setItem(CLAVE_PROGRESO, bruto);
+    const raiz = document.createElement('div');
+    document.body.append(raiz);
+    montarAplicacion(raiz, { catalogo, preguntasPorTema }, almacen);
+  };
+
+  const jugarHastaResultados = async (): Promise<void> => {
+    for (let i = 0; i < 80 && window.location.hash !== '#/resultados'; i += 1) {
+      const sig = document.getElementById('siguiente') as HTMLButtonElement | null;
+      const objetivo =
+        sig && !sig.disabled
+          ? sig
+          : (document.querySelector('.opcion:not([disabled])') as HTMLButtonElement | null);
+      if (!objetivo) break;
+      objetivo.click();
+      await esperar(() => true);
+    }
+    await esperar(() => window.location.hash === '#/resultados');
+  };
+
+  const ultimo = {
+    seleccion: { tipo: 'tema', cursoId: 'eso2', temaId: 'restauracion' },
+    claveTema: 'eso2/restauracion',
+    cursoTitulo: '2º ESO',
+    temaTitulo: 'Restauración borbónica',
+  };
+
+  // --- 1) «Recarga» con y sin historial ---
+  const al = almacenFalso();
+  recargarCon(al);
+  comprobar(!existe(document, '.continuar'), 'sin nada guardado, la app arranca SIN tarjeta (nunca se simula un último)');
+
+  guardarProgreso({ ...progresoVacio(), ultimoTema: ultimo }, al);
+  recargarCon(al);
+  comprobar(existe(document, '.continuar'), 'al recargar con un cuestionario terminado, la tarjeta vuelve a estar');
+  comprobar(
+    texto(document.querySelector('.continuar .contexto')) === '2º ESO · Restauración borbónica',
+    'con el curso y el tema que había guardado, no con nada inventado',
+  );
+
+  // --- 2) el atajo funciona de verdad tras la recarga ---
+  botones(document, '.continuar button')[0].click();
+  await esperar(() => window.location.hash === '#/cuestionario');
+  comprobar(
+    texto(document.querySelector('.cuestionario-cabecera .contexto')) === '2º ESO · Restauración borbónica',
+    'y su botón empieza el cuestionario de ese mismo tema (reutiliza iniciar)',
+  );
+  comprobar(
+    texto(document.querySelector('.contador')) === 'Pregunta 1 de 3',
+    'con las 3 preguntas de ese tema: no es un cuestionario genérico',
+  );
+
+  // --- 3) se juega OTRO tema y se recarga: la tarjeta cambia ---
+  window.location.hash = '#/';
+  await esperar(() => existe(document, 'button.tema'));
+  const otro = [...document.querySelectorAll('button.tema')].find((b) => texto(b).includes('El mundo contemporáneo'));
+  comprobar(!!otro, 'el otro tema jugable del catálogo de pruebas se puede elegir');
+  otro!.click();
+  await esperar(() => window.location.hash === '#/cuestionario');
+  await jugarHastaResultados();
+  recargarCon(al);
+  comprobar(
+    texto(document.querySelector('.continuar .contexto')) === '4º ESO · El mundo contemporáneo',
+    'tras jugar otro tema y recargar, la tarjeta apunta al ÚLTIMO terminado',
+  );
+
+  // --- 4) el tema dejó de estar en el catálogo (datos/ actualizados) ---
+  const alPurgable = almacenFalso();
+  guardarProgreso(
+    {
+      ...progresoVacio(),
+      // `industrial` EXISTE pero tiene menos preguntas que su mínimo → no es jugable
+      ultimoTema: { ...ultimo, claveTema: 'eso2/industrial', temaTitulo: 'Revolución Industrial', seleccion: { tipo: 'tema', cursoId: 'eso2', temaId: 'industrial' } },
+    },
+    alPurgable,
+  );
+  recargarCon(alPurgable);
+  comprobar(!existe(document, '.continuar'), 'si el tema ya no es jugable, NO se enseña la tarjeta (iniciar lo rechazaría)');
+  comprobar(leerProgreso(alPurgable).ultimoTema === null, 'y el dato se purga del almacén');
+
+  const alFuera = almacenFalso();
+  guardarProgreso(
+    { ...progresoVacio(), ultimoTema: { ...ultimo, seleccion: { tipo: 'tema', cursoId: 'eso1', temaId: 'desaparecido' } } },
+    alFuera,
+  );
+  recargarCon(alFuera);
+  comprobar(!existe(document, '.continuar'), 'idem si el curso ya no existe en el catálogo');
+
+  // --- 5) localStorage sucio ---
+  recargarCon(almacenFalso(), '{esto no es json');
+  comprobar(!existe(document, '.continuar'), 'con el progreso corrupto, la app arranca sin tarjeta y sin lanzar');
+
+  // --- 6) borrar el progreso se lleva la tarjeta ---
+  recargarCon(al);
+  comprobar(existe(document, '.continuar'), 'hay tarjeta mientras el progreso siga guardado');
+  (document.querySelector('a[href="#/ajustes"]') as HTMLAnchorElement).click();
+  await esperar(() => texto(document.querySelector('#vista h1')) === 'Ajustes');
+  botones(document, '.boton--peligro')[0].click();
+  botones(document.querySelector('dialog.dialogo')!, '.boton--primario')[0].click();
+  window.location.hash = '#/';
+  await esperar(() => texto(document.querySelector('#vista h1')) === 'Elige curso y tema');
+  comprobar(!existe(document, '.continuar'), 'al borrar TODO el progreso, la tarjeta también se va');
+  comprobar(leerProgreso(al).ultimoTema === null, 'porque el «último cuestionario» vivía en ese mismo progreso');
+})();
 
 finalizar();

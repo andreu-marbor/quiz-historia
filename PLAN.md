@@ -758,7 +758,7 @@ Por disparadores (§12.2). Las tres primeras tareas **no esperan a ningún dispa
 | 5 | **Resultados como «ficha de examen»**: resumen arriba + revisión jerarquizada | `T4` |
 | 6 | **Ajustes agrupados** (`Apariencia` · `Juego` · `Datos`) con la destructiva separada | `T6` |
 
-### 14.3 Orden de ejecución (T0–T9)
+### 14.3 Orden de ejecución (T0–T10)
 
 Cada tarea = **commit + push** con `prueba` y `build` en verde; los selectores de `pruebas/pantallas.ts` se actualizan **en la misma tarea** si cambia el DOM.
 
@@ -779,6 +779,13 @@ Cada tarea = **commit + push** con `prueba` y `build` en verde; los selectores d
   - *Cabecera:* `.marca` con `padding-top` 1rem → 0.75rem **+ `min-height: 44px`** (con el recorte solo, el enlace caía a **42px** de objetivo táctil — descubierto con `comprobar-movil` local) y `.navegacion` con menos aire ⇒ **161 → 152px** a 320px, sin reducir fuentes ni tocar `aria-current`/el píldora de «Jugar».
   - *Móvil estrecho (hallazgo nuevo):* medida con CDP → a 320px el título medía **94px y se partía en 3-4 líneas** (5 con nota; fila global de **279px**): la insignia `nowrap` compartía columna con el rótulo (defecto **previo**, que T9 empeoraba). Solución: **bajo `30rem` las filas pasan de `grid` a `flex-wrap`**, con la flecha arriba a la derecha vía **`order`** (sin mover nada del DOM) y `flex: 1 1 calc(100% - 3rem)` en `.tema-nombre` (si la base fuera 0, «10 preguntas» se colaba en la primera línea) ⇒ título a **192px** (1-2 líneas), filas de **75-99px** (antes 123) y meta+insignia juntas cuando caben.
   - *Validación:* **455 → 476 comprobaciones** (21 nuevas: descripción e icono de la fila global, escala `/100`, icono de banda, tarjeta con y sin historial, esquema de encabezados con la tarjeta y `estructura('inicio')` con ella), `build` ✅, `comprobar-contraste` ✅ (AA claro y oscuro), `comprobar-movil` **local** a 320px ✅ (0 desbordes, ≥44px en las 5 pantallas) y **7 capturas** (claro/oscuro/320px) revisadas a mano.)*
+- [x] **T10 · «Continuar repasando» entre sesiones:** la tarjeta **ya sobrevive a recargar** la página o volver al día siguiente. ✅ *(2026-10-09 — cierra la limitación de T9. Detalle:*
+  - *Dato:* `Progreso` gana **`ultimoTema`** (`UltimoTema` = `Seleccion` + clave + títulos ya resueltos), que es **el mismo tipo** que `TemaDelResultado` (`contexto.ts` pasa a ser un alias) ⇒ **una sola representación** del dato, sin posibilidad de desincronizarse entre Resultados, «Repetir» y la tarjeta. Se rellena en **`finalizar()`** en el mismo gesto que el resto del progreso.
+  - *Sin migración:* el campo es nuevo dentro de la clave `repaso-historia:progreso:v1`; `leerProgreso` lo lee **defensivamente** (cualquier forma rara → `null`) y los progresos escritos antes del T10 se interpretan como «sin último».
+  - *Guarda 1:* al arrancar, **`seleccionResuelve()`** reusa los **mismos primitivos que `iniciar`** (curso + tema/asignatura + mínimo de preguntas). Si no pasa, se **purga** `ultimoTema` del almacén y no se pinta: mejor sin tarjeta que un atajo que `iniciar` rechazaría y que dejaría al alumno sin explicación.
+  - *Guarda 2:* `registrarCuestionario` **conserva** `ultimoTema` (construye el `Progreso` a mano: era justo donde el campo podía perderse sin ruido); hay prueba explícita.
+  - *Consistencia:* empezar una partida **no** borra el «último terminado» (si el alumno la abandona, la tarjeta sigue apuntando al último que sí terminó) y **borrar el progreso se lleva la tarjeta** (enseñarla después prometería un repaso que ya no está guardado).
+  - *Validación:* **476 → 507 comprobaciones** (+17 en persistencia: ida y vuelta de tema suelto y de fila global, conservación en `registrarCuestionario`, datos antiguos sin el campo y **8 formas inválidas**; +14 en pantallas: montar una app nueva sobre un almacén con datos = recarga, el atajo real, cambio de último cuestionario, purga, JSON corrupto y borrar progreso) · `build` ✅ · **CDP en navegador real: 8/8** (incluido jugar un cuestionario entero, recargar y ver la tarjeta con la fila «Repaso global»).)*
 
 ### 14.4 Riesgos
 

@@ -277,6 +277,9 @@ export function montarAplicacion(
       borrarProgresoAlmacen(almacen);
       progreso = progresoVacio();
       estado.nuevaMejor = false;
+      // T10: si se borra TODO el progreso, la tarjeta «Continuar» también se
+      // va: enseñarla después sería prometer un repaso que ya no está guardado.
+      estado.temaResultado = null;
       puenteWidget.enviar(0, null); // el widget vuelve a «Juega hoy» (§13.3)
     },
 
@@ -366,7 +369,10 @@ export function montarAplicacion(
       soloFalladas: idsFalladas !== null,
     };
     estado.resultado = null;
-    estado.temaResultado = null;
+    // El «último terminado» se queda en el de antes: empezar una partida nueva
+    // no borra el historial (T10) — si el alumno la abandona, la tarjeta
+    // «Continuar» sigue apuntando al último cuestionario que sí terminó.
+    estado.temaResultado = progreso.ultimoTema ?? null;
     estado.nuevaMejor = false;
 
     navegar('/cuestionario');
@@ -378,20 +384,26 @@ export function montarAplicacion(
       sesion.respuestas,
     );
     const notaAnterior = progreso.temas[sesion.claveTema]?.mejorNota ?? 0;
+    const temaResultado: TemaDelResultado = {
+      seleccion: sesion.seleccion,
+      claveTema: sesion.claveTema,
+      cursoTitulo: sesion.cursoTitulo,
+      temaTitulo: sesion.temaTitulo,
+    };
 
-    progreso = registrarCuestionario(progreso, sesion.claveTema, resultado.nota);
+    progreso = {
+      ...registrarCuestionario(progreso, sesion.claveTema, resultado.nota),
+      // T10: el último cuestionario terminado se guarda CON el progreso, así
+      // la tarjeta «Continuar repasando» sigue ahí al recargar o mañana.
+      ultimoTema: temaResultado,
+    };
     guardarProgreso(progreso, almacen);
     // Único sitio donde cambia la racha: el mejor momento para avisar al
     // widget, y todavía dentro del gesto que pulsa «Ver resultados» (§13.3).
     puenteWidget.enviar(progreso.racha, progreso.ultimoDia);
 
     estado.resultado = resultado;
-    estado.temaResultado = {
-      seleccion: sesion.seleccion,
-      claveTema: sesion.claveTema,
-      cursoTitulo: sesion.cursoTitulo,
-      temaTitulo: sesion.temaTitulo,
-    };
+    estado.temaResultado = temaResultado;
     estado.nuevaMejor = resultado.nota > notaAnterior;
     estado.sesion = null;
 
@@ -408,7 +420,51 @@ export function montarAplicacion(
     else raizDocumento.setAttribute('data-tema', ajustes.modoTema);
   }
 
+  /**
+   * ¿La selección guardada sigue siendo jugable en el catálogo actual?
+   *
+   * Reusa los MISMOS primitivos que `iniciar` (existencia + mínimo de
+   * preguntas), así la tarjeta nunca apunta a algo que `iniciar` rechazaría
+   * y que dejaría al alumno en la pantalla de inicio sin explicación.
+   */
+  function seleccionResuelve(seleccion: Seleccion): boolean {
+    const curso = buscarCurso(fuentes.catalogo, seleccion.cursoId);
+    if (!curso) return false;
+
+    if (seleccion.tipo === 'tema') {
+      const tema = buscarTema(curso, seleccion.temaId);
+      if (!tema) return false;
+      return temaJugable(preguntasDeTema(fuentes.preguntasPorTema, curso.id, tema.id), tema);
+    }
+
+    const asignatura = asignaturaDeCurso(curso, seleccion.asignaturaId);
+    if (!asignatura) return false;
+    const temas = temasDeAsignatura(asignatura);
+    return preguntasDeConjunto(fuentes.preguntasPorTema, curso, asignatura.id).length >= minimoDeConjunto(temas);
+  }
+
+  /**
+   * T10: al arrancar se recupera el último cuestionario terminado, que es lo
+   * que sostiene la tarjeta «Continuar repasando» (y la ficha de resultados
+   * no: esa exige además `estado.resultado`, que no sobrevive a la recarga).
+   *
+   * Si el tema ya no está en el catálogo —`datos/` actualizado, o una lectura
+   * corrupta de `localStorage`— se purga el dato: mejor sin tarjeta que un
+   * atajo que `iniciar` rechazaría y que dejaría al alumno en el aire.
+   */
+  function recuperarUltimoTema(): void {
+    const ultimo = progreso.ultimoTema;
+    if (!ultimo) return;
+    if (seleccionResuelve(ultimo.seleccion)) {
+      estado.temaResultado = ultimo;
+      return;
+    }
+    progreso = { ...progreso, ultimoTema: null };
+    guardarProgreso(progreso, almacen);
+  }
+
   aplicarTema();
+  recuperarUltimoTema();
   montar();
   window.addEventListener('hashchange', () => {
     pintar();
