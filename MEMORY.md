@@ -555,3 +555,10 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
   2. **Sin contrato de pantalla:** había pruebas de la lógica pura (`pruebas/logica.ts`), pero **ninguna comprobaba que la app lo mostrara así**: si alguien hubiera escrito `curso.asignaturas[0].temas` dentro de un `pintar`, el suite entero seguía en verde. Ahora `pruebas/pantallas.ts` monta un catálogo **desordenado a posta en el archivo** y exige el orden del campo en Inicio (cursos, asignaturas y temas) y en la tabla de Progreso (con la fila «Repaso global» delante de sus temas).
 - **Validación:** `npm.cmd run prueba` → **517 comprobaciones** (507 → 517: +6 en datos y +4 en pantallas) · `npm.cmd run build` ✅ · los datos reales del repositorio siguen pasando el validador reforzado.
 - **Documentado** en tres sitios para que quede como regla: `PLAN.md` §3 (lista del validador), `PLAN.md` §13.2 (reglas y tabla de riesgos) y `AGENTS.md` (reglas duras). **Uso:** para reordenar el temario basta con tocar el `orden`; la posición en el JSON no tiene ningún efecto.
+
+### 2026-10-09 — `LICENSE` (MIT) añadido al repo
+
+- **Petición:** crear el fichero `LICENSE` con licencia MIT y commitearlo.
+- **Contenido:** texto estándar de la MIT con **`Copyright (c) 2026 Andreu Martinez`** (nombre del historial de git del repo). Sin cambios de código ni de build; el CI solo valida, construye y despliega igual que siempre.
+- **Commit:** `f43aee5` → `main` (push normal, con upstream desde el primer día).
+- **Alcance:** `LICENSE` (nuevo), `AGENTS.md` (árbol de directorios) y esta entrada.

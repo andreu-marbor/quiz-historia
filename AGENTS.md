@@ -37,6 +37,7 @@ quiz-historia/
 ├── MEMORY.md                 # Memoria de cambios e incidencias (aditiva)
 ├── AGENTS.md                 # Este fichero
 ├── README.md                 # README del portfolio
+├── LICENSE                   # licencia MIT (2026, Andreu Martinez)
 ├── index.html
 ├── package.json
 ├── tsconfig.json
