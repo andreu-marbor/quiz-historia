@@ -269,14 +269,24 @@ seccion('Pantalla de inicio');
   );
 
   const conjuntos = botones(vista, '.tema--todos');
-  comprobar(conjuntos.length === 2, 'una fila «Todos los temas» por asignatura (§13.1)');
+  comprobar(conjuntos.length === 2, 'una fila «Repaso global» por asignatura (§13.1)');
   comprobar(
-    texto(conjuntos[0]).includes('Todos los temas de Historia'),
+    texto(conjuntos[0]).includes('Repaso global de Historia'),
     'el rótulo de la fila conjunta lleva el nombre de la asignatura',
   );
   comprobar(
     texto(conjuntos[0]).includes('4 preguntas'),
     'suma las preguntas de todos los temas de la asignatura (3 + 1)',
+  );
+  // Mejora UX · la fila global se explica sola: no basta con un borde distinto
+  comprobar(
+    texto(conjuntos[0]).includes('Incluye preguntas de todos los temas'),
+    'la fila global dice qué incluye (no solo un borde distinto)',
+  );
+  comprobar(
+    conjuntos[0].querySelector('.tema-nombre svg.icono[aria-hidden="true"]') !== null &&
+      conjuntos[1].querySelector('.tema-nombre svg.icono[aria-hidden="true"]') !== null,
+    'y lleva icono propio: su naturaleza no depende solo del color ni del borde',
   );
 
   const temas = botones(vista, '.tema:not(.tema--todos)');
@@ -333,11 +343,19 @@ seccion('Pantalla de inicio');
   progreso = registrarCuestionario(progreso, 'eso2/restauracion', 85, '2026-10-06');
   const vista2 = nuevaVista();
   pintarInicio(vista2, contexto({ progreso }));
-  comprobar(texto(vista2).includes('Mejor nota: 85'), 'muestra la mejor nota del tema');
+  comprobar(texto(vista2).includes('Mejor nota: 85/100'), 'muestra la mejor nota CON su escala (0–100)');
   comprobar(texto(vista2).includes('Sin jugar todavía'), 'los temas sin jugar lo indican');
   comprobar(
     existe(vista2, '.insignia--neutro'),
     'con la clase que hoy sí tiene estilo propio (era clase muerta, §14.1)',
+  );
+  comprobar(
+    existe(vista2, '.insignia--media svg.icono[aria-hidden="true"]'),
+    'la nota lleva icono además del color (la banda no se comunica solo con color)',
+  );
+  comprobar(
+    existe(vista2, '.insignia--neutro') && !existe(vista2, '.insignia--neutro svg'),
+    '«Sin jugar todavía» se distingue por su texto, sin icono de banda',
   );
 
   // Catálogo vacío
@@ -372,13 +390,56 @@ seccion('Pantalla de inicio');
   const vista4 = nuevaVista();
   pintarInicio(vista4, contexto({ catalogo: dosAsignaturas }));
   const filasDoble = botones(vista4, '.tema--todos');
-  comprobar(filasDoble.length === 2, 'hay una fila «Todos los temas» por asignatura, no una por curso');
+  comprobar(filasDoble.length === 2, 'hay una fila «Repaso global» por asignatura, no una por curso');
   comprobar(
-    texto(filasDoble[0]).includes('Todos los temas de Historia') &&
-      texto(filasDoble[1]).includes('Todos los temas de Historia del Arte'),
+    texto(filasDoble[0]).includes('Repaso global de Historia') &&
+      texto(filasDoble[1]).includes('Repaso global de Historia del Arte'),
     'cada una lleva su asignatura en el rótulo',
   );
   comprobar(vista4.querySelectorAll('.asignatura-titulo').length === 2, 'y cada bloque, su subtítulo (h3)');
+
+  // --- tarjeta «Continuar repasando» (continuidad del estudio) ---
+  comprobar(
+    !existe(vista, '.continuar'),
+    'sin historial de la sesión NO aparece la tarjeta (nunca se simula un último cuestionario)',
+  );
+
+  const ultimo: TemaDelResultado = {
+    seleccion: { tipo: 'tema', cursoId: 'eso2', temaId: 'restauracion' },
+    claveTema: 'eso2/restauracion',
+    cursoTitulo: '2º ESO',
+    temaTitulo: 'Restauración borbónica',
+  };
+  llamadas = [];
+  const vista5 = nuevaVista();
+  pintarInicio(vista5, contexto({ temaResultado: ultimo }));
+
+  comprobar(existe(vista5, '.continuar'), 'con historial de la sesión, la tarjeta aparece');
+  comprobar(
+    texto(vista5.querySelector('.continuar .contexto')) === '2º ESO · Restauración borbónica',
+    'muestra el curso y el tema del último cuestionario terminado',
+  );
+  comprobar(
+    texto(vista5.querySelector('.continuar h2')) === 'Continuar repasando',
+    'con su propio encabezado',
+  );
+  const niveles = [...vista5.querySelectorAll('h1, h2, h3')].map((e) => Number(e.tagName.slice(1)));
+  comprobar(
+    niveles[0] === 1 && niveles.every((n, i) => i === 0 || n <= niveles[i - 1] + 1),
+    'el esquema de encabezados sigue sin saltos con la tarjeta (h1 → h2 → h2 → h3)',
+  );
+  const botonContinuar = botones(vista5, '.continuar button')[0];
+  comprobar(
+    !botonContinuar.hasAttribute('aria-label') &&
+      texto(botonContinuar).includes('Continuar') &&
+      texto(botonContinuar).includes('2º ESO'),
+    'el botón combina su texto visible con el contexto accesible (sin aria-label que lo pise)',
+  );
+  botonContinuar.click();
+  comprobar(
+    llamadas.length === 1 && llamadas[0][0] === 'repetir' && llamadas[0][1] === false,
+    'pulsarlo reutiliza la acción actual de repetir el último cuestionario (cero lógica nueva)',
+  );
 }
 
 // ---------------------------------------------------------------------------
@@ -618,7 +679,7 @@ seccion('Pantalla de resultados');
   comprobar(texto(vista.querySelector('.aciertos')) === '1 de 4 correctas', 'aciertos y total');
   comprobar(texto(vista.querySelector('.veredicto')).includes('practicando'), 'veredicto acorde a la nota');
   comprobar(
-    texto(vista.querySelector('.nota-mejor')) === 'Mejor nota: 25' &&
+    texto(vista.querySelector('.nota-mejor')) === 'Mejor nota: 25/100' &&
       vista.querySelectorAll('.nota-datos p').length === 3,
     'ficha (T4): aciertos, veredicto y mejor nota agrupados junto a la nota',
   );
@@ -687,7 +748,7 @@ seccion('Pantalla de progreso');
   const filas = [...vista.querySelectorAll('tbody tr')];
   comprobar(filas.length === 3, 'una fila por clave con datos');
   comprobar(
-    filas[0].querySelector('th')!.textContent === 'Todos los temas de Historia',
+    filas[0].querySelector('th')!.textContent === 'Repaso global de Historia',
     'la fila del conjunto convive con las de los temas (§13.1)',
   );
   comprobar(filas[0].querySelectorAll('td')[1]!.textContent === 'Historia', 'y también lleva su asignatura');
@@ -696,6 +757,14 @@ seccion('Pantalla de progreso');
   comprobar(filas[1].querySelectorAll('td')[1]!.textContent === 'Historia', 'columna de asignatura (§13.2)');
   comprobar(filas[1].querySelector('.insignia')!.textContent === '85', 'mejor nota (no la última)');
   comprobar(existe(vista, '.insignia--media'), 'la insignia colorea la nota (85 está en la banda media)');
+  comprobar(
+    existe(vista, '.insignia--media svg.icono[aria-hidden="true"]'),
+    'y la banda va acompañada de icono, nunca solo de color',
+  );
+  comprobar(
+    texto(vista.querySelector('caption')).includes('sobre 100'),
+    'la tabla declara la escala de la nota (0–100)',
+  );
   comprobar(
     filas[1].querySelectorAll('td')[3]!.textContent === '2',
     'veces jugado en ese tema',
@@ -1022,19 +1091,26 @@ await (async () => {
   comprobar(window.location.hash === '#/cuestionario', 'INC-02: al salir primero se abre el diálogo');
   botones(document.querySelector('dialog.dialogo')!, '.boton--primario')[0].click();
   comprobar(window.location.hash === '#/', 'salir del cuestionario regresa al inicio');
-  comprobar(texto(document.querySelector('#vista')).includes('Mejor nota: 67'), 'el inicio refleja la nota guardada');
-
-  // --- «Todos los temas de {asignatura}»: fila conjunta (§13.1) ---
-  const filasConjunto = botones(document, '.tema--todos');
-  comprobar(filasConjunto.length === 2, 'hay una fila «Todos los temas» por asignatura');
   comprobar(
-    texto(filasConjunto[0]).includes('Todos los temas de Historia'),
+    texto(document.querySelector('#vista')).includes('Mejor nota: 67/100'),
+    'el inicio refleja la nota guardada, con su escala',
+  );
+
+  // --- «Repaso global de {asignatura}»: fila conjunta (§13.1) ---
+  const filasConjunto = botones(document, '.tema--todos');
+  comprobar(filasConjunto.length === 2, 'hay una fila «Repaso global» por asignatura');
+  comprobar(
+    texto(filasConjunto[0]).includes('Repaso global de Historia'),
     'con el rótulo de su asignatura',
+  );
+  comprobar(
+    texto(filasConjunto[0]).includes('Incluye preguntas de todos los temas'),
+    'y con la descripción de lo que incluye',
   );
   filasConjunto[0].click();
   comprobar(window.location.hash === '#/cuestionario', 'la fila conjunta arranca su cuestionario');
   comprobar(
-    texto(document.querySelector('.contexto')) === '2º ESO · Todos los temas de Historia',
+    texto(document.querySelector('.contexto')) === '2º ESO · Repaso global de Historia',
     'el contexto de juego lleva el rótulo del conjunto',
   );
   comprobar(texto(document.querySelector('.contador')) === 'Pregunta 1 de 4', 'el banco es la unión de sus temas (3 + 1)');
@@ -1086,7 +1162,7 @@ await (async () => {
     'dos filas: el tema suelto y la fila del conjunto (§13.1)',
   );
   comprobar(
-    texto(document.querySelector('tbody tr th')) === 'Todos los temas de Historia',
+    texto(document.querySelector('tbody tr th')) === 'Repaso global de Historia',
     'y la del conjunto va primero, con su clave propia',
   );
   comprobar(texto(document.querySelector('.tarjeta-valor')) === '1', 'racha de 1 día');
@@ -1223,6 +1299,15 @@ await (async () => {
   }
   await esperar(() => window.location.hash === '#/resultados');
   estructura('resultados');
+
+  // --- el inicio CON la tarjeta de continuidad también cumple la estructura ---
+  window.location.hash = '#/';
+  await esperar(() => texto(document.querySelector('#vista h1')) === 'Elige curso y tema');
+  comprobar(
+    existe(document, '.continuar'),
+    'al volver al inicio tras jugar aparece la tarjeta de continuar (historial de la sesión)',
+  );
+  estructura('inicio con la tarjeta de continuar');
 
   // --- progreso y ajustes ---
   window.location.hash = '#/progreso';

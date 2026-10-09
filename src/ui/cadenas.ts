@@ -24,11 +24,17 @@ export const T = {
     /** Chip del contador de temas del curso (visible y accesible, T2) */
     temas: (n: number) => `${n} tema${n === 1 ? '' : 's'}`,
     minimo: (n: number) => `Necesitas al menos ${n} preguntas para jugar`,
-    mejorNota: (n: number) => `Mejor nota: ${n}`,
+    /** Nota guardada con su ESCALA a la vista: `resumir()` da 0–100 (§3/§4). */
+    mejorNota: (n: number) => `Mejor nota: ${n}/100`,
     sinNota: 'Sin jugar todavía',
     jugar: 'Jugar a',
-    /** Fila «Todos los temas de {asignatura}» (§13.1) */
-    todosDe: (asignatura: string) => `Todos los temas de ${asignatura}`,
+    /** Rótulo de la fila global por asignatura (§13.1). */
+    repasoGlobal: (asignatura: string) => `Repaso global de ${asignatura}`,
+    /** Qué hace esa fila: va SIEMPRE debajo de `repasoGlobal`, nunca suelta. */
+    repasoGlobalDetalle: 'Incluye preguntas de todos los temas',
+    /** Tarjeta «Continuar repasando»: solo con historial de la sesión. */
+    continuar: 'Continuar repasando',
+    continuarBoton: 'Continuar',
   },
 
   cuestionario: {
@@ -65,7 +71,6 @@ export const T = {
     repetirFalladas: 'Repetir solo las falladas',
     repetirTodas: 'Repetir todas',
     otroTema: 'Elegir otro tema',
-    contexto: (curso: string, tema: string) => `${curso} · ${tema}`,
   },
 
   progreso: {
@@ -77,7 +82,7 @@ export const T = {
     temasJugados: (n: number) => `${n} tema${n === 1 ? '' : 's'} en juego`,
     mejorPorTema: 'Mejor nota por tema',
     tabla: {
-      pie: 'Mejor nota conseguida en cada tema',
+      pie: 'Mejor nota sobre 100 conseguida en cada tema',
       curso: 'Curso',
       asignatura: 'Asignatura',
       tema: 'Tema',
@@ -125,6 +130,8 @@ export const T = {
     error: 'Algo ha salido mal. Vuelve a intentarlo.',
     atras: 'Volver',
     cargando: 'Cargando…',
+    /** «Curso · Tema»: el mismo rótulo de contexto en Resultados y en Inicio */
+    contexto: (curso: string, tema: string) => `${curso} · ${tema}`,
     /** Estado degradado del shell (T7): la app funciona entera sin red */
     sinConexion: 'Sin conexión: la app sigue funcionando con los datos guardados en este dispositivo.',
   },

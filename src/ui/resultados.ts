@@ -20,7 +20,7 @@ export function pintarResultados(vista: HTMLElement, ctx: Contexto): void {
     'header',
     { class: 'pantalla-cabecera' },
     h('h1', { id: 'titulo-pantalla', tabindex: '-1' }, T.resultados.titulo),
-    h('p', { class: 'contexto' }, T.resultados.contexto(tema.cursoTitulo, tema.temaTitulo)),
+    h('p', { class: 'contexto' }, T.comunes.contexto(tema.cursoTitulo, tema.temaTitulo)),
   );
 
   // Ficha de examen (T4): la nota grande manda y los datos se agrupan a su

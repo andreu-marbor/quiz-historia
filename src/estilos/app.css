@@ -18,7 +18,12 @@
 
 .marca {
   display: inline-block;
-  padding: var(--espacio) var(--espacio) 0;
+  /* Vertical recortada (0.25rem) frente a la versión anterior: la cabecera
+     sobra alto, no tamaño de texto — el nombre sigue con su `--texto-marca`.
+     El `min-height` mantiene el enlace en 44px de objetivo táctil (con el
+     recorte habría caído a 42px). */
+  min-height: 44px;
+  padding: var(--espacio-m) var(--espacio) 0;
   color: var(--accent);
   font-family: var(--font-titulo);
   font-size: var(--texto-marca);
@@ -27,8 +32,10 @@
   text-decoration: none;
 }
 
+/* Menos aire alrededor de los enlaces (−0.4rem en total): los pillos siguen
+   midiendo 44px de alto (objetivo táctil) porque lo fija `min-height`. */
 .navegacion {
-  padding: var(--espacio-s) var(--espacio) var(--espacio-m);
+  padding: var(--espacio-xs) var(--espacio) var(--espacio-s);
 }
 
 .navegacion ul {
@@ -228,8 +235,12 @@
 
 /* ------------------------------------------------------------- insignias */
 
+/* `inline-flex`: el icono de banda y el texto se alinean en el centro sin
+   jugar con la línea base (era `inline-block`). */
 .insignia {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espacio-xs);
   padding: 0.15rem var(--espacio-s);
   border: 1px solid var(--borde);
   border-radius: 999px;
@@ -271,6 +282,32 @@
 }
 
 /* --------------------------------------------------------------- inicio */
+
+/* Tarjeta «Continuar repasando»: mismo molde que `.tarjeta` de Progreso
+   (título en versalita + contenido). Compacta a propósito —entre el título de
+   la pantalla y los cursos— para no desplazar el selector más de lo que ocupa. */
+.continuar {
+  margin-bottom: calc(var(--espacio) * 1.5);
+  padding: calc(var(--espacio) * 1.1);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-grande);
+  background: var(--bg-secundario);
+  box-shadow: var(--sombra);
+}
+
+.continuar-fila {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espacio-s) var(--espacio-m);
+}
+
+/* El curso · tema de la tarjeta es el dato que hay que leer; la acción se
+   queda con su 44px de alto (`.boton`). */
+.continuar-fila .contexto {
+  font-weight: 600;
+}
 
 .curso {
   margin-bottom: var(--espacio);
@@ -412,15 +449,34 @@
   box-shadow: var(--sombra);
 }
 
-/* Fila «Todos los temas de {asignatura}» (§13.1): mismo ancho, pero se
-   distingue de un tema concreto por el borde discontinuo granate. */
+/* Fila «Repaso global de {asignatura}» (§13.1): mismo ancho que un tema
+   concreto, pero se la distingue por TRES señales a la vez —icono, descripción
+   visible y color—; el borde discontinuo granate se queda como refuerzo y
+   nunca como único indicador de su naturaleza. */
 .tema--todos {
+  grid-template-areas:
+    'nombre  ir'
+    'detalle insignia'
+    'meta    insignia';
   border-color: var(--accent);
   border-style: dashed;
 }
 
 .tema--todos .tema-nombre {
   color: var(--accent);
+}
+
+/* Icono delante del rótulo: señal no-cromática de «esto es un repaso global» */
+.tema--todos .tema-nombre .icono {
+  margin-right: var(--espacio-xs);
+}
+
+/* Descripción de la fila global: línea propia bajo el rótulo (solo existe en
+   `.tema--todos`, así que su `grid-area` no toca a las filas de tema suelto) */
+.tema-detalle {
+  grid-area: detalle;
+  color: var(--texto-tenue);
+  font-size: var(--texto-s);
 }
 
 .tema-nombre {
@@ -1150,5 +1206,49 @@
   .navegacion a {
     padding: var(--espacio-s) var(--espacio-m);
     font-size: var(--texto-s);
+  }
+
+  /* --- Filas de tema apiladas a partir de flexible (320px) ---
+     En rejilla, la insignia `nowrap` (hasta 156px con «Mejor nota: 60/100»)
+     compartía columna con el título y lo ESTRANGULABA: a 320px el título
+     medía 94px y se partía en 3-4 líneas (5, con nota guardada).
+     Con flex el título ocupa toda la primera línea, la flecha sube a su
+     sitio (vía `order`, sin mover nada del DOM) y la nota baja a su propia
+     línea a la derecha; si «10 preguntas» y la insignia caben, van juntas. */
+  .tema {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .tema-nombre {
+    order: 1;
+    /* base = anchura menos lo de la flecha: la primera línea queda SOLO para
+       título + flecha (si la base fuera 0, «10 preguntas» se colaría arriba y
+       el título acabaría estrecho otra vez) */
+    flex: 1 1 calc(100% - 3rem);
+  }
+
+  .tema-ir {
+    order: 2;
+    flex: 0 0 auto;
+    margin-left: auto;
+  }
+
+  .tema-detalle {
+    order: 3;
+    flex: 1 0 100%;
+  }
+
+  .tema-meta {
+    order: 4;
+    flex: 0 1 auto;
+  }
+
+  .insignia,
+  .tema-no-disponible {
+    order: 5;
+    flex: 0 0 auto;
+    margin-left: auto;
   }
 }

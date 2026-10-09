@@ -296,7 +296,7 @@ export function montarAplicacion(
 
   /**
    * Monta la partida a partir de la **selección** (§13.1): un tema concreto o la
-   * fila «Todos los temas de {asignatura}». `idsFalladas` restringe el banco a
+   * fila «Repaso global de {asignatura}». `idsFalladas` restringe el banco a
    * esas preguntas (botón «Repetir solo las falladas»).
    */
   function iniciar(seleccion: Seleccion, idsFalladas: readonly string[] | null): void {
@@ -336,7 +336,7 @@ export function montarAplicacion(
         navegar('/');
         return;
       }
-      titulo = T.inicio.todosDe(asignatura.titulo);
+      titulo = T.inicio.repasoGlobal(asignatura.titulo);
       clave = claveConjunto(curso.id, asignatura.id);
     }
 

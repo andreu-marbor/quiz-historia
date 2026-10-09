@@ -12,7 +12,7 @@ import type { Ajustes, Progreso } from '../persistencia';
 /** Partida en curso. */
 export interface Sesion {
   cursoId: string;
-  /** Tema concreto o «Todos los temas de {asignatura}» (§13.1) */
+  /** Tema concreto o fila «Repaso global de {asignatura}» (§13.1) */
   seleccion: Seleccion;
   /** Clave en `progreso.temas`: `<curso>/<tema>` o `<curso>/__todos__/<asignatura>` */
   claveTema: string;

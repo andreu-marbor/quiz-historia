@@ -18,7 +18,7 @@ import { T } from './cadenas';
 import type { Contexto } from './contexto';
 import { h, vaciar } from './dom';
 import { estadoVacio } from './estados';
-import { icono } from './iconos';
+import { icono, type NombreIcono } from './iconos';
 
 export function pintarInicio(vista: HTMLElement, ctx: Contexto): void {
   vaciar(vista);
@@ -36,7 +36,48 @@ export function pintarInicio(vista: HTMLElement, ctx: Contexto): void {
     return;
   }
 
-  vista.append(encabezado, ...cursos.map((curso, i) => pintarCurso(ctx, curso, i === 0)));
+  // La tarjeta de continuidad va ENTRE el título y los cursos: compacta, no
+  // desplaza el selector más de lo que ocupa ella misma (y solo aparece si
+  // hay historial de verdad, ver `pintarContinuar`).
+  const continuar = pintarContinuar(ctx);
+  vista.append(encabezado, ...(continuar ? [continuar] : []), ...cursos.map((curso, i) => pintarCurso(ctx, curso, i === 0)));
+}
+
+/**
+ * Tarjeta «Continuar repasando»: atajo al último cuestionario terminado.
+ *
+ * **Fuente de datos:** `ctx.temaResultado`, el MISMO dato que ya usa la
+ * pantalla de resultados (selección + curso + tema). **No hay persistencia
+ * nueva**: `Progreso` guarda notas, contadores y racha, pero no el último
+ * tema jugado, así que la tarjeta solo existe mientras dura la sesión —
+ * preferible a inventar un «último cuestionario» que los datos no respaldan.
+ *
+ * **Acción:** `repetir(false)`, exactamente el botón «Repetir todas» de
+ * resultados → reutiliza la navegación y la lógica de `iniciar` tal cual.
+ */
+function pintarContinuar(ctx: Contexto): HTMLElement | null {
+  const ultimo = ctx.temaResultado;
+  if (!ultimo) return null;
+
+  const contexto = T.comunes.contexto(ultimo.cursoTitulo, ultimo.temaTitulo);
+  return h(
+    'section',
+    { class: 'continuar', 'aria-labelledby': 'continuar-titulo' },
+    h('h2', { class: 'tarjeta-titulo', id: 'continuar-titulo' }, T.inicio.continuar),
+    h(
+      'div',
+      { class: 'continuar-fila' },
+      h('p', { class: 'contexto' }, contexto),
+      // Texto visible corto + contexto oculto al frente: el nombre accesible
+      // lo dice TODO (y sigue conteniendo lo visible, sin `aria-label`).
+      h(
+        'button',
+        { type: 'button', class: 'boton boton--primario', onclick: () => ctx.acciones.repetir(false) },
+        h('span', { class: 'visualmente-oculto' }, `(${contexto}) `),
+        T.inicio.continuarBoton,
+      ),
+    ),
+  );
 }
 
 function pintarCurso(ctx: Contexto, curso: Curso, abiertoPorDefecto: boolean): HTMLElement {
@@ -78,7 +119,7 @@ function pintarAsignatura(ctx: Contexto, curso: Curso, asignatura: Asignatura): 
   if (temas.length === 0) return bloque; // el validador exige ≥1 tema por asignatura
 
   const lista = h('ul', { class: 'lista-temas' });
-  // Primero, la fila «Todos los temas de {asignatura}» (§13.1)
+  // Primero, la fila «Repaso global de {asignatura}» (§13.1)
   lista.append(pintarConjunto(ctx, curso, asignatura));
   for (const tema of temas) {
     lista.append(pintarTema(ctx, curso, asignatura, tema));
@@ -88,16 +129,19 @@ function pintarAsignatura(ctx: Contexto, curso: Curso, asignatura: Asignatura): 
 }
 
 /**
- * Fila «Todos los temas de {asignatura}» (§13.1): juega con el banco de TODOS
+ * Fila «Repaso global de {asignatura}» (§13.1): juega con el banco de TODOS
  * los temas de esa asignatura. Clave de progreso propia (`claveConjunto`), así
  * que convive con las notas de cada tema suelto.
+ *
+ * Se distingue de un tema concreto por **tres** señales —icono, descripción
+ * visible y color—, nunca solo por el borde discontinuo.
  */
 function pintarConjunto(ctx: Contexto, curso: Curso, asignatura: Asignatura): HTMLElement {
   const temas = temasDeAsignatura(asignatura);
   const preguntas = preguntasDeConjunto(ctx.preguntasPorTema, curso, asignatura.id);
   const minimo = minimoDeConjunto(temas);
   const jugable = preguntas.length >= minimo;
-  const titulo = T.inicio.todosDe(asignatura.titulo);
+  const titulo = T.inicio.repasoGlobal(asignatura.titulo);
   const nota = ctx.progreso.temas[claveConjunto(curso.id, asignatura.id)]?.mejorNota;
 
   const boton = h(
@@ -110,11 +154,14 @@ function pintarConjunto(ctx: Contexto, curso: Curso, asignatura: Asignatura): HT
       onclick: jugable ? () => ctx.acciones.elegirConjunto(curso.id, asignatura.id) : undefined,
     },
     h('span', { class: 'visualmente-oculto' }, `(${curso.titulo} · ${asignatura.titulo}) `),
-    h('span', { class: 'tema-nombre' }, titulo),
+    h('span', { class: 'tema-nombre' }, icono('lista', 'tema-icono-global'), titulo),
+    // La descripción es lo que explica QUÉ hace esta fila: visible de serie,
+    // así que también forma parte del nombre accesible del botón.
+    h('span', { class: 'tema-detalle' }, T.inicio.repasoGlobalDetalle),
     h('span', { class: 'tema-meta' }, T.inicio.preguntas(preguntas.length)),
     nota === undefined
       ? h('span', { class: 'insignia insignia--neutro' }, T.inicio.sinNota)
-      : h('span', { class: `insignia ${claseInsignia(nota)}` }, T.inicio.mejorNota(nota)),
+      : insigniaNota(nota, T.inicio.mejorNota(nota)),
     // Icono de flecha (decorativo, T2): el significado ya lo da el propio
     // botón, así que va con aria-hidden y sin texto.
     jugable
@@ -151,7 +198,7 @@ function pintarTema(ctx: Contexto, curso: Curso, asignatura: Asignatura, tema: T
     h('span', { class: 'tema-meta' }, T.inicio.preguntas(preguntas.length)),
     nota === undefined
       ? h('span', { class: 'insignia insignia--neutro' }, T.inicio.sinNota)
-      : h('span', { class: `insignia ${claseInsignia(nota)}` }, T.inicio.mejorNota(nota)),
+      : insigniaNota(nota, T.inicio.mejorNota(nota)),
     jugable
       ? icono('flecha', 'tema-ir')
       : h('span', { class: 'tema-no-disponible' }, icono('aviso'), T.inicio.minimo(tema.minPreguntas)),
@@ -165,4 +212,21 @@ export function claseInsignia(nota: number): string {
   if (nota >= 90) return 'insignia--alta';
   if (nota >= 60) return 'insignia--media';
   return 'insignia--baja';
+}
+
+/**
+ * Icono de la banda: cuenta LO MISMO que el color (✓ ≥ 6, ⚠ por debajo), para
+ * que «bueno/malo» no dependa solo de distinguir verde de rojo (1.4.1 y §14.1).
+ */
+function iconoDeNota(nota: number): NombreIcono {
+  return nota >= 60 ? 'check' : 'aviso';
+}
+
+/**
+ * Insignia de una nota guardada: color por bandas + icono + texto con su
+ * escala. `texto` es SIEMPRE visible (`Mejor nota: 85/100`, `85`…), así que
+ * el color queda como refuerzo y nunca como único indicador.
+ */
+export function insigniaNota(nota: number, texto: string): HTMLElement {
+  return h('span', { class: `insignia ${claseInsignia(nota)}` }, icono(iconoDeNota(nota)), texto);
 }

@@ -14,7 +14,7 @@ import type { Contexto } from './contexto';
 import { h, vaciar } from './dom';
 import { estadoVacio } from './estados';
 import { icono, type NombreIcono } from './iconos';
-import { claseInsignia } from './inicio';
+import { insigniaNota } from './inicio';
 
 export function pintarProgreso(vista: HTMLElement, ctx: Contexto): void {
   vaciar(vista);
@@ -48,13 +48,13 @@ export function pintarProgreso(vista: HTMLElement, ctx: Contexto): void {
   const filas: Fila[] = [];
   for (const curso of cursosOrdenados(ctx.catalogo)) {
     for (const asignatura of asignaturasDeCurso(curso)) {
-      // Fila «Todos los temas de {asignatura}»: clave virtual propia (§13.1)
+      // Fila «Repaso global de {asignatura}»: clave virtual propia (§13.1)
       const conjunto = progreso.temas[claveConjunto(curso.id, asignatura.id)];
       if (conjunto) {
         filas.push({
           curso: curso.titulo,
           asignatura: asignatura.titulo,
-          tema: T.inicio.todosDe(asignatura.titulo),
+          tema: T.inicio.repasoGlobal(asignatura.titulo),
           mejor: conjunto.mejorNota,
           jugados: conjunto.jugados,
         });
@@ -155,7 +155,7 @@ function tabla(filas: Fila[]): HTMLElement {
             h(
               'td',
               { class: 'celda-nota', role: 'cell', 'data-encabezado': T.progreso.tabla.mejor },
-              h('span', { class: `insignia ${claseInsignia(fila.mejor)}` }, String(fila.mejor)),
+              insigniaNota(fila.mejor, String(fila.mejor)),
             ),
             h(
               'td',
