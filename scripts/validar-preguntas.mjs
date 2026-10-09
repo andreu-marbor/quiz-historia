@@ -225,6 +225,11 @@ export function validarCatalogo(datos, donde = 'temas.json') {
   }
 
   const idsCurso = new Set();
+  // El `orden` manda en la pantalla, así que debe ser entero ≥1 y NO repetirse
+  // en su ámbito: entre cursos, entre asignaturas del curso y entre temas de
+  // la asignatura (T11). Un repetido deja el orden a merced del orden del
+  // fichero, que es justo lo que el autor intenta controlar con este campo.
+  const ordenesCurso = new Set();
   datos.cursos.forEach((curso, i) => {
     const en = `${donde} → cursos[${i}]`;
     if (!esObjeto(curso)) {
@@ -250,7 +255,13 @@ export function validarCatalogo(datos, donde = 'temas.json') {
     }
 
     if (!textoNoVacio(curso.titulo)) errores.push(`${en}: falta el "titulo" (texto no vacío)`);
-    if (!Number.isInteger(curso.orden)) errores.push(`${en}: "orden" debe ser un número entero`);
+    if (!Number.isInteger(curso.orden) || curso.orden < 1) {
+      errores.push(`${en}: "orden" debe ser un número entero ≥ 1`);
+    } else if (ordenesCurso.has(curso.orden)) {
+      errores.push(`${en}: el "orden" ${curso.orden} está repetido entre los cursos`);
+    } else {
+      ordenesCurso.add(curso.orden);
+    }
 
     if (!Array.isArray(curso.asignaturas) || curso.asignaturas.length === 0) {
       errores.push(`${en}: "asignaturas" debe ser una lista no vacía (es obligatoria, §13.2)`);
@@ -261,6 +272,7 @@ export function validarCatalogo(datos, donde = 'temas.json') {
     // convención de ids de pregunta `<curso>-<tema>-<nnn>` chocarían si se repiten.
     const idsTema = new Set();
     const idsAsignatura = new Set();
+    const ordenesAsignatura = new Set();
 
     curso.asignaturas.forEach((asignatura, a) => {
       const enAsig = `${en} → asignaturas[${a}]`;
@@ -284,14 +296,20 @@ export function validarCatalogo(datos, donde = 'temas.json') {
       }
 
       if (!textoNoVacio(asignatura.titulo)) errores.push(`${enAsig}: falta el "titulo" (texto no vacío)`);
-      if (!Number.isInteger(asignatura.orden)) errores.push(`${enAsig}: "orden" debe ser un número entero`);
+      if (!Number.isInteger(asignatura.orden) || asignatura.orden < 1) {
+        errores.push(`${enAsig}: "orden" debe ser un número entero ≥ 1`);
+      } else if (ordenesAsignatura.has(asignatura.orden)) {
+        errores.push(`${enAsig}: el "orden" ${asignatura.orden} está repetido dentro del curso`);
+      } else {
+        ordenesAsignatura.add(asignatura.orden);
+      }
 
       if (!Array.isArray(asignatura.temas) || asignatura.temas.length === 0) {
         errores.push(`${enAsig}: "temas" debe ser una lista no vacía`);
         return;
       }
 
-      const idsOrden = new Set();
+      const ordenesTema = new Set();
       asignatura.temas.forEach((tema, j) => {
         const enTema = `${enAsig} → temas[${j}]`;
         if (!esObjeto(tema)) {
@@ -314,11 +332,12 @@ export function validarCatalogo(datos, donde = 'temas.json') {
         }
 
         if (!textoNoVacio(tema.titulo)) errores.push(`${enTema}: falta el "titulo" (texto no vacío)`);
-        if (!Number.isInteger(tema.orden)) errores.push(`${enTema}: "orden" debe ser un número entero`);
-        else if (idsOrden.has(tema.orden)) {
+        if (!Number.isInteger(tema.orden) || tema.orden < 1) {
+          errores.push(`${enTema}: "orden" debe ser un número entero ≥ 1`);
+        } else if (ordenesTema.has(tema.orden)) {
           errores.push(`${enTema}: el "orden" ${tema.orden} está repetido dentro de la asignatura`);
         } else {
-          idsOrden.add(tema.orden);
+          ordenesTema.add(tema.orden);
         }
         if (!Number.isInteger(tema.minPreguntas) || tema.minPreguntas < 1) {
           errores.push(`${enTema}: "minPreguntas" debe ser un entero ≥ 1`);

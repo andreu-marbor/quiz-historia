@@ -1585,4 +1585,98 @@ await (async () => {
   comprobar(leerProgreso(al).ultimoTema === null, 'porque el «último cuestionario» vivía en ese mismo progreso');
 })();
 
+// ---------------------------------------------------------------------------
+await (async () => {
+  seccion('El campo `orden` es el que manda en pantalla (T11: no el orden del fichero)');
+
+  // Catálogo a posta DESORDENADO en el archivo: si la app ordenara por la
+  // posición en el JSON, este catálogo saldría del revés. Es lo que permite
+  // estructurar el temario tocando SOLO `orden`.
+  const preguntasDesorden = new Map([
+    ['eso2/restauracion', [pregunta('eso2-restauracion-001'), pregunta('eso2-restauracion-002')]],
+    ['eso2/siglo-de-oro', [pregunta('eso2-siglo-de-oro-001'), pregunta('eso2-siglo-de-oro-002')]],
+    ['eso2/renacimiento', [pregunta('eso2-renacimiento-001'), pregunta('eso2-renacimiento-002')]],
+    ['eso2/barroco', [pregunta('eso2-barroco-001'), pregunta('eso2-barroco-002')]],
+    ['eso4/guerra-fria', [pregunta('eso4-guerra-fria-001'), pregunta('eso4-guerra-fria-002')]],
+  ]);
+  const catalogoDesorden: Catalogo = {
+    cursos: [
+      {
+        id: 'eso4',
+        titulo: '4º ESO',
+        orden: 2, // en el archivo va PRIMERO, en pantalla debe ir último
+        asignaturas: [
+          {
+            id: 'geografia',
+            titulo: 'Geografía',
+            orden: 1,
+            temas: [{ id: 'guerra-fria', titulo: 'La Guerra Fría', orden: 1, minPreguntas: 2 }],
+          },
+        ],
+      },
+      {
+        id: 'eso2',
+        titulo: '2º ESO',
+        orden: 1,
+        asignaturas: [
+          {
+            id: 'arte',
+            titulo: 'Historia del Arte',
+            orden: 2, // en el archivo va PRIMERO dentro del curso
+            temas: [{ id: 'barroco', titulo: 'El Barroco', orden: 1, minPreguntas: 2 }],
+          },
+          {
+            id: 'historia',
+            titulo: 'Historia',
+            orden: 1,
+            temas: [
+              { id: 'renacimiento', titulo: 'El Renacimiento', orden: 3, minPreguntas: 2 }, // archivo: 1º
+              { id: 'restauracion', titulo: 'La Restauración', orden: 1, minPreguntas: 2 }, // archivo: 2º
+              { id: 'siglo-de-oro', titulo: 'El Siglo de Oro', orden: 2, minPreguntas: 2 }, // archivo: 3º
+            ],
+          },
+        ],
+      },
+    ],
+  };
+
+  const claves = [
+    'eso2/__todos__/historia', 'eso2/restauracion', 'eso2/siglo-de-oro', 'eso2/renacimiento',
+    'eso2/__todos__/arte', 'eso2/barroco',
+    'eso4/__todos__/geografia', 'eso4/guerra-fria',
+  ];
+  const progresoDesorden: Progreso = {
+    ...progresoVacio(),
+    temas: Object.fromEntries(claves.map((clave) => [clave, { mejorNota: 70, jugados: 1 }])),
+  };
+  const ctx = { catalogo: catalogoDesorden, preguntasPorTema: preguntasDesorden, progreso: progresoDesorden };
+
+  // --- Inicio ---
+  const vista = nuevaVista();
+  pintarInicio(vista, contexto(ctx));
+  comprobar(
+    [...vista.querySelectorAll('h2')].map((e) => texto(e)).join('|') === '2º ESO|4º ESO',
+    'los CURSOS se muestran por su `orden`, aunque en el archivo estén al revés',
+  );
+  comprobar(
+    [...vista.querySelectorAll('h3')].map((e) => texto(e)).join('|') === 'Historia|Historia del Arte|Geografía',
+    'y las ASIGNATURAS de cada curso también (sin mezclarse entre cursos)',
+  );
+  comprobar(
+    [...vista.querySelectorAll('.tema:not(.tema--todos) .tema-nombre')]
+      .map((e) => texto(e).trim())
+      .join('|') === 'La Restauración|El Siglo de Oro|El Renacimiento|El Barroco|La Guerra Fría',
+    'y los TEMAS por su campo `orden` (1, 2, 3…), no por su posición en el JSON',
+  );
+
+  // --- Progreso: la misma regla en la tabla de notas ---
+  const tabla2 = nuevaVista();
+  pintarProgreso(tabla2, contexto(ctx));
+  comprobar(
+    [...tabla2.querySelectorAll('tbody tr th')].map((e) => texto(e)).join('|') ===
+      'Repaso global de Historia|La Restauración|El Siglo de Oro|El Renacimiento|Repaso global de Historia del Arte|El Barroco|Repaso global de Geografía|La Guerra Fría',
+    'la tabla de progreso respeta el mismo orden (fila global delante de sus temas)',
+  );
+})();
+
 finalizar();

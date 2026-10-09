@@ -219,6 +219,47 @@ incluye(
   );
 }
 
+// --- T11: el `orden` es lo que manda en pantalla, así que no admite ambigüedad ---
+{
+  const dosCursos = catalogoDePrueba();
+  (dosCursos['cursos'] as Array<Record<string, unknown>>).push({
+    id: 'eso4',
+    titulo: '4º ESO',
+    orden: 2, // repetido: ya lo lleva el primer curso del catálogo
+    asignaturas: [
+      { id: 'historia', titulo: 'Historia', orden: 1, temas: [{ id: 'tema-b', titulo: 'Tema B', orden: 1, minPreguntas: 2 }] },
+    ],
+  });
+  incluye(
+    validarCatalogo(dosCursos),
+    'está repetido entre los cursos',
+    'el "orden" es único entre los cursos (dos cursos, mismo orden = orden a merced del fichero)',
+  );
+}
+{
+  const dosAsignaturas = catalogoDePrueba();
+  const asignaturas = ((dosAsignaturas['cursos'] as Array<Record<string, unknown>>)[0]['asignaturas'] as Array<Record<string, unknown>>);
+  asignaturas.push({
+    id: 'historia-del-arte',
+    titulo: 'Historia del Arte',
+    orden: 1, // repetida: ya lo lleva la primera asignatura del curso
+    temas: [{ id: 'tema-b', titulo: 'Tema B', orden: 1, minPreguntas: 2 }],
+  });
+  incluye(
+    validarCatalogo(dosAsignaturas),
+    'está repetido dentro del curso',
+    'el "orden" es único entre las asignaturas de un curso',
+  );
+}
+incluye(validarCatalogo(catalogoCon({ orden: 0 })), 'entero ≥ 1', 'el orden de un curso debe ser ≥ 1 (el 0 no es «el primero»)');
+incluye(validarCatalogo(catalogoCon({}, { orden: -3 })), 'entero ≥ 1', 'ni un orden negativo');
+{
+  const asignaturaSinOrden = catalogoDePrueba();
+  ((asignaturaSinOrden['cursos'] as Array<Record<string, unknown>>)[0]['asignaturas'] as Array<Record<string, unknown>>)[0]['orden'] = 0;
+  incluye(validarCatalogo(asignaturaSinOrden), 'entero ≥ 1', 'el orden de una asignatura debe ser ≥ 1');
+}
+incluye(validarCatalogo(catalogoCon({}, { orden: 0 })), 'entero ≥ 1', 'y el de un tema también');
+
 // ---------------------------------------------------------------------------
 seccion('Reglas del repositorio (ficheros falsos)');
 

@@ -185,6 +185,7 @@ Sin dependencias externas, comprueba:
 - `tipo` válido y coherente con `opciones` (p. ej. `verdadero-false` con 2 opciones);
 - `dificultad` ∈ {1,2,3};
 - todo tema de `temas.json` tiene ≥ `minPreguntas` preguntas;
+- `orden` en **curso, asignatura y tema**: **entero ≥ 1 y no repetido en su ámbito** (entre cursos, entre asignaturas del curso y entre temas de la asignatura) — es el campo que decide el orden en pantalla, así que un repetido lo dejaría a merced del orden del fichero (T11);
 - no hay ficheros de pregunta cuyo tema no esté en el catálogo (temas huérfanos);
 - nombres de directorio de `datos/preguntas/` = ids de curso del catálogo.
 
@@ -642,7 +643,7 @@ Por disparadores (§12.2). Las tres primeras tareas **no esperan a ningún dispa
   - **se rechaza `temas` a nivel de curso** (la forma antigua) y cualquier campo desconocido;
   - `id` de asignatura **único dentro del curso**;
   - **`id` de tema único dentro del curso**: dos asignaturas no pueden reusar el mismo slug, porque chocarían la clave `<curso>/<tema>` y la convención de ids `<curso>-<tema>-<nnn>`;
-  - `orden` **único dentro de cada asignatura**; `minPreguntas` ≥ 1;
+  - `orden` **≥ 1 y no repetido en su ámbito**: entre cursos, entre asignaturas del curso y entre temas de la asignatura (es el que manda en pantalla, ver **T11**); `minPreguntas` ≥ 1;
   - los directorios de `datos/preguntas/` siguen siendo ids de curso (**sin cambios**).
 - **Se compone con §13.1 (decisión cerrada el 2026-10-08):** la opción «Todos los temas» se ofrece **una por asignatura** — «Todos los temas de Historia» + «Todos los temas de Historia del Arte» — y **no hay fila «Todo el curso»** que mezcle materias distintas.
 
@@ -664,7 +665,7 @@ Por disparadores (§12.2). Las tres primeras tareas **no esperan a ningún dispa
 | Romper `temas.json` y todo lo que lo lee a la vez | Un **commit atómico**: tipos + datos + UI + validador + tests **en verde juntos**; `npm.cmd run prueba` cubre el conjunto |
 | **Pérdida del progreso** de los alumnos | Las claves `<curso>/<tema>` **no cambian** (ni el índice ni los directorios) → notas, racha y contadores sobreviven. Con test explícito |
 | Dos asignaturas reusando el mismo `id` de tema | El validador exige ids de tema **únicos dentro del curso** (colisionarían `<curso>/<tema>` y `<curso>-<tema>-<nnn>`) |
-| `orden` repetido | Único **dentro de cada asignatura** |
+| `orden` repetido | Único **en su ámbito** (T11): entre cursos, entre asignaturas del curso y entre temas de la asignatura |
 | Mezclar materias en un mismo cuestionario | **Fuera de alcance** (no hay fila «Todo el curso»); si algún día se pide, la escala 1·2·3 ya es común a ambas y no haría falta nada nuevo |
 
 ### 13.3 Widget de la racha en la pantalla de inicio (Android)
@@ -758,7 +759,7 @@ Por disparadores (§12.2). Las tres primeras tareas **no esperan a ningún dispa
 | 5 | **Resultados como «ficha de examen»**: resumen arriba + revisión jerarquizada | `T4` |
 | 6 | **Ajustes agrupados** (`Apariencia` · `Juego` · `Datos`) con la destructiva separada | `T6` |
 
-### 14.3 Orden de ejecución (T0–T10)
+### 14.3 Orden de ejecución (T0–T11)
 
 Cada tarea = **commit + push** con `prueba` y `build` en verde; los selectores de `pruebas/pantallas.ts` se actualizan **en la misma tarea** si cambia el DOM.
 
@@ -786,6 +787,12 @@ Cada tarea = **commit + push** con `prueba` y `build` en verde; los selectores d
   - *Guarda 2:* `registrarCuestionario` **conserva** `ultimoTema` (construye el `Progreso` a mano: era justo donde el campo podía perderse sin ruido); hay prueba explícita.
   - *Consistencia:* empezar una partida **no** borra el «último terminado» (si el alumno la abandona, la tarjeta sigue apuntando al último que sí terminó) y **borrar el progreso se lleva la tarjeta** (enseñarla después prometería un repaso que ya no está guardado).
   - *Validación:* **476 → 507 comprobaciones** (+17 en persistencia: ida y vuelta de tema suelto y de fila global, conservación en `registrarCuestionario`, datos antiguos sin el campo y **8 formas inválidas**; +14 en pantallas: montar una app nueva sobre un almacén con datos = recarga, el atajo real, cambio de último cuestionario, purga, JSON corrupto y borrar progreso) · `build` ✅ · **CDP en navegador real: 8/8** (incluido jugar un cuestionario entero, recargar y ver la tarjeta con la fila «Repaso global»).)*
+- [x] **T11 · Requisito del usuario: el `orden` de `temas.json` estructura el temario en pantalla.** ✅ *(2026-10-09. Detalle:*
+  - *Estado previo (verificado, no reescrito):* el campo **ya existía** en los tres niveles de `datos/temas.json`, `Tema.orden` ya era obligatorio en el tipo, el validador ya lo exigía entero y ya lo comprobaba único **dentro de cada asignatura**, y `src/logica/catalogo.ts` ya ordenaba cursos, asignaturas y temas (`cursosOrdenados` · `asignaturasDeCurso` · `temasDeAsignatura` · `temasDelCurso`), usados por Inicio y Progreso. **El requisito estaba cubierto: lo que faltaba era garantizarlo.**
+  - *Refuerzo del validador:* `orden` **≥ 1** en los tres niveles y **único en su ámbito** —entre cursos y entre asignaturas del curso, que eran los dos ámbitos sin comprobar—; un repetido dejaba el orden a merced de la posición en el fichero, que es justo lo que el autor controla con este campo. El `Set` de temas pasó de `idsOrden` a `ordenesTema` para que los tres ámbitos se lean igual.
+  - *Contrato de pantalla (lo nuevo de verdad):* `pruebas/pantallas.ts` monta un catálogo **desordenado a posta en el archivo** (cursos, asignaturas y temas en orden inverso al del campo) y exige que Inicio muestre cursos, asignaturas y temas por su `orden` y que la tabla de Progreso repita ese orden (fila «Repaso global» delante de sus temas). Antes la única garantía eran las pruebas de la lógica pura: si alguien hubiera escrito `curso.asignaturas[0].temas` dentro de un `pintar`, **habría seguido pasando en verde**.
+  - *Cómo se usa:* para reordenar el temario basta con tocar el `orden` de `temas.json`; la posición en el fichero no tiene ningún efecto. La regla queda escrita en **§3** (validador), en las reglas de **§13.2** y en `AGENTS.md`.
+  - *Validación:* **507 → 517 comprobaciones** (+6 en datos: orden repetido entre cursos, entre asignaturas y `orden` 0/negativo en curso, asignatura y tema; +4 en pantallas: cursos, asignaturas, temas y tabla de progreso) · `build` ✅ · los datos reales siguen pasando el validador reforzado.)*
 
 ### 14.4 Riesgos
 

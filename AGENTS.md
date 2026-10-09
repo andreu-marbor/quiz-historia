@@ -98,6 +98,7 @@ quiz-historia/
 - `respuesta` = índice (0-based) **dentro** de `opciones`.
 - `tipo` ∈ `opcion-multiple` | `verdadero-falso` | `fecha` | `imagen` (2–6 opciones; `verdadero-falso` exactamente 2).
 - `dificultad` ∈ 1 | 2 | 3. `enunciado` y `explicacion` **no vacíos**.
+- `orden` en curso, asignatura y tema: **entero ≥ 1 y no repetido en su ámbito** (entre cursos, entre asignaturas del curso, entre temas de la asignatura). **Es el que decide el orden en pantalla**: la posición en el fichero no tiene ningún efecto, así que para reordenar el temario basta con tocar `orden`.
 - Todo tema de `temas.json` ≥ `minPreguntas`; sin ficheros huérfanos ni temas vacíos.
 
 > ⚠️ **Nunca** escribir preguntas dentro de `src/` ni cadenas de contenido hardcodeadas: el contenido SOLO vive en `datos/`.
