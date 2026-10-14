@@ -1,0 +1,102 @@
+[
+  {
+    "id": "bachillerato2-guerra-civil-001",
+    "enunciado": "¿En qué año se sublevaron amplios sectores del ejército contra la República?",
+    "tipo": "fecha",
+    "opciones": ["1936", "1937", "1938", "1939"],
+    "respuesta": 0,
+    "explicacion": "La sublevación comenzó la noche del 17 al 18 de julio de 1936 en Melilla y se extendió por buena parte de la península; su fracaso en las principales ciudades convirtió el golpe en guerra.",
+    "dificultad": 1,
+    "tags": ["guerra-civil", "alzamiento", "fechas"]
+  },
+  {
+    "id": "bachillerato2-guerra-civil-002",
+    "enunciado": "¿Qué militares formaron el núcleo inicial de la sublevación de julio de 1936?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Azaña, Prieto y Caballero", "Primo de Rivera y Gil Robles", "Franco, Mola y Queipo de Llano", "Serrano y Cánovas"],
+    "respuesta": 2,
+    "explicacion": "El general Mola era el «director» de la conjura, Franco unió su alzamiento en Marruecos y Queipo de Llano tomó el sur; Sanjurjo debía encabezar el movimiento pero murió en accidente.",
+    "dificultad": 1,
+    "tags": ["guerra-civil", "alzamiento", "protagonistas"]
+  },
+  {
+    "id": "bachillerato2-guerra-civil-003",
+    "enunciado": "¿Cómo denominaron a su propio bando los sublevados del 18 de julio?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El bando nacional", "El bando azul", "El bando carlista", "El bando monárquico"],
+    "respuesta": 0,
+    "explicacion": "Los sublevados se autodenominaron «nacionales» para presentarse como defensores de la unidad de España; el otro bando fue el republicano o «rojo» para su enemigo.",
+    "dificultad": 1,
+    "tags": ["guerra-civil", "bandos", "propaganda"]
+  },
+  {
+    "id": "bachillerato2-guerra-civil-004",
+    "enunciado": "¿En qué año se libró la batalla de Guadalajara, una victoria republicana sobre los italianos?",
+    "tipo": "fecha",
+    "opciones": ["1936", "1937", "1938", "1939"],
+    "respuesta": 1,
+    "explicacion": "En marzo de 1937 las Brigadas Internacionales y el Ejército Popular frenaron la ofensiva italiana sobre Guadalajara, que avanzaba hacia Madrid; fue una de las pocas victorias claras de la República.",
+    "dificultad": 2,
+    "tags": ["guerra-civil", "batallas", "italia", "fechas"]
+  },
+  {
+    "id": "bachillerato2-guerra-civil-005",
+    "enunciado": "La Unión Soviética y las Brigadas Internacionales apoyaron a la República, mientras Alemania e Italia apoyaron a los sublevados.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Alemania envió la Legión Cóndor y Italia la Aviazión Legionaria y miles de soldados; la URSS mandó armas y consejeros, y unos 35.000 voluntarios de 50 países lucharon en las Brigadas Internacionales.",
+    "dificultad": 2,
+    "tags": ["guerra-civil", "intervencion-extranjera", "brigadas-internacionales"]
+  },
+  {
+    "id": "bachillerato2-guerra-civil-006",
+    "enunciado": "El bombardeo de Guernica, el 26 de abril de 1937, fue obra de la Legión Cóndor alemana.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Guernica, plaza de reclutamiento vasca, fue bombardeada y arrasada durante tres horas; el cuadro de Picasso, pintado para el pabellón español de París, lo convirtió en símbolo internacional de la barbarie.",
+    "dificultad": 2,
+    "tags": ["guerra-civil", "guernica", "bombardeos"]
+  },
+  {
+    "id": "bachillerato2-guerra-civil-007",
+    "enunciado": "¿En qué consistió el acuerdo internacional de no intervención en la guerra de España?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Ceder Gibraltar", "No enviar armas ni voluntarios a España", "Repartir el norte de África", "Abrir los puertos franceses"],
+    "respuesta": 1,
+    "explicacion": "Firmado en agosto de 1936 por 27 países, prohibía vender armas o enviar combatientes; Alemania e Italia lo incumplieron sistemáticamente, mientras la República compraba lo que podía.",
+    "dificultad": 2,
+    "tags": ["guerra-civil", "no-intervencion", "diplomacia"]
+  },
+  {
+    "id": "bachillerato2-guerra-civil-008",
+    "enunciado": "¿En qué año ocuparon las tropas franquistas Madrid?",
+    "tipo": "fecha",
+    "opciones": ["1939", "1938", "1940", "1937"],
+    "respuesta": 0,
+    "explicacion": "Madrid cayó el 28 de marzo de 1939, pocos días antes del final de la guerra; la ciudad había resistido desde noviembre de 1936 con la defensa de la Casa de Campo y el Cuartel de la Montaña.",
+    "dificultad": 3,
+    "tags": ["guerra-civil", "madrid", "final-de-guerra", "fechas"]
+  },
+  {
+    "id": "bachillerato2-guerra-civil-009",
+    "enunciado": "La guerra terminó el 1 de abril de 1939 con la victoria del bando nacional.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "El último boletín de guerra anunció el 1 de abril de 1939 la victoria total; empezaba la dictadura de Franco, que duraría hasta 1975.",
+    "dificultad": 3,
+    "tags": ["guerra-civil", "final-de-guerra", "franco", "fechas"]
+  },
+  {
+    "id": "bachillerato2-guerra-civil-010",
+    "enunciado": "¿Qué acontecimiento convirtió el sitio del Alcázar de Toledo en símbolo de la propaganda nacional?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El bombardeo de la aviación rebelde", "La resistencia durante casi dos meses", "La ayuda internacional a la República", "La rendición de la ciudad"],
+    "respuesta": 1,
+    "explicacion": "El Alcázar, defendido por Moscardó hasta septiembre de 1936, resistió el asedio republicano; su hundimiento final fue utilizado como emblema de la resistencia del bando sublevado.",
+    "dificultad": 3,
+    "tags": ["guerra-civil", "toledo", "propaganda"]
+  }
+]

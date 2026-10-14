@@ -1,0 +1,102 @@
+[
+  {
+    "id": "bachillerato2-segunda-republica-001",
+    "enunciado": "¿En qué año se proclamó la Segunda República española?",
+    "tipo": "fecha",
+    "opciones": ["1930", "1936", "1931", "1933"],
+    "respuesta": 2,
+    "explicacion": "Tras las elecciones municipales del 12 de abril, el 14 de abril se proclamó la República en Madrid y en las capitales de provincia; Alfonso XIII abandonó el país ese mismo día.",
+    "dificultad": 1,
+    "tags": ["segunda-republica", "proclamacion", "fechas"]
+  },
+  {
+    "id": "bachillerato2-segunda-republica-002",
+    "enunciado": "¿En qué plaza de Madrid se proclamó la República el 14 de abril de 1931?",
+    "tipo": "opcion-multiple",
+    "opciones": ["La Puerta del Sol", "La Plaza de Oriente", "La Plaza de España", "El Puente de Segovia"],
+    "respuesta": 0,
+    "explicacion": "La proclamación tuvo lugar en la Puerta del Sol, ante el número 5 de la calle del Correo; en el resto de España la República se anunció el mismo día en las plazas mayores de las capitales.",
+    "dificultad": 1,
+    "tags": ["segunda-republica", "proclamacion", "madrid"]
+  },
+  {
+    "id": "bachillerato2-segunda-republica-003",
+    "enunciado": "¿Cómo definía la Constitución de 1931 la organización territorial del Estado?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Un Estado federal irrevocable", "Un Estado integral compatible con las autonomías", "Un Estado unitario sin autonomías", "Una monarquía parlamentaria"],
+    "respuesta": 1,
+    "explicacion": "El artículo 1 la definía como «Estado integral compatible con el régimen autonómico de municipios y regiones»; de ahí nacieron los estatutos de Cataluña, País Vasco y Galicia.",
+    "dificultad": 1,
+    "tags": ["segunda-republica", "constitucion-1931", "territorios"]
+  },
+  {
+    "id": "bachillerato2-segunda-republica-004",
+    "enunciado": "¿En qué año se aprobó la Constitución de la Segunda República?",
+    "tipo": "fecha",
+    "opciones": ["1930", "1933", "1936", "1931"],
+    "respuesta": 3,
+    "explicacion": "La Constitución de 1931 se aprobó el 9 de diciembre de ese año por unas Cortes constituyentes de amplia mayoría republicano-socialista.",
+    "dificultad": 2,
+    "tags": ["segunda-republica", "constitucion-1931", "fechas"]
+  },
+  {
+    "id": "bachillerato2-segunda-republica-005",
+    "enunciado": "La Constitución de 1931 separó la Iglesia del Estado e implantó la enseñanza laica.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "El Estado dejó de financiar al clero (con un presupuesto transitorio de diez años) y la educación primaria pasó a ser laica y gratuita; las reformas laicas de Azaña provocaron la conflictividad de 1931-1933.",
+    "dificultad": 2,
+    "tags": ["segunda-republica", "laicismo", "educacion"]
+  },
+  {
+    "id": "bachillerato2-segunda-republica-006",
+    "enunciado": "El periodo 1933-1936, con gobiernos radicales apoyados por la CEDA, se conoce como «bienio negro».",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "El radical Alejandro Lerroux gobernó con el apoyo parlamentario de Gil Robles, que llegó a ministro en 1935; la derecha revirtió las reformas del bienio reformista (1931-1933).",
+    "dificultad": 2,
+    "tags": ["segunda-republica", "bienio-negro", "ceda"]
+  },
+  {
+    "id": "bachillerato2-segunda-republica-007",
+    "enunciado": "¿Qué insurrección de octubre de 1934 acabó con una dura represión en Asturias?",
+    "tipo": "opcion-multiple",
+    "opciones": ["La Semana Trágica de 1909", "El levantamiento de Jaca", "La Revolución de Octubre de 1934", "La huelga de La Canadiense"],
+    "respuesta": 2,
+    "explicacion": "La revolución de 1934 fue sobre todo campesina en el interior y obrero-industrial en Asturias, donde los comités revolucionarios resistieron semanas; fue sofocada por el ejército bajo el mando de Franco.",
+    "dificultad": 2,
+    "tags": ["segunda-republica", "revolucion-1934", "asturias"]
+  },
+  {
+    "id": "bachillerato2-segunda-republica-008",
+    "enunciado": "¿En qué año se firmó el Frente Popular?",
+    "tipo": "fecha",
+    "opciones": ["1935", "1936", "1934", "1937"],
+    "respuesta": 1,
+    "explicacion": "El Frente Popular —republicanos de izquierda, socialistas, comunistas y POUM— se firmó en enero de 1936 y venció en las elecciones de febrero, abriendo el camino al 18 de julio.",
+    "dificultad": 3,
+    "tags": ["segunda-republica", "frente-popular", "elecciones", "fechas"]
+  },
+  {
+    "id": "bachillerato2-segunda-republica-009",
+    "enunciado": "El Frente Popular agrupaba a fuerzas republicanas de izquierda, socialistas, comunistas e izquierda republicana.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Su programa incluía la amnistía de los presos de 1934, la reinstauración de la Generalitat y la reforma agraria; los anarquistas de la CNT no entraron en el pacto.",
+    "dificultad": 3,
+    "tags": ["segunda-republica", "frente-popular", "partidos"]
+  },
+  {
+    "id": "bachillerato2-segunda-republica-010",
+    "enunciado": "¿Qué reforma prometió el gobierno de Azaña y apenas cumplió en los latifundios del sur?",
+    "tipo": "opcion-multiple",
+    "opciones": ["La ley de contratos de cultivo", "La desamortización de Madoz", "La colectivización de 1936", "La reforma agraria"],
+    "respuesta": 3,
+    "explicacion": "La reforma agraria de 1932 expropió las grandes fincas de Extremadura, pero el reparto fue muy limitado y dejó a muchos jornaleros sin tierra; su incumplimiento marcó el descrédito de la República en el campo.",
+    "dificultad": 3,
+    "tags": ["segunda-republica", "reforma-agraria", "campo"]
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "id": "bachillerato2-templo-griego-001",
+    "enunciado": "¿Qué dos órdenes arquitectónicos griegos son los más antiguos?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Jónico y corintio", "Dórico y jónico", "Dórico y corintio", "Toscano y dórico"],
+    "respuesta": 1,
+    "explicacion": "El dórico, de aspecto maciso, es el más antiguo (siglos VII-VI a.C.); le siguió el jónico, más esbelto, y el corintio, de capitel con hojas de acanto, popularizado en época helenística y romana.",
+    "dificultad": 1,
+    "tags": ["templo-griego", "ordenes-clasicos"]
+  },
+  {
+    "id": "bachillerato2-templo-griego-002",
+    "enunciado": "¿Qué templo de la Acrópolis de Atenas es el gran modelo del orden dórico?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El Partenón", "El Erecteión", "El templo de Atenea Nike", "El Olimpieion"],
+    "respuesta": 0,
+    "explicacion": "El Partenón (447-432 a.C.), de Ictino y Calícrates, combina un orden dórico exterior con un friso jónico continuo; el Erecteión y el templo de Atenea Nike son jónicos.",
+    "dificultad": 1,
+    "tags": ["templo-griego", "partenon", "orden-dorico"]
+  },
+  {
+    "id": "bachillerato2-templo-griego-003",
+    "enunciado": "¿En qué siglo se construyó el Partenón de Atenas?",
+    "tipo": "fecha",
+    "opciones": ["El siglo V a.C.", "El siglo VI a.C.", "El siglo IV a.C.", "El siglo III a.C."],
+    "respuesta": 0,
+    "explicacion": "Se levantó entre 447 y 432 a.C., en el apogeo de la Atenas de Pericles; el Erecteión y el templo de Atenea Nike son del mismo siglo, pero posteriores.",
+    "dificultad": 2,
+    "tags": ["templo-griego", "partenon", "siglo-v", "fechas"]
+  },
+  {
+    "id": "bachillerato2-templo-griego-004",
+    "enunciado": "¿Qué escultor supervisó las obras de la Acrópolis de Atenas y dirigió las esculturas del Partenón?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Miron", "Praxíteles", "Fidias", "Calícrates"],
+    "respuesta": 2,
+    "explicacion": "Fidias dirigió el programa escultórico —metopas, frontones y friso— y la Atenea Parthenos; Miron es del siglo V a.C. y Praxíteles del IV, posteriores al Partenón.",
+    "dificultad": 1,
+    "tags": ["templo-griego", "fidias", "escultura"]
+  },
+  {
+    "id": "bachillerato2-templo-griego-005",
+    "enunciado": "El templo griego estaba concebido para albergar la estatua de culto, no para reunir a la comunidad fiel en su interior.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Es un templo de culto íctónico: la cella custodiaba la imagen de la divinidad, mientras los ritos se celebraban en el exterior, ante el altar; las procesiones recorrían la perístasis.",
+    "dificultad": 2,
+    "tags": ["templo-griego", "culto", "cella"]
+  },
+  {
+    "id": "bachillerato2-templo-griego-006",
+    "enunciado": "¿Qué parte del entablamento dórico alterna triglifos y metopas?",
+    "tipo": "opcion-multiple",
+    "opciones": ["La cella", "La estilóbata", "El friso", "La pronaos"],
+    "respuesta": 2,
+    "explicacion": "El friso es la banda del entablamento con los triglifos (tres acanaladuras) y las metopas (relieves); la cella y la pronaos son espacios de la planta, y la estilóbata, el basamento.",
+    "dificultad": 2,
+    "tags": ["templo-griego", "orden-dorico", "entablamento"]
+  },
+  {
+    "id": "bachillerato2-templo-griego-007",
+    "enunciado": "El Erecteión es un templo jónico célebre por su pórtico sostenido por figuras femeninas (Caryátides).",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Su pórtico sur se apoya en seis Caryátides; el templo reúne varios niveles por los lugares sagrados que alberga (Poseidón-Erecteo, Atenea Polias y Cecrope).",
+    "dificultad": 2,
+    "tags": ["templo-griego", "erecteion", "orden-jonico"]
+  },
+  {
+    "id": "bachillerato2-templo-griego-008",
+    "enunciado": "¿Qué pequeño templo jónico de la Acrópolis está dedicado a la victoria?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El Erecteión", "El templo de Atenea Nike", "El Partenón", "El Hipodromo"],
+    "respuesta": 1,
+    "explicacion": "El templo de Atenea Nike, de Calícrates, preside la entrada de la Acrópolis; su friso muestra amazonas y victorias aladas. El Hipodromo no es un templo.",
+    "dificultad": 3,
+    "tags": ["templo-griego", "acropolis", "orden-jonico"]
+  },
+  {
+    "id": "bachillerato2-templo-griego-009",
+    "enunciado": "Las columnas jónicas presentan volutas en el capitel, mientras que las corintias están adornadas con hojas de acanto.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "La voluta es la señal de identidad del jónico; el corintio multiplica las hojas de acanto alrededor del fuste. Ambos se diferencian del dórico, sin basa y con capitel liso.",
+    "dificultad": 3,
+    "tags": ["templo-griego", "ordenes-clasicos", "columnas"]
+  },
+  {
+    "id": "bachillerato2-templo-griego-010",
+    "enunciado": "¿Qué característica distingue al orden dórico del jónico?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El jónico carece de capitel", "El corintio es el orden más antiguo", "El dórico no tiene basa y lleva friso de triglifos", "El dórico presenta volutas en el capitel"],
+    "respuesta": 2,
+    "explicacion": "Las columnas dóricas se apoyan directamente en el estilóbato, sin basa, y su friso de triglifos y metopas es exclusivo del orden; las volutas corresponden al jónico.",
+    "dificultad": 3,
+    "tags": ["templo-griego", "ordenes-clasicos", "dorico", "jonico"]
+  }
+]

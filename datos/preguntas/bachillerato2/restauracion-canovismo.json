@@ -1,0 +1,102 @@
+[
+  {
+    "id": "bachillerato2-restauracion-canovismo-001",
+    "enunciado": "¿Qué político diseñó el sistema político de la Restauración?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Práxedes Mateo Sagasta", "Antonio Cánovas del Castillo", "Leopoldo O'Donnell", "Francisco Serrano"],
+    "respuesta": 1,
+    "explicacion": "Cánovas forjó la monarquía de Alfonso XII, la Constitución de 1876 y el turno de partidos; Sagasta, su rival en el Partido Liberal, era la pieza que completaba la alternancia.",
+    "dificultad": 1,
+    "tags": ["restauracion", "canovas", "sistema-politico"]
+  },
+  {
+    "id": "bachillerato2-restauracion-canovismo-002",
+    "enunciado": "¿En qué año llegó a España Alfonso XII para ocupar el trono?",
+    "tipo": "fecha",
+    "opciones": ["1876", "1874", "1875", "1877"],
+    "respuesta": 2,
+    "explicacion": "Alfonso XII desembarcó en Barcelona en enero de 1875, dos semanas después de ser proclamado (dic. 1874); en 1876 aprobó la Constitución que ordenó el sistema.",
+    "dificultad": 1,
+    "tags": ["restauracion", "alfonso-xii", "fechas"]
+  },
+  {
+    "id": "bachillerato2-restauracion-canovismo-003",
+    "enunciado": "¿Cómo se llamó la alternancia pactada de conservadores y liberales en el poder?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El sufragio universal", "El cantonalismo", "El turno pacífico", "La conjunción republicana"],
+    "respuesta": 2,
+    "explicacion": "El «turno» o «pacto» alternaba a Cánovas y Sagasta en el gobierno sin que las elecciones decidieran nada; en 1903 se le llamó «el turno del olvido».",
+    "dificultad": 1,
+    "tags": ["restauracion", "turno-pacifica", "sistema-politico"]
+  },
+  {
+    "id": "bachillerato2-restauracion-canovismo-004",
+    "enunciado": "¿En qué año se aprobó la Constitución de la Restauración?",
+    "tipo": "fecha",
+    "opciones": ["1876", "1869", "1878", "1884"],
+    "respuesta": 0,
+    "explicacion": "La Constitución de 1876, de matriz conservadora y aprobada por Cortes elegidas con sufragio censitario, rigió —con reformas— hasta 1931.",
+    "dificultad": 2,
+    "tags": ["restauracion", "constitucion-1876", "fechas"]
+  },
+  {
+    "id": "bachillerato2-restauracion-canovismo-005",
+    "enunciado": "La Constitución de 1876 otorgaba al rey amplios poderes y restringía el derecho de sufragio.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "El rey nombraba y cesaba ministros, podía vetar leyes y disolver las Cortes; el voto era censitario (cabecera de distrito) hasta el sufragio universal masculino de 1890.",
+    "dificultad": 2,
+    "tags": ["restauracion", "constitucion-1876", "monarquia"]
+  },
+  {
+    "id": "bachillerato2-restauracion-canovismo-006",
+    "enunciado": "¿Qué prácticas garantizaban los resultados electorales del sistema canovista?",
+    "tipo": "opcion-multiple",
+    "opciones": ["La milicia nacional", "La Ley de Orden Público", "El sufragio universal", "El caciquismo y el pucherazo"],
+    "respuesta": 3,
+    "explicacion": "El caciquismo (presión de los notables sobre los votantes) y el pucherazo (falseo del escrutinio) aseguraban la mayoría del partido elegido de antemano; los «cabezuelas» movían el censo de su distrito.",
+    "dificultad": 2,
+    "tags": ["restauracion", "caciquismo", "pucherazo", "elecciones"]
+  },
+  {
+    "id": "bachillerato2-restauracion-canovismo-007",
+    "enunciado": "El objetivo del turno era estabilizar el régimen evitando pronunciamientos militares y revoluciones.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Cánovas y Sagasta buscaron «la paz y el olvido»: que los partidos compartieran el poder para que nadie tuviera motivos de sublevarse. El sistema funcionó hasta 1898.",
+    "dificultad": 2,
+    "tags": ["restauracion", "turno-pacifica", "estabilidad"]
+  },
+  {
+    "id": "bachillerato2-restauracion-canovismo-008",
+    "enunciado": "¿En qué año murió asesinado Antonio Cánovas del Castillo?",
+    "tipo": "fecha",
+    "opciones": ["1895", "1899", "1900", "1897"],
+    "respuesta": 3,
+    "explicacion": "El 8 de agosto de 1897, el anarquista Angiolillo lo ultimó en Santa Águeda (Guipúzcoa); su muerte, junto al Desastre de 1898, dejó al sistema sin su arquitecto.",
+    "dificultad": 3,
+    "tags": ["restauracion", "canovas", "anarquismo", "fechas"]
+  },
+  {
+    "id": "bachillerato2-restauracion-canovismo-009",
+    "enunciado": "El Desastre de 1898 dañó seriamente la legitimidad de los partidos del turno.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "La pérdida de Cuba, Puerto Rico y Filipinas y el desastre colonial empujaron a regeneracionismo y a la oposición (los «junios» de 1907); el turno siguió, pero ya sin vitalidad.",
+    "dificultad": 3,
+    "tags": ["restauracion", "crisis-1898", "regeneracionismo"]
+  },
+  {
+    "id": "bachillerato2-restauracion-canovismo-010",
+    "enunciado": "¿Qué reforma electoral aprobó Sagasta en 1890 amplió notablemente el número de votantes?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El voto femenino", "El sufragio universal masculino", "El sufragio de cabecera de distrito", "El voto reservado a los titulados"],
+    "respuesta": 1,
+    "explicacion": "La ley de 1890 implantó el sufragio universal masculino para varones mayores de 25 años, aunque el caciquismo siguió vaciándolo de contenido.",
+    "dificultad": 3,
+    "tags": ["restauracion", "sufragio", "sagasta", "fechas"]
+  }
+]

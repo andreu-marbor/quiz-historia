@@ -1,0 +1,102 @@
+[
+  {
+    "id": "bachillerato2-al-andalus-001",
+    "enunciado": "¿En qué año cruzaron las tropas musulmanas el Estrecho y comenzó la conquista de la península?",
+    "tipo": "fecha",
+    "opciones": ["711", "718", "722", "756"],
+    "respuesta": 0,
+    "explicacion": "En el verano de 711, Tariq ibn Ziyad cruzó el Estrecho con tropas bereberes; en pocos años cayeron Toledo (711), Córdoba (712) y Zaragoza (714).",
+    "dificultad": 1,
+    "tags": ["al-andalus", "conquista-islamica", "fechas"]
+  },
+  {
+    "id": "bachillerato2-al-andalus-002",
+    "enunciado": "¿Qué caudillo dirigió el cruce del Estrecho en 711 y da nombre a Gibraltar?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Musza ibn Nusayr", "Tariq ibn Ziyad", "Abd al-Rahman I", "Al-Mansur"],
+    "respuesta": 1,
+    "explicacion": "Tariq ibn Ziyad desembarcó en Jebel Tariq («monte de Tariq»), que dio nombre a Gibraltar; Musa ibn Nusayr, su superior, completó la conquista al año siguiente.",
+    "dificultad": 1,
+    "tags": ["al-andalus", "protagonistas", "conquista-islamica"]
+  },
+  {
+    "id": "bachillerato2-al-andalus-003",
+    "enunciado": "¿Qué batalla de 711 selló la derrota del rey visigodo Rodrigo?",
+    "tipo": "opcion-multiple",
+    "opciones": ["La batalla de Guadalete", "La batalla de Covadonga", "La batalla de Clavijo", "La batalla de las Navas de Tolosa"],
+    "respuesta": 0,
+    "explicacion": "En la batalla del río Guadalete (o de la Calahorra) murió o desapareció Rodrigo; los reinados cristianos de Covadonga (722), Clavijo y Navas de Tolosa (1212) son posteriores y del otro bando.",
+    "dificultad": 1,
+    "tags": ["al-andalus", "conquista-islamica", "batallas"]
+  },
+  {
+    "id": "bachillerato2-al-andalus-004",
+    "enunciado": "¿En qué año proclamó Abd al-Rahman I el emirato independiente de Córdoba?",
+    "tipo": "fecha",
+    "opciones": ["711", "929", "756", "1031"],
+    "respuesta": 2,
+    "explicacion": "En 756 Abd al-Rahman I, único superviviente de la familia omeya asesinada en Damasco, se proclamó emir independiente de Bagdad; hasta 929 no se proclamó califa.",
+    "dificultad": 2,
+    "tags": ["al-andalus", "omeyas", "fechas"]
+  },
+  {
+    "id": "bachillerato2-al-andalus-005",
+    "enunciado": "¿Qué título adoptó Abd al-Rahman III en el año 929 para rivalizar con el califa de Bagdad?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El de califa", "El de sultán", "El de emir mayor", "El de rey de reyes"],
+    "respuesta": 0,
+    "explicacion": "Abd al-Rahman III se proclamó califa de Córdoba en 929, asumiendo la jefatura religiosa y política del islam occidental; el título de sultán sería propio de épocas posteriores.",
+    "dificultad": 2,
+    "tags": ["al-andalus", "omeyas", "califato"]
+  },
+  {
+    "id": "bachillerato2-al-andalus-006",
+    "enunciado": "¿En qué año se desmanteló el Califato de Córdoba y se abrió el periodo de los reinos de taifas?",
+    "tipo": "fecha",
+    "opciones": ["1085", "1147", "1090", "1031"],
+    "respuesta": 3,
+    "explicacion": "Tras una guerra civil, en 1031 fue derrocado el califa Hisham III y Córdoba se proclamó república de taifas; las taifas nacieron del vacío de poder, no de una conquista.",
+    "dificultad": 3,
+    "tags": ["al-andalus", "taifas", "fechas"]
+  },
+  {
+    "id": "bachillerato2-al-andalus-007",
+    "enunciado": "Las parias eran tributos que los reinos cristianos hacían pagar a los reinos de taifas a cambio de protección militar.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Tras la caída de Toledo (1085), las taifas pagaron parias a León y Castilla para evitar ataques: un oro que debilitó a los propios reinos musulmanes, que siguieron pagándolas después a los almorávides.",
+    "dificultad": 2,
+    "tags": ["al-andalus", "taifas", "reinos-cristianos"]
+  },
+  {
+    "id": "bachillerato2-al-andalus-008",
+    "enunciado": "La batalla de Covadonga (722) supuso el fin de la presencia musulmana en la península ibérica.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 1,
+    "explicacion": "Falso: Covadonga (722) fue el comienzo simbólico del reino astur y de la expansión cristiana; al-Ándalus pervivió casi ochocientos años, hasta la rendición de Granada en 1492.",
+    "dificultad": 3,
+    "tags": ["al-andalus", "reconquista", "batallas"]
+  },
+  {
+    "id": "bachillerato2-al-andalus-009",
+    "enunciado": "¿Qué dinastía fundó el reino nazarí de Granada, el último de al-Ándalus?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Los omeyas", "Los abadíes", "Los nazaríes", "Los hammudíes"],
+    "respuesta": 2,
+    "explicacion": "Los nazaríes, de origen árabe, instalaron su capital en Granada en 1238 y gobernaron hasta 1492; los omeyas fueron la dinastía del emirato y el califato de Córdoba.",
+    "dificultad": 3,
+    "tags": ["al-andalus", "nazaries", "granada"]
+  },
+  {
+    "id": "bachillerato2-al-andalus-010",
+    "enunciado": "¿Cuál fue la capital de al-Ándalus durante la mayor parte de su existencia?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Toledo", "Córdoba", "Granada", "Sevilla"],
+    "respuesta": 1,
+    "explicacion": "Córdoba fue sede del emirato (756) y del califato (929-1031) y la ciudad más poblada de Occidente; Toledo solo fue capital visigoda y Granada lo fue del último reino, desde 1238.",
+    "dificultad": 2,
+    "tags": ["al-andalus", "ciudades", "cordoba"]
+  }
+]

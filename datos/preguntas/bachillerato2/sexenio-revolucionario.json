@@ -1,0 +1,102 @@
+[
+  {
+    "id": "bachillerato2-sexenio-revolucionario-001",
+    "enunciado": "¿En qué año estalló la revolución conocida como «La Gloriosa»?",
+    "tipo": "fecha",
+    "opciones": ["1866", "1873", "1868", "1874"],
+    "respuesta": 2,
+    "explicacion": "En septiembre de 1868 el levantamiento de Serrano, Topete y Prim en Cádiz derrocó a Isabel II; el himno de Riego y «La Marsellesa» sonarón en la Plaza de Oriente.",
+    "dificultad": 1,
+    "tags": ["sexenio", "revolucion-gloriosa", "fechas"]
+  },
+  {
+    "id": "bachillerato2-sexenio-revolucionario-002",
+    "enunciado": "¿Qué militares encabezaron el pronunciamiento de septiembre de 1868?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Prim, Serrano y Topete", "Espartero y O'Donnell", "Cánovas y Sagasta", "Serrano y Cánovas"],
+    "respuesta": 0,
+    "explicacion": "El almirante Topete dio el golpe en Cádiz, donde se unieron el general Serrano y el político Prim; los tres formaron el gobierno provisional de la revolución.",
+    "dificultad": 1,
+    "tags": ["sexenio", "protagonistas", "pronunciamientos"]
+  },
+  {
+    "id": "bachillerato2-sexenio-revolucionario-003",
+    "enunciado": "¿En qué barco abandonó España Isabel II tras la revolución de 1868?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El Santa María", "El La Girona", "El Numancia", "El Pelayo"],
+    "respuesta": 1,
+    "explicacion": "Isabel II salió de Sanlúcar de Barrameda en el vapor La Girona rumbo a Francia; el exilio de la reina hizo posible la búsqueda de un rey constitucional para España.",
+    "dificultad": 1,
+    "tags": ["sexenio", "isabel-ii", "exilio"]
+  },
+  {
+    "id": "bachillerato2-sexenio-revolucionario-004",
+    "enunciado": "¿En qué año se proclamó la Primera República española?",
+    "tipo": "fecha",
+    "opciones": ["1871", "1874", "1869", "1873"],
+    "respuesta": 3,
+    "explicacion": "El 11 de febrero de 1873 las Cortes proclamaron la República por amplia mayoría; duró once meses, con cuatro presidentes y profunda división interna.",
+    "dificultad": 2,
+    "tags": ["sexenio", "primera-republica", "fechas"]
+  },
+  {
+    "id": "bachillerato2-sexenio-revolucionario-005",
+    "enunciado": "La Constitución de 1869 consagró el sufragio universal masculino y una amplia declaración de derechos.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Fue la primera constitución española con derechos fundamentales (libertad de prensa, de reunión, de culto) y voto universal masculino para varones mayores de 25 años.",
+    "dificultad": 2,
+    "tags": ["sexenio", "constitucion-1869", "sufragio"]
+  },
+  {
+    "id": "bachillerato2-sexenio-revolucionario-006",
+    "enunciado": "¿Qué monarca subió al trono español en 1870 y abdicó en 1873?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Alfonso XII", "Amadeo I de Saboya", "Cristina de Borbón", "Leopoldo de Hohenzollern"],
+    "respuesta": 1,
+    "explicacion": "Amadeo I de Saboya fue elegido por las Cortes en 1870; su reinado fue breve y conflictivo —tanto con la izquierda como con la coronada— y dimitió en febrero de 1873.",
+    "dificultad": 2,
+    "tags": ["sexenio", "amadeo-i", "monarquia"]
+  },
+  {
+    "id": "bachillerato2-sexenio-revolucionario-007",
+    "enunciado": "La Primera República (1873-1874) sufrió fuertes divisiones internas entre unitarios y federales.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Los federalistas radicales de Pi y Margall chocaron con los más moderados, mientras guerras carlistas, cantonalismo y rebeliones militares desbordaron al gobierno.",
+    "dificultad": 2,
+    "tags": ["sexenio", "primera-republica", "federalismo"]
+  },
+  {
+    "id": "bachillerato2-sexenio-revolucionario-008",
+    "enunciado": "¿En qué año se proclamó rey a Alfonso XII tras el pronunciamiento de Martínez Campos?",
+    "tipo": "fecha",
+    "opciones": ["1874", "1876", "1873", "1875"],
+    "respuesta": 0,
+    "explicacion": "El 29 de diciembre de 1874, desde el cuartel de Sagunto, Martínez Campos proclamó rey a Alfonso XII; el monarca entró en Madrid en enero de 1875.",
+    "dificultad": 3,
+    "tags": ["sexenio", "restauracion", "borbones", "fechas"]
+  },
+  {
+    "id": "bachillerato2-sexenio-revolucionario-009",
+    "enunciado": "El cantonalismo de 1873 proclamó la independencia de cantones como Cartagena, Valencia o Alcoy dentro de un Estado federal.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "La sublevación cantonal, encabezada por Rojo y Ferrándiz en Cartagena, aceleró la caída de la República; los cantones resistieron meses con la escuadra sublevada en el Mediterráneo.",
+    "dificultad": 3,
+    "tags": ["sexenio", "cantonalismo", "primera-republica"]
+  },
+  {
+    "id": "bachillerato2-sexenio-revolucionario-010",
+    "enunciado": "¿Qué general entró en el Congreso con sus tropas el 3 de enero de 1874 y disolvió las Cortes?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Francisco Serrano", "Juan Prim", "Manuel Pavía", "Arsenio Martínez Campos"],
+    "respuesta": 2,
+    "explicacion": "El general Pavía cargó contra el Congreso al no formarse gobierno; Serrano asumió la dictadura personal hasta diciembre de 1874, en que se restauró la monarquía.",
+    "dificultad": 3,
+    "tags": ["sexenio", "golpes-de-estado", "protagonistas"]
+  }
+]

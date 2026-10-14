@@ -1,0 +1,102 @@
+[
+  {
+    "id": "bachillerato2-absolutismo-liberalismo-fernando-vii-001",
+    "enunciado": "¿Qué bando defendía la vuelta al absolutismo y el rechazo de la Constitución de 1812?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Los liberales", "Los absolutistas", "Los isabelinos", "Los progresistas"],
+    "respuesta": 1,
+    "explicacion": "Los absolutistas o serviles exigían el restablecimiento del Antiguo Régimen y de los fueros eclesiásticos; los liberales, divididos en moderados y progresistas, defendían la Constitución.",
+    "dificultad": 1,
+    "tags": ["fernando-vii", "absolutismo", "liberalismo"]
+  },
+  {
+    "id": "bachillerato2-absolutismo-liberalismo-fernando-vii-002",
+    "enunciado": "¿En qué año se firmó el Tratado de Valençay, por el que Napoleón liberó a Fernando VII?",
+    "tipo": "fecha",
+    "opciones": ["1808", "1814", "1813", "1812"],
+    "respuesta": 1,
+    "explicacion": "Se firmó el 11 de diciembre de 1813 y devolvió la corona a Fernando VII; el rey llegó a España en marzo de 1814 y reanudó su gobierno personal en mayo.",
+    "dificultad": 1,
+    "tags": ["fernando-vii", "guerra-independencia", "tratados", "fechas"]
+  },
+  {
+    "id": "bachillerato2-absolutismo-liberalismo-fernando-vii-003",
+    "enunciado": "¿Qué sistema de gobierno reinstauró Fernando VII al volver a reinar en 1814?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El absolutismo", "El liberalismo constitucional", "La regencia de María Cristina", "El sufragio censitario"],
+    "respuesta": 0,
+    "explicacion": "Entre 1814 y 1820 gobernó sin Cortes ni Constitución, apoyándose en la Santa Hermandad y en la represión de los liberales; el régimen constitucional solo volvió por la fuerza.",
+    "dificultad": 1,
+    "tags": ["fernando-vii", "absolutismo", "gobierno"]
+  },
+  {
+    "id": "bachillerato2-absolutismo-liberalismo-fernando-vii-004",
+    "enunciado": "El decreto de 4 de mayo de 1814 anuló la Constitución de 1812 y devolvió al rey el poder sin límites.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "El decreto respondía al Manifiesto de los Persas, firmado por 69 diputados absolutistas; marcó el fin del primer experimento liberal español.",
+    "dificultad": 2,
+    "tags": ["fernando-vii", "absolutismo", "constitucion-1812"]
+  },
+  {
+    "id": "bachillerato2-absolutismo-liberalismo-fernando-vii-005",
+    "enunciado": "¿En qué año se produjo el pronunciamiento del general Riego que abrió el Trienio Liberal?",
+    "tipo": "fecha",
+    "opciones": ["1823", "1814", "1820", "1833"],
+    "respuesta": 2,
+    "explicacion": "Enero de 1820: Riego se pronunció en Cabezas de San Juan con el «himno de riego»; el pronunciamiento obligó al rey a jurar la Constitución de 1812 y a convocar Cortes.",
+    "dificultad": 2,
+    "tags": ["fernando-vii", "pronunciamientos", "trienio-liberal", "fechas"]
+  },
+  {
+    "id": "bachillerato2-absolutismo-liberalismo-fernando-vii-006",
+    "enunciado": "¿Qué consecuencia tuvo la intervención de los Cien Mil Hijos de San Luis en 1823?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Restablecieron el absolutismo de Fernando VII", "Invadieron Francia para apoyar a Napoleón", "Derrotaron al ejército carlista", "Expulsaron a los franceses de Madrid"],
+    "respuesta": 0,
+    "explicacion": "El ejército francés, mandado por Angulema y autorizado por la Santa Alianza, entró en España y puso fin al Trienio Liberal en 1823; los liberales huyeron o fueron encarcelados.",
+    "dificultad": 2,
+    "tags": ["fernando-vii", "santa-alianza", "intervencion-extranjera"]
+  },
+  {
+    "id": "bachillerato2-absolutismo-liberalismo-fernando-vii-007",
+    "enunciado": "Fernando VII juró, suspendió y volvió a derogar la Constitución de 1812 en distintos momentos de su reinado.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "La dudosa de 1814, el juramento de 1820 y la derogación de 1823 le valieron el apodo de «el Rey Felón» y la frase de que «se salió con la suya».",
+    "dificultad": 2,
+    "tags": ["fernando-vii", "absolutismo", "apodos"]
+  },
+  {
+    "id": "bachillerato2-absolutismo-liberalismo-fernando-vii-008",
+    "enunciado": "¿En qué año murió Fernando VII y quedó el trono en manos de su hija Isabel II?",
+    "tipo": "fecha",
+    "opciones": ["1829", "1830", "1826", "1833"],
+    "respuesta": 3,
+    "explicacion": "Fernando VII murió el 29 de septiembre de 1833; la reina gobernadora María Cristina asumió la regencia y estalló la Primera Guerra Carlista.",
+    "dificultad": 3,
+    "tags": ["fernando-vii", "isabel-ii", "sucesion", "fechas"]
+  },
+  {
+    "id": "bachillerato2-absolutismo-liberalismo-fernando-vii-009",
+    "enunciado": "La Pragmática Sanción de 1830 eliminó la Ley Sálica para que Isabel II pudiera heredar el trono.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "La Ley Sálica excluía a las mujeres de la sucesión; su abolición en 1830 abrió el paso a la hija de Fernando VII y fue la causa inmediata del enfrentamiento con su hermano don Carlos.",
+    "dificultad": 3,
+    "tags": ["fernando-vii", "sucesion", "ley-salica"]
+  },
+  {
+    "id": "bachillerato2-absolutismo-liberalismo-fernando-vii-010",
+    "enunciado": "¿Qué pretendiente encabezó la causa absolutista tras la muerte de Fernando VII?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Espartero", "Cristina de Borbón", "El infante Carlos María Isidro", "El duque de Wellington"],
+    "respuesta": 2,
+    "explicacion": "Don Carlos, hermano del rey, se apoyó en la Ley Sálica y en los fueros de los reinos; sus seguidores, los carlistas, combatieron tres guerras contra los sucesores de Isabel II.",
+    "dificultad": 3,
+    "tags": ["fernando-vii", "carlismo", "pretendientes"]
+  }
+]

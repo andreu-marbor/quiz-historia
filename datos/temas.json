@@ -7,7 +7,7 @@
       "asignaturas": [
         {
           "id": "historia",
-          "titulo": "Historia",
+          "titulo": "Asignatura Ejemplo",
           "orden": 1,
           "temas": [
             {
@@ -33,7 +33,7 @@
       "asignaturas": [
         {
           "id": "historia",
-          "titulo": "Historia",
+          "titulo": "Asignatura Ejemplo",
           "orden": 1,
           "temas": [
             {
@@ -53,13 +53,178 @@
       "asignaturas": [
         {
           "id": "historia",
-          "titulo": "Historia",
+          "titulo": "Asignatura Ejemplo",
           "orden": 1,
           "temas": [
             {
               "id": "revolucion-rusa",
               "titulo": "La Revolución Rusa y la URSS",
               "orden": 2,
+              "minPreguntas": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bachillerato2",
+      "titulo": "2º Bachillerato",
+      "orden": 6,
+      "asignaturas": [
+        {
+          "id": "historia",
+          "titulo": "Historia",
+          "orden": 1,
+          "temas": [
+            {
+              "id": "romanizacion",
+              "titulo": "El proceso de romanización",
+              "orden": 1,
+              "minPreguntas": 10
+            },
+            {
+              "id": "al-andalus",
+              "titulo": "Al-Ándalus: evolución política",
+              "orden": 2,
+              "minPreguntas": 10
+            },
+            {
+              "id": "castilla-aragon-baja-edad-media",
+              "titulo": "Castilla y Aragón en la Baja Edad Media",
+              "orden": 3,
+              "minPreguntas": 10
+            },
+            {
+              "id": "reyes-catolicos",
+              "titulo": "El reinado de los Reyes Católicos",
+              "orden": 4,
+              "minPreguntas": 10
+            },
+            {
+              "id": "austria-mayores-siglo-xvi",
+              "titulo": "El reinado de los Austrias Mayores: política exterior del siglo XVI",
+              "orden": 5,
+              "minPreguntas": 10
+            },
+            {
+              "id": "reformismo-borbonico-xviii",
+              "titulo": "El reformismo borbónico en el siglo XVIII",
+              "orden": 6,
+              "minPreguntas": 10
+            },
+            {
+              "id": "cortes-cadiz-1812",
+              "titulo": "Las Cortes de Cádiz. La Constitución de 1812",
+              "orden": 7,
+              "minPreguntas": 10
+            },
+            {
+              "id": "absolutismo-liberalismo-fernando-vii",
+              "titulo": "Absolutismo frente a liberalismo. Evolución política del reinado de Fernando VII",
+              "orden": 8,
+              "minPreguntas": 10
+            },
+            {
+              "id": "revolucion-liberal-isabel-ii",
+              "titulo": "Revolución liberal en el reinado de Isabel II. Carlismo y desamortizaciones",
+              "orden": 9,
+              "minPreguntas": 10
+            },
+            {
+              "id": "sexenio-revolucionario",
+              "titulo": "El Sexenio Revolucionario (1868-1874)",
+              "orden": 10,
+              "minPreguntas": 10
+            },
+            {
+              "id": "restauracion-canovismo",
+              "titulo": "El régimen de la Restauración. Características y funcionamiento del sistema canovista",
+              "orden": 11,
+              "minPreguntas": 10
+            },
+            {
+              "id": "regeneracionismo-primero-de-rivera",
+              "titulo": "Panorama general del reinado de Alfonso XIII: regeneracionismo, crisis y dictadura de Primo de Rivera (1902-1931)",
+              "orden": 12,
+              "minPreguntas": 10
+            },
+            {
+              "id": "segunda-republica",
+              "titulo": "La Segunda República (1931-1936)",
+              "orden": 13,
+              "minPreguntas": 10
+            },
+            {
+              "id": "guerra-civil",
+              "titulo": "La Guerra Civil (1936-1939)",
+              "orden": 14,
+              "minPreguntas": 10
+            },
+            {
+              "id": "dictadura-franco",
+              "titulo": "La dictadura de Franco (1939-1975)",
+              "orden": 15,
+              "minPreguntas": 10
+            },
+            {
+              "id": "transicion-1978",
+              "titulo": "La Transición a la democracia: la Constitución de 1978",
+              "orden": 16,
+              "minPreguntas": 10
+            }
+          ]
+        },
+        {
+          "id": "historia-del-arte",
+          "titulo": "Historia del Arte",
+          "orden": 2,
+          "temas": [
+            {
+              "id": "templo-griego",
+              "titulo": "El templo griego",
+              "orden": 1,
+              "minPreguntas": 10
+            },
+            {
+              "id": "arquitectura-urbana-roma",
+              "titulo": "Arquitectura y urbanismo en Roma",
+              "orden": 2,
+              "minPreguntas": 10
+            },
+            {
+              "id": "arquitectura-romanica",
+              "titulo": "La arquitectura románica: el monasterio y la iglesia",
+              "orden": 3,
+              "minPreguntas": 10
+            },
+            {
+              "id": "catedral-gotica",
+              "titulo": "La catedral gótica",
+              "orden": 4,
+              "minPreguntas": 10
+            },
+            {
+              "id": "renacimiento-mecenazgo",
+              "titulo": "Miguel Ángel, Rafael y Leonardo. Mecenazgo y pintura",
+              "orden": 5,
+              "minPreguntas": 10
+            },
+            {
+              "id": "barroco-urbanismo",
+              "titulo": "El espacio arquitectónico y el urbanismo en el barroco",
+              "orden": 6,
+              "minPreguntas": 10
+            },
+            {
+              "id": "romanticismo-realismo-impresionismo",
+              "titulo": "Siglo XIX: Romanticismo, realismo e impresionismo",
+              "orden": 7,
+              "minPreguntas": 10
+            },
+            {
+              "id": "vanguardias-artisticas",
+              "titulo": "Vanguardias artísticas: fauvismo, cubismo, surrealismo, dadaísmo y expresionismo",
+              "orden": 8,
               "minPreguntas": 10
             }
           ]

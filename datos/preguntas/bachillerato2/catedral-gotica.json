@@ -1,0 +1,102 @@
+[
+  {
+    "id": "bachillerato2-catedral-gotica-001",
+    "enunciado": "¿Qué elemento exterior evacúa el empuje de la bóveda y permite muros ligeros con grandes ventanales?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Los contrafuertes macizos", "Las pilas bautismales", "Los arbotantes", "Los claves de bóveda"],
+    "respuesta": 2,
+    "explicacion": "El arbotante transmite el empuje desde la bóveda hasta el contrafuerte exterior; así el muro se reduce a un mero tabique vidriero, a diferencia del macizo muro románico.",
+    "dificultad": 1,
+    "tags": ["gotica", "estructura", "arbotantes"]
+  },
+  {
+    "id": "bachillerato2-catedral-gotica-002",
+    "enunciado": "¿Qué iglesia se considera el nacimiento del arte gótico?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Notre-Dame de París", "La catedral de Chartres", "La abadía de Saint-Denis", "El Panteón de París"],
+    "respuesta": 2,
+    "explicacion": "En la cripta y el coro de Saint-Denis, bajo el abad Suger (1140-1144), se combinaron el arco apuntado, los vitrales y la luz para expresar la teología de la claridad.",
+    "dificultad": 1,
+    "tags": ["gotica", "saint-denis", "origenes"]
+  },
+  {
+    "id": "bachillerato2-catedral-gotica-003",
+    "enunciado": "¿Qué siglos abarca el gran periodo de las catedrales góticas francesas?",
+    "tipo": "fecha",
+    "opciones": ["Siglos XII-XIII", "Siglos XIV-XV", "Siglos IX-X", "Siglos XVI-XVII"],
+    "respuesta": 0,
+    "explicacion": "Entre 1150 y 1300 se levantaron París, Chartres, Reims y Amiens; después el gótico se diversificó en rayonnant, flamígero y variantes nacionales.",
+    "dificultad": 2,
+    "tags": ["gotica", "francia", "cronologia", "fechas"]
+  },
+  {
+    "id": "bachillerato2-catedral-gotica-004",
+    "enunciado": "¿Qué elemento de la fachada occidental gótica se sitúa sobre las portadas?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El tímpano", "El rosetón", "El arbotante", "El triforio"],
+    "respuesta": 1,
+    "explicacion": "El gran rosetón frontal ilumina el coro y simboliza la Virgen; el tímpano es la decoración de la portada, el arbotante está en el exterior y el triforio, en la nave.",
+    "dificultad": 1,
+    "tags": ["gotica", "fachada", "roseton", "vitrales"]
+  },
+  {
+    "id": "bachillerato2-catedral-gotica-005",
+    "enunciado": "Los vitrales medievales tenían una función didáctica: contaban la Biblia a los fieles analfabetos.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Las vidrieras —rojo y azul dominantes— formaban un «libro de los pobres» con escenas sagradas, además de filtrar una luz que el gótico consideraba divina.",
+    "dificultad": 2,
+    "tags": ["gotica", "vitrales", "luz", "religion"]
+  },
+  {
+    "id": "bachillerato2-catedral-gotica-006",
+    "enunciado": "¿Qué obra gótica se levantó en Toledo por iniciativa del arzobispo Ximénez de Rada?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Fray Martín y el arzobispo Ximénez de Rada", "Juan de Herrera", "Antoni Gaudí", "Diego de Siloé"],
+    "respuesta": 0,
+    "explicacion": "La catedral de Toledo (1226-1493) es obra de Fray Martín, siguiendo el modelo de Bourges; el resto de opciones corresponden al Renacimiento, al Modernismo y al siglo XVI castellano.",
+    "dificultad": 2,
+    "tags": ["gotica", "espana", "toledo", "catedrales"]
+  },
+  {
+    "id": "bachillerato2-catedral-gotica-007",
+    "enunciado": "La catedral de Chartres conserva casi todos sus vitrales originales del siglo XIII.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Chartres es el mayor conjunto de vidrieras medievales del mundo: unas 176, de la época de San Luis; sobrevivieron al incendio de 1194 que destruyó la catedral anterior.",
+    "dificultad": 2,
+    "tags": ["gotica", "chartres", "vitrales"]
+  },
+  {
+    "id": "bachillerato2-catedral-gotica-008",
+    "enunciado": "¿En qué año comenzó la construcción de Notre-Dame de París?",
+    "tipo": "fecha",
+    "opciones": ["1140", "1163", "1345", "1200"],
+    "respuesta": 1,
+    "explicacion": "Las obras se iniciaron en 1163 bajo el obispo Maurice de Sully y se prolongaron hasta 1345; su fachada con dos torres y su tribuna de reyes son modelo del gótico francés.",
+    "dificultad": 3,
+    "tags": ["gotica", "paris", "catedrales", "fechas"]
+  },
+  {
+    "id": "bachillerato2-catedral-gotica-009",
+    "enunciado": "El gótico español suele conservar muros y contrafuertes más macizos y una decoración más sobria que el gótico francés.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Las catedrales hispánicas (Toledo, Burgos, León) mantienen masas más cerradas, naves menos altas y menor desarrollo de la girola, con influencias del gótico alemán y mudéjar.",
+    "dificultad": 3,
+    "tags": ["gotica", "espana", "comparacion"]
+  },
+  {
+    "id": "bachillerato2-catedral-gotica-010",
+    "enunciado": "¿Qué añadido gótico distingue a la catedral de Burgos?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Su cúpula barroca", "Su pórtico románico", "Su rosetón del siglo XII", "Sus agujas caladas añadidas en el siglo XV"],
+    "respuesta": 3,
+    "explicacion": "Las agujas góticas de las torres, obra de Juan de Colonia (1440-1456), con su tracería calada, son la imagen más reconocible de Burgos; la catedral es de 1221-1567.",
+    "dificultad": 3,
+    "tags": ["gotica", "espana", "burgos", "catedrales"]
+  }
+]

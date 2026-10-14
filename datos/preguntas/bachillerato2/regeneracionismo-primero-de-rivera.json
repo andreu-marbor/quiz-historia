@@ -1,0 +1,102 @@
+[
+  {
+    "id": "bachillerato2-regeneracionismo-primero-de-rivera-001",
+    "enunciado": "¿En qué año alcanzó Alfonso XIII la mayoría de edad y asumió el gobierno personal?",
+    "tipo": "fecha",
+    "opciones": ["1886", "1906", "1921", "1902"],
+    "respuesta": 3,
+    "explicacion": "Proclamado rey al nacer en 1886, Alfonso XIII fue declarado mayor de edad en 1902; su reinado personal se extendió entonces hasta la proclamación de la República en 1931.",
+    "dificultad": 1,
+    "tags": ["alfonso-xiii", "regeneracionismo", "fechas"]
+  },
+  {
+    "id": "bachillerato2-regeneracionismo-primero-de-rivera-002",
+    "enunciado": "¿Qué filósofo y escritor es uno de los nombres mayores del regeneracionismo español?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Miguel de Unamuno", "Benito Pérez Galdós", "Vicente Blasco Ibáñez", "Ramón del Valle-Inclán"],
+    "respuesta": 0,
+    "explicacion": "Unamuno, con «La vida es sueño» (1903) y su rectorado en Salamanca, encarnó la crítica al «sentimiento trágico» de España; el 98 regeneró también Costa, Ganivet y los escritores de la Generación del 98.",
+    "dificultad": 1,
+    "tags": ["regeneracionismo", "generacion-98", "intelectuales"]
+  },
+  {
+    "id": "bachillerato2-regeneracionismo-primero-de-rivera-003",
+    "enunciado": "¿Qué obra de Joaquín Costa denunció el dominio de la oligarquía y el caciquismo en la España de la Restauración?",
+    "tipo": "opcion-multiple",
+    "opciones": ["La crisis de España", "España y su destino", "Programa de gobierno", "Oligarquía y caciquismo"],
+    "respuesta": 3,
+    "explicacion": "«Oligarquía y caciquismo como es actualmente el gobierno en España» (1901) fue el diagnóstico de Costa, que pedía «hacer España» con escuelas, agua, crédito y obras públicas.",
+    "dificultad": 3,
+    "tags": ["regeneracionismo", "costa", "caciquismo", "libros"]
+  },
+  {
+    "id": "bachillerato2-regeneracionismo-primero-de-rivera-004",
+    "enunciado": "La crisis de 1917 reunió a tres frentes de oposición: militar, parlamentario y social.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Los jefes de la Asociación de Militares exigieron reformas, los diputados catalanes el constituyente y la UGT convocó la huelga general de agosto; el gobierno de Dato reprimió y negoció por separado.",
+    "dificultad": 2,
+    "tags": ["crisis-1917", "militarismo", "huelga-general"]
+  },
+  {
+    "id": "bachillerato2-regeneracionismo-primero-de-rivera-005",
+    "enunciado": "¿En qué año se fundó la CNT en el congreso del Teatro de la Comedia de Madrid?",
+    "tipo": "fecha",
+    "opciones": ["1905", "1912", "1910", "1917"],
+    "respuesta": 2,
+    "explicacion": "La Confederación Nacional del Trabajo se constituyó en 1910 con sindicatos anarquistas de toda España; en 1919 la semana trágica de Barcelona la convirtió en la fuerza obrera del norte.",
+    "dificultad": 2,
+    "tags": ["sindicalismo", "cnt", "anarquismo", "fechas"]
+  },
+  {
+    "id": "bachillerato2-regeneracionismo-primero-de-rivera-006",
+    "enunciado": "¿Qué régimen encabezó Miguel Primo de Rivera a partir de 1923?",
+    "tipo": "opcion-multiple",
+    "opciones": ["La dictadura de Primo de Rivera", "El gobierno de Maura", "El pronunciamiento de 1930", "La regencia de María Cristina"],
+    "respuesta": 0,
+    "explicacion": "La noche del 13 de septiembre de 1923 Primo de Rivera, capitán general de Cataluña, dio un golpe de Estado aceptado por el rey para acabar con el parlamentarismo y la «cuestión africana».",
+    "dificultad": 2,
+    "tags": ["primo-de-rivera", "dictadura", "golpe-de-estado"]
+  },
+  {
+    "id": "bachillerato2-regeneracionismo-primero-de-rivera-007",
+    "enunciado": "La dictadura se organizó primero en un Directorio Militar (1923-1925) y después en un Directorio Civil (1925-1930).",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "El primer gobierno fue de militares; en 1925 se incorporaron civiles como Cambó o los comisarios generales, en un intento de dar al régimen apariencia institucional.",
+    "dificultad": 2,
+    "tags": ["primo-de-rivera", "dictadura", "instituciones"]
+  },
+  {
+    "id": "bachillerato2-regeneracionismo-primero-de-rivera-008",
+    "enunciado": "¿En qué año dimitió Primo de Rivera, dejando al rey sin respaldo político?",
+    "tipo": "fecha",
+    "opciones": ["1929", "1931", "1928", "1930"],
+    "respuesta": 3,
+    "explicacion": "El 28 de enero de 1930 Alfonso XIII aceptó su dimisión tras la huelga estudiantil y la oposición de universidades y partes del ejército; murió en París dos meses después.",
+    "dificultad": 3,
+    "tags": ["primo-de-rivera", "dictadura", "fechas"]
+  },
+  {
+    "id": "bachillerato2-regeneracionismo-primero-de-rivera-009",
+    "enunciado": "El pacto de San Sebastián (agosto de 1929) unió a republicanos y a la oposición monárquica en torno a la caída de la monarquía.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "En la asamblea de la ciudad vasca se formó una comisión revolucionaria con Azaña, Alcalá-Zamora, Lerroux, el PSOE y los nacionalistas; preparó el compromiso de 1930 y el levantamiento de Jaca.",
+    "dificultad": 3,
+    "tags": ["pacto-de-san-sebastian", "republicanismo", "crisis-de-la-monarquia"]
+  },
+  {
+    "id": "bachillerato2-regeneracionismo-primero-de-rivera-010",
+    "enunciado": "¿Qué desastre militar de 1921 en el Rif desacreditó al ejército y a la política colonial?",
+    "tipo": "opcion-multiple",
+    "opciones": ["La semana trágica de Barcelona", "El desastre de Annual", "La huelga de La Canadiense", "La crisis de 1917"],
+    "respuesta": 1,
+    "explicacion": "En Annual, el ejército de Silvestre sufrió miles de bajas al retroceder ante las fuerzas de Abd el-Krim; el informe Picasso puso de manifiesto la mala gestión militar y preparó el terreno de la dictadura.",
+    "dificultad": 3,
+    "tags": ["guerra-del-rif", "annual", "ejercito", "crisis"]
+  }
+]

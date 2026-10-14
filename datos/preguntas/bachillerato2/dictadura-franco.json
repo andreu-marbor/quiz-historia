@@ -1,0 +1,102 @@
+[
+  {
+    "id": "bachillerato2-dictadura-franco-001",
+    "enunciado": "¿Qué títulos ostentó Francisco Franco al frente del Estado?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Presidente y Generalísimo", "Rey y Caudillo", "Generalísimo de los Ejércitos y Caudillo de España", "Director del Estado"],
+    "respuesta": 2,
+    "explicacion": "Franco acumuló los cargos de jefe del Estado, Generalísimo de los Ejércitos y Caudillo de España, además de jefe nacional de Falange y gran maestre de los órdenes militares.",
+    "dificultad": 1,
+    "tags": ["dictadura-franco", "franco", "cargos"]
+  },
+  {
+    "id": "bachillerato2-dictadura-franco-002",
+    "enunciado": "¿En qué año se creó el único partido legal del régimen?",
+    "tipo": "fecha",
+    "opciones": ["1939", "1937", "1943", "1940"],
+    "respuesta": 1,
+    "explicacion": "En abril de 1937 el decreto de unificación fusionó Falange y las JONS con los tradicionalistas en «Falange Española Tradicionalista y de las Juntas de Ofensiva Nacional Sindicalista».",
+    "dificultad": 1,
+    "tags": ["dictadura-franco", "partido-unico", "fechas"]
+  },
+  {
+    "id": "bachillerato2-dictadura-franco-003",
+    "enunciado": "¿Cómo se llamó el partido único creado por el decreto de unificación de 1937?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El PSOE", "El Partido Liberal", "Falange Española Tradicionalista y de las JONS", "El PCE"],
+    "respuesta": 2,
+    "explicacion": "El régimen se apoyó en Falange, con su jerarquía y su uniforme, aunque Franco equilibró el partido con los católicos y el ejército: un sistema de «búnker» de fuerzas del Movimiento.",
+    "dificultad": 2,
+    "tags": ["dictadura-franco", "partido-unico", "falange"]
+  },
+  {
+    "id": "bachillerato2-dictadura-franco-004",
+    "enunciado": "¿En qué año ingresó España en la Organización de Naciones Unidas?",
+    "tipo": "fecha",
+    "opciones": ["1950", "1960", "1945", "1955"],
+    "respuesta": 3,
+    "explicacion": "España fue excluida de la ONU en 1945 por su cercanía a las potencias del Eje; su ingreso, en 1955, marcó el fin del aislamiento diplomático.",
+    "dificultad": 2,
+    "tags": ["dictadura-franco", "aislamiento", "onu", "fechas"]
+  },
+  {
+    "id": "bachillerato2-dictadura-franco-005",
+    "enunciado": "España fue declarada país no beligerante en la Segunda Guerra Mundial y envió la División Azul al frente ruso.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Aunque España no entró en guerra, unos 45.000 voluntarios combatieron desde 1941 en la URSS con la División Azul; su retirada en 1943 respondió a la presión aliada.",
+    "dificultad": 2,
+    "tags": ["dictadura-franco", "segunda-guerra-mundial", "division-azul"]
+  },
+  {
+    "id": "bachillerato2-dictadura-franco-006",
+    "enunciado": "El Concordato de 1953 con la Santa Sede y los pactos con Estados Unidos terminaron con el aislamiento del régimen.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "El Concordato reconoció a la Iglesia católica en España; los Acuerdos de 1953 firmaron bases militares estadounidenses a cambio de ayuda económica. Los tres —junto a la ONU de 1955— son los «pactos del 53».",
+    "dificultad": 2,
+    "tags": ["dictadura-franco", "aislamiento", "concordato", "eeuu"]
+  },
+  {
+    "id": "bachillerato2-dictadura-franco-007",
+    "enunciado": "¿Qué ley de 1947 designó a Franco como jefe del Estado vitalicio y reguló la sucesión a la Corona?",
+    "tipo": "opcion-multiple",
+    "opciones": ["La Ley de Sucesión en la Jefatura del Estado", "La Ley de Prensa e Imprenta", "El Concordato con la Santa Sede", "La Ley de Principios Fundamentales del Movimiento"],
+    "respuesta": 0,
+    "explicacion": "La Ley de 26 de julio de 1947 declaró a España un Estado de derecho y permitió a Franco nombrar a su sucesor con título de rey o príncipe; fue reformada en 1967.",
+    "dificultad": 2,
+    "tags": ["dictadura-franco", "sucesion", "legislacion"]
+  },
+  {
+    "id": "bachillerato2-dictadura-franco-008",
+    "enunciado": "¿Qué medida económica de 1959 abrió España al exterior y marcó el inicio del «milagro español»?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El Convenio de Bruselas", "El Plan de Estabilización de 1959", "La Constitución de 1967", "El primer plan quinquenal"],
+    "respuesta": 1,
+    "explicacion": "El Plan de Estabilización de 1959 devaluó la peseta, liberalizó comercio y finanzas y frenó la inflación; la entrada de turismo, capital y tecnología abrió dos décadas de fuerte crecimiento.",
+    "dificultad": 3,
+    "tags": ["dictadura-franco", "economia", "estabilizacion", "fechas"]
+  },
+  {
+    "id": "bachillerato2-dictadura-franco-009",
+    "enunciado": "La Ley de Prensa de 1966 eliminó la censura previa obligatoria de los periódicos.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "La «Ley Blanco» sustituyó la censura directa por fianzas y responsabilidad posterior; no supuso la libertad de prensa, pero permitió publicaciones mucho más críticas, como «Mundo Obrero» o «Cuadernos para el Diálogo».",
+    "dificultad": 3,
+    "tags": ["dictadura-franco", "prensa", "censura", "apertura"]
+  },
+  {
+    "id": "bachillerato2-dictadura-franco-010",
+    "enunciado": "¿En qué año murió Francisco Franco?",
+    "tipo": "fecha",
+    "opciones": ["1973", "1976", "1970", "1975"],
+    "respuesta": 3,
+    "explicacion": "Franco murió el 20 de noviembre de 1975, dos días después de la ejecución de los últimos represaliados por el franquismo; Juan Carlos I fue proclamado rey el 22 de noviembre.",
+    "dificultad": 3,
+    "tags": ["dictadura-franco", "franco", "fin-de-la-dictadura", "fechas"]
+  }
+]

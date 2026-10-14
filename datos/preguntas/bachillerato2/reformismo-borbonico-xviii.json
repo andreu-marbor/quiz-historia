@@ -1,0 +1,102 @@
+[
+  {
+    "id": "bachillerato2-reformismo-borbonico-xviii-001",
+    "enunciado": "¿Quién era el candidato borbón al trono de España en la Guerra de Sucesión?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El archiduque Carlos de Austria", "Felipe de Anjou", "James Francis Edward Stuart", "Leopoldo I de Habsburgo"],
+    "respuesta": 1,
+    "explicacion": "Felipe de Anjou, nieto de Luis XIV de Francia, fue el bando borbónico; el archiduque Carlos, apoyado por Austria, Inglaterra y los Países Bajos, era el candidato austracista.",
+    "dificultad": 1,
+    "tags": ["reformismo-borbonico", "guerra-sucesion", "borbones"]
+  },
+  {
+    "id": "bachillerato2-reformismo-borbonico-xviii-002",
+    "enunciado": "¿En qué año se firmaron los Tratados de Utrecht que pusieron fin a la Guerra de Sucesión?",
+    "tipo": "fecha",
+    "opciones": ["1700", "1714", "1713", "1702"],
+    "respuesta": 2,
+    "explicacion": "Utrecht se firmó en 1713 (el acta final con Austria, en Rastatt, es de 1714); reconoció a Felipe V como rey de España a cambio de renunciar a los dominios italianos y flandeses.",
+    "dificultad": 1,
+    "tags": ["reformismo-borbonico", "guerra-sucesion", "tratados", "fechas"]
+  },
+  {
+    "id": "bachillerato2-reformismo-borbonico-xviii-003",
+    "enunciado": "¿Qué territorios cedió España a Gran Bretaña en el Tratado de Utrecht?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Gibraltar y Menorca", "Cerdeña y Sicilia", "Filipinas y Cuba", "Portugal y Nápoles"],
+    "respuesta": 0,
+    "explicacion": "Gibraltar y Menorca pasaron a la Corona británica (Menorca la recuperó España en 1802); Cerdeña y Sicilia fueron para Austria y Saboya, y Filipinas y Cuba no se cedieron.",
+    "dificultad": 2,
+    "tags": ["reformismo-borbonico", "guerra-sucesion", "ultramar", "tratados"]
+  },
+  {
+    "id": "bachillerato2-reformismo-borbonico-xviii-004",
+    "enunciado": "La Guerra de Sucesión se libró también en la península, donde el bando austracista contó con Portugal, Saboya y amplios apoyos en la Corona de Aragón.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Aragón, Valencia, Cataluña y Mallorca apoyaron al archiduque Carlos; Castilla fue borbónica. Por eso, tras la guerra, los Borbones castigaron a los territorios perdedores con los Decretos de Nueva Planta.",
+    "dificultad": 2,
+    "tags": ["reformismo-borbonico", "guerra-sucesion", "territorios"]
+  },
+  {
+    "id": "bachillerato2-reformismo-borbonico-xviii-005",
+    "enunciado": "¿Qué decretos de Felipe V abolieron los fueros e instituciones propias de la Corona de Aragón?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El fuero real", "Las leyes de Toro", "El concordato de 1753", "Los decretos de Nueva Planta"],
+    "respuesta": 3,
+    "explicacion": "Los decretos de Nueva Planta (1707-1716) suspendieron las cortes, los fueros y la administración propia de Valencia, Aragón, Cataluña y Mallorca, imponiendo el modelo castellano.",
+    "dificultad": 2,
+    "tags": ["reformismo-borbonico", "nueva-planta", "territorios"]
+  },
+  {
+    "id": "bachillerato2-reformismo-borbonico-xviii-006",
+    "enunciado": "¿Qué órganos de gobierno sustituyeron a los antiguos Consejos en la administración borbónica?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Las secretarías de Estado y Despacho", "Las ferias", "Los corregidores", "Los virreinados"],
+    "respuesta": 0,
+    "explicacion": "Los Borbones sustituyeron el sistema de consejos por secretarías de Estado y Despacho (Guerra, Marina, Indias) dirigidas por ministros con poder ejecutivo, siguiendo el modelo francés.",
+    "dificultad": 2,
+    "tags": ["reformismo-borbonico", "administracion", "reformas"]
+  },
+  {
+    "id": "bachillerato2-reformismo-borbonico-xviii-007",
+    "enunciado": "La Ilustración se difundió en la España del siglo XVIII a través de periódicos, sociedades económicas de amigos del país y el despotismo ilustrado.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Las sociedades económicas promovieron agricultura, industria y comercio, y los gabinetes de lectura y los periódicos difundieron las ideas; el lema de Carlos III —gobernar para el pueblo, pero sin el pueblo— resume el despotismo ilustrado.",
+    "dificultad": 2,
+    "tags": ["reformismo-borbonico", "ilustracion", "sociedades-economicas"]
+  },
+  {
+    "id": "bachillerato2-reformismo-borbonico-xviii-008",
+    "enunciado": "¿En qué año expulsó Carlos III a los jesuitas de los dominios españoles?",
+    "tipo": "fecha",
+    "opciones": ["1759", "1788", "1767", "1716"],
+    "respuesta": 2,
+    "explicacion": "En 1767, siguiendo la bula de Clemente XIV, Carlos III expulsó a la Compañía de Jesús acusándolos de conspirar; perdieron sus colegios y su enorme influencia educativa.",
+    "dificultad": 3,
+    "tags": ["reformismo-borbonico", "carlos-iii", "jesuitas", "fechas"]
+  },
+  {
+    "id": "bachillerato2-reformismo-borbonico-xviii-009",
+    "enunciado": "El motín de Esquilache (1766) en Madrid obligó a Carlos III a destituir a su ministro y a reformar el abrigo y el sombrero de los madrileños.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Los tumultos de 1766, con trasfondo de crisis de subsistencias, acabaron con la caída del marqués de Esquilache y con medidas de abastecimiento; tras ellos se expulsó también a los jesuitas.",
+    "dificultad": 3,
+    "tags": ["reformismo-borbonico", "motines", "carlos-iii"]
+  },
+  {
+    "id": "bachillerato2-reformismo-borbonico-xviii-010",
+    "enunciado": "¿Qué acontecimiento dejó el trono de España vacante y abierto a una dinastía francesa?",
+    "tipo": "opcion-multiple",
+    "opciones": ["La paz de Utrecht", "La batalla de Almenar", "La llegada de Felipe V a Madrid", "La muerte de Carlos II sin herederos"],
+    "respuesta": 3,
+    "explicacion": "Carlos II «el Hechizado» murió en 1700 sin descendencia válida; su testamento favoreció a Felipe de Anjou y desató la guerra europea por la sucesión española.",
+    "dificultad": 3,
+    "tags": ["reformismo-borbonico", "guerra-sucesion", "habsburgo"]
+  }
+]

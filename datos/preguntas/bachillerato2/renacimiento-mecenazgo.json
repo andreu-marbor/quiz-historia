@@ -1,0 +1,102 @@
+[
+  {
+    "id": "bachillerato2-renacimiento-mecenazgo-001",
+    "enunciado": "¿Qué ciudad fue el centro del Renacimiento italiano?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Venecia", "Roma", "Florencia", "Nápoles"],
+    "respuesta": 2,
+    "explicacion": "Florencia, con los Médici, dio a Brunelleschi, Donatello y Leonardo el impulso inicial; Roma y Venecia recogieron después la herencia, y Génua y Milán tuvieron manifestaciones propias.",
+    "dificultad": 1,
+    "tags": ["renacimiento", "florencia", "mecenazgo"]
+  },
+  {
+    "id": "bachillerato2-renacimiento-mecenazgo-002",
+    "enunciado": "¿Qué familia florentina fue la gran mecenas del Renacimiento temprano?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Los Médici", "Los Borgia", "Los Sforza", "Los Este"],
+    "respuesta": 0,
+    "explicacion": "Cosme el Viejo y Lorenzo el Magnífico financiaron artistas, bibliotecas y la Academia Platónica; los Sforza y los Este protegieron a Leonardo y a artistas de Mantua y Ferrara.",
+    "dificultad": 1,
+    "tags": ["renacimiento", "medici", "mecenazgo"]
+  },
+  {
+    "id": "bachillerato2-renacimiento-mecenazgo-003",
+    "enunciado": "¿En qué año se inició la construcción de la basílica de San Pedro del Vaticano?",
+    "tipo": "fecha",
+    "opciones": ["1498", "1506", "1520", "1564"],
+    "respuesta": 1,
+    "explicacion": "Julio II encargó la nueva basílica a Bramante en 1506; participaron Rafael, Sangallo y, sobre todo, Miguel Ángel, que diseñó la cúpula. Se terminó en el siglo XVI con Maderno y Bernini.",
+    "dificultad": 2,
+    "tags": ["renacimiento", "san-pedro", "mecenazgo-papal", "fechas"]
+  },
+  {
+    "id": "bachillerato2-renacimiento-mecenazgo-004",
+    "enunciado": "¿En qué iglesia milanesa pintó Leonardo da Vinci La última Cena?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Santa María la Mayor", "La catedral de Milán", "San Lorenzo", "Santa Maria delle Grazie"],
+    "respuesta": 3,
+    "explicacion": "La pintó en el muro del refectorio dominico de Santa Maria delle Grazie entre 1495 y 1498, bajo la protección de Ludovico Sforza; su técnica al temple y óleo sobre yeso se degradeó pronto.",
+    "dificultad": 1,
+    "tags": ["renacimiento", "leonardo", "ultima-cena"]
+  },
+  {
+    "id": "bachillerato2-renacimiento-mecenazgo-005",
+    "enunciado": "La última Cena de Leonardo ocupa el muro del refectorio de Santa Maria delle Grazie y fue pintada hacia 1495-1498.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Leonardo rompió con el fresco tradicional para trabajar con más libertad, eligiendo el momento en que Cristo anuncia la traición; la composición se organiza en cuatro grupos de tres apóstoles.",
+    "dificultad": 2,
+    "tags": ["renacimiento", "leonardo", "ultima-cena"]
+  },
+  {
+    "id": "bachillerato2-renacimiento-mecenazgo-006",
+    "enunciado": "¿Qué fresco de Rafael decora la Stanza della Segnatura del Vaticano?",
+    "tipo": "opcion-multiple",
+    "opciones": ["La capilla Sixtina", "El Juicio Final", "La escuela de Atenas", "El panteón de Agripa"],
+    "respuesta": 2,
+    "explicacion": "La escuela de Atenas reúne a Platón y Aristóteles entre los filósofos antiguos, en paralelo a la Disputación del sacramento de la pared opuesta: síntesis del saber clásico y cristiano.",
+    "dificultad": 2,
+    "tags": ["renacimiento", "rafael", "pintura", "vaticano"]
+  },
+  {
+    "id": "bachillerato2-renacimiento-mecenazgo-007",
+    "enunciado": "La capilla Sixtina fue pintada por Miguel Ángel por encargo de Julio II, y el Juicio Final es una obra posterior, de Clemente VII y Pablo III.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "El techo se realizó entre 1508 y 1512; el Juicio Final, en la pared del altar, se pintó entre 1536 y 1541, con un Miguel Ángel ya de otra sensibilidad, tras el Saco de Roma.",
+    "dificultad": 2,
+    "tags": ["renacimiento", "miguel-angel", "sixtina"]
+  },
+  {
+    "id": "bachillerato2-renacimiento-mecenazgo-008",
+    "enunciado": "¿En qué año comenzó Miguel Ángel a pintar el techo de la capilla Sixtina?",
+    "tipo": "fecha",
+    "opciones": ["1499", "1512", "1508", "1536"],
+    "respuesta": 2,
+    "explicacion": "Comenzó en mayo de 1508 y lo terminó en octubre de 1512; el programa narra el Génesis con las nueve escenas centrales y los profetas, sibilas y «ignudi».",
+    "dificultad": 3,
+    "tags": ["renacimiento", "miguel-angel", "sixtina", "fechas"]
+  },
+  {
+    "id": "bachillerato2-renacimiento-mecenazgo-009",
+    "enunciado": "Leonardo, Miguel Ángel y Rafael forman la trinidad del Renacimiento clásico, todos activos en el primer tercio del siglo XVI.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Leonardo (1452-1519) y Miguel Ángel (1475-1564) se solaparon con Rafael (1483-1520); su coincidencia en Roma y Florencia define el Renacimiento clásico o cinquecento.",
+    "dificultad": 3,
+    "tags": ["renacimiento", "leonardo", "miguel-angel", "rafael"]
+  },
+  {
+    "id": "bachillerato2-renacimiento-mecenazgo-010",
+    "enunciado": "¿Qué recurso técnico permitió a los pintores renacentistas representar el espacio con profundidad?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El oro de fondo", "La perspectiva lineal", "La jerarquía de figuras", "El hieratismo"],
+    "respuesta": 1,
+    "explicacion": "Brunelleschi formuló y Alberti sistematizó la perspectiva cónica con punto de fuga; los otros términos corresponden al arte medieval o al egipcio.",
+    "dificultad": 3,
+    "tags": ["renacimiento", "perspectiva", "pintura"]
+  }
+]

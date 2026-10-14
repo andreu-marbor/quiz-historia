@@ -1,0 +1,102 @@
+[
+  {
+    "id": "bachillerato2-arquitectura-romanica-001",
+    "enunciado": "¿Qué siglos abarca el apogeo del románico en Europa?",
+    "tipo": "fecha",
+    "opciones": ["Siglos XI-XIII", "Siglos XIV-XV", "Siglos VIII-X", "Siglos III-IV"],
+    "respuesta": 0,
+    "explicacion": "El románico se difunde entre los siglos XI y XIII, coincidiendo con la paz feudal, la reforma monástica y el Camino de Santiago; en España pervive en el siglo XIV en zonas rurales.",
+    "dificultad": 1,
+    "tags": ["romanica", "cronologia", "fechas"]
+  },
+  {
+    "id": "bachillerato2-arquitectura-romanica-002",
+    "enunciado": "¿Qué tipo de arco domina en la arquitectura románica?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El arco apuntado", "El arco de medio punto", "El arco carpanel", "El arco rebajado"],
+    "respuesta": 1,
+    "explicacion": "El arco de medio punto y la bóveda de cañón definen el románico; el apuntado es gótico, el carpanel, plateresco, y el rebajado, propio del clasicismo.",
+    "dificultad": 1,
+    "tags": ["romanica", "arco", "estructura"]
+  },
+  {
+    "id": "bachillerato2-arquitectura-romanica-003",
+    "enunciado": "¿En qué siglo se difundió el románico por la península gracias al Camino de Santiago?",
+    "tipo": "fecha",
+    "opciones": ["Siglo IX", "Siglo XI", "Siglo XIII", "Siglo XV"],
+    "respuesta": 1,
+    "explicacion": "En el siglo XI, con la peregrinación a Compostela y la reforma cluniacense, se levantaron las catedrales y monasterios del Camino (Santiago, Jaca, Frómista, Silos).",
+    "dificultad": 2,
+    "tags": ["romanica", "camino-de-santiago", "espana", "fechas"]
+  },
+  {
+    "id": "bachillerato2-arquitectura-romanica-004",
+    "enunciado": "¿Qué monasterio castellano conserva su claustro románico célebre por los capiteles historiados?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Santo Domingo de Silos", "San Lorenzo de El Escorial", "El Monasterio de Poblet", "San Pedro de Cardeña"],
+    "respuesta": 0,
+    "explicacion": "El claustro de Silos (siglos XI-XII) es una joya del románico hispánico, con dobles columnas y capiteles narrativos; El Escorial es renacentista y Poblet, cisterciense gótico.",
+    "dificultad": 2,
+    "tags": ["romanica", "monasterios", "claustro", "espana"]
+  },
+  {
+    "id": "bachillerato2-arquitectura-romanica-005",
+    "enunciado": "Las iglesias románicas tienen muros gruesos, ventanas estrechas y contrafuertes exteriores, por lo que su interior es oscuro.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Al apoyar el empuje de la bóveda con muros masivos, apenas caben vanos; la luz entra débil por las saeteras. El gótico resolverá el problema con arbotantes y vitrales.",
+    "dificultad": 2,
+    "tags": ["romanica", "estructura", "luz"]
+  },
+  {
+    "id": "bachillerato2-arquitectura-romanica-006",
+    "enunciado": "¿Qué elemento decorativo domina la escultura románica en capiteles, tímpanos e impostas?",
+    "tipo": "opcion-multiple",
+    "opciones": ["La pintura al fresco", "La escultura historiada", "El mosaico bizantino", "El vitral narrativo"],
+    "respuesta": 1,
+    "explicacion": "La escultura —la «biblia en piedra» para fieles analfabetos— cubre portadas y capiteles; el vitral narrativo es característico del gótico y el mosaico, del bizantino.",
+    "dificultad": 2,
+    "tags": ["romanica", "escultura", "decoracion"]
+  },
+  {
+    "id": "bachillerato2-arquitectura-romanica-007",
+    "enunciado": "Los pórticos románicos suelen tener en el tímpano la figura de Cristo en Majestad (Pantocrátor) rodeado de tetramorfos.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "El Pantocrátor y los símbolos de los evangelistas son el tema dominante de los tímpanos, como en Santa María de Mur o en el Pórtico de la Gloria, ya de transición al gótico.",
+    "dificultad": 2,
+    "tags": ["romanica", "pantocrator", "escultura"]
+  },
+  {
+    "id": "bachillerato2-arquitectura-romanica-008",
+    "enunciado": "¿En qué año se inició la construcción de la catedral de Santiago de Compostela?",
+    "tipo": "fecha",
+    "opciones": ["1211", "1188", "1000", "1075"],
+    "respuesta": 3,
+    "explicacion": "Las obras comenzaron hacia 1075 y la catedral se consagró en 1211; su planta con girola y su fachada del Obradoiro son de transición y posteriores.",
+    "dificultad": 3,
+    "tags": ["romanica", "santiago", "catedrales", "fechas"]
+  },
+  {
+    "id": "bachillerato2-arquitectura-romanica-009",
+    "enunciado": "La catedral de Santiago es fundamentalmente románica, con añadidos góticos como el crucero y la girola.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "La girola, el crucero con cimborrio y el claustro son góticos (siglos XIV-XV), igual que la fachada del Obradoiro; la nave y la Portada Platerías conservan el espíritu románico.",
+    "dificultad": 3,
+    "tags": ["romanica", "santiago", "gótico", "catedrales"]
+  },
+  {
+    "id": "bachillerato2-arquitectura-romanica-010",
+    "enunciado": "¿Qué función cumplía la cripta en las iglesias románicas?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Albergar el coro", "Servir de baptisterio", "Custodiar reliquias y sepulturas", "Alojar la sacristía"],
+    "respuesta": 2,
+    "explicacion": "La cripta, bajo el ábside, guardaba reliquias y sepulturas de santos o patronos; elevaba además el presbiterio para resolver la pendiente y dar luz al ábside.",
+    "dificultad": 3,
+    "tags": ["romanica", "cripta", "reliquias"]
+  }
+]

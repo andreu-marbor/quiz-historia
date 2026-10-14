@@ -1,0 +1,102 @@
+[
+  {
+    "id": "bachillerato2-austria-mayores-siglo-xvi-001",
+    "enunciado": "¿Qué título ostentó Carlos I de España a partir de 1520?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Rey de Portugal", "Rey de Francia", "Emperador del Sacro Imperio", "Papa de Roma"],
+    "respuesta": 2,
+    "explicacion": "Carlos I fue elegido emperador de Alemania en 1520, lo que le dio el título de Carlos V, emperador; sus dominios iban de España y Nápoles a los Países Bajos y las Indias.",
+    "dificultad": 1,
+    "tags": ["austria-mayores", "carlos-v", "sacro-imperio"]
+  },
+  {
+    "id": "bachillerato2-austria-mayores-siglo-xvi-002",
+    "enunciado": "¿En qué año abdicó Carlos V en favor de su hijo Felipe II?",
+    "tipo": "fecha",
+    "opciones": ["1516", "1556", "1558", "1598"],
+    "respuesta": 1,
+    "explicacion": "Carlos V repartió sus estados en 1556: Felipe II recibió España, Italia y los Países Bajos, y su hermano Fernando I el Sacro Imperio; el emperador se retiró al monasterio de Yuste.",
+    "dificultad": 1,
+    "tags": ["austria-mayores", "carlos-v", "abdicion", "fechas"]
+  },
+  {
+    "id": "bachillerato2-austria-mayores-siglo-xvi-003",
+    "enunciado": "¿Qué sucedió en la batalla de Pavía (1525)?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Carlos V venció a Francisco I", "Francisco I venció a Carlos V", "Enrique VIII venció a Francisco I", "Solimán venció a Carlos V"],
+    "respuesta": 0,
+    "explicacion": "En Pavía, las tropas imperiales de Carlos V capturaron al rey Francisco I de Francia, que tuvo que firmar el Tratado de Madrid (1526) para recuperar la libertad.",
+    "dificultad": 1,
+    "tags": ["austria-mayores", "francia", "batallas"]
+  },
+  {
+    "id": "bachillerato2-austria-mayores-siglo-xvi-004",
+    "enunciado": "Tras la derrota de Pavía, Francisco I fue hecho prisionero y llevado a España, donde firmó su liberación en 1526.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "El rey francés estuvo prisionero en Madrid casi un año y firmó allí el Tratado de Madrid; apenas salió, lo anuló con la Liga de Cognac, lo que inauguró una rivalidad de siglos.",
+    "dificultad": 2,
+    "tags": ["austria-mayores", "francia", "tratados"]
+  },
+  {
+    "id": "bachillerato2-austria-mayores-siglo-xvi-005",
+    "enunciado": "¿En qué año saquearon las tropas de Carlos V la ciudad de Roma?",
+    "tipo": "fecha",
+    "opciones": ["1494", "1556", "1527", "1512"],
+    "respuesta": 2,
+    "explicacion": "En 1527, en el contexto de las guerras de Italia y sin cobrar su soldada, los tercios de Carlos V entraron en Roma y saquearon la ciudad: el papa Clemente VII quedó prisionero en el castillo de Sant'Angelo.",
+    "dificultad": 2,
+    "tags": ["austria-mayores", "roma", "saqueo", "fechas"]
+  },
+  {
+    "id": "bachillerato2-austria-mayores-siglo-xvi-006",
+    "enunciado": "¿Qué resultado tuvo la batalla de Lepanto (1571)?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El Imperio otomano venció a Venecia", "Los españoles fueron derrotados por los berberiscos", "La Santa Liga venció al Imperio otomano", "Venecia se alió con los otomanos"],
+    "respuesta": 2,
+    "explicacion": "La Liga Santa (España, Venecia y el Papado) destruyó la flota otomana en el golfo de Corinto; no frenó la expansión naval turca, pero detuvo su avance en el Mediterráneo occidental.",
+    "dificultad": 2,
+    "tags": ["austria-mayores", "lepanto", "otomanos", "batallas"]
+  },
+  {
+    "id": "bachillerato2-austria-mayores-siglo-xvi-007",
+    "enunciado": "La Paz de Augsburgo (1555) reconoció a los príncipes luteranos el derecho a decidir la religión de sus territorios.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "El principio de cuius regio, eius religio permitió que el luteranismo conviviera con el catolicismo en el Sacro Imperio, hasta que la paz de Westfalia (1648) reconoció también el calvinismo.",
+    "dificultad": 2,
+    "tags": ["austria-mayores", "reforma", "sacro-imperio"]
+  },
+  {
+    "id": "bachillerato2-austria-mayores-siglo-xvi-008",
+    "enunciado": "¿En qué año murió Felipe II en el Escorial?",
+    "tipo": "fecha",
+    "opciones": ["1621", "1596", "1600", "1598"],
+    "respuesta": 3,
+    "explicacion": "Felipe II murió el 13 de septiembre de 1598 a los 71 años, después de cuatro décadas de reinado y de haber heredado un imperio en el que «nunca se ponía el sol».",
+    "dificultad": 3,
+    "tags": ["austria-mayores", "felipe-ii", "fechas"]
+  },
+  {
+    "id": "bachillerato2-austria-mayores-siglo-xvi-009",
+    "enunciado": "La Unión de Arras (1579) agrupó las provincias católicas del sur de los Países Bajos frente a la rebelión de Guillermo de Orange.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Arras se unió a la causa de Felipe II y dio lugar a la actual Bélgica; las provincias del norte respondieron con la Unión de Utrecht (1579), origen de la República de los Países Bajos.",
+    "dificultad": 3,
+    "tags": ["austria-mayores", "paises-bajos", "rebelion"]
+  },
+  {
+    "id": "bachillerato2-austria-mayores-siglo-xvi-010",
+    "enunciado": "¿Qué monarcas firmaron la paz de Cateau-Cambrésis (1559), que puso fin a las guerras franco-españolas por Italia?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Carlos V y Francisco I", "Felipe II y Enrique II", "Felipe II y Enrique III", "Carlos V y Enrique II"],
+    "respuesta": 1,
+    "explicacion": "Tras la muerte de Francisco I, su hijo Enrique II firmó con Felipe II la paz de Cateau-Cambrésis: Francia renunció a Italia y España confirmó su hegemonía en la península itálica.",
+    "dificultad": 3,
+    "tags": ["austria-mayores", "francia", "tratados", "paz"]
+  }
+]

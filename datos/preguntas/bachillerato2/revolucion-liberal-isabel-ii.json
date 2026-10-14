@@ -1,0 +1,102 @@
+[
+  {
+    "id": "bachillerato2-revolucion-liberal-isabel-ii-001",
+    "enunciado": "¿Qué dos bandos se enfrentaron en la Primera Guerra Carlista (1833-1840)?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Los centralistas y los federalistas", "Los carlistas y los isabelinos", "Los afrancesados y los jacobinos", "Los monárquicos y los republicanos"],
+    "respuesta": 1,
+    "explicacion": "Los carlistas («Dios, Patria y Rey») defendían a don Carlos y el absolutismo; los isabelinos o cristinos apoyaban a Isabel II y el liberalismo, con facciones de moderados y progresistas.",
+    "dificultad": 1,
+    "tags": ["carlismo", "isabel-ii", "guerras-carlistas"]
+  },
+  {
+    "id": "bachillerato2-revolucion-liberal-isabel-ii-002",
+    "enunciado": "¿En qué año accedió al trono Isabel II?",
+    "tipo": "fecha",
+    "opciones": ["1830", "1843", "1833", "1834"],
+    "respuesta": 2,
+    "explicacion": "Isabel II subió al trono en 1833 a los tres años, con su madre María Cristina como reina gobernadora; fue proclamada mayor de edad en 1843.",
+    "dificultad": 1,
+    "tags": ["isabel-ii", "sucesion", "fechas"]
+  },
+  {
+    "id": "bachillerato2-revolucion-liberal-isabel-ii-003",
+    "enunciado": "¿Cuáles eran los tres lemas del carlismo?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Dios, Patria y Rey", "Libertad, Igualdad y Fraternidad", "Trabajo, Orden y Progreso", "Patria, Rey y Constitución"],
+    "respuesta": 0,
+    "explicacion": "«Dios, Patria y Rey» resumía su programa: defensa de la religión católica, de los fueros de los reinos y del pretendiente don Carlos frente a la monarquía liberal de Isabel II.",
+    "dificultad": 1,
+    "tags": ["carlismo", "lema", "tradicionalismo"]
+  },
+  {
+    "id": "bachillerato2-revolucion-liberal-isabel-ii-004",
+    "enunciado": "Las desamortizaciones de Mendizábal (1836-1837) y de Madoz (1855) expropiaron bienes de la Iglesia y de los municipios y los vendieron en subasta.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "La de Mendizábal se centró en la propiedad eclesiástica (para pagar la deuda) y la Madoz de 1855 incluyó también bienes comunales de los municipios; ambas fueron «desamortizaciones liberales».",
+    "dificultad": 2,
+    "tags": ["desamortizaciones", "iglesia", "madoz", "propiedad"]
+  },
+  {
+    "id": "bachillerato2-revolucion-liberal-isabel-ii-005",
+    "enunciado": "¿A qué sector social benefició principalmente la desamortización de la segunda mitad del siglo XIX?",
+    "tipo": "opcion-multiple",
+    "opciones": ["A los jornaleros sin tierra", "A la burguesía agraria y los grandes propietarios", "A los campesinos pobres", "Al clero regular"],
+    "respuesta": 1,
+    "explicacion": "Los bienes subastados fueron adquiridos sobre todo por quienes ya tenían dinero: burgueses y latifundistas. Los campesinos perdieron comunales en la de Madoz sin recibir tierra, lo que reforzó el campo sin tierra.",
+    "dificultad": 2,
+    "tags": ["desamortizaciones", "estructura-agraria", "burguesia"]
+  },
+  {
+    "id": "bachillerato2-revolucion-liberal-isabel-ii-006",
+    "enunciado": "¿En qué año se aprobó la Constitución progresista de 1837?",
+    "tipo": "fecha",
+    "opciones": ["1845", "1837", "1834", "1869"],
+    "respuesta": 1,
+    "explicacion": "La Constitución de 1837, obra de los progresistas tras el triunfo de Espartero, reconocía la soberanía nacional y la milicia nacional; la de 1845, de los moderados, fue más conservadora.",
+    "dificultad": 2,
+    "tags": ["isabel-ii", "constituciones", "fechas"]
+  },
+  {
+    "id": "bachillerato2-revolucion-liberal-isabel-ii-007",
+    "enunciado": "La Constitución de 1845 consagró el sufragio censitario: solo podía votar quien acreditaba una renta mínima.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "El voto quedó reducido a los varones mayores de 25 con 25 escudos de renta, lo que dejó fuera a la mayoría de la población; amplió, en cambio, el censo respecto a la exigencia de 1837.",
+    "dificultad": 2,
+    "tags": ["isabel-ii", "constitucion-1845", "sufragio"]
+  },
+  {
+    "id": "bachillerato2-revolucion-liberal-isabel-ii-008",
+    "enunciado": "¿En qué año fue proclamada mayor de edad y reina titular Isabel II?",
+    "tipo": "fecha",
+    "opciones": ["1833", "1854", "1868", "1843"],
+    "respuesta": 3,
+    "explicacion": "En 1843, con 13 años, se cesó la regencia de Espartero y Isabel II fue declarada mayor de edad, abriendo el periodo del reinado personal.",
+    "dificultad": 3,
+    "tags": ["isabel-ii", "mayor-de-edad", "fechas"]
+  },
+  {
+    "id": "bachillerato2-revolucion-liberal-isabel-ii-009",
+    "enunciado": "El pronunciamiento de «La Vicalvarada» (1854) abrió el Bienio Progresista (1854-1856).",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "El levantamiento de O'Donnell y Topete en Vicálvaro puso fin al gobierno de los moderados y encabezó dos años de reformas progresistas, entre ellas la Ley General de Desamortización de Madoz.",
+    "dificultad": 3,
+    "tags": ["isabel-ii", "pronunciamientos", "bienio-progresista"]
+  },
+  {
+    "id": "bachillerato2-revolucion-liberal-isabel-ii-010",
+    "enunciado": "¿Qué partido fundó O'Donnell en 1854 como alternativa entre moderados y progresistas?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El Partido Demócrata", "Los moderados", "La Unión Liberal", "El Partido Republicano"],
+    "respuesta": 2,
+    "explicacion": "La Unión Liberal agrupó a liberales moderados y buscó una vía centrista; gobernó con O'Donnell en los periodos de 1858-1863 y 1864-1866, con expansión colonial y ferroviaria.",
+    "dificultad": 3,
+    "tags": ["isabel-ii", "partidos", "union-liberal"]
+  }
+]

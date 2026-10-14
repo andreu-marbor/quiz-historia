@@ -1,0 +1,102 @@
+[
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-001",
+    "enunciado": "¿Qué rey castellano conquistó Toledo en 1085?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Fernando III", "Alfonso VI", "Alfonso VIII", "Ramiro II"],
+    "respuesta": 1,
+    "explicacion": "Alfonso VI tomó Toledo en 1085 y la convirtió en su corte; la conquista provocó la llegada de los almorávides y el pago de parias por parte de los reinos de taifas.",
+    "dificultad": 1,
+    "tags": ["castilla", "reconquista", "toledo", "fechas"]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-002",
+    "enunciado": "El Tratado de Almizra (1244) delimitó las zonas de expansión de Castilla y de la Corona de Aragón.",
+    "tipo": "fecha",
+    "opciones": ["1265", "1229", "1244", "1287"],
+    "respuesta": 2,
+    "explicacion": "Firmado por Jaime I y Alfonso X, el tratado fijó el Valle de Huercal y las fronteras del sureste peninsular, evitando que ambos reinos se enfrentaran tras la conquista de Valencia.",
+    "dificultad": 2,
+    "tags": ["castilla", "aragon", "tratados", "fechas"]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-003",
+    "enunciado": "¿Qué batalla de 1212 unió a Castilla, Aragón y Navarra contra los almohades?",
+    "tipo": "opcion-multiple",
+    "opciones": ["La batalla de Alarcos", "La batalla de Clavijo", "La batalla de las Navas de Tolosa", "La batalla de Tudela"],
+    "respuesta": 2,
+    "explicacion": "Las Navas de Tolosa (1212) abrió el valle del Guadalquivir a Castilla; Alarcos (1195) había sido una derrota castellana y Clavijo es una leyenda sobre el apoyo del apóstol Santiago.",
+    "dificultad": 1,
+    "tags": ["castilla", "reconquista", "batallas"]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-004",
+    "enunciado": "¿En qué año se libró la batalla de las Navas de Tolosa?",
+    "tipo": "fecha",
+    "opciones": ["1210", "1214", "1230", "1212"],
+    "respuesta": 3,
+    "explicacion": "El 16 de julio de 1212, la coalición de Alfonso VIII, Pedro II de Aragón y Sancho VII de Navarra venció al ejército almohade en Despeñaperros.",
+    "dificultad": 1,
+    "tags": ["castilla", "reconquista", "fechas", "batallas"]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-005",
+    "enunciado": "¿Qué rey consolidó la unión definitiva de las coronas de Castilla y León en 1230?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Alfonso IX", "Alfonso X", "Fernando III", "Sancho IV"],
+    "respuesta": 2,
+    "explicacion": "Fernando III heredó Castilla y León en 1230 al resolver la doble elección de 1217-1218; conquistó además Córdoba (1236) y Sevilla (1248).",
+    "dificultad": 2,
+    "tags": ["castilla", "león", "monarquia", "fechas"]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-006",
+    "enunciado": "¿Qué isla conquistó Jaime I de Aragón en 1229?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Menorca", "Sicilia", "Cerdeña", "Mallorca"],
+    "respuesta": 3,
+    "explicacion": "Jaime I conquistó Mallorca en 1229 con una empresa mixta de nobles y burguesía marítima; Menorca cayó en 1287 con Alfonso III y Sicilia pasó a la Corona en 1282.",
+    "dificultad": 2,
+    "tags": ["aragon", "mediterraneo", "conquistas", "fechas"]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-007",
+    "enunciado": "El Compromiso de Caspe (1412) resolvió pacíficamente la sucesión de la Corona de Aragón en favor de Fernando de Antequera.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Ante la muerte sin heredero directo de Martín I, nueve compromisarios se reunieron en Caspe y eligieron en 1412 al infante castellano Fernando de Antequera, fundador de la casa de Trastámara en Aragón.",
+    "dificultad": 2,
+    "tags": ["aragon", "monarquia", "compromiso-de-caspe"]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-008",
+    "enunciado": "¿En qué año llegó la peste negra a la Corona de Aragón?",
+    "tipo": "fecha",
+    "opciones": ["1347", "1350", "1370", "1348"],
+    "respuesta": 3,
+    "explicacion": "La peste negra entró por los puertos del Mediterráneo en 1348 (Mallorca, Valencia, Barcelona) y diezmó entre un tercio y la mitad de la población peninsular.",
+    "dificultad": 3,
+    "tags": ["castilla", "aragon", "peste-negra", "fechas"]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-009",
+    "enunciado": "Las Cortes eran asambleas convocadas por el rey que exigían su consentimiento para cobrar impuestos nuevos.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "El pacto fiscal era la base del poder de las Cortes en Castilla y en Aragón: el rey pedía dinero y a cambio acordaba justicia, leyes y fueros; sin su voto no se podía crear tributo.",
+    "dificultad": 3,
+    "tags": ["castilla", "aragon", "cortes", "instituciones"]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-010",
+    "enunciado": "¿Qué institución castellana agrupaba a las ciudades para frenar el poder de la nobleza y garantizar la seguridad del camino?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El Consejo de Castilla", "Las hermandades", "Los señoríos", "Las ferias"],
+    "respuesta": 1,
+    "explicacion": "Las hermandades generales unían concejos para perseguir malhechores y frenar los abusos señoriales; el Consejo de Castilla es un órgano de gobierno real y los señoríos, la base del poder nobiliario.",
+    "dificultad": 3,
+    "tags": ["castilla", "instituciones", "ciudades"]
+  }
+]

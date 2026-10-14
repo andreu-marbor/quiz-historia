@@ -5,7 +5,7 @@
  * Se ejecuta con `npm.cmd run prueba:datos` (esbuild + node).
  */
 
-import { mkdirSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import {
   contarPreguntas,
@@ -70,12 +70,59 @@ mostrarSiHay(erroresReales);
 
 const resumen = resumenDatos(raizDatos);
 comprobar(resumen.cursos >= 3, `hay al menos 3 cursos de ejemplo (${resumen.cursos})`);
-comprobar(resumen.temas >= 3 && resumen.temas <= 4, `hay 3–4 temas de ejemplo (${resumen.temas})`);
+comprobar(resumen.temas >= 3, `hay al menos 3 temas de ejemplo (${resumen.temas})`);
 comprobar(resumen.preguntas >= 40, `hay al menos 40 preguntas de muestra (${resumen.preguntas})`);
 comprobar(
   contarPreguntas(raizDatos) === resumen.preguntas,
   'contarPreguntas coincide con resumenDatos',
 );
+
+// §15.4 A4 — sin enunciados repetidos: 200 preguntas por tema hacen muy fácil
+// repetir (o casi repetir) un enunciado, y un cuestionario con la pregunta dos
+// veces no enseña nada. Se comparan los enunciados NORMALIZADOS (minúsculas,
+// sin acentos ni puntuación) de todo `datos/preguntas/`.
+function normalizarEnunciado(texto: string): string {
+  return texto
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
+}
+
+function enunciadosDeDatos(): string[] {
+  const raizPreguntas = join(raizDatos, 'preguntas');
+  const enunciados: string[] = [];
+  for (const curso of readdirSync(raizPreguntas, { withFileTypes: true })) {
+    if (!curso.isDirectory()) continue;
+    const raizCurso = join(raizPreguntas, curso.name);
+    for (const fichero of readdirSync(raizCurso)) {
+      if (!fichero.endsWith('.json')) continue;
+      const preguntas = JSON.parse(readFileSync(join(raizCurso, fichero), 'utf8')) as Array<
+        Record<string, unknown>
+      >;
+      for (const pregunta of preguntas) {
+        enunciados.push(String(pregunta['enunciado'] ?? ''));
+      }
+    }
+  }
+  return enunciados;
+}
+
+const enunciados = enunciadosDeDatos();
+const repeticiones = new Map<string, number>();
+for (const enunciado of enunciados) {
+  const clave = normalizarEnunciado(enunciado);
+  repeticiones.set(clave, (repeticiones.get(clave) ?? 0) + 1);
+}
+const duplicados = [...repeticiones.entries()]
+  .filter(([, veces]) => veces > 1)
+  .map(([clave]) => `${clave} (×${repeticiones.get(clave)})`);
+comprobar(
+  duplicados.length === 0,
+  `no hay enunciados repetidos en datos/ (${enunciados.length} preguntas, ${duplicados.length} duplicados)`,
+);
+mostrarSiHay(duplicados);
 
 // ---------------------------------------------------------------------------
 seccion('Reglas de una pregunta (datos falsos)');

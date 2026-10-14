@@ -3,7 +3,7 @@
 Plan de implementación de la aplicación de repaso de Historia para ESO y Bachiller.
 
 > **Estado:** plan aprobado y decisiones cerradas (§9), pendiente de ejecución por fases.
-> **Última actualización:** 2026-10-07
+> **Última actualización:** 2026-10-14
 
 ---
 
@@ -291,8 +291,19 @@ Así quedan **incluidas en el bundle y la app funciona sin internet de serie**.
 
 ### Fase 6 — Contenido real y documentación
 
+> **Primer tramo en marcha: §15 — Poblado de 2º Bachillerato (EBAU 2027)**, plan detallado con decisiones cerradas el 2026-10-14 a partir de los PDFs del profesorado (`HistoriaEspanya2Bach.pdf` + `HistoriaArte2Bach.pdf`). Las tareas de ese tramo están desglosadas en **§15.4**.
+
 - [ ] Cargar preguntas del temario real: 1º–4º ESO y 1º–2º Bachiller, por unidad.
-- [ ] Revisión pedagógica (que un profesor valide enunciados y explicaciones).
+  - [ ] **§15 · 2º Bachillerato — Historia (16 temas del temario EBAU 2027) + Historia del Arte (8 temas) → 200 preguntas por tema (4.800).** *Decisiones cerradas y tareas en §15; entrega por bloque (7 commits).*
+  - [ ] §15 · Fase A — catálogo `bachillerato2` con las dos asignaturas y 24 temas + 10 preguntas por tema (base jugable) + relajar el aserto `temas <= 4` de `pruebas/datos.ts` + chequeo de **enunciados duplicados** en `pruebas/datos.ts`.
+  - [ ] §15 · Bloque 1 — romanización, Al-Ándalus, Castilla y Aragón en la Baja Edad Media (3 temas → 600).
+  - [ ] §15 · Bloque 2 — Reyes Católicos, Austrias Mayores, reformismo borbónico (3 temas → 600).
+  - [ ] §15 · Siglo XIX — Cádiz, Fernando VII, Isabel II, Sexenio, Restauración (5 temas → 1.000).
+  - [ ] §15 · Siglo XX — Alfonso XIII, República, Guerra Civil, Franco, Transición (5 temas → 1.000).
+  - [ ] §15 · Arte 1–4 — templo griego, Roma, románico, gótico (4 temas → 800).
+  - [ ] §15 · Arte 5–8 — Renacimiento, barroco, XIX, vanguardias (4 temas → 800).
+- [ ] Revisión pedagógica (que un profesor valide enunciados y explicaciones) — **por bloques, según se entregan** (§15.5).
+
 - [x] `AGENTS.md` del proyecto: flujo "editar JSON → validador → push → despliegue", convenciones, ubicación del keystore. ✅ *Hecho en Fase 1; revisado con la Asignatura (§13.2).*
 - [x] `MEMORY.md` con el registro de cambios (solo aditivo, como en `tres-en-raya`). ✅ *Hecho; se lleva al día en cada cambio.*
 
@@ -475,6 +486,8 @@ La app no se reescribe "por si acaso": cada acción tiene un umbral medible que 
 | Progreso en `localStorage` | **> 500 KB** | Podar: mejor nota y racha de todos, historial fino solo de los últimos N temas |
 | Validador o `build` | **> 10 s** | Lectura/validación incremental (baja prioridad) |
 
+> ⚠️ **Estado de los disparadores (2026-10-14):** con el plan **§15** (4.800 preguntas de 2º Bachillerato) el disparador **«Preguntas totales > 450» queda SALTADO A PROPÓSITO** (decisión §15.1-4): el contenido se queda en el bundle único con `eager` y no se implanta aún la carga diferida de §12.3 A. **Aceptado y consciente** — el umbral hoy no lo comprueba nadie en CI (`scripts/presupuesto.mjs` sigue sin existir, §12.4). Consecuencias previstas: bundle de **~2,7 MB de JSON → ~0,9–1 MB gzip** y precaché del SW mayor, con `comprobar-offline` y `comprobar-movil` como vigilantes en cada commit grande. **Cuando se ejecute Fase 7 (§12.6), la carga diferida pasa a ser la primera tarea obligatoria.**
+
 ### 12.3 Arquitectura objetivo
 
 #### A. Datos: de un bundle único a chunks por tema
@@ -656,7 +669,7 @@ Por disparadores (§12.2). Las tres primeras tareas **no esperan a ningún dispa
 - [x] Validador + `pruebas/datos.ts` con las reglas obligatorias de arriba (curso sin asignaturas, forma antigua con `temas`, campos desconocidos, id de tema repetido entre asignaturas, `orden` repetido dentro de una asignatura). ✅
 - [x] Migrar los fixtures de catálogo de `pruebas/` y actualizar `pruebas/logica.ts` y `pruebas/pantallas.ts` (315 comprobaciones). ✅
 - [x] Extensión de §13.1: las filas pasan a ser **una por asignatura**, cada una con su propia clave virtual. ✅
-- [ ] Contenido: primeros temas de Historia del Arte de 2º Bachillerato (puede caer en la Fase 6).
+- [ ] Contenido: primeros temas de Historia del Arte de 2º Bachillerato (puede caer en la Fase 6). → **En marcha: §15** — los 8 temas del temario de Arte entran completos (200 preguntas c/u) en los commits «Arte 1–4» y «Arte 5–8».
 
 **Riesgos**
 
@@ -803,3 +816,135 @@ Cada tarea = **commit + push** con `prueba` y `build` en verde; los selectores d
 | Regresión del modo oscuro | Todo color nuevo **por variables**, con su pareja oscura en `base.css`; revisar a mano en cada tarea |
 | Animación incómoda | Todo bajo el `prefers-reduced-motion` global de `base.css` |
 | Alcance desbordado | Fases 7 y 8 intactas; una pantalla por tarea y un push por tarea |
+
+---
+
+## 15. Poblado de 2º Bachillerato · EBAU 2027 (2026-10-14)
+
+> **Origen:** dos documentos del profesorado — **`HistoriaEspanya2Bach.pdf`** (reunión del 22/09/2026, «Preparatoria de las Pruebas de Acceso a la Universidad 2027 · Historia de España») y **`HistoriaArte2Bach.pdf`** (reunión del 16/09/2026, «Examen PAU 2027 · Historia del Arte»).
+>
+> ⚠️ **Los PDFs no contienen preguntas ni desarrollo del temario**: son las presentaciones con el **formato del examen** y la **lista de temas recomendados** (Historia: pp. 13–16; Arte: p. 9). De ahí sale el temario; **las preguntas se redactan aquí**, en `datos/preguntas/bachillerato2/`.
+>
+> Ejecución en la **Fase 6** (§5). Cada bloque = **commit + push** con `npm.cmd run prueba` y `npm.cmd run build` en verde.
+
+### 15.1 Decisiones cerradas (2026-10-14)
+
+| # | Decisión | Elección | Por qué |
+|---|---|---|---|
+| 1 | **`id` del curso** | **`bachillerato2`** («2º Bachillerato», `orden: 6`) | Coherente con `eso2`/`eso4`/`bachillerato1`. Es la **clave de progreso** `<curso>/<tema>`, así que es irreversible tras el primer push. **No** el `2bach` del ejemplo ilustrativo de §3/§13 |
+| 2 | **Volumen** | **200 preguntas por tema** | Petición explícita del usuario («al menos 100 o 200 por tema» → 200) |
+| 3 | **Alcance** | **Historia (16 temas) + Historia del Arte (8 temas) = 24 temas → 4.800 preguntas** | Los dos PDFs son del mismo curso y §13.2 ya prevé 2º Bachillerato con las dos asignaturas |
+| 4 | **Disparador `§12.2` (>450 preguntas)** | **Aceptado temporalmente**: bundle único con `eager`, sin carga diferida | El contenido es prioritario; la carga diferida (§12.3 A) queda como **primera tarea obligatoria de la Fase 7**. Anotado en §12.2 |
+| 5 | **Entregas** | **1 commit por bloque** (7 en total, ver §15.4) | Cada bloque es un avance autónomo, verificable y reanudable en su frontera |
+| 6 | **Chequeo de duplicados** | **Nuevo test en `pruebas/datos.ts`**: sin enunciados repetidos (normalizados) en `datos/` | El riesgo real de 200 preguntas por tema son los enunciados repetidos/casi repetidos; debe vigilarse la CI, no a ojo |
+| 7 | **Tipos de pregunta** | Solo `opcion-multiple` · `verdadero-falso` · `fecha` — **nunca `imagen`** | La UI **no pinta** `tipo: "imagen"` todavía (§12.3 C) y el validador exige que el fichero exista en `public/` |
+| 8 | **`minPreguntas`** | **10** en los 24 temas | Igual que el resto del catálogo; el umbral es de «jugable», no de «terminado» |
+
+### 15.2 Temario (literal de los PDFs)
+
+**Historia de España — 16 temas** (PDF pp. 13–16; la Parte A sale de los bloques 1 y 2, la B y C de XIX–XX):
+
+| # | Bloque | `id` del tema | Título |
+|---|---|---|---|
+| 1 | A · Bloque 1 | `romanizacion` | El proceso de romanización |
+| 2 | A · Bloque 1 | `al-andalus` | Al-Ándalus: evolución política |
+| 3 | A · Bloque 1 | `castilla-aragon-baja-edad-media` | Castilla y Aragón en la Baja Edad Media |
+| 4 | A · Bloque 2 | `reyes-catolicos` | El reinado de los Reyes Católicos |
+| 5 | A · Bloque 2 | `austria-mayores-siglo-xvi` | El reinado de los Austrias Mayores: política exterior del siglo XVI |
+| 6 | A · Bloque 2 | `reformismo-borbonico-xviii` | El reformismo borbónico en el siglo XVIII |
+| 7 | XIX | `cortes-cadiz-1812` | Las Cortes de Cádiz. La Constitución de 1812 |
+| 8 | XIX | `absolutismo-liberalismo-fernando-vii` | Absolutismo frente a liberalismo. Fernando VII |
+| 9 | XIX | `revolucion-liberal-isabel-ii` | Revolución liberal en el reinado de Isabel II. Carlismo y desamortizaciones |
+| 10 | XIX | `sexenio-revolucionario` | El Sexenio Revolucionario (1868-1874) |
+| 11 | XIX | `restauracion-canovismo` | El régimen de la Restauración. Sistema canovista |
+| 12 | XX | `regeneracionismo-primero-de-rivera` | Alfonso XIII, regeneracionismo y dictadura de Primo de Rivera (1902-1931) |
+| 13 | XX | `segunda-republica` | La Segunda República (1931-1936) |
+| 14 | XX | `guerra-civil` | La Guerra Civil (1936-1939) |
+| 15 | XX | `dictadura-franco` | La dictadura de Franco (1939-1975) |
+| 16 | XX | `transicion-1978` | La Transición a la democracia: la Constitución de 1978 |
+
+**Historia del Arte — 8 temas** (PDF p. 9, «Temas recomendados»):
+
+| # | `id` del tema | Título | Obras de apoyo del PDF (pp. 10–12) |
+|---|---|---|---|
+| 1 | `templo-griego` | El templo griego | Partenón |
+| 2 | `arquitectura-urbana-roma` | Arquitectura y urbanismo en Roma | Teatro de Cartagena, Coliseo, Columna de Trajano |
+| 3 | `arquitectura-romanica` | La arquitectura románica: el monasterio y la iglesia | San Clemente de Tahull, Mezquita de Córdoba |
+| 4 | `catedral-gotica` | La catedral gótica | Catedral de Amiens, Puerta del Sarmental |
+| 5 | `renacimiento-mecenazgo` | Miguel Ángel, Rafael y Leonardo. Mecenazgo y pintura | Juicio Final, Nacimiento de Venus, Tributo de la moneda |
+| 6 | `barroco-urbanismo` | El espacio arquitectónico y el urbanismo en el barroco | Imafronte de Murcia, San Carlos de las Cuatro Fuentes, Plaza de San Pedro |
+| 7 | `romanticismo-realismo-impresionismo` | Siglo XIX: Romanticismo, realismo e impresionismo | Fusilamientos del 3 de mayo, El caminante, El taller del pintor |
+| 8 | `vanguardias-artisticas` | Vanguardias artísticas: fauvismo, cubismo, surrealismo, dadaísmo y expresionismo | Guernica, La fuente de Duchamp, El Grito |
+
+- **Vocabulario (p. 13):** los ~110 términos (alfiz, arco fajón, bóveda de crucería, claroscuro, schiacciato…) se reparten **en el tema al que pertenecen** → material directo de preguntas.
+- **Comparativas (p. 12):** las 8 parejas de obras → preguntas de opción múltiple/verdadero-falso.
+- **Identificación (p. 11):** las 40 láminas → preguntas de autor/obra/estilo/fecha **en texto** (sin imagen, decisión §15.1-7).
+
+**Nota de alcance (documentar en `MEMORY.md`):** el examen de Arte es **reconocimiento de láminas** y la UI aún no las pinta → este tramo cubre la parte **cerrada** (definiciones, identificación, comparativas), no el comentario de imagen. Habilitar `tipo: "imagen"` se vuelve disparador inmediato de la Fase 7 (§12.3 C).
+
+### 15.3 Receta de calidad (por tema)
+
+- **Mezcla de tipos:** ~65 % `opcion-multiple` · ~25 % `verdadero-falso` · ~10 % `fecha` (más `fecha` en Historia; en Arte, fechas de estilos y obras).
+- **`dificultad`** ≈ 1/3 cada una (1·2·3): la selección reparte 1·2·3, así que un desbalance empobrece cada cuestionario.
+- **Índice de `respuesta`** repartido por igual entre las posiciones posibles (sin sesgo de «siempre la A»).
+- **Distractores plausibles:** fechas vecinas, coetáneos, movimientos del mismo periodo; nada de relleno obvio.
+- **`explicacion`** siempre con el porqué + dato clave (fecha, artículo, autor, síntesis del contexto). Es el valor pedagógico de R/02.
+- **`tags`** en kebab-case español, 2–4 por pregunta (tema + concepto).
+- **`verdadero-falso`** exactamente `["Verdadero", "Falso"]`; 2–6 opciones sin repetir; ids `bachillerato2-<tema>-<nnn>` **correlativos sin huecos** (`-001`…`-200`).
+- **Nada de contenido en `src/`** (regla dura de `AGENTS.md`): todo vive en `datos/`.
+
+### 15.4 Tareas
+
+> Orden fijado. **Cada bloque se redacta por tema y en tandas de 25–50 preguntas**, ejecutando `node scripts/validar-preguntas.mjs` tras cada fichero; el commit del bloque cierra con `npm.cmd run prueba` + `npm.cmd run build` en verde.
+
+**Fase A · Catálogo (commit 1 · base jugable)**
+
+- [x] A1 · `datos/temas.json`: curso **`bachillerato2`** («2º Bachillerato», `orden: 6`) con asignaturas `historia` (orden 1, 16 temas) y `historia-del-arte` (orden 2, 8 temas); `orden` 1..N por asignatura, `minPreguntas: 10`. ✅ (títulos de asignatura: «Historia» y «Historia del Arte»)
+- [x] A2 · `datos/preguntas/bachillerato2/<tema>.json` × **24** con **10 preguntas cada uno** (240): obligatorio, el validador exige `minPreguntas` por tema para aceptar el catálogo. ✅ (validador: 4 cursos · 28 temas · 280 preguntas)
+- [x] A3 · `pruebas/datos.ts`: relajar `temas <= 4` → `temas >= 3` (los 24 temas rompen el aserto de la Fase 1). ✅
+- [x] A4 · `pruebas/datos.ts`: **chequeo de enunciados duplicados** — normalizar (minúsculas, sin acentos ni puntuación) y fallar si se repiten en `datos/`. ✅ (280 preguntas, 0 duplicados)
+- [x] A5 · Validar (`prueba` + `build`) → **commit + push**. ✅ (`prueba` **518 comprobaciones** · `build` 178,78 kB / 53,01 kB gzip)
+
+**Fase B · Rendido por bloques (commits 2–7)** — 200 preguntas por tema, es decir:
+
+- [ ] B1 · **Bloque 1**: `romanizacion`, `al-andalus`, `castilla-aragon-baja-edad-media` → 600.
+- [ ] B2 · **Bloque 2**: `reyes-catolicos`, `austria-mayores-siglo-xvi`, `reformismo-borbonico-xviii` → 600.
+- [ ] B3 · **Siglo XIX**: `cortes-cadiz-1812`, `absolutismo-liberalismo-fernando-vii`, `revolucion-liberal-isabel-ii`, `sexenio-revolucionario`, `restauracion-canovismo` → 1.000.
+- [ ] B4 · **Siglo XX**: `regeneracionismo-primero-de-rivera`, `segunda-republica`, `guerra-civil`, `dictadura-franco`, `transicion-1978` → 1.000.
+- [ ] B5 · **Arte 1–4**: `templo-griego`, `arquitectura-urbana-roma`, `arquitectura-romanica`, `catedral-gotica` → 800.
+- [ ] B6 · **Arte 5–8**: `renacimiento-mecenazgo`, `barroco-urbanismo`, `romanticismo-realismo-impresionismo`, `vanguardias-artisticas` → 800.
+
+**Cierre de cada bloque (hacer siempre, en este orden)**
+
+1. `node scripts/validar-preguntas.mjs` → ✅ (reglas duras de §3).
+2. `npm.cmd run prueba` → ✅ (incluye el nuevo chequeo de duplicados).
+3. `npm.cmd run build` → ✅.
+4. `npm.cmd run comprobar-offline` y `comprobar-movil` en los bloques grandes (vigilancia del disparador aceptado, §12.2).
+5. Recuento por tema (que cada uno llegue a 200) + muestreo manual de ~10 preguntas por tema.
+6. Commit + push → CI en verde → entrada en `MEMORY.md`.
+
+**Documentación (al cierre)**
+
+- [ ] D1 · `MEMORY.md`: entrada por fase/bloque (aditiva), incluida la limitación de imágenes en Arte (§15.2).
+- [ ] D2 · `PLAN.md`: marcar Fase 6 por bloques a medida que se cierren; nota del disparador saltado ya anotada en §12.2.
+- [ ] D3 · `AGENTS.md`: **sin cambios** (el árbol ya prevé `datos/preguntas/<curso>/<tema>.json`).
+
+### 15.5 Criterios de "hecho"
+
+- [ ] 24 temas con **200 preguntas cada uno (4.800)**, sin duplicados y con `dificultad` repartida.
+- [ ] `prueba` y `build` en verde en los 7 commits; CI en `main` verde tras cada push.
+- [ ] **Revisión pedagógica** de muestreo por bloque (Fase 6): el profesor valida enunciados y explicaciones.
+- [ ] `comprobar-offline` y `comprobar-movil` en verde tras los bloques grandes (sin regresión del offline, invariante de §12).
+- [ ] `MEMORY.md` y este `PLAN.md` al día.
+
+### 15.6 Riesgos
+
+| Riesgo | Mitigación |
+|---|---|
+| **Bundle grande** (~2,7 MB JSON / ~0,9–1 MB gzip) y precaché del SW mayor | Aceptado y anotado en §12.2; `comprobar-offline` y `comprobar-movil` en cada commit grande; carga diferida (§12.3 A) = primera tarea de la Fase 7 |
+| **Enunciados repetidos** a 200 por tema | Chequeo permanente en `pruebas/datos.ts` (A4) + normalización (minúsculas/sin acentos) |
+| **Calidad pedagógica** de contenido redactado por IA | Receta de §15.3 + muestreo por bloque + **revisión del profesor** antes de dar el bloque por bueno (Fase 6) |
+| **Arte sin imágenes** (el examen es de láminas) | Alcance documentado en §15.2; `tipo: "imagen"` disparador de Fase 7 |
+| **`id` del curso equivocado** | Decidido **antes** del primer push (§15.1-1); una vez publicado, cambiarlo perdería el progreso |
+| Repositorio crece mucho (4.800 preguntas) | Texto plano, comprime ~3× en gzip; los JSON son la fuente de verdad y se validan en CI |
+| Agotamiento del plan a mitad | Fronteras de commit por bloque: se puede parar y reanudar sin dejar el repositorio roto (cada bloque cierra en verde) |

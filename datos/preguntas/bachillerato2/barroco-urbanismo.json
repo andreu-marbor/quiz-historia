@@ -1,0 +1,102 @@
+[
+  {
+    "id": "bachillerato2-barroco-urbanismo-001",
+    "enunciado": "¿Qué plaza de Roma reformó Bernini con su columnata oval para acoger a los fieles?",
+    "tipo": "opcion-multiple",
+    "opciones": ["La plaza Navona", "La plaza de España", "La plaza de San Pedro del Vaticano", "El Panteón"],
+    "respuesta": 2,
+    "explicacion": "La columnata de 284 columnas, de 1656 a 1666, enmarca el balcón de la basílica; Bernini la diseñó para el jubileo de 1675 y su planta imita los brazos de la iglesia.",
+    "dificultad": 1,
+    "tags": ["barroco", "bernini", "roma", "plazas"]
+  },
+  {
+    "id": "bachillerato2-barroco-urbanismo-002",
+    "enunciado": "¿Qué plaza de Madrid fue diseñada como espacio regio para festejos reales?",
+    "tipo": "opcion-multiple",
+    "opciones": ["La Plaza Mayor", "La Puerta del Sol", "La Cebada", "La Plaza de Oriente"],
+    "respuesta": 0,
+    "explicacion": "Proyectada por Juan de Gómez en la época de Felipe III y remozada tras el incendio de 1790, acogía toros y autos de fe; la Plaza de Oriente es ya borbónica y el Puerta del Sol, comercial.",
+    "dificultad": 1,
+    "tags": ["barroco", "madrid", "plazas", "urbanismo"]
+  },
+  {
+    "id": "bachillerato2-barroco-urbanismo-003",
+    "enunciado": "¿Qué siglos abarca el arte barroco en Europa?",
+    "tipo": "fecha",
+    "opciones": ["Siglos XVII-XVIII", "Siglos XV-XVI", "Siglos XIII-XIV", "Siglos XIX-XX"],
+    "respuesta": 0,
+    "explicacion": "El barroco se desarrolla desde finales del siglo XVI hasta mediados del XVIII, cuando el neoclasicismo lo sustituye; en España tiene manifestaciones tardías en el siglo XVIII borbónico.",
+    "dificultad": 2,
+    "tags": ["barroco", "cronologia", "fechas"]
+  },
+  {
+    "id": "bachillerato2-barroco-urbanismo-004",
+    "enunciado": "¿Qué rasgo distingue al barroco frente al clasicismo renacentista?",
+    "tipo": "opcion-multiple",
+    "opciones": ["La simetría austera", "El movimiento y la curva", "La línea recta serena", "El vacío decorativo"],
+    "respuesta": 1,
+    "explicacion": "El barroco busca el dinamismo, el contraste de luces y sombras, la ilusión y la emoción del espectador, frente a la calma, la proporción y la contención del Renacimiento.",
+    "dificultad": 1,
+    "tags": ["barroco", "estilo", "clasicismo"]
+  },
+  {
+    "id": "bachillerato2-barroco-urbanismo-005",
+    "enunciado": "El barroco recurre al engaño óptico: bóvedas fingidas y perspectivas pintadas funden arquitectura y pintura (quadratura).",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Artistas como Andrea Pozzo pintaron cúpulas inexistentes en San Ignacio de Roma; el techo del Escorial, en cambio, no se cubrió por orden de Felipe II, que no quería decoración sobre la tumba real.",
+    "dificultad": 2,
+    "tags": ["barroco", "quadratura", "pintura", "illusionismo"]
+  },
+  {
+    "id": "bachillerato2-barroco-urbanismo-006",
+    "enunciado": "¿Qué iglesia romana, de planta elíptica, es una de las obras maestras de Borromini?",
+    "tipo": "opcion-multiple",
+    "opciones": ["San Lorenzo fuera de las murallas", "El Panteón", "San Carlo alle Quattro Fontane", "Santa Maria Maggiore"],
+    "respuesta": 2,
+    "explicacion": "San Carlo alle Quattro Fontane (1638-1646) condensa el barroco de Borromini: planta elíptica, muros ondulados y una cúpula hexagonal nervada; contrasta con el clasicismo de Bernini.",
+    "dificultad": 2,
+    "tags": ["barroco", "borromini", "roma", "iglesias"]
+  },
+  {
+    "id": "bachillerato2-barroco-urbanismo-007",
+    "enunciado": "Las iglesias barrocas españolas suelen mantener la planta de cruz latina con capillas laterales y una cúpula sobre el crucero.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Iglesias como los Venerables de Sevilla o San Miguel de los Reyes de Valencia conservan la planta tradicional; el barroco se manifiesta en la decoración, las fachadas cóncavas y las cúpulas aericolas.",
+    "dificultad": 2,
+    "tags": ["barroco", "espana", "iglesias", "planta"]
+  },
+  {
+    "id": "bachillerato2-barroco-urbanismo-008",
+    "enunciado": "¿En qué año completó Bernini la columnata de la plaza de San Pedro?",
+    "tipo": "fecha",
+    "opciones": ["1620", "1700", "1600", "1666"],
+    "respuesta": 3,
+    "explicacion": "Bernini la terminó en 1666, en el pontificado de Alejandro VII; el proyecto se inició en 1656 y resolvió el problema de dar amplitud a la plaza sin ocultar la fachada de Maderno.",
+    "dificultad": 3,
+    "tags": ["barroco", "bernini", "san-pedro", "fechas"]
+  },
+  {
+    "id": "bachillerato2-barroco-urbanismo-009",
+    "enunciado": "Los Borbones embellecieron Madrid con obras de Sabatini y Villanueva, como la Puerta de Alcalá y el Paseo del Prado.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Sabatini proyectó la Puerta de Alcalá (1778) y el Salón de Recoletos; Villanueva diseñó el Museo del Prado, el Gabinete de Historia Natural y el Jardín Botánico, configurando el eje del Prado.",
+    "dificultad": 3,
+    "tags": ["barroco", "borbones", "madrid", "urbanismo"]
+  },
+  {
+    "id": "bachillerato2-barroco-urbanismo-010",
+    "enunciado": "¿Qué plaza barroca de Roma, de planta oval, conserva la fuente de los Cuatro Ríos de Bernini?",
+    "tipo": "opcion-multiple",
+    "opciones": ["La plaza de España", "La plaza Navona", "El Foro", "La plaza del Popolo"],
+    "respuesta": 1,
+    "explicacion": "Piazza Navona conserva la planta del estadio de Diocleciano; en ella Bernini situó en 1651 la Fontana dei Quattro Fiumi, con los Nilo, Ganges, Danubio y Río de la Plata.",
+    "dificultad": 3,
+    "tags": ["barroco", "bernini", "fuentes", "roma"]
+  }
+]

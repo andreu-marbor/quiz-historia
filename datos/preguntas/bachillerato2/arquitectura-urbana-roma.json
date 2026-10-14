@@ -1,0 +1,102 @@
+[
+  {
+    "id": "bachillerato2-arquitectura-urbana-roma-001",
+    "enunciado": "¿Qué ingeniería permitía abastecer de agua a las ciudades de la Hispania romana?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Los circos", "Los acueductos", "Los foros", "Los anfiteatros"],
+    "respuesta": 1,
+    "explicacion": "Los acueductos llevaban el agua por gravedad desde manantiales lejanos; en España se conservan los de Mérida (Los Milagros) y el de Segovia, aún en uso en época visigoda.",
+    "dificultad": 1,
+    "tags": ["arquitectura-roma", "acueductos", "ingenieria"]
+  },
+  {
+    "id": "bachillerato2-arquitectura-urbana-roma-002",
+    "enunciado": "¿Qué edificio de Roma albergaba las luchas de gladiadores?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El Coliseo", "El Panteón", "El Circo Máximo", "El Foro"],
+    "respuesta": 0,
+    "explicacion": "El anfiteatro Flavio o Coliseo, inaugurado en el año 80 d.C., tenía capacidad para unos 50.000 espectadores; el Circo era para las cuadrigas y el Panteón para el culto.",
+    "dificultad": 1,
+    "tags": ["arquitectura-roma", "coliseo", "anfiteatro"]
+  },
+  {
+    "id": "bachillerato2-arquitectura-urbana-roma-003",
+    "enunciado": "¿En qué siglo se construyó el Panteón actual de Roma?",
+    "tipo": "fecha",
+    "opciones": ["Siglo IV d.C.", "Siglo I a.C.", "Siglo II d.C.", "Siglo VI d.C."],
+    "respuesta": 2,
+    "explicacion": "Lo reedificó Adriano entre los años 118 y 128 d.C., conservando la fachada del Panteón de Agripa (siglo I a.C.), cuya inscripción se lee en el pórtico.",
+    "dificultad": 2,
+    "tags": ["arquitectura-roma", "panteon", "adriano", "fechas"]
+  },
+  {
+    "id": "bachillerato2-arquitectura-urbana-roma-004",
+    "enunciado": "La cúpula del Panteón mide unos 43 metros de diámetro interior, la misma altura que el edificio.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "La cúpula de hormigón, con un óculo de 9 metros de luz, es la mayor del mundo no reforzada; su espesor va disminuyendo hacia arriba con áridos más ligeros.",
+    "dificultad": 2,
+    "tags": ["arquitectura-roma", "panteon", "cupula", "estructura"]
+  },
+  {
+    "id": "bachillerato2-arquitectura-urbana-roma-005",
+    "enunciado": "¿Qué material constructivo permitió los grandes espacios abovedados romanos?",
+    "tipo": "opcion-multiple",
+    "opciones": ["La mampostería seca", "El adobe", "El hormigón romano (opus caementicium)", "La madera laminada"],
+    "respuesta": 2,
+    "explicacion": "El hormigón de árido, cal y ceniza volcánica (puzolana) permitió bóvedas y cúpulas de gran luz; se enlucía con ladrillo o mármol para dar acabado y cohesión.",
+    "dificultad": 2,
+    "tags": ["arquitectura-roma", "materiales", "hormigon", "estructura"]
+  },
+  {
+    "id": "bachillerato2-arquitectura-urbana-roma-006",
+    "enunciado": "El foro era el centro civil, religioso y comercial de la ciudad romana.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "En el foro se reunían el templo, la basílica (justicia y comercio) y los pórticos; en las ciudades hispanas fue el eje de la nueva traza romana.",
+    "dificultad": 2,
+    "tags": ["arquitectura-roma", "foro", "urbanismo"]
+  },
+  {
+    "id": "bachillerato2-arquitectura-urbana-roma-007",
+    "enunciado": "¿Qué obra romana de tres pisos de arcos se conserva en el sur de Francia?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El puente de Alcántara", "El acueducto de los Milagros", "El puente Milvio", "El acueducto de Pont du Gard"],
+    "respuesta": 3,
+    "explicacion": "El Pont du Gard formaba parte del acueducto de Nîmes; en España, los Milagros (Mérida) y el acueducto de Segovia son otros ejemplos, y Alcántara es un puente de Trajano sobre el Tajo.",
+    "dificultad": 3,
+    "tags": ["arquitectura-roma", "acueductos", "puentes"]
+  },
+  {
+    "id": "bachillerato2-arquitectura-urbana-roma-008",
+    "enunciado": "¿En qué año fue inaugurado el Coliseo de Roma?",
+    "tipo": "fecha",
+    "opciones": ["44 a.C.", "117 d.C.", "130 d.C.", "80 d.C."],
+    "respuesta": 3,
+    "explicacion": "Los emperadores Tito y Vespasiano inauguraron el anfiteatro Flavio en el año 80 d.C. con cien días de juegos; se levantó sobre la laguna de la domus de Nerón.",
+    "dificultad": 3,
+    "tags": ["arquitectura-roma", "coliseo", "fechas"]
+  },
+  {
+    "id": "bachillerato2-arquitectura-urbana-roma-009",
+    "enunciado": "Los romanos trazaban las ciudades nuevas según la centuriación, con el cardo y el decumano como vías principales.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "El cardo iba de norte a sur y el decumano de este a oeste; su cruzamiento marcaba el foro. La centuriación dividía el territorio en cuadrículas para repartir tierras a los colonos.",
+    "dificultad": 3,
+    "tags": ["arquitectura-roma", "urbanismo", "centuriacion"]
+  },
+  {
+    "id": "bachillerato2-arquitectura-urbana-roma-010",
+    "enunciado": "¿Para qué espectáculos se utilizaba el circo romano?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Reuniones del Senado", "Carreras de cuadrigas", "Representaciones teatrales", "Combates de gladiadores"],
+    "respuesta": 1,
+    "explicacion": "El circo, de planta alargada con dos columnas en la meta, acogía las carreras de carros; los combates eran en el anfiteatro y las representaciones teatrales en el teatro.",
+    "dificultad": 3,
+    "tags": ["arquitectura-roma", "circo", "espectaculos"]
+  }
+]

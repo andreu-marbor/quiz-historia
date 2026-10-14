@@ -1,0 +1,102 @@
+[
+  {
+    "id": "bachillerato2-reyes-catolicos-001",
+    "enunciado": "¿En qué año se casaron Isabel de Castilla y Fernando de Aragón?",
+    "tipo": "fecha",
+    "opciones": ["1474", "1469", "1479", "1492"],
+    "respuesta": 1,
+    "explicacion": "Se casaron en secreto en Valladolid en 1469, cuando Isabel aún no era reina; la boda unió los dos reinos y fue la base de la monarquía autoritaria de los Reyes Católicos.",
+    "dificultad": 1,
+    "tags": ["reyes-catolicos", "matrimonio-real", "fechas"]
+  },
+  {
+    "id": "bachillerato2-reyes-catolicos-002",
+    "enunciado": "¿En qué año se rindió el reino de Granada, último territorio musulmán de la península?",
+    "tipo": "fecha",
+    "opciones": ["1479", "1487", "1492", "1476"],
+    "respuesta": 2,
+    "explicacion": "El 2 de enero de 1492 Boabdil entregó las llaves de Granada; ese mismo año se firmaron las Capitulaciones de Santa Fe y el edicto de expulsión de los judíos.",
+    "dificultad": 1,
+    "tags": ["reyes-catolicos", "granada", "reconquista", "fechas"]
+  },
+  {
+    "id": "bachillerato2-reyes-catolicos-003",
+    "enunciado": "¿Qué institución creada en 1478 encargó a los Reyes Católicos perseguir la herejía en sus reinos?",
+    "tipo": "opcion-multiple",
+    "opciones": ["La Santa Hermandad", "La Inquisición", "Las Cortes de Toledo", "El Consejo de Aragón"],
+    "respuesta": 1,
+    "explicacion": "La bula de Sixto IV (1478) autorizó una inquisición en Castilla a petición de los monarcas; su administración quedó en manos de la Corona, lo que hizo de ella un instrumento de poder real.",
+    "dificultad": 1,
+    "tags": ["reyes-catolicos", "inquisicion", "instituciones"]
+  },
+  {
+    "id": "bachillerato2-reyes-catolicos-004",
+    "enunciado": "La Inquisición española dependía de la Corona más que directamente de Roma, a diferencia de la inquisición medieval.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Aunque necesitaba la bula papal, los inquisidores eran nombrados y pagados por los reyes y los recursos iban a la caja real: era una institución de Estado, no un tribunal pontificio.",
+    "dificultad": 2,
+    "tags": ["reyes-catolicos", "inquisicion", "monarquia-autoritaria"]
+  },
+  {
+    "id": "bachillerato2-reyes-catolicos-005",
+    "enunciado": "¿En qué año se dictó el decreto de expulsión de los judíos de España?",
+    "tipo": "fecha",
+    "opciones": ["1478", "1502", "1492", "1499"],
+    "respuesta": 2,
+    "explicacion": "El edicto de Granada se firmó el 31 de marzo de 1492 y entró en vigor el 31 de julio: entre 40.000 y 100.000 judíos abandonaron la península, la mayoría hacia el norte de África y Portugal.",
+    "dificultad": 2,
+    "tags": ["reyes-catolicos", "expulsion-judios", "fechas"]
+  },
+  {
+    "id": "bachillerato2-reyes-catolicos-006",
+    "enunciado": "¿En qué año se firmó el Tratado de Tordesillas entre España y Portugal?",
+    "tipo": "fecha",
+    "opciones": ["1494", "1479", "1512", "1492"],
+    "respuesta": 0,
+    "explicacion": "En 1494, siguiendo una bula de Alejandro VI, Tordesillas repartió el Atlántico entre las dos coronas peninsulares; Portugal quedó con Brasil y España con el resto de América.",
+    "dificultad": 2,
+    "tags": ["reyes-catolicos", "ultramar", "tratados", "fechas"]
+  },
+  {
+    "id": "bachillerato2-reyes-catolicos-007",
+    "enunciado": "El Tratado de Tordesillas se firmó en 1492 y solo afectaba a los territorios descubiertos por España.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 1,
+    "explicacion": "Falso en las dos cláusulas: se firmó en 1494 y dividió el Atlántico entre España y Portugal, reconociendo las zonas de exploración de ambas coronas.",
+    "dificultad": 2,
+    "tags": ["reyes-catolicos", "ultramar", "tratados"]
+  },
+  {
+    "id": "bachillerato2-reyes-catolicos-008",
+    "enunciado": "¿Qué incorporación de 1512 completó la unión territorial de la futura España?",
+    "tipo": "opcion-multiple",
+    "opciones": ["La anexión de Nápoles", "La incorporación de Sicilia", "La conquista de Orán", "La conquista de Navarra"],
+    "respuesta": 3,
+    "explicacion": "En 1512 el ejército castellano ocupó la Alta Navarra, incorporando el reino a la monarquía hispánica; Nápoles y Sicilia eran conquistas italianas, no unión peninsular.",
+    "dificultad": 3,
+    "tags": ["reyes-catolicos", "navarra", "monarquia", "fechas"]
+  },
+  {
+    "id": "bachillerato2-reyes-catolicos-009",
+    "enunciado": "Las Capitulaciones de Santa Fe (1492) reconocieron a Cristóbal Colón los títulos de almirante, virrey y gobernador de las tierras que descubriera.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "El documento firmado en Santa Fe, ya conquistada Granada, fijaba las dignidades y el diezmo de las ganancias para Colón y su descendencia; fue el contrato de la empresa del Atlántico.",
+    "dificultad": 3,
+    "tags": ["reyes-catolicos", "descubrimientos", "colón"]
+  },
+  {
+    "id": "bachillerato2-reyes-catolicos-010",
+    "enunciado": "¿Qué bula papal de 1493 concedió a los Reyes Católicos las tierras descubiertas al oeste de una línea imaginaria?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Exsurge Domine", "Romanus Pontifex", "Inter caetera", "Aeterni regis"],
+    "respuesta": 2,
+    "explicacion": "La bula Inter caetera de Alejandro VI (1493) trazó la línea que repartía el Nuevo Mundo; Romanus Pontifex era portuguesa y Exsurge Domine, contra Lutero (1520).",
+    "dificultad": 3,
+    "tags": ["reyes-catolicos", "ultramar", "vaticano"]
+  }
+]

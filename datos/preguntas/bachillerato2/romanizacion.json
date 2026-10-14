@@ -1,0 +1,102 @@
+[
+  {
+    "id": "bachillerato2-romanizacion-001",
+    "enunciado": "¿Qué ciudad fue la capital administrativa de la Hispania romana durante el Principado?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Cartagena", "Tarraco", "Mérida", "Córdoba"],
+    "respuesta": 1,
+    "explicacion": "Tarraco (la actual Tarragona) fue residencia del legado imperial y capital de la provincia Citerior; con la reorganización de Diocleciano la sede administrativa pasó a Emerita Augusta (Mérida).",
+    "dificultad": 1,
+    "tags": ["romanizacion", "ciudades-romanas"]
+  },
+  {
+    "id": "bachillerato2-romanizacion-002",
+    "enunciado": "¿En qué año comenzó la Segunda Guerra Púnica, que llevó a Roma a conquistar Hispania?",
+    "tipo": "fecha",
+    "opciones": ["206 a.C.", "197 a.C.", "218 a.C.", "149 a.C."],
+    "respuesta": 2,
+    "explicacion": "En 218 a.C. desembarcaron los romanos en Emporion para cortar los refuerzos de Aníbal; la guerra en la península terminó con la rendición cartaginesa en 206 a.C. tras la batalla de Ilipa.",
+    "dificultad": 1,
+    "tags": ["romanizacion", "guerras-punicas", "fechas"]
+  },
+  {
+    "id": "bachillerato2-romanizacion-003",
+    "enunciado": "¿Qué general romano venció en la batalla de Ilipa (206 a.C.) y expulsó a los cartagineses del valle del Guadalquivir?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Aníbal", "Asdrúbal Bárquida", "Publio Cornelio Escipión", "Quinto Cecilio Metelo"],
+    "respuesta": 2,
+    "explicacion": "Escipión —después llamado Africano— venció en Ilipa; la derrota dejó a Cartago sin su principal territorio de ultramar y selló el fin de su presencia militar en Hispania.",
+    "dificultad": 2,
+    "tags": ["romanizacion", "guerras-punicas", "protagonistas"]
+  },
+  {
+    "id": "bachillerato2-romanizacion-004",
+    "enunciado": "La ciudad de Numancia resistió varios asedios romanos y fue arrasada en el año 133 a.C. por Publio Cornelio Escipión Emiliano.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Numancia, en Soria, aguantó casi un siglo de hostilidades; su caída en 133 a.C. a manos de Escipión Emiliano —la misma fecha que la de Sagunto en Cartago— abrió el interior de la meseta a Roma.",
+    "dificultad": 2,
+    "tags": ["romanizacion", "numancia", "fechas"]
+  },
+  {
+    "id": "bachillerato2-romanizacion-005",
+    "enunciado": "¿Qué edificio de Mérida acogía los combates de gladiadores y de fieras?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El teatro", "El circo", "El templo de Diana", "El anfiteatro"],
+    "respuesta": 3,
+    "explicacion": "El anfiteatro de Mérida, construido en el año 8 a.C., era el escenario de los munera (combates de gladiadores); el teatro era para el teatro y el circo para las carreras de cuadrigas.",
+    "dificultad": 1,
+    "tags": ["romanizacion", "arquitectura-romana", "merida"]
+  },
+  {
+    "id": "bachillerato2-romanizacion-006",
+    "enunciado": "Las grandes vías de la Hispania romana se construyeron principalmente para el tránsito militar y la administración del territorio.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "La red viaria (como la vía Augusta) unía los campamentos y las ciudades para mover tropas y mensajes; el comercio y los viajeros se beneficiaron de ella, pero ese no era su fin original.",
+    "dificultad": 2,
+    "tags": ["romanizacion", "via-romana", "urbanismo"]
+  },
+  {
+    "id": "bachillerato2-romanizacion-007",
+    "enunciado": "¿Qué ciudad fundada como colonia romana en el valle del Ebro conserva las columnas de su templo dedicado a Augusto?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Bracara Augusta", "Caesaraugusta", "Tarraco", "Carthago Nova"],
+    "respuesta": 1,
+    "explicacion": "Caesaraugusta (Zaragoza), fundada por Augusto en el año 14 a.C. para veteranos, es la única de la que se conservan las columnas de su templo de Augusto; Bracara es Braga y Carthago Nova, Cartagena.",
+    "dificultad": 3,
+    "tags": ["romanizacion", "ciudades-romanas", "zaragoza"]
+  },
+  {
+    "id": "bachillerato2-romanizacion-008",
+    "enunciado": "¿Qué emperador romano nacido en Italica (Sevilla) conquistó Dacia y dio su nombre a la actual Rumanía?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Adriano", "Trajano", "Teodosio", "Constancio II"],
+    "respuesta": 1,
+    "explicacion": "Trajano, nacido en Italica en el año 53 d.C., conquistó Dacia entre 101 y 106 d.C.; Adriano, también de Italica, sucedió a Trajano, y Teodosio fue el último emperador de un Imperio unido.",
+    "dificultad": 3,
+    "tags": ["romanizacion", "emperadores", "protagonistas"]
+  },
+  {
+    "id": "bachillerato2-romanizacion-009",
+    "enunciado": "¿En qué año cayó Sagunto tras el asedio de los cartagineses, hecho que desencadenó la Segunda Guerra Púnica?",
+    "tipo": "fecha",
+    "opciones": ["218 a.C.", "211 a.C.", "219 a.C.", "206 a.C."],
+    "respuesta": 2,
+    "explicacion": "Sagunto, aliada de Roma, cayó en 219 a.C. tras un largo asedio de Aníbal; Roma protestó y declaró la guerra, y un año después Aníbal cruzó los Pirineos.",
+    "dificultad": 3,
+    "tags": ["romanizacion", "guerras-punicas", "fechas"]
+  },
+  {
+    "id": "bachillerato2-romanizacion-010",
+    "enunciado": "Tras la conquista, Roma organizó el territorio peninsular dividiéndolo en dos provincias: la Ulterior y la Citerior.",
+    "tipo": "opcion-multiple",
+    "opciones": ["La Ulterior y la Citerior", "La Bética y la Lusitania", "La Tarraconense y la Gallaecia", "Hispania y Galia"],
+    "respuesta": 0,
+    "explicacion": "En el año 197 a.C. Roma creó la Ulterior (sur) y la Citerior (este); Augusto reorganizó el territorio en Tarraconense, Bética y Lusitania, por lo que las otras dos opciones corresponden a épocas distintas.",
+    "dificultad": 2,
+    "tags": ["romanizacion", "administracion-romana"]
+  }
+]

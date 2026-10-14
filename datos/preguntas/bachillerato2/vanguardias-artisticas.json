@@ -1,0 +1,102 @@
+[
+  {
+    "id": "bachillerato2-vanguardias-artisticas-001",
+    "enunciado": "¿Qué movimiento pictórico, liderado por Matisse, usaba colores arbitrarios y pinceladas intensas?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El cubismo", "El expresionismo", "El fauvismo", "El surrealismo"],
+    "respuesta": 2,
+    "explicacion": "El fauvismo (1905, «jaula de fieras» del Salón de Otoño) liberó el color de su función descriptiva; derivó del divisionismo y precedió al cubismo y al expresionismo alemán.",
+    "dificultad": 1,
+    "tags": ["vanguardias", "fauvismo", "matisse"]
+  },
+  {
+    "id": "bachillerato2-vanguardias-artisticas-002",
+    "enunciado": "¿Qué obra de Picasso (1907) abre la vía del cubismo?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Las señoritas de Aviñón", "Guernica", "La persistencia de la memoria", "El guitarrista ciego"],
+    "respuesta": 0,
+    "explicacion": "Las señoritas de Aviñón rompe la perspectiva y deforma las figuras africanizadas; Guernica es de 1937 y La persistencia de la memoria, de Dalí (1931).",
+    "dificultad": 1,
+    "tags": ["vanguardias", "cubismo", "picasso"]
+  },
+  {
+    "id": "bachillerato2-vanguardias-artisticas-003",
+    "enunciado": "¿En qué año pintó Picasso Guernica?",
+    "tipo": "fecha",
+    "opciones": ["1925", "1914", "1930", "1937"],
+    "respuesta": 3,
+    "explicacion": "Lo realizó en París para el pabellón español de la Exposición Internacional de 1937, tras el bombardeo de la villa vasca; hoy se conserva en el Museo Reina Sofía.",
+    "dificultad": 2,
+    "tags": ["vanguardias", "picasso", "guernica", "fechas"]
+  },
+  {
+    "id": "bachillerato2-vanguardias-artisticas-004",
+    "enunciado": "¿Qué escritor impulsó el dadaísmo en el Cabaret Voltaire de Zúrich durante la Primera Guerra Mundial?",
+    "tipo": "opcion-multiple",
+    "opciones": ["André Breton", "Salvador Dalí", "Tristan Tzara", "Marcel Duchamp"],
+    "respuesta": 2,
+    "explicacion": "Tristan Tzara, con Hugo Ball en el Cabaret Voltaire (1916), impulsó el dadaísmo: rechazo del sentido, del arte burgués y de la lógica que había llevado a la guerra; el dadaísmo preparó al surrealismo.",
+    "dificultad": 1,
+    "tags": ["vanguardias", "dadaismo", "tzara"]
+  },
+  {
+    "id": "bachillerato2-vanguardias-artisticas-005",
+    "enunciado": "El surrealismo nació del dadaísmo; Breton publicó su manifiesto en 1924 y Dalí, Miró y Magritte son sus nombres mayores.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "El manifiesto de 1924 definía el automatismo puro y la supremacía del sueño; Magritte trabajó en Bélgica y Miró en Cataluña, con estilos muy distintos dentro de la misma idea.",
+    "dificultad": 2,
+    "tags": ["vanguardias", "surrealismo", "breton"]
+  },
+  {
+    "id": "bachillerato2-vanguardias-artisticas-006",
+    "enunciado": "¿Qué cuadro de Dalí es el emblema del surrealismo español?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Los elefantes", "El gran masturbador", "La persistencia de la memoria", "Homenaje a Nadia"],
+    "respuesta": 2,
+    "explicacion": "La persistencia de la memoria (1931), con sus relojes blandos en el paisaje de Portlligat, ilustra la elasticidad del tiempo onírico; los elefantes con patas de insecto son un motivo recurrente suyo.",
+    "dificultad": 2,
+    "tags": ["vanguardias", "surrealismo", "dali"]
+  },
+  {
+    "id": "bachillerato2-vanguardias-artisticas-007",
+    "enunciado": "El cubismo fragmenta el objeto y lo presenta desde varios puntos de vista a la vez, con paleta limitada en su etapa analítica.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Picasso y Braque (1907-1914) redujeron el color a grises y ocres para concentrarse en la estructura; la etapa sintética posterior recuperó el color y añadió collage y texturas.",
+    "dificultad": 2,
+    "tags": ["vanguardias", "cubismo", "picasso", "braque"]
+  },
+  {
+    "id": "bachillerato2-vanguardias-artisticas-008",
+    "enunciado": "¿En qué año se publicó el manifiesto del surrealismo de André Breton?",
+    "tipo": "fecha",
+    "opciones": ["1916", "1924", "1934", "1905"],
+    "respuesta": 1,
+    "explicacion": "Se publicó en 1924 en París, dos años antes de la novela automática «Los campos magnéticos»; el movimiento pervivió en Europa hasta la Segunda Guerra Mundial.",
+    "dificultad": 3,
+    "tags": ["vanguardias", "surrealismo", "breton", "fechas"]
+  },
+  {
+    "id": "bachillerato2-vanguardias-artisticas-009",
+    "enunciado": "El expresionismo alemán (Die Brücke, 1905) prioriza la expresión emocional y la deformación frente a la representación fiel.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Kirchner, Nolde o Heckel buscaron la angustia y lo primitivo con trazos violentos; Der Blaue Reiter, de Kandinsky y Marc, derivó hacia la abstracción.",
+    "dificultad": 3,
+    "tags": ["vanguardias", "expresionismo", "alemania"]
+  },
+  {
+    "id": "bachillerato2-vanguardias-artisticas-010",
+    "enunciado": "¿Qué artista neoplasticista fundó el grupo De Stijl y pintó Composición con rojo, azul y amarillo?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Wassily Kandinsky", "Kazimir Malévich", "Piet Mondrian", "Robert Delaunay"],
+    "respuesta": 2,
+    "explicacion": "Mondrian redujo la pintura a líneas rectas y tres colores primarios en equilibrio; Kandinsky fue pionero de la abstracción con Der Blaue Reiter y Malévich del suprematismo (Cuadrado negro).",
+    "dificultad": 3,
+    "tags": ["vanguardias", "neoplasticismo", "mondrian", "abstraccion"]
+  }
+]

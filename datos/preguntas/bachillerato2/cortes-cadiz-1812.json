@@ -1,0 +1,102 @@
+[
+  {
+    "id": "bachillerato2-cortes-cadiz-1812-001",
+    "enunciado": "¿En qué año se produjo el levantamiento de Madrid contra las tropas napoleónicas?",
+    "tipo": "fecha",
+    "opciones": ["1807", "1814", "1808", "1810"],
+    "respuesta": 2,
+    "explicacion": "El 2 de mayo de 1808 Madrid se sublevó contra los invasores; la represión de Wad-Ras (3 de mayo) fue el detonante de la guerra de Independencia y de las Juntas.",
+    "dificultad": 1,
+    "tags": ["cortes-cadiz", "guerra-independencia", "fechas"]
+  },
+  {
+    "id": "bachillerato2-cortes-cadiz-1812-002",
+    "enunciado": "¿Qué texto aprobaron las Cortes de Cádiz en 1812?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El Estatuto de Bayona", "La Carta Otorgada de 1834", "El Reglamento de 1808", "La Constitución de 1812"],
+    "respuesta": 3,
+    "explicacion": "El 19 de marzo de 1812 se promulgó la primera Constitución liberal española; el Estatuto de Bayona (1808) era una carta otorgada por José I y el Reglamento de 1808, de la Junta Central.",
+    "dificultad": 1,
+    "tags": ["cortes-cadiz", "constitucion-1812"]
+  },
+  {
+    "id": "bachillerato2-cortes-cadiz-1812-003",
+    "enunciado": "¿Qué apodo recibió la Constitución de 1812 porque se publicó el día de San José?",
+    "tipo": "opcion-multiple",
+    "opciones": ["La Pepa", "La Triste", "La Carta Magna", "La Constitución de los Robles"],
+    "respuesta": 0,
+    "explicacion": "«La Pepa» por publicarse el 19 de marzo, festividad de San José; también es conocida como «la docta» por la erudición de sus diputados.",
+    "dificultad": 1,
+    "tags": ["cortes-cadiz", "constitucion-1812"]
+  },
+  {
+    "id": "bachillerato2-cortes-cadiz-1812-004",
+    "enunciado": "¿En qué año se promulgó la Constitución de Cádiz?",
+    "tipo": "fecha",
+    "opciones": ["1814", "1812", "1810", "1820"],
+    "respuesta": 1,
+    "explicacion": "Se aprobó el 19 de marzo de 1812, en plena guerra de Independencia y con Cádiz como única gran plaza no ocupada; estuvo vigente de forma intermitente hasta 1833.",
+    "dificultad": 1,
+    "tags": ["cortes-cadiz", "constitucion-1812", "fechas"]
+  },
+  {
+    "id": "bachillerato2-cortes-cadiz-1812-005",
+    "enunciado": "La Constitución de 1812 proclamó la soberanía nacional y la monarquía constitucional.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "El poder residía en la nación, representada por las Cortes unicamerales; el rey dejaba de ser fuente de derecho y quedaba sometido a la Constitución.",
+    "dificultad": 2,
+    "tags": ["cortes-cadiz", "constitucion-1812", "soberania-nacional"]
+  },
+  {
+    "id": "bachillerato2-cortes-cadiz-1812-006",
+    "enunciado": "El sufragio de la Constitución de 1812 era universal para los varones mayores de 25 años, sin exigir renta.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Fue sufragio universal masculino (salvo sirvientes a sueldo, deudores y analfabetos en ciertos casos), mucho más amplio que el censitario de 1834, 1837 o 1845.",
+    "dificultad": 2,
+    "tags": ["cortes-cadiz", "constitucion-1812", "sufragio"]
+  },
+  {
+    "id": "bachillerato2-cortes-cadiz-1812-007",
+    "enunciado": "¿Qué régimen abolió la Constitución de 1812 en materia de tierra y jurisdicción?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El ejército permanente", "Los derechos de aduana", "Los señoríos jurisdiccionales", "La propiedad de la Iglesia"],
+    "respuesta": 2,
+    "explicacion": "El artículo 38 abolió los señoríos jurisdiccionales: desaparecieron las jurisdicciones señoriales sobre personas y tierras. La propiedad eclesiástica no se suprimió (eso llegaría con las desamortizaciones).",
+    "dificultad": 2,
+    "tags": ["cortes-cadiz", "senorio", "reforma-agraria"]
+  },
+  {
+    "id": "bachillerato2-cortes-cadiz-1812-008",
+    "enunciado": "¿Qué órgano de gobierno precedió a las Cortes de Cádiz durante la guerra de Independencia?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El Consejo de Castilla", "La Regencia de Murcia", "La Junta Central de Sevilla", "La Diputación de Cádiz"],
+    "respuesta": 2,
+    "explicacion": "La Junta Central, reunida en Sevilla desde septiembre de 1808, gobernó en nombre de Fernando VII y se disolvió en enero de 1811 al convocar elecciones a Cortes.",
+    "dificultad": 3,
+    "tags": ["cortes-cadiz", "guerra-independencia", "instituciones"]
+  },
+  {
+    "id": "bachillerato2-cortes-cadiz-1812-009",
+    "enunciado": "¿En qué año volvió Fernando VII a reinar personalmente tras la victoria sobre Napoleón?",
+    "tipo": "fecha",
+    "opciones": ["1820", "1812", "1808", "1814"],
+    "respuesta": 3,
+    "explicacion": "Fernando VII entró en Madrid en mayo de 1814, poco después de firmar en Valençay el tratado que le devolvía el trono, y anuló de inmediato la Constitución de 1812.",
+    "dificultad": 3,
+    "tags": ["cortes-cadiz", "fernando-vii", "absolutismo", "fechas"]
+  },
+  {
+    "id": "bachillerato2-cortes-cadiz-1812-010",
+    "enunciado": "Fernando VII derogó la Constitución de 1812 en el verano de 1814, al poco de volver a España.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "El decreto de 4 de mayo de 1814 —inspirado en el Manifiesto de los Persas— devolvió al rey el poder sin límites y encarceló a los diputados más liberales de Cádiz.",
+    "dificultad": 3,
+    "tags": ["cortes-cadiz", "fernando-vii", "absolutismo"]
+  }
+]

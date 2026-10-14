@@ -1,0 +1,102 @@
+[
+  {
+    "id": "bachillerato2-transicion-1978-001",
+    "enunciado": "¿En qué año se celebraron las primeras elecciones democráticas tras la muerte de Franco?",
+    "tipo": "fecha",
+    "opciones": ["1975", "1977", "1979", "1981"],
+    "respuesta": 1,
+    "explicacion": "El 15 de junio de 1977 se votaron las Cortes constituyentes; la UCD de Adolfo Suárez ganó con 165 escaños, seguida del PSOE y del PCE.",
+    "dificultad": 1,
+    "tags": ["transicion", "elecciones-1977", "fechas"]
+  },
+  {
+    "id": "bachillerato2-transicion-1978-002",
+    "enunciado": "¿Qué presidente del Gobierno dirigió la reforma política y la legalización de los partidos?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Leopoldo Calvo-Sotelo", "Santiago Carrillo", "Manuel Fraga", "Adolfo Suárez"],
+    "respuesta": 3,
+    "explicacion": "Adolfo Suárez, secretario general del Movimiento, fue nombrado en 1976 y encabezó la Ley para la Reforma Política, la legalización de partidos y el primer gobierno democrático.",
+    "dificultad": 1,
+    "tags": ["transicion", "suarez", "reforma-politica"]
+  },
+  {
+    "id": "bachillerato2-transicion-1978-003",
+    "enunciado": "¿Qué acuerdo de octubre de 1977 estabilizó la economía y la democracia?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El Pacto de San Sebastián", "El Tratado de El Pardo", "El Pacto de la Moncloa", "El Acuerdo de Bilbao"],
+    "respuesta": 2,
+    "explicacion": "El Pacto de la Moncloa firmó gobierno, patronal, sindicatos y partidos: reforma fiscal, moderación salarial y devaluación controlada, en medio de la crisis del petróleo.",
+    "dificultad": 1,
+    "tags": ["transicion", "pacto-moncloa", "economia"]
+  },
+  {
+    "id": "bachillerato2-transicion-1978-004",
+    "enunciado": "¿En qué año se sometió la Constitución a referéndum?",
+    "tipo": "fecha",
+    "opciones": ["1977", "1979", "1981", "1978"],
+    "respuesta": 3,
+    "explicacion": "El referéndum se celebró el 6 de diciembre de 1978 y obtuvo un 91,8 % de «sí» con una participación del 67 %; la Constitución entró en vigor el 29 de diciembre.",
+    "dificultad": 2,
+    "tags": ["transicion", "constitucion-1978", "referendum", "fechas"]
+  },
+  {
+    "id": "bachillerato2-transicion-1978-005",
+    "enunciado": "La Constitución de 1978 proclama la soberanía nacional, la monarquía parlamentaria y el derecho a la autonomía de las nacionalidades y regiones.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Los artículos 1.º y 2.º fijan la forma del Estado y su organización; el título VIII desarrolla las autonomías y su financiación, con la vía estatutaria y la preautonomía.",
+    "dificultad": 2,
+    "tags": ["transicion", "constitucion-1978", "soberania", "territorios"]
+  },
+  {
+    "id": "bachillerato2-transicion-1978-006",
+    "enunciado": "El 23 de febrero de 1981 el teniente coronel Tejero asaltó el Congreso de los Diputados, pero el intento de golpe fracasó.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "El golpe fracasó por la posición del rey —su discurso televisado a las 1.15 h— y porque el gobierno de Calvo-Sotelo continuó; la tesis de la connivencia no quedó acreditada en el juicio.",
+    "dificultad": 2,
+    "tags": ["transicion", "golpe-23-de-febrero", "23-f"]
+  },
+  {
+    "id": "bachillerato2-transicion-1978-007",
+    "enunciado": "¿Qué forma de Estado establece el artículo 1.º de la Constitución de 1978?",
+    "tipo": "opcion-multiple",
+    "opciones": ["La monarquía parlamentaria", "La república federal", "El Estado federal", "La monarquía absoluta"],
+    "respuesta": 0,
+    "explicacion": "España se constituye como un Estado social y democrático de derecho, que propugna como valores superiores la libertad, la justicia, la igualdad y el pluralismo político, bajo una monarquía parlamentaria.",
+    "dificultad": 2,
+    "tags": ["transicion", "constitucion-1978", "forma-del-estado"]
+  },
+  {
+    "id": "bachillerato2-transicion-1978-008",
+    "enunciado": "¿En qué año entró en vigor la Constitución de 1978?",
+    "tipo": "fecha",
+    "opciones": ["1978", "1979", "1981", "1977"],
+    "respuesta": 0,
+    "explicacion": "Fue publicada en el BOE el 29 de diciembre de 1978, día en que entró en vigor; el texto sigue vigente, con más de veinte reformas formales.",
+    "dificultad": 3,
+    "tags": ["transicion", "constitucion-1978", "fechas"]
+  },
+  {
+    "id": "bachillerato2-transicion-1978-009",
+    "enunciado": "La Ley para la Reforma Política de 1976 abrió legalmente la transición, permitiendo partidos políticos y Cortes bicamerales.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Aprobada en referéndum en diciembre de 1976, derogó los Procuradores «de esencia nacional» y convocó elecciones a un Congreso y un Senado elegidos por sufragio universal.",
+    "dificultad": 3,
+    "tags": ["transicion", "reforma-politica", "legalizacion-de-partidos"]
+  },
+  {
+    "id": "bachillerato2-transicion-1978-010",
+    "enunciado": "¿Qué modelo territorial prevé la Constitución de 1978?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El Estado unitario centralizado", "El Estado federal", "El Estado de las autonomías", "El Estado confederal"],
+    "respuesta": 2,
+    "explicacion": "El «Estado de las autonomías» es un modelo peculiar: unidad indisoluble, descentralización vía estatutos y competencias compartidas; no se usó la palabra «federal» para no herir sensibilidades.",
+    "dificultad": 3,
+    "tags": ["transicion", "constitucion-1978", "territorios", "estatutos"]
+  }
+]

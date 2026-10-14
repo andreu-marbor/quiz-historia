@@ -1,0 +1,102 @@
+[
+  {
+    "id": "bachillerato2-romanticismo-realismo-impresionismo-001",
+    "enunciado": "¿Qué pintor francés firmó La libertad guiando al pueblo, símbolo del Romanticismo?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Ingres", "Courbet", "Delacroix", "Manet"],
+    "respuesta": 2,
+    "explicacion": "Delacroix pintó la obra en 1830 como homenaje a la revolución de los Tres Gloriosos; Ingres representa el clasicismo académico y Courbet, el realismo.",
+    "dificultad": 1,
+    "tags": ["romanticismo", "delacroix", "pintura"]
+  },
+  {
+    "id": "bachillerato2-romanticismo-realismo-impresionismo-002",
+    "enunciado": "¿Qué pintor realista expuso El taller del pintor (1855) como «manifiesto» de su arte?",
+    "tipo": "opcion-multiple",
+    "opciones": ["Monet", "Courbet", "Degas", "Renoir"],
+    "respuesta": 1,
+    "explicacion": "Gustave Courbet rechazó ser juzgado por el Salón y montó su propio pabellón «Realista»; su obra retrataba escenas del pueblo sin idealización, con materia pictórica densa.",
+    "dificultad": 3,
+    "tags": ["realismo", "courbet", "pintura"]
+  },
+  {
+    "id": "bachillerato2-romanticismo-realismo-impresionismo-003",
+    "enunciado": "¿En qué año se celebró la muestra que dio nombre al impresionismo?",
+    "tipo": "fecha",
+    "opciones": ["1864", "1874", "1889", "1900"],
+    "respuesta": 1,
+    "explicacion": "En abril de 1874, en el estudio del fotógrafo Nadar, abrió la Société anonyme des artistes; la crítica ridiculizó La impresión, sol naciente de Monet y bautizó al grupo como impresionistas.",
+    "dificultad": 2,
+    "tags": ["impresionismo", "exposiciones", "monet", "fechas"]
+  },
+  {
+    "id": "bachillerato2-romanticismo-realismo-impresionismo-004",
+    "enunciado": "¿Qué obra de Goya es uno de los símbolos del Romanticismo español?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El tres de mayo de 1808", "Las meninas", "El juramento de los Horacios", "La rendición de Breda"],
+    "respuesta": 0,
+    "explicacion": "El tres de mayo de 1808 (1814) muestra la emoción y el horror frente a la ejecución de madrileños; Las meninas son de Velázquez y las otras dos, de la pintura barroca de tradición clásica.",
+    "dificultad": 1,
+    "tags": ["romanticismo", "goya", "espana"]
+  },
+  {
+    "id": "bachillerato2-romanticismo-realismo-impresionismo-005",
+    "enunciado": "El impresionismo buscaba captar la luz y el instante con pinceladas sueltas y la pintura al aire libre (plein air).",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Los impresionistas abandonaban el taller y el dibujo acabado para registrar la percepción fugaz de la luz; usaban colores puros yuxtapuestos y componían a menudo con escenas modernas.",
+    "dificultad": 2,
+    "tags": ["impresionismo", "tecnica", "luz"]
+  },
+  {
+    "id": "bachillerato2-romanticismo-realismo-impresionismo-006",
+    "enunciado": "¿Qué cuadro de Monet dio nombre al movimiento impresionista?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El almuerzo de los remeros", "La bañista", "Impresión, sol naciente", "El baile en el Moulin de la Galette"],
+    "respuesta": 2,
+    "explicacion": "Impresión, sol naciente (1872), el puerto de Le Havre a amanecer, inspiró el titular burlón de Louis Leroy; Renoir pintó El baile en el Moulin de la Galette en 1876.",
+    "dificultad": 2,
+    "tags": ["impresionismo", "monet", "pintura"]
+  },
+  {
+    "id": "bachillerato2-romanticismo-realismo-impresionismo-007",
+    "enunciado": "El Salón de París era la exposición oficial controlada por la Academia de Bellas Artes, que seleccionaba las obras admitidas.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Ese filtro académico explica que los innovadores —realistas e impresionistas— buscaran salones alternativos, como el de los Refusés (1863) o las muestras independientes de 1874 en adelante.",
+    "dificultad": 2,
+    "tags": ["impresionismo", "academia", "salon"]
+  },
+  {
+    "id": "bachillerato2-romanticismo-realismo-impresionismo-008",
+    "enunciado": "¿En qué año murió Francisco de Goya?",
+    "tipo": "fecha",
+    "opciones": ["1810", "1836", "1806", "1828"],
+    "respuesta": 3,
+    "explicacion": "Goya murió en Burdeos el 16 de abril de 1828, en su segundo exilio; su trayectoria, de las tapices ilustradas a los «Pinturas negras» y los «Desastres», enlaza Ilustración y Romanticismo.",
+    "dificultad": 3,
+    "tags": ["romanticismo", "goya", "fechas"]
+  },
+  {
+    "id": "bachillerato2-romanticismo-realismo-impresionismo-009",
+    "enunciado": "La pintura de Goya evolucionó desde las escenas amables de tapices hacia los Caprichos y los Desastres de la guerra, cada vez más críticas.",
+    "tipo": "verdadero-falso",
+    "opciones": ["Verdadero", "Falso"],
+    "respuesta": 0,
+    "explicacion": "Los Caprichos (1799) satirizan la superstición y el vicio; los Desastres de la guerra (1810-1814) registran la represión; las Pinturas negras de la Quinta del Sordo culminan su oscuridad interior.",
+    "dificultad": 3,
+    "tags": ["romanticismo", "goya", "caprichos", "desastres-de-la-guerra"]
+  },
+  {
+    "id": "bachillerato2-romanticismo-realismo-impresionismo-010",
+    "enunciado": "¿Qué movimiento, derivado del impresionismo, sistematizó Seurat con puntos de color puro?",
+    "tipo": "opcion-multiple",
+    "opciones": ["El fauvismo", "El simbolismo", "El puntillismo (neoimpresionismo)", "El expresionismo"],
+    "respuesta": 2,
+    "explicacion": "Seurat y Signac aplicaron la teoría óptica de la mezcla de colores en el lienzo, con pequeños puntos; de ahí derivarían el fauvismo y, por extensión, las vanguardias del siglo XX.",
+    "dificultad": 3,
+    "tags": ["impresionismo", "neoimpresionismo", "seurat", "puntillismo"]
+  }
+]

@@ -562,3 +562,31 @@ Registro de **cambios relevantes**, **problemas encontrados y sus soluciones** y
 - **Contenido:** texto estándar de la MIT con **`Copyright (c) 2026 Andreu Martinez`** (nombre del historial de git del repo). Sin cambios de código ni de build; el CI solo valida, construye y despliega igual que siempre.
 - **Commit:** `f43aee5` → `main` (push normal, con upstream desde el primer día).
 - **Alcance:** `LICENSE` (nuevo), `AGENTS.md` (árbol de directorios) y esta entrada.
+
+### 2026-10-14 — Contenido: el `titulo` de todas las asignaturas pasa a «Asignatura Ejemplo» (petición del usuario)
+
+- **Petición:** «en los JSON actuales marca la asignatura de todos los temas que hay como "Asignatura Ejemplo"».
+- **Cambio:** en `datos/temas.json`, el `titulo` de las 3 asignaturas (antes «Historia» en 2º ESO, 4º ESO y 1º Bachiller) pasa a **«Asignatura Ejemplo»**. **Solo el `titulo`**: los `id` (`historia`), los `orden`, los `temas` y **todos los ficheros de `datos/preguntas/`** quedan intactos — el `id` de asignatura no se toca porque de él dependen las claves virtuales «Repaso global» de `localStorage` (`<curso>/__todos__/<asignatura>`), cambiarlo dejaría sin lectura el progreso guardado por los alumnos.
+- **Efecto visible:** subtítulos `h3` de Inicio/Progreso, columna «Asignatura» de Progreso y los rótulos «Repaso global de Asignatura Ejemplo» / «2º ESO · Repaso global de Asignatura Ejemplo».
+- **Validación:** `node scripts/validar-preguntas.mjs` ✅ (3 cursos, 4 temas, 40 preguntas) · `npm.cmd run prueba` ✅ **517 comprobaciones** (68 + 60 + 338 + 51 + 36 de contraste) — las pruebas usan catálogos falsos propios, no los títulos reales, así que ninguna dependía de «Historia».
+- **Alcance:** `datos/temas.json` y esta entrada.
+
+### 2026-10-14 — `PLAN.md` §15: plan de poblado de 2º Bachillerato (EBAU 2027) añadido antes de ejecutar nada
+
+- **Petición:** «antes de arrancar nada, añade las tareas de este plan en `PLAN.md`», tras confirmar el usuario las dos decisiones que quedaban abiertas: **`id` del curso = `bachillerato2`** y **chequeo de enunciados duplicados en `pruebas/datos.ts`**.
+- **Fuentes:** se extrajo el texto de los dos PDFs del repo con `pypdf` (Python 3.14 + `pypdf` 6.20, `PYTHONIOENCODING=utf-8`) — **no son libros de contenido**: son las presentaciones de las reuniones de coordinación de la PAU 2027 y solo aportan el **formato del examen** y el **temario** (Historia de España pp. 13–16 → 16 temas; Historia del Arte p. 9 → 8 temas, más 40 láminas, 8 comparativas y ~110 términos de vocabulario en las pp. 11–13).
+- **Nuevo `PLAN.md` §15** (950 líneas en total, +145): 15.1 decisiones cerradas (8) · 15.2 temario literal con los `id` de cada tema · 15.3 receta de calidad · 15.4 tareas (Fase A + bloques B1–B6 + cierre y documentación) · 15.5 criterios de hecho · 15.6 riesgos.
+- **Otros puntos tocados en `PLAN.md`:** cabecera («Última actualización» → 2026-10-14); **Fase 6** desglosada con las 8 tareas del §15; **§12.2** con aviso de que el disparador **«> 450 preguntas» queda saltado a propósito** (decisión §15.1-4: bundle único `eager`, sin carga diferida, pendiente como primera tarea obligatoria de la Fase 7); **§13.2** la tarea pendiente de Historia del Arte apunta a §15.
+- **Cifras del plan:** 24 temas × **200 preguntas** = **4.800** (16 Historia + 8 Arte), entregas en **7 commits** (catálogo + 6 bloques), `minPreguntas: 10`, estimación de bundle **~2,7 MB JSON / ~0,9–1 MB gzip**.
+- **Alcance:** solo `PLAN.md` y esta entrada; **cero código y cero contenido todavía** (`datos/` intacto respecto al cambio anterior).
+
+### 2026-10-14 — Fase A (§15.4): curso `bachillerato2` + 240 preguntas base + chequeo de duplicados
+
+- **Petición:** «arranca» (Fase A del plan de §15.4), tras el plan registrado en `PLAN.md`.
+- **Catálogo (`datos/temas.json`):** nuevo curso **`bachillerato2`** («2º Bachillerato», `orden: 6`) con dos asignaturas — **`historia`** («Historia», orden 1, **16 temas** de la Historia de España) y **`historia-del-arte`** («Historia del Arte», orden 2, **8 temas** del temario de Arte de la PAU) —, `orden` 1..N por asignatura y `minPreguntas: 10`. Los `id` de tema son los fijados en §15.2 (`romanizacion` … `transicion-1978`; `templo-griego` … `vanguardias-artisticas`).
+- **Contenido:** 24 ficheros `datos/preguntas/bachillerato2/<tema>.json` con **10 preguntas cada uno (240)**, ids `bachillerato2-<tema>-001…010` correlativos, mezcla ≈65/25/10 de tipos, `dificultad` 3·4·3 por tema, índice de `respuesta` repartido y explicación con dato clave. **Ninguna pregunta usa `tipo: "imagen"`** (la UI aún no la renderiza): en Arte, donde el examen real es de láminas, todo el contenido es textual — **limitación documentada** (§15.6 y D1).
+- **Pruebas (`pruebas/datos.ts`):** (A3) el aserto `temas <= 4` pasa a `temas >= 3` (28 temas reales) y (A4) **nuevo chequeo de enunciados duplicados** en todo `datos/preguntas/`: se normalizan (minúsculas, sin acentos ni puntuación) y se falla listándolos; era el control pedido por el usuario contra las repeticiones inevitables a 200 por tema.
+- **Títulos de asignatura:** «Historia» y «Historia del Arte» para el curso nuevo (propuestos por el agente al arrancar; los 3 cursos antiguos siguen con «Asignatura Ejemplo»).
+- **Incidencia (glitch de escritura):** en un lote de 4 `write` el tool devolvió «Created file successfully» pero **los ficheros no llegaron a persistirse** (el directorio tenía 15 en vez de 19). Detectado al recuentar y parsear; se reescribieron los 4 y se verificó de nuevo. **Lección:** tras cada lote de `write`, comprobar el recuento de ficheros antes de dar el lote por bueno.
+- **Validación:** `node scripts/validar-preguntas.mjs` ✅ **4 cursos · 28 temas · 280 preguntas** · `npm.cmd run prueba` ✅ **518 comprobaciones** (517 → 518: +1 del chequeo de duplicados, 0 duplicados) · `npm.cmd run build` ✅ (`tsc --noEmit` + vite: bundle **178,78 kB / 53,01 kB gzip** — de momento pequeño; el salto de tamaño llegará con los bloques de 200 y ahí tocará `comprobar-offline`/`comprobar-movil`).
+- **Alcance:** `datos/temas.json`, `datos/preguntas/bachillerato2/` (24 ficheros), `pruebas/datos.ts`, `PLAN.md` (A1–A5 marcadas) y esta entrada.
