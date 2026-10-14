@@ -907,7 +907,7 @@ Cada tarea = **commit + push** con `prueba` y `build` en verde; los selectores d
 
 **Fase B · Rendido por bloques (commits 2–7)** — 200 preguntas por tema, es decir:
 
-- [ ] B1 · **Bloque 1**: `romanizacion`, `al-andalus`, `castilla-aragon-baja-edad-media` → 600.
+- [x] B1 · **Bloque 1**: `romanizacion`, `al-andalus`, `castilla-aragon-baja-edad-media` → 600. ✅ (cada tema a 200: om/vf/fecha ≈ 65/25/10, dificultad ≈ 1/3 c/u, índice de `respuesta` repartido; revisión factual por muestreo, con una corrección — Baza no la defendió Boabdil. `prueba` 518 · `build` **510 kB / 141 kB gzip: el disparador de §12.2 está confirmado, carga diferida pendiente (Fase 7)**)
 - [ ] B2 · **Bloque 2**: `reyes-catolicos`, `austria-mayores-siglo-xvi`, `reformismo-borbonico-xviii` → 600.
 - [ ] B3 · **Siglo XIX**: `cortes-cadiz-1812`, `absolutismo-liberalismo-fernando-vii`, `revolucion-liberal-isabel-ii`, `sexenio-revolucionario`, `restauracion-canovismo` → 1.000.
 - [ ] B4 · **Siglo XX**: `regeneracionismo-primero-de-rivera`, `segunda-republica`, `guerra-civil`, `dictadura-franco`, `transicion-1978` → 1.000.

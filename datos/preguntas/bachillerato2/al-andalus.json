@@ -3,100 +3,3710 @@
     "id": "bachillerato2-al-andalus-001",
     "enunciado": "¿En qué año cruzaron las tropas musulmanas el Estrecho y comenzó la conquista de la península?",
     "tipo": "fecha",
-    "opciones": ["711", "718", "722", "756"],
+    "opciones": [
+      "711",
+      "718",
+      "722",
+      "756"
+    ],
     "respuesta": 0,
     "explicacion": "En el verano de 711, Tariq ibn Ziyad cruzó el Estrecho con tropas bereberes; en pocos años cayeron Toledo (711), Córdoba (712) y Zaragoza (714).",
     "dificultad": 1,
-    "tags": ["al-andalus", "conquista-islamica", "fechas"]
+    "tags": [
+      "al-andalus",
+      "conquista-islamica",
+      "fechas"
+    ]
   },
   {
     "id": "bachillerato2-al-andalus-002",
     "enunciado": "¿Qué caudillo dirigió el cruce del Estrecho en 711 y da nombre a Gibraltar?",
     "tipo": "opcion-multiple",
-    "opciones": ["Musza ibn Nusayr", "Tariq ibn Ziyad", "Abd al-Rahman I", "Al-Mansur"],
+    "opciones": [
+      "Musza ibn Nusayr",
+      "Tariq ibn Ziyad",
+      "Abd al-Rahman I",
+      "Al-Mansur"
+    ],
     "respuesta": 1,
     "explicacion": "Tariq ibn Ziyad desembarcó en Jebel Tariq («monte de Tariq»), que dio nombre a Gibraltar; Musa ibn Nusayr, su superior, completó la conquista al año siguiente.",
     "dificultad": 1,
-    "tags": ["al-andalus", "protagonistas", "conquista-islamica"]
+    "tags": [
+      "al-andalus",
+      "protagonistas",
+      "conquista-islamica"
+    ]
   },
   {
     "id": "bachillerato2-al-andalus-003",
     "enunciado": "¿Qué batalla de 711 selló la derrota del rey visigodo Rodrigo?",
     "tipo": "opcion-multiple",
-    "opciones": ["La batalla de Guadalete", "La batalla de Covadonga", "La batalla de Clavijo", "La batalla de las Navas de Tolosa"],
+    "opciones": [
+      "La batalla de Guadalete",
+      "La batalla de Covadonga",
+      "La batalla de Clavijo",
+      "La batalla de las Navas de Tolosa"
+    ],
     "respuesta": 0,
     "explicacion": "En la batalla del río Guadalete (o de la Calahorra) murió o desapareció Rodrigo; los reinados cristianos de Covadonga (722), Clavijo y Navas de Tolosa (1212) son posteriores y del otro bando.",
     "dificultad": 1,
-    "tags": ["al-andalus", "conquista-islamica", "batallas"]
+    "tags": [
+      "al-andalus",
+      "conquista-islamica",
+      "batallas"
+    ]
   },
   {
     "id": "bachillerato2-al-andalus-004",
     "enunciado": "¿En qué año proclamó Abd al-Rahman I el emirato independiente de Córdoba?",
     "tipo": "fecha",
-    "opciones": ["711", "929", "756", "1031"],
+    "opciones": [
+      "711",
+      "929",
+      "756",
+      "1031"
+    ],
     "respuesta": 2,
     "explicacion": "En 756 Abd al-Rahman I, único superviviente de la familia omeya asesinada en Damasco, se proclamó emir independiente de Bagdad; hasta 929 no se proclamó califa.",
     "dificultad": 2,
-    "tags": ["al-andalus", "omeyas", "fechas"]
+    "tags": [
+      "al-andalus",
+      "omeyas",
+      "fechas"
+    ]
   },
   {
     "id": "bachillerato2-al-andalus-005",
     "enunciado": "¿Qué título adoptó Abd al-Rahman III en el año 929 para rivalizar con el califa de Bagdad?",
     "tipo": "opcion-multiple",
-    "opciones": ["El de califa", "El de sultán", "El de emir mayor", "El de rey de reyes"],
+    "opciones": [
+      "El de califa",
+      "El de sultán",
+      "El de emir mayor",
+      "El de rey de reyes"
+    ],
     "respuesta": 0,
     "explicacion": "Abd al-Rahman III se proclamó califa de Córdoba en 929, asumiendo la jefatura religiosa y política del islam occidental; el título de sultán sería propio de épocas posteriores.",
     "dificultad": 2,
-    "tags": ["al-andalus", "omeyas", "califato"]
+    "tags": [
+      "al-andalus",
+      "omeyas",
+      "califato"
+    ]
   },
   {
     "id": "bachillerato2-al-andalus-006",
     "enunciado": "¿En qué año se desmanteló el Califato de Córdoba y se abrió el periodo de los reinos de taifas?",
     "tipo": "fecha",
-    "opciones": ["1085", "1147", "1090", "1031"],
+    "opciones": [
+      "1085",
+      "1147",
+      "1090",
+      "1031"
+    ],
     "respuesta": 3,
     "explicacion": "Tras una guerra civil, en 1031 fue derrocado el califa Hisham III y Córdoba se proclamó república de taifas; las taifas nacieron del vacío de poder, no de una conquista.",
     "dificultad": 3,
-    "tags": ["al-andalus", "taifas", "fechas"]
+    "tags": [
+      "al-andalus",
+      "taifas",
+      "fechas"
+    ]
   },
   {
     "id": "bachillerato2-al-andalus-007",
     "enunciado": "Las parias eran tributos que los reinos cristianos hacían pagar a los reinos de taifas a cambio de protección militar.",
     "tipo": "verdadero-falso",
-    "opciones": ["Verdadero", "Falso"],
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
     "respuesta": 0,
     "explicacion": "Tras la caída de Toledo (1085), las taifas pagaron parias a León y Castilla para evitar ataques: un oro que debilitó a los propios reinos musulmanes, que siguieron pagándolas después a los almorávides.",
     "dificultad": 2,
-    "tags": ["al-andalus", "taifas", "reinos-cristianos"]
+    "tags": [
+      "al-andalus",
+      "taifas",
+      "reinos-cristianos"
+    ]
   },
   {
     "id": "bachillerato2-al-andalus-008",
     "enunciado": "La batalla de Covadonga (722) supuso el fin de la presencia musulmana en la península ibérica.",
     "tipo": "verdadero-falso",
-    "opciones": ["Verdadero", "Falso"],
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
     "respuesta": 1,
     "explicacion": "Falso: Covadonga (722) fue el comienzo simbólico del reino astur y de la expansión cristiana; al-Ándalus pervivió casi ochocientos años, hasta la rendición de Granada en 1492.",
     "dificultad": 3,
-    "tags": ["al-andalus", "reconquista", "batallas"]
+    "tags": [
+      "al-andalus",
+      "reconquista",
+      "batallas"
+    ]
   },
   {
     "id": "bachillerato2-al-andalus-009",
     "enunciado": "¿Qué dinastía fundó el reino nazarí de Granada, el último de al-Ándalus?",
     "tipo": "opcion-multiple",
-    "opciones": ["Los omeyas", "Los abadíes", "Los nazaríes", "Los hammudíes"],
+    "opciones": [
+      "Los omeyas",
+      "Los abadíes",
+      "Los nazaríes",
+      "Los hammudíes"
+    ],
     "respuesta": 2,
     "explicacion": "Los nazaríes, de origen árabe, instalaron su capital en Granada en 1238 y gobernaron hasta 1492; los omeyas fueron la dinastía del emirato y el califato de Córdoba.",
     "dificultad": 3,
-    "tags": ["al-andalus", "nazaries", "granada"]
+    "tags": [
+      "al-andalus",
+      "nazaries",
+      "granada"
+    ]
   },
   {
     "id": "bachillerato2-al-andalus-010",
     "enunciado": "¿Cuál fue la capital de al-Ándalus durante la mayor parte de su existencia?",
     "tipo": "opcion-multiple",
-    "opciones": ["Toledo", "Córdoba", "Granada", "Sevilla"],
+    "opciones": [
+      "Toledo",
+      "Córdoba",
+      "Granada",
+      "Sevilla"
+    ],
     "respuesta": 1,
     "explicacion": "Córdoba fue sede del emirato (756) y del califato (929-1031) y la ciudad más poblada de Occidente; Toledo solo fue capital visigoda y Granada lo fue del último reino, desde 1238.",
     "dificultad": 2,
-    "tags": ["al-andalus", "ciudades", "cordoba"]
+    "tags": [
+      "al-andalus",
+      "ciudades",
+      "cordoba"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-011",
+    "enunciado": "¿Qué valí de Ifriqiya supervisó la conquista desde África y desembarcó en la península en 712?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Tariq ibn Ziyad",
+      "Abd al-Aziz ibn Musa",
+      "Al-Samh ibn Malik",
+      "Musa ibn Nusayr"
+    ],
+    "respuesta": 3,
+    "explicacion": "Musa ibn Nusayr, gobernador de Ifriqiya, organizó la campaña y llegó en persona en 712 para rematar la conquista; Tariq era su lugarteniente y Abd al-Aziz, su hijo, fue el primer valí de al-Ándalus.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "conquista-islamica",
+      "protagonistas"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-012",
+    "enunciado": "¿En qué año cayó Córdoba en manos musulmanas?",
+    "tipo": "fecha",
+    "opciones": [
+      "711",
+      "712",
+      "714",
+      "718"
+    ],
+    "respuesta": 1,
+    "explicacion": "Tras la entrada de Tariq en 711, Musa ibn Nusayr completó el avance en 712 con la toma de Mérida y Córdoba; el resto del valle del Guadalquivir se sumó en los años siguientes.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "conquista-islamica",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-013",
+    "enunciado": "¿Cómo se llamaba el valí andalusí que murió combatiendo a los francos en 732?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Balch ibn Bishr",
+      "Al-Samh ibn Malik",
+      "Hudayfa al-Bayyali",
+      "Abd al-Rahman al-Ghafiqi"
+    ],
+    "respuesta": 3,
+    "explicacion": "Abd al-Rahman al-Ghafiqi, valí de al-Ándalus, cayó en la batalla de Poitiers (732) frente a Carlos Martel; al-Samh fue valí anterior y murió asediando Toulouse en 721, mientras que Balj llegó de Siria en 741.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "batallas",
+      "protagonistas"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-014",
+    "enunciado": "¿Con qué otro nombre es conocida la batalla de 732 en la que murió Abd al-Rahman al-Ghafiqi?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Batalla de Sagrajas",
+      "Batalla de Clavijo",
+      "Batalla de Aljubarrota",
+      "Batalla de Tours"
+    ],
+    "respuesta": 3,
+    "explicacion": "Se la conoce como batalla de Poitiers o de Tours porque tuvo lugar entre ambas ciudades y frenó el avance andalusí por el valle del Loira; Sagrajas (1086), Clavijo (844) y Aljubarrota (1385) son batallas bien posteriores.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "batallas",
+      "reinos-cristianos"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-015",
+    "enunciado": "La conquista militar fue vertiginosa, pero la ocupación efectiva del territorio y su pacificación se prolongaron durante décadas.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: la columna andalusí llegó al Ebro y al Duero en muy pocos años, pero la sumisión de los núcleos del norte y el control efectivo de las rutas exigieron décadas de expediciones anuales.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "conquista-islamica",
+      "cronologia"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-016",
+    "enunciado": "¿Qué ciudad del valle del Ebro, tomada en 714, se convirtió en una de las grandes plazas fuertes de la frontera interior de al-Ándalus?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Granada",
+      "Sevilla",
+      "Toledo",
+      "Zaragoza"
+    ],
+    "respuesta": 3,
+    "explicacion": "Zaragoza, conquistada por Musa ibn Nusayr en 714, dominaba el valle del Ebro y fue capital de la marca superior y sede de los banu Hud en época de taifas; las otras ciudades quedaban en el valle del Guadalquivir o en la Meseta.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "conquista-islamica",
+      "ciudades"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-017",
+    "enunciado": "El término muladí, presente en las revueltas del siglo IX, designaba a los...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "esclavos manumitidos de origen godo",
+      "árabes venidos de Siria",
+      "berberes del norte de África",
+      "hispano-visigodos conversos al islam"
+    ],
+    "respuesta": 3,
+    "explicacion": "Muladí (o baladí, «del país») eran los nativos hispano-visigodos convertidos al islam, frente a árabes y berberes que llegaban ya islamizados; el mestizaje y la pugna por el poder entre estos grupos marcaron la historia de al-Ándalus.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "sociedad",
+      "muladies"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-018",
+    "enunciado": "Los andalusíes dominaron al norte de los Pirineos una franja costera con base en Narbona. ¿Cómo se llamaba esa provincia?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El Languedoc",
+      "El Rosellón",
+      "La Provenza",
+      "La Septimania"
+    ],
+    "respuesta": 3,
+    "explicacion": "La Septimania, con Narbona como bastión, fue el único territorio al norte de los Pirineos bajo dominio andalusí de forma duradera; las incursiones alcanzaron el Languedoc, Borgoña y el valle del Loira sin que ninguna otra región quedara anexionada.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "conquista-islamica",
+      "fronteras"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-019",
+    "enunciado": "Tras la derrota de 732, al-Ándalus perdió de inmediato la Septimania y todos sus territorios al norte de los Pirineos.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Falso: al-Ándalus conservó la Septimania con Narbona como centro hasta que los francos, tras un largo asedio, la tomaron en 759; solo entonces se quebró la presencia musulmana al norte de los Pirineos.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "septimania",
+      "fronteras"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-020",
+    "enunciado": "Las revueltas bereberes de la década de 740 en al-Ándalus estuvieron provocadas, en gran medida, por el impago de sus soldadas.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: los bereberes, mal pagados por el poder de Damasco, se sublevaron en el norte de África y penetraron en la península; la batalla de Akouba (741) y la guerra entre árabes y berberes desangraron al-Ándalus, que hubo de pedir refuerzos sirios.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "bereberes",
+      "conflictos-internos"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-021",
+    "enunciado": "¿Qué cuerpo de élite de origen sirio llegó a la península en 741 para ayudar a sofocar las revueltas bereberes?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Los mamelucos de Egipto",
+      "Los eslavos de Bulgaria",
+      "Los jenízaros de Anatolia",
+      "El yund de Siria"
+    ],
+    "respuesta": 3,
+    "explicacion": "En 741 llegó el yund (división territorial) de Siria mandado por Balj ibn Bishr; sus tropas se repartieron entre Sevilla y Córdoba y dieron origen a barrios militares como el de Shaduna. Mamelucos y jenízaros son instituciones de otros siglos y regiones.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "bereberes",
+      "ejercito"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-022",
+    "enunciado": "¿Contra qué emir se rebeló repetidamente Musa ibn Musa, el poderoso caudillo de la cuenca del Ebro apodado «el tercer rey de España»?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Abd al-Rahman I",
+      "Hisham I",
+      "Mohamed I",
+      "Abd al-Rahman II"
+    ],
+    "respuesta": 3,
+    "explicacion": "Musa ibn Musa, de la familia de los banu Qasi, se enfrentó a Abd al-Rahman II, acuñó moneda propia y llegó a controlar Zaragoza, Toledo y Medinaceli; su derrota en Albelda (859) y su muerte en 862 quebraron el poder de los banu Qasi.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "banu-qasi",
+      "conflictos-internos"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-023",
+    "enunciado": "Abd al-Rahman I recibió del califa abasí de Bagdad el reconocimiento oficial de su gobierno en Córdoba.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Falso: Abd al-Rahman I llegó huido a al-Ándalus tras la masacre de su familia omeya en 750 y nunca obtuvo la investidura de Bagdad, de la que dependían los demás emires; por eso su poder se apoyó en ejércitos de clientes bereberes y sirios.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "omeyas",
+      "emirato"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-024",
+    "enunciado": "¿En qué año murió el fundador del emirato independiente de Córdoba?",
+    "tipo": "fecha",
+    "opciones": [
+      "750",
+      "756",
+      "788",
+      "822"
+    ],
+    "respuesta": 2,
+    "explicacion": "Abd al-Rahman I gobernó de 756 a 788, año en que murió de muerte natural en Córdoba; 750 es el año de la masacre de los omeyas en Damasco y 822 el de la muerte de su nieto Abd al-Rahman II.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "omeyas",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-025",
+    "enunciado": "El emir Abd al-Rahman I dirigió en 778 una campaña hacia los Pirineos que terminó en desastre. ¿Contra qué monarca franco se enfrentó?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Luis el Piadoso",
+      "Pipino el Breve",
+      "Carlos Martel",
+      "Carlomagno"
+    ],
+    "respuesta": 3,
+    "explicacion": "En 778 Abd al-Rahman I sitió Zaragoza y, de regreso, su retaguardia fue aniquilada en Roncesvalles por los vascones de Carlomagno, que asediaba Pamplona; el episodio inspiró el Cantar de Roldán.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "emirato",
+      "reinos-cristianos"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-026",
+    "enunciado": "¿Quién sucedió a Abd al-Rahman I en el emirato de Córdoba en 788?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Sulayman ibn Yasar",
+      "Al-Hakam I",
+      "Abd al-Rahman II",
+      "Hisham I"
+    ],
+    "respuesta": 3,
+    "explicacion": "Hisham I (788-796) era hijo de Abd al-Rahman I y le sucedió pese a las conspiraciones palaciegas; a él le siguieron al-Hakam I (796-822) y Abd al-Rahman II (822-852).",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "omeyas",
+      "emirato"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-027",
+    "enunciado": "¿Qué emir sofocó la gran revuelta de Córdoba de 818 tras sitiar el arrabal ribereño durante tres años?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Abd al-Rahman I",
+      "Abd al-Rahman II",
+      "Al-Hakam I",
+      "Hisham I"
+    ],
+    "respuesta": 2,
+    "explicacion": "Al-Hakam I arrasó en 818 el arrabal sublevado de la Ribada, en la margen del Guadalquivir; muchos de sus habitantes, los ribadíes, se exiliaron a Bugia (Argelia) y Alejandría (Egipto).",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "emirato",
+      "revueltas"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-028",
+    "enunciado": "¿Cómo se llamaba el barrio populoso del extrarradio de Córdoba cuyos habitantes, los ribadíes, protagonizaron la revuelta de 818?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Madinat al-Zahra",
+      "Shaduna",
+      "La Ribada",
+      "Al-Sinjar"
+    ],
+    "respuesta": 2,
+    "explicacion": "La Ribada era el arrabal más poblado de Córdoba, en la otra margen del Guadalquivir; Shaduna y Al-Sinjar designan respectivamente al barrio sirio y a la zona de asentamiento de los jinetes orientales en Sevilla.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "cordoba",
+      "revueltas"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-029",
+    "enunciado": "Los ribadíes expulsados de Córdoba en 818 se dispersaron sin encontrar acogida fuera de al-Ándalus.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Falso: la emigración de los ribadíes fue masiva y fundaron comunidades propias en Bugia (Argelia) y en Alejandría (Egipto), donde su barrio, al-Mahalla, conservó su identidad andalusí durante generaciones.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "cordoba",
+      "revueltas"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-030",
+    "enunciado": "¿En qué zona montañosa se refugió Umar ibn Hafsun, el gran caudillo muladí que desafió durante décadas a los emires de Córdoba?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "En los montes de Toledo",
+      "En la sierra Morena jerezana",
+      "En la sierra de Espadán",
+      "En el macizo de Ronda, con Bobastro como centro"
+    ],
+    "respuesta": 3,
+    "explicacion": "Umar ibn Hafsun hizo de Bobastro, en las sierras de Ronda (Málaga), su plaza fuerte desde donde dominó la campiña y las rutas hacia Toledo, Mérida y Sevilla.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "muladies",
+      "revueltas"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-031",
+    "enunciado": "Umar ibn Hafsun mantuvo siempre la fidelidad a la causa del emirato de Córdoba.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Falso: Ibn Hafsun fue el mayor enemigo del emirato desde las sierras de Ronda; en 885 se hizo bautizar como Samuel, con lo que dio carácter religioso a su rebelión muladí, y solo fue sometido póstumamente.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "muladies",
+      "revueltas"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-032",
+    "enunciado": "¿En qué año tomó Abd al-Rahman III la plaza de Bobastro, último foco de la rebelión muladí de la sierra?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "859",
+      "912",
+      "918",
+      "928"
+    ],
+    "respuesta": 3,
+    "explicacion": "Abd al-Rahman III tomó Bobastro en 928, dos años antes de proclamarse califa; Ibn Hafsun había muerto en 918 y la plaza resistió en manos de sus hijos hasta entonces.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "muladies",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-033",
+    "enunciado": "¿De qué familia clienta de origen bereber procedía al-Mansur (Ibn Abi Amir), el poderoso valido que gobernó al-Ándalus a finales del siglo X?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Los banu Qasi",
+      "Los hammudíes",
+      "Los banu Abi Amir",
+      "Los banu Hud"
+    ],
+    "respuesta": 2,
+    "explicacion": "Los banu Abi Amir, familia clienta de la tribu bereber de los Hawwara, se adueñaron del gobierno tras la muerte de al-Hakam II (976); los banu Qasi y banu Hud fueron señores del Ebro y los hammudíes, rivales en la fitna.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "califato",
+      "al-mansur"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-034",
+    "enunciado": "El califa Hisham II era un niño cuando ascendió al trono en 976. ¿Qué personaje concentró entonces el poder real?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Abd al-Rahman III",
+      "Al-Hakam II",
+      "Al-Mansur",
+      "Sulayman"
+    ],
+    "respuesta": 2,
+    "explicacion": "Al-Mansur, hábil político y militar, apartó a la corte omeya y controló el califato como valido entre 978 y su muerte en 1002; Hisham II siguió siendo califa nominal.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "califato",
+      "al-mansur"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-035",
+    "enunciado": "En 985, al-Mansur atacó y saqueó una importante ciudad condal catalana. ¿Cuál?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Zaragoza",
+      "Gerona",
+      "Barcelona",
+      "Lérida"
+    ],
+    "respuesta": 2,
+    "explicacion": "El saqueo de Barcelona (985) sometió a su conde Borrell II, que quedó en posición de vasallaje; el episodio marcó el retroceso del poder andalusí sobre el nordeste peninsular en favor de los condes catalanes.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "al-mansur",
+      "reinos-cristianos"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-036",
+    "enunciado": "¿En qué año llegó la expedición de al-Mansur hasta Santiago de Compostela, cuya catedral fue saqueada?",
+    "tipo": "fecha",
+    "opciones": [
+      "976",
+      "985",
+      "997",
+      "1002"
+    ],
+    "respuesta": 2,
+    "explicacion": "La gran razzia de 997 partió de Córdoba, atravesó la Lusitania y llegó hasta Santiago, símbolo del reino cristiano de León; al-Mansur murió cinco años después, en 1002.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "al-mansur",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-037",
+    "enunciado": "Según la tradición, las campanas de la catedral de Santiago que al-Mansur se llevó a Córdoba en 997 acabaron reconvertidas en lámparas de la mezquita aljama.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: el relato andalusí quiere que el bronce de las campanas se fundiera para las lámparas de la mezquita de Córdoba, lo que simbolizaba la humillación del principal santuario cristiano de Occidente.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "al-mansur",
+      "simbolos"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-038",
+    "enunciado": "¿En qué año murió al-Mansur al regresar de la expedición contra el castillo de Monzón, en el valle del Ebro?",
+    "tipo": "fecha",
+    "opciones": [
+      "997",
+      "1002",
+      "1009",
+      "1031"
+    ],
+    "respuesta": 1,
+    "explicacion": "Al-Mansur murió en 1002, probablemente de muerte natural o envenenado; su hijo Abd al-Malik le sustituyó y, a su muerte en 1008, el edificio del valido se vino abajo y estalló la fitna.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "al-mansur",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-039",
+    "enunciado": "Tras la muerte de al-Mansur, su hijo siguió controlando el califato hasta 1008. ¿Cómo se llamaba?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Hisham II",
+      "Abd al-Rahman III",
+      "Hisham III",
+      "Abd al-Malik al-Muzaffar"
+    ],
+    "respuesta": 3,
+    "explicacion": "Abd al-Malik al-Muzaffar heredó el validoato y gobernó de facto hasta su muerte en 1008; cuando él mismo falleció sin heredero hábil, los saqaliba y los hammudíes abrieron la guerra civil.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "califato",
+      "al-mansur"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-040",
+    "enunciado": "La fitna de al-Ándalus (1009-1031) enfrentó a los partidarios de la dinastía omeya y a los hammudíes, y terminó con la desaparición del califato de Córdoba.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: la larga guerra civil, con alternancia de califas y asesinatos, acabó en 1031 con el destierro del último califa, Hisham III, y la proclamación de repúblicas y reinos de taifas.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "califato",
+      "taifas"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-041",
+    "enunciado": "¿Qué rey navarro selló su alianza con el califa Abd al-Rahman III entregando a su hija Urraca al futuro al-Hakam II?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "García Íñiguez",
+      "Fernando González",
+      "Ramiro I",
+      "Sancho I Garcés"
+    ],
+    "respuesta": 3,
+    "explicacion": "Sancho I Garcés envió a su hija Urraca a Córdoba en 963; su unión con al-Hakam II, madre del futuro Hisham II, trajo a Navarra una paz muy rentable a cambio de vasallaje simbólico.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "califato",
+      "reinos-cristianos"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-042",
+    "enunciado": "¿Cómo se llamaba la ciudad palatina levantada por Abd al-Rahman III en las afueras de Córdoba como símbolo del califato?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Madinat al-Zahira",
+      "Al-Madina al-Jadida",
+      "Madinat al-Zahra",
+      "Córdoba la Nueva"
+    ],
+    "respuesta": 2,
+    "explicacion": "Madinat al-Zahra («la ciudad brillante») fue el complejo palaciego de Abd al-Rahman III; Madinat al-Zahira, en cambio, es la ciudad fundada por al-Mansur a comienzos del siglo XI.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "califato",
+      "arte"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-043",
+    "enunciado": "¿En qué décadas se construyó principalmente Madinat al-Zahra, la residencia oficial de Abd al-Rahman III?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "920-930",
+      "950-960",
+      "930-940",
+      "970-980"
+    ],
+    "respuesta": 2,
+    "explicacion": "Las obras arrancaron hacia 936 y el conjunto se inauguró solemnemente en 940, en pleno apogeo del califa; sus salones de recepción y su aljama proyectaban la imagen del poder de Córdoba.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "califato",
+      "arte"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-044",
+    "enunciado": "Madinat al-Zahra se concibió como escenografía del poder: el salón del trono y las salas de recepción mostraban al visitante la grandeza del califa de Córdoba.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: en el salón alto recibía el califa a embajadas y tributos; la arquitectura, las jardines y el protocolo de la ciudad palatina eran un instrumento político al servicio del prestigio omeya.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "califato",
+      "politica"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-045",
+    "enunciado": "¿Qué califa amplió la mezquita aljama de Córdoba añadiendo la maqsura con sus bóvedas en doble fila de arcos?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Abd al-Rahman I",
+      "Al-Hakam I",
+      "Al-Hakam II",
+      "Al-Mansur"
+    ],
+    "respuesta": 2,
+    "explicacion": "Al-Hakam II reformó en profundidad la mezquita aljama entre 961 y 976: amplió el patio, cubrió la sala de oración y añadió la maqsura califal con bóvedas nervadas, innovación que preludia el arte hispanomusulmán posterior.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "arte",
+      "cordoba"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-046",
+    "enunciado": "¿Qué hecho marcó especialmente el reinado del emir al-Hakam I (796-822), además de la ampliación de la mezquita de Córdoba?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La toma de Bobastro en 928",
+      "La proclamación del califato en 929",
+      "El saqueo de Santiago en 997",
+      "La revuelta de Córdoba de 818 y el arrasamiento de la Ribada"
+    ],
+    "respuesta": 3,
+    "explicacion": "Al-Hakam I sofocó la sublevación del arrabal cordobés de 818 tras un largo asedio; las otras opciones pertenecen a Abd al-Rahman III, al-Mansur y las revueltas muladíes del siglo X.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "emirato",
+      "revueltas"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-047",
+    "enunciado": "¿A cuántos volúmenes aproximados ascendía la biblioteca del califa al-Hakam II, una de las mayores de Occidente?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "10.000",
+      "40.000",
+      "100.000",
+      "400.000"
+    ],
+    "respuesta": 3,
+    "explicacion": "La maktaba de al-Hakam II reunía cientos de miles de volúmenes y estaba catalogada por materias; los sabios de todo el islam acudían a Córdoba para consultarse, símbolo del esplendor cultural del califato.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "califato",
+      "cultura"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-048",
+    "enunciado": "El califa al-Hakam II (961-976) es presentado por las fuentes andalusíes como un gobernante culto, protector de las ciencias y de los sabios.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: bajo su mecenazgo florecieron la filología, la medicina y las ciencias, y Córdoba se convirtió en foco intelectual; murió en 976 dejando un califato en lo más alto de su poder.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "califato",
+      "cultura"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-049",
+    "enunciado": "El valido al-Mansur se apoyó en un cuerpo de élite de esclavos soldados. ¿Cómo se llamaban?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Los jenízaros",
+      "Los mamelucos",
+      "Los saqaliba",
+      "Los ghilman"
+    ],
+    "respuesta": 2,
+    "explicacion": "Los saqaliba, esclavos blancos comprados y adiestrados como tropa, fueron el pilar del poder de al-Mansur; jenízaros y mamelucos son formaciones de otros mundos y siglos.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "al-mansur",
+      "ejercito"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-050",
+    "enunciado": "¿En qué año tomó y incendió al-Mansur la ciudad de León, amenazando el centro del reino cristiano?",
+    "tipo": "fecha",
+    "opciones": [
+      "976",
+      "985",
+      "994",
+      "997"
+    ],
+    "respuesta": 2,
+    "explicacion": "En 994 al-Mansur tomó León, que quedó devastada; en 985 había saqueado Barcelona y en 997 llegaría hasta Santiago, en una estrategia de presión y parias sobre todos los reinos cristianos.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "al-mansur",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-051",
+    "enunciado": "Las campañas de al-Mansur contra los reinos cristianos, como la toma de León o el saqueo de Santiago, terminaron incorporando esos territorios al califato de Córdoba.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Falso: al-Mansur logró saqueos, humillaciones y parias, pero no anexiones duraderas; las tierras al norte del Duero siguieron en manos cristianas y tras su muerte en 1002 el califato entró en crisis.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "al-mansur",
+      "reinos-cristianos"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-052",
+    "enunciado": "Tras la deposición del último califa en 1031, los notables de Córdoba intentaron mantener un gobierno propio sin dinastía. ¿Cómo se conoce ese experimento?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La taifa de los saqaliba",
+      "El reino de los abadíes",
+      "El protectorado zirí",
+      "La república de la yamāʿa"
+    ],
+    "respuesta": 3,
+    "explicacion": "La yamāʿa (asamblea de notables) cordobesa gobernó la ciudad sin califa durante años, un caso excepcional de gobierno colectivo en al-Ándalus, hasta que la ciudad acabó sometida por una de las taifas.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "cordoba",
+      "taifas"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-053",
+    "enunciado": "La Córdoba de la yamāʿa acabó sometida por la gran taifa vecina del valle del Guadalquivir. ¿Cuál?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Los hammudíes de Málaga",
+      "Los ziríes de Granada",
+      "Los abadíes de Sevilla",
+      "Los banu Hud de Zaragoza"
+    ],
+    "respuesta": 2,
+    "explicacion": "Hacia 1040 la yamāʿa entregó Córdoba a los abadíes de Sevilla, cuyo rey al-Mu'tamid la integró en su reino; los hammudíes habían gobernado la propia Córdoba cordobesa antes, y Zaragoza y Granada eran otras taifas rivales.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "taifas",
+      "cordoba"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-054",
+    "enunciado": "¿Qué título portaban los válidos que ejercieron el poder efectivo en el califato de Córdoba, como al-Mansur?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Cadí de Córdoba",
+      "Valí de Ifriqiya",
+      "Alfaquí mayor",
+      "Hayib (cámara del poder)"
+    ],
+    "respuesta": 3,
+    "explicacion": "El hayib era el funcionario que accedía al poder tras el califa; al-Mansur hizo hereditario el cargo dentro de los banu Abi Amir. El valí era el gobernador de provincias y el cadí, el juez.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "califato",
+      "politica"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-055",
+    "enunciado": "Los saqaliba, esclavos blancos formados como soldados, llegaron a gobernar Córdoba durante la fitna del siglo XI.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: tras la muerte de al-Mansur, los jefes saqaliba dominaron Córdoba entre 1008 y 1013, incluso proclamando califas a su servicio, hasta que los hammudíes tomaron la ciudad y abrieron una nueva etapa de la guerra civil.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "fitna",
+      "ejercito"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-056",
+    "enunciado": "¿Qué dinastía taifa reinó en Sevilla, la más rica y poderosa del valle del Guadalquivir?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Los hammudíes",
+      "Los ziríes",
+      "Los aftasíes",
+      "Los abadíes"
+    ],
+    "respuesta": 3,
+    "explicacion": "Los abadíes gobernaron Sevilla hasta 1091; su rey al-Mu'tamid llegó a ser el monarca más poderoso de al-Ándalus antes de caer ante los almorávenes. Los ziríes y aftasíes mandaban en Granada y Badajoz.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "taifas",
+      "sevilla"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-057",
+    "enunciado": "¿Qué ciudad fue capital de la taifa de los banu Hud, cuya corte acogió a sabios y poetas?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Toledo",
+      "Denia",
+      "Zaragoza",
+      "Badajoz"
+    ],
+    "respuesta": 2,
+    "explicacion": "Los banu Hud regentaron Zaragoza y su marca superior; su corte fue de las más brillantes del siglo XI y llegó a pagar parias al rey de León para sostenerse frente a las taifas rivales.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "taifas",
+      "zaragoza"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-058",
+    "enunciado": "¿Qué ciudad era la capital de la taifa de los aftasíes, en la Extremadura actual?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Mérida",
+      "Silves",
+      "Badajoz",
+      "Toledo"
+    ],
+    "respuesta": 2,
+    "explicacion": "Los aftasíes, de origen bereber, controlaron Badajoz y una amplia zona del oeste peninsular; su reino hizo de bisagra entre al-Ándalus y los reinos cristianos portugueses y leoneses.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "taifas",
+      "badajoz"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-059",
+    "enunciado": "¿Qué ciudad fue el centro de la taifa de los daulú, una de las más amenazadas por los reinos cristianos?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Sevilla",
+      "Zaragoza",
+      "Granada",
+      "Toledo"
+    ],
+    "respuesta": 3,
+    "explicacion": "La taifa de Toledo, dirigida por los daulú, sufrió la presión de Castilla hasta que Alfonso VI tomó la ciudad en 1085; las otras ciudades fueron capitales de taifas hudíes, ziríes y abadíes.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "taifas",
+      "toledo"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-060",
+    "enunciado": "¿En qué ciudad se asentaron los ziríes, dinastía bereber que gobernó un reino taifa hasta 1090?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Denia",
+      "Badajoz",
+      "Granada",
+      "Almería"
+    ],
+    "respuesta": 2,
+    "explicacion": "Los ziríes, bereberes de la región de Argel, instalaron su corte en Granada, donde reinaron desde principios del siglo XI hasta la conquista almorávide; no confundir con los nazaríes, que la rigieron después de 1238.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "taifas",
+      "granada"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-061",
+    "enunciado": "Los sumadíes, dinastía taifa de origen bereber, gobernaron Denia y...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Játiva",
+      "Málaga",
+      "Cartagena",
+      "Almería"
+    ],
+    "respuesta": 3,
+    "explicacion": "Los sumadíes controlaron el sureste peninsular, con Denia y Almería como centros, y proyectaron su poder hacia Baleares y el norte de África; Almería sería después también refugio de la cultura andalusí.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "taifas",
+      "denia"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-062",
+    "enunciado": "¿Qué monarca, famoso como poeta y conocido como «el rey poeta», gobernó Sevilla hasta su trágico destierro en Marruecos?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Al-Mu'tamin",
+      "Al-Muqtadir",
+      "Al-Mu'tamid",
+      "Al-Mamun"
+    ],
+    "respuesta": 2,
+    "explicacion": "Al-Mu'tamid (1040-1091), rey poeta de Sevilla, encabezó la resistencia frente a los almorávenes y terminó exiliado en Aghmat (Marruecos), donde murió añorando el Guadalquivir en sus versos.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "taifas",
+      "sevilla"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-063",
+    "enunciado": "¿En qué año se libró la batalla de Sagrajas (Zallaqa), en la que Yusuf ibn Tashufin y los taifas derrotaron a Alfonso VI?",
+    "tipo": "fecha",
+    "opciones": [
+      "1085",
+      "1086",
+      "1090",
+      "1091"
+    ],
+    "respuesta": 1,
+    "explicacion": "En 1086, al año siguiente de la caída de Toledo, el ejército almorávide junto a los taifas venció a Alfonso VI en Zallaqa; al-Mu'tamid participó y financió la campaña.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "almoraveces",
+      "batallas"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-064",
+    "enunciado": "¿Qué rey taifa de Sevilla pagó parias al rey Fernando I de Castilla a cambio de protección militar?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Al-Muqtadir de Zaragoza",
+      "Al-Mamun de Toledo",
+      "Al-Mu'tamid de Sevilla",
+      "Yusuf ibn Tashufin"
+    ],
+    "respuesta": 2,
+    "explicacion": "Al-Mu'tamid fue vasallo tributario de Castilla hasta que, temeroso de su crecimiento, llamó a los almorávenes; las parias que pagaba a Fernando I llegaban incluso a fundirse en moneda para las obras cristianas.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "taifas",
+      "parias"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-065",
+    "enunciado": "Algunas taifas se aliaron con los reinos cristianos contra otras taifas rivales en las pugnas del siglo XI.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: Sevilla, Zaragoza y otras taifas usaron alianzas y parias con leoneses, castellanos y navarros contra sus vecinos musulmanes; esta fragmentación facilitó la intervención cristiana y, finalmente, la llamada a los almorávenes.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "taifas",
+      "politica"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-066",
+    "enunciado": "¿Qué dinastía andalusí, partiendo de Denia, se hizo con el poder en las Baleares y desplegó una potente actividad marítima en el Mediterráneo occidental?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Los ziríes",
+      "Los mazadíes",
+      "Los banu Ghaniya",
+      "Los sumadíes"
+    ],
+    "respuesta": 2,
+    "explicacion": "Los banu Ghaniya, originarios de Denia, dominaron Mallorca a partir de 1114 y llegaron a disputar el norte de África a los almohades; fueron el proyecto expansionista más audaz del final del periodo taifa.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "taifas",
+      "comercio"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-067",
+    "enunciado": "La corte hudí de Zaragoza acogió a Avempace (Ibn Bajja), futuro filósofo y médico célebre en todo al-Ándalus.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: Avempace fue visir y hombre de letras al servicio de los reyes hudíes de Zaragoza antes de retirarse a la Sevilla de los abadíes; su figura ilustra el esplendor cultural de las taifas.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "taifas",
+      "cultura"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-068",
+    "enunciado": "La caída de Toledo en manos de Alfonso VI (1085) provocó que los reyes taifas...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "se aliasen con el rey de Francia",
+      "fundasen el Califato de Córdoba",
+      "cediesen Cádiz a Génova",
+      "llamasen en su auxilio a los almorávenes del Magreb"
+    ],
+    "respuesta": 3,
+    "explicacion": "Ante el avance castellano, los taifas (con al-Mu'tamid a la cabeza) solicitaron ayuda a los almorávenes, que en 1086 cruzaron el Estrecho y acabaron imponiendo su autoridad sobre todo al-Ándalus.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "taifas",
+      "almoraveces"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-069",
+    "enunciado": "¿Qué poder conquistó Sevilla en 1091, poniendo fin al reino de al-Mu'tamid y al ciclo de las taifas del Guadalquivir?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Los almohades",
+      "Los fatimíes",
+      "Los otomanos",
+      "Los almorávenes"
+    ],
+    "respuesta": 3,
+    "explicacion": "Los almorávenes, tras Sagrajas (1086), sometieron una a una las taifas; Sevilla cayó en 1091 y al-Mu'tamid fue desterrado a Aghmat, donde murió. Los almohades les sustituirían un siglo después.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "almoraveces",
+      "sevilla"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-070",
+    "enunciado": "La fragmentación política de las taifas frenó la economía y la vida cultural de al-Ándalus.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Falso: pese a las luchas internas, el siglo XI fue de esplendor comercial, urbano e intelectual; las cortes taifas compitieron protegiendo a sabios, poetas y artistas, y el comercio mediterráneo se intensificó.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "taifas",
+      "cultura"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-071",
+    "enunciado": "¿Qué caudillo bereber del Magreb cruzó el Estrecho en 1086 tras ser llamado por los reyes taifas?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Ali ibn Yusuf",
+      "Abd al-Mu'min",
+      "Ibn Tumart",
+      "Yusuf ibn Tashufin"
+    ],
+    "respuesta": 3,
+    "explicacion": "Yusuf ibn Tashufin, jefe almorávide, pasó a la península en 1086, venció a Alfonso VI en Sagrajas y regresó en varias campañas hasta someter todo al-Ándalus; Abd al-Mu'min e Ibn Tumart fueron dirigentes almohades posteriores.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "almoraveces",
+      "protagonistas"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-072",
+    "enunciado": "Los almorávenes (al-murabitun) eran bereberes de la confederación sanhaya pertenecientes a la tribu...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Los masmuda",
+      "Los kutama",
+      "Los lamtuna",
+      "Los hilalianos"
+    ],
+    "respuesta": 2,
+    "explicacion": "Los lamtuna, pastores del Sáhara occidental, encabezaron el movimiento de Abd Allah ibn Yasin que dio origen a los almorávenes; masmuda y kutama son otras confederaciones bereberes de Marruecos y Ifriqiya.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "almoraveces",
+      "bereberes"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-073",
+    "enunciado": "¿Qué ciudad fundó Yusuf ibn Tashufin en el Magreb como capital de su imperio?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Fez",
+      "Túnez",
+      "Marrakech",
+      "Argel"
+    ],
+    "respuesta": 2,
+    "explicacion": "Marrakech, fundada hacia 1070, se convirtió en la capital almorávide y después almohade; desde allí se gobernó un imperio que unificó Magreb y al-Ándalus, algo que ni las taifas ni los reinos cristianos lograron.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "almoraveces",
+      "ciudades"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-074",
+    "enunciado": "Los almorávenes impusieron en al-Ándalus una ortodoxia malikí rigorista y combatieron la vida refinada de las cortes taifas.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: los almorávenes se presentaron como campeones del islam malikí estricto, censuraron la música, el vino y el lujo de las taifas y persiguieron a los heterodoxos, aunque al-Ándalus vivía de otro modo.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "almoraveces",
+      "religion"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-075",
+    "enunciado": "¿En qué año tomó Yusuf ibn Tashufin Granada, tras someter a la dinastía zirí?",
+    "tipo": "fecha",
+    "opciones": [
+      "1086",
+      "1088",
+      "1090",
+      "1094"
+    ],
+    "respuesta": 2,
+    "explicacion": "En 1090 cayó Granada; en 1091 fue el turno de Córdoba y Sevilla, con lo que desaparecieron los reinos taifas más importantes y al-Ándalus quedó integrado en el imperio almorávide.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "almoraveces",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-076",
+    "enunciado": "El ejército almorávide venció a Castilla en Uclés (1108), pero la victoria fue pírrica. ¿Qué príncipe almorávide murió en combate?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Abd al-Mu'min",
+      "Yusuf ibn Tashufin",
+      "Tarsina",
+      "Tarif ibn Ali"
+    ],
+    "respuesta": 3,
+    "explicacion": "En Uclés murió el joven príncipe Tarif, hijo del sultán Ali ibn Yusuf, lo que dejó a la dinastía sin heredero varón directo; la noticia aceleró la crisis del dominio almorávide sobre la frontera del Ebro.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "almoraveces",
+      "batallas"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-077",
+    "enunciado": "¿Cómo se llamaba el predicador bereber que predicó la taqwa (puritanismo) y fundó el movimiento almohade?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Abd al-Mu'min",
+      "Yusuf ibn Tashufin",
+      "Ibn Tumart",
+      "Abu Bakr"
+    ],
+    "respuesta": 2,
+    "explicacion": "Ibn Tumart, doctor de la tribu masmuda, predicó la tawhid (unidad de Dios) contra lo que consideraba desviaciones; sus seguidores, los almohades (al-muwahhidun), derribaron a los almorávenes un siglo después.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "almohades",
+      "protagonistas"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-078",
+    "enunciado": "El movimiento almohade se organizó en el Alto Atlas en torno a una pequeña ciudad-fortaleza. ¿Cuál?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Marrakech",
+      "Tlemecén",
+      "Bugia",
+      "Tinmal"
+    ],
+    "respuesta": 3,
+    "explicacion": "Tinmal, en las montañas del Alto Atlas, fue el cuartel general de Ibn Tumart y la Meca del movimiento; de allí partió la expansión almohade que culminó con la toma de Marrakech en 1147.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "almohades",
+      "ciudades"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-079",
+    "enunciado": "¿Qué califa almohade tomó Marrakech en 1147 y extendió su imperio desde el Magreb hasta al-Ándalus?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Ibn Tumart",
+      "Abu Yaqub Yusuf",
+      "Abd al-Mu'min",
+      "Al-Mansur"
+    ],
+    "respuesta": 2,
+    "explicacion": "Abd al-Mu'min, sucesor de Ibn Tumart, conquistó Marrakech en 1147 y sometió al-Ándalus hacia 1150; bajo su reinado el califato almohade alcanzó su máxima extensión.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "almohades",
+      "protagonistas"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-080",
+    "enunciado": "¿Qué gran obra almohade, comenzada hacia 1184, domina la ciudad de Sevilla y fue culminada por al-Mansur?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La Torre del Oro",
+      "El Alcázar de Jerez",
+      "La Giralda",
+      "La mezquita de Córdoba"
+    ],
+    "respuesta": 2,
+    "explicacion": "La Giralda, alminar de la mezquita aljama de Sevilla, se inició con el califa Abu Yaqub Yusuf y se remató bajo al-Mansur hacia 1198; la Torre del Oro, junto al río, es almohade posterior (1220).",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "almohades",
+      "arte"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-081",
+    "enunciado": "El ejército almohade de al-Mansur derrotó a Alfonso VIII en 1195. ¿En qué batalla?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Las Navas de Tolosa",
+      "Alcántara",
+      "Almedina",
+      "Alarcos"
+    ],
+    "respuesta": 3,
+    "explicacion": "La batalla de Alarcos (1195) fue un desastre para Castilla, que perdió su avanzada del Tajo; la represalia cristiana llegó diecisiete años después, con la coalición de las Navas de Tolosa (1212).",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "almohades",
+      "batallas"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-082",
+    "enunciado": "La derrota almohade de Las Navas de Tolosa (1212) inició el rápido desmantelamiento del poder musulmán en la península.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: tras las Navas, el imperio almohade se quebró; en al-Ándalus reaparecieron pequeñas taifas mientras los reinos cristianos conquistaban Córdoba (1236), Jaén (1246) y Sevilla (1248).",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "almohades",
+      "reconquista"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-083",
+    "enunciado": "¿Qué ciudad, convertida en la capital almohade de la península, fue conquistada por Fernando III en 1248?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Córdoba",
+      "Granada",
+      "Sevilla",
+      "Jaén"
+    ],
+    "respuesta": 2,
+    "explicacion": "Sevilla rindió en 1248 tras un largo asedio y pasó a ser sede de la Casa de Contratación en 1503; Córdoba y Jaén habían caído antes (1236 y 1246) y Granada resistió como reino nazarí hasta 1492.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "almohades",
+      "sevilla"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-084",
+    "enunciado": "Tras la batalla de las Navas de Tolosa (1212), los almohades lograron reorganizar con éxito su dominio en la península hasta el final del periodo musulmán.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Falso: tras 1212 el poder almohade se desmoronó, resurgieron reinos de taifas dependientes (los benafarces de Valencia y Murcia) y el propio califato se hundió en Marrakech, tomada por los meriníes en 1269.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "almohades",
+      "reconquista"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-085",
+    "enunciado": "Marrakech, la antigua capital almohade, cayó en 1269 en manos de...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Los ziríes",
+      "Los saadíes",
+      "Los nazaríes de Granada",
+      "Los meriníes"
+    ],
+    "respuesta": 3,
+    "explicacion": "Los meriníes, dinastía zenata, entraron en Marrakech en 1269 y fundaron una nueva dinastía magrebí; los saadíes llegaron siglos después y los ziríes fueron dinastía taifa del siglo XI.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "almohades",
+      "magreb"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-086",
+    "enunciado": "¿Qué gobernante nazarí, apodado al-Ahmar, se instaló en Granada en 1238 y fundó el reino?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Muhammad III",
+      "Yusuf I",
+      "Isma'il I",
+      "Muhammad I al-Ahmar"
+    ],
+    "respuesta": 3,
+    "explicacion": "Muhammad I al-Ahmar (1238-1273) fijó la capital en Granada y equilibró su supervivencia aliándose alternativamente con Castilla y con los benimerines del Magreb; el reino perduró hasta 1492.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "nazaries",
+      "granada"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-087",
+    "enunciado": "En contraste con los califas omeyas, los sultanes nazaríes adoptaron el título de...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Sultanes",
+      "Califas",
+      "Emires",
+      "Reyes de reyes"
+    ],
+    "respuesta": 2,
+    "explicacion": "Los nazaríes se titularon emires, subordinados en el plano religioso a los califas benimerines del Magreb, a cuya obediencia nominal reconocían; se reservaron así una dependencia que el Califato de Córdoba jamás aceptó.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "nazaries",
+      "politica"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-088",
+    "enunciado": "Tras la derrota nazarí en Tarifa (1340), ¿qué rey cristiano obligó a Isma'il I a aceptar el vasallaje y el pago de parias?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Fernando III",
+      "Alfonso XI",
+      "Pedro I",
+      "Enrique II"
+    ],
+    "respuesta": 1,
+    "explicacion": "La batalla de Tarifa (1340) destruyó la ayuda benimerí a Granada; Isma'il I aceptó ser vasallo de Alfonso XI y pagar parias anuales, dependencia que marcaría la política exterior nazarí durante siglos.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "nazaries",
+      "reinos-cristianos"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-089",
+    "enunciado": "¿Qué sultán nazarí, dos veces en el trono y exiliado en el Magreb, fue el gran valedor de la arquitectura de la Alhambra?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Yusuf I",
+      "Boabdil",
+      "Muhammad V",
+      "Muhammad III"
+    ],
+    "respuesta": 2,
+    "explicacion": "Muhammad V (1354-1391) levantó el palacio de los Leones y embelleció el Generalife tras su regreso del exilio meriní; su tío Yusuf I fue el constructor del palacio de Comares.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "nazaries",
+      "arte"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-090",
+    "enunciado": "El Salón de Embajadores, espacio de representación máxima del poder nazarí, se sitúa en qué conjunto palatino?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El palacio de los Leones",
+      "El Generalife",
+      "El palacio de Comares",
+      "El mexuar"
+    ],
+    "respuesta": 2,
+    "explicacion": "El salón de Embajadores ocupa la Torre de Comares, construida por Yusuf I; el palacio de los Leones es de Muhammad V y el mexuar era la sala de audiencia y gobierno, de carácter más funcional.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "nazaries",
+      "arte"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-091",
+    "enunciado": "El Generalife fue únicamente un jardín ornamental, sin función residencial para los sultanes nazaríes.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Falso: el Generalife era la residencia de recreo veraniega de los sultanes, con palacios, acequias y jardines de cultivo; su nombre procede de Yannat al-Arif («jardín del arquitecto» o del soberano).",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "nazaries",
+      "arte"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-092",
+    "enunciado": "¿Qué plaza conquistaron los Reyes Católicos en 1482, en el primer gran golpe contra el reino de Granada?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Málaga",
+      "Alhama",
+      "Baza",
+      "Guadix"
+    ],
+    "respuesta": 1,
+    "explicacion": "La toma de Alhama (febrero de 1482), a la que siguió la de Ronda (1485), abrió una brecha en la frontera granadina; Málaga cayó en 1487 y Baza en 1489.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "nazaries",
+      "reconquista"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-093",
+    "enunciado": "El reino nazarí sufrió entre 1482 y 1492 una guerra civil que debilitó su resistencia. ¿Quiénes fueron los bandos enfrentados?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Boabdil contra los Reyes Católicos",
+      "El Zagal contra los benimerines",
+      "Muhammad V contra Yusuf I",
+      "Boabdil contra su padre Muley Hacen y su tío El Zagal"
+    ],
+    "respuesta": 3,
+    "explicacion": "La pugna entre Muhammad XII (Boabdil), su padre Muley Hacen y su tío El Zagal partió el reino en dos bloques —Granada y Málaga, Málaga y el este— mientras Castilla aprovechaba la división para conquistar plaza a plaza.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "nazaries",
+      "conflictos-internos"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-094",
+    "enunciado": "¿Qué ciudad portuaria, tomada en 1487 tras un largo asedio, privó a Granada de su salida al mar y de la pesca del atún?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Almería",
+      "Estepona",
+      "Vélez",
+      "Málaga"
+    ],
+    "respuesta": 3,
+    "explicacion": "La caída de Málaga (agosto de 1487) cortó el comercio marítimo y los ingresos de la pesca del atún y del almadrabón, tan importantes para la hacienda nazarí; Almería resistió hasta 1489.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "nazaries",
+      "reconquista"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-095",
+    "enunciado": "Derrotado en Lucena (1483), Boabdil fue capturado y liberado tras jurar vasallaje a los Reyes Católicos, lo que agravó la división del reino nazarí.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: Boabdil pasó un año prisionero y regresó como tributario de Castilla; su dependencia de los Reyes Católicos enfrentó a los granadinos con su propio sultán y benefició a El Zagal.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "nazaries",
+      "reinos-cristianos"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-096",
+    "enunciado": "¿En qué año se produjo la rendición de Granada y la entrega de las llaves de la ciudad a los Reyes Católicos?",
+    "tipo": "fecha",
+    "opciones": [
+      "1479",
+      "1487",
+      "1492",
+      "1502"
+    ],
+    "respuesta": 2,
+    "explicacion": "En enero de 1492 Boabdil entregó las llaves a Fernando e Isabel, poniendo fin a casi ocho siglos de presencia musulmana; ese mismo año, los judíos fueron expulsados de la Corona de Castilla.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "nazaries",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-097",
+    "enunciado": "Los capítulos de la rendición de Granada (1492) garantizaban a los musulmanes el libre ejercicio de su religión y el respeto a sus leyes.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: la capitulación reconoció libertad religiosa, propiedad y justicia propia; pero tras la rebelión de las Alpujarras (1499-1501) la monarquía decretó el bautismo forzoso y el islam pasó a la clandestinidad.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "nazaries",
+      "religion"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-098",
+    "enunciado": "Tras la entrega de Granada, el sultán Boabdil se retiró a la Alpujarra y terminó marchando al exilio en...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Argel",
+      "Túnez",
+      "El Cairo",
+      "Fez"
+    ],
+    "respuesta": 3,
+    "explicacion": "Boabdil abandonó la Alpujarra y se instaló en Fez (1502), donde murió en 1527; la tradición de sus lágrimas al contemplar Granada procede de las crónicas cristianas, no del propio sultán.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "nazaries",
+      "protagonistas"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-099",
+    "enunciado": "¿Qué industria textil fue la base del comercio del reino nazarí, con su centro en la alcaicería de la ciudad?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La lana",
+      "El lino",
+      "La seda",
+      "El yute"
+    ],
+    "respuesta": 2,
+    "explicacion": "La seda granadina —hilada, teñida con almagra y tejida— abastecía a la aristocracia y se exportaba al Magreb y al Mediterráneo; junto a ella destacaron la alfarería, la salazón y la pesca.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "nazaries",
+      "economia"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-100",
+    "enunciado": "¿Qué plaza del este de Granada capituló en 1489 tras un largo asedio, abriendo a los Reyes Católicos el camino de Guadix?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Ronda",
+      "Málaga",
+      "Alhama",
+      "Baza"
+    ],
+    "respuesta": 3,
+    "explicacion": "Baza se rindió en diciembre de 1489 tras un largo asedio, y con el pacto que siguió se rindieron también Guadix y Almería; la estrategia de asedios sucesivos hizo innecesario tomar Granada por la fuerza.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "nazaries",
+      "reconquista"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-101",
+    "enunciado": "El sistema de riego de al-Ándalus se basaba fundamentalmente en...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Canales subterráneos traídos de Persia",
+      "Pozos artesanales y la dependencia de la lluvia",
+      "La reutilización íntegra de los acueductos romanos",
+      "Acequias, norias y aljibes para repartir el agua de los ríos y manantiales"
+    ],
+    "respuesta": 3,
+    "explicacion": "Las acequias, las norias de sangre o de agua y los aljibes permitieron multiplicar las huertas; los antiguos acueductos romanos se repararon puntualmente, pero la ingeniería hidráulica fue una aportación andalusí.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "economia",
+      "regadio"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-102",
+    "enunciado": "¿Qué tribunal valenciano, heredero del reparto islámico de la acequia mayor, resuelve oralmente los conflictos de riego de la huerta?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El Tribunal de Comares",
+      "El Tribunal de las Aguas",
+      "El Cabildo de la Aljaba",
+      "El Consejo de la Zahra"
+    ],
+    "respuesta": 1,
+    "explicacion": "El Tribunal de las Aguas de Valencia juzga desde época medieval el cumplimiento de las normas de la acequia mayor, cuyo trazado es de origen andalusí (siglo X); es considerado el tribunal de aguas más antiguo de España.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "regadio",
+      "valencia"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-103",
+    "enunciado": "La cría del gusano de seda, base de una industria exportadora del Levante peninsular, se apoyó en el cultivo de...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La viña",
+      "La morera",
+      "La palmera",
+      "El olivo"
+    ],
+    "respuesta": 1,
+    "explicacion": "La morera alimenta al gusano de seda; su plantación masiva en el Levante y el sur sostuvo telares de seda en Valencia, Almería y Granada, y dio nombre a ciudades y comarcas como la Ribera.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "economia",
+      "seda"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-104",
+    "enunciado": "El cultivo de la caña de azúcar, muy rentable en al-Ándalus, se concentraba en...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Las tierras altas de Galicia",
+      "El valle del Duero",
+      "El Cantábrico occidental",
+      "El Levante y el sur peninsular"
+    ],
+    "respuesta": 3,
+    "explicacion": "La caña exigía calor y agua: se cultivó en Valencia, Murcia, Almería, Granada, Jerez y las Baleares, y de ahí se difundió al Mediterráneo; los trapenses la llevarían luego a América.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "economia",
+      "cultivos"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-105",
+    "enunciado": "¿Hacia qué año se documenta en Játiva uno de los primeros molinos de papel de Europa, herederos de la técnica andalusí?",
+    "tipo": "fecha",
+    "opciones": [
+      "1050",
+      "1150",
+      "1250",
+      "1350"
+    ],
+    "respuesta": 1,
+    "explicacion": "Hacia 1150 funcionaba en Játiva un molino papelero; el papel jativense se exportó a Italia y fue durante siglos sinónimo de calidad en el Mediterráneo cristiano.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "economia",
+      "artesania"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-106",
+    "enunciado": "La moneda de oro andalusí dio nombre al maravedí cristiano. ¿Cómo se llamaba esa moneda de oro?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El dirham",
+      "El felús",
+      "El dínar",
+      "El miskal"
+    ],
+    "respuesta": 2,
+    "explicacion": "El dínar de oro (el morabitino de los almorávenes y almohades) pasó a los reinos cristianos como «maravedí», la unidad de cuenta castellana durante siglos; el dirham era de plata y el felús, de cobre.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "economia",
+      "moneda"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-107",
+    "enunciado": "¿Qué puerto del sureste fue el gran emporio del comercio mediterráneo de al-Ándalus y un centro destacado del tráfico de esclavos?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Cádiz",
+      "Almería",
+      "Huelva",
+      "Cartagena"
+    ],
+    "respuesta": 1,
+    "explicacion": "Almería, con sus atarazanas y alcaicerías, concentró el comercio con Génova, Pisa y el Magreb y fue famosa por su mercado de esclavos; rivalizó con Denia y Málaga, mientras Cádiz y Cartagena tuvieron menos peso en el periodo andalusí.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "comercio",
+      "almeria"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-108",
+    "enunciado": "La alcaicería era el mercado donde se comerciaba de forma regulada con el producto de lujo por excelencia de al-Ándalus. ¿Cuál?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El cuero",
+      "El hierro",
+      "El trigo",
+      "La seda"
+    ],
+    "respuesta": 3,
+    "explicacion": "El nombre procede del árabe qaṣayrī («palacio pequeño»); las alcaicerías monopolizaban el comercio de la seda, el más valioso de los tejidos andalusíes, y pervivieron en las ciudades conquistadas.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "comercio",
+      "seda"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-109",
+    "enunciado": "El aceite de oliva tuvo en al-Ándalus usos muy variados: alimentación, iluminación, cosmética e industria.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: junto al vino, que el islam prohibía, el aceite fue el producto agrícola estrella: se exportaba en grandes cantidades y abastecía molinos, lámparas de mezquitas y preparados médicos.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "economia",
+      "olivar"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-110",
+    "enunciado": "¿Qué técnica decorativa, creada en al-Ándalus y difundida por todo el Mediterráneo, dio nombre a los azulejos españoles?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El trencadís",
+      "El encaje",
+      "El azulejo",
+      "El marfil"
+    ],
+    "respuesta": 2,
+    "explicacion": "Azulejo viene del árabe al-zulaiy («piedra pulida»); la cerámica vidriada andalusí, con motivos geométricos y epigráficos, se extendió por Italia y el Magreb y pervive en el arte cristiano posterior.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "artesania",
+      "arte"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-111",
+    "enunciado": "Toledo fue célebre en época andalusí por la producción de acero y armas, un oficio que pervivió tras la conquista cristiana.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: el acero toledano, elaborado con las mejores técnicas andalusíes, fue célebre ya en el siglo XI y siguió siendo un monopolio de prestigio en la Toledo cristiana.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "artesania",
+      "toledo"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-112",
+    "enunciado": "¿Cómo se llamaba la moneda de cobre de uso cotidiano en al-Ándalus?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El dínar",
+      "El dirham",
+      "El tanga",
+      "El felús"
+    ],
+    "respuesta": 3,
+    "explicacion": "El felús (del latín follis) hacía la pequeña moneda de mercado, mientras el dínar de oro y el dirham de plata servían para el comercio mayorista y las parias.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "economia",
+      "moneda"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-113",
+    "enunciado": "El dominio almohade aisló a al-Ándalus del comercio mediterráneo y del transahariano.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Falso: al-Ándalus quedó integrado en una economía que unía la cuenca mediterránea con las rutas del oro del Sáhara; Sevilla y Almería exportaban aceite, trigo, seda y frutos secos y acuñaban moneda de oro magrebí.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "almohades",
+      "comercio"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-114",
+    "enunciado": "¿Qué productos andalusíes demandaban sobre todo los comerciantes italianos (genoveses y pisanos) en el siglo XI?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Ganado porcino",
+      "Cristal y papel",
+      "Piedra de cantería",
+      "Aceite, trigo, frutos secos y esclavos"
+    ],
+    "respuesta": 3,
+    "explicacion": "Génova y Pisa abastecieron a al-Ándalus de esclavos y hombres de mar a cambio de productos agrícolas, azufre, minerales y mercancías orientales; el trueque dinamizó ambas orillas del Mediterráneo.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "comercio",
+      "mediterraneo"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-115",
+    "enunciado": "Las almadrabas de pesca del atún con redes fijas, heredadas de la época andalusí, se localizaban sobre todo en...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La costa gallega",
+      "El Cantábrico occidental",
+      "El litoral catalán",
+      "La costa atlántica del sur, de Cádiz a la fachada portuguesa"
+    ],
+    "respuesta": 3,
+    "explicacion": "La propia palabra almadraba es de origen árabe (al-madraba, «lugar donde se golpea»); las almadrabas gaditanas y del Algarve portugués organizaron una pesca estacional muy rentable cuyas reglas perviven hoy.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "economia",
+      "pesca"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-116",
+    "enunciado": "¿Qué nombre recibían los cristianos que vivían bajo dominio musulmán en al-Ándalus y acabaron adoptando la lengua y los usos árabes?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Los mudéjares",
+      "Los mozárabes",
+      "Los francos",
+      "Los siervos"
+    ],
+    "respuesta": 1,
+    "explicacion": "Mozárabe viene de mozarabicus («arabizado»): cristianos que conservaban su fe bajo el islam; los mudéjares, en cambio, eran musulmanes que vivían bajo dominio cristiano.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "sociedad",
+      "mozarabes"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-117",
+    "enunciado": "Los musulmanes que quedaron bajo dominio de los reinos cristianos y vivieron en sus ciudades se denominaban...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Mozárabes",
+      "Muladíes",
+      "Mudéjares",
+      "Dhimmi"
+    ],
+    "respuesta": 2,
+    "explicacion": "Mudéjares: musulmanes en tierra cristiana, protegidos a cambio del pago de tributos; pervivieron en Aragón y Castilla hasta los bautismos forzosos de los siglos XV y XVI.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "sociedad",
+      "mudejares"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-118",
+    "enunciado": "Los cristianos y judíos de al-Ándalus eran dhimmi, personas protegidas. ¿En qué régimen jurídico se basaba su condición?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Conversión forzosa",
+      "Esclavitud",
+      "Protección a cambio de la yizia y de la sumisión",
+      "Expulsión inmediata"
+    ],
+    "respuesta": 2,
+    "explicacion": "La dhimma garantizaba la práctica de su religión a cambio del pago de la yizia, del vestido diferenciado y de la sumisión a la autoridad islámica; la conversión forzosa fue excepcional y propia de momentos de crisis.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "sociedad",
+      "religion"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-119",
+    "enunciado": "¿Cómo se llamaba el impuesto personal que los no musulmanes pagaban a la autoridad de al-Ándalus?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La zakat",
+      "La yizia",
+      "El diezmo",
+      "La paria"
+    ],
+    "respuesta": 1,
+    "explicacion": "La yizia gravaba a los dhimmi; la zakat era la limosna obligatoria de los musulmanes y la paria, un tributo entre reinos (por ejemplo, el que pagaban las taifas a Castilla).",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "sociedad",
+      "impuestos"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-120",
+    "enunciado": "¿Qué comunidad religiosa de al-Ándalus destacó en oficios de intermediación financiera, traducción y medicina, llegando a ocupar cargos de gobierno?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Los siervos griegos",
+      "Los francos",
+      "Los bereberes",
+      "Los judíos"
+    ],
+    "respuesta": 3,
+    "explicacion": "Las comunidades judías, herederas de una larga presencia peninsular, sirvieron de enlace cultural y comercial entre al-Ándalus y el Magreb; de ellas salieron visires y médicos célebres, como los ibn Nagrela o Maimónides.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "sociedad",
+      "judios"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-121",
+    "enunciado": "¿Qué ciudad de la actual provincia de Córdoba fue un gran centro de vida judía, célebre por su numerosa aljama desde el siglo VIII?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Priego",
+      "Bujalance",
+      "Lucena",
+      "Luque"
+    ],
+    "respuesta": 2,
+    "explicacion": "Lucena (Medina Yabrurt para los judíos) llegó a ser una de las mayores comunidades hebreas de Occidente, dedicada al comercio y a la agricultura; los disturbios de 1391 y la conversión de 1483 la hundieron.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "judios",
+      "cordoba"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-122",
+    "enunciado": "El mestizaje en al-Ándalus fue intenso desde los primeros siglos: los conquistadores árabes se casaron con mujeres...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "francas del reino de los francos",
+      "visigodas católicas",
+      "bereberes del Atlas",
+      "mozárabes, hispano-visigodas conversas al islam"
+    ],
+    "respuesta": 3,
+    "explicacion": "Los matrimonios entre árabes y mujeres nativas dieron lugar a los muladíes, grupo social clave que, junto con los conversos, protagonizó las grandes rebeliones contra el emirato cordobés.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "sociedad",
+      "muladies"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-123",
+    "enunciado": "La sociedad andalusí no conocía distinciones raciales, pero sí distinguía grupos de origen, lengua y religión: árabes, berberes, muladíes y dhimmi.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: el estatus venía determinado por la condición religiosa y el origen más que por la raza; aun así, la tensión entre árabes, berberes y muladíes fue motor de numerosas fitnas internas.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "sociedad",
+      "conflictos-internos"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-124",
+    "enunciado": "Los enfrentamientos entre facciones qaysíes y yemeníes en la al-Ándalus de los siglos VIII y IX dividieron a los árabes por su procedencia...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "del Ebro y del Guadalquivir",
+      "del Magreb y de Ifriqiya",
+      "de Siria y de Egipto",
+      "del norte y del sur de Arabia"
+    ],
+    "respuesta": 3,
+    "explicacion": "Los qaysíes, de la Arabia septentrional, y los yemeníes, del sur, exportaron a al-Ándalus sus viejas rivalidades tribales; se aliaron alternativamente con muladíes y berberes en la lucha por el poder.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "sociedad",
+      "conflictos-internos"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-125",
+    "enunciado": "El mercado de esclavos de al-Ándalus se abastecía principalmente de...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Campesinos muladíes endeudados",
+      "Esclavos asiáticos",
+      "Cautivos cristianos de la frontera",
+      "Esclavos eslavos y africanos comprados en el Magreb"
+    ],
+    "respuesta": 3,
+    "explicacion": "La trata abastecía de esclavos blancos (saqaliba) del este europeo y de esclavos negros del Sáhara; la servidumbre podía llevar a la manumisión y al ascenso militar, como demostraron los propios saqaliba cordobeses.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "sociedad",
+      "esclavitud"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-126",
+    "enunciado": "En las grandes explotaciones agrícolas de al-Ándalus convivían trabajadores libres, aparceros y esclavos.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: junto a la pequeña propiedad campesina existían grandes dominios (de la corona, de mezquitas o de waqfs) trabajados por familiares libres, aparceros y esclavos, con el diezmo y las tasas como cargas habituales.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "sociedad",
+      "campesinado"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-127",
+    "enunciado": "La emigración de mozárabes desde al-Ándalus hacia los reinos cristianos se intensificó...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "con la llegada de los nazaríes",
+      "durante el emirato de Abd al-Rahman I",
+      "tras la batalla de Poitiers",
+      "con la presión almohade y las conquistas cristianas de los siglos XI y XII"
+    ],
+    "respuesta": 3,
+    "explicacion": "Las oleadas almorávide y almohade agravaron la situación de los cristianos mozárabes, que emigraron al norte; los reinos cristianos los instalaron en repoblaciones de la Extremadura y el valle del Guadiana.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "sociedad",
+      "mozarabes"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-128",
+    "enunciado": "Los mudéjares de los reinos hispanocristianos conservaron su religión y su lengua gracias a la existencia de...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Fueros exclusivos de la nobleza",
+      "Aljamas y tribunales propios",
+      "Derecho a acuñar moneda",
+      "Exención de todo impuesto"
+    ],
+    "respuesta": 1,
+    "explicacion": "La aljama (comunidad musulmana de una ciudad) organizaba culto, justicia y tributos; pagaban la pecha o yizia y contaban con sus propios cadíes, hasta la decadencia de las comunidades mudéjares.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "sociedad",
+      "mudejares"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-129",
+    "enunciado": "La ley islámica obligó desde los primeros tiempos a los judíos de al-Ándalus a vivir en barrios cerrados y separados.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Falso: durante los primeros siglos los judíos se integraron en barrios abiertos y mixtos; la concentración en juderías se agravó con los almorávenes y almohades, y la obligación de residencia segregada fue más característica de los reinos cristianos tras 1391.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "judios",
+      "sociedad"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-130",
+    "enunciado": "¿En qué año estalló en Granada el pogromo contra su comunidad judía, en el que murió el visir José ibn Nagrela?",
+    "tipo": "fecha",
+    "opciones": [
+      "1031",
+      "1066",
+      "1090",
+      "1148"
+    ],
+    "respuesta": 1,
+    "explicacion": "En 1066, en pleno reino zirí, una revuelta asesinó al visir judío y a gran parte de la judería de Granada; el episodio evidenció el deterioro de la convivencia bajo presión antes de la llegada de los almorávenes.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "judios",
+      "violencia"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-131",
+    "enunciado": "¿En qué año nació en Córdoba Ibn Rushd, el gran filósofo y médico conocido como Averroes?",
+    "tipo": "fecha",
+    "opciones": [
+      "1058",
+      "1092",
+      "1126",
+      "1198"
+    ],
+    "respuesta": 2,
+    "explicacion": "Ibn Rushd nació en Córdoba en 1126 y murió en 1198 en Marrakech; 1058 es el año de nacimiento de Avicena y 1198 el del fallecimiento del propio Averroes, tras una vida de cargos públicos y polémicas.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "cultura",
+      "filosofia"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-132",
+    "enunciado": "¿Con qué obra respondió Averroes al tratado de Al-Ghazali titulado La incoherencia de los filósofos?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El Kitab al-Tasrif",
+      "La guía de los perplejos",
+      "El collar de la paloma",
+      "La incoherencia de los incoherentes"
+    ],
+    "respuesta": 3,
+    "explicacion": "Averroes contestó a Al-Ghazali con Tahāfut al-Tahāfut (La incoherencia de los incoherentes), en defensa de la licitud de la filosofía; La guía de los perplejos es de Maimónides y el Tasrif, de al-Zahrawi.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "cultura",
+      "filosofia"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-133",
+    "enunciado": "¿En qué ciudad nació Maimónides, médico y filósofo autor de La guía de los perplejos?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Toledo",
+      "Granada",
+      "Sevilla",
+      "Córdoba"
+    ],
+    "respuesta": 3,
+    "explicacion": "Maimónides (Musa ibn Maymún) nació en Córdoba en 1138, huyó de la presión almohade y acabó en El Cairo, donde fue médico del sultán Saladino; su obra concilió fe judía y filosofía aristotélica.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "cultura",
+      "filosofia"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-134",
+    "enunciado": "¿Qué médico cordobés escribió el Kitab al-Tasrif, enciclopedia médica de la que destacó su tratado de cirugía?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Al-Razi",
+      "Al-Zahrawi (Abulcasis)",
+      "Ibn Sina",
+      "Ibn al-Baytar"
+    ],
+    "respuesta": 1,
+    "explicacion": "Al-Zahrawi (Abulcasis, 936-1013), considerado padre de la cirugía moderna, ilustró sus instrumentos en el Tasrif; su influencia llegó a la cirugía europea renacentista por vía de las traducciones latinas.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "cultura",
+      "medicina"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-135",
+    "enunciado": "¿Qué forma poética nació en al-Ándalus en el siglo IX y se difundió después por todo el Mediterráneo islámico?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La qasida clásica",
+      "La moaxaja",
+      "El panegírico real",
+      "La prosa rimada"
+    ],
+    "respuesta": 1,
+    "explicacion": "La moaxaja (muwashshah), con su estrofa de rima alternada y su estribillo final, fue una creación andalusí que pasó al Magreb y al Oriente; la qasida, en cambio, era la forma poética clásica oriental.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "cultura",
+      "literatura"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-136",
+    "enunciado": "Las jarchas, coplas breves en lengua romance que cerraban las moaxajas andalusíes, son especialmente importantes porque...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "las escribió Averroes",
+      "fueron compuestas por Maimónides",
+      "son poemas de guerra",
+      "son una de las primeras muestras literarias escritas en romance"
+    ],
+    "respuesta": 3,
+    "explicacion": "Las jarchas, en dialecto hispanoárabe, son testimonio de la vida cotidiana y de la lengua vulgar hablada: junto con las glosas emilianenses constituyen las primeras muestras escritas de la lengua castellana.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "cultura",
+      "literatura"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-137",
+    "enunciado": "El polígrafo cordobés Ibn Hazm (994-1064) es autor de una célebre obra sobre el amor. ¿Cómo se titula?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La guía de los perplejos",
+      "El libro de la curación",
+      "El collar de la paloma",
+      "Las epístolas"
+    ],
+    "respuesta": 2,
+    "explicacion": "El Collar de la paloma (Ṭawq al-ḥamāma) es un tratado sobre el amor y la amistad escrito por el jurista zahirí Ibn Hazm, testigo del Córdoba califal de antes de la fitna.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "cultura",
+      "literatura"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-138",
+    "enunciado": "¿Qué sabio malagueño, contemporáneo de los almohades, fue el mayor botánico y farmacéutico de su tiempo?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Al-Zahrawi",
+      "Ibn Tufayl",
+      "Ibn Hazm",
+      "Ibn al-Baytar"
+    ],
+    "respuesta": 3,
+    "explicacion": "Ibn al-Baytar (1197-1248), nacido en Málaga, recorrió el Mediterráneo recogiendo plantas y su Compendio de medicinas simples reunió más de mil cuatrocientos fármacos, empleados en Europa durante siglos.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "cultura",
+      "medicina"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-139",
+    "enunciado": "Averroes defendió en sus comentarios a Aristóteles la llamada doctrina de la «doble verdad», que separaba fe y razón.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Falso: Averroes sostuvo la armonía entre fe y filosofía y la licitud de interpretar la Revelación; la «doble verdad» fue una acusación de sus adversarios y de la escolástica posterior, no su tesis.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "cultura",
+      "filosofia"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-140",
+    "enunciado": "Hayy ibn Yaqzan, de Ibn Tufayl, narra la historia de un hombre que se educa en una isla desierta sin maestros ni sociedad.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: la novela filosófica de Ibn Tufayl (1105-1185), médico de los almohades, influyó en la literatura europea posterior, desde Robinson Crusoe hasta los proyectos ilustrados de educación.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "cultura",
+      "literatura"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-141",
+    "enunciado": "¿En qué ciudad se formó la escuela de traductores que transmitió al Occidente latino la ciencia y la filosofía andalusíes?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Barcelona",
+      "Toledo",
+      "Palermo",
+      "Marsella"
+    ],
+    "respuesta": 1,
+    "explicacion": "Tras la conquista de Toledo (1085), la ciudad se convirtió en gran taller de traducción del árabe al latín; allí trabajaron el arzobispo Raimundo de Toledo, Domingo Gundisalvo y Gerardo de Cremona.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "cultura",
+      "traduccion"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-142",
+    "enunciado": "¿Qué traductor italiano trabajó en la escuela de traductores de Toledo y volcó al latín el Almagesto de Ptolomeo a partir de la versión árabe?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Domingo Gundisalvo",
+      "Gerardo de Cremona",
+      "Alfonso X",
+      "Raimundo de Toledo"
+    ],
+    "respuesta": 1,
+    "explicacion": "Gerardo de Cremona (1114-1187) tradujo en Toledo más de setenta obras, entre ellas el Almagesto y el Canon de Avicena; su labor hizo de al-Ándalus la vía de entrada de la ciencia clásica y oriental en Europa.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "cultura",
+      "traduccion"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-143",
+    "enunciado": "Alfonso X «El Sabio» impulsó en su corte la compilación y la traducción del saber. ¿Qué obra suya se beneficia del saber andalusí?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El Cantar de Roldán",
+      "El poema del Mío Cid",
+      "La General Estoria",
+      "La Regla de Calatrava"
+    ],
+    "respuesta": 2,
+    "explicacion": "La General Estoria de Alfonso X integra relatos y ciencias procedentes de tradiciones árabes, junto con las fuentes clásicas y cristianas; a la misma corriente pertenecen su Lapidario y su Libro del saber de astrología.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "cultura",
+      "traduccion"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-144",
+    "enunciado": "La filosofía de Averroes fue decisiva para la escolástica cristiana, y en particular para el pensamiento de Santo Tomás de Aquino.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: los comentarios de Averroes a Aristóteles circularon en las universidades europeas (París, Bolonia), donde se le llamó «el Comentador»; Santo Tomás le refirió y rebatió sistemáticamente.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "cultura",
+      "filosofia"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-145",
+    "enunciado": "El célebre historiador Ibn Jaldún, autor de la Muqaddima, visitó Granada en 1364-1365 en misión diplomática benimerí. ¿Por qué es célebre su obra?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Por traducir el Corán al latín",
+      "Por ser el primer tratado de óptica",
+      "Por recopilar la cirugía de al-Zahrawi",
+      "Por anticipar una teoría sociológica del poder y del ciclo de las dinastías"
+    ],
+    "respuesta": 3,
+    "explicacion": "La Muqaddima (1377) explica el auge y la caída de las dinastías por la cohesión social de los grupos nómadas y su relajación posterior: una visión de la historia considerada precursora de la sociología.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "cultura",
+      "historia"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-146",
+    "enunciado": "¿Qué era la mezquita aljama de una ciudad de al-Ándalus?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La mezquita mayor, vinculada al poder político",
+      "Una mezquita de barrio",
+      "Un oratorio privado",
+      "La sinagoga mayor"
+    ],
+    "respuesta": 0,
+    "explicacion": "La aljama reunía la oración del viernes junto al poder civil; de sus predios dependían las rentas del culto. A ella acudían las autoridades en actos oficiales, como la jura del emir o la proclamación del califa.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "religion",
+      "ciudades"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-147",
+    "enunciado": "El nombre de «Alhambra» aplicado al palacio y la fortaleza nazaríes de Granada procede...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "De su fundador nazarí",
+      "Del color rojizo de sus tapias",
+      "De su posición estratégica",
+      "Del río que la baña"
+    ],
+    "respuesta": 1,
+    "explicacion": "Al-Hamra («la roja») alude al color del tapial de los muros de la alcazaba; el conjunto unía función defensiva, palacios, jardines y acueductos en la colina frente al Albaicín.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "nazaries",
+      "arte"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-148",
+    "enunciado": "¿En qué año fue saqueada y arrasada Madinat al-Zahra durante las guerras civiles de la fitna?",
+    "tipo": "fecha",
+    "opciones": [
+      "997",
+      "1002",
+      "1010",
+      "1031"
+    ],
+    "respuesta": 2,
+    "explicacion": "En 1010, en plena guerra civil entre omeyas y hammudíes, la ciudad palatina fue saqueada y destruida; sus ruinas, redescubiertas en el siglo XIX, son hoy Patrimonio Mundial de la UNESCO.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "califato",
+      "arte"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-149",
+    "enunciado": "¿Qué es el arte mudéjar?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La arquitectura de las mezquitas nazaríes",
+      "Un estilo exclusivo del norte de África",
+      "La aplicación de técnicas y decoración islámicas a edificios cristianos",
+      "La escultura visigoda"
+    ],
+    "respuesta": 2,
+    "explicacion": "El mudéjar combina estructuras cristianas (iglesias, sinagogas) con ladrillo, arcos, yeserías, maderas y cerámica de tradición islámica, fruto del trabajo de artesanos musulmanes en tierra cristiana.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "mudejar",
+      "arte"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-150",
+    "enunciado": "¿Qué torre almohade de Sevilla, erigida junto al Guadalquivir, defendía el acceso al puerto fluvial?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La Giralda",
+      "La Torre del Oro",
+      "La Torre del Aceite",
+      "La Torre de los Lujanes"
+    ],
+    "respuesta": 1,
+    "explicacion": "La Torre del Oro (hacia 1220), de planta dodecagonal y cuerpo superior hexagonal, vigilaba el río; la Giralda era el alminar de la mezquita aljama y la Torre del Aceite, en Jaén, es una torre de defensiva de huerta.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "almohades",
+      "arte"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-151",
+    "enunciado": "¿Cómo se conocía en época nazarí el barrio árabe que se extiende en la colina frente a la Alhambra, en Granada?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El Alcázar",
+      "La Axerquía",
+      "El Arrabal de Genil",
+      "El Albaicín (al-Bayyazin)"
+    ],
+    "respuesta": 3,
+    "explicacion": "El Albaicín, del árabe al-Bayyazin, conserva el trazado urbano medieval nazarí con sus casas-palacio y sus baños; la Axerquía y el Arrabal de Genil eran los barrios extramuros de Córdoba y Sevilla respectivamente.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "nazaries",
+      "granada"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-152",
+    "enunciado": "La sinagoga toledana de Santa María la Blanca, levantada en 1203, es un ejemplo de sinagoga mudéjar construida por artesanos musulmanes.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: sus arcos de herradura sobre pilares de ladrillo y sus frisos de madera policromada son obra de la tradición islámica al servicio de la aljama judía de Toledo, testimonio de la convivencia medieval.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "mudejar",
+      "toledo"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-153",
+    "enunciado": "La Alhambra abastecía sus fuentes y jardines gracias a una acequia traída de...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La Sierra de Elvira",
+      "El Genil directamente",
+      "El urbano Darro",
+      "El propio Generalife"
+    ],
+    "respuesta": 0,
+    "explicacion": "La acequia Real de Aynadamar, de unos seis kilómetros, conducía agua desde la fuente de Fuentenueva, en la Sierra de Elvira; su reparto regulado hacía posible el juego del agua en palacios y jardines.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "nazaries",
+      "agua"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-154",
+    "enunciado": "La decoración de la Alhambra se basa en la pintura figurativa de temas humanos y animales, evitando la geometría y la escritura.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Falso: la decoración nazarí es esencialmente afigurativa: yeserías de ataurique, lacerías geométricas, mocárabes e inscripciones con el lema del reino («No hay más vencedor que Dios»), con escaso uso de figuras vivas.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "nazaries",
+      "arte"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-155",
+    "enunciado": "La estatua que remata la Giralda desde el siglo XVI, conocida como el Giraldillo, representa...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El rey Fernando el Católico",
+      "Una sirena del Guadalquivir",
+      "La Fe victoriosa con estandarte",
+      "El arcángel San Miguel"
+    ],
+    "respuesta": 2,
+    "explicacion": "El Giraldillo, fundido en 1568, es una alegoría de la Fe victoriosa que corona el antiguo alminar almohade convertido en campanario cristiano tras la conquista de Sevilla.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "almohades",
+      "arte"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-156",
+    "enunciado": "¿Qué arquitectura caracteriza las arquerías de la mezquita de Córdoba en sus dos alturas?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Arcos de medio punto románicos",
+      "Arcos apuntados góticos",
+      "Arcos de herradura y lobulados sobre columnas",
+      "Arcos conopiales flamígeros"
+    ],
+    "respuesta": 2,
+    "explicacion": "El juego de arcos de herradura y lobulados sostenidos por columnas de jaspe y dovelas alternas de ladrillo y piedra creó el ritmo inconfundible de la mezquita cordobesa, reutilizada desde templos romanos y visigodos.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "cordoba",
+      "arte"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-157",
+    "enunciado": "¿En qué época se añadió el último tramo de naves a la mezquita aljama de Córdoba, alcanzada su planta definitiva?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Abd al-Rahman I",
+      "Al-Mansur",
+      "Al-Hakam II",
+      "Abd al-Rahman III"
+    ],
+    "respuesta": 1,
+    "explicacion": "Tras las ampliaciones de Abd al-Rahman I (siglo VIII) y al-Hakam II (siglo X), el valido al-Mansur prolongó la nave hacia el sur a finales del siglo X, dando a la mezquita su extensión actual.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "cordoba",
+      "arte"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-158",
+    "enunciado": "¿Qué edificio toledano, antigua mezquita de barrio andalusí conocida como Bab al-Mardum, se convirtió en ermita con el nombre de Cristo de la Luz?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La iglesia de Santo Tomé",
+      "La sinagoga del Tránsito",
+      "El Alcázar",
+      "La mezquita del Cristo de la Luz"
+    ],
+    "respuesta": 3,
+    "explicacion": "La pequeña mezquita del siglo X, con su arquería de ladrillo y su decoración epigráfica, fue cedida tras la conquista de Toledo a la comunidad mozárabe de Bnei Anus, que la consagró como ermita.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "toledo",
+      "arte"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-159",
+    "enunciado": "Además de la mezquita aljama, las ciudades andalusíes contaban con mezquitas de barrio repartidas por sus arrabales.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: Córdoba llegó a albergar centenares de mezquitas menores (musallas) de uso vecinal; su abundancia, ya señalada por los viajeros cristianos, facilitó la conversión de muchos de esos edificios en iglesias tras las conquistas.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "religion",
+      "ciudades"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-160",
+    "enunciado": "Los baños árabes (hammam) andalusíes se inspiraban en...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Los baños romanos, con salas fría, templada y caliente",
+      "Los baños vikingos",
+      "Los rituales zoroástricos",
+      "Los templos egipcios"
+    ],
+    "respuesta": 0,
+    "explicacion": "Los hammam retomaron la planta termal romana —vestuario, sala fría, templada y caliente con hipocausto— y añadieron el ritual del aseo islámico; pervivieron en Ronda, Granada y Barcelona.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "ciudades",
+      "vida-cotidiana"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-161",
+    "enunciado": "¿Qué escuela jurídica del islam dominó la vida religiosa de al-Ándalus desde el siglo VIII?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La hanafí",
+      "La malikí",
+      "La hanbalí",
+      "La shafií"
+    ],
+    "respuesta": 1,
+    "explicacion": "El derecho malikí, que privilegia la tradición jurídica de Medina, se impuso desde la llegada de los primeros alfaquíes y estructuró la vida pública de emirato, califato y taifas, con la mezquita aljama como centro.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "religion",
+      "derecho"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-162",
+    "enunciado": "El rito litúrgico hispano-visigodo que los cristianos mozárabes conservaron durante el dominio musulmán se conoce como...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El rito mozárabe",
+      "El rito ambrosiano",
+      "El rito griego",
+      "El rito carolingio"
+    ],
+    "respuesta": 0,
+    "explicacion": "El rito mozárabe pervivió en Toledo y otras iglesias bajo al-Ándalus y se mantuvo en la España cristiana hasta que el Concilio de Burgos (1080) lo sustituyó por el rito romano.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "religion",
+      "mozarabes"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-163",
+    "enunciado": "La situación de los cristianos y los judíos en al-Ándalus fue idéntica a lo largo de los ocho siglos, sin cambios apreciables.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Falso: la convivencia fue más llevadera bajo emirato y califato, se endureció con el rigorismo almorávide y almohade —con conversiones y emigraciones— y se quebró definitivamente con los pogromos y los bautismos forzosos del siglo XV.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "religion",
+      "convivencia"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-164",
+    "enunciado": "Tras la victoria de Alarcos (1195), el califa almohade al-Mansur decretó...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La quema de los libros de Averroes y la prohibición de la filosofía",
+      "El cierre de las madrasas",
+      "La expulsión de los judíos andalusíes",
+      "La construcción de la Giralda"
+    ],
+    "respuesta": 0,
+    "explicacion": "A raíz del triunfo de Alarcos, al-Mansur persiguió las «herejías» filosóficas: Averroes fue desterrado y sus libros quemados en Sevilla, aunque la medida fue revocada poco antes de su muerte en 1198.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "almohades",
+      "filosofia"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-165",
+    "enunciado": "¿En qué año redactó al-Idrisi su célebre geografía del Mediterráneo, conocida como el Libro de Roger?",
+    "tipo": "fecha",
+    "opciones": [
+      "1054",
+      "1154",
+      "1254",
+      "1354"
+    ],
+    "respuesta": 1,
+    "explicacion": "Hacia 1154 al-Idrisi concluyó en Palermo la Nuzhat al-mushtaq (Libro de Roger), con mapas y descripciones muy precisas de al-Ándalus, para el rey normando Roger II de Sicilia.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "cultura",
+      "geografia"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-166",
+    "enunciado": "El viajero valenciano Ibn Jubayr dejó en su obra un detallado testimonio de al-Ándalus almohade. ¿Cómo se titula su libro?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La Muqaddima",
+      "El Collar de la paloma",
+      "La Rihla (Libro de los viajes)",
+      "El Libro de la curación"
+    ],
+    "respuesta": 2,
+    "explicacion": "La Rihla de Ibn Jubayr (1185) relata su peregrinación y sus escala por Almería, Granada y Sevilla, describiendo ciudades, mezquitas, hospitales y costumbres del islam occidental.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "cultura",
+      "viajes"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-167",
+    "enunciado": "¿Qué edificio público, cuyo nombre procede del árabe al-funduq, almacenaba y regulaba el comercio de mercancías en las ciudades andalusíes?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El zoco",
+      "El aljibe",
+      "La alhóndiga",
+      "La mezquita"
+    ],
+    "respuesta": 2,
+    "explicacion": "La alhóndiga era el gran depósito fiscal donde se pesaba y vendía el grano y otras mercancías; el zoco (sūq) era el mercado callejero, el aljibe, la cisterna, y la alcaicería, el mercado regulado de la seda.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "ciudades",
+      "comercio"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-168",
+    "enunciado": "¿Qué centro de enseñanza superior fundó Yusuf I en Granada en 1349, precursor del estudio general de la ciudad?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El colegio de Almuñécar",
+      "La madrasa yusufíyya",
+      "La escuela del Generalife",
+      "El ateneo de Granada"
+    ],
+    "respuesta": 1,
+    "explicacion": "La madrasa yusufíyya enseñaba gramática, derecho, medicina, matemáticas y astronomía; dotada con rentas de fundaciones piadosas, funcionó hasta la conquista cristiana y simboliza el empeño cultural nazarí.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "nazaries",
+      "cultura"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-169",
+    "enunciado": "Los llamados Reales Alfares de la Alhambra eran...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La prisión de los sultanes",
+      "La escuela de caballería",
+      "El mercado de la seda",
+      "El barrio de alfareros y hornos del palacio nazarí"
+    ],
+    "respuesta": 3,
+    "explicacion": "Junto a la muralla de la Alhambra se ubicaban talleres y hornos de alfarería, abasteciendo de cerámica y fajencias al palacio; los hallazgos arqueológicos atestiguan su actividad.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "nazaries",
+      "artesania"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-170",
+    "enunciado": "¿Qué murid andalusí, viajero a Oriente y discípulo de al-Ghazali, impulsó el movimiento sufí peninsular en el siglo XII?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Ibn al-Arif",
+      "Ibn Hazm",
+      "Al-Zahrawi",
+      "Ibn al-Baytar"
+    ],
+    "respuesta": 0,
+    "explicacion": "Ibn al-Arif (1088-1141), de Almería y Murcia, organizó cofradías de muridines en al-Ándalus tras su formación en Oriente; el sufismo, promovido también por los almohades, dejó huella en la espiritualidad peninsular.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "religion",
+      "sufismo"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-171",
+    "enunciado": "¿Cómo se puede caracterizar el proceso de islamización de la población peninsular?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Un proceso lento que tardó varias generaciones",
+      "Un bautismo masivo e inmediato ordenado por Tariq",
+      "Una imposición violenta consumada en pocos años",
+      "Un fenómeno limitado al norte de África"
+    ],
+    "respuesta": 0,
+    "explicacion": "Los primeros musulmanes fueron una minoría: la conversión avanzó por vía pacífica y social, favorecida por los impuestos a los dhimmi, y solo se completó hacia el siglo XI, con el debilitamiento de las comunidades cristianas.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "sociedad",
+      "islamizacion"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-172",
+    "enunciado": "Los almohades, más rigoristas que los omeyas, agravaron la presión sobre cristianos y judíos, empujando conversiones forzosas y emigraciones.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: el fanatismo almohade destruyó sinagogas y presionó a las comunidades dhimmi; muchos judíos y mozárabes huyeron a los reinos cristianos o al Magreb, y otros optaron por la conversión.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "almohades",
+      "religion"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-173",
+    "enunciado": "¿Qué palabra, procedente del árabe sūq, designaba al mercado abierto de las ciudades andalusíes?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La alhóndiga",
+      "El aljibe",
+      "La alcaicería",
+      "El zoco"
+    ],
+    "respuesta": 3,
+    "explicacion": "El zoco (del árabe sūq) era el mercado ordinario, a menudo organizado por oficios y protegido del sol con toldos; de él perviven topónimos como la Zoco de Marrakech (Djemma al-Fna).",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "ciudades",
+      "comercio"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-174",
+    "enunciado": "¿Dónde se ubicaban las principales cecas (casas de moneda) del reino nazarí?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Toledo y Córdoba",
+      "Sevilla y Cádiz",
+      "Granada y Málaga",
+      "Lérida y Tortosa"
+    ],
+    "respuesta": 2,
+    "explicacion": "Los nazaríes acuñaron dineros y dinares en Granada y Málaga; Toledo, Sevilla y Lérida habían tenido cecas en épocas anteriores, y Tortosa perteneció a las taifas del Ebro.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "nazaries",
+      "moneda"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-175",
+    "enunciado": "La conquista cristiana de las ciudades andalusíes provocó la emigración de parte de sus musulmanes (mudéjares) hacia el reino de Granada y el Magreb.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: tras la caída de Toledo, Valencia, Córdoba o Sevilla, numerosos mudéjares prefirieron trasladarse a territorio musulmán antes que someterse al dominio cristiano, reforzando al reino nazarí y las ciudades magrebíes.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "sociedad",
+      "reconquista"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-176",
+    "enunciado": "El nombre «Al-Ándalus» aplicado a la España musulmana procede...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "De la palabra árabe para «península»",
+      "Del pueblo germánico de los vándalos",
+      "Del río Guadalquivir",
+      "De la expresión «tierra roja»"
+    ],
+    "respuesta": 1,
+    "explicacion": "La etimología más aceptada relaciona al-Ándalus con Vandalusia, la tierra de los vándalos que habitó el sur peninsular; los árabes aplicaron el topónimo a todo el territorio conquistado.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "geografia",
+      "toponimia"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-177",
+    "enunciado": "El topónimo Guadalquivir procede del árabe wadi al-kabir, que significa...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El río grande",
+      "El agua de la sierra",
+      "El río sagrado",
+      "El estrecho"
+    ],
+    "respuesta": 0,
+    "explicacion": "Wadi al-kabir («río grande») aludía al Guadalquivir, eje de la vida andalusí; de la toponimia árabe peninsular proceden también Guadalajara, Guadiana, Alcarria o Albacete.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "geografia",
+      "toponimia"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-178",
+    "enunciado": "¿Cuál de estas palabras del español procede del árabe andalusí?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Almohada",
+      "Puente",
+      "Ventana",
+      "Mesón"
+    ],
+    "respuesta": 0,
+    "explicacion": "Almohada viene del árabe al-mukhadda; puente (pons), ventana (de ventus) y mesón (mensa) son de raíz latina, como la mayor parte del léxico hispanorromance.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "legado",
+      "lengua"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-179",
+    "enunciado": "El español tomó del árabe tan solo un puñado de palabras, todas ellas relacionadas con la religión islámica.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Falso: el hispano tomó del árabe centenares de palabras de la vida cotidiana (aceite, almacén, azotea), del campo (acequia, alhóndiga), de la ciencia (álgebra, algoritmo, química) y de la administración.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "legado",
+      "lengua"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-180",
+    "enunciado": "¿En qué año se inició el dominio musulmán de las Baleares con la toma de Mallorca?",
+    "tipo": "fecha",
+    "opciones": [
+      "897",
+      "902",
+      "914",
+      "1015"
+    ],
+    "respuesta": 1,
+    "explicacion": "La flota andalusí tomó Mallorca en 902, iniciando casi tres siglos de islam en las islas; los banu Ghaniya las reconquistarían para el islam en el siglo XII antes de la ofensiva cristiana de 1229-1232.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "conquista-islamica",
+      "baleares"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-181",
+    "enunciado": "Tras la conquista, la franja del valle del Duero quedó despoblada como zona fronteriza. ¿Qué imagen emplean los historiadores para designarla?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El desierto del Duero",
+      "El muro de la cristiandad",
+      "La tierra de nadie",
+      "El valle abandonado"
+    ],
+    "respuesta": 0,
+    "explicacion": "El «desierto del Duero» designa la banda devastada que actuó de colchón entre al-Ándalus y los reinos cristianos hasta su repoblación en los siglos IX y X.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "fronteras",
+      "reinos-cristianos"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-182",
+    "enunciado": "Tras la conquista de Toledo (1085), el río Tajo se convirtió en la principal línea fronteriza entre al-Ándalus y los reinos cristianos.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: con Castilla instalada en el Tajo, la frontera se estabilizó hasta el avance almohade; posteriormente la línea del Guadalquivir marcó el repliegue nazarí tras las conquistas del siglo XIII.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "fronteras",
+      "reinos-cristianos"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-183",
+    "enunciado": "¿Qué encargo jurídico de al-Hakam II facilitó la convivencia al traducir al árabe las antiguas leyes visigodas?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La recopilación del Fuero Juzgo (Liber Iudiciorum)",
+      "El Almagesto de Ptolomeo",
+      "El Libro del saber de astrología",
+      "La Gesta de al-Mansur"
+    ],
+    "respuesta": 0,
+    "explicacion": "El califa encargó traducir y adaptar el Liber Iudiciorum visigodo para que los jueces y notarios de la aljama cristiana pudieran aplicar sus propias leyes, un ejemplo de gestión jurídica de la diversidad.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "califato",
+      "mozarabes"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-184",
+    "enunciado": "¿En qué año fue declarado el conjunto monumental de la Alhambra Patrimonio Mundial de la UNESCO?",
+    "tipo": "fecha",
+    "opciones": [
+      "1974",
+      "1984",
+      "1994",
+      "2004"
+    ],
+    "respuesta": 1,
+    "explicacion": "La Alhambra fue inscrita en la lista del Patrimonio Mundial en 1984, junto con el Generalife y en el mismo año que la mezquita de Córdoba; el Albaicín se añadió en 1994.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "nazaries",
+      "patrimonio"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-185",
+    "enunciado": "¿En qué año fue declarada la ciudad palatina de Madinat al-Zahra Patrimonio Mundial de la UNESCO?",
+    "tipo": "fecha",
+    "opciones": [
+      "1984",
+      "1994",
+      "2003",
+      "2018"
+    ],
+    "respuesta": 3,
+    "explicacion": "Madinat al-Zahra fue reconocida como Patrimonio Mundial en 2018, en reconocimiento a su valor como emblema del Califato de Córdoba y de la civilización andalusí.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "califato",
+      "patrimonio"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-186",
+    "enunciado": "¿En qué orden cronológico transcurrieron los grandes periodos políticos de al-Ándalus?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Conquista y emirato, califato, taifas, dominación magrebí y reino nazarí",
+      "Califato, taifas, conquista y emirato, nazaríes",
+      "Taifas, conquista, califato y almohades",
+      "Emirato, nazaríes, califato y taifas"
+    ],
+    "respuesta": 0,
+    "explicacion": "La secuencia es: conquista (711-756), emirato independiente (756-929), califato (929-1031), taifas (1031-1086), almorávenes y almohades (1086-1248) y, ya aislado, el reino nazarí de Granada (1238-1492).",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "cronologia",
+      "sintesis"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-187",
+    "enunciado": "El reino nazarí de Granada (1238-1492) tuvo más años de existencia que el califato de Córdoba (929-1031).",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: el califato cordobés duró algo más de un siglo, mientras el reino nazarí pervivió más de doscientos cincuenta años como Estado dependiente de Castilla.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "cronologia",
+      "sintesis"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-188",
+    "enunciado": "¿Qué ciudad era el centro de la Marca Media de al-Ándalus, la frontera del Tajo, célebre por sus rebeliones contra el emirato?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Mérida",
+      "Sevilla",
+      "Toledo",
+      "León"
+    ],
+    "respuesta": 2,
+    "explicacion": "Toledo, cabeza de la marca del Tajo, protagonizó sucesivas sublevaciones hasta que Abd al-Rahman II ordenó derribar sus murallas en el siglo IX; antes había sido la capital visigoda.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "fronteras",
+      "toledo"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-189",
+    "enunciado": "¿Qué acontecimiento de 1236 abrió a Castilla el corazón del valle del Guadalquivir andalusí?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La batalla de las Navas de Tolosa",
+      "La toma de Córdoba",
+      "El sitio de Sevilla",
+      "La caída de Alhama"
+    ],
+    "respuesta": 1,
+    "explicacion": "Fernando III entró en Córdoba en 1236, diez años después de las Navas; Jaén cayó en 1246 y Sevilla en 1248, quedando reducido al-Ándalus al reino nazarí de Granada.",
+    "dificultad": 2,
+    "tags": [
+      "al-andalus",
+      "reconquista",
+      "cronologia"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-190",
+    "enunciado": "La conquista cristiana de al-Ándalus avanzó por etapas: primero el Ebro y el Tajo, después el Guadalquivir y, al final, el reino nazarí de Granada.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: el avance siguió el eje de los grandes ríos —el Ebro taifa y Toledo en el siglo XI, el Guadalquivir tras 1236— y culminó con la rendición de Granada en enero de 1492.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "reconquista",
+      "sintesis"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-191",
+    "enunciado": "¿Cuánto tiempo transcurrió entre el cruce del Estrecho (711) y la rendición de Granada (1492)?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Casi ochocientos años",
+      "Cuatrocientos años",
+      "Trescientos años",
+      "Un milenio"
+    ],
+    "respuesta": 0,
+    "explicacion": "De 711 a 1492 hay 781 años: la presencia musulmana organizada en la península se prolongó casi ocho siglos, desde Tariq hasta Boabdil.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "cronologia",
+      "sintesis"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-192",
+    "enunciado": "¿Cómo sobrevivió el reino de Granada como Estado musulmán durante más de dos siglos rodeado de Castilla?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Su superioridad militar demostrada en campo abierto",
+      "El pago de parias y las alianzas con Castilla y con los benimerines",
+      "La ayuda naval de Génova",
+      "El aislamiento absoluto de Castilla"
+    ],
+    "respuesta": 1,
+    "explicacion": "Los nazaríes mantuvieron su independencia combinando parias a Castilla, alianzas matrimoniales y el apoyo militar de los benimerines magrebíes, sin presentar batalla campal tras Tarifa (1340).",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "nazaries",
+      "diplomacia"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-193",
+    "enunciado": "La economía del reino nazarí se sostenía en la agricultura de regadío, la seda, el comercio mediterráneo y los tributos que pagaba a Castilla.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: el regadío de la vega, los tejidos de seda, el comercio con el Magreb y las exportaciones agrícolas sostuvieron al reino, cuya hacienda cargaba además con las parias debidas a Castilla.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "nazaries",
+      "economia"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-194",
+    "enunciado": "¿Qué dinastía bereber del Magreb sostuvo militarmente al reino nazarí frente a Castilla en el siglo XIV?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Los almohades",
+      "Los ziríes",
+      "Los benimerines",
+      "Los saadíes"
+    ],
+    "respuesta": 2,
+    "explicacion": "Los benimerines (meriníes) de Fez aliaron con los nazaríes, incluso en la batalla de Tarifa (1340), y acogieron a sultanes exiliados; almohades, ziríes y saadíes pertenecen a otros momentos de la historia del Magreb.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "nazaries",
+      "magreb"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-195",
+    "enunciado": "¿Qué realizó el sultán nazarí Isma'il I (1314-1325), primero de los nazaríes de la segunda dinastía?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La construcción del palacio de los Leones",
+      "Recuperar Almería y asegurar la frontera mediante pactos con Castilla",
+      "La rendición a Fernando III",
+      "Su exilio en Fez"
+    ],
+    "respuesta": 1,
+    "explicacion": "Isma'il I recuperó Almería hacia 1314 y reforzó las defensas del reino; el palacio de los Leones es de Muhammad V, la rendición de 1492 de Boabdil y el exilio en Fez, del propio Boabdil.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "nazaries",
+      "protagonistas"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-196",
+    "enunciado": "La Mezquita de Córdoba, Madinat al-Zahra y la Alhambra son tres hitos de...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La arquitectura religiosa y palaciega andalusí",
+      "El arte cristiano medieval",
+      "La arquitectura romana",
+      "La escultura visigoda"
+    ],
+    "respuesta": 0,
+    "explicacion": "Los tres edificios resumen la evolución del arte andalusí: la aljama cordobesa del emirato, la ciudad palatina del califato y el complejo nazarí de Granada, culmen del arte hispanomusulmán.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "arte",
+      "sintesis"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-197",
+    "enunciado": "Los almorávenes y los almohades lograron detener definitivamente el avance de los reinos cristianos.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Falso: Sagrajas (1086) y Alarcos (1195) retrasaron el avance cristiano, pero la victoria de las Navas de Tolosa (1212) rompió el poder almohade y abrió la conquista del Guadalquivir.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "almoraveces",
+      "almohades"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-198",
+    "enunciado": "¿Qué eclesiástico impulsó desde Granada, en 1499, las conversiones forzosas de los musulmanes nazaríes?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El cardenal Cisneros",
+      "El papa Alejandro VI",
+      "La reina Isabel",
+      "El obispo de Jaén"
+    ],
+    "respuesta": 0,
+    "explicacion": "El arzobispo y cardenal Jiménez de Cisneros promovió las conversiones tras la rebelión de las Alpujarras, con la quema pública del Corán; el edicto de Granada (1501) impuso bautismo o destierro en la antigua aljama.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "nazaries",
+      "religion"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-199",
+    "enunciado": "El territorio de al-Ándalus, en su máxima extensión y en distintos momentos, se correspondía aproximadamente con...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Solo la actual Andalucía",
+      "La Corona de Aragón",
+      "Andalucía, Valencia, Murcia, las Baleares, Madrid, Toledo, Extremadura y buena parte de Portugal",
+      "El norte de Portugal y Galicia"
+    ],
+    "respuesta": 2,
+    "explicacion": "Al-Ándalus llegó a dominar casi toda la península salvo el extremo norte; su núcleo permanente fue el valle del Guadalquivir, el sureste, Valencia y las Baleares, con plazas avanzadas en la Meseta y Portugal.",
+    "dificultad": 3,
+    "tags": [
+      "al-andalus",
+      "geografia",
+      "sintesis"
+    ]
+  },
+  {
+    "id": "bachillerato2-al-andalus-200",
+    "enunciado": "Al-Ándalus dejó un legado artístico, científico y lingüístico que sigue presente en la España actual.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: de la Alhambra al vocabulario cotidiano, pasando por la ciencia de Averroes y Maimónides y por técnicas como el regadío o el azulejo, el legado andalusí atraviesa la cultura hispánica y europea.",
+    "dificultad": 1,
+    "tags": [
+      "al-andalus",
+      "legado",
+      "sintesis"
+    ]
   }
 ]

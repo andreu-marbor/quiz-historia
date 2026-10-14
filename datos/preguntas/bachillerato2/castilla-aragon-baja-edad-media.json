@@ -3,100 +3,3741 @@
     "id": "bachillerato2-castilla-aragon-baja-edad-media-001",
     "enunciado": "¿Qué rey castellano conquistó Toledo en 1085?",
     "tipo": "opcion-multiple",
-    "opciones": ["Fernando III", "Alfonso VI", "Alfonso VIII", "Ramiro II"],
+    "opciones": [
+      "Fernando III",
+      "Alfonso VI",
+      "Alfonso VIII",
+      "Ramiro II"
+    ],
     "respuesta": 1,
     "explicacion": "Alfonso VI tomó Toledo en 1085 y la convirtió en su corte; la conquista provocó la llegada de los almorávides y el pago de parias por parte de los reinos de taifas.",
     "dificultad": 1,
-    "tags": ["castilla", "reconquista", "toledo", "fechas"]
+    "tags": [
+      "castilla",
+      "reconquista",
+      "toledo",
+      "fechas"
+    ]
   },
   {
     "id": "bachillerato2-castilla-aragon-baja-edad-media-002",
     "enunciado": "El Tratado de Almizra (1244) delimitó las zonas de expansión de Castilla y de la Corona de Aragón.",
     "tipo": "fecha",
-    "opciones": ["1265", "1229", "1244", "1287"],
+    "opciones": [
+      "1265",
+      "1229",
+      "1244",
+      "1287"
+    ],
     "respuesta": 2,
     "explicacion": "Firmado por Jaime I y Alfonso X, el tratado fijó el Valle de Huercal y las fronteras del sureste peninsular, evitando que ambos reinos se enfrentaran tras la conquista de Valencia.",
     "dificultad": 2,
-    "tags": ["castilla", "aragon", "tratados", "fechas"]
+    "tags": [
+      "castilla",
+      "aragon",
+      "tratados",
+      "fechas"
+    ]
   },
   {
     "id": "bachillerato2-castilla-aragon-baja-edad-media-003",
     "enunciado": "¿Qué batalla de 1212 unió a Castilla, Aragón y Navarra contra los almohades?",
     "tipo": "opcion-multiple",
-    "opciones": ["La batalla de Alarcos", "La batalla de Clavijo", "La batalla de las Navas de Tolosa", "La batalla de Tudela"],
+    "opciones": [
+      "La batalla de Alarcos",
+      "La batalla de Clavijo",
+      "La batalla de las Navas de Tolosa",
+      "La batalla de Tudela"
+    ],
     "respuesta": 2,
     "explicacion": "Las Navas de Tolosa (1212) abrió el valle del Guadalquivir a Castilla; Alarcos (1195) había sido una derrota castellana y Clavijo es una leyenda sobre el apoyo del apóstol Santiago.",
     "dificultad": 1,
-    "tags": ["castilla", "reconquista", "batallas"]
+    "tags": [
+      "castilla",
+      "reconquista",
+      "batallas"
+    ]
   },
   {
     "id": "bachillerato2-castilla-aragon-baja-edad-media-004",
     "enunciado": "¿En qué año se libró la batalla de las Navas de Tolosa?",
     "tipo": "fecha",
-    "opciones": ["1210", "1214", "1230", "1212"],
+    "opciones": [
+      "1210",
+      "1214",
+      "1230",
+      "1212"
+    ],
     "respuesta": 3,
     "explicacion": "El 16 de julio de 1212, la coalición de Alfonso VIII, Pedro II de Aragón y Sancho VII de Navarra venció al ejército almohade en Despeñaperros.",
     "dificultad": 1,
-    "tags": ["castilla", "reconquista", "fechas", "batallas"]
+    "tags": [
+      "castilla",
+      "reconquista",
+      "fechas",
+      "batallas"
+    ]
   },
   {
     "id": "bachillerato2-castilla-aragon-baja-edad-media-005",
     "enunciado": "¿Qué rey consolidó la unión definitiva de las coronas de Castilla y León en 1230?",
     "tipo": "opcion-multiple",
-    "opciones": ["Alfonso IX", "Alfonso X", "Fernando III", "Sancho IV"],
+    "opciones": [
+      "Alfonso IX",
+      "Alfonso X",
+      "Fernando III",
+      "Sancho IV"
+    ],
     "respuesta": 2,
     "explicacion": "Fernando III heredó Castilla y León en 1230 al resolver la doble elección de 1217-1218; conquistó además Córdoba (1236) y Sevilla (1248).",
     "dificultad": 2,
-    "tags": ["castilla", "león", "monarquia", "fechas"]
+    "tags": [
+      "castilla",
+      "león",
+      "monarquia",
+      "fechas"
+    ]
   },
   {
     "id": "bachillerato2-castilla-aragon-baja-edad-media-006",
     "enunciado": "¿Qué isla conquistó Jaime I de Aragón en 1229?",
     "tipo": "opcion-multiple",
-    "opciones": ["Menorca", "Sicilia", "Cerdeña", "Mallorca"],
+    "opciones": [
+      "Menorca",
+      "Sicilia",
+      "Cerdeña",
+      "Mallorca"
+    ],
     "respuesta": 3,
     "explicacion": "Jaime I conquistó Mallorca en 1229 con una empresa mixta de nobles y burguesía marítima; Menorca cayó en 1287 con Alfonso III y Sicilia pasó a la Corona en 1282.",
     "dificultad": 2,
-    "tags": ["aragon", "mediterraneo", "conquistas", "fechas"]
+    "tags": [
+      "aragon",
+      "mediterraneo",
+      "conquistas",
+      "fechas"
+    ]
   },
   {
     "id": "bachillerato2-castilla-aragon-baja-edad-media-007",
     "enunciado": "El Compromiso de Caspe (1412) resolvió pacíficamente la sucesión de la Corona de Aragón en favor de Fernando de Antequera.",
     "tipo": "verdadero-falso",
-    "opciones": ["Verdadero", "Falso"],
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
     "respuesta": 0,
     "explicacion": "Ante la muerte sin heredero directo de Martín I, nueve compromisarios se reunieron en Caspe y eligieron en 1412 al infante castellano Fernando de Antequera, fundador de la casa de Trastámara en Aragón.",
     "dificultad": 2,
-    "tags": ["aragon", "monarquia", "compromiso-de-caspe"]
+    "tags": [
+      "aragon",
+      "monarquia",
+      "compromiso-de-caspe"
+    ]
   },
   {
     "id": "bachillerato2-castilla-aragon-baja-edad-media-008",
     "enunciado": "¿En qué año llegó la peste negra a la Corona de Aragón?",
     "tipo": "fecha",
-    "opciones": ["1347", "1350", "1370", "1348"],
+    "opciones": [
+      "1347",
+      "1350",
+      "1370",
+      "1348"
+    ],
     "respuesta": 3,
     "explicacion": "La peste negra entró por los puertos del Mediterráneo en 1348 (Mallorca, Valencia, Barcelona) y diezmó entre un tercio y la mitad de la población peninsular.",
     "dificultad": 3,
-    "tags": ["castilla", "aragon", "peste-negra", "fechas"]
+    "tags": [
+      "castilla",
+      "aragon",
+      "peste-negra",
+      "fechas"
+    ]
   },
   {
     "id": "bachillerato2-castilla-aragon-baja-edad-media-009",
     "enunciado": "Las Cortes eran asambleas convocadas por el rey que exigían su consentimiento para cobrar impuestos nuevos.",
     "tipo": "verdadero-falso",
-    "opciones": ["Verdadero", "Falso"],
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
     "respuesta": 0,
     "explicacion": "El pacto fiscal era la base del poder de las Cortes en Castilla y en Aragón: el rey pedía dinero y a cambio acordaba justicia, leyes y fueros; sin su voto no se podía crear tributo.",
     "dificultad": 3,
-    "tags": ["castilla", "aragon", "cortes", "instituciones"]
+    "tags": [
+      "castilla",
+      "aragon",
+      "cortes",
+      "instituciones"
+    ]
   },
   {
     "id": "bachillerato2-castilla-aragon-baja-edad-media-010",
     "enunciado": "¿Qué institución castellana agrupaba a las ciudades para frenar el poder de la nobleza y garantizar la seguridad del camino?",
     "tipo": "opcion-multiple",
-    "opciones": ["El Consejo de Castilla", "Las hermandades", "Los señoríos", "Las ferias"],
+    "opciones": [
+      "El Consejo de Castilla",
+      "Las hermandades",
+      "Los señoríos",
+      "Las ferias"
+    ],
     "respuesta": 1,
     "explicacion": "Las hermandades generales unían concejos para perseguir malhechores y frenar los abusos señoriales; el Consejo de Castilla es un órgano de gobierno real y los señoríos, la base del poder nobiliario.",
     "dificultad": 3,
-    "tags": ["castilla", "instituciones", "ciudades"]
+    "tags": [
+      "castilla",
+      "instituciones",
+      "ciudades"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-011",
+    "enunciado": "¿Qué ciudad eligió Alfonso II como corte del reino de Asturias a finales del siglo VIII?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Oviedo",
+      "León",
+      "Toledo",
+      "Covadonga"
+    ],
+    "respuesta": 0,
+    "explicacion": "Alfonso II trasladó la corte a Oviedo, donde levantó el palacio real y la iglesia de San Salvador; desde allí se organizó la ocupación del valle del Duero y se difundió la leyenda del Apóstol Santiago.",
+    "dificultad": 1,
+    "tags": [
+      "asturias",
+      "monarquia",
+      "siglo-ix"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-012",
+    "enunciado": "El reino de Asturias surgió en la cornisa cantábrica como refugio de los cristianos que resistían al poder musulmán.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Con Pelayo y sus sucesores, el núcleo inicial de resistencia se organizó en Asturias y se extendió hacia el Duero, mientras el islam apenas controlaba el centro peninsular; la corte se desplazó después a León.",
+    "dificultad": 1,
+    "tags": [
+      "asturias",
+      "reconquista",
+      "siglo-viii"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-013",
+    "enunciado": "¿En qué año murió Sancho III el Mayor de Navarra, que había unificado bajo su mando el norte peninsular?",
+    "tipo": "fecha",
+    "opciones": [
+      "1031",
+      "1035",
+      "1037",
+      "1043"
+    ],
+    "respuesta": 1,
+    "explicacion": "Sancho III murió el 18 de octubre de 1035 y su testamento repartió los territorios: García Sánchez III heredó Navarra, Fernando I el condado de Castilla y Ramiro I el de Aragón.",
+    "dificultad": 2,
+    "tags": [
+      "navarra",
+      "monarquia",
+      "fechas",
+      "siglo-xi"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-014",
+    "enunciado": "¿Qué hijo de Sancho III el Mayor heredó el condado de Castilla y acabó incorporando también el reino de León?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "García Sánchez III",
+      "Ramiro I",
+      "Fernando I",
+      "Gonzalo de Sobrarbe"
+    ],
+    "respuesta": 2,
+    "explicacion": "Fernando I (1035-1065) gobernó Castilla como rey, venció a Bermudo III en Tamarón (1037), se hizo con León y cobró parias a los reinos de taifas, entre ellas la de Sevilla.",
+    "dificultad": 2,
+    "tags": [
+      "castilla",
+      "condado",
+      "monarquia",
+      "siglo-xi"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-015",
+    "enunciado": "¿Qué batalla de 1037 costó la vida al rey Bermudo III y dejó el camino de León abierto a Fernando I?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La batalla de Atapuerca",
+      "La batalla de Clavijo",
+      "El sitio de Zamora",
+      "La batalla de Tamarón"
+    ],
+    "respuesta": 3,
+    "explicacion": "En Tamarón (1037) las tropas de Fernando I derrotaron y mataron a Bermudo III, último rey de la dinastía asturleonesa; Fernando I heredó entonces el reino de León.",
+    "dificultad": 1,
+    "tags": [
+      "castilla",
+      "leon",
+      "batallas",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-016",
+    "enunciado": "En la batalla de Atapuerca (1054), Fernando I venció y mató a su hermano García III de Navarra.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Atapuerca (1054) enfrentó a los hermanos Fernando I y García III de Nájera; la victoria castellana convirtió a Castilla en la potencia dominante del norte y abrió nuevas guerras entre los reinos cristianos.",
+    "dificultad": 1,
+    "tags": [
+      "castilla",
+      "navarra",
+      "batallas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-017",
+    "enunciado": "¿Qué conde castellano es considerado, según la tradición, el impulsor de la herencia del condado de Castilla y protagonista de un poema del siglo XIII?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Fernán González",
+      "García Fernández",
+      "Sancho el Mayor",
+      "García González"
+    ],
+    "respuesta": 0,
+    "explicacion": "Fernán González (conde hacia 931-970) gobernó Castilla durante la debilidad leonesa y la tradición le atribuye la conversión del condado en hereditario; le sucedió su hijo García Fernández.",
+    "dificultad": 3,
+    "tags": [
+      "castilla",
+      "condado",
+      "nobleza",
+      "siglo-x"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-018",
+    "enunciado": "Borrell II renovó su fidelidad al rey francés Hugo Capeto en 987.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "El conde Borrell II no acudió a la coronación de Hugo Capeto (987) ni renovó el homenaje: desde entonces los condados catalanes quedaron de facto independientes de la monarquía franca.",
+    "dificultad": 3,
+    "tags": [
+      "cataluna",
+      "condados",
+      "francia"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-019",
+    "enunciado": "¿Qué conde catalán, muerto en 897, es el progenitor tradicional de la casa de Barcelona?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Carlomagno",
+      "Guifredo el Velloso",
+      "Borrell II",
+      "Ramón Berenguer IV"
+    ],
+    "respuesta": 1,
+    "explicacion": "Guifredo (Wilfredo) el Velloso, muerto en 897, gobernó Barcelona, Gerona y Ausona y transmitió los condados a sus hijos: de su linaje nació la casa de Barcelona, que gobernó Cataluña durante siglos.",
+    "dificultad": 2,
+    "tags": [
+      "cataluna",
+      "condados",
+      "casa-de-barcelona"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-020",
+    "enunciado": "¿Qué batalla del año 778 frenó la expansión carolingia hacia la península ibérica?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La batalla de Poitiers",
+      "La batalla de Covadonga",
+      "La batalla de Roncesvalles",
+      "La toma de Barcelona"
+    ],
+    "respuesta": 2,
+    "explicacion": "En Roncesvalles (778), los vascones emboscaron a la retaguardia de Carlomagno cuando volvía de Zaragoza; los carolingios avanzaron más tarde por el Ebro y Cataluña, tomando Barcelona en 801.",
+    "dificultad": 1,
+    "tags": [
+      "francia",
+      "carolingios",
+      "siglo-viii"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-021",
+    "enunciado": "¿Qué título reivindicó Alfonso VI tras la toma de Toledo para expresar su hegemonía sobre la cristiandad peninsular?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Rex Catholicus",
+      "Defensor de la Fe",
+      "Emperador del Sacro Imperio",
+      "Imperator totius Hispaniae"
+    ],
+    "respuesta": 3,
+    "explicacion": "«Imperator totius Hispaniae» (emperador de toda España) era un título honorífico de prestigio usado por los reyes leoneses desde el siglo XI y hecho propio por Alfonso VI tras 1085: expresaba una ambición de hegemonía, no un dominio efectivo.",
+    "dificultad": 3,
+    "tags": [
+      "castilla",
+      "monarquia",
+      "titulo-imperial"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-022",
+    "enunciado": "El título de «imperator totius Hispaniae» otorgaba a su portador autoridad política efectiva sobre los demás reinos cristianos de la península.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Era un símbolo ideológico: los reinos de Navarra, Aragón o Portugal no reconocían ninguna soberanía leonesa; el título servía para reforzar el prestigio de la monarquía ante cristianos y musulmanes.",
+    "dificultad": 3,
+    "tags": [
+      "castilla",
+      "monarquia",
+      "titulo-imperial"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-023",
+    "enunciado": "¿A qué linaje francés se enlazaron las hijas de Alfonso VI, Urraca y Teresa, para afianzar su política de alianzas?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Los Capetos",
+      "Los Plantagenet",
+      "Los de Borgoña",
+      "Los de Champaña"
+    ],
+    "respuesta": 2,
+    "explicacion": "Urraca se casó con Ramón de Borgoña, padre de Alfonso VII, y Teresa con Enrique de Borgoña, cuyo hijo fue el primer conde de Portucale; Alfonso VI buscó así apoyos franceses frente a la nobleza leonesa.",
+    "dificultad": 2,
+    "tags": [
+      "castilla",
+      "francia",
+      "matrimonios"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-024",
+    "enunciado": "A la muerte de Alfonso VI en 1109, ¿quién heredó la corona de Castilla y León?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La infanta Teresa",
+      "La infanta Urraca",
+      "El conde Ramón de Borgoña",
+      "Alfonso I de Aragón"
+    ],
+    "respuesta": 1,
+    "explicacion": "Alfonso VI murió en 1109 y le sucedió su hija Urraca; su matrimonio con Alfonso I el Batallador y el rechazo de la nobleza desataron un largo conflicto por la herencia (1109-1126).",
+    "dificultad": 3,
+    "tags": [
+      "castilla",
+      "leon",
+      "monarquia",
+      "siglo-xii"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-025",
+    "enunciado": "Alfonso I el Batallador murió sin descendencia en 1134 y testó a favor de las órdenes militares.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Alfonso I (muerto en 1134) dejó Aragón a los templarios, a san Juan y a Montesa; las Cortes rechazaron el testamento y proclamaron rey a su hermano Ramiro II el Monje.",
+    "dificultad": 1,
+    "tags": [
+      "aragon",
+      "monarquia",
+      "ordenes-militares"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-026",
+    "enunciado": "¿Qué enlace resolvió la crisis sucesoria abierta por la muerte de Alfonso I el Batallador?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Urraca y Ramón de Borgoña",
+      "Teresa y Enrique de Borgoña",
+      "Petronila y Ramón Berenguer IV",
+      "Berenguela y Alfonso IX"
+    ],
+    "respuesta": 2,
+    "explicacion": "Ramiro II se casó con Inés de Aquitania para asegurar la sucesión y su hija Petronila fue prometida en 1137 a Ramón Berenguer IV, conde de Barcelona: el enlace unió Aragón y Cataluña bajo una misma dinastía.",
+    "dificultad": 3,
+    "tags": [
+      "aragon",
+      "cataluna",
+      "matrimonios",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-027",
+    "enunciado": "¿Qué acontecimiento del año 801 puso Barcelona bajo dominio carolingio?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El tratado de Zaragoza",
+      "La donación del papa",
+      "El casamiento de la condesa Adelaida",
+      "La conquista de la ciudad por Ludovico Pío"
+    ],
+    "respuesta": 3,
+    "explicacion": "Ludovico Pío, hijo de Carlomagno, tomó Barcelona en 801 y la integró en la Marca Hispanica: los condados catalanes quedaron organizados como frontera militar frente al Islam.",
+    "dificultad": 3,
+    "tags": [
+      "cataluna",
+      "carolingios",
+      "condados",
+      "siglo-ix"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-028",
+    "enunciado": "¿Qué rey aragonés conquistó Zaragoza en 1118 y convirtió la ciudad en su corte?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Alfonso I el Batallador",
+      "Sancho Ramírez",
+      "Pedro I de Aragón",
+      "Ramiro II el Monje"
+    ],
+    "respuesta": 0,
+    "explicacion": "Alfonso I el Batallador tomó Zaragoza en diciembre de 1118 y trasladó allí su corte; en 1120 tomó también Calatayud y Daroca, abriendo el valle del Ebro al avance aragonés.",
+    "dificultad": 1,
+    "tags": [
+      "aragon",
+      "reconquista",
+      "zaragoza",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-029",
+    "enunciado": "Tras la muerte de Alfonso I el Batallador en 1134, ¿qué personaje ocupó brevemente el trono aragonés antes del pacto con Barcelona?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Sancho Ramírez",
+      "Ramiro II el Monje",
+      "García Ramírez",
+      "Pedro II de Aragón"
+    ],
+    "respuesta": 1,
+    "explicacion": "Ramiro II, hermano de Alfonso I y obispo, reinó de 1134 a 1137, se casó con Inés de Aquitania para asegurar la descendencia y cedió el gobierno a Ramón Berenguer IV al concertar el enlace de su hija Petronila.",
+    "dificultad": 3,
+    "tags": [
+      "aragon",
+      "monarquia",
+      "siglo-xii"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-030",
+    "enunciado": "¿Qué batalla de 1139 llevó a Alfonso Enriquez a proclamarse rey de Portugal?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La batalla de Lisboa",
+      "La batalla de Aljubarrota",
+      "La batalla de Zamora",
+      "La batalla de Ourique"
+    ],
+    "respuesta": 3,
+    "explicacion": "Ourique (1139) permitió a Alfonso Enriquez proclamarse rey; la independencia quedó reconocida en Zamora (1143), mientras la toma de Lisboa (1147) consolidó el avance portugués.",
+    "dificultad": 1,
+    "tags": [
+      "portugal",
+      "batallas",
+      "reconquista",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-031",
+    "enunciado": "¿Qué empresa militar permitió a Alfonso VII tomar Almería en 1147?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Un pacto con el rey de Granada",
+      "La flota combinada de castellanos, genoveses y pisanos",
+      "La intervención exclusiva de Navarra",
+      "Un acuerdo con los almohades de Marrakech"
+    ],
+    "respuesta": 1,
+    "explicacion": "Alfonso VII unió su ejército con flotas de Génova y Pisa y tomó Almería en 1147; el enclave, clave en el comercio mediterráneo, se perdió poco después ante la contraofensiva almohade.",
+    "dificultad": 2,
+    "tags": [
+      "castilla",
+      "reconquista",
+      "mediterraneo",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-032",
+    "enunciado": "¿Qué ciudad conquistó Fernando III en 1246, dos años antes que Sevilla?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Jaén",
+      "Córdoba",
+      "Úbeda",
+      "Baeza"
+    ],
+    "respuesta": 0,
+    "explicacion": "Jaén le rindió pleitesía a Fernando III en 1246 mediante capitulación; su caída dejó aislada a Sevilla, que se rindió en diciembre de 1248 tras un largo asedio.",
+    "dificultad": 2,
+    "tags": [
+      "castilla",
+      "reconquista",
+      "jaen",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-033",
+    "enunciado": "El reino de Portugal se independizó de León y Castilla en el siglo XIII.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Alfonso Enriquez se proclamó rey en 1139 y la independencia quedó reconocida en Zamora (1143); en el siglo XIII Portugal era ya un reino consolidado que participó en la conquista del Guadalquivir.",
+    "dificultad": 1,
+    "tags": [
+      "portugal",
+      "independencia",
+      "siglo-xii"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-034",
+    "enunciado": "¿Qué ciudad tomó Alfonso I de Portugal en 1147 con la ayuda de cruzados del norte de Europa?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Coimbra",
+      "Lisboa",
+      "Évora",
+      "Faro"
+    ],
+    "respuesta": 1,
+    "explicacion": "Lisboa cayó en octubre de 1147 tras un largo asedio con flotas de cruzados flamencos, ingleses y normandos; Coimbra ya había sido conquistada en 1064 por Fernando I de Castilla.",
+    "dificultad": 2,
+    "tags": [
+      "portugal",
+      "reconquista",
+      "lisboa",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-035",
+    "enunciado": "¿En qué año tomó Fernando III la ciudad de Córdoba?",
+    "tipo": "fecha",
+    "opciones": [
+      "1230",
+      "1246",
+      "1236",
+      "1240"
+    ],
+    "respuesta": 2,
+    "explicacion": "Fernando III entró en Córdoba en junio de 1236; Jaén se rindió en 1246 y Sevilla en 1248, completando la conquista cristiana del valle del Guadalquivir.",
+    "dificultad": 2,
+    "tags": [
+      "castilla",
+      "reconquista",
+      "cordoba",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-036",
+    "enunciado": "¿Qué ciudad conquistó Jaime I en 1238 y repartió entre nobles castellanos, aragoneses y catalanes?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Zaragoza",
+      "Mallorca",
+      "Sevilla",
+      "Valencia"
+    ],
+    "respuesta": 3,
+    "explicacion": "Jaime I entró en Valencia en 1238 tras el pacto con su rey musulmán; el repartimiento de sus tierras benefició a nobles de los tres reinos y la ciudad recibió fuero propio.",
+    "dificultad": 1,
+    "tags": [
+      "aragon",
+      "valencia",
+      "reconquista",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-037",
+    "enunciado": "¿En qué año tomó Jaime I la ciudad de Valencia?",
+    "tipo": "fecha",
+    "opciones": [
+      "1238",
+      "1235",
+      "1229",
+      "1244"
+    ],
+    "respuesta": 0,
+    "explicacion": "Valencia cayó en 1238 y sus tierras se repartieron en 1238-1239; Menorca (1287) y Cerdeña quedaron para más adelante, mientras el Tratado de Almizra (1244) fijaba la frontera con Castilla.",
+    "dificultad": 1,
+    "tags": [
+      "aragon",
+      "valencia",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-038",
+    "enunciado": "¿Qué isla balear conquistaron los catalano-aragoneses en 1235, después de Mallorca?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Menorca",
+      "Ibiza",
+      "Cerdeña",
+      "Sicilia"
+    ],
+    "respuesta": 1,
+    "explicacion": "Ibiza cayó en 1235 con flotas de Génova, Pisa y la nobleza catalana; Menorca resistió hasta 1287, cuando Alfonso III la tomó por capitulación.",
+    "dificultad": 2,
+    "tags": [
+      "aragon",
+      "mediterraneo",
+      "conquistas",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-039",
+    "enunciado": "El reino de Murcia se incorporó a Castilla en 1243 mediante un pacto de rendición, sin asalto militar.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Murcia capituló en 1243 y su tierra se repobló con castellanos, leoneses, navarros, aragoneses y portugueses; la revuelta mudéjar de 1264 obligó a una nueva intervención, con ayuda de Jaime I (1265-1266).",
+    "dificultad": 2,
+    "tags": [
+      "castilla",
+      "murcia",
+      "reconquista"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-040",
+    "enunciado": "¿Qué levantamiento sacudió Murcia y el valle del Guadalquivir en 1264, al arranque del reinado de Alfonso X?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La rebelión de los infantes de la Cerda",
+      "La guerra con el reino nazarí",
+      "La revuelta mudéjar",
+      "La sublevación de Portugal"
+    ],
+    "respuesta": 2,
+    "explicacion": "La revuelta mudéjar de 1264-1266 movilizó a los mudéjares de Murcia y del Guadalquivir, en connivencia con Granada; su represión provocó el despoblamiento de amplias zonas de la Campiña.",
+    "dificultad": 2,
+    "tags": [
+      "castilla",
+      "mudejares",
+      "revueltas",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-041",
+    "enunciado": "¿En qué año se firmó el Tratado de Alcañices entre Castilla y Portugal?",
+    "tipo": "fecha",
+    "opciones": [
+      "1267",
+      "1294",
+      "1340",
+      "1297"
+    ],
+    "respuesta": 3,
+    "explicacion": "El Tratado de Alcañices (1297), firmado durante la minoría de Alfonso XI, fijó la frontera hispano-portuguesa y sigue siendo la base del límite actual entre ambos países.",
+    "dificultad": 3,
+    "tags": [
+      "portugal",
+      "tratados",
+      "fronteras",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-042",
+    "enunciado": "¿Qué monarcas sellaron la paz en Alcañices en 1297?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Fernando IV de Castilla y Dionisio I de Portugal",
+      "Alfonso X y Alfonso III de Portugal",
+      "Sancho IV y Alfonso II de Portugal",
+      "Alfonso XI y Dionisio I de Portugal"
+    ],
+    "respuesta": 0,
+    "explicacion": "Fernando IV y Dionisio I dividieron en 1297 el Algarve y las plazas de la raya, poniendo fin a las disputas castellano-portuguesas por la herencia del condado de Portucale.",
+    "dificultad": 3,
+    "tags": [
+      "castilla",
+      "portugal",
+      "tratados",
+      "siglo-xiii"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-043",
+    "enunciado": "¿Qué batalla vencieron Alfonso XI y el rey portugués en 1340 contra los benimerines cerca de Tarifa?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La batalla de Alarcos",
+      "La batalla del Salado",
+      "La batalla de Aljubarrota",
+      "La batalla de las Navas de Tolosa"
+    ],
+    "respuesta": 1,
+    "explicacion": "La batalla del Salado (30 de octubre de 1340) destruyó al ejército benimerín; la victoria consolidó el control castellano del Estrecho y permitió proseguir el sitio de Algeciras.",
+    "dificultad": 1,
+    "tags": [
+      "castilla",
+      "portugal",
+      "batallas",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-044",
+    "enunciado": "¿Qué plaza costó a Alfonso XI un sitio de dos años y cayó en 1344?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Tarifa",
+      "Gibraltar",
+      "Algeciras",
+      "Ronda"
+    ],
+    "respuesta": 2,
+    "explicacion": "Algeciras, base marítima benimerín, resistió el sitio de 1342-1344 y se rindió en marzo de 1344 con el apoyo de flotas genovesa y pisanas; la plaza fue restituida al reino nazarí en 1369.",
+    "dificultad": 2,
+    "tags": [
+      "castilla",
+      "reconquista",
+      "algeciras",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-045",
+    "enunciado": "¿Qué resultado tuvo la batalla de Aljubarrota (1385) entre Portugal y Castilla?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Victoria castellana que incorporó Portugal",
+      "Empate que condujo a nuevas treguas",
+      "Rendición del rey portugués",
+      "Victoria portuguesa que aseguró su independencia"
+    ],
+    "respuesta": 3,
+    "explicacion": "Aljubarrota (agosto de 1385) fue una rotunda victoria portuguesa con apoyo inglés, dirigida por Nuno Álvares Pereira, sobre Juan I de Castilla; selló la independencia portuguesa y precedió al Tratado de Windsor (1386).",
+    "dificultad": 2,
+    "tags": [
+      "portugal",
+      "batallas",
+      "castilla",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-046",
+    "enunciado": "La conquista de Sevilla en 1248 se resolvió por simple pacto, sin asedio militar.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Sevilla fue sometida tras un asedio de casi dos años, con la ayuda de flotas y huestes del norte peninsular; la ciudad capituló el 23 de noviembre de 1248 y sus tierras se repartieron entre Corona, Iglesia y repobladores.",
+    "dificultad": 3,
+    "tags": [
+      "castilla",
+      "sevilla",
+      "reconquista",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-047",
+    "enunciado": "¿Qué ciudad conquistó Alfonso VIII en 1177 en la cuenca alta del Júcar?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Cuenca",
+      "Segorbe",
+      "Játiva",
+      "Requena"
+    ],
+    "respuesta": 0,
+    "explicacion": "Cuenca cayó en 1177 tras el asedio conjunto de toledanos y castellanos; su repoblación se organizó con carta puebla y fuero, y la ciudad se convirtió en un gran núcleo de Castilla la Nueva.",
+    "dificultad": 3,
+    "tags": [
+      "castilla",
+      "reconquista",
+      "cuenca",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-048",
+    "enunciado": "¿Qué medida de colonización acompañó la conquista de Cuenca en 1177?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La entrega del territorio a la Orden de Santiago",
+      "Una repoblación con fuero y cartas pueblas para nuevos vecinos",
+      "El asentamiento exclusivo de población mudejar",
+      "Un condominio con la Corona de Aragón"
+    ],
+    "respuesta": 1,
+    "explicacion": "Alfonso VIII atrajo a Cuenca a vecinos de Toledo, Castilla y León con fuero y privilegios: la tierra de la ciudad quedó organizada como comunidad de villa y tierra, con baldíos de uso común.",
+    "dificultad": 3,
+    "tags": [
+      "castilla",
+      "repoblacion",
+      "cuenca",
+      "fueros"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-049",
+    "enunciado": "¿Qué derrota sufrió Alfonso VIII en 1195 frente a los almohades, casi veinte años antes de las Navas de Tolosa?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La batalla de Clavijo",
+      "La batalla de Uclés",
+      "La batalla de Alarcos",
+      "La batalla de las Navas de Tolosa"
+    ],
+    "respuesta": 2,
+    "explicacion": "Alarcos (1195) fue una grave derrota castellana que permitió a los almohades recuperar posiciones en el Guadalquivir y provocó la reacción coaligada de 1212 que culminó en las Navas de Tolosa.",
+    "dificultad": 1,
+    "tags": [
+      "castilla",
+      "reconquista",
+      "batallas",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-050",
+    "enunciado": "Gibraltar fue conquistado por Alfonso XI en 1344, junto con Algeciras.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Gibraltar pasó a Castilla en 1309 bajo Fernando IV, mientras Algeciras fue tomada en 1344 por Alfonso XI tras un largo asedio; fueron conquistas separadas y de décadas distintas.",
+    "dificultad": 2,
+    "tags": [
+      "castilla",
+      "fronteras",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-051",
+    "enunciado": "¿Cómo se llamaba la ocupación de tierras despobladas por particulares con permiso del conde o del rey?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La carta puebla",
+      "La comunidad de villa y tierra",
+      "La behetría",
+      "La presura"
+    ],
+    "respuesta": 3,
+    "explicacion": "La presura (o aprehensión) permitía ocupar tierras yermas y repoblarlas con vecinos bajo confirmación señorial; fue el motor de la repoblación del valle del Duero en los siglos X y XI.",
+    "dificultad": 1,
+    "tags": [
+      "castilla",
+      "repoblacion",
+      "siglo-xi"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-052",
+    "enunciado": "Las behetrías estaban sometidas a un señor hereditario que los vecinos no podían cambiar.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "En las behetrías del norte —Asturias, León y Castilla septentrional— los vecinos podían elegir y deponer a su señor; por eso se distinguen de las tierras de realengo y de los señoríos hereditarios.",
+    "dificultad": 1,
+    "tags": [
+      "repoblacion",
+      "senorios",
+      "norte"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-053",
+    "enunciado": "¿Qué otorgaba un fuero a los vecinos de una villa repoblada?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Un conjunto de leyes y privilegios que regían la vida del concejo",
+      "Un título de nobleza personal",
+      "El monopolio del comercio de la lana",
+      "Un vínculo de vasallaje con un señor"
+    ],
+    "respuesta": 0,
+    "explicacion": "El fuero regulaba gobierno, justicia, penas, propiedad y tributos de la villa; lo concedía el rey y constituía la identidad jurídica de la población, negociada muchas veces por sus propios vecinos.",
+    "dificultad": 2,
+    "tags": [
+      "repoblacion",
+      "fueros",
+      "concejos"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-054",
+    "enunciado": "En la repoblación del valle del Duero predominó la iniciativa regia plenamente dirigida, sin espacio para la iniciativa privada.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "El Duero se pobló sobre todo de manera espontánea y privada (presura, monasterios, vecinos); la dirección regia se reforzó después con cartas pueblas y repartimientos en el Tajo, el Guadalquivir y Valencia.",
+    "dificultad": 3,
+    "tags": [
+      "repoblacion",
+      "fueros",
+      "siglo-xi"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-055",
+    "enunciado": "¿Qué institución local gobernaba una villa medieval castellana?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La hermandad",
+      "El concejo",
+      "La Mesta",
+      "El monasterio"
+    ],
+    "respuesta": 1,
+    "explicacion": "El concejo —asamblea de vecinos o «concejo abierto»— elegía sus cargos, administraba justicia y rentas y gestionaba el término; las hermandades agrupaban varios concejos y la Mesta, ganaderos.",
+    "dificultad": 1,
+    "tags": [
+      "concejos",
+      "instituciones",
+      "villas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-056",
+    "enunciado": "¿Qué territorio abarcaba la «comunidad de villa y tierra»?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Únicamente el casco urbano y sus calles",
+      "Las tierras sujetas al señor eclesiástico",
+      "El término común de cultivo, pastos y montes del concejo",
+      "Las tierras reservadas al ganado de la Mesta"
+    ],
+    "respuesta": 2,
+    "explicacion": "Villa y tierra formaban un único término en el que convivían campos de labor, dehesas, montes y baldíos de aprovechamiento vecinal; de su reparto dependía la supervivencia de los campesinos.",
+    "dificultad": 2,
+    "tags": [
+      "concejos",
+      "repoblacion",
+      "villas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-057",
+    "enunciado": "¿Qué distinción jurídica dividía el territorio de la Corona de Castilla?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Estado noble y estado llano",
+      "Behetría y realengo",
+      "Mesta y concejo",
+      "Realengo y señorío"
+    ],
+    "respuesta": 3,
+    "explicacion": "El realengo eran tierras bajo autoridad directa del rey; el señorío, las de la nobleza o la Iglesia, con jurisdicción propia para cobrar rentas y hacer justicia: ambos convivieron con un fuerte peso señorial.",
+    "dificultad": 3,
+    "tags": [
+      "senorios",
+      "instituciones",
+      "castilla"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-058",
+    "enunciado": "¿Qué institución creó Alfonso X en 1273 para organizar la ganadería trashumante?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El Honrado Concejo de la Mesta",
+      "El Consejo de Castilla",
+      "La Hermandad General",
+      "El Consulado de Burgos"
+    ],
+    "respuesta": 0,
+    "explicacion": "La Mesta (1273) agrupó a los ganaderos trashumantes, defendió sus privilegios fiscales y vigiló las cañadas; con la lana merina se convirtió en uno de los pilares de la economía castellana.",
+    "dificultad": 1,
+    "tags": [
+      "mesta",
+      "economia",
+      "trashumancia",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-059",
+    "enunciado": "Las cañadas reales eran itinerarios protegidos que unían los pastos de verano e invernada del ganado trashumante.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Los rebaños merinos bajaban en invierno a La Mancha y Extremadura y subían en verano a la meseta norte; las cañadas —leonesa, segoviana, soriana y manchega— eran las vías ganaderas garantizadas por el rey.",
+    "dificultad": 2,
+    "tags": [
+      "mesta",
+      "trashumancia",
+      "economia"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-060",
+    "enunciado": "¿Qué designaban los «baldíos» dentro del territorio de un concejo?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Los bienes de la Iglesia parroquial",
+      "Las tierras comunales sin roturar de uso vecinal",
+      "Las tierras cedidas a la Mesta",
+      "Los señoríos sin heredero"
+    ],
+    "respuesta": 1,
+    "explicacion": "Los baldíos —junto con montes y dehesas— eran tierras comunales de uso vecinal (pasto, leña, caza); su administración y los conflictos por su aprovechamiento marcaron la vida rural bajomedieval.",
+    "dificultad": 3,
+    "tags": [
+      "concejos",
+      "repoblacion",
+      "campesinos"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-061",
+    "enunciado": "En Aragón, ¿qué nobleza menor poseía tierras y vasallos y gozaba de fueros propios?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Los ricoshombres",
+      "Los merinos",
+      "Los infanzones",
+      "Los burgueses"
+    ],
+    "respuesta": 2,
+    "explicacion": "Los infanzones formaban la nobleza menor de Aragón y Navarra, con tierras y jurisdicción propia; se distinguían de los ricoshombres (la alta nobleza) y de los caballeros y pecheros.",
+    "dificultad": 1,
+    "tags": [
+      "aragon",
+      "nobleza",
+      "senorios"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-062",
+    "enunciado": "¿Cómo se llamaba el grupo de caballeros que armaban y seguían a un rey o a un gran señor?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La hermandad",
+      "La guarda real",
+      "La hueste concejil",
+      "La mesnada"
+    ],
+    "respuesta": 3,
+    "explicacion": "La mesnada era el séquito militar de rey o magnate, formado por caballeros e infanzones mantenidos con beneficios; junto a la hueste concejil de las villas, era el núcleo del poder armado.",
+    "dificultad": 2,
+    "tags": [
+      "nobleza",
+      "ejercito",
+      "feudalismo"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-063",
+    "enunciado": "¿Qué sector de la nobleza accedía al consejo real y a las grandes mercedes en la Corona de Castilla?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Los ricoshombres",
+      "Los infanzones",
+      "Los caballeros villanos",
+      "Los merinos"
+    ],
+    "respuesta": 0,
+    "explicacion": "Los ricoshombres o grandes formaban la alta nobleza: poseían señoríos, vasallos y oficios del reino; en el siglo XIV su poder creció al agruparse en linajes y bandos.",
+    "dificultad": 2,
+    "tags": [
+      "castilla",
+      "nobleza",
+      "instituciones"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-064",
+    "enunciado": "Los nobles castellanos pagaban los mismos impuestos que los villanos pecheros.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Los nobles gozaban de exención de pechos y tributos concejiles: la hacienda real y señorial se sostenía sobre el campesinado y las villas; la nobleza contribuía solo mediante servicios extraordinarios acordados en Cortes.",
+    "dificultad": 3,
+    "tags": [
+      "nobleza",
+      "sociedad",
+      "impuestos"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-065",
+    "enunciado": "¿Qué orden monástica reformada se implantó en los reinos del norte en el siglo XI, con monasterios como Sahagún o San Isidoro de León?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El Císter",
+      "Cluny",
+      "La Cartuja",
+      "Montserrat"
+    ],
+    "respuesta": 1,
+    "explicacion": "Cluny, en Borgoña, difundió la reforma benedictina y creó en Castilla y León grandes monasterios ligados al Camino de Santiago; su influjo reforzó la colaboración entre reyes y papado.",
+    "dificultad": 1,
+    "tags": [
+      "clero",
+      "monasterios",
+      "cluny"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-066",
+    "enunciado": "¿En qué año se fundó la abadía del Císter, cuna de la orden reformada?",
+    "tipo": "fecha",
+    "opciones": [
+      "1054",
+      "1093",
+      "1098",
+      "1115"
+    ],
+    "respuesta": 2,
+    "explicacion": "La abadía de Cîteaux se fundó en 1098; la orden que nació allí, impulsada por Bernardo de Claraval, se extendió por la península en el siglo XII y priorizó la austeridad y el trabajo agrícola.",
+    "dificultad": 2,
+    "tags": [
+      "clero",
+      "monasterios",
+      "cister",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-067",
+    "enunciado": "¿Qué monasterios cistercienses se levantaron en la Corona de Aragón en el siglo XII?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Sahagún y Oña",
+      "Las Huelgas y Nájera",
+      "San Millán y Silos",
+      "Poblet y Santes Creus"
+    ],
+    "respuesta": 3,
+    "explicacion": "Poblet (1150) y Santes Creus (1153), junto con el femenino de Vallbona, llevaron el Císter a la Corona de Aragón; los cistercienses se instalaron en tierras de nueva colonización y se vincularon a la casa real.",
+    "dificultad": 2,
+    "tags": [
+      "aragon",
+      "cataluna",
+      "monasterios",
+      "cister"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-068",
+    "enunciado": "El Císter se implantó en zonas de nueva colonización y su economía se basaba en el trabajo manual y la agricultura.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Los cistercienses, «monjes labradores», roturaron bosques y dehesas con siervos y jornaleros; monasterios como Las Huelgas de Burgos o Poblet fueron grandes explotaciones y focos de repoblación.",
+    "dificultad": 2,
+    "tags": [
+      "cister",
+      "monasterios",
+      "repoblacion"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-069",
+    "enunciado": "¿Qué orden militar nació en el siglo XII para defender la plaza de Calatrava?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La Orden de Calatrava",
+      "La Orden de Santiago",
+      "La Orden de Alcántara",
+      "La Orden de Montesa"
+    ],
+    "respuesta": 0,
+    "explicacion": "La orden de Calatrava surgió de la comunidad que defendió la plaza ante los almohades y sirvió de modelo a las órdenes militares castellanas; Santiago y Alcántara cumplieron la misma función en la frontera.",
+    "dificultad": 1,
+    "tags": [
+      "ordenes-militares",
+      "reconquista",
+      "clero"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-070",
+    "enunciado": "Las órdenes militares renunciaron a poseer tierras y rentas para centrarse solo en la oración.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Combinaban la regla monástica con la función militar: recibieron tierras, castillos, diezmos y derechos de cobro en la frontera, y llegaron a ser grandes señorías hasta su incorporación a la Corona.",
+    "dificultad": 2,
+    "tags": [
+      "ordenes-militares",
+      "clero",
+      "senorios"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-071",
+    "enunciado": "¿Qué orden, creada en 1317, heredó en la Corona de Aragón los bienes de los templarios?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La Orden de los hospitalarios",
+      "La Orden de Montesa",
+      "La Orden de Santiago",
+      "La Orden de Calatrava"
+    ],
+    "respuesta": 1,
+    "explicacion": "Disuelto el Temple (1308-1312), la Corona de Aragón creó en 1317 la orden de Montesa para administrar sus bienes en Valencia; en Castilla los bienes templarios se repartieron entre Santiago, Calatrava y Alcántara.",
+    "dificultad": 3,
+    "tags": [
+      "ordenes-militares",
+      "aragon",
+      "temple",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-072",
+    "enunciado": "¿Qué rasgo distinguía al campesinado castellano de la Baja Edad Media?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La servidumbre de la gleba como norma",
+      "La desaparición de la propiedad privada",
+      "La mayoría de libertad, aunque con obligaciones fiscales",
+      "El monopolio de la tierra por la Iglesia"
+    ],
+    "respuesta": 2,
+    "explicacion": "En Castilla predominó el campesino libre, pechero al concejo y al rey, sin la servidumbre de la gleba tan extendida al este de Europa; sí hubo campesinos sujetos a señorío y siervos en zonas puntuales.",
+    "dificultad": 3,
+    "tags": [
+      "campesinos",
+      "sociedad",
+      "feudalismo"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-073",
+    "enunciado": "Ser pechero eximía del pago de tributos al rey y al concejo.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "El pechero era justo lo contrario: el vecino que pagaba «pechos» o impuestos; la nobleza y el clero estaban exentos, y sobre él recaían monedas, subsidios y cargas concejiles.",
+    "dificultad": 1,
+    "tags": [
+      "campesinos",
+      "impuestos",
+      "sociedad"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-074",
+    "enunciado": "¿Qué campesinos poseían una o dos yuntas de bueyes y alquaban su fuerza de trabajo?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Los behetreros",
+      "Los monteros",
+      "Los infanzones",
+      "Los yunteros"
+    ],
+    "respuesta": 3,
+    "explicacion": "Los yunteros alquilaban sus yuntas a otros labradores; arruinados por la peste y por el avance de los pastizales, son un indicador de la crisis del campo castellano de los siglos XIV y XV.",
+    "dificultad": 3,
+    "tags": [
+      "campesinos",
+      "agricultura",
+      "siglo-xiv"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-075",
+    "enunciado": "¿Qué efecto económico general tuvo la fuerte mortandad de la peste de 1348?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La subida de salarios y la presión de los trabajadores por mejores condiciones",
+      "El fin de la ganadería trashumante",
+      "El abandono definitivo de las ciudades",
+      "La abolición de los señoríos"
+    ],
+    "respuesta": 0,
+    "explicacion": "La escasez de brazos encareció el trabajo y tensionó la sociedad rural en toda Europa; señores, concejos y monarcas intentaron contener salarios y movilidad con normas y privilegios.",
+    "dificultad": 2,
+    "tags": [
+      "crisis-siglo-xiv",
+      "peste-negra",
+      "economia"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-076",
+    "enunciado": "¿Cómo se llamaba la comunidad judía organizada con sus propios representantes y tribunales?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Las aljamas",
+      "Las hermandades",
+      "Los concejos de villa",
+      "Las ferias"
+    ],
+    "respuesta": 0,
+    "explicacion": "La aljama era la comunidad judía con gobierno propio, rabinato, tribunales y recaudación; sus barrios —las juderías— ocupaban el centro de las ciudades de Castilla, Aragón y Portugal.",
+    "dificultad": 1,
+    "tags": [
+      "judios",
+      "sociedad",
+      "ciudades"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-077",
+    "enunciado": "¿Cuáles eran las actividades habituales de los judíos en los reinos peninsulares?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Solo la agricultura de secano",
+      "El oficio de las armas",
+      "Finanzas, comercio, artesanía y cobro de tributos",
+      "La pesca y el transporte marítimo"
+    ],
+    "respuesta": 2,
+    "explicacion": "Además de artesanos y comerciantes, muchos judíos prestaron dinero y administraron rentas reales (almojarifes y financieros); por eso los reyes los protegieron y la crisis del siglo XIV los convirtió en chivos expiatorios.",
+    "dificultad": 3,
+    "tags": [
+      "judios",
+      "economia",
+      "sociedad"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-078",
+    "enunciado": "¿En qué año se produjeron las grandes matanzas de judíos que afectaron a Sevilla, Toledo y Barcelona?",
+    "tipo": "fecha",
+    "opciones": [
+      "1348",
+      "1371",
+      "1381",
+      "1391"
+    ],
+    "respuesta": 3,
+    "explicacion": "En junio de 1391 los predicadores incitaron al pogrom de Sevilla y la violencia se extendió por Castilla, Aragón y Portugal: miles de judíos murieron o se vieron forzados a bautizarse.",
+    "dificultad": 1,
+    "tags": [
+      "judios",
+      "revueltas",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-079",
+    "enunciado": "Las revueltas antijudías de 1391 provocaron conversiones masivas que dieron origen a los «cristianos nuevos».",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Muchos judíos se bautizaron para salvar la vida; sus descendientes —cristianos nuevos— fueron vigilados después por la Inquisición (1478) bajo sospecha de criptojudía.",
+    "dificultad": 3,
+    "tags": [
+      "judios",
+      "revueltas",
+      "conversos"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-080",
+    "enunciado": "¿Quiénes eran los mudéjares?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Musulmanes que permanecieron en tierra cristiana tras la conquista",
+      "Cristianos que vivían bajo el poder musulmán",
+      "Judíos convertidos al cristianismo",
+      "Musulmanes expulsados de Granada"
+    ],
+    "respuesta": 0,
+    "explicacion": "El mudéjar es el musulmán de los reinos cristianos —los mozárabes serían los cristianos bajo el islam—; conservó su religión, lengua y costumbres a cambio de tributos y prestaciones.",
+    "dificultad": 1,
+    "tags": [
+      "mudejares",
+      "sociedad",
+      "convivencia"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-081",
+    "enunciado": "¿Qué régimen jurídico compartían los mudéjares de los reinos cristianos?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La exención total de impuestos",
+      "La organización propia bajo su ley y el pago de tributos especiales",
+      "La obligación de habitar únicamente en el campo",
+      "La prohibición de ejercer artesanía"
+    ],
+    "respuesta": 1,
+    "explicacion": "Las morerías se gobernaban por sus propias autoridades y tribunales bajo la ley islámica; a cambio pagaban tributos extraordinarios y prestaciones, y ejercían oficios tan variados como la artesanía o la agricultura.",
+    "dificultad": 3,
+    "tags": [
+      "mudejares",
+      "derecho",
+      "sociedad"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-082",
+    "enunciado": "¿Qué papel desempeñaban con frecuencia los judíos en la administración de los reyes cristianos?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Maestros de las escuelas catedralicias",
+      "Comandantes de las órdenes militares",
+      "Cobradores y administradores de rentas reales",
+      "Merinos mayores de frontera"
+    ],
+    "respuesta": 2,
+    "explicacion": "Reyes como Alfonso IX o Alfonso X confiaron a judíos la recaudación de tributos y la gestión de las rentas; ese papel, junto con el préstamo de dinero, alimentó el antisemitismo en la crisis del siglo XIV.",
+    "dificultad": 3,
+    "tags": [
+      "judios",
+      "monarquia",
+      "hacienda"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-083",
+    "enunciado": "¿Qué acontecimiento de 1369 puso fin a la guerra civil entre Pedro I y Enrique de Trastámara?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La batalla de Nájera",
+      "El sitio de Burgos",
+      "La victoria de Pedro I en Montiel",
+      "El asesinato de Pedro I en Montiel"
+    ],
+    "respuesta": 3,
+    "explicacion": "Tras la derrota de Nájera (1367) frente al ejército del Príncipe Negro, Pedro I recuperó el trono; en marzo de 1369, acorralado en Montiel, fue asesinado por Enrique de Trastámara, coronado como Enrique II.",
+    "dificultad": 2,
+    "tags": [
+      "guerra-civil",
+      "pedro-i",
+      "trastamara",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-084",
+    "enunciado": "La crisis del siglo XIV se explica por la peste, las malas cosechas y el freno de la expansión territorial.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "A la peste negra (1348) y a las epidemias recurrentes se sumaron hambrunas y guerras; además, el freno de la conquista cerró a nobles y campesinos la vía de acceder a nuevas tierras.",
+    "dificultad": 3,
+    "tags": [
+      "crisis-siglo-xiv",
+      "peste-negra",
+      "economia"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-085",
+    "enunciado": "¿Qué evolución siguió la población peninsular durante el siglo XIV?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Descayó de forma abrupta por la peste y las epidemias",
+      "Se duplicó con la conquista del sur",
+      "Se mantuvo estable hasta 1500",
+      "Creció con la llegada masiva de inmigrantes franceses"
+    ],
+    "respuesta": 0,
+    "explicacion": "La peste de 1348 inauguró un ciclo de epidemias periódicas que diezmó repetidamente a Castilla y a la Corona de Aragón, con profundas consecuencias económicas y sociales hasta bien entrado el siglo XV.",
+    "dificultad": 1,
+    "tags": [
+      "crisis-siglo-xiv",
+      "demografia",
+      "peste-negra"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-086",
+    "enunciado": "¿Dónde murió Fernando III en 1252, ciudad que había convertido en su residencia favorita?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Toledo",
+      "Sevilla",
+      "Córdoba",
+      "Burgos"
+    ],
+    "respuesta": 1,
+    "explicacion": "Fernando III murió en Sevilla el 30 de mayo de 1252; la ciudad del Guadalquivir se convirtió en una de las sedes favoritas de la monarquía y en el gran escenario de su conquista.",
+    "dificultad": 1,
+    "tags": [
+      "castilla",
+      "fernando-iii",
+      "sevilla",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-087",
+    "enunciado": "La santidad de Fernando III fue reconocida por la Iglesia en el siglo XVII.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Fernando III fue canonizado en 1671 por Clemente X, impulsado por la monarquía española; en vida pasó a la historia como el gran conquistador de Córdoba y Sevilla.",
+    "dificultad": 3,
+    "tags": [
+      "fernando-iii",
+      "clero",
+      "siglo-xvii"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-088",
+    "enunciado": "¿Qué obra jurídica enciclopédica ordenó componer Alfonso X?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El Ordenamiento de Alcalá",
+      "Las Leyes de Toro",
+      "Las Siete Partidas",
+      "La Recopilación de 1567"
+    ],
+    "respuesta": 2,
+    "explicacion": "Las Siete Partidas son una enciclopedia jurídica de siete partes compuesta en el reinado de Alfonso X; marcó la práctica jurídica peninsular hasta la época moderna.",
+    "dificultad": 2,
+    "tags": [
+      "alfonso-x",
+      "derecho",
+      "partidas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-089",
+    "enunciado": "¿Qué fuentes del derecho se combinaron en las Siete Partidas?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Solo el fuero municipal castellano",
+      "Únicamente el derecho visigodo",
+      "El derecho islámico de los mudéjares",
+      "El derecho romano, el canónico y la costumbre castellana"
+    ],
+    "respuesta": 3,
+    "explicacion": "Las Partidas beben del Corpus iuris civilis y del derecho eclesiástico, adaptados a la costumbre castellana; su aplicación chocó muchas veces con los fueros locales, de los que la Corona quiso prescindir.",
+    "dificultad": 2,
+    "tags": [
+      "alfonso-x",
+      "derecho",
+      "partidas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-090",
+    "enunciado": "¿En qué año fue elegido Alfonso X candidato a la corona del Sacro Imperio por los electores alemanes?",
+    "tipo": "fecha",
+    "opciones": [
+      "1257",
+      "1248",
+      "1273",
+      "1282"
+    ],
+    "respuesta": 0,
+    "explicacion": "En 1257 una facción de electores proclamó a Alfonso X rey de Romanos, pero la facción rival eligió a Ricardo de Cornualles: el asunto quedó bloqueado y el rey sabio nunca fue coronado.",
+    "dificultad": 2,
+    "tags": [
+      "alfonso-x",
+      "sacro-imperio",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-091",
+    "enunciado": "Alfonso X llegó a ser coronado emperador en Roma.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Nunca lo fue: la elección de 1257 quedó envuelta en la disputa con Ricardo de Cornualles y en la oposición papal, y Alfonso X abandonó la pretensión imperial en los últimos años de su reinado.",
+    "dificultad": 3,
+    "tags": [
+      "alfonso-x",
+      "sacro-imperio",
+      "monarquia"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-092",
+    "enunciado": "¿Qué grave rebelión marcó los últimos años del reinado de Alfonso X?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La revuelta mudéjar de Murcia",
+      "La rebelión de su hijo Sancho y de parte de la nobleza",
+      "El alzamiento de Portugal",
+      "La guerra con la Corona de Aragón"
+    ],
+    "respuesta": 1,
+    "explicacion": "Entre 1282 y 1284 el infante Sancho se sublevó, se hizo proclamar rey y desheredó a sus sobrinos, los infantes de la Cerda; Alfonso X murió en Sevilla en 1284 sin reconocer a su hijo.",
+    "dificultad": 2,
+    "tags": [
+      "alfonso-x",
+      "monarquia",
+      "revueltas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-093",
+    "enunciado": "Sancho IV subió al trono apartando a los hijos de su hermano Alfonso, los infantes de la Cerda.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Sancho IV (1284-1295) se impuso a los infantes de la Cerda, apoyados por Aragón; la pretensión de la rama rival se prolongó durante décadas y alimentó conflictos dinásticos.",
+    "dificultad": 2,
+    "tags": [
+      "castilla",
+      "monarquia",
+      "trastamara",
+      "siglo-xiv"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-094",
+    "enunciado": "¿Qué reina ejerció la regencia durante las minorías de Fernando IV y de Alfonso XI?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Berenguela de Castilla",
+      "Urraca de Zamora",
+      "María de Molina",
+      "Leonor de Aquitania"
+    ],
+    "respuesta": 2,
+    "explicacion": "María de Molina, esposa de Sancho IV, gobernó como tutora de su hijo Fernando IV y de su nieto Alfonso XI; confirmó fueros y privilegios para ganarse el apoyo de las Cortes y murió en 1321.",
+    "dificultad": 2,
+    "tags": [
+      "castilla",
+      "monarquia",
+      "regencias"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-095",
+    "enunciado": "¿En qué año murió María de Molina, tutora de los reyes castellanos?",
+    "tipo": "fecha",
+    "opciones": [
+      "1318",
+      "1325",
+      "1319",
+      "1321"
+    ],
+    "respuesta": 3,
+    "explicacion": "María de Molina murió el 1 de julio de 1321 tras años defendiendo la sucesión de su nieto Alfonso XI frente a los bandos nobiliarios; su intervención fue decisiva para estabilizar la monarquía.",
+    "dificultad": 3,
+    "tags": [
+      "castilla",
+      "regencias",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-096",
+    "enunciado": "¿Qué hizo Alfonso XI en 1325, a los catorce años de edad?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Asumió el gobierno personal y apartó a sus tutores",
+      "Se casó con María de Portugal",
+      "Fue elegido rey de Romanos",
+      "Abandonó Castilla para gobernar desde Roma"
+    ],
+    "respuesta": 0,
+    "explicacion": "En 1325 Alfonso XI tomó el poder real, poniendo fin a la segunda tutoría; desde entonces reforzó la monarquía, controló a la nobleza y desplegó una enorme labor legislativa.",
+    "dificultad": 3,
+    "tags": [
+      "alfonso-xi",
+      "monarquia",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-097",
+    "enunciado": "¿Qué ley dictó Alfonso XI en 1348 para ordenar el reino?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Las Siete Partidas",
+      "El Ordenamiento de Alcalá",
+      "El Fuero Real",
+      "Las Leyes de Toro"
+    ],
+    "respuesta": 1,
+    "explicacion": "El Ordenamiento de Alcalá (1348) compiló y corrigió leyes anteriores y organizó la administración del reino; junto a las Partidas, es una de las cumbres de la legislación castellana medieval.",
+    "dificultad": 2,
+    "tags": [
+      "alfonso-xi",
+      "derecho",
+      "ordenamientos",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-098",
+    "enunciado": "¿Cómo murió Alfonso XI en 1350?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "En batalla contra el rey nazarí",
+      "De vejez en Sevilla",
+      "De peste, en su campamento de Gibraltar",
+      "Asesinado por los ricoshombres"
+    ],
+    "respuesta": 2,
+    "explicacion": "Alfonso XI murió de peste en Gibraltar el 26 de marzo de 1350, a los 38 años, cuando preparaba la ofensiva sobre el Estrecho; le sucedió su hijo Pedro, de apenas dieciséis años.",
+    "dificultad": 1,
+    "tags": [
+      "alfonso-xi",
+      "peste-negra",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-099",
+    "enunciado": "¿Qué apodo le dieron sus partidarios a Pedro I de Castilla?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El Sabio",
+      "El Católico",
+      "El Cruel",
+      "El Justiciero"
+    ],
+    "respuesta": 3,
+    "explicacion": "Los partidarios de Pedro I lo llamaron «el Justiciero» por su defensa del orden y de los fueros; sus enemigos —los Trastámara y la nobleza— lo difundieron como «el Cruel».",
+    "dificultad": 1,
+    "tags": [
+      "pedro-i",
+      "monarquia",
+      "apodos"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-100",
+    "enunciado": "El apodo «el Cruel» fue acuñado por los partidarios de Pedro I.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Fue el mote de sus adversarios, que le achacaban el asesinato de parientes y rivales —entre ellos su hermanastro Fadrique—; «el Justiciero» era el nombre que usaba su propio bando.",
+    "dificultad": 1,
+    "tags": [
+      "pedro-i",
+      "apodos",
+      "propaganda"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-101",
+    "enunciado": "¿De quién era hijo Enrique de Trastámara?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "De Alfonso XI y de Leonor de Guzmán",
+      "De Alfonso XI y de María de Portugal",
+      "De Sancho IV y de María de Molina",
+      "De Alfonso X y de Violante de Aragón"
+    ],
+    "respuesta": 0,
+    "explicacion": "Enrique fue hijo ilegítimo de Alfonso XI y de su amante Leonor de Guzmán, y por tanto medio hermano de Pedro I, nacido del matrimonio con María de Portugal.",
+    "dificultad": 3,
+    "tags": [
+      "trastamara",
+      "monarquia",
+      "enrique-ii"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-102",
+    "enunciado": "Buena parte de la alta nobleza castellana acabó apoyando a Enrique de Trastámara frente a Pedro I.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Los linajes descontentos con el gobierno de Pedro I —y Francia, que buscaba debilitar a la Inglaterra aliada castellana— respaldaron a Enrique; la guerra civil de 1366-1369 terminó en Montiel.",
+    "dificultad": 3,
+    "tags": [
+      "guerra-civil",
+      "nobleza",
+      "trastamara"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-103",
+    "enunciado": "¿Cómo se llamó la redistribución de señoríos y oficios que Enrique II hizo entre sus partidarios?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El perdón general",
+      "Las mercedes enriqueñas",
+      "La sentencia arbitral",
+      "Los mayorazgos"
+    ],
+    "respuesta": 1,
+    "explicacion": "Las mercedes enriqueñas premiaron con señoríos, rentas y oficios a los nobles que lo habían acompañado; la alta nobleza salió fortalecida y la monarquía quedó endeudada y comprometida con los linajes.",
+    "dificultad": 3,
+    "tags": [
+      "enrique-ii",
+      "nobleza",
+      "senorios"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-104",
+    "enunciado": "Las Cortes de Castilla se componían de tres brazos: clero, nobleza y villas.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Los tres estamentos enviaban procuradores; con el tiempo, las reuniones con representantes de villas —las más frecuentes en el siglo XIV— dieron a las ciudades un papel decisivo en el voto fiscal.",
+    "dificultad": 1,
+    "tags": [
+      "castilla",
+      "cortes",
+      "instituciones"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-105",
+    "enunciado": "¿Qué asamblea convocó Alfonso IX de León en 1188 y es considerada precedente del parlamentarismo europeo?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El concilio de Toledo",
+      "La Junta de Ávila",
+      "Las Cortes de León",
+      "El Consejo de Castilla"
+    ],
+    "respuesta": 2,
+    "explicacion": "Las Cortes de León (1188) reunieron a obispos, nobles y procuradores de villas: son el precedente más citado de la asamblea representativa europea y el origen simbólico del parlamentarismo.",
+    "dificultad": 1,
+    "tags": [
+      "cortes",
+      "leon",
+      "instituciones",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-106",
+    "enunciado": "¿A quién hizo matar Pedro I en 1358, en un episodio que escandalizó a la corte?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "A Juan Alfonso de Albuquerque",
+      "Al conde de Trastámara",
+      "Al merino mayor de Castilla",
+      "A su hermanastro Fadrique, maestre de Santiago"
+    ],
+    "respuesta": 3,
+    "explicacion": "En 1358 Pedro I ordenó matar a Fadrique, maestre de Santiago e hijo de Alfonso XI, acusado de traición; el crimen alimentó la propaganda de los Trastámara, encabezada por su otro hermano Enrique.",
+    "dificultad": 3,
+    "tags": [
+      "pedro-i",
+      "monarquia",
+      "violencia"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-107",
+    "enunciado": "Pedro I apenas convocó Cortes durante su reinado.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Su gobierno se apoyó en la administración y en los favoritos más que en las asambleas: las fuentes le atribuyen una sola convocatoria de Cortes, frente a las numerosas de Alfonso XI.",
+    "dificultad": 2,
+    "tags": [
+      "pedro-i",
+      "cortes",
+      "instituciones"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-108",
+    "enunciado": "¿Cuál fue la línea principal de la política interior de Alfonso XI?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Reforzar el poder real controlando a la nobleza y a las ciudades",
+      "Repartir señoríos entre los grandes linajes",
+      "Disolver las Cortes de Castilla",
+      "Entregar la recaudación de impuestos a las órdenes militares"
+    ],
+    "respuesta": 0,
+    "explicacion": "Alfonso XI persiguió a magnates rebeldes, intervino en los gobiernos municipales y legisló de forma masiva (Ordenamiento de 1348): su objetivo fue una monarquía fuerte y bien ordenada.",
+    "dificultad": 1,
+    "tags": [
+      "alfonso-xi",
+      "monarquia",
+      "politica"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-109",
+    "enunciado": "La victoria de Enrique de Trastámara en 1369 inauguró…",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La restauración de la casa de Navarra",
+      "La nueva dinastía de Trastámara",
+      "La unión con el reino de Portugal",
+      "El gobierno directo de las Cortes"
+    ],
+    "respuesta": 1,
+    "explicacion": "Enrique II abrió la casa de Trastámara, que ocupó el trono castellano hasta los Reyes Católicos; en 1412, con el Compromiso de Caspe, la misma casa llegó también al trono de Aragón.",
+    "dificultad": 1,
+    "tags": [
+      "trastamara",
+      "enrique-ii",
+      "monarquia"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-110",
+    "enunciado": "¿Qué nombre recibían los partidarios enfrentados de los grandes linajes en la Castilla de la Baja Edad Media?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Las hermandades",
+      "Las comunidades",
+      "Los bandos",
+      "Las cofradías"
+    ],
+    "respuesta": 2,
+    "explicacion": "Las disputas entre linajes —los bandos— ensangrentaron ciudades como Toledo, Burgos o Segovia; las hermandades eran, en cambio, asociaciones de concejos para el orden público.",
+    "dificultad": 1,
+    "tags": [
+      "banderias",
+      "nobleza",
+      "ciudades"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-111",
+    "enunciado": "¿Quién sucedió a Juan I en el trono de Castilla en 1390?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Enrique III",
+      "Pedro I",
+      "Alfonso XI",
+      "Enrique IV"
+    ],
+    "respuesta": 0,
+    "explicacion": "Enrique III, hijo de Juan I, subió al trono en 1390 y gobernó hasta 1406; le sucedió su hijo Juan II.",
+    "dificultad": 1,
+    "tags": [
+      "castilla",
+      "monarquia",
+      "siglo-xiv"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-112",
+    "enunciado": "Isabel I y Enrique IV eran hermanos de padre y de madre.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Eran medio hermanos: compartían padre (Juan II) pero tenían madres distintas, por eso Isabel disputó el trono a Enrique IV.",
+    "dificultad": 1,
+    "tags": [
+      "castilla",
+      "isabel-i",
+      "parentesco"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-113",
+    "enunciado": "¿En qué año se extendieron los ataques contra los judíos por las principales ciudades de Castilla y Aragón?",
+    "tipo": "fecha",
+    "opciones": [
+      "1371",
+      "1391",
+      "1351",
+      "1411"
+    ],
+    "respuesta": 1,
+    "explicacion": "En 1391 una oleada de ataques arrasó las juderías de la península; fue el peor episodio de violencia antijudía de la Baja Edad Media.",
+    "dificultad": 3,
+    "tags": [
+      "juderias",
+      "violencia",
+      "siglo-xiv"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-114",
+    "enunciado": "¿Cómo se conocía a Juana, la hija de Enrique IV cuya legitimidad puso en duda su media hermana Isabel?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "la Católica",
+      "la Desdichada",
+      "la Beltraneja",
+      "la Reina Chica"
+    ],
+    "respuesta": 2,
+    "explicacion": "Juana «la Beltraneja» fue la rival de Isabel en la guerra civil por la sucesión; Isabel resultó vencedora y fue proclamada reina en 1474.",
+    "dificultad": 2,
+    "tags": [
+      "castilla",
+      "sucesion",
+      "isabel-i"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-115",
+    "enunciado": "Enrique III de Castilla recibió el apodo de «el Doliente» por su delicada salud.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Es verdadero: Enrique III padeció una constitución frágil y murió joven, en 1406, con solo 27 años.",
+    "dificultad": 1,
+    "tags": [
+      "castilla",
+      "monarquia",
+      "apodos"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-116",
+    "enunciado": "¿De qué rey era hija María de Molina, regente de Castilla?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Fernando III",
+      "Sancho IV",
+      "Alfonso X el Sabio",
+      "Alfonso IX de León"
+    ],
+    "respuesta": 3,
+    "explicacion": "María de Molina era hija de Alfonso IX de León; se casó con Sancho IV y regentó el reino en dos minorías de edad.",
+    "dificultad": 1,
+    "tags": [
+      "castilla",
+      "regencia",
+      "maria-de-molina"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-117",
+    "enunciado": "¿En qué año subió Isabel I al trono de Castilla?",
+    "tipo": "fecha",
+    "opciones": [
+      "1474",
+      "1469",
+      "1479",
+      "1492"
+    ],
+    "respuesta": 0,
+    "explicacion": "Isabel I subió al trono en 1474 tras la muerte de Enrique IV; 1469 es su boda con Fernando, 1479 la unión dinástica y 1492 la toma de Granada.",
+    "dificultad": 1,
+    "tags": [
+      "castilla",
+      "isabel-i",
+      "sucesion"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-118",
+    "enunciado": "Enrique III de Castilla fue hijo de Alfonso XI.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Es falso: Enrique III era hijo de Juan I y nieto, por tanto, de Enrique II; Alfonso XI fue su bisabuelo paterno.",
+    "dificultad": 2,
+    "tags": [
+      "castilla",
+      "monarquia",
+      "genealogia"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-119",
+    "enunciado": "En la batalla de Nájera (1360), Pedro I venció a Enrique de Trastámara gracias a la ayuda militar de…",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "las mesnadas portuguesas",
+      "el Príncipe Negro y sus tropas inglesas",
+      "los genoveses",
+      "las compañías de Bertrand du Guesclin"
+    ],
+    "respuesta": 1,
+    "explicacion": "Pedro I se apoyó en el Príncipe Negro, que derrotó a Enrique en Nájera; Du Guesclin, que luchaba en el bando enemigo, cayó prisionero.",
+    "dificultad": 3,
+    "tags": [
+      "castilla",
+      "guerra-civil",
+      "inglaterra"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-120",
+    "enunciado": "La guerra civil entre Pedro I y Enrique de Trastámara terminó con la victoria de este en 1369.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Es verdadero: en 1369 Enrique mató a Pedro I en Montiel y se hizo rey como Enrique II, fundando la dinastía Trastámara.",
+    "dificultad": 3,
+    "tags": [
+      "castilla",
+      "guerra-civil",
+      "trastamara"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-121",
+    "enunciado": "¿En qué año conquistó Jaime I el Conquistador la ciudad de Valencia?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "1229",
+      "1248",
+      "1238",
+      "1212"
+    ],
+    "respuesta": 2,
+    "explicacion": "Jaime I tomó Valencia en 1238; 1229 es la conquista de Mallorca, 1248 la de Sevilla por Fernando III y 1212 la de Las Navas de Tolosa.",
+    "dificultad": 2,
+    "tags": [
+      "aragon",
+      "reconquista",
+      "valencia"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-122",
+    "enunciado": "¿De qué rey era hijo Jaime I el Conquistador?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Alfonso II de Aragón",
+      "Sancho VI de Navarra",
+      "Fernando III de Castilla",
+      "Pedro II de Aragón"
+    ],
+    "respuesta": 3,
+    "explicacion": "Jaime I era hijo de Pedro II de Aragón, muerto en Murete (1213), y accedió al trono siendo un niño.",
+    "dificultad": 1,
+    "tags": [
+      "aragon",
+      "monarquia",
+      "jaime-i"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-123",
+    "enunciado": "La conquista de Mallorca (1229-1231) fue obra de Pedro II de Aragón.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Es falso: la conquista de Mallorca la encabezó Jaime I, hijo y sucesor de Pedro II, con ayuda de navarros y aragoneses.",
+    "dificultad": 1,
+    "tags": [
+      "aragon",
+      "reconquista",
+      "mallorca"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-124",
+    "enunciado": "El Compromiso de Caspe (1412) puso fin a la crisis de sucesión de…",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "la Corona de Aragón",
+      "la Corona de Castilla",
+      "el Reino de Portugal",
+      "el Reino de Navarra"
+    ],
+    "respuesta": 0,
+    "explicacion": "Muerto Martín I sin herederos, ocho compromisarios reunidos en Caspe resolvieron la vacante de la Corona de Aragón en 1412.",
+    "dificultad": 3,
+    "tags": [
+      "aragon",
+      "sucesion",
+      "compromiso-de-caspe"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-125",
+    "enunciado": "¿A quién eligieron los compromisarios del Compromiso de Caspe como rey de la Corona de Aragón?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Jaime II de Urgel",
+      "Fernando de Antequera",
+      "Martín el Humano",
+      "Pedro IV"
+    ],
+    "respuesta": 1,
+    "explicacion": "Eligió a Fernando de Antequera, de la casa castellana de Trastámara, que reinó como Fernando I; su elección acercó Aragón a Castilla.",
+    "dificultad": 2,
+    "tags": [
+      "aragon",
+      "sucesion",
+      "compromiso-de-caspe"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-126",
+    "enunciado": "Pedro IV incorporó el Reino de Mallorca a la Corona de Aragón en 1343.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Es verdadero: Pedro IV el Ceremonioso sometió al rey de Mallorca y anexó el reino en 1343, aunque la isla se sublevó repetidamente.",
+    "dificultad": 2,
+    "tags": [
+      "aragon",
+      "mallorca",
+      "territorios"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-127",
+    "enunciado": "¿Qué apodo recibió Pedro IV de Aragón?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "el Conquistador",
+      "el Sabio",
+      "el Ceremonioso",
+      "el Magnánimo"
+    ],
+    "respuesta": 2,
+    "explicacion": "Se le llamó «el Ceremonioso» por su apego al ceremonial de la monarquía; «el Conquistador» fue Jaime I y «el Magnánimo», Alfonso V.",
+    "dificultad": 2,
+    "tags": [
+      "aragon",
+      "monarquia",
+      "apodos"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-128",
+    "enunciado": "En la Corona de Aragón, la institución que actuaba como árbitro entre el rey y los nobles, defendiendo el cumplimiento de los fueros, era…",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "la Diputación del General",
+      "el Consejo de Ciento",
+      "la Hermandad General",
+      "el Justicia de Aragón"
+    ],
+    "respuesta": 3,
+    "explicacion": "El Justicia de Aragón era un magistrado supremo que resolvía los conflictos entre rey y magnates; simboliza el limitado poder real en Aragón.",
+    "dificultad": 3,
+    "tags": [
+      "aragon",
+      "instituciones",
+      "fueros"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-129",
+    "enunciado": "El Reino de Valencia, conquistado por Jaime I, integraba la…",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Corona de Aragón",
+      "Corona de Castilla",
+      "Reino de Mallorca",
+      "Reino de Navarra"
+    ],
+    "respuesta": 0,
+    "explicacion": "Valencia pasó a formar parte de la Corona de Aragón desde su conquista (1238), junto a Aragón, Cataluña y, después, Mallorca.",
+    "dificultad": 1,
+    "tags": [
+      "aragon",
+      "valencia",
+      "territorios"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-130",
+    "enunciado": "El sistema político por el que el rey de Aragón debía jurar los fueros ante las Cortes antes de reinar se conoce como…",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "absolutismo",
+      "pactismo",
+      "centralismo",
+      "senorialismo"
+    ],
+    "respuesta": 1,
+    "explicacion": "El pactismo: rey y Cortes se obligaban mutuamente mediante el juramento de los fueros, lo que limitaba el poder monárquico.",
+    "dificultad": 2,
+    "tags": [
+      "aragon",
+      "instituciones",
+      "cortes"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-131",
+    "enunciado": "¿Qué territorios integraban la Corona de Aragón en la Baja Edad Media?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Aragón, Navarra y Vizcaya",
+      "Castilla, León y Galicia",
+      "Aragón, Cataluña, Valencia y el Reino de Mallorca",
+      "Cataluña, Provenza y Nápoles"
+    ],
+    "respuesta": 2,
+    "explicacion": "El núcleo era Aragón, el condado de Barcelona (Cataluña), el Reino de Valencia y el Reino de Mallorca; Nápoles se incorporó ya en el siglo XV.",
+    "dificultad": 2,
+    "tags": [
+      "aragon",
+      "territorios",
+      "corona-de-aragon"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-132",
+    "enunciado": "La Unión de Aragón, coalición nobiliaria que desafió el poder real, se enfrentó a…",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Jaime II",
+      "Alfonso V el Magnánimo",
+      "Fernando el Católico",
+      "Pedro IV el Ceremonioso"
+    ],
+    "respuesta": 3,
+    "explicacion": "La Unión obligó a Pedro IV a jurar los fueros cada año en las Cortes de Zaragoza (1347-1348), pero el rey acabó imponiéndose por las armas.",
+    "dificultad": 3,
+    "tags": [
+      "aragon",
+      "nobleza",
+      "union-de-aragon"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-133",
+    "enunciado": "Tras la muerte de Pedro IV (1387), ¿quién le sucedió en el trono de Aragón?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Juan I de Aragón",
+      "Martín el Humano",
+      "Fernando de Antequera",
+      "Pedro IV de Mallorca"
+    ],
+    "respuesta": 0,
+    "explicacion": "Le sucedió su hijo Juan I (1387-1396) y, sin herederos de este, luego Martín I el Humano (1396-1410).",
+    "dificultad": 2,
+    "tags": [
+      "aragon",
+      "monarquia",
+      "sucesion"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-134",
+    "enunciado": "¿Qué acontecimiento disparó la crisis de sucesión que resolvió el Compromiso de Caspe?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "la abdicación de Pedro IV",
+      "la muerte sin herederos de Martín I el Humano",
+      "la conquista de Nápoles",
+      "la guerra con Castilla"
+    ],
+    "respuesta": 1,
+    "explicacion": "Martín I murió en 1410 sin descendencia; sin heredero directo, las cortes de los tres reinos nombraron compromisarios, que eligieron a Fernando de Antequera.",
+    "dificultad": 3,
+    "tags": [
+      "aragon",
+      "sucesion",
+      "compromiso-de-caspe"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-135",
+    "enunciado": "La Generalitat de Cataluña nació en 1359 como…",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "un tribunal supremo de justicia",
+      "la asamblea de la nobleza",
+      "una diputación permanente para la recaudación de impuestos",
+      "el consejo municipal de Barcelona"
+    ],
+    "respuesta": 2,
+    "explicacion": "La Generalitat nació como diputación permanente encargada de recaudar y administrar el impuesto de la «generalitat» acordado en las Cortes de 1359.",
+    "dificultad": 3,
+    "tags": [
+      "cataluna",
+      "instituciones",
+      "generalitat"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-136",
+    "enunciado": "¿A qué ciudad italiana conquistó Alfonso V el Magnánimo en 1442?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Nápoles",
+      "Palermo",
+      "Mesina",
+      "Génova"
+    ],
+    "respuesta": 0,
+    "explicacion": "Alfonso V tomó Nápoles en 1442 y trasladó allí la corte, aunque Aragón siguió siendo el centro administrativo de la corona.",
+    "dificultad": 2,
+    "tags": [
+      "aragon",
+      "napoles",
+      "siglo-xv"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-137",
+    "enunciado": "La capital del Reino de Aragón era Barcelona.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Es falso: la capital del Reino de Aragón era Zaragoza; Barcelona era la sede del condado de Barcelona y de la Generalitat de Cataluña.",
+    "dificultad": 1,
+    "tags": [
+      "aragon",
+      "ciudades",
+      "capitales"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-138",
+    "enunciado": "¿En qué año murió sin herederos Martín I el Humano, rey de Aragón?",
+    "tipo": "fecha",
+    "opciones": [
+      "1400",
+      "1410",
+      "1420",
+      "1390"
+    ],
+    "respuesta": 1,
+    "explicacion": "Martín I murió en 1410; su falta de herederos abrió la crisis de sucesión que resolvió al año siguiente el Compromiso de Caspe.",
+    "dificultad": 1,
+    "tags": [
+      "aragon",
+      "monarquia",
+      "sucesion"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-139",
+    "enunciado": "¿Qué institución se ocupaba del gobierno municipal de Barcelona y estaba formada por cien miembros?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "el Consell de Cent",
+      "la Diputación del General",
+      "la Cancillería real",
+      "el Justicia de Zaragoza"
+    ],
+    "respuesta": 0,
+    "explicacion": "El Consell de Cent era el consejo municipal de Barcelona, ampliado a cien miembros, encargado del gobierno de la ciudad.",
+    "dificultad": 3,
+    "tags": [
+      "cataluna",
+      "barcelona",
+      "instituciones"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-140",
+    "enunciado": "El Reino de Nápoles pasó a formar parte de la Corona de Aragón en el siglo XV.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Es verdadero: Alfonso V conquistó Nápoles en 1442, en pleno siglo XV, y gobernó desde allí hasta su muerte.",
+    "dificultad": 2,
+    "tags": [
+      "aragon",
+      "napoles",
+      "siglo-xv"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-141",
+    "enunciado": "Las Vísperas sicilianas (1282) llevaron a la Corona de Aragón el dominio de…",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "la Cerdeña",
+      "el Reino de Nápoles",
+      "Sicilia",
+      "Creta"
+    ],
+    "respuesta": 2,
+    "explicacion": "La revuelta siciliana de 1282 contra los Anjou abrió las puertas de la isla a Pedro III, que desembarcó ese mismo año.",
+    "dificultad": 3,
+    "tags": [
+      "aragon",
+      "sicilia",
+      "siglo-xiii"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-142",
+    "enunciado": "¿En qué año llegó la peste negra a la península ibérica?",
+    "tipo": "fecha",
+    "opciones": [
+      "1348",
+      "1368",
+      "1328",
+      "1388"
+    ],
+    "respuesta": 0,
+    "explicacion": "La peste negra alcanzó la península en 1348, en plena epidemia europea, y desmanteló economías y campañas militares.",
+    "dificultad": 2,
+    "tags": [
+      "peste",
+      "demografia",
+      "siglo-xiv"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-143",
+    "enunciado": "¿Cómo se llamaba el heredero de Aragón que en 1137 se unió por matrimonio a la condesa Petronila de Barcelona?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Ramón Berenguer III",
+      "Ramón Berenguer IV",
+      "Alfonso el Batallador",
+      "Jaime II de Urgel"
+    ],
+    "respuesta": 1,
+    "explicacion": "Petronila, heredera de Aragón, se desposó con Ramón Berenguer IV, conde de Barcelona: de ese enlace nació la futura Corona de Aragón.",
+    "dificultad": 2,
+    "tags": [
+      "aragon",
+      "condado-de-barcelona",
+      "siglo-xii"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-144",
+    "enunciado": "La Generalitat de Cataluña fue creada por el rey de Aragón.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Es falso: la Generalitat nació de las Cortes catalanas en 1359 como diputación permanente para recaudar el impuesto de la generalitat.",
+    "dificultad": 1,
+    "tags": [
+      "cataluna",
+      "instituciones",
+      "generalitat"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-145",
+    "enunciado": "¿En qué ciudad se fundó en 1300 el Estudi General, primera universidad de la Corona de Aragón?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Lleida",
+      "Zaragoza",
+      "Barcelona",
+      "Valencia"
+    ],
+    "respuesta": 0,
+    "explicacion": "Jaime II fundó el Estudi General de Lleida en 1300; años después se crearon las universidades de Zaragoza (1474) y Valencia (1499).",
+    "dificultad": 3,
+    "tags": [
+      "aragon",
+      "universidades",
+      "estudios"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-146",
+    "enunciado": "¿En qué siglo se unió dinásticamente el condado de Barcelona al Reino de Aragón?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "siglo XI",
+      "siglo XIII",
+      "siglo XIV",
+      "siglo XII"
+    ],
+    "respuesta": 3,
+    "explicacion": "La unión se produjo en el siglo XII, en 1137, con el matrimonio de Petronila y Ramón Berenguer IV; consolidó un espacio peninsular poderoso.",
+    "dificultad": 1,
+    "tags": [
+      "aragon",
+      "condado-de-barcelona",
+      "siglo-xii"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-147",
+    "enunciado": "Alfonso X el Sabio llegó a ser candidato y elegido a la corona de…",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "emperador del Sacro Imperio Romano Germánico",
+      "rey de Portugal",
+      "rey de Navarra",
+      "duque de Borgoña"
+    ],
+    "respuesta": 0,
+    "explicacion": "Los príncipes electores lo eligieron rey de romanos (1257), pero la elección fue impugnada y no llegó a coronarse; el fracaso minó su reinado.",
+    "dificultad": 3,
+    "tags": [
+      "castilla",
+      "alfonso-x",
+      "sacro-imperio"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-148",
+    "enunciado": "El matrimonio de la reina Petronila de Aragón con Ramón Berenguer IV unió el Reino de Aragón y el condado de Barcelona.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Es verdadero: ese enlace de 1137 fusionó las dinastías y sentó las bases de la Corona de Aragón.",
+    "dificultad": 2,
+    "tags": [
+      "aragon",
+      "condado-de-barcelona",
+      "dinastias"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-149",
+    "enunciado": "¿En qué ciudad radicaba la sede de la Generalitat de Cataluña?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Barcelona",
+      "Zaragoza",
+      "Valencia",
+      "Palma"
+    ],
+    "respuesta": 0,
+    "explicacion": "La Generalitat de Cataluña tenía su sede en Barcelona, donde se reunían sus diputados ante las Cortes del principado.",
+    "dificultad": 3,
+    "tags": [
+      "cataluna",
+      "barcelona",
+      "generalitat"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-150",
+    "enunciado": "¿En qué ciudad se solían reunir las Cortes del Reino de Aragón?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Barcelona",
+      "Valencia",
+      "Zaragoza",
+      "Tortosa"
+    ],
+    "respuesta": 2,
+    "explicacion": "Las Cortes aragonesas se reunían habitualmente en Zaragoza, la principal ciudad del reino y escenario de los juramentos de los fueros.",
+    "dificultad": 1,
+    "tags": [
+      "aragon",
+      "cortes",
+      "zaragoza"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-151",
+    "enunciado": "En la Baja Edad Media, el monopolio de la explotación de la sal pertenecía a…",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "la Iglesia",
+      "los concejos",
+      "la Mesta",
+      "la Corona real"
+    ],
+    "respuesta": 3,
+    "explicacion": "La sal era monopolio de la Corona, que controlaba salinas y precios: era una de las rentas más seguras de la hacienda real.",
+    "dificultad": 2,
+    "tags": [
+      "economia",
+      "hacienda",
+      "sal"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-152",
+    "enunciado": "Fue Pedro IV el Ceremonioso quien conquistó Sicilia en 1282.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Es falso: Sicilia la conquistó Pedro III en 1282, aprovechando la revuelta de las Vísperas sicilianas; el Ceremonioso vivió un siglo después.",
+    "dificultad": 2,
+    "tags": [
+      "aragon",
+      "sicilia",
+      "monarquia"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-153",
+    "enunciado": "¿Qué actividad regulaba el Consulado de Barcelona, creado en 1258?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "el comercio marítimo",
+      "la minería del plata",
+      "la ganadería trashumante",
+      "la acuñación de moneda"
+    ],
+    "respuesta": 0,
+    "explicacion": "El Consulado de Barcelona regulaba el comercio y el derecho marítimo catalán, base de la potencia mercantil mediterránea de la corona.",
+    "dificultad": 1,
+    "tags": [
+      "cataluna",
+      "comercio",
+      "barcelona"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-154",
+    "enunciado": "¿En qué año murió Jaime I el Conquistador?",
+    "tipo": "fecha",
+    "opciones": [
+      "1266",
+      "1276",
+      "1286",
+      "1296"
+    ],
+    "respuesta": 1,
+    "explicacion": "Jaime I murió en 1276; en su testamento repartió los dominios, y su hijo Jaime II recibió el Reino de Mallorca.",
+    "dificultad": 2,
+    "tags": [
+      "aragon",
+      "jaime-i",
+      "monarquia"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-155",
+    "enunciado": "¿Qué eran las behetrías en la Castilla de la Baja Edad Media?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "territorios de la Corona real",
+      "zonas de pasto de la Mesta",
+      "aldeas dependientes de un monasterio",
+      "villas cuyos vecinos podían elegir señor"
+    ],
+    "respuesta": 3,
+    "explicacion": "Las behetrías eran villas de realengo cuyos habitantes podían escoger o cambiar de señor; el Ordenamiento de Alcalá (1348) las reguló.",
+    "dificultad": 3,
+    "tags": [
+      "castilla",
+      "senorio",
+      "poblamiento"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-156",
+    "enunciado": "¿Qué producto textil castellano se exportaba masivamente a Flandes en el siglo XIV?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "el lino",
+      "el seda",
+      "el cuero",
+      "la lana"
+    ],
+    "respuesta": 3,
+    "explicacion": "La lana merina salía de Castilla hacia los telares de Flandes: era el gran producto de exportación peninsular y motor de las ferias de Burgos.",
+    "dificultad": 1,
+    "tags": [
+      "castilla",
+      "economia",
+      "lana"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-157",
+    "enunciado": "El Tratado de Almizra (1244) delimitó la frontera entre…",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "las expansiones aragonesa y castellana en el sureste peninsular",
+      "el Reino de Portugal y la Corona de Castilla",
+      "el condado de Tolosa y la Corona de Francia",
+      "el Reino de Granada y el de Marruecos"
+    ],
+    "respuesta": 0,
+    "explicacion": "Jaime I y Alfonso X fijaron en Almizra los límites entre la expansión aragonesa en Valencia y la castellana hacia Murcia.",
+    "dificultad": 3,
+    "tags": [
+      "aragon",
+      "castilla",
+      "fronteras"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-158",
+    "enunciado": "La peste negra de 1348 mermó gravemente la población de Castilla y de la Corona de Aragón.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Es verdadero: la epidemia de 1348 diezmó la población de ambos reinos y acentuó la crisis de siglos XIV y XV.",
+    "dificultad": 3,
+    "tags": [
+      "peste",
+      "demografia",
+      "siglo-xiv"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-159",
+    "enunciado": "¿Qué ciudad castellana era el gran mercado de la lana?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Sevilla",
+      "Toledo",
+      "León",
+      "Burgos"
+    ],
+    "respuesta": 3,
+    "explicacion": "Burgos concentró el comercio de la lana y sus ferias; de allí la lana seguía por tierra y mar hacia los Países Bajos.",
+    "dificultad": 1,
+    "tags": [
+      "castilla",
+      "economia",
+      "lana"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-160",
+    "enunciado": "¿Qué obra de Alfonso X el Sabio es una colección de cantos y poemas en honor de la Virgen?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Las Siete Partidas",
+      "Libro del ajedrez y de los dados",
+      "Las Cantigas de Santa María",
+      "Cronica de Alfonso X"
+    ],
+    "respuesta": 2,
+    "explicacion": "Las Cantigas de Santa María son una colección de himnos y cantos de peregrinación; las Siete Partidas y el Libro del ajedrez también son suyas, por eso no valen como respuesta.",
+    "dificultad": 3,
+    "tags": [
+      "castilla",
+      "alfonso-x",
+      "cultura"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-161",
+    "enunciado": "¿Qué villa castellana acogió las ferias más famosas del siglo XV?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Burgos",
+      "Sevilla",
+      "Medina del Campo",
+      "Valladolid"
+    ],
+    "respuesta": 3,
+    "explicacion": "Medina del Campo fue el gran centro ferial del siglo XV, con negocios de banca internacional (familia Fugger) y comercio de lana.",
+    "dificultad": 2,
+    "tags": [
+      "castilla",
+      "comercio",
+      "ferias"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-162",
+    "enunciado": "En la Corona de Aragón, los ricos hombres eran la nobleza menor.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Es falso: los ricos hombres formaban la alta nobleza; la nobleza menor estaba formada por los infanzones.",
+    "dificultad": 2,
+    "tags": [
+      "aragon",
+      "nobleza",
+      "sociedad"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-163",
+    "enunciado": "¿En qué año murió Enrique III de Castilla?",
+    "tipo": "fecha",
+    "opciones": [
+      "1406",
+      "1396",
+      "1416",
+      "1426"
+    ],
+    "respuesta": 0,
+    "explicacion": "Enrique III «el Doliente» murió en 1406 y le sucedió su hijo Juan II, que era un niño, por lo que hubo regencias.",
+    "dificultad": 2,
+    "tags": [
+      "castilla",
+      "monarquia",
+      "siglo-xv"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-164",
+    "enunciado": "¿Cómo se llamaba a los musulmanes que vivían bajo dominio cristiano?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "los conversos",
+      "los mudéjares",
+      "los moriscos",
+      "los burgueses"
+    ],
+    "respuesta": 1,
+    "explicacion": "Los mudéjares mantenían su religión y su cultura bajo los reinos cristianos; «moriscos» designa, en cambio, a los convertidos tras 1492.",
+    "dificultad": 1,
+    "tags": [
+      "sociedad",
+      "mudejares",
+      "religion"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-165",
+    "enunciado": "¿Qué impuesto indirecto, creado en Castilla para financiar la guerra, gravaba la venta de mercancías?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "el diezmo",
+      "la alcabala",
+      "el tributo de servidumbre",
+      "la moneda forzosa"
+    ],
+    "respuesta": 1,
+    "explicacion": "La alcabala nació en tiempos de Alfonso XI (1342) para costear la campaña de Algeciras y se convirtió en la gran renta de la Corona.",
+    "dificultad": 2,
+    "tags": [
+      "castilla",
+      "hacienda",
+      "impuestos"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-166",
+    "enunciado": "El diezmo obligaba a entregar a la Iglesia la décima parte de las cosechas.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Es verdadero: el diezmo era el tributo eclesiástico que gravaba la décima parte de la producción agraria y ganadera.",
+    "dificultad": 1,
+    "tags": [
+      "iglesia",
+      "impuestos",
+      "sociedad"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-167",
+    "enunciado": "¿Qué asamblea de vecinos se encargaba del gobierno de una villa?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "la Hermandad",
+      "las Cortes",
+      "el concejo",
+      "la Mesta"
+    ],
+    "respuesta": 2,
+    "explicacion": "El concejo era la asamblea de vecinos que regía el municipio; la Hermandad agrupaba varios concejos y las Cortes eran estamentales y reinos.",
+    "dificultad": 1,
+    "tags": [
+      "municipios",
+      "concejo",
+      "gobierno-local"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-168",
+    "enunciado": "¿En qué año accedió al trono Alfonso XI de Castilla?",
+    "tipo": "fecha",
+    "opciones": [
+      "1312",
+      "1302",
+      "1322",
+      "1332"
+    ],
+    "respuesta": 0,
+    "explicacion": "Alfonso XI subió al trono en 1312, tras la muerte de Fernando IV, y debido a su minoría de edad hubo varias regencias disputadas.",
+    "dificultad": 2,
+    "tags": [
+      "castilla",
+      "monarquia",
+      "siglo-xiv"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-169",
+    "enunciado": "¿Quién escribió el Rimado de Palacio, obra que critica la corrupción de su tiempo?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Don Juan Manuel",
+      "Pedro López de Ayala",
+      "el Arcipreste de Hita",
+      "Gonzalo de Berceo"
+    ],
+    "respuesta": 1,
+    "explicacion": "Pedro López de Ayala, canciller de Enrique III y Juan I, escribió además las Crónicas de los reyes de Castilla; Don Juan Manuel escribió El conde Lucanor.",
+    "dificultad": 3,
+    "tags": [
+      "literatura",
+      "castilla",
+      "siglo-xiv"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-170",
+    "enunciado": "La universidad de Salamanca se fundó en el siglo XII.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Es falso: Alfonso IX de León la fundó en 1218, ya en el siglo XIII; es la universidad más antigua de España en funcionamiento.",
+    "dificultad": 2,
+    "tags": [
+      "educacion",
+      "salamanca",
+      "siglo-xiii"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-171",
+    "enunciado": "Un gremio era una asociación de…",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "comerciantes itinerantes",
+      "artesanos de un mismo oficio",
+      "monjes copistas",
+      "labradores sin tierra"
+    ],
+    "respuesta": 1,
+    "explicacion": "Los gremios agrupaban a los artesanos de un oficio para regular formación, precios y calidad: maestros, oficiales y aprendices.",
+    "dificultad": 1,
+    "tags": [
+      "artesania",
+      "gremios",
+      "economia"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-172",
+    "enunciado": "¿Qué edificio levantó Valencia en el siglo XV para regular su comercio de la seda?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "el Mercado",
+      "el Miguelete",
+      "el Palacio Real",
+      "la Lonja de la Seda"
+    ],
+    "respuesta": 3,
+    "explicacion": "La Lonja de la Seda, construida entre 1482 y 1498, era la sala de contratos de los comerciantes; es hoy patrimonio mundial.",
+    "dificultad": 2,
+    "tags": [
+      "valencia",
+      "comercio",
+      "siglo-xv"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-173",
+    "enunciado": "¿En qué año estalló la guerra de los Dos Pedros entre Castilla y Aragón?",
+    "tipo": "fecha",
+    "opciones": [
+      "1356",
+      "1366",
+      "1346",
+      "1376"
+    ],
+    "respuesta": 0,
+    "explicacion": "La guerra de los Dos Pedros (Pedro I de Castilla contra Pedro IV de Aragón) comenzó en 1356 y duró hasta 1375.",
+    "dificultad": 3,
+    "tags": [
+      "guerra",
+      "castilla",
+      "aragon"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-174",
+    "enunciado": "Los mudéjares conservaron su religión islámica y su lengua bajo los reinos cristianos.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Es verdadero: los mudéjares eran libres en su culto y mantenían el árabe; vivían sobre todo en Aragón, Valencia y Andalucía.",
+    "dificultad": 1,
+    "tags": [
+      "sociedad",
+      "mudejares",
+      "religion"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-175",
+    "enunciado": "¿Cómo se llamaban los judíos bautizados a partir de las conversiones masivas del siglo XIV?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "los mudéjares",
+      "los conversos",
+      "los moriscos",
+      "los burgueses"
+    ],
+    "respuesta": 1,
+    "explicacion": "Los conversos (o cristianos nuevos) provinieron de las conversiones forzadas; muchos siguieron ejerciendo oficios como el crédito o la medicina.",
+    "dificultad": 2,
+    "tags": [
+      "judios",
+      "conversos",
+      "siglo-xiv"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-176",
+    "enunciado": "El arte mudéjar de Aragón se hizo célebre por su uso de…",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "el mármol de Carrara",
+      "la madera policromada",
+      "el ladrillo",
+      "la piedra caliza"
+    ],
+    "respuesta": 2,
+    "explicacion": "El mudéjar aragonés combinó ladrillo y cerámica con motivos islámicos, herencia de los artesanos musulmanes (Torre de la Seo, de Zaragoza).",
+    "dificultad": 3,
+    "tags": [
+      "arte",
+      "mudejar",
+      "aragon"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-177",
+    "enunciado": "La potencia comercial de la Corona de Aragón descansaba sobre todo en la exportación de lana merina a Flandes.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Es falso: la lana merina era el gran producto castellano; la Corona de Aragón comerciaba sobre todo en el Mediterráneo (trigo, seda, corales).",
+    "dificultad": 3,
+    "tags": [
+      "comercio",
+      "aragon",
+      "lana"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-178",
+    "enunciado": "Las cañadas reales eran…",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "vías de peregrinación",
+      "rutas comerciales marítimas",
+      "caminos de romería",
+      "rutas ganaderas trashumantes"
+    ],
+    "respuesta": 3,
+    "explicacion": "Las cañadas reales eran los itinerarios protegidos por los que la ganadería trashumaba entre pastos de verano e invierno.",
+    "dificultad": 1,
+    "tags": [
+      "ganaderia",
+      "trashumancia",
+      "caminos"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-179",
+    "enunciado": "¿Qué tribunal creado por los Reyes Católicos en 1478 perseguía la herejía?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "la Inquisición",
+      "el Justicia de Aragón",
+      "el Consejo de Castilla",
+      "el Tribunal de la Mesta"
+    ],
+    "respuesta": 0,
+    "explicacion": "La Inquisición fue instituida en 1478 por los Reyes Católicos con bula del papa Sixto IV; perseguía sobre todo a los conversos sospechosos.",
+    "dificultad": 3,
+    "tags": [
+      "religion",
+      "inquisicion",
+      "siglo-xv"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-180",
+    "enunciado": "Las tierras de realengo eran las que dependían de…",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "la Iglesia",
+      "el rey",
+      "los concejos",
+      "la Mesta"
+    ],
+    "respuesta": 1,
+    "explicacion": "El realengo eran las tierras regias, al contrario que el señorío eclesiástico o laico; sus rentas iban directamente a la hacienda real.",
+    "dificultad": 1,
+    "tags": [
+      "realengo",
+      "señorio",
+      "castilla"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-181",
+    "enunciado": "Los gremios controlaban la calidad de los productos y los precios de los oficios.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Es verdadero: los gremios fijaban normas de fabricación, horarios y tarifas para evitar la competencia desleal dentro del oficio.",
+    "dificultad": 1,
+    "tags": [
+      "gremios",
+      "artesania",
+      "economia"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-182",
+    "enunciado": "¿A qué comunidad se reservaba en la práctica el préstamo de dinero en la Castilla medieval?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "los mudéjares",
+      "los conversos",
+      "los judíos",
+      "los templarios"
+    ],
+    "respuesta": 2,
+    "explicacion": "La usura estaba prohibida a cristianos, así que el préstamo de dinero recayó en los judíos; por eso ocuparon oficios de recaudadores y financieron a la Corona.",
+    "dificultad": 3,
+    "tags": [
+      "judios",
+      "economia",
+      "prestamo"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-183",
+    "enunciado": "¿Qué asamblea reunía en Castilla a nobleza, clero y ciudades para legislar junto al rey?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "el concejo",
+      "la Hermandad General",
+      "la Mesta",
+      "las Cortes"
+    ],
+    "respuesta": 3,
+    "explicacion": "Las Cortes castellanas, reunidas por estamentos, otorgaban impuestos y votaban leyes: sin su consentimiento no había tributos nuevos.",
+    "dificultad": 1,
+    "tags": [
+      "castilla",
+      "cortes",
+      "instituciones"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-184",
+    "enunciado": "¿Con qué acuerdo terminó la guerra de los Dos Pedros en 1371?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "la paz de Tordesillas",
+      "el Tratado de Alcañices",
+      "el Tratado de Almizra",
+      "la batalla de Aljubarrota"
+    ],
+    "respuesta": 0,
+    "explicacion": "La paz de Tordesillas (1371) puso fin a la guerra entre Pedro I y Pedro IV; no confundir con el Tratado de Tordesillas de 1494.",
+    "dificultad": 3,
+    "tags": [
+      "paz",
+      "castilla",
+      "aragon"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-185",
+    "enunciado": "¿Qué proyecto de crónica universal emprendió Alfonso X el Sabio?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Las Siete Partidas",
+      "la General Estoria",
+      "Las Cantigas de Santa María",
+      "El Libro del ajedrez"
+    ],
+    "respuesta": 1,
+    "explicacion": "La General Estoria pretendía narrar la historia desde la Creación hasta la época del rey; quedó inacabada a su muerte (1284).",
+    "dificultad": 3,
+    "tags": [
+      "castilla",
+      "alfonso-x",
+      "literatura"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-186",
+    "enunciado": "¿Quién fue el padre de Fernando el Católico?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Alfonso V el Magnánimo",
+      "Pedro IV el Ceremonioso",
+      "Juan II de Aragón",
+      "Enrique IV"
+    ],
+    "respuesta": 2,
+    "explicacion": "Fernando el Católico era hijo de Juan II de Aragón y de Juana Enríquez; por su madre Isabel era hermano medio de Enrique IV de Castilla.",
+    "dificultad": 1,
+    "tags": [
+      "aragon",
+      "fernando-el-catolico",
+      "dinastias"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-187",
+    "enunciado": "La Mesta era una institución de labradores castellanos.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Es falso: la Mesta era la Hermandad de la Ganadería, creada en 1273 para defender a los trashumantes, no a los campesinos cultivadores.",
+    "dificultad": 1,
+    "tags": [
+      "ganaderia",
+      "mesta",
+      "castilla"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-188",
+    "enunciado": "¿En qué año nació Fernando el Católico?",
+    "tipo": "fecha",
+    "opciones": [
+      "1462",
+      "1442",
+      "1472",
+      "1452"
+    ],
+    "respuesta": 3,
+    "explicacion": "Fernando nació en 1452 en Sos (Aragón); en 1469 se casó con Isabel y en 1479 heredó el trono de Aragón a la muerte de su padre.",
+    "dificultad": 2,
+    "tags": [
+      "aragon",
+      "fernando-el-catolico",
+      "siglo-xv"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-189",
+    "enunciado": "¿Quién escribió El conde Lucanor?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Pedro López de Ayala",
+      "Gonzalo de Berceo",
+      "Don Juan Manuel",
+      "el Arcipreste de Hita"
+    ],
+    "respuesta": 2,
+    "explicacion": "Don Juan Manuel redactó El conde Lucanor (primera mitad del siglo XIV), obra didáctica de enredos y consejos; Ayala escribió el Rimado de Palacio.",
+    "dificultad": 2,
+    "tags": [
+      "literatura",
+      "siglo-xiv",
+      "don-juan-manuel"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-190",
+    "enunciado": "El arte gótico se distingue por sus arcos de medio punto y sus muros pesados y macizos.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Es falso: eso describe el románico; el gótico usa arcos apuntados y grandes ventanales para aligerar los muros.",
+    "dificultad": 1,
+    "tags": [
+      "arte",
+      "gotico",
+      "arquitectura"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-191",
+    "enunciado": "¿Cómo se llamó la segunda esposa de Juan II de Aragón y madre de Fernando el Católico?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "María de Aragón",
+      "Juana Enríquez",
+      "Leonor de Alburquerque",
+      "Isabel de Coímbra"
+    ],
+    "respuesta": 1,
+    "explicacion": "Juana Enríquez, casada con Juan II en 1447, fue madre de Fernando; María de Aragón había sido la primera esposa del rey y Leonor de Alburquerque su abuela.",
+    "dificultad": 3,
+    "tags": [
+      "aragon",
+      "fernando-el-catolico",
+      "dinastias"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-192",
+    "enunciado": "¿Qué lengua fue la principal fuente de las traducciones científicas de la Escuela de Toledo impulsada por Alfonso X?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "el latín",
+      "el griego",
+      "el árabe",
+      "el hebreo"
+    ],
+    "respuesta": 2,
+    "explicacion": "Se traducían del árabe obras de astronomía y filosofía (a su vez versiones de originales griegos); el latín era la lengua culta, pero el flujo clave llegó vía el árabe.",
+    "dificultad": 3,
+    "tags": [
+      "castilla",
+      "alfonso-x",
+      "traducciones"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-193",
+    "enunciado": "Fernando el Católico fue hijo de Isabel la Católica y de Juan II de Aragón.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Es falso: sus padres fueron Juan II de Aragón y Juana Enríquez; Isabel la Católica era su media hermana, hija del mismo rey y de Isabel de Portugal.",
+    "dificultad": 2,
+    "tags": [
+      "aragon",
+      "fernando-el-catolico",
+      "parentesco"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-194",
+    "enunciado": "¿Qué obra legislativa de Alfonso X se dirigía especialmente a las villas de realengo?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "las Siete Partidas",
+      "el Espéculo",
+      "la General Estoria",
+      "el Fuero Real"
+    ],
+    "respuesta": 3,
+    "explicacion": "El Fuero Real recogía el ordenamiento de las ciudades de realengo; las Siete Partidas fueron el gran código jurídico del reinado, de alcance más amplio.",
+    "dificultad": 3,
+    "tags": [
+      "castilla",
+      "alfonso-x",
+      "derecho"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-195",
+    "enunciado": "¿Qué villa portuaria abrió Castilla al comercio marítimo del norte con su fuero de 1300?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Bilbao",
+      "Santander",
+      "Laredo",
+      "San Sebastián"
+    ],
+    "respuesta": 0,
+    "explicacion": "Bilbao recibió su fuero en 1300 de la mano de Diego López de Haro y se convirtió en el gran puerto atlántico de Castilla.",
+    "dificultad": 1,
+    "tags": [
+      "castilla",
+      "comercio",
+      "puertos"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-196",
+    "enunciado": "Tras las conversiones masivas del siglo XIV, muchos conversos siguieron ejerciendo oficios como la medicina o la recaudación de impuestos.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Es verdadero: los conversos accedieron a cargos administrativos y oficios urbanos, lo que alimentó las tensiones que motivaron su persecución.",
+    "dificultad": 2,
+    "tags": [
+      "judios",
+      "conversos",
+      "sociedad"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-197",
+    "enunciado": "¿En qué ciudad se creó en 1293 el consulado que regulaba el comercio castellano con Flandes?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Sevilla",
+      "Burgos",
+      "Bilbao",
+      "La Coruña"
+    ],
+    "respuesta": 1,
+    "explicacion": "Alfonso X creó en Burgos (1293) el consulado que resolvía pleitos comerciales con el norte de Europa; era la salida de la lana castellana.",
+    "dificultad": 3,
+    "tags": [
+      "castilla",
+      "comercio",
+      "burgos"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-198",
+    "enunciado": "Gonzalo de Berceo, autor de Milagros de Nuestra Señora, pertenecía al…",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "la escuela de traductores",
+      "el mester de juglaría",
+      "el mester de clerecía",
+      "la lírica popular"
+    ],
+    "respuesta": 2,
+    "explicacion": "Berceo es el representante del mester de clerecía: poesía culta en cuaderna vía escrita por clérigos; el mester de juglaría era oral y anónimo.",
+    "dificultad": 3,
+    "tags": [
+      "literatura",
+      "berceo",
+      "siglo-xiii"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-199",
+    "enunciado": "La universidad de Alcalá es más antigua que la de Salamanca.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Es falso: Salamanca se fundó en 1218, mientras que la de Alcalá la creó Cisneros en 1499, casi tres siglos después.",
+    "dificultad": 2,
+    "tags": [
+      "educacion",
+      "universidades",
+      "siglos-xiii-xv"
+    ]
+  },
+  {
+    "id": "bachillerato2-castilla-aragon-baja-edad-media-200",
+    "enunciado": "¿Qué grupo formaba la inmensa mayoría de la población en la Castilla del siglo XIV?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "la nobleza",
+      "el clero",
+      "los burgueses",
+      "los campesinos"
+    ],
+    "respuesta": 3,
+    "explicacion": "Alrededor de nueve de cada diez habitantes eran campesinos; nobleza y clero concentraban la tierra y los privilegios de un mundo estamental.",
+    "dificultad": 1,
+    "tags": [
+      "sociedad",
+      "poblacion",
+      "estamentos"
+    ]
   }
 ]

@@ -3,100 +3,3703 @@
     "id": "bachillerato2-romanizacion-001",
     "enunciado": "¿Qué ciudad fue la capital administrativa de la Hispania romana durante el Principado?",
     "tipo": "opcion-multiple",
-    "opciones": ["Cartagena", "Tarraco", "Mérida", "Córdoba"],
+    "opciones": [
+      "Cartagena",
+      "Tarraco",
+      "Mérida",
+      "Córdoba"
+    ],
     "respuesta": 1,
     "explicacion": "Tarraco (la actual Tarragona) fue residencia del legado imperial y capital de la provincia Citerior; con la reorganización de Diocleciano la sede administrativa pasó a Emerita Augusta (Mérida).",
     "dificultad": 1,
-    "tags": ["romanizacion", "ciudades-romanas"]
+    "tags": [
+      "romanizacion",
+      "ciudades-romanas"
+    ]
   },
   {
     "id": "bachillerato2-romanizacion-002",
     "enunciado": "¿En qué año comenzó la Segunda Guerra Púnica, que llevó a Roma a conquistar Hispania?",
     "tipo": "fecha",
-    "opciones": ["206 a.C.", "197 a.C.", "218 a.C.", "149 a.C."],
+    "opciones": [
+      "206 a.C.",
+      "197 a.C.",
+      "218 a.C.",
+      "149 a.C."
+    ],
     "respuesta": 2,
     "explicacion": "En 218 a.C. desembarcaron los romanos en Emporion para cortar los refuerzos de Aníbal; la guerra en la península terminó con la rendición cartaginesa en 206 a.C. tras la batalla de Ilipa.",
     "dificultad": 1,
-    "tags": ["romanizacion", "guerras-punicas", "fechas"]
+    "tags": [
+      "romanizacion",
+      "guerras-punicas",
+      "fechas"
+    ]
   },
   {
     "id": "bachillerato2-romanizacion-003",
     "enunciado": "¿Qué general romano venció en la batalla de Ilipa (206 a.C.) y expulsó a los cartagineses del valle del Guadalquivir?",
     "tipo": "opcion-multiple",
-    "opciones": ["Aníbal", "Asdrúbal Bárquida", "Publio Cornelio Escipión", "Quinto Cecilio Metelo"],
+    "opciones": [
+      "Aníbal",
+      "Asdrúbal Bárquida",
+      "Publio Cornelio Escipión",
+      "Quinto Cecilio Metelo"
+    ],
     "respuesta": 2,
     "explicacion": "Escipión —después llamado Africano— venció en Ilipa; la derrota dejó a Cartago sin su principal territorio de ultramar y selló el fin de su presencia militar en Hispania.",
     "dificultad": 2,
-    "tags": ["romanizacion", "guerras-punicas", "protagonistas"]
+    "tags": [
+      "romanizacion",
+      "guerras-punicas",
+      "protagonistas"
+    ]
   },
   {
     "id": "bachillerato2-romanizacion-004",
     "enunciado": "La ciudad de Numancia resistió varios asedios romanos y fue arrasada en el año 133 a.C. por Publio Cornelio Escipión Emiliano.",
     "tipo": "verdadero-falso",
-    "opciones": ["Verdadero", "Falso"],
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
     "respuesta": 0,
     "explicacion": "Numancia, en Soria, aguantó casi un siglo de hostilidades; su caída en 133 a.C. a manos de Escipión Emiliano —la misma fecha que la de Sagunto en Cartago— abrió el interior de la meseta a Roma.",
     "dificultad": 2,
-    "tags": ["romanizacion", "numancia", "fechas"]
+    "tags": [
+      "romanizacion",
+      "numancia",
+      "fechas"
+    ]
   },
   {
     "id": "bachillerato2-romanizacion-005",
     "enunciado": "¿Qué edificio de Mérida acogía los combates de gladiadores y de fieras?",
     "tipo": "opcion-multiple",
-    "opciones": ["El teatro", "El circo", "El templo de Diana", "El anfiteatro"],
+    "opciones": [
+      "El teatro",
+      "El circo",
+      "El templo de Diana",
+      "El anfiteatro"
+    ],
     "respuesta": 3,
     "explicacion": "El anfiteatro de Mérida, construido en el año 8 a.C., era el escenario de los munera (combates de gladiadores); el teatro era para el teatro y el circo para las carreras de cuadrigas.",
     "dificultad": 1,
-    "tags": ["romanizacion", "arquitectura-romana", "merida"]
+    "tags": [
+      "romanizacion",
+      "arquitectura-romana",
+      "merida"
+    ]
   },
   {
     "id": "bachillerato2-romanizacion-006",
     "enunciado": "Las grandes vías de la Hispania romana se construyeron principalmente para el tránsito militar y la administración del territorio.",
     "tipo": "verdadero-falso",
-    "opciones": ["Verdadero", "Falso"],
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
     "respuesta": 0,
     "explicacion": "La red viaria (como la vía Augusta) unía los campamentos y las ciudades para mover tropas y mensajes; el comercio y los viajeros se beneficiaron de ella, pero ese no era su fin original.",
     "dificultad": 2,
-    "tags": ["romanizacion", "via-romana", "urbanismo"]
+    "tags": [
+      "romanizacion",
+      "via-romana",
+      "urbanismo"
+    ]
   },
   {
     "id": "bachillerato2-romanizacion-007",
     "enunciado": "¿Qué ciudad fundada como colonia romana en el valle del Ebro conserva las columnas de su templo dedicado a Augusto?",
     "tipo": "opcion-multiple",
-    "opciones": ["Bracara Augusta", "Caesaraugusta", "Tarraco", "Carthago Nova"],
+    "opciones": [
+      "Bracara Augusta",
+      "Caesaraugusta",
+      "Tarraco",
+      "Carthago Nova"
+    ],
     "respuesta": 1,
     "explicacion": "Caesaraugusta (Zaragoza), fundada por Augusto en el año 14 a.C. para veteranos, es la única de la que se conservan las columnas de su templo de Augusto; Bracara es Braga y Carthago Nova, Cartagena.",
     "dificultad": 3,
-    "tags": ["romanizacion", "ciudades-romanas", "zaragoza"]
+    "tags": [
+      "romanizacion",
+      "ciudades-romanas",
+      "zaragoza"
+    ]
   },
   {
     "id": "bachillerato2-romanizacion-008",
     "enunciado": "¿Qué emperador romano nacido en Italica (Sevilla) conquistó Dacia y dio su nombre a la actual Rumanía?",
     "tipo": "opcion-multiple",
-    "opciones": ["Adriano", "Trajano", "Teodosio", "Constancio II"],
+    "opciones": [
+      "Adriano",
+      "Trajano",
+      "Teodosio",
+      "Constancio II"
+    ],
     "respuesta": 1,
     "explicacion": "Trajano, nacido en Italica en el año 53 d.C., conquistó Dacia entre 101 y 106 d.C.; Adriano, también de Italica, sucedió a Trajano, y Teodosio fue el último emperador de un Imperio unido.",
     "dificultad": 3,
-    "tags": ["romanizacion", "emperadores", "protagonistas"]
+    "tags": [
+      "romanizacion",
+      "emperadores",
+      "protagonistas"
+    ]
   },
   {
     "id": "bachillerato2-romanizacion-009",
     "enunciado": "¿En qué año cayó Sagunto tras el asedio de los cartagineses, hecho que desencadenó la Segunda Guerra Púnica?",
     "tipo": "fecha",
-    "opciones": ["218 a.C.", "211 a.C.", "219 a.C.", "206 a.C."],
+    "opciones": [
+      "218 a.C.",
+      "211 a.C.",
+      "219 a.C.",
+      "206 a.C."
+    ],
     "respuesta": 2,
     "explicacion": "Sagunto, aliada de Roma, cayó en 219 a.C. tras un largo asedio de Aníbal; Roma protestó y declaró la guerra, y un año después Aníbal cruzó los Pirineos.",
     "dificultad": 3,
-    "tags": ["romanizacion", "guerras-punicas", "fechas"]
+    "tags": [
+      "romanizacion",
+      "guerras-punicas",
+      "fechas"
+    ]
   },
   {
     "id": "bachillerato2-romanizacion-010",
     "enunciado": "Tras la conquista, Roma organizó el territorio peninsular dividiéndolo en dos provincias: la Ulterior y la Citerior.",
     "tipo": "opcion-multiple",
-    "opciones": ["La Ulterior y la Citerior", "La Bética y la Lusitania", "La Tarraconense y la Gallaecia", "Hispania y Galia"],
+    "opciones": [
+      "La Ulterior y la Citerior",
+      "La Bética y la Lusitania",
+      "La Tarraconense y la Gallaecia",
+      "Hispania y Galia"
+    ],
     "respuesta": 0,
     "explicacion": "En el año 197 a.C. Roma creó la Ulterior (sur) y la Citerior (este); Augusto reorganizó el territorio en Tarraconense, Bética y Lusitania, por lo que las otras dos opciones corresponden a épocas distintas.",
     "dificultad": 2,
-    "tags": ["romanizacion", "administracion-romana"]
+    "tags": [
+      "romanizacion",
+      "administracion-romana"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-011",
+    "enunciado": "¿Qué generales romanos fueron enviados a Hispania en 218 a.C. para arrebatar a Cartago sus bases y cortarle los suministros a Aníbal?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Marco Claudio Marcelo y Tiberio Sempronio Graco",
+      "Cneo y Publio Cornelio Escipión",
+      "Lucio Emilio Paulo y Cayo Terencio Varrón",
+      "Quinto Cecilio Metelo y Tiberio Sempronio Graco"
+    ],
+    "respuesta": 1,
+    "explicacion": "Los hermanos Escipión desembarcaron en Emporion en 218 a.C. con la misión de conquistar el litoral y el valle del Ebro: la de Cannae (216 a.C.) correspondía a Emilio Paulo y Varrón, no a ellos.",
+    "dificultad": 1,
+    "tags": [
+      "romanizacion",
+      "guerras-punicas",
+      "protagonistas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-012",
+    "enunciado": "¿Contra qué fuerza cartaginesa logró Cneo Escipión su primera gran victoria en Hispania, en la batalla del Ebro (217 a.C.)?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La flota de Hanón, que custodiaba la desembocadura del Ebro",
+      "El ejército de Aníbal acampado en Sagunto",
+      "La escuadra de Amílcar Barca fondeada en Gades",
+      "El ejército de Hasdrúbal Giscón en Ilipa"
+    ],
+    "respuesta": 0,
+    "explicacion": "En 217 a.C. Cneo Escipión destrozó la escuadra de Hanón frente al Ebro, controló el noreste peninsular y obtuvo el triunfo en Roma; Gades y la Andalucía interior seguían en manos de la familia Bárquida.",
+    "dificultad": 2,
+    "tags": [
+      "romanizacion",
+      "guerras-punicas",
+      "batallas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-013",
+    "enunciado": "¿Cómo terminó la campaña de 211 a.C. para los hermanos Escipión en la retaguardia de Hispania?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Con su rendición ante Magón tras el sitio de Emporion",
+      "Con la huida a la Galia tras perder Tarraco",
+      "Con la derrota y muerte en combate de ambos hermanos ante Asdrúbal y Magón",
+      "Con una tregua que repartió el valle del Ebro entre Roma y Cartago"
+    ],
+    "respuesta": 2,
+    "explicacion": "En 211 a.C. Asdrúbal y Magón Barca derrotaron y mataron a Publio y Cneo Escipión; Roma perdió en un solo golpe a sus dos generales y casi todo su avance, hasta que en 209 a.C. el joven Publio tomó Carthago Nova.",
+    "dificultad": 3,
+    "tags": [
+      "romanizacion",
+      "guerras-punicas",
+      "batallas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-014",
+    "enunciado": "La caída de Sagunto tras un largo asedio fue el pretexto (casus belli) que Roma adujo para declarar la guerra a Cartago.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Sagunto era aliada de Roma y estaba al sur del Ebro; su rendición en 219 a.C. permitió a Roma erigirse en valedora de sus aliados hispanos y declarar la guerra, que estalló en 218 a.C.",
+    "dificultad": 1,
+    "tags": [
+      "romanizacion",
+      "guerras-punicas",
+      "sagunto"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-015",
+    "enunciado": "¿Qué relevancia tuvo Sagunto en el desencadenamiento de la Segunda Guerra Púnica?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Era la capital administrativa de la Hispania romana y sede del pretor",
+      "Era la base naval cartaginesa del sureste peninsular",
+      "Había sido fundada por Roma como colonia de veteranos en el Ebro",
+      "Era una ciudad ibérica aliada de Roma al sur del Ebro, cuyo asedio Aníbal prolongó varios meses"
+    ],
+    "respuesta": 3,
+    "explicacion": "Sagunto (la actual Sagunto, Valencia) dominaba el paso costero entre el Ebro y Cartagena; Aníbal la asedió alrededor de un año antes de rendirla en 219 a.C., y ese ataque a un aliado romano originó la declaración de guerra.",
+    "dificultad": 2,
+    "tags": [
+      "romanizacion",
+      "guerras-punicas",
+      "sagunto"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-016",
+    "enunciado": "¿En qué año sufrió Roma en Hispania la doble derrota en la que perdieron la vida los dos hermanos Escipión?",
+    "tipo": "fecha",
+    "opciones": [
+      "217 a.C.",
+      "218 a.C.",
+      "211 a.C.",
+      "209 a.C."
+    ],
+    "respuesta": 2,
+    "explicacion": "En 211 a.C. Asdrúbal y Magón vencieron y mataron a Publio y Cneo Escipión en la retaguardia peninsular; dos años más tarde (209 a.C.) su hijo Publio tomó Carthago Nova y rehízo la campaña romana.",
+    "dificultad": 3,
+    "tags": [
+      "romanizacion",
+      "guerras-punicas",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-017",
+    "enunciado": "¿A qué generales cartagineses venció Roma en Ilipa (206 a.C.), la batalla que le abrió el valle del Guadalquivir?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Aníbal y Asdrúbal Barca",
+      "Hasdrúbal Giscón y Magón Barca",
+      "Amílcar Barca y Asdrúbal Bárquida",
+      "Hanón y Amílcar Magón"
+    ],
+    "respuesta": 1,
+    "explicacion": "En Ilipa (cerca de la actual Sevilla) el ejército romano de Publio Escipión venció a Hasdrúbal Giscón y a Magón Barca; los supervivientes se retiraron a Gades y a África, dejando el sur peninsular en manos romanas.",
+    "dificultad": 3,
+    "tags": [
+      "romanizacion",
+      "guerras-punicas",
+      "batallas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-018",
+    "enunciado": "¿Cuál fue la consecuencia inmediata de la victoria romana en Ilipa (206 a.C.)?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El abandono de la península por los ejércitos cartagineses, que se marcharon a Gades y a África",
+      "La firma del tratado del Ebro, que fijó la frontera entre ambas potencias",
+      "La creación de las provincias de la Ulterior y la Citerior",
+      "La rendición de Numancia tras un largo asedio"
+    ],
+    "respuesta": 0,
+    "explicacion": "Cartago perdió su principal territorio de ultramar: Magón embarcó hacia Italia en 206 a.C. y el resto de tropas pasó a África. El tratado del Ebro era de 226 a.C. y las dos provincias se crearon en 197 a.C.",
+    "dificultad": 2,
+    "tags": [
+      "romanizacion",
+      "guerras-punicas",
+      "conquista"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-019",
+    "enunciado": "Antes de abandonar Hispania, Magón zarpó de Gades, escaló en las Baleares y desembarcó en Liguria (205 a.C.) para atacar Italia por la retaguardia.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Magón partió de Gades en 206 a.C. y desembarcó en Liguria en 205 a.C., imitando la maniobra de su hermano Aníbal, que había cruzado los Alpes en 218 a.C.; la fracasada expedición lo llevó al exilio y a la muerte.",
+    "dificultad": 2,
+    "tags": [
+      "romanizacion",
+      "guerras-punicas",
+      "protagonistas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-020",
+    "enunciado": "¿Qué recurso económico hispano pasó a manos de Roma tras la expulsión de Cartago y financió su esfuerzo bélico?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El estaño del noroeste y el plomo de la Tarraconense",
+      "El cinabrio de las minas de Almadén",
+      "El oro de las arenas del valle del Duero",
+      "La plata del sureste (Cartagena) y del valle del Guadalquivir"
+    ],
+    "respuesta": 3,
+    "explicacion": "Las minas de plata de Carthago Nova y de la Bética se convirtieron en la principal fuente de metales preciosos de Roma en el siglo II a.C.; se explotaron mediante arrendamientos (societates) y alimentaron la acuñación de denarios.",
+    "dificultad": 3,
+    "tags": [
+      "romanizacion",
+      "mineria",
+      "economia-romana"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-021",
+    "enunciado": "¿Qué ciudad del sureste, tomada por Escipión en 209 a.C., se convirtió en la gran base romana frente a Cartago?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Sagunto",
+      "Gades",
+      "Carthago Nova",
+      "Tarraco"
+    ],
+    "respuesta": 2,
+    "explicacion": "Escipión capturó Carthago Nova (Cartagena) en 209 a.C.: su puerto, su arsenal y sus riquezas mineras quedaron en manos romanas y sirvieron de base para el resto de la campaña; Tarraco era la sede del gobernador y Gades seguía en pie hasta 206 a.C.",
+    "dificultad": 1,
+    "tags": [
+      "romanizacion",
+      "guerras-punicas",
+      "ciudades-romanas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-022",
+    "enunciado": "¿Qué estipulaba el tratado del Ebro (226 a.C.) suscrito entre Roma y Cartago?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Que el Ebro marcaría el límite entre las zonas de influencia de ambas potencias, lo que encajaba con la alianza romana con Sagunto",
+      "Que Aníbal podría cruzar libremente el Ebro con sus ejércitos",
+      "Que Cartago cedía Cerdeña y Córcega a Roma a cambio de una alianza militar",
+      "Que Hispania sería repartida entre las dos potencias por sorteo"
+    ],
+    "respuesta": 0,
+    "explicacion": "El tratado de 226 a.C. fijaba el Ebro como frontera de no agresión; Roma no se comprometió a cruzarlo, pero sí a proteger a sus aliados como Sagunto, al sur del río. Cerdeña y Córcega habían pasado a Roma mucho antes, en 238 a.C.",
+    "dificultad": 3,
+    "tags": [
+      "romanizacion",
+      "guerras-punicas",
+      "tratados"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-023",
+    "enunciado": "¿A qué pueblo hispano pertenecía Numancia, la ciudad que resistió a Roma hasta el año 133 a.C.?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "A los celtíberos del alto Duero",
+      "A los vacceos del valle del Tajo",
+      "A los turdetanos del Guadalquivir",
+      "A los bastetanos del sureste",
+      "A los edetanos del Ebro medio"
+    ],
+    "respuesta": 0,
+    "explicacion": "Numancia (junto a la actual Garray, Soria) era una ciudad celtibérica situada a orillas del Duero; por eso encabezó la resistencia de los pueblos de la meseta frente a Roma, no la de los vacceos o los turdetanos, asentados más al oeste y al sur.",
+    "dificultad": 1,
+    "tags": [
+      "romanizacion",
+      "numancia",
+      "guerra-celtiberica"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-024",
+    "enunciado": "Durante la larga guerra contra Numancia, ¿qué episodio humilló a Roma hasta el punto de que el Senado repudiara a su propio cónsul?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El cónsul Mancino firmó una paz vergonzosa que el Senado anuló, y los numantinos devolvieron al propio cónsul sin quererlo como prisionero",
+      "Escipión Emiliano capituló ante Numancia y pagó un tributo anual",
+      "El ejército romano entero fue hecho prisionero tras la batalla de Sedetania",
+      "El Senado tuvo que reconocer a Numancia como ciudad libre y aliada de Roma"
+    ],
+    "respuesta": 0,
+    "explicacion": "Derrotado en 141 a.C., el cónsul Cayo Hostilio Mancino pactó la retirada romana; el Senado declaró nulo el tratado y lo entregó a los numantinos, que se negaron a recibirlo, precisamente para no tener que admitirlo como pacto válido.",
+    "dificultad": 2,
+    "tags": [
+      "romanizacion",
+      "numancia",
+      "guerra-celtiberica"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-025",
+    "enunciado": "Numancia se levantaba sobre un cerro amurallado junto al Duero, en el corazón de la actual provincia de Soria.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Numancia ocupaba una posición elevada y amurallada en Garray (Soria), dominando el paso del Duero; esa defensa natural explica que Roma necesitara sucesivas campañas y, en 133 a.C., un largo cerco para rendirla.",
+    "dificultad": 1,
+    "tags": [
+      "romanizacion",
+      "numancia",
+      "geografia-hispania"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-026",
+    "enunciado": "¿Qué estrategia empleó Escipión Emiliano para rendir Numancia en el año 133 a.C.?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Un asalto frontal con arietes tras dos años de sitio",
+      "Un sitio por hambre: rodeó la ciudad con una muralla de bloqueo y una red de campamentos",
+      "El desvío del curso del Duero para inundar el cerro",
+      "Una batalla campal decidida en la llanura, sin cercar la ciudad"
+    ],
+    "respuesta": 1,
+    "explicacion": "Escipión levantó una empalizada de bloqueo de unos once kilómetros custodiada por siete campamentos y patrullas; sin forraje ni víveres, la ciudad se consumió por dentro y cayó en 133 a.C. sin necesidad de un asalto general.",
+    "dificultad": 3,
+    "tags": [
+      "romanizacion",
+      "numancia",
+      "asedios"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-027",
+    "enunciado": "¿En qué año fue asesinado Viriato, cuando acababa de obligar de nuevo a Roma a sentarse a negociar?",
+    "tipo": "fecha",
+    "opciones": [
+      "153 a.C.",
+      "147 a.C.",
+      "139 a.C.",
+      "134 a.C."
+    ],
+    "respuesta": 2,
+    "explicacion": "Viriato fue muerto en 139 a.C. mientras dormía, por tres de sus emisarios sobornados por el cónsul Servilio Cepión; la guerra lusitana había comenzado en 153 a.C. y la paz romana con él se había firmado en 140 a.C.",
+    "dificultad": 3,
+    "tags": [
+      "romanizacion",
+      "lusitania",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-028",
+    "enunciado": "¿Quién fue Viriato, el gran adversario de Roma en el suroeste peninsular?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Un caudillo lusitano, de origen pastor y bandolero, que unió a los pueblos del suroeste contra Roma",
+      "Un príncipe cartaginés refugiado en Hispania tras la Segunda Guerra Púnica",
+      "Un noble celtibérico proclamado rey por la asamblea de Numancia",
+      "El gobernador romano de la Ulterior que se rebeló contra el Senado"
+    ],
+    "respuesta": 0,
+    "explicacion": "Viriato era lusitano, pastor y guerrero de gran audacia; desde 153 a.C. convirtió la resistencia del suroeste en una guerra de guerrillas que duró hasta su asesinato en 139 a.C.",
+    "dificultad": 1,
+    "tags": [
+      "romanizacion",
+      "lusitania",
+      "protagonistas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-029",
+    "enunciado": "¿Qué recurso empleó Roma para eliminar a Viriato, al que no conseguía derrotar en batalla?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Lo acusó de traición ante su propio pueblo y lo entregó a una asamblea indígena",
+      "Lo emboscó durante las negociaciones de paz y lo hizo prisionero",
+      "Sobornó a tres de sus emisarios para que lo asesinaran mientras dormía",
+      "Lo mandó envenenar por su propio médico tras concederle la ciudadanía romana"
+    ],
+    "respuesta": 2,
+    "explicacion": "El cónsul Servilio Cepión compró a tres enviados de Viriato —Audax, Ditalco y Minio—, que lo mataron en su lecho en 139 a.C.: Roma obtuvo por traición lo que casi quince años de campañas no habían logrado.",
+    "dificultad": 3,
+    "tags": [
+      "romanizacion",
+      "lusitania",
+      "protagonistas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-030",
+    "enunciado": "Tras la muerte de Viriato, Roma cumplió los acuerdos firmados y reconoció la autonomía de la Lusitania.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Falso: ningún acuerdo sobrevivió a la traición. Servilio Cepión prosiguió la ofensiva contra los sucesores de Viriato, quebró la resistencia lusitana organizada y la región pasó a ser territorio sometido, sin autonomía alguna.",
+    "dificultad": 2,
+    "tags": [
+      "romanizacion",
+      "lusitania",
+      "guerra-lusitana"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-031",
+    "enunciado": "¿Qué pueblos del cuadrante noroeste peninsular resistieron a Roma hasta las campañas de Augusto?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Los cántabros y los astures, junto con los galaicos",
+      "Los turdetanos y los bastetanos",
+      "Los edetanos y los ilergetes",
+      "Los oretanos y los contestanos"
+    ],
+    "respuesta": 0,
+    "explicacion": "Cántabros, astures y galaicos (las actuales Cantabria, Asturias y Galicia) fueron los últimos en someterse, entre 29 y 19 a.C.; los pueblos de las otras opciones habitaban el este y el sureste, conquistados desde el siglo II a.C.",
+    "dificultad": 1,
+    "tags": [
+      "romanizacion",
+      "pueblos-del-norte",
+      "conquista"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-032",
+    "enunciado": "¿Qué característica explicaba las victorias de Viriato frente a ejércitos romanos muy superiores en número?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El reclutamiento masivo de mercenarios cartagineses",
+      "El uso de emboscadas y ataques rápidos en un terreno montañoso que él dominaba",
+      "El apoyo de una flota que cortaba el abastecimiento romano por mar",
+      "El control de las minas de plata, con las que pagaba a sus tropas"
+    ],
+    "respuesta": 1,
+    "explicacion": "Viriato evitó la batalla campal y combatió con emboscadas, ataques por sorpresa y retiradas veloces aprovechando el relieve; por eso Roma tuvo que negociar la paz de 140 a.C. antes de decidirse a traicionarlo.",
+    "dificultad": 2,
+    "tags": [
+      "romanizacion",
+      "lusitania",
+      "estrategia"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-033",
+    "enunciado": "¿Qué ocurrió en Numancia cuando el cerco romano cortó toda llegada de víveres, en 133 a.C.?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La ciudad capituló y Roma la convirtió en un municipio de derecho romano",
+      "Sus habitantes incendiaron la ciudad y se dieron muerte antes que rendirse, y los supervivientes fueron esclavizados",
+      "Se rindieron a cambio de conservar sus tierras y su organización política",
+      "Fueron evacuados por los romanos y se instalaron en la costa mediterránea"
+    ],
+    "respuesta": 1,
+    "explicacion": "Ante el hambre, los numantinos incendiaron Numancia y se suicidaron en masa; los pocos supervivientes fueron vendidos como esclavos y la ciudad quedó despoblada, un ejemplo del coste de la resistencia frente a Roma.",
+    "dificultad": 2,
+    "tags": [
+      "romanizacion",
+      "numancia",
+      "asedios"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-034",
+    "enunciado": "Durante la conquista y las guerras civiles de Hispania, los pueblos indígenas permanecieron neutrales y nunca se aliaron con ningún bando.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Falso: en la Segunda Guerra Púnica los ilergetes y otros pueblos apoyaron a Cartago mientras Roma se servía de Sagunto y de levas indígenas, y en el siglo I a.C. Sertorio construyó su poder precisamente aliándose con las ciudades hispanas.",
+    "dificultad": 1,
+    "tags": [
+      "romanizacion",
+      "pueblos-hispanos",
+      "conquista"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-035",
+    "enunciado": "¿Quién fue Sertorio, el protagonista de la guerra civil que asoló Hispania entre 80 y 72 a.C.?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Un procónsul leal a Sila enviado a pacificar el noroeste peninsular",
+      "Cayo Sertorio, proscrito por las victorias de Sila, que se refugió en Hispania con un puñado de fieles",
+      "Marco Licinio Craso, vencedor de la guerra de Espartaco",
+      "Quinto Cecilio Metelo Pío, gobernador de la Ulterior"
+    ],
+    "respuesta": 1,
+    "explicacion": "Sertorio, lugarteniente de Mario y proscrito tras la victoria de los optimates, desembarcó en Hispania en 80 a.C. con unos pocos hombres y convirtió la Ulterior en el foco de la resistencia popular hasta su asesinato en 72 a.C.",
+    "dificultad": 1,
+    "tags": [
+      "romanizacion",
+      "guerras-civiles",
+      "sertorio"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-036",
+    "enunciado": "¿Qué organización creó Sertorio en Osca (Huesca) para presentarse como un gobierno legítimo y asegurarse la fidelidad de las élites hispanas?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Un senado propio y una escuela donde se educaban los hijos de los nobles hispanos",
+      "Un colegio de sacerdotes encargado de imponer el culto a los dioses romanos",
+      "Una flota militar financiada por las ciudades ibéricas del levante",
+      "Un tribunal permanente que resolvía los pleitos entre pueblos indígenas"
+    ],
+    "respuesta": 0,
+    "explicacion": "En Osca, Sertorio instaló un senado formado por romanos e hispanos y una escuela para los hijos de los caudillos indígenas, que funcionaban además como rehenes; así dio a su rebelión el aparato de un Estado rival.",
+    "dificultad": 3,
+    "tags": [
+      "romanizacion",
+      "guerras-civiles",
+      "sertorio"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-037",
+    "enunciado": "¿Cómo llegó Sertorio a controlar la Hispania Ulterior en el año 80 a.C., al comienzo de su guerra contra Sila?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Comprando el nombramiento al mejor postor entre los senadores proscritos",
+      "Desembarcando con unos pocos exiliados y logrando que las tropas hispanas le proclamaran jefe del ejército",
+      "Heredando el mando tras la muerte del procónsul romano en una emboscada",
+      "Siendo elegido por las ciudades hispanas en una asamblea reunida en Cartagena"
+    ],
+    "respuesta": 1,
+    "explicacion": "Sertorio llegó en 80 a.C. con un grupo reducido de exiliados; su prestigio militar entre las legiones y el apoyo de las ciudades hispanas le permitieron tomar el mando de la Ulterior y sostener la guerra ocho años, hasta 72 a.C.",
+    "dificultad": 2,
+    "tags": [
+      "romanizacion",
+      "guerras-civiles",
+      "sertorio"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-038",
+    "enunciado": "Sertorio pertenecía al bando popular (mariano) y su resistencia en Hispania prolongó la guerra civil entre optimates y populares.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: Sertorio fue lugarteniente de Mario y cayó en proscripción cuando Sila venció a los populares; su guerra (80–72 a.C.) mantuvo viva en Hispania la causa de los desposesidos frente a los optimates.",
+    "dificultad": 1,
+    "tags": [
+      "romanizacion",
+      "guerras-civiles",
+      "sertorio"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-039",
+    "enunciado": "¿En qué año fue asesinado Sertorio en su propia mesa, víctima de una conjura de sus lugartenientes?",
+    "tipo": "fecha",
+    "opciones": [
+      "80 a.C.",
+      "76 a.C.",
+      "72 a.C.",
+      "63 a.C."
+    ],
+    "respuesta": 2,
+    "explicacion": "Sertorio fue apuñalado en 72 a.C. durante un banquete organizado por Perpena, que ambicionaba el mando; sin su cabeza, la rebelión se desmoronó y Pompeyo pudo rematar la guerra hispana.",
+    "dificultad": 2,
+    "tags": [
+      "romanizacion",
+      "guerras-civiles",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-040",
+    "enunciado": "¿Qué final tuvo el general que mandó asesinar a Sertorio?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Recibió el gobierno de Hispania y celebró el triunfo en Roma",
+      "Fue derrotado por Pompeyo, que capturó su correspondencia y lo hizo ejecutar",
+      "Se pasó a los partidarios de Sila y murió en combate en África",
+      "Fue ajusticiado por los propios conjurados al resultar descubierto"
+    ],
+    "respuesta": 1,
+    "explicacion": "Perpena, que mató a Sertorio en la cena, no pudo mantener su mando: derrotado por Pompeyo, fue capturado y ejecutado. Pompeyo quemó sin publicar sus cartas, que podían comprometer a nobles romanos que habían pactado con Sertorio.",
+    "dificultad": 2,
+    "tags": [
+      "romanizacion",
+      "guerras-civiles",
+      "pompeyo"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-041",
+    "enunciado": "¿Qué logró Pompeyo en Hispania durante y después de la guerra de Sertorio?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Conquistó Gades y refundó Cartagena como colonia de veteranos",
+      "Derrotó a los últimos sertorianos y regresó a Roma en 71 a.C. para celebrar un triunfo que lo convirtió en el general más prestigioso",
+      "Firmó con Sertorio un tratado que le concedió el mando de ambas provincias hispanas",
+      "Dirigió en persona las campañas del norte contra cántabros y astures"
+    ],
+    "respuesta": 1,
+    "explicacion": "Llegado a Hispania en 76 a.C. con mando extraordinario, Pompeyo compartió la campaña con Metelo Pío; tras el asesinato de Sertorio (72 a.C.) venció a Perpena, pacificó el territorio y volvió en 71 a.C. a celebrar su triunfo.",
+    "dificultad": 3,
+    "tags": [
+      "romanizacion",
+      "guerras-civiles",
+      "pompeyo"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-042",
+    "enunciado": "¿Quiénes dirigían el ejército de Pompeyo en Hispania cuando César les hizo frente en Ilerda (49 a.C.)?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Los legados Pompeyo Afranio y Petreio",
+      "Sus hijos Gneo y Sexto Pompeyo",
+      "Tito Labieno y Marco Antonio",
+      "Quinto Cecilio Metelo Escipión"
+    ],
+    "respuesta": 0,
+    "explicacion": "La Citerior estaba a cargo de los legados Lucio Afranio y Marco Petreio; los hijos de Pompeyo y Tito Labieno combatieron en el bando pompeyano, pero lo hicieron en Munda (45 a.C.), no en Ilerda.",
+    "dificultad": 3,
+    "tags": [
+      "romanizacion",
+      "guerras-civiles",
+      "ilerda"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-043",
+    "enunciado": "En la campaña de Ilerda (49 a.C.), César no necesitó una batalla campal decisiva: maniobrando cortó los abastecimientos de los pompeyanos y consiguió que se rindieran.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: César se apoderó de los vados y del puente del Segre y cercó a Afranio y Petreio en la meseta de Ilerda; sin grano ni provisiones, capitularon en agosto de 49 a.C. y el victorioso los indultó.",
+    "dificultad": 2,
+    "tags": [
+      "romanizacion",
+      "guerras-civiles",
+      "ilerda"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-044",
+    "enunciado": "¿Qué implicación tuvo la rendición de Ilerda (49 a.C.) para el desarrollo de la guerra civil?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Permitió a César quedar dueño de Hispania y volverse contra Pompeyo en el Mediterráneo oriental",
+      "Obligó a César a retirarse a la Galia para rehacer sus ejércitos",
+      "Supuso la rendición inmediata de Pompeyo, que acabó suicidándose en Egipto",
+      "Puso fin a la guerra civil con un tratado de paz firmado en Roma"
+    ],
+    "respuesta": 0,
+    "explicacion": "Con Ilerda, César controló la península, base militar y financiera de los optimates, y marchó al este; Pompeyo fue derrotado en Farsalia (48 a.C.) y asesinado en Egipto, pero la guerra siguió hasta 45 a.C.",
+    "dificultad": 2,
+    "tags": [
+      "romanizacion",
+      "guerras-civiles",
+      "ilerda"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-045",
+    "enunciado": "En la batalla de Munda (45 a.C.), las tropas de César vencieron cómodamente gracias a una clara superioridad numérica sobre los hijos de Pompeyo.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Falso: Munda fue la batalla más dura de César; sus líneas llegaron a flaquear y él combatió en primera línea. Suetonio y Plutarco recogen su dicho: había luchado muchas veces por la victoria, pero allí por la vida.",
+    "dificultad": 1,
+    "tags": [
+      "romanizacion",
+      "guerras-civiles",
+      "munda"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-046",
+    "enunciado": "¿Qué fuerzas enfrentó a César en la batalla de Munda (45 a.C.)?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El ejército de los hijos de Pompeyo, Gneo y Sexto, con Tito Labieno al mando de su caballería",
+      "Las legiones de Afranio y Petreio, veteranas de la campaña de Ilerda",
+      "Un ejército levantado por los partidarios de Mario en la Bética",
+      "La flota de Sexto Pompeyo, que bloqueaba el Guadalquivir"
+    ],
+    "respuesta": 0,
+    "explicacion": "En Munda (45 a.C.) César se midió a Gneo y Sexto Pompeyo, con Tito Labieno —su antiguo legado, ahora enemigo— al frente de la caballería; la victoria costó cientos de muertos a César, dejó a Gneo Pompeyo muerto en la huida y a Sexto fugitivo.",
+    "dificultad": 3,
+    "tags": [
+      "romanizacion",
+      "guerras-civiles",
+      "munda"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-047",
+    "enunciado": "¿Dónde se libró la batalla de Munda (45 a.C.)?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "En la meseta castellana, a orillas del Duero",
+      "En el valle del Ebro, cerca de Tarraco",
+      "En la Bética, el sur peninsular",
+      "En Gallaecia, el noroeste peninsular"
+    ],
+    "respuesta": 2,
+    "explicacion": "Munda se libró en la Bética: allí, el 17 de marzo de 45 a.C., César se midió a los hijos de Pompeyo en la que él mismo consideró su batalla más dura; el Duero y el Ebro habían sido escenario de conflictos anteriores (Numancia, Ilerda).",
+    "dificultad": 1,
+    "tags": [
+      "romanizacion",
+      "guerras-civiles",
+      "munda"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-048",
+    "enunciado": "Tras la derrota pompeyana en África (Tapsos, 46 a.C.), ¿dónde se rehicieron las fuerzas optimates para la última resistencia?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "En Sicilia, controlando el abastecimiento de trigo de Roma",
+      "En las Galias, apoyadas en los pueblos del interior peninsular",
+      "En la Ulterior, con tropas enviadas por el Senado de Roma",
+      "En Hispania, donde Gneo y Sexto Pompeyo levantaron un nuevo ejército con hispanos y desertores"
+    ],
+    "respuesta": 3,
+    "explicacion": "Derrotados en Tapsos (46 a.C.), Gneo y Sexto Pompeyo huyeron a Hispania, donde reclutaron con rapidez un ejército numeroso; la guerra se concentró en la península y se decidió en Munda un año después.",
+    "dificultad": 2,
+    "tags": [
+      "romanizacion",
+      "guerras-civiles",
+      "munda"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-049",
+    "enunciado": "César venció en Munda sin sobresaltos, pues las tropas de los hijos de Pompeyo huyeron al primer contacto.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Falso: Munda fue una lucha tenaz hasta el final, con las líneas de César flaqueando y el propio César combatiendo en primera línea; solo se rompió cuando Gneo Pompeyo emprendió la huida y su ejército fue destrozado.",
+    "dificultad": 1,
+    "tags": [
+      "romanizacion",
+      "guerras-civiles",
+      "munda"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-050",
+    "enunciado": "¿En qué año se libró la batalla de Munda, el último gran episodio bélico de la guerra civil republicana en Hispania?",
+    "tipo": "fecha",
+    "opciones": [
+      "49 a.C.",
+      "48 a.C.",
+      "46 a.C.",
+      "45 a.C."
+    ],
+    "respuesta": 3,
+    "explicacion": "Munda se libró el 17 de marzo de 45 a.C.; 49 a.C. corresponde a Ilerda, 48 a.C. a la derrota de Pompeyo en Farsalia y 46 a.C. a la batalla de Tapsos, en África.",
+    "dificultad": 2,
+    "tags": [
+      "romanizacion",
+      "guerras-civiles",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-051",
+    "enunciado": "¿Cuáles fueron las consecuencias inmediatas de la victoria de César en Munda (45 a.C.)?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Se firmó una paz que confirmó a Pompeyo como dueño de Hispania",
+      "César repartió Hispania entre sus legados y volvió a la Galia",
+      "El Senado depuso a César y restauró la República",
+      "Murieron Gneo Pompeyo y Tito Labieno, Sexto Pompeyo huyó y César quedó dueño de Hispania y de todo el mundo romano"
+    ],
+    "respuesta": 3,
+    "explicacion": "Tras Munda no quedó quien se le opusiera: Gneo Pompeyo fue capturado y decapitado en la huida, Labieno murió en la batalla y Sexto escapó; de vuelta en Roma, César fue nombrado dictador perpetuo en febrero del 44 a.C.",
+    "dificultad": 3,
+    "tags": [
+      "romanizacion",
+      "guerras-civiles",
+      "munda"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-052",
+    "enunciado": "Las campañas contra cántabros y astures fueron dirigidas desde Roma por el Senado, sin que Augusto llegara nunca a Hispania.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Falso: Augusto acudió en persona a Hispania en 26 a.C., instaló su cuartel en Tarraco y presidió las operaciones del norte; desde allí dirigió la guerra hasta su cierre en 19 a.C.",
+    "dificultad": 1,
+    "tags": [
+      "romanizacion",
+      "guerras-cantabras",
+      "augusto"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-053",
+    "enunciado": "¿Por qué la conquista del cuadrante noroeste y del norte peninsular resultó tan larga y costosa para Roma?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Porque Roma tuvo que respetar un tratado que le prohibía cruzar el Ebro hasta el año 19 a.C.",
+      "Porque Cartago envió sucesivamente tres ejércitos de socorro a los cántabros",
+      "Porque los cántabros y astures, dispersos en castros de montaña y sin una capital que tomara, evitaban la batalla y hostigaban a las columnas romanas",
+      "Porque el norte carecía de recursos y Roma no quiso invertir en su conquista"
+    ],
+    "respuesta": 2,
+    "explicacion": "Sin una capital cuya rendición acabara la guerra, con una economía pastoril móvil y un relieve que favorecía la emboscada, la resistencia no se quebró en una sola campaña: hizo falta un despliegue sostenido de legiones y campamentos entre 29 y 19 a.C.",
+    "dificultad": 3,
+    "tags": [
+      "romanizacion",
+      "pueblos-del-norte",
+      "guerras-cantabras"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-054",
+    "enunciado": "Cántabros y astures fueron los últimos pueblos peninsulares en someterse a Roma, en las campañas de Augusto de 29 a 19 a.C.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: después de Numancia (133 a.C.) quedaban pendientes el norte y el noroeste; las guerras cántabras y astures, de 29 a 19 a.C., cerraron la conquista de Hispania y abrieron el paso a su plena romanización.",
+    "dificultad": 2,
+    "tags": [
+      "romanizacion",
+      "pueblos-del-norte",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-055",
+    "enunciado": "¿En qué año comenzaron las campañas de Augusto contra los pueblos del norte peninsular?",
+    "tipo": "fecha",
+    "opciones": [
+      "30 a.C.",
+      "26 a.C.",
+      "29 a.C.",
+      "19 a.C."
+    ],
+    "respuesta": 2,
+    "explicacion": "Las guerras cántabras y astures se iniciaron en 29 a.C.; 26 a.C. es el año en que Augusto llegó en persona a Hispania y 19 a.C. el de la definitiva pacificación del norte.",
+    "dificultad": 1,
+    "tags": [
+      "romanizacion",
+      "guerras-cantabras",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-056",
+    "enunciado": "¿Qué medidas adoptó Roma para asegurar su dominio en el norte peninsular tras el fin de la resistencia (19 a.C.)?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Erigir una muralla fronteriza que separara a Roma de los pueblos del norte",
+      "Convertir la región en una provincia aliada gobernada por sus propios caudillos",
+      "Abandonar el territorio y limitarlo a una simple zona de reclutamiento de auxiliares",
+      "Fundar colonias y fortines, como Lucus Asturum y Juliobriga, guarnecer las calzadas y explotar el oro con la técnica del ruina montium"
+    ],
+    "respuesta": 3,
+    "explicacion": "El control se logró con asentamientos militares y coloniales (Lucus Asturum, Juliobriga, Segisama Julia), una red de calzadas y la explotación minera del oro —Las Médulas, con arrastres de agua (ruina montium)— acompañada de deportaciones parciales de población.",
+    "dificultad": 3,
+    "tags": [
+      "romanizacion",
+      "pueblos-del-norte",
+      "colonizacion-romana"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-057",
+    "enunciado": "El último foco de resistencia que Roma tuvo que quebrar en Hispania fue la Lusitania, en tiempos de Augusto.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Falso: Lusitania quedó sometida un siglo antes, con la muerte de Viriato (139 a.C.) y el hundimiento de la resistencia lusitana; la última resistencia fue la de cántabros y astures, que acabó en 19 a.C.",
+    "dificultad": 1,
+    "tags": [
+      "romanizacion",
+      "pueblos-del-norte",
+      "conquista"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-058",
+    "enunciado": "¿Cuál de estas secuencias ordena cronológicamente los hitos de la conquista y de las guerras civiles en Hispania?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Numancia (133 a.C.) → Ilipa (206 a.C.) → Munda (45 a.C.) → fin de las guerras del norte (19 a.C.)",
+      "Ilipa (206 a.C.) → Munda (45 a.C.) → Numancia (133 a.C.) → fin de las guerras del norte (19 a.C.)",
+      "Ilipa (206 a.C.) → Numancia (133 a.C.) → Munda (45 a.C.) → fin de las guerras del norte (19 a.C.)",
+      "Ilipa (206 a.C.) → Numancia (133 a.C.) → fin de las guerras del norte (19 a.C.) → Munda (45 a.C.)"
+    ],
+    "respuesta": 2,
+    "explicacion": "El orden correcto es Ilipa (206 a.C., fin de los cartagineses), Numancia (133 a.C., sometimiento de la meseta), Munda (45 a.C., fin de la guerra civil) y el cierre de la conquista con las guerras del norte (19 a.C.): casi dos siglos de expansión.",
+    "dificultad": 3,
+    "tags": [
+      "romanizacion",
+      "cronologia",
+      "conquista"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-059",
+    "enunciado": "En el año 27 a.C. el Senado concedió a Octaviano un nuevo cognomen con el que se conoce hoy al primer emperador romano. ¿Cuál fue?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "César",
+      "Augusto",
+      "Tiberio",
+      "Vespasiano"
+    ],
+    "respuesta": 1,
+    "explicacion": "El Senado otorgó a Octaviano el título de Augusto, «el venerable», en el 27 a.C., fecha tradicional del inicio del Principado; César fue el cognomen de su adoptivo Julio César y Tiberio y Vespasiano reinaron décadas más tarde.",
+    "dificultad": 1,
+    "tags": [
+      "augusto",
+      "principado",
+      "roma"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-060",
+    "enunciado": "Tras la reorganización territorial de Augusto, ¿cuáles fueron las tres provincias en que quedó dividida la Hispania romana?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Ulterior, Citerior y Carthaginiensis",
+      "Bética, Lusitania y Narbonense",
+      "Tarraconense, Gallaecia y Balearica",
+      "Bética, Lusitania y Tarraconense"
+    ],
+    "respuesta": 3,
+    "explicacion": "Augusto dejó la Bética en manos del Senado y creó las imperiales Lusitania y Tarraconense; la Ulterior y la Citerior eran la división del 197 a.C., la Narbonense quedaba en la Galia y Gallaecia y Carthaginiensis fueron solo conventus jurídicos.",
+    "dificultad": 1,
+    "tags": [
+      "augusto",
+      "provincias",
+      "administracion-romana"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-061",
+    "enunciado": "¿En qué año se aprobó la reorganización augustea que dividió Hispania en Bética, Lusitania y Tarraconense?",
+    "tipo": "fecha",
+    "opciones": [
+      "197 a.C.",
+      "27 a.C.",
+      "19 a.C.",
+      "14 d.C."
+    ],
+    "respuesta": 1,
+    "explicacion": "El senadoconsulto del 27 a.C. fijó la nueva división provincial; el 197 a.C. había creado la Ulterior y la Citerior, el 19 a.C. marcaron el final de las guerras cántabras y el 14 d.C. murió Augusto.",
+    "dificultad": 2,
+    "tags": [
+      "fechas",
+      "provincias",
+      "augusto"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-062",
+    "enunciado": "La Bética fue una provincia senatorial gobernada por un procónsul, mientras que la Tarraconense y la Lusitania dependían directamente del emperador.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Augusto dejó la Bética —la zona más urbana y romanizada— bajo control del Senado, que enviaba un procónsul; Lusitania y Tarraconense eran provincias imperiales y las dirigía un legatus Augusti pro praetore designado por el emperador.",
+    "dificultad": 1,
+    "tags": [
+      "provincias",
+      "gobernadores",
+      "betica"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-063",
+    "enunciado": "En las provincias imperiales hispanas (Lusitania y Tarraconense), ¿qué cargo ejercía el gobierno en nombre del emperador con mando militar?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El procónsul",
+      "El cuestor",
+      "El legatus Augusti pro praetore",
+      "El duoviro iure dicundo"
+    ],
+    "respuesta": 2,
+    "explicacion": "El legado augustal era un senador con imperium nombrado por el emperador; el procónsul gobernaba las provincias senatoriales como la Bética, el cuestor cuidaba del erario y los duoviros presidían los municipios hispanos.",
+    "dificultad": 3,
+    "tags": [
+      "gobernadores",
+      "provincias",
+      "administracion-romana"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-064",
+    "enunciado": "¿En qué ciudad se reunía el conventus iuridicus de la provincia Bética?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Hispalis (Sevilla)",
+      "Cartagena",
+      "Mérida",
+      "Córdoba"
+    ],
+    "respuesta": 3,
+    "explicacion": "Córdoba era la sede del conventus de la Bética, donde se celebraban los tribunales sin que el procónsul recorriera la provincia; Cartagena y Mérida eran sedes de otros conventus y Hispalis no llegó a serlo.",
+    "dificultad": 2,
+    "tags": [
+      "conventus-iuridici",
+      "cordoba",
+      "betica"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-065",
+    "enunciado": "¿Cuál de estas ciudades hispanas ejerció como sede de un conventus iuridicus, el distrito donde se administraba justicia?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Brigantium",
+      "Bracara Augusta",
+      "Emerita Augusta",
+      "Caesaraugusta"
+    ],
+    "respuesta": 1,
+    "explicacion": "Las sedes hispanas fueron Cartagena, Tarraco, Mérida, Córdoba, Lugo y Bracara Augusta (Braga); Brigantium (La Coruña) era ciudad del conventus sin ser su cabecera, y Mérida y Zaragoza presidían otros distritos.",
+    "dificultad": 2,
+    "tags": [
+      "conventus-iuridici",
+      "gallaecia",
+      "ciudades-romanas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-066",
+    "enunciado": "Los conventus iuridici agrupaban a las ciudades de un territorio para administrar justicia sin que el gobernador tuviera que desplazarse por toda la provincia.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Cada provincia se dividía en distritos judiciales —en Hispania hubo asientos en Cartagena, Tarraco, Mérida, Córdoba, Lugo y Bracara— en los que el gobernador o su delegado celebraban tribunal; así se evitaban largos viajes del promagistrado.",
+    "dificultad": 1,
+    "tags": [
+      "conventus-iuridici",
+      "justicia-romana"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-067",
+    "enunciado": "¿A qué soldados debió su fundación Augusta Emerita (Mérida), capital de la Lusitania?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Los veteranos de las legiones IV Macedonica y VI Victrix",
+      "Los veteranos de las legiones V Alaudae y X Gemina",
+      "Los colonos griegos de Emporion",
+      "Los defensores del asedio de Numancia"
+    ],
+    "respuesta": 1,
+    "explicacion": "Augusto fundó Emerita Augusta en el 25 a.C. para licenciar (emeritus) a los veteranos de las legiones V Alaudae y X Gemina tras las guerras civiles; de ahí el nombre de la ciudad y su condición de capital lusitana.",
+    "dificultad": 3,
+    "tags": [
+      "emerita-augusta",
+      "colonias-de-veteranos",
+      "lusitania"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-068",
+    "enunciado": "¿Qué ventaja jurídica distinguía a los vecinos de las ciudades fundadas como coloniae frente a las civitates stipendiarias sometidas a Roma?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Estaban exentos del tributo",
+      "Podían acuñar moneda de oro",
+      "Poseían la ciudadanía romana o el derecho latino",
+      "No prestaban servicio militar"
+    ],
+    "respuesta": 2,
+    "explicacion": "Las colonias —sobre todo las fundadas para veteranos— otorgaban a sus vecinos el ius Latii o la civitas plena; en cambio, las civitates stipendiarias pagaban tributo y carecían de derecho romano, y ninguna comunidad quedaba exenta del ejército.",
+    "dificultad": 3,
+    "tags": [
+      "ciudadania",
+      "colonia",
+      "derecho-romano"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-069",
+    "enunciado": "El evergetismo, práctica muy extendida en las ciudades hispanas, consistía en...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La concesión de tierras del Estado a los veteranos",
+      "El cobro de impuestos municipales sobre el comercio",
+      "Donaciones privadas de las élites para financiar obras y espectáculos públicos",
+      "La exportación de aceite y vino en ánforas béticas"
+    ],
+    "respuesta": 2,
+    "explicacion": "Los evergetas eran aristócratas que financiaban con su fortuna templos, baños, teatros y juegos a cambio de honores como estatuas o inscripciones; las otras opciones aluden al reparto de tierras, a la fiscalidad y al comercio bético.",
+    "dificultad": 3,
+    "tags": [
+      "evergetismo",
+      "ciudades-romanas",
+      "elites-hispanas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-070",
+    "enunciado": "¿En qué año se libró la batalla de Accio, que dejó a Octaviano como dueño único del mundo romano?",
+    "tipo": "fecha",
+    "opciones": [
+      "31 a.C.",
+      "44 a.C.",
+      "27 a.C.",
+      "14 a.C."
+    ],
+    "respuesta": 0,
+    "explicacion": "En el 31 a.C. Octaviano venció a Marco Antonio y Cleopatra en Accio; el 44 a.C. fue el asesinato de César, el 27 a.C. la concesión del título de Augusto y el 14 a.C. la fundación de Caesaraugusta.",
+    "dificultad": 1,
+    "tags": [
+      "fechas",
+      "augusto",
+      "principado"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-071",
+    "enunciado": "¿Cuál era el recorrido principal de la gran calzada del oeste peninsular conocida como Vía de la Plata?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "De Tarraco a Carthago Nova",
+      "De Caesaraugusta a Bracara Augusta",
+      "De Augusta Emerita a Asturica Augusta",
+      "De Hispalis a Gades"
+    ],
+    "respuesta": 2,
+    "explicacion": "La Vía de la Plata unía Mérida con Astorga (Asturica Augusta) siguiendo el eje norte-sur del interior occidental; Tarraco-Cartagena, Zaragoza-Braga y Sevilla-Cádiz corresponden a otros itinerarios de la red viaria.",
+    "dificultad": 2,
+    "tags": [
+      "via-de-la-plata",
+      "vias-romanas",
+      "urbanismo"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-072",
+    "enunciado": "La Vía Augusta, la calzada más larga de la Hispania romana, discurría...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Desde Augusta Emerita hasta Brigantium atravesando la meseta",
+      "Desde el pie de los Pirineos hasta Gades (Cádiz), bordeando el litoral y el valle del Ebro",
+      "Desde Narbo Martius hasta Tarraco sin entrar en la península",
+      "Desde Carthago Nova hasta Caesaraugusta por el interior"
+    ],
+    "respuesta": 1,
+    "explicacion": "La Vía Augusta enlazaba los Pirineos con Gades recorriendo el litoral mediterráneo y el valle del Ebro (Caesaraugusta, Tarraco, Sagunto, Carthago Nova); era la vía de mayor longitud de la península.",
+    "dificultad": 3,
+    "tags": [
+      "via-augusta",
+      "vias-romanas",
+      "urbanismo"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-073",
+    "enunciado": "Los miliarios eran columnas de piedra que señalaban la distancia en millas romanas y muchos de ellos se erigieron en época de Augusto.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "La milla equivalía a unos 1.480 metros y los miliarios marcaban el tramo recorrido de cada calzada; los miliarios augusteos hallados en La Rioja y en el valle del Duero llevan dedicatorias al princeps.",
+    "dificultad": 1,
+    "tags": [
+      "miliarios",
+      "vias-romanas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-074",
+    "enunciado": "¿En qué consistía la centuriación del territorio que Roma aplicó en zonas del interior peninsular?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "En reservar una décima parte de la cosecha para el templo",
+      "En medir la población de cada ciudad para fijar el tributo",
+      "En dividir el suelo en lotes cuadrados trazados con ejes cardo-decumano para repartir tierras",
+      "En construir una torre de vigilancia cada milla"
+    ],
+    "respuesta": 2,
+    "explicacion": "El age centuriatus copiaba el sistema agrimensor romano: dos ejes perpendiculares (cardo y decumano) troceaban el territorio en parcelas para repartirlo entre veteranos y colonos; no tenía que ver ni con el diezmo religioso ni con el censo.",
+    "dificultad": 3,
+    "tags": [
+      "centuriacion",
+      "territorium",
+      "urbanismo"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-075",
+    "enunciado": "El territorium de una ciudad romana de Hispania era...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El área de la colina sagrada donde se levantaba el templo",
+      "El registro de los ciudadanos inscritos en el censo",
+      "El espacio rural sometido a la jurisdicción de esa ciudad",
+      "La red de caminos que unía las colonias con Roma"
+    ],
+    "respuesta": 2,
+    "explicacion": "El territorium era el campo bajo la potestad de la urbs, del que dependían los vicus vecinos y en el que se aplicaba su derecho; no debe confundirse con el recinto amurallado ni con el ager publicus de Roma.",
+    "dificultad": 3,
+    "tags": [
+      "territorium",
+      "ciudades-romanas",
+      "derecho-romano"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-076",
+    "enunciado": "En la relación de patronazgo, el cliente apoyaba públicamente a su patrono en la asamblea y el tribunal, quien a cambio le prestaba protección jurídica y ayuda económica.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "La clientela era un vínculo de reciprocidad: officium y apoyo electoral del cliente, gratia y protección del patrono; en las ciudades hispanas los notables acumulaban cientos de clientes que aseguraban su éxito político.",
+    "dificultad": 2,
+    "tags": [
+      "patronazgo",
+      "clientes",
+      "elites-hispanas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-077",
+    "enunciado": "¿Quiénes formaban el ordo decurionum, el senado local de las ciudades hispanas?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Los antiguos esclavos libertos de la ciudad",
+      "Los sacerdotes del culto imperial",
+      "Los soldados retirados del ejército provincial",
+      "Los propietarios acaudalados que habían ejercido magistraturas"
+    ],
+    "respuesta": 3,
+    "explicacion": "El ordo reunía a los decuriones, la élite municipal con un patrimonio mínimo exigido y un cursus honorum a sus espaldas; de su senado salían los duoviros, ediles y cuestores, y sus miembros respondían con su fortuna de los gastos públicos.",
+    "dificultad": 3,
+    "tags": [
+      "senado-local",
+      "ciudades-romanas",
+      "elites-hispanas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-078",
+    "enunciado": "¿Cuál era la característica definitoria de los municipia hispanos frente a los simples núcleos de población dependientes?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Estaban exentos de pagar el tributo a Roma",
+      "Tenían propia constitución, con magistrados y senado, y sus vecinos gozaban de la ciudadanía o del derecho latino",
+      "Solo podían ser gobernados por un legado del emperador",
+      "Sus habitantes no podían poseer tierras fuera del recinto"
+    ],
+    "respuesta": 1,
+    "explicacion": "El municipium conservaba su administración local (duoviros, ediles y ordo) bajo el derecho romano; los núcleos stipendiarios carecían de autonomía y pagaban tributo, y hasta el 212 d.C. sus vecinos no poseían la civitas plena.",
+    "dificultad": 3,
+    "tags": [
+      "municipium",
+      "ciudades-romanas",
+      "ciudadania"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-079",
+    "enunciado": "¿Qué medida dio la ciudadanía romana a todos los habitantes libres de la Hispania romana y del resto del Imperio?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El ius Latii que Vespasiano extendió a toda Hispania",
+      "El Edicto de Augusto del 27 a.C.",
+      "La Constitutio Antoniniana de Caracalla (212 d.C.)",
+      "La extensión del ager publicus a los hispanos"
+    ],
+    "respuesta": 2,
+    "explicacion": "La Constitutio Antoniniana (212 d.C.) otorgó la civitas a todos los hombres libres del Imperio; Vespasiano se limitó a difundir el derecho latino por Hispania y el Edicto de Augusto del 27 a.C. organizó las provincias, no la ciudadanía.",
+    "dificultad": 3,
+    "tags": [
+      "ciudadania",
+      "caracalla",
+      "derecho-romano"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-080",
+    "enunciado": "El teatro de la colonia Augusta Emerita (Mérida) fue financiado por...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El senado de la Bética",
+      "El emperador Vespasiano",
+      "El legado de la Tarraconense",
+      "Marco Agripa, yerno y general de Augusto"
+    ],
+    "respuesta": 3,
+    "explicacion": "Una inscripción del podio del teatro atribuye la obra a Marco Agripa hacia el 15 a.C.; el anfiteatro de Mérida es más tardío (año 8 a.C.) y ni el senado bético ni Vespasiano intervinieron en su construcción.",
+    "dificultad": 3,
+    "tags": [
+      "merida",
+      "teatro-romano",
+      "augusto"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-081",
+    "enunciado": "La Bética fue una de las regiones más prósperas del Imperio: su aceite se exportaba a Roma en enormes cantidades transportadas en ánforas.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "El aceite bético (baética) se producía en la vega del Guadalquivir y se exportaba en ánforas dressel 20; en Ostia y Roma se han hallado millones de estas vasijas, señal del dominio bético sobre el mercado del aceite imperial.",
+    "dificultad": 1,
+    "tags": [
+      "betica",
+      "comercio-romano",
+      "aceite"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-082",
+    "enunciado": "¿En qué año fundó Augusto la colonia de Emerita Augusta para licenciar a los veteranos de las legiones V y X?",
+    "tipo": "fecha",
+    "opciones": [
+      "29 a.C.",
+      "14 a.C.",
+      "25 a.C.",
+      "19 a.C."
+    ],
+    "respuesta": 2,
+    "explicacion": "Emerita Augusta se asentó en el 25 a.C. a orillas del Guadiana; el 29 a.C. marcó el inicio de las guerras cántabras, el 19 a.C. su final y el 14 a.C. la fundación de Caesaraugusta.",
+    "dificultad": 2,
+    "tags": [
+      "emerita-augusta",
+      "colonias-de-veteranos",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-083",
+    "enunciado": "¿Qué atribución vitalicia permitió a Augusto vetar los acuerdos del Senado y hacer su persona inviolable sin dejar de ser, formalmente, un magistrado republicano?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El imperium proconsulare maius",
+      "El cargo de pontifex maximus",
+      "La censura vitalicia",
+      "La potestad tribunicia (tribunicia potestas)"
+    ],
+    "respuesta": 3,
+    "explicacion": "La tribunicia potestas, que Augusto recibió en el 23 a.C. y renovó de por vida, daba sacrosanctidad y veto sobre el Senado; el imperium maius le daba mando militar sobre las provincias y el pontificado era una magistratura religiosa.",
+    "dificultad": 3,
+    "tags": [
+      "augusto",
+      "principado",
+      "poder-romano"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-084",
+    "enunciado": "¿Cuál fue la clave política del Principado fundado por Augusto?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La conservación de las formas republicanas bajo un poder personal disfrazado de magistraturas",
+      "La restauración de la monarquía helenística con reyes provinciales",
+      "La dictadura militar de los generales con sede en las legiones",
+      "La república de los decuriones gobernada por un senado mundial"
+    ],
+    "respuesta": 0,
+    "explicacion": "Augusto mantuvo el Senado, los comicios y las magistraturas, pero concentró la potestad tribunicia y el imperium: fue princeps, «primer ciudadano», y rechazó el título de rex y la dictadura permanente, presentando su poder como restauración de la República.",
+    "dificultad": 3,
+    "tags": [
+      "principado",
+      "augusto",
+      "politica-romana"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-085",
+    "enunciado": "¿Bajo qué gobierno recibió Tarraco el estatuto de colonia que la convirtió en la gran sede del poder de la Tarraconense?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Bajo Julio César",
+      "Bajo Augusto",
+      "Bajo Vespasiano",
+      "Bajo Trajano"
+    ],
+    "respuesta": 1,
+    "explicacion": "Augusto elevó Tarraco a la colonia Iulia Victrix y allí residió el legado de la Tarraconense; César solo había dado el título de colonia a Corduba y Vespasiano y Trajano actúan en el siglo I d.C., cuando la ciudad ya era plenamente romana.",
+    "dificultad": 2,
+    "tags": [
+      "tarraco",
+      "colonia",
+      "tarraconense"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-086",
+    "enunciado": "Corduba, célebre por su escuela filosófica y por el nacimiento de Séneca, recibió el título de colonia de la mano de...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Julio César, en plenas guerras civiles",
+      "Augusto, para veteranos de las legiones V y la X",
+      "Vespasiano, al difundir el ius Latii por Hispania",
+      "Caracalla, con la Constitutio Antoniniana"
+    ],
+    "respuesta": 0,
+    "explicacion": "César convirtió Corduba en la Colonia Patricia para premiar a la ciudad; Augusto fundó Emerita para veteranos, Vespasiano difundió el derecho latino y Caracalla concedió la ciudadanía a todos los habitantes libres en el 212 d.C.",
+    "dificultad": 2,
+    "tags": [
+      "cordoba",
+      "colonia",
+      "betica"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-087",
+    "enunciado": "Las ciudades romanas hispanas de trazado regular se organizaban en torno a dos calles perpendiculares denominadas...",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Vía sacra y decumano",
+      "Foro y pomerium",
+      "Cardo maximus y decumano maximus",
+      "Cardo y vía pública"
+    ],
+    "respuesta": 2,
+    "explicacion": "El cardo maximus recorría la ciudad de norte a sur y el decumano maximus de este a oeste; su cruce marcaba el solar del foro, y con ese módulo se trazaron ciudades como Tarraco o Caesaraugusta.",
+    "dificultad": 1,
+    "tags": [
+      "urbanismo",
+      "ciudades-romanas",
+      "cardo-decumano"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-088",
+    "enunciado": "¿Qué tienen de excepcional las termas romanas conservadas en la actual Lugo?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Se construyeron sobre un anfiteatro",
+      "Están excavadas bajo la catedral",
+      "Fueron decoradas con mosaicos de origen griego",
+      "Conservan íntegras todas sus bóvedas, algo excepcional entre las termas hispanas"
+    ],
+    "respuesta": 3,
+    "explicacion": "Las termas de Lugo (siglos I-III), junto a la muralla, mantienen completas sus bóvedas de ladrillo, caso raro en la península; eran un conjunto de higiene y ocio con frigidarium, tepidarium y caldarium.",
+    "dificultad": 2,
+    "tags": [
+      "lugo",
+      "termas-romanas",
+      "urbanismo"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-089",
+    "enunciado": "¿Qué deidades integraban la tríada capitolina que se veneraba en el templo principal de las ciudades hispanas?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Marte, Venus y Quirino",
+      "Hércules, Mercurio y Vulcano",
+      "Júpiter, Juno y Minerva",
+      "Sol, Luna y Cibeles"
+    ],
+    "respuesta": 2,
+    "explicacion": "El Capitolio de ciudades como Mérida o Tarraco albergaba a Júpiter, Juno y Minerva, la tríada de Estado de Roma; Cibeles y Mitra se veneraban en santuarios propios y separados de este culto cívico.",
+    "dificultad": 2,
+    "tags": [
+      "religion-romana",
+      "templo",
+      "ciudades-romanas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-090",
+    "enunciado": "Las colonias fundadas para veteranos, como Emerita Augusta o Caesaraugusta, asentaban a los soldados licenciados en lotes de tierra del territorio de la nueva ciudad.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Augusto repartió el ager entre los excombatientes —en Mérida, veteranos de las legiones V y X— para fidelizar al ejército y ocupar zonas despobladas; la centuriación trazaba esos lotes cuadrados alrededor del núcleo urbano.",
+    "dificultad": 1,
+    "tags": [
+      "colonias-de-veteranos",
+      "centuriacion",
+      "augusto"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-091",
+    "enunciado": "¿Cuál era la sede del conventus iuridicus que abarcaba el sureste peninsular, en torno a la antigua Carthago Nova?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Illici (Elche)",
+      "Carthago Nova (Cartagena)",
+      "Toletum (Toledo)",
+      "Saguntum (Sagunto)"
+    ],
+    "respuesta": 1,
+    "explicacion": "El conventus Carthaginiensis tenía su cabecera en Carthago Nova, fundada por los Bárquidas en el 223 a.C.; Illici, Saguntum y Toletum eran ciudades del distrito o de otras zonas, pero nunca presidieron ese tribunal.",
+    "dificultad": 1,
+    "tags": [
+      "conventus-iuridici",
+      "cartagena",
+      "sureste"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-092",
+    "enunciado": "En las ciudades hispanas, el circo acogía los combates de gladiadores, mientras que el anfiteatro se destinaba a las carreras de cuadrigas.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Está invertido: el anfiteatro era el escenario de los munera y de las venationes —el de Mérida se inauguró en el año 8 a.C.— y el circo, de planta alargada con espina, se reservaba para las carreras de cuadrigas.",
+    "dificultad": 1,
+    "tags": [
+      "anfiteatro",
+      "circo",
+      "arquitectura-romana"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-093",
+    "enunciado": "En la Hispania del Principado, la capital de la Lusitania y la sede de su conventus iuridicus se hallaban en Córdoba.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Al revés: la capital de la Lusitania y sede de su conventus era Augusta Emerita (Mérida), mientras que Córdoba presidía el conventus de la Bética, provincia senatorial gobernada por un procónsul.",
+    "dificultad": 2,
+    "tags": [
+      "lusitania",
+      "emerita-augusta",
+      "conventus-iuridici"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-094",
+    "enunciado": "¿En qué año estallaron las guerras cántabras y astures, que prolongaron una década la conquista del norte peninsular?",
+    "tipo": "fecha",
+    "opciones": [
+      "31 a.C.",
+      "19 a.C.",
+      "29 a.C.",
+      "15 a.C."
+    ],
+    "respuesta": 2,
+    "explicacion": "Las guerras cántabras comenzaron en el 29 a.C. y terminaron en el 19 a.C., fecha del fin de la conquista; el 31 a.C. corresponde a la batalla de Accio y el 15 a.C. a campañas de Augusto en el Danubio.",
+    "dificultad": 2,
+    "tags": [
+      "guerras-cantabras",
+      "fechas",
+      "conquista-romana"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-095",
+    "enunciado": "¿Cómo se llamaba la técnica minera que, reteniendo agua y rompiendo las presas, derrumbaba el interior de los montes auríferos de Las Médulas?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Ruina montium",
+      "Opus reticulatum",
+      "Aquaeductus",
+      "Ruina valli"
+    ],
+    "respuesta": 0,
+    "explicacion": "Era la ruina montium, descrita por Plinio: el agua acumulada se liberaba de golpe y desmontaba la veta del oro; en Las Médulas se excavaron kilómetros de galerías y canales para captar y desviar el agua de los arroyos.",
+    "dificultad": 3,
+    "tags": [
+      "las-medulas",
+      "conquista-romana",
+      "augusto"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-096",
+    "enunciado": "¿Qué edificio porticado, próximo al foro, albergaba en las ciudades hispanas los tribunales y las operaciones comerciales?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La basílica",
+      "El mausoleo",
+      "El hipódromo",
+      "El ninfeo"
+    ],
+    "respuesta": 0,
+    "explicacion": "La basílica era una gran sala rectangular y columnada junto al foro, sede de la justicia y del negocio —como la de Mérida o Tarraco—; el mausoleo era funerario, el hipódromo, un recinto griego para carreras, y el ninfeo, un santuario de fuentes.",
+    "dificultad": 1,
+    "tags": [
+      "basilica",
+      "foro",
+      "urbanismo"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-097",
+    "enunciado": "En los municipia de derecho latino de Hispania, ¿qué conseguía el vecino que accedía a una magistratura local?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Quedar exento de tributos",
+      "Un asiento vitalicio en el senado de Roma",
+      "El derecho a acuñar moneda propia",
+      "La ciudadanía romana plena"
+    ],
+    "respuesta": 3,
+    "explicacion": "El ius Latii permitía a los magistrados municipales —duoviros y ediles— obtener la civitas al completar su cargo; así se integraron las élites hispanas en Roma mucho antes de que Caracalla extendiera la ciudadanía en el 212 d.C.",
+    "dificultad": 3,
+    "tags": [
+      "ius-latii",
+      "municipium",
+      "ciudadania"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-098",
+    "enunciado": "¿Cuál de estas ciudades NO se encuentra en el recorrido de la Vía de la Plata?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Emerita Augusta (Mérida)",
+      "Salamantica (Salamanca)",
+      "Asturica Augusta (Astorga)",
+      "Caesaraugusta (Zaragoza)"
+    ],
+    "respuesta": 3,
+    "explicacion": "Zaragoza se levanta en el valle del Ebro, sobre la Vía Augusta; la Vía de la Plata cruzaba el oeste peninsular de sur a norte con hitos como Mérida, Salamanca y Astorga.",
+    "dificultad": 2,
+    "tags": [
+      "via-de-la-plata",
+      "vias-romanas",
+      "zaragoza"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-099",
+    "enunciado": "¿Cuál de las siguientes NO fue una provincia hispana del Principado?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La Lusitania",
+      "La Bética",
+      "La Tarraconense",
+      "La Narbonense"
+    ],
+    "respuesta": 3,
+    "explicacion": "La Narbonense correspondía al sur de la Galia, no a la península; Hispania se organizó en Bética, Lusitania y Tarraconense y solo la Tardoantigüedad añadió la Gallaecia y la Cartaginense.",
+    "dificultad": 1,
+    "tags": [
+      "provincias",
+      "administracion-romana",
+      "galia"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-100",
+    "enunciado": "En las ciudades hispanas de trazado regular, ¿qué elemento se emplazaba normalmente en la intersección del cardo y del decumano?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Las termas",
+      "El anfiteatro",
+      "El foro",
+      "El circo"
+    ],
+    "respuesta": 2,
+    "explicacion": "El foro ocupaba el cruce de los ejes urbanos junto al templo y a la basílica y era el centro de la vida cívica; las termas y los recintos de espectáculos se situaban en la periferia, junto a la muralla.",
+    "dificultad": 1,
+    "tags": [
+      "foro",
+      "urbanismo",
+      "ciudades-romanas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-101",
+    "enunciado": "¿Dónde se rendía oficialmente el culto al emperador en las ciudades hispanas del Principado?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "En los hipogeos funerarios extramuros",
+      "En el anfiteatro durante los munera",
+      "En el circo ante el pueblo reunido",
+      "En el foro, mediante un altar o templo dedicado al princeps"
+    ],
+    "respuesta": 3,
+    "explicacion": "El culto imperial se concentraba en el foro: el foro provincial de Mérida albergaba un altar de Roma y Augusto y Tarraco contaba con otro similar; los espectáculos y las tumbas no eran el marco de este culto cívico.",
+    "dificultad": 3,
+    "tags": [
+      "culto-imperial",
+      "foro",
+      "augusto"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-102",
+    "enunciado": "La romanización de Hispania fue muy desigual: intensa en el valle del Guadalquivir y en el litoral mediterráneo, fue más tardía en el noroeste peninsular, donde pervivieron lenguas y estructuras propias.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "El sur y el este, con ciudades, calzadas y latín tempranos, fueron los más romanizados; la conquista del noroeste no se cerró hasta el 19 a.C. y en Gallaecia y Vasconia pervivieron el galaico-lusitano y el vasco siglos después.",
+    "dificultad": 2,
+    "tags": [
+      "romanizacion",
+      "gallaecia",
+      "betica"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-103",
+    "enunciado": "La Vía Augusta era la gran calzada que unía Augusta Emerita con Asturica Augusta a través del oeste peninsular.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Ese itinerario corresponde a la Vía de la Plata; la Vía Augusta discurría por el litoral mediterráneo y el valle del Ebro, desde los Pirineos hasta Gades (Cádiz), y era la más larga de Hispania.",
+    "dificultad": 2,
+    "tags": [
+      "via-augusta",
+      "via-de-la-plata",
+      "vias-romanas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-104",
+    "enunciado": "El anfiteatro y el circo solían levantarse dentro del recinto urbano, junto al foro, para que toda la ciudad presenciara los espectáculos.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Es falso: se construían fuera de la muralla por el gran tamaño del recinto y el riesgo de aglomeraciones —el anfiteatro y el circo de Mérida están extramuros, junto al Guadiana—; el foro, en cambio, ocupaba el centro de la ciudad.",
+    "dificultad": 2,
+    "tags": [
+      "anfiteatro",
+      "circo",
+      "urbanismo"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-105",
+    "enunciado": "La colonia de Augusta Emerita fue fundada por Vespasiano para asentar a los veteranos que lucharon en las guerras cántabras.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Falso: la fundó Augusto en el 25 a.C. para licenciar a los veteranos de las legiones V Alaudae y X Gemina; Vespasiano reinó casi un siglo después (69-79 d.C.) y su medida más trascendente en Hispania fue difundir el ius Latii.",
+    "dificultad": 1,
+    "tags": [
+      "emerita-augusta",
+      "colonias-de-veteranos",
+      "vespasiano"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-106",
+    "enunciado": "¿En qué año murió Augusto, a quien sucedió su hijastro Tiberio?",
+    "tipo": "fecha",
+    "opciones": [
+      "27 a.C.",
+      "9 d.C.",
+      "41 d.C.",
+      "14 d.C."
+    ],
+    "respuesta": 3,
+    "explicacion": "Augusto murió en el 14 d.C. en Nola, a los 75 años, y le sucedió Tiberio; el 27 a.C. fue su reconocimiento como Augusto, el 9 d.C. la pérdida de las legiones en el bosque de Teutoburgo y el 41 d.C. el asesinato de Calígula.",
+    "dificultad": 1,
+    "tags": [
+      "fechas",
+      "augusto",
+      "tiberio"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-107",
+    "enunciado": "¿En qué comarca hispana se concentraba la explotación romana de la plata y el plomo que convirtió a Carthago Nova en uno de los grandes centros mineros del Imperio?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La sierra minera de Cartagena-La Unión, en Murcia",
+      "El Macizo Galaico, en el noroeste peninsular",
+      "La cuenca del Ebro, en el valle del Jalón",
+      "La costa de la Contestania, en Alicante"
+    ],
+    "respuesta": 0,
+    "explicacion": "La sierra de Cartagena-La Unión (Murcia) ya explotaba plata y plomo en época púnica; los romanos ampliaron los arranques con ruedas de agua y galerías, y el distrito siguió siendo de los más productivos del Mediterráneo.",
+    "dificultad": 1,
+    "tags": [
+      "mineria",
+      "carthago-nova",
+      "plata",
+      "hispania-romana"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-108",
+    "enunciado": "El oro de Las Médulas, en Asturias, se extrajo mediante un sistema hidráulico que las fuentes llaman «ruina montium». ¿En qué consistía ese método?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "En fundir el mineral en hornos de tiro forzado alimentados con madera de encina",
+      "En canalizar agua a presión por depósitos y galerías para desmenuzar el monte por dentro y dejar el oro al descubierto",
+      "En lavar el mineral en bateas de madera siguiendo técnicas fenicias de amalgamación",
+      "En abrir pozos verticales y extraer el mineral con polías y cestos de cuero"
+    ],
+    "respuesta": 1,
+    "explicacion": "El «ruina montium» consistía en llenar de agua grandes reservorios y conductos para que la presión desmenuzara la roca; el oro se recogía en recintos de lavado. Las Médulas, el mayor yacimiento aurífero romano de la península, es Patrimonio de la Humanidad.",
+    "dificultad": 2,
+    "tags": [
+      "oro",
+      "las-medulas",
+      "mineria",
+      "tecnologia-romana"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-109",
+    "enunciado": "El mayor yacimiento de mercurio explotado por los romanos se encontraba en Las Médulas, en Asturias.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Falso: el mercurio hispano procedía de Almadén (actual Ciudad Real), explotado desde el siglo III a.C. y considerado el mayor yacimiento del mundo; Las Médulas se explotaba por su oro, no por su mercurio.",
+    "dificultad": 1,
+    "tags": [
+      "mercurio",
+      "almaden",
+      "mineria"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-110",
+    "enunciado": "¿En qué año concedió Caracalla la Constitutio Antoniniana, por la que todos los habitantes libres del Imperio recibieron la ciudadanía romana?",
+    "tipo": "fecha",
+    "opciones": [
+      "180 d.C.",
+      "212 d.C.",
+      "235 d.C.",
+      "117 d.C."
+    ],
+    "respuesta": 1,
+    "explicacion": "La Constitutio Antoniniana se promulgó en 212 d.C. bajo Caracalla: unificó jurídicamente el Imperio y convirtió a los peregrini y latini hispanos en ciudadanos romanos, salvo los dediticii.",
+    "dificultad": 2,
+    "tags": [
+      "constitutio-antoniniana",
+      "ciudadania",
+      "caracalla"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-111",
+    "enunciado": "¿Qué tipo de ánfora transportaba el aceite de oliva exportado desde la Bética hacia Roma y el resto del Mediterráneo?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Las ánforas Dressel 1, propias del vino itálico",
+      "Las ánforas Punicas 1, de tradición cartaginesa",
+      "Las ánforas Dressel 20, de cuerpo globular, cuello corto y asas marcadas con el sello del productor",
+      "Las ánforas Haltern 7, utilizadas para la salazón"
+    ],
+    "respuesta": 2,
+    "explicacion": "El aceite baético viajaba en ánforas Dressel 20 (también llamadas globulares), reconocibles por su cuerpo abombado y por las marcas de las officinae en las asas; su hallazgo en Ostia, Roma o el norte de África documenta la escala de la exportación.",
+    "dificultad": 3,
+    "tags": [
+      "anforas",
+      "aceite",
+      "betica",
+      "comercio"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-112",
+    "enunciado": "El garum era una salsa elaborada con las vísceras y la sangre del pescado fermentadas al sol, muy apreciada en la cocina romana y producida en grandes factorías hispanas.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: el garum sustituía a la salsa de pescado griega y se preparaba con vientres de pescado y sal en piletas al sol; las factorías hispanas de la Bética y de Cartagena lo exportaban en ánforas por todo el Imperio.",
+    "dificultad": 1,
+    "tags": [
+      "garum",
+      "alimentacion",
+      "comercio"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-113",
+    "enunciado": "¿Qué cultivo permitió a la Bética y a la Tarraconense convertirse en exportadores netos de grano hacia Roma?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El centeno, adaptado a los suelos del norte peninsular",
+      "El trigo, cultivado en grandes explotaciones de la llanura",
+      "El arroz, que se regaba en las marismas del Guadalquivir",
+      "La cebada, que se destinaba exclusivamente al forraje"
+    ],
+    "respuesta": 1,
+    "explicacion": "El trigo hispano, cultivado en grandes latifundios de la Bética y de la Tarraconense, abasteció el annona de Roma; las fuentes documentan enviados de grano hispano al puerto de Ostia desde la época de Augusto.",
+    "dificultad": 1,
+    "tags": [
+      "trigo",
+      "agricultura",
+      "exportacion"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-114",
+    "enunciado": "Plinio el Viejo destacó la excelencia de un producto de la Bética que sostenía una próspera industria textil. ¿Cuál?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La lana, elogiada como la mejor del Imperio",
+      "El lino, exportado en bruto hacia los talleres de Oriente",
+      "La seda, traslucida por el comercio con la India",
+      "El cuero curtido, monopolio de las colonias itálicas"
+    ],
+    "respuesta": 0,
+    "explicacion": "Plinio el Viejo (HN VIII, 190) escribió que Italia habría consagrado a su lana la corona que la Bética le arrebató: los rebaños merinos asentados en el valle del Guadalquivir hacían de la lana baética la más apreciada del Imperio.",
+    "dificultad": 2,
+    "tags": [
+      "lana",
+      "betica",
+      "industria"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-115",
+    "enunciado": "Las fuentes antiguas, como Diodoro Sículo, describen con crudeza el trabajo esclavo en las minas hispanas. ¿Qué señalaban como característico de esas explotaciones?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Que funcionaban con una plantilla fija de artesanos libres asalariados",
+      "Que la mortalidad era altísima y rara vez un esclavo sobrevivía más de tres años",
+      "Que se reservaban a la explotación estatal sin mano de obra privada",
+      "Que los esclavos recibían tierras al cabo de diez años de servicio"
+    ],
+    "respuesta": 1,
+    "explicacion": "Diodoro Sículo (V, 15) afirma que en las minas hispanas morían en pocos meses numerosos esclavos y que apenas unos pocos sobrevivían más de tres años: jornadas extenuantes bajo tierra, vigilancia y mala alimentación convertían el trabajo minero en una sentencia de muerte.",
+    "dificultad": 3,
+    "tags": [
+      "esclavitud",
+      "mineria",
+      "fuentes-antiguas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-116",
+    "enunciado": "¿Qué condición jurídica correspondía a los habitantes libres de las ciudades hispanas aliadas antes de la Constitutio Antoniniana?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Eran socii con plena ciudadanía romana pero sin derecho a votar",
+      "Eran latini con derecho a comerciar pero vedados para el matrimonio con romanos",
+      "Eran peregrini, con personalidad jurídica propia pero sin la ciudadanía romana",
+      "Eran esclavos del Estado adscritos a las tierras comunales"
+    ],
+    "respuesta": 2,
+    "explicacion": "Los habitantes libres de los territorios no ciudadanos eran peregrini, regidos por su derecho local y por el edicto del gobernador: poseían derechos privados, pero el ius suffragii y el ius conubii con romanos les estaban vedados hasta 212 d.C.",
+    "dificultad": 3,
+    "tags": [
+      "peregrini",
+      "ciudadania",
+      "condiciones-sociales"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-117",
+    "enunciado": "El ascenso de hispanos a los máximos cargos del Imperio durante los siglos I y II d.C. evidencia principalmente:",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La creación de un ejército provincial hispano independiente del Senado",
+      "El reconocimiento del derecho de las comunidades celtibéricas a acuñar moneda de oro",
+      "La sustitución de los magistrados romanos por decuriones peregrinos sin cargos",
+      "La integración de la aristocracia indígena romanizada en el orden senatorial y ecuestre"
+    ],
+    "respuesta": 3,
+    "explicacion": "Las élites locales invirtieron en tierras, adoptaron el latín y el derecho y accedieron al cursus honorum: familias hispanas llegaron al consulado y al Senado, y de Hispania salieron los emperadores Trajano y Adriano, muestra de la plena integración del territorio.",
+    "dificultad": 3,
+    "tags": [
+      "elites",
+      "romanizacion",
+      "senado"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-118",
+    "enunciado": "En el sistema de patronazgo romano, el patrono estaba obligado a mantener, defender y heredar a sus clientes, mientras que estos no asumían ninguna obligación hacia él.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Falso: el vínculo era recíproco. El patrono prestaba protección jurídica y, a veces, alimentos o entierro; el cliente debía obsequium (respeto), salutación diaria y acompañamiento en los actos públicos y en los juicios de su protector.",
+    "dificultad": 2,
+    "tags": [
+      "patronazgo",
+      "clientes",
+      "sociedad-romana"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-119",
+    "enunciado": "En las ciudades hispanas, ¿qué tipo de vivienda correspondía a la mayoría de la población urbana?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La domus unifamiliar con atrio y peristilo",
+      "La insula de varias plantas, alquilada por pisos",
+      "La villa rustica con su torre de defensa",
+      "El ergastulum, destinado a los esclavos de la casa"
+    ],
+    "respuesta": 1,
+    "explicacion": "La mayoría vivía en insulae, edificios de ladrillo y madera de varios pisos alquilados a la plebe; la domus, con su atrio, sus lararia y sus mosaicos, correspondía a las familias acomodadas. El fuego y los derrumbes fueron un problema crónico del urbanismo romano.",
+    "dificultad": 1,
+    "tags": [
+      "insulae",
+      "vivienda",
+      "ciudades-romanas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-120",
+    "enunciado": "La domus romana se articulaba en torno al atrio, con su impluvium y su lararium, y, en las casas ricas, en torno a un peristilo porticado rodeado de jardines.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: el atrio, con el impluvium para recoger el agua de la lluvia y el altar de los lares, era el corazón de la casa; las domus ostentosas de Italica o Mérida añadían peristilo porticado, baños privados y mosaicos con temas mitológicos.",
+    "dificultad": 2,
+    "tags": [
+      "domus",
+      "vivienda",
+      "arquitectura"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-121",
+    "enunciado": "¿Cómo se llamaba la sala intermedia de las termas por la que el bañista pasaba antes de entrar en la piscina de agua fría?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El caldarium",
+      "El frigidarium",
+      "El tepidarium",
+      "La palaestra"
+    ],
+    "respuesta": 2,
+    "explicacion": "El tepidarium, de temperatura templada, servía de transición entre el caldarium (caliente) y el frigidarium (frío), y a menudo se calentaba por hipocausto; la palaestra era el patio de ejercicios previos al baño.",
+    "dificultad": 2,
+    "tags": [
+      "termas",
+      "ocio",
+      "arquitectura"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-122",
+    "enunciado": "¿Qué anfiteatro hispano, levantado junto al mar en época de Augusto y declarado Patrimonio de la Humanidad como parte del conjunto arqueológico de Tarraco, es uno de los mayores de la península?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El de Tarraco, actual Tarragona",
+      "El de Italica, cerca de Sevilla",
+      "El de Emerita, en Mérida",
+      "El de Brigantium, en La Coruña"
+    ],
+    "respuesta": 0,
+    "explicacion": "El anfiteatro de Tarraco (hacia el 15 d.C.), excavado en la orilla del mar, cabía unos 14.000 espectadores; en él se inmortalizó el martirio de los mártires tarraconenses en época diocleciana y es uno de los mejor conservados de Hispania.",
+    "dificultad": 3,
+    "tags": [
+      "anfiteatro",
+      "tarraco",
+      "espectaculos"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-123",
+    "enunciado": "En el circo romano se celebraban los combates de gladiadores, mientras que las carreras de cuadrigas tenían lugar en el anfiteatro.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Falso: los espectáculos se confunden hoy, pero eran distintos. En el circo, de planta alargada con la meta central (spina), se corrían carros; en el anfiteatro, de planta ovalada, luchaban gladiadores y tenían lugar las venationes con fieras.",
+    "dificultad": 1,
+    "tags": [
+      "circo",
+      "anfiteatro",
+      "espectaculos"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-124",
+    "enunciado": "El teatro de Mérida, uno de los mejor conservados de la península, fue financiado en tiempos de Augusto por un magistrado muy ligado al emperador. ¿Quién?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Publio Cornelio Escipión Emiliano",
+      "Marco Vipsanio Agripa",
+      "Cayo Sulpicio Galba",
+      "Lucio Anneo Séneca"
+    ],
+    "respuesta": 1,
+    "explicacion": "El teatro de Emerita fue levantado hacia el 15-16 a.C. por orden de Marco Vipsanio Agripa, yerno y general de Augusto; su fachada escénica, de dos pisos de columnas corintias, es una de las imágenes clásicas de la Hispania romana.",
+    "dificultad": 3,
+    "tags": [
+      "teatro",
+      "merida",
+      "augusto"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-125",
+    "enunciado": "El término latino «ludi», frecuente en la epigrafía hispana, designaba:",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Las ferias anuales de comercio entre vecinos de la civitas",
+      "Los ritos funerarios oficiados por los sacerdotes del municipio",
+      "Los juegos o espectáculos públicos: carreras, combates y representaciones",
+      "Los ejercicios militares de la guardia urbana"
+    ],
+    "respuesta": 2,
+    "explicacion": "«Ludus» significa juego: los ludi eran espectáculos públicos financiados por el Estado o por los magistrados, como los ludi romani en honor de Júpiter; los ludi gladiatorii eran a su vez las escuelas de gladiadores, y el nombre designó también cada sesión de munera.",
+    "dificultad": 1,
+    "tags": [
+      "ludi",
+      "espectaculos",
+      "ocio"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-126",
+    "enunciado": "¿Qué tipo de establecimiento urbano vendía comida y bebida ya preparadas y calientes al público?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El macellum, que era el mercado municipal de abastos",
+      "El horreum, granero público para el grano del annona",
+      "El tabularium, archivo de los edictos del magistrado",
+      "El termopolium, con su mostrador de alfarería y recipientes incrustados"
+    ],
+    "respuesta": 3,
+    "explicacion": "El termopolium era la taberna de comida rápida romana, con un mostrador que alojaba recipientes (dolia) para servir platos calientes; los ejemplos de Mérida, de Pompeya o de Italica muestran una alimentación urbana basada en pan, aceite, vino y guisos.",
+    "dificultad": 1,
+    "tags": [
+      "alimentacion",
+      "termopolium",
+      "ciudades-romanas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-127",
+    "enunciado": "¿Qué figura ostentaba en la familia romana la autoridad sobre los hijos, los bienes y los esclavos (patria potestad)?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La materfamilias, como administradora de la dote",
+      "El patrono de la gens a la que pertenecía la familia",
+      "El paterfamilias, jefe varón de la casa",
+      "El decurión, representante municipal de la familia"
+    ],
+    "respuesta": 2,
+    "explicacion": "El paterfamilias era el varón mayor de la familia, bajo cuya potestad se encontraban hijos, yernos y esclavos: concentraba la autoridad doméstica (patria potestas) y la gestión del patrimonio, si bien en la práctica del Bajo Imperio los hijos fueron emancipándose.",
+    "dificultad": 1,
+    "tags": [
+      "familia",
+      "patria-potestad",
+      "derecho-romano"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-128",
+    "enunciado": "¿Qué ciudad hispana, heredera de la fenicia Gadir, siguió siendo en época romana un gran puerto atlántico célebre por su comercio y sus salazones?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Hispalis, la actual Sevilla",
+      "Carthago Nova, la actual Cartagena",
+      "Olisipo, la actual Lisboa",
+      "Gades, la actual Cádiz"
+    ],
+    "respuesta": 3,
+    "explicacion": "Gades (Cádiz), fundada hacia el 1100 a.C., era considerada una de las ciudades más antiguas del Occidente; en época romana fue un emporio atlántico del pescado y del garum, cuyo templo de Hércules visitaban peregrinos, y patria de Séneca y de Lucano.",
+    "dificultad": 1,
+    "tags": [
+      "gades",
+      "comercio",
+      "puertos"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-129",
+    "enunciado": "¿En qué año fue asesinado Julio César, cuya política de fundaciones y de concesiones modificó profundamente el ordenamiento de Hispania?",
+    "tipo": "fecha",
+    "opciones": [
+      "48 a.C.",
+      "51 a.C.",
+      "44 a.C.",
+      "31 a.C."
+    ],
+    "respuesta": 2,
+    "explicacion": "César cayó asesinado en los idus de marzo del 44 a.C. En el terreno hispano sus medidas fueron decisivas: fundó o amplió colonias como Caesaraugusta y Clunia y extendió el ius Latii a numerosas ciudades, abriendo el camino del ascenso de sus élites.",
+    "dificultad": 2,
+    "tags": [
+      "julio-cesar",
+      "colonias",
+      "ius-latii"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-130",
+    "enunciado": "¿En qué año se constituyó la colonia de Caesaraugusta, la actual Zaragoza, en el valle del Ebro?",
+    "tipo": "fecha",
+    "opciones": [
+      "27 a.C.",
+      "14 a.C.",
+      "45 a.C.",
+      "14 d.C."
+    ],
+    "respuesta": 1,
+    "explicacion": "Caesaraugusta se constituyó como colonia en el 14 a.C., ya en el principado de Augusto; de ella procede el topónimo Zaragoza y se conservan su teatro, su foro y su puente sobre el río Ebro.",
+    "dificultad": 1,
+    "tags": [
+      "caesaraugusta",
+      "fundacion-de-ciudades",
+      "augusto"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-131",
+    "enunciado": "¿Qué rasgo define el latifundio que dominó la economía de la Bética y de la Beturia y sostuvo su vocación exportadora?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Pequeñas explotaciones familiares arrendadas por plazos de cinco años",
+      "Propiedades del emperador trabajadas exclusivamente por presos condenados",
+      "Heredades comunales celtibéricas repartidas por sorteo entre los vecinos",
+      "Grandes propiedades de olivar, trigo y pastos trabajadas por esclavos y colonos, con un vilico que las administraba"
+    ],
+    "respuesta": 3,
+    "explicacion": "El latifundio hispano combinaba grandes extensiones con mano de obra esclava y colonos ligados a la tierra; el propietario ausente, que vivía en la ciudad, era representado por un vilico, y la producción se orientaba al mercado urbano y al annona.",
+    "dificultad": 1,
+    "tags": [
+      "latifundio",
+      "agricultura",
+      "esclavitud"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-132",
+    "enunciado": "Los esclavos romanos no podían disponer de ningún bien propio, ni siquiera de forma nominal, ya que la ley los consideraba una simple cosa (res).",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Falso: aunque carecían de personalidad jurídica, muchos esclavos manejaban un peculium, un conjunto de bienes que el amo les cedía y con el que podían negociar; con ese ahorro llegaban incluso a comprar su libertad (manumissio).",
+    "dificultad": 2,
+    "tags": [
+      "esclavitud",
+      "peculium",
+      "derecho-romano"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-133",
+    "enunciado": "Los decuriones hispanos formaban el consejo de la ciudad (curia) y asumían, con frecuencia a costa de su patrimonio, el cargo de los cultos, los espectáculos y las obras públicas, así como la recaudación del tributo.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: desde el siglo II d.C. los curiales debían cubrir con su propio dinero las liturgias y responder de la recaudación municipal; la presión fiscal del Bajo Imperio llevó a muchos a huir del cargo, como denunciaron las constituciones imperiales.",
+    "dificultad": 3,
+    "tags": [
+      "decuriones",
+      "ciudades-romanas",
+      "autonomia-municipal"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-134",
+    "enunciado": "¿Qué grupo social explotaba en régimen de arriendo las minas y la recaudación de impuestos de la Hispania republicana?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Los flamines, sacerdotes encargados del culto imperial",
+      "Los vigiles, cuerpo municipal de vigilancia nocturna",
+      "Los publicani, empresarios y recaudadores que licitaban la explotación",
+      "Los haruspices, adivinos consultados antes de cada campaña"
+    ],
+    "respuesta": 2,
+    "explicacion": "Los publicani, miembros del orden ecuestre, adquirían en pública licitación la recaudación de los impuestos y la explotación de las minas; tras la reforma de Augusto, buena parte de esas rentas pasó del aerarium al fiscus imperial.",
+    "dificultad": 2,
+    "tags": [
+      "publicani",
+      "republica-romana",
+      "mineria"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-135",
+    "enunciado": "Tras la conquista, Roma impuso a las comunidades hispanas sometidas un tributo anual en metálico, el «stipendium». ¿En qué consistía esa carga?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "En un pago fijo de dinero que gravaba a la comunidad conquistada",
+      "En una décima parte de la cosecha entregada en especie",
+      "En el alistamiento obligatorio de un contingente de soldados",
+      "En la entrega anual de esclavos para las subastas públicas"
+    ],
+    "respuesta": 0,
+    "explicacion": "El stipendium era un tributo monetario fijo que convertía a la comunidad en «stipendiaria»: aseguraba a Roma un ingreso estable y aceleró la monetización de la economía hispana, empujando al endeudamiento a los campesinos libres.",
+    "dificultad": 3,
+    "tags": [
+      "stipendium",
+      "conquista-romana",
+      "tributos"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-136",
+    "enunciado": "¿Qué otorgaba el estatus de «colonia» a las fundaciones urbanas hispanas de época republicana y augustea?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La exención perpetua de todo tributo en compensación por la guerra",
+      "El derecho a acuñar moneda de oro y a firmar tratados con los pueblos vecinos",
+      "La plena ciudadanía romana o el derecho latino para sus vecinos, con tierras repartidas a los veteranos",
+      "La sede permanente de un legado imperial y de su guarnición"
+    ],
+    "respuesta": 2,
+    "explicacion": "Las coloniae (Corduba, Caesaraugusta, Emerita) eran asentamientos de ciudadanos o veteranos dotados de tierras trazadas por centuriatio y de derecho romano o latino; por eso sus élites accedían antes al cursus honorum y al Senado.",
+    "dificultad": 3,
+    "tags": [
+      "colonia",
+      "fundacion-de-ciudades",
+      "ciudadania"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-137",
+    "enunciado": "¿Qué derecho concedía el «ius italicum», extendido a las ciudades hispanas privilegiadas del Imperio?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El derecho a acuñar moneda propia y a recaudar aranceles portuarios",
+      "Los efectos jurídicos del derecho de los itálicos, incluido el de poseer la propiedad con valor romano",
+      "El privilegio de no pagar ningún impuesto al fisco imperial",
+      "La potestad de declarar la guerra por sí solas a los pueblos vecinos"
+    ],
+    "respuesta": 1,
+    "explicacion": "El ius italicum, difundido por Vespasiano y confirmado por Trajano y Adriano, atribuía a la ciudad el mismo estatus que a las de Italia: suelo urbano con valor jurídico romano y acceso preferente a la ciudadanía para sus magistrados.",
+    "dificultad": 3,
+    "tags": [
+      "ius-italicum",
+      "ciudades-romanas",
+      "derecho-romano"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-138",
+    "enunciado": "Según el derecho romano clásico del Principado, las mujeres libres estaban sometidas de por vida a la tutela de un varón que debía autorizar todos sus actos jurídicos.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Falso: la tutela perpetua de las mujeres era un respeto arcaico que la práctica fue vaciando; la lex Iulia de tutela (18 a.C.) dispensó de ella a las mujeres ingenuas con hijos, y el ius trium liberorum de Augusto liberaba también a las libertas que tuvieran tres hijos.",
+    "dificultad": 3,
+    "tags": [
+      "mujer",
+      "derecho-romano",
+      "tutela"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-139",
+    "enunciado": "¿Cómo se llamaba en la domus romana la despensa destinada a conservar los alimentos y las ánforas de aceite y vino?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El lararium",
+      "La cella penaria",
+      "El tablinum",
+      "El cryptoporticus"
+    ],
+    "respuesta": 1,
+    "explicacion": "La cella penaria era la despensa doméstica; el lararium guardaba los altares de los lares, el tablinum comunicaba el atrio con el peristilo y servía de despacho, y el cryptoporticus era el corredor semisoterrado que frescaba y ventilaba la casa.",
+    "dificultad": 1,
+    "tags": [
+      "domus",
+      "alimentacion",
+      "vivienda"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-140",
+    "enunciado": "¿Qué ciudad costera de la Bética, junto al estrecho de Gibraltar, fue un enorme centro de salazón de pescado y elaboración de garum en el siglo I d.C.?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Italica, junto al Guadalquivir",
+      "Hispalis, en la margen del Betis",
+      "Cartago Nova, en el sureste peninsular",
+      "Baelo Claudia, junto a la bahía de Algeciras"
+    ],
+    "respuesta": 3,
+    "explicacion": "Baelo Claudia, fundada en época de Augusto, vivía de la pesca del bonito y del atún: sus fábricas producían salsamen y garum para exportar a Roma y al norte de África, y un terremoto del siglo III la dejó prácticamente abandonada.",
+    "dificultad": 2,
+    "tags": [
+      "baelo-claudia",
+      "salazones",
+      "garum"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-141",
+    "enunciado": "¿En qué año se completó el puente de Alcántara sobre el Tajo, obra del arquitecto Cayo Julio Lacer?",
+    "tipo": "fecha",
+    "opciones": [
+      "106 d.C.",
+      "14 d.C.",
+      "98 d.C.",
+      "212 d.C."
+    ],
+    "respuesta": 0,
+    "explicacion": "El puente de Alcántara, cuyos arcos mayores alcanzan 48 metros de luz, se terminó en el 106 d.C. en honor de Trajano; la inscripción conservada en el arco central y el pequeño templo dedicado a Lacer recuerdan a su constructor.",
+    "dificultad": 2,
+    "tags": [
+      "puente-de-alcantara",
+      "ingenieria-romana",
+      "trajano"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-142",
+    "enunciado": "¿Qué metales hacían célebre a la sierra de Huelva (Riotinto) en la Antigüedad romana?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El cobre y el hierro",
+      "El mercurio y el estaño",
+      "El oro y el plomo",
+      "La plata y el estaño"
+    ],
+    "respuesta": 0,
+    "explicacion": "La comarca de Río Tinto explotaba cobre y hierro desde el III milenio a.C.; Plinio menciona el oro y la plata de las minas cercanas de Mariana, y los romanos extrajeron asimismo azufre por lixiviación. Hoy es Patrimonio de la Humanidad.",
+    "dificultad": 1,
+    "tags": [
+      "rio-tinto",
+      "mineria",
+      "andalucia"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-143",
+    "enunciado": "Las ánforas de tipo empórico (Dressel 1/4 y Dressel 4/5), producidas en Emporiae y en la costa catalana, servían para transportar:",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Aceite de oliva refinado destinado a las termas",
+      "Vino hispano destinado a la exportación",
+      "Salazón de pescado en salmuera",
+      "Cerámica de lujo vidriada al plomo"
+    ],
+    "respuesta": 1,
+    "explicacion": "El «tipo empórico» era la ánfora vinaria del nordeste peninsular: Emporiae y Barcino exportaban vino catalán al sur de Francia y a Italia, en competencia con el vino itálico; las Dressel 20, en cambio, servían para el aceite baético.",
+    "dificultad": 3,
+    "tags": [
+      "anforas",
+      "vino",
+      "comercio",
+      "emporiae"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-144",
+    "enunciado": "Desde el fin de la República, Hispania pasó a ser exportadora neta de grano y de aceite, y abasteció con regularidad el annona de Roma.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: las flotas hispanas embarcaban trigo y aceite de la Bética y de la Tarraconense hacia Ostia y Roma; los centenares de ánforas Dressel 20 halladas en el monte Testaccio de la capital son la prueba material de ese tráfico.",
+    "dificultad": 2,
+    "tags": [
+      "trigo",
+      "annona",
+      "exportacion"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-145",
+    "enunciado": "¿Qué puerto del noroeste peninsular era la gran escala del comercio romano con el Atlántico y con Britania?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Olisipo, la actual Lisboa",
+      "Flaviobriga, en la costa cantábrica",
+      "Brigantium, la actual La Coruña",
+      "Gala, la actual Vigo"
+    ],
+    "respuesta": 2,
+    "explicacion": "Brigantium (La Coruña) dominaba el comercio del noroeste: de su faro de Hércules partían rutas hacia el estrecho de la Mancha y hacia las islas Británicas, enlazadas por mar con Cale (Oporto) y Olisipo (Lisboa) en el eje atlántico.",
+    "dificultad": 2,
+    "tags": [
+      "brigantium",
+      "comercio-atlantico",
+      "puertos"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-146",
+    "enunciado": "¿Cómo se llamaba el acto jurídico por el que un esclavo romano obtenía la libertad?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La emancipatio, que liberaba al esclavo de la patria potestad",
+      "La in iure cessio, cesión simulada ante el magistrado",
+      "La adoptio, que integraba al esclavo en la familia",
+      "La manumissio, realizada por vindicta, testamento o censo"
+    ],
+    "respuesta": 3,
+    "explicacion": "La manumissio podía ser «vindicta» (ante el magistrado, con un tercero que reclamaba la libertad), por testamento o por censo; el liberto se convertía en ciudadano romano, pero quedaba ligado a su patrono con obligaciones de obsequio y herencia.",
+    "dificultad": 1,
+    "tags": [
+      "manumissio",
+      "libertos",
+      "esclavitud"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-147",
+    "enunciado": "Tras la manumisión, los libertos romanos rompían por completo sus vínculos con el antiguo dueño y quedaban jurídicamente al mismo nivel que los ingenuos.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Falso: el liberto quedaba sometido al patronato; debía obsequium, servicios y fides a su antiguo amo, que conservaba derechos sobre sus bienes y su herencia. Además, los ingenuos (nacidos libres) mantenían una superioridad social frente a los libertos.",
+    "dificultad": 2,
+    "tags": [
+      "libertos",
+      "patronazgo",
+      "condiciones-sociales"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-148",
+    "enunciado": "¿Para qué se utilizaba la basílica en el foro de una ciudad hispana?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Para el culto imperial y los sacrificios públicos",
+      "Para alojar a los magistrados y a sus guardias",
+      "Para el almacenamiento del grano del annona",
+      "Para la administración de justicia y los asuntos comerciales"
+    ],
+    "respuesta": 3,
+    "explicacion": "La basílica era el gran edificio civil del foro: naves porticadas donde se resolvían pleitos y se firmaban contratos, en paralelo a la curia, sede del consejo municipal; los ejemplos de Mérida, de Tarraco y de Clunia son notables por su tamaño.",
+    "dificultad": 3,
+    "tags": [
+      "basilica",
+      "foro",
+      "ciudades-romanas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-149",
+    "enunciado": "¿En qué año recibió Octavio el título de «Augustus», dando comienzo formalmente el Principado?",
+    "tipo": "fecha",
+    "opciones": [
+      "44 a.C.",
+      "31 a.C.",
+      "14 d.C.",
+      "27 a.C."
+    ],
+    "respuesta": 3,
+    "explicacion": "Tras la victoria de Accio (31 a.C.), el Senado concedió a Octavio el título de Augustus en el 27 a.C.; ese mismo año se reorganizaron las provincias hispanas, que pasaron en buena parte al control directo del emperador.",
+    "dificultad": 2,
+    "tags": [
+      "augusto",
+      "principado",
+      "fechas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-150",
+    "enunciado": "¿Qué vía romana, conocida desde la Edad Media como «de la Plata», unía Emerita con Asturica Augusta atravesando el occidente peninsular?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "La Vía de la Plata, que cruzaba Lusitania y Gallaecia de sur a norte",
+      "La Vía Augusta, que bordeaba el litoral mediterráneo",
+      "La Vía Agrippa, que unía la Meseta con el valle del Ebro",
+      "La Vía Herculia, que costeaba la franja cantábrica"
+    ],
+    "respuesta": 0,
+    "explicacion": "La Vía de la Plata articuló el occidente peninsular con etapas como Mérida, Salamanca y Astorga; su nombre medieval alude al comercio de la plata y del ganado del occidente, no a las minas de Cartagena, que quedaban al sureste.",
+    "dificultad": 1,
+    "tags": [
+      "via-de-la-plata",
+      "calzadas-romanas",
+      "comunicaciones"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-151",
+    "enunciado": "Las ánforas hispanas halladas en Ostia, Roma, el norte de África y el Atlántico constituyen la principal fuente arqueológica para reconstruir la exportación de aceite, vino y salazones.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: la distribución de los restos cerámicos y de sus epígrafes (officinae) permite datar y medir el comercio; el hallazgo de centenares de Dressel 20 en Ostia y en el monte Testaccio de Roma documenta la escala de la exportación baética.",
+    "dificultad": 3,
+    "tags": [
+      "anforas",
+      "comercio",
+      "arqueologia"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-152",
+    "enunciado": "¿En qué régimen de trabajo se sustentaban muchas explotaciones hispanas del Bajo Imperio, con campesinos atados a la tierra y entregando parte de la cosecha?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El arrendamiento romano (locatio conductio) a plazo fijo",
+      "La servidumbre de gleba del derecho medieval",
+      "El colonato, con cultivo a precario y pago en parte de frutos",
+      "El esclavismo puro, con esclavos comprados en subasta"
+    ],
+    "respuesta": 2,
+    "explicacion": "El colonato se generalizó desde el siglo III: los coloni trabajaban la tierra del dominus a cambio de una parte de la cosecha (partitio) y se transmitían con la heredad; las constituciones del Bajo Imperio fijaron a los coloni a la tierra, precedente de la servidumbre medieval.",
+    "dificultad": 3,
+    "tags": [
+      "colonato",
+      "latifundio",
+      "bajo-imperio"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-153",
+    "enunciado": "¿Quién administraba en el día a día un latifundio hispano en ausencia del propietario, que vivía en la ciudad?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "El decurión, jefe del consejo municipal",
+      "El publicano, arrendatario de las rentas públicas",
+      "El colonus, cultivador atado a la tierra",
+      "El vilicus, mayordomo de condición servil o liberta"
+    ],
+    "respuesta": 3,
+    "explicacion": "El vilicus dirigía la explotación, distribuía el ganado y el equipo y controlaba el trabajo de los coloni; en los latifundios tardorromanos de la Bética y de la Lusitania, algunos vilici llegaron a acumular fortuna propia, partiendo de un peculium.",
+    "dificultad": 2,
+    "tags": [
+      "vilicus",
+      "latifundio",
+      "esclavitud"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-154",
+    "enunciado": "La integración económica de Hispania fue desigual: el sur y el litoral se insertaron plenamente en los circuitos exportadores del aceite, el vino y las salazones, mientras que el interior y el noroeste mantuvieron economías más locales, con menor monetización.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Verdadero: la arqueología lo confirma; ánforas e inscripciones abundan en la Bética, la Tarraconense y el litoral, mientras que el interior y el noroeste conservan asentamientos de tradición indígena con menor producción exportadora, una diferencia que perduró hasta el Bajo Imperio.",
+    "dificultad": 3,
+    "tags": [
+      "romanizacion",
+      "economia-romana",
+      "desigualdad"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-155",
+    "enunciado": "El conjunto monumental conocido como «templo de Diana», en el recinto arqueológico de Mérida, cumplía una función:",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Era el templo del culto religioso del recinto augustal de la colonia",
+      "Era el anfiteatro dedicado a las luchas de fieras",
+      "Era el circo de las carreras de carros",
+      "Era el tabernáculo del mercado forense"
+    ],
+    "respuesta": 0,
+    "explicacion": "El templo de Diana (siglo I a.C.) presidía el recinto religioso de Emerita Augusta; de su cella perviven muros y columnas de orden jónico, y es el mejor conservado del conjunto.",
+    "dificultad": 1,
+    "tags": [
+      "emerita-augusta",
+      "arquitectura-religiosa",
+      "merida"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-156",
+    "enunciado": "El arco de Berá, a las puertas de Tarragona, es un arco de triunfo erigido a inicios del siglo I d.C. y dedicado a:",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Nerón",
+      "el emperador Augusto",
+      "Adriano",
+      "Constantino"
+    ],
+    "respuesta": 1,
+    "explicacion": "Lo mandó erigir hacia el año 26 d.C. el procónsul Sexto Marcelo en la vía Augusta, para honrar a Augusto; mide unos 16 metros de altura.",
+    "dificultad": 1,
+    "tags": [
+      "tarraco",
+      "arco-de-triunfo",
+      "imperio-romano"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-157",
+    "enunciado": "La muralla de Lugo, levantada en el siglo III en época del Bajo Imperio, es la única muralla romana conservada íntegra con su perímetro completo y sus puertas.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Cerraba unos 2.117 metros de la ciudad de Lucus Augusti, con 85 torres y 10 puertas (el acceso principal era la puerta Miñá); es Patrimonio Mundial desde el año 2000.",
+    "dificultad": 1,
+    "tags": [
+      "muralla-de-lugo",
+      "lucus-augusti",
+      "fortificaciones"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-158",
+    "enunciado": "El acueducto de «Los Milagros» de Mérida, reconocible por su alternancia de hiladas de granito y ladrillo, conducía el agua:",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "del río Guadiana hasta los barrancos del norte",
+      "de la presa de Proserpina a la zona occidental",
+      "del río Albarregas a la zona oriental de la ciudad",
+      "de los manantiales de Alange hasta el circo"
+    ],
+    "respuesta": 2,
+    "explicacion": "Partía de la presa de Cornalvo, sobre el Albarregas, y abastecía la ladera oriental de Emerita Augusta; su nombre alude a las leyendas populares que explicaban su fábrica colosal.",
+    "dificultad": 2,
+    "tags": [
+      "los-milagros",
+      "emerita-augusta",
+      "ingenieria-hidraulica"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-159",
+    "enunciado": "¿En qué año fundó Augusto la colonia de Emerita Augusta para asentar a los veteranos de las legiones VI y IX?",
+    "tipo": "fecha",
+    "opciones": [
+      "19 a.C.",
+      "45 a.C.",
+      "25 a.C.",
+      "14 a.C."
+    ],
+    "respuesta": 2,
+    "explicacion": "En el año 25 a.C., en plenas campañas del norte peninsular, Augusto fundó la colonia para los veteranos de las legiones VI Victrix y IX; dio origen a la actual Mérida, capital de la Lusitania.",
+    "dificultad": 2,
+    "tags": [
+      "emerita-augusta",
+      "fundacion-de-ciudades",
+      "augusto"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-160",
+    "enunciado": "El teatro de Mérida, con su friso de la Gorgona y su potente scaenae frons, fue financiado por:",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Publio Carisio",
+      "Lucio Cornelio Balbo",
+      "Marco Vipsanio Agripa",
+      "Quinto Cecilio Metelo Pío"
+    ],
+    "respuesta": 2,
+    "explicacion": "Agripa, general y yerno de Augusto, lo mandó erigir hacia el 16-15 a.C.; es uno de los tres grandes teatros romanos conservados del Occidente, junto con los de Orange y Sabratha.",
+    "dificultad": 2,
+    "tags": [
+      "teatro-romano",
+      "merida",
+      "arquitectura"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-161",
+    "enunciado": "El acueducto de Segovia, cuya fábrica de sillarejo sin mortero se sitúa en el Bajo Imperio, abastecía la ciudad con agua captada en:",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "el río Duero, mediante norias",
+      "el río Eresma, desde la presa de la Grajera",
+      "el río Adaja, por canales subterráneos",
+      "el río Acebeda, aguas arriba en la sierra"
+    ],
+    "respuesta": 3,
+    "explicacion": "La captación se ubicaba junto al actual pueblo de La Acebeda, en la sierra de Guadarrama, y el recorrido ronda los 15 km; el tramo urbano alcanza unos 28 m de altura con 167 arcos.",
+    "dificultad": 3,
+    "tags": [
+      "acueducto-de-segovia",
+      "ingenieria-hidraulica",
+      "segovia"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-162",
+    "enunciado": "El mosaico romano de «Diana cazadora», pieza emblemática del Museo Nacional de Arte Romano de Mérida, procede de la villa de La Olmeda, en Palencia.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Procede de la villa romana del Caserio de los Hurtados, en el término de Mérida; La Olmeda (Palencia) es célebre por otros mosaicos de los siglos IV-V, pero no por esa pieza.",
+    "dificultad": 2,
+    "tags": [
+      "mosaico",
+      "arte-romano",
+      "merida"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-163",
+    "enunciado": "El retrato de Augusto de Prima Porta, idealizado al modo griego, incluye en el relieve central de su coraza:",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "el rapto de los sabinos",
+      "la devolución de los estandartes por los partos",
+      "el juicio de Paris",
+      "el sacrificio de Ifigenia"
+    ],
+    "respuesta": 1,
+    "explicacion": "La armadura celebra la devolución de las águilas perdidas por Craso, lograda por el propio Augusto en el año 20 a.C. por vía diplomática con los partos.",
+    "dificultad": 3,
+    "tags": [
+      "escultura",
+      "retrato-imperial",
+      "augusto"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-164",
+    "enunciado": "Los pavimentos de las casas y villas hispanorromanas se componían de pequeños cubos de mármol o piedra denominados:",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "teselas",
+      "tegulae",
+      "fistulae",
+      "sillares"
+    ],
+    "respuesta": 0,
+    "explicacion": "Las teselas formaban los mosaicos (opus vermiculatum); las tegulae eran tejas del tejado y las fistulae tuberías de plomo de las conducciones hidráulicas.",
+    "dificultad": 1,
+    "tags": [
+      "mosaico",
+      "arte-romano",
+      "tecnicas-artisticas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-165",
+    "enunciado": "El edificio del foro de Tarraco que albergaba los tribunales de justicia y las reuniones del consejo municipal, de planta basilical alargada, era:",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "el macellum (mercado)",
+      "los horrea (almacenes)",
+      "la basílica",
+      "el tabularium (archivo)"
+    ],
+    "respuesta": 2,
+    "explicacion": "La basílica tarragonina, del siglo I a.C. y unos 110 metros de longitud, es una de las primeras del Imperio; su ábside quedó incorporado a la catedral de Tarragona.",
+    "dificultad": 3,
+    "tags": [
+      "tarraco",
+      "arquitectura-civil",
+      "basilica"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-166",
+    "enunciado": "¿En qué año cruzaron los Pirineos e irrumpieron en la península los suevos, vándalos y alanos?",
+    "tipo": "fecha",
+    "opciones": [
+      "406",
+      "409",
+      "411",
+      "415"
+    ],
+    "respuesta": 1,
+    "explicacion": "En el otoño del 409, aprovechando la desintegración del Imperio occidental, entraron por Hispania; en 411 el gobierno imperial les concedió tierras mediante un pacto de hospitalidad (foedus).",
+    "dificultad": 2,
+    "tags": [
+      "invasiones-del-409",
+      "fin-de-hispania-romana",
+      "pueblos-germanicos"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-167",
+    "enunciado": "El culto estatal romano en los municipios y colonias hispanos seguía el modelo de la tríada del Capitolio de Roma, formada por:",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Júpiter, Juno y Minerva",
+      "Marte, Venus y Quirino",
+      "Saturno, Ops y Ceres",
+      "Neptuno, Apolo y Diana"
+    ],
+    "respuesta": 0,
+    "explicacion": "Júpiter, Juno y Minerva presidían el templo capitolino de Roma; en Hispania su réplica mejor conservada es el templo del recinto religioso de Mérida.",
+    "dificultad": 1,
+    "tags": [
+      "religion-romana",
+      "tria-capitolina",
+      "culto-oficial"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-168",
+    "enunciado": "El templo del foro de Baelo Claudia (Tarifa), de planta helenística y columnas corintias, estaba dedicado a:",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Júpiter Optimus Maximus",
+      "la diosa Cibeles",
+      "el emperador Augusto y la diosa Roma",
+      "la tríada capitolina completa"
+    ],
+    "respuesta": 2,
+    "explicacion": "El templo del foro se consagró al culto imperial de Roma y Augusto en el siglo I a.C., en una de las ciudades garumeras más prósperas del Estrecho.",
+    "dificultad": 2,
+    "tags": [
+      "baelo-claudia",
+      "culto-imperial",
+      "tarifa"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-169",
+    "enunciado": "El santuario de la calle Molino de la Rosa, en Mérida, donde apareció una destacada estatua de la diosa Cibeles, testimonia la penetración de los cultos orientales en Hispania.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Cibeles, la Magna Mater de origen frigio, se difundió en ciudades con fuerte presencia militar y comercial como Emerita Augusta; la estatua emeritense se conserva en el museo local.",
+    "dificultad": 2,
+    "tags": [
+      "cibeles",
+      "cultos-orientales",
+      "emerita-augusta"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-170",
+    "enunciado": "Uno de los mitraeos más extensos del Imperio romano apareció en el siglo II en la colonia hispana de:",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Tarraco",
+      "Emerita Augusta",
+      "Carthago Nova",
+      "Caesar Augusta (Zaragoza)"
+    ],
+    "respuesta": 3,
+    "explicacion": "El mitraeo de Zaragoza (siglos II-III), hallado bajo la avenida de la Independencia, medía unos 18 x 8 metros y permitía banquetes rituales de decenas de comensales.",
+    "dificultad": 3,
+    "tags": [
+      "mitra",
+      "zaragoza",
+      "cultos-orientales"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-171",
+    "enunciado": "El culto de Mitra, importado de Persia y extendido por el Imperio en los siglos II-III, fue adoptado sobre todo por:",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "soldados y libertos del ejército",
+      "las vestales de Roma",
+      "comerciantes de la ruta del ámbar",
+      "los flamines de las colonias hispanas"
+    ],
+    "respuesta": 0,
+    "explicacion": "Su difusión se explica por la presencia militar: hay mitraeos en Zaragoza, Reina (Badajoz), Toledo o La Oliva; era un culto mistérico con banquetes comunitarios y jerarquías iniciáticas.",
+    "dificultad": 2,
+    "tags": [
+      "mitra",
+      "ejercito-romano",
+      "cultos-orientales"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-172",
+    "enunciado": "¿Hacia qué año se celebró el concilio de Elvira (Granada), una de las primeras asambleas eclesiásticas de Occidente, con unos 32 cánones?",
+    "tipo": "fecha",
+    "opciones": [
+      "306",
+      "313",
+      "325",
+      "381"
+    ],
+    "respuesta": 0,
+    "explicacion": "Hacia 305-306, en vísperas de la persecución de Diocleciano; sus cánones regulan la disciplina de los cristianos hispanos y beticos, incluida la exigida separación entre judíos y cristianos.",
+    "dificultad": 2,
+    "tags": [
+      "concilio-de-elvira",
+      "iglesia-hispana",
+      "cristianizacion"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-173",
+    "enunciado": "El concilio de Toledo I (397) supuso para la iglesia hispana:",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "la conversión de los visigodos al catolicismo",
+      "la condena del priscilianismo y la reorganización de las diócesis hispanas",
+      "la creación de un patriarcado propio de Toledo",
+      "la expulsión de los judíos del reino"
+    ],
+    "respuesta": 1,
+    "explicacion": "Presidido por el obispo Aspar, condenó de nuevo el priscilianismo, reguló la vida clerical y organizó las sedes episcopales; la conversión visigoda llegó con Toledo III (589).",
+    "dificultad": 3,
+    "tags": [
+      "concilios-de-toledo",
+      "iglesia-hispana",
+      "priscilianismo"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-174",
+    "enunciado": "Prisciliano, noble hispano considerado el primer hereje ejecutado por la autoridad civil del Imperio, fue decapitado en el año 385 en:",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Roma",
+      "Cartago",
+      "Tréveris",
+      "Toledo"
+    ],
+    "respuesta": 2,
+    "explicacion": "Juzgado junto a tres compañeros ante el emperador Magno Máximo en Tréveris, fue decapitado allí; su doctrina mezclaba ascetismo, gnosis y oposición a los obispos africanos.",
+    "dificultad": 3,
+    "tags": [
+      "prisciliano",
+      "herejia",
+      "siglo-iv"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-175",
+    "enunciado": "Santa Eulalia, patrona de Mérida, sufrió el martirio en época de la persecución de Diocleciano, hacia el año 304, y sus restos se veneran en la cripta de la catedral de Mérida.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Su pasión, recogida por Prudencio en el Peristephanon (siglo IV), la presenta como una niña de la colonia; el cenotafio de la catedral la recuerda junto a otros mártires emeritenses.",
+    "dificultad": 1,
+    "tags": [
+      "martires",
+      "emerita-augusta",
+      "cristianizacion"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-176",
+    "enunciado": "La presencia de comunidades judías en la Hispania romana se documenta de forma especialmente sólida mediante:",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "una sinagoga monumental hallada en Emerita Augusta",
+      "un mosaico con la Menorá de Baelo Claudia",
+      "los cánones judaizantes del concilio de Toledo I",
+      "las inscripciones funerarias hebreas de Tarraco y otras ciudades"
+    ],
+    "respuesta": 3,
+    "explicacion": "Varios epitafios en hebreo o latín con símbolos judíos (como la menorá) atestiguan comunidades establecidas desde el siglo III en Tarraco, Zaragoza, Calatayud o Mérida.",
+    "dificultad": 3,
+    "tags": [
+      "judaismo-romano",
+      "epigrafia",
+      "hispania-romana"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-177",
+    "enunciado": "El padre de la Iglesia Tertuliano, nacido en Cartagena, escribió hacia el año 200 que Hispania era una «tierra fecundísima en mártires», testimonio de una cristianización temprana.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "En su Ad nationes (c. 197-200) alude a la sangre vertida por los cristianos en Hispania; los mártires emeritenses (304) y cordobeses (817) confirman esa temprana tradición martirial.",
+    "dificultad": 2,
+    "tags": [
+      "tertuliano",
+      "cristianizacion",
+      "siglo-ii"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-178",
+    "enunciado": "Osio (Hosius), obispo de Córdoba en los siglos III y IV, fue el único prelado occidental presente en el concilio convocado por Constantino en:",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Sárdica (343)",
+      "Nicea (325)",
+      "Calcedonia (451)",
+      "Elvira (306)"
+    ],
+    "respuesta": 1,
+    "explicacion": "Osio presidió el concilio de Nicea (325) en representación de Occidente y fue consejero de Constantino; murió en el 357, ya muy anciano, tras haber firmado una fórmula arriana.",
+    "dificultad": 3,
+    "tags": [
+      "osio-de-cordoba",
+      "concilio-de-nicea",
+      "iglesia-hispana"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-179",
+    "enunciado": "El latín vulgar, difundido en Hispania por el ejército, los colonos y el comercio, se define como:",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "la variedad culta y literaria del latín clásico",
+      "la variedad coloquial y popular del latín, base de las lenguas romances",
+      "el latín técnico de los juristas romanos",
+      "la lengua administrativa griega del Imperio oriental"
+    ],
+    "respuesta": 1,
+    "explicacion": "Frente al latín literario de las élites, la lengua hablada por la mayoría evolucionó de forma distinta en cada territorio: en Hispania dio lugar al castellán, gallego, catalán, aragonés y asturleonés.",
+    "dificultad": 1,
+    "tags": [
+      "latin-vulgar",
+      "latinizacion",
+      "lenguas-romances"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-180",
+    "enunciado": "Las glosas emilianenses, anotadas en los márgenes de códices latinos del monasterio de San Millán de la Cogolla (siglo X), son clave porque:",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "conservan las primeras palabras en euskera protohistórico",
+      "son el primer texto del Cantar de Mio Cid",
+      "contienen anotaciones en lenguas romance (romance castellano y navarro-aragonés) sobre textos latinos",
+      "documentan la conversión de los visigodos al catolicismo"
+    ],
+    "respuesta": 2,
+    "explicacion": "Junto a las glosas ribereñas (siglo IX), permiten seguir la emergencia del castellano y del romance navarro-aragonés a partir del latín: el romance es ya la lengua en la que se glosa.",
+    "dificultad": 2,
+    "tags": [
+      "glosas-emilianenses",
+      "lenguas-romances",
+      "castellano"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-181",
+    "enunciado": "De las lenguas que se hablan hoy en España, la que no desciende del latín es:",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "el gallego",
+      "el catalán",
+      "el asturiano",
+      "el euskera"
+    ],
+    "respuesta": 3,
+    "explicacion": "El euskera es una lengua prerromana, aislada y no indoeuropea, que sobrevivió a la romanización; el resto son lenguas romances nacidas del latín vulgar peninsular.",
+    "dificultad": 1,
+    "tags": [
+      "euskera",
+      "lenguas-romances",
+      "romanizacion"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-182",
+    "enunciado": "Los numerosos vocablos germánicos que conserva el español (guerra, guardia, blanco, espiar) llegaron a la península principalmente con la colonización militar cartaginesa del siglo III a.C.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Los préstamos germánicos proceden de la dominación visigoda (siglos V-VII), no de Cartago: palabras como guerra, ropa, jardín o espiar son de raíz germánica occidental.",
+    "dificultad": 2,
+    "tags": [
+      "germanismos",
+      "visigodos",
+      "latinizacion"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-183",
+    "enunciado": "El debate historiográfico contemporáneo cuestiona el modelo clásico de «romanización» como imposición unidireccional y propone entenderla como:",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "un proceso de aculturación bidireccional e hibridación, con papel activo de las élites locales",
+      "una colonización demográfica pura, sin mestizaje alguno",
+      "un fenómeno limitado a los municipium, sin alcance en el mundo rural",
+      "una imposición cultural fracasada por la resistencia total de los indígenas"
+    ],
+    "respuesta": 0,
+    "explicacion": "Si Mommsen habló de unificación cultural romana, la historiografía actual insiste en procesos locales, apropiaciones selectivas, sincretismo y resistencias, con protagonismo de las élites indígenas.",
+    "dificultad": 3,
+    "tags": [
+      "romanizacion",
+      "debate-historiografico",
+      "aculturacion"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-184",
+    "enunciado": "Tras el fin del dominio imperial, la pervivencia del derecho romano en el reino visigodo quedó garantizada por el Breviario de Alarico (Lex Romana Visigothorum), compilado en Tolosa en el año 506.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Promulgado por el rey visigodo Alarico II para sus súbditos romanos, recopilaba el derecho vigente y fue la base de la romanidad jurídica en la Galia visigoda y, más tarde, en Hispania.",
+    "dificultad": 3,
+    "tags": [
+      "breviario-de-alarico",
+      "romanidad",
+      "derecho-romano"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-185",
+    "enunciado": "La deidad indígena Ataecina, documentada en epígrafes votivos de Torre de Juan Abad (Ciudad Real), fue asimilada por los romanos a:",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "Minerva",
+      "Proserpina",
+      "Fortuna",
+      "Ceres"
+    ],
+    "respuesta": 1,
+    "explicacion": "Su identificación con Proserpina, diosa del inframundo, revela el sincretismo hispano-romano: a la deidad prerromana del más allá se le atribuyeron los atributos de la Proserpina latina.",
+    "dificultad": 3,
+    "tags": [
+      "sincretismo-religioso",
+      "ataecina",
+      "religion-hispano-romana"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-186",
+    "enunciado": "Los topónimos Bracara, Lucus o Scalabis conservan su forma latina, mientras que nombres como Toledo o Madrid serían fundaciones coloniales de época de Augusto.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Bracara Augusta, Lucus Augusti y Scalabis sí son ciudades romanas; pero Toledo era ya cabeza de los Carpetaníos y Madrid tiene raíces prerromanas y nombre árabe posterior, no son colonias augusteas.",
+    "dificultad": 1,
+    "tags": [
+      "toponimia",
+      "romanizacion",
+      "hispania-romana"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-187",
+    "enunciado": "¿Cuál de estas palabras del español procede del árabe y no del latín?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "almohada",
+      "ventana",
+      "mesa",
+      "puerta"
+    ],
+    "respuesta": 0,
+    "explicacion": "Almohada viene del árabe al-muhaddaya; en cambio ventana (de fenestra), mesa (de mensa) y puerta (de porta) son herencias directas del latín, como la mayor parte del léxico español.",
+    "dificultad": 1,
+    "tags": [
+      "lexico",
+      "influencia-arabe",
+      "latinizacion"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-188",
+    "enunciado": "El acueducto de Tarragona conocido como «Pont del Diable», que abastecía a la ciudad de agua potable, captaba el agua:",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "del río Ebro, mediante norias",
+      "del río Francolí, por un canal subterráneo",
+      "en los manantiales de la Mola de Santa Bárbara",
+      "en la presa del Regueros, en la sierra de la Mola (l'Argentera)"
+    ],
+    "respuesta": 3,
+    "explicacion": "La captación se encontraba en la presa dels Regueros, a unos 25 km de la ciudad; los restos mejor conservados son los del tramo de l'Aquila, con arcos de hasta 26 metros de altura.",
+    "dificultad": 2,
+    "tags": [
+      "acueducto",
+      "tarraco",
+      "ingenieria-hidraulica"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-189",
+    "enunciado": "¿En qué año recibieron los pueblos asentados en Hispania —suevos, vándalos y alanos— un pacto de hospitalidad (foedus) que formalizaba su reparto territorial?",
+    "tipo": "fecha",
+    "opciones": [
+      "409",
+      "411",
+      "416",
+      "429"
+    ],
+    "respuesta": 1,
+    "explicacion": "En 411 el gobierno de Honorio concedió tierras: suevos y vándalos asdingos en Gallaecia, vándalos silingos en la Bética y alanos en Lusitania y la Cartaginense.",
+    "dificultad": 2,
+    "tags": [
+      "foedus",
+      "invasiones-del-409",
+      "siglo-v"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-190",
+    "enunciado": "¿Qué pueblo germánico, admitido como foederatus en Hispania, acabó asentándose en la Tarraconense y eligiendo Toledo como sede regia?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "los suevos",
+      "los vándalos asdingos",
+      "los visigodos",
+      "los alanos"
+    ],
+    "respuesta": 2,
+    "explicacion": "Los visigodos, aliados de Roma contra los vándalos, se instalaron tras 416-418; su primera capital fue Tolosa y, en la península, Toledo acabó siendo la sede definitiva del reino.",
+    "dificultad": 2,
+    "tags": [
+      "visigodos",
+      "toledo",
+      "fin-de-hispania-romana"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-191",
+    "enunciado": "El puente romano de Mérida, de unos 790 metros y levantado en el siglo I a.C. para conectar el foro con la salida de la vía de la Plata, salva:",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "el río Almonte",
+      "el río Guadiana",
+      "el río Zújar",
+      "el río Salor"
+    ],
+    "respuesta": 1,
+    "explicacion": "Cruza el Guadiana con unos 60 arcos y fue el puente más largo de la Hispania romana; se reconstruyó en época visigoda, bajo Leovigildo, y en la Edad Media tras las crecidas.",
+    "dificultad": 1,
+    "tags": [
+      "puente-romano",
+      "merida",
+      "ingenieria"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-192",
+    "enunciado": "¿Cómo surgió el nombre «Los Milagros» con el que se conoce el acueducto emeritense del Albarregas?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "por un episodio hagiográfico del obispo Masona",
+      "por los milagros eucarísticos narrados en su inscripción fundacional",
+      "por su supervivencia «milagrosa» tras el terremoto de 1755",
+      "por las leyendas populares que atribuían su fábrica colosal a gigantes o hechicería"
+    ],
+    "respuesta": 3,
+    "explicacion": "No existe inscripción milagrosa alguna: el nombre alude a las leyendas medievales que explicaban el enorme paño de arcos como obra sobrenatural, un motivo común ante las ruinas romanas.",
+    "dificultad": 3,
+    "tags": [
+      "los-milagros",
+      "emerita-augusta",
+      "arqueologia"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-193",
+    "enunciado": "¿Desde qué año se celebran los espectáculos del Festival Internacional de Teatro Clásico en el teatro romano de Mérida?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "1933",
+      "1927",
+      "1952",
+      "1961"
+    ],
+    "respuesta": 0,
+    "explicacion": "El festival se inauguró en 1933 en el teatro de Agripa, uno de los tres mejor conservados del Imperio romano, y representa cada verano obras de los autores griegos y latinos.",
+    "dificultad": 1,
+    "tags": [
+      "teatro-romano",
+      "merida",
+      "festival-de-teatro-clasico"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-194",
+    "enunciado": "El circo de Mérida, destinado a las carreras de carros tirados por cuadrigas, superaba con creces en capacidad al teatro y al anfiteatro: se estima que albergaba cerca de 30.000 espectadores.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 0,
+    "explicacion": "Su pista se prolongaba unos 400 metros; junto al templo de Diana, el teatro, el anfiteatro y los acueductos formaba el conjunto monumental de Emerita Augusta, Patrimonio Mundial desde 1993.",
+    "dificultad": 1,
+    "tags": [
+      "circo",
+      "merida",
+      "espectaculos-romanos"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-195",
+    "enunciado": "Entre las esculturas del Museo Nacional de Arte Romano de Mérida destaca una copia romana en mármol de un célebre original griego. ¿Cuál?",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "la Venus de Cnido, de Praxíteles",
+      "el Hermes, de Praxíteles",
+      "el Discóbolo, de Mirón",
+      "el Laocoonte del Vaticano"
+    ],
+    "respuesta": 0,
+    "explicacion": "La copia de la Venus de Cnido (siglos I a.C.-I d.C.) procede de Mérida; el museo, obra de Rafael Moneo inaugurado en 1986, conserva también el célebre «Grupo de los Gigantes».",
+    "dificultad": 3,
+    "tags": [
+      "escultura",
+      "merida",
+      "museo-nacional-de-arte-romano"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-196",
+    "enunciado": "La batalla de Río Orvigo (456), en la que los visigodos de Eurico derrotaron al reino suevo de Requiario, se libró en las orillas de un afluente del:",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "río Tajo",
+      "río Guadiana",
+      "río Duero",
+      "río Ebro"
+    ],
+    "respuesta": 2,
+    "explicacion": "El combate se sitúa tradicionalmente en el Orbigo, afluente del Pisuerga (cuenca del Duero); tras la derrota, los visigodos saquearon Braga y el reino suevo quedó muy reducido.",
+    "dificultad": 1,
+    "tags": [
+      "rio-orvigo",
+      "suevos",
+      "visigodos"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-197",
+    "enunciado": "El concilio de Elvira (hacia 306) fue convocado por el emperador Constantino como parte de su política de unidad religiosa del Imperio.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "Elvira fue una asamblea de los propios obispos hispanos y beticos, sin intervención imperial; la política constantiniana llegó después, con el concilio de Nicea (325), presidido por su impulso.",
+    "dificultad": 3,
+    "tags": [
+      "concilio-de-elvira",
+      "iglesia-hispana",
+      "constantino"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-198",
+    "enunciado": "La Crónica de Hidacio, obispo de Aquae Flaviae (Chaves), es la fuente principal para el estudio de:",
+    "tipo": "opcion-multiple",
+    "opciones": [
+      "las guerras celtibéricas contra Numancia",
+      "el cisma priscilianista del siglo IV",
+      "el establecimiento de las provincias Ulterior y Citerior",
+      "la invasión de 409 y el asentamiento de suevos y vándalos"
+    ],
+    "respuesta": 3,
+    "explicacion": "Hidacio (†h. 469) prolongó la crónica de Orosio hasta casi el final de su vida y es la principal fuente para la entrada de 409, el saqueo de la Bética y el pacto con los suevos.",
+    "dificultad": 3,
+    "tags": [
+      "hidacio",
+      "invasiones-del-409",
+      "fuentes-antiguas"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-199",
+    "enunciado": "Toledo fue siempre la capital del reino visigodo: los visigodos la eligieron como sede regia al entrar en Hispania, en el año 418, por voluntad del rey Walia.",
+    "tipo": "verdadero-falso",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "respuesta": 1,
+    "explicacion": "La capital inicial fue Tolosa (Toulouse); en la península la sede regia estuvo antes en Narbona y Barcelona, y Toledo solo se convirtió en capital bajo Leovigildo (hacia 571), al reunificar el reino.",
+    "dificultad": 1,
+    "tags": [
+      "toledo",
+      "visigodos",
+      "capital-del-reino"
+    ]
+  },
+  {
+    "id": "bachillerato2-romanizacion-200",
+    "enunciado": "¿En qué año se celebró el III Concilio de Toledo, en el que el rey visigodo Reccaredo abrazó el catolicismo y se puso fin al arrianismo oficial del reino?",
+    "tipo": "fecha",
+    "opciones": [
+      "571",
+      "585",
+      "589",
+      "597"
+    ],
+    "respuesta": 2,
+    "explicacion": "En 589 Reccaredo abandonó el arrianismo y los obispos hispanos y godos se unieron a la fe católica; el concilio, presidido por Leandro de Sevilla, selló la unidad religiosa del reino visigodo.",
+    "dificultad": 2,
+    "tags": [
+      "concilio-de-toledo",
+      "reccaredo",
+      "visigodos"
+    ]
   }
 ]
