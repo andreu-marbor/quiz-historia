@@ -168,6 +168,14 @@ bubblewrap.cmd build                         # genera APK + AAB — requiere BUB
 
 **URLs:** web → `https://andreu-marbor.github.io/quiz-historia/` · repo → `https://github.com/andreu-marbor/quiz-historia`
 
+## ⚠️ Seguridad: datos sensibles — NUNCA al repo
+
+- **Prohibido subir a git**: keystores (`*.keystore`, `*.jks`, `*.p12`), contraseñas (keystore, Bubblewrap, APIs, servicios), claves API/tokens, ficheros `.env`, credenciales de Render/GitHub y `local.properties`.
+- **Cómo se guardan**: en rutas **fuera del repo** — contraseñas de keystore en `%USERPROFILE%\.bubblewrap\` (PLAN.md §9.1), entornos en variables de entorno. Todo lo anterior, además, **explícitamente en `.gitignore`**.
+- **Antes de cada commit grande:** revisar `git status` y comprobar `git ls-files | Select-String -Pattern '(keystore|\.env|secret|passw|token|key)'` → debe salir vacío.
+- **Si algo se sube por error:** rotar/cambiar la credencial **inmediatamente** — borrar el commit no basta (el historial, clones y forks conservan el dato).
+- Auditoría recurrente: `git log --all --diff-filter=A --name-only` detecta ficheros que alguna vez se trackearon (auditoría 2026-10-16: los 10 proyectos de la carpeta, limpios).
+
 ## ⚠️ Memoria del proyecto
 
 Existe un archivo **[MEMORY.md](./MEMORY.md)** que registra:
